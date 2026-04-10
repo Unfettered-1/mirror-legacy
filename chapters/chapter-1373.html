@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1373: Treasured Elephant (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1372.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1374.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1373: Treasured Elephant (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Great void.</p>
+<p>Li Ximing left Shahuang and flew through the great void to Northern Dan. He saw brilliant colored radiance sheltering the land below. It was clearly the traditional display of Buddhist cultivators; the sky was filled with a multicolored light whose power was difficult to judge.</p>
+<p>The Great Konghai Temple’s mountain gate likely had formations, yet given the Buddhist cultivators’ level of formation mastery, Northern Dan could not have established one so swiftly. It was most likely sustained by the light of sacred soil.</p>
+<p>He frowned inwardly,Impressive indeed. Buddhist cultivators excel at using the Merciful One as a formation. Drawing it down provides a fine means of protection. It is less troublesome than forging a Purple Mansion Realm grand formation. The difficulty lies in that when the people disperse, the formation disperses as well…</p>
+<p>Yet, this was not his concern. He took a detour and flew to Lüfang. Following the jade slip, he halted at the edge of the Si Sea. He peered through the great void and saw a small island where demonic creatures moved about, along with the occasional monk.</p>
+<p>There was only a Foundation Establishment Realm grand formation on the island. The demon elephant was nowhere to be seen, and there was not even the glow of a Purple Mansion Realm formation in the great void. Clearly, this demonic creature was impoverished.</p>
+<p>He invoked the Immortal Mirror to probe the depths and confirmed there was no ambush in the great void. Only then did he relax. Glancing below, he drifted down, emerging from the great void and manifesting upon the island. Immediate commotion arose. Li Ximing did not hesitate. With a thought, he activated the Mountain-Charging Sea-Pacing Tiger. The sky turned hazy yellow, colored clouds drifting before being scattered by transformed Baleful Qi.</p>
+<p>The demonic creatures trembled in fear. Waves surged upon the sea as thunderous roars echoed. White spray exploded from the surface as a burly man clad in white armor strode out of the sea. Suspicion filled his expression.</p>
+<p>Upon seeing Li Ximing, he paused in surprise and frowned as he said, “Which Fellow Daoist stands before me?”</p>
+<p>Holding the Mountain-Charging Sea-Pacing Tiger, its white pearl shining brightly, Li Ximing swept his gaze over the man and replied with a laugh, “Merely a rogue cultivator from the outer-sea, passing by this place and wishing to meet you.”</p>
+<p>“A rogue cultivator?” The demonic creature immediately grew suspicious and looked him up and down, unable to discern his cultivation. Since Li Ximing was a Daoist Master, the demonic creature maintained courtesy and waved his sleeve as he said, “Then, please enter!”</p>
+<p>This Demon King was impoverished despite being at the Purple Mansion Realm. When he saw Li Ximing casually handling a spirit artifact, his momentum weakened noticeably. Leading him onto the island, the demonic creature probed, “Fellow Daoist… do you cultivate the Earth Virtue?”</p>
+<p>Li Ximing did not reveal any deeper wonders. He was using the Mountain-Charging Sea-Pacing Tiger, which naturally appeared to be of the Earth Virtue Dao. While signaling westward with a jade talisman, he replied calmly, “Being in the Eastern Sea, Earth Virtue must be a rare sight here.”</p>
+<p>The white elephant frowned deeply, lost in thought. He led Li Ximing up the peak, gathered the scriptures from the table, poured tea, and said softly, “I wonder…”</p>
+<p>Before he could finish, Li Ximing glanced at him and assumed an imposing posture, striking first, “Under whose command does Fellow Daoist serve?”</p>
+<p>The white elephant was still a Purple Mansion Realm Demon King. He would not be easily intimidated. His expression darkened and his eyes narrowed as he replied, “I cultivate within the sea and am a close friend of the Temple Master of the Great Konghai Temple. I am known as Tuodu… And you, who are you…”</p>
+<p>Since Earth Virtue had been mentioned, Li Ximing replied casually, “Are you familiar with the Xu Xiang Dao lineage?”</p>
+<p>Demon King Tuodu stared at him heavily and asked, “Senior Sumian?”</p>
+<p>Li Ximing had not expected a few words to lead straight to Xuanmiao Temple. Since he bore no enmity toward them, exposing himself in battle and offending Sumian without cause would be foolish. He laughed and shook his head as he said, “No.”</p>
+<p>Yet suspicion rose within him,Sumian is widely connected and quite renowned, unlike me, merely a Purple Mansion Realm Daoist Master. Even if this demonic creature has not seen him, he should not mistake me for him…</p>
+<p>Upon hearing his denial, suspicion flashed in the white elephant’s eyes. At that moment, a streak of colored light rose into the sky. Tuodu was startled and prepared to rise, yet the man before him reacted even faster, standing with hands behind his back and staring coldly.</p>
+<p>“Fellow Daoist, please wait!”</p>
+<p>In that moment, Demon King Tuodu finally understood. Li Ximing did not hesitate and said coldly, “I do not wish to harm anyone. If you remain still, we shall part in peace. If you insist on acting, Demon King, you may try!”</p>
+<p>The western light shimmered in many colors. Shock and fury crossed Tuodu’s face. After a brief hesitation, his mouth tore wide to his ears, two tusks elongating rapidly as his body expanded in fury.</p>
+<p>“You dare to harm my friend Baoqing?! How dare you?!”</p>
+<p>His roar rolled like thunder through the clouds. Below, monks and demons alike looked up, their faces showing fear and shared indignation.</p>
+<p>Boom!</p>
+<p>The sea surged violently as a colossal white-skinned treasure elephant rose into the sky, vast as a mountain. A golden mantle was draped over its forehead. Its two ivory tusks were like peaks of white jade, gleaming bright. Its massive mouth was filled with crimson, releasing an ear-splitting roar.</p>
+<p>Gales erupted in all directions. Yet Li Ximing remained standing beside the table, the tea upon it utterly undisturbed. He shook his head and said with a sigh, “How unwise you are, Fellow Daoist!”</p>
+<p>As he spoke, a pair of elephantine hooves vast enough to blot out the sky descended from above. Their shadow swallowed the entire mountain peak as they stomped down.</p>
+<p>Facing hooves as large as mountains, Li Ximing revealed a strange expression. He neither invoked a divine ability nor deployed the Mountain-Charging Profound Veil. Instead, he merely stepped lightly forward into the great void.</p>
+<p>The hooves showed no restraint and crashed heavily onto the peak. Thick smoke and thunderous explosions engulfed the island. Demonic creatures and monks alike fell like rain, severed limbs scattering in every direction.</p>
+<p>Standing quietly within the great void, Li Ximing stared in astonishment, momentarily at a loss for words.</p>
+<p>I have not even made a move… and he has already destroyed his own domain…</p>
+<p>Tuodu seemed still unsatisfied. He stomped several more times in fury, flames of wrath surging skyward as he roared, “Where do you think you can flee?!”</p>
+<p>After smashing his own territory, the Demon King reverted to human form, hoisted an enormous stone pillar, and stepped into the great void, leaving behind a land filled with wails.</p>
+<p>Not good!Alarm flashed through Li Ximing’s mind,He intends to rush west to provide aid!</p>
+<p>He no longer held back. Bright Yang divine ability rose within him as he prepared to intercept. Yet the demonic creature ignored him entirely and plunged headlong into the depths of the sea.</p>
+<p>Li Ximing immediately understood. The radiance in his hand dimmed as he regarded the demonic creature with a peculiar gaze,This demon truly does not wish to fight…</p>
+<p>Those who reached the Purple Mansion Realm were seldom foolish. Thus Li Ximing dared not relax his guard. He followed closely, beams of heavenly light shooting from the center of his brows, forcing the demon to dodge repeatedly and accelerate ever faster.</p>
+<p>After roughly fifteen minutes, they reached the deep-sea region of the great void, within the territory of the Dragon Clan. Li Ximing grew cautious.</p>
+<p>The demon halted abruptly and turned around. “Fellow Daoist!”</p>
+<p>Li Ximing had never intended a fight to the death. Smiling gently, he replied, “Fellow Daoist Tuodu has truly broadened my horizons.”</p>
+<p>Demon King Tuodu waved his hands repeatedly. His earlier ferocity vanished, revealing an elephant’s simple sincerity. He sighed and said, “My thanks for your understanding…”</p>
+<p>With a wave of his hand, he led Li Ximing back into the manifest world. He set out a table and chairs upon a sea reef, wearing a refreshed and genial expression as he smiled. “So you cultivate Bright Yang. You must be Fellow Daoist Zhaojing. You wield a fine spirit artifact indeed. I could not discern a trace of it! My apologies for the offense!”</p>
+<p>Li Ximing was about to speak, yet Tuodu waved his hand first and said, “Baoqing deserves it. Let him suffer his misfortune. Even the temple master has left him to reap what he has sown. If I can hold back one Purple Mansion Realm force, I have already done my utmost for the Great Konghai Temple!”</p>
+<p>He seemed entirely different from before, with a plain and straightforward demeanor. Li Ximing remained noncommittal and believed none of it. What good demon kings ruled the sea? He simply did not wish for mutual ruin and was playing along.</p>
+<p>After all, the other party likely believed Li Ximing possessed at least two spirit artifacts and was perhaps backed by the Supreme Yang Dao lineage. Otherwise, how could a Purple Mansion Realm Demon King who ruled a region display such civility?</p>
+<p>The demon sighed repeatedly. Li Ximing was content to sit leisurely and remarked casually, “It seems you have little intention of aiding Baoqing. The Great Konghai Temple has only two Mahas within. Yet there are so many hidden intricacies?”</p>
+<p>“Haha!” Tuodu smiled warmly and said, “The sacred soil of the Great Konghai Temple is unlike that of the northern Buddhists. There are many complexities within. You and I are not the main forces in this battle. We merely lend our presence. Why delay each other’s cultivation?”</p>
+<p>Li Ximing watched him in silence. The Immortal Mirror’s scan had revealed a deep and shadowy aura coiled beneath the reef. Clearly, another Purple Mansion Realm ally lurked below.</p>
+<p>This Tuodu is truly cunning. That earlier stomp was merely an excuse, under the guise of battle, to slaughter the monks on his island. He appears to be a hot-tempered treasure elephant, yet this ruthlessness is far from simple.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1372.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1374.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

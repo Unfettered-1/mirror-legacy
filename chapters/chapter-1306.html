@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1306: Entrust (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1305.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1307.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1306: Entrust (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Tinglan carefully lifted the purple gold orb with both hands. It felt icy to the touch and seemed no different from an ordinary object, yet it was a supreme treasure that everyone in this world coveted. Its grade could not be discerned, nor could she sense any mana from it. There was only its heavy, substantial feel.</p>
+<p>She held the purple gold orb up and stood facing the brilliant morning glow in the sky. When the golden dawn light passed through the purple orb and reflected outward, it unexpectedly caused the throne upon the purple platform to emit light.</p>
+<p>Everything around her gradually brightened. The purple platform cave dwelling that had been sealed for many years finally stirred to life. Tinglan stepped through the void and found herself entering a small cave dwelling.</p>
+<p>It was unclear where this cave dwelling was anchored. Inside, purple gold light shimmered everywhere in a vast purple haze. It contained only a jade seat and a small platform.</p>
+<p>The small platform was about the size of a palm square and had been carved from a single piece of complete purple jade. Though intricate patterns had been carved into it, they appeared in a pale purple hue and were concealed within the platform, giving it a quiet and refined elegance. A circular curved groove that reflected a faint white glow had been carved at its exact center.</p>
+<p>Tinglan stepped forward and placed the Purple Essence Immortal Origin Profound Canopy into it. The divine ability in her hand flickered, and a dim point of purple light leapt up from the platform and flew into the center of her eyebrows.</p>
+<p>At the same time, the Radiant Purple Profound Illumination Grand Formation of the Purple Smoke Blessed Land finally transmitted a sense of harmony like water blending with milk. Tinglan stood quietly, gradually bringing this peerlessly powerful grand formation under her control.</p>
+<p>Though this jade platform was small, it was the hub of the Purple Smoke Blessed Land. It was the formation plate of the Radiant Purple Profound Illumination Grand Formation Taixu had left behind.</p>
+<p>Although Tinglan had governed the Purple Smoke Gate alone for many years, she had never possessed the qualification to control this formation. She only had the right to open and close access. Only by obtaining one of the two, the Dharma relics Purple Essence Immortal Origin Profound Canopy or the Taixu Purple Essence Manual, could one truly gain this formation’s recognition.</p>
+<p>Now that Zimu had departed and this Dharma relic had fallen into her hands, Tinglan finally stepped into this treasured land that only the Grand Daoist Masters of the Wun and Kan Families had once been qualified to enter. Yet her heart was filled with worry.</p>
+<p>Is it truly this serious?</p>
+<p>The Supreme Yang Dao lineage had suppressed Jiangnan for so many years, always watching the clouds rise and fall from on high and waiting for Purple Mansion Realm cultivators of other Dao lineages to come and pay their respects. At its peak, if it wished to summon other Purple Mansion Realm cultivators in Jiangnan, a single immortal decree would suffice.</p>
+<p>Though it was somewhat weakened now, that was only because the Grand Daoist Masters of several sects were close in age and their periods of decline had coincided. Moreover, Chi Buzi regarded the Supreme Yang Dao lineage of the Azure Pond Sect as a burden, making the timing exceedingly unfortunate. Otherwise, the dignified Supreme Yang Dao lineage would not have fallen into such weakness so suddenly.</p>
+<p>If these words had not come from Zimu herself, Tinglan would have treated any claim that something might happen to the Supreme Yang Dao lineage as a joke.</p>
+<p>It does seem rather laughable. Hengzhu Dao and Xiukui Dao style themselves as branch seats of the Origin Mansion, while my Purple Smoke Gate and Wanyu adhere firmly to our ancestors’ final instructions, with the direct line refusing to practice the wondrous techniques of extending the path. Originally, only the Azure Pond Sect had the ability to produce a Grand Daoist Master within a short time.</p>
+<p>However, every sect has a path to retreat. My family and the Hengzhu Dao Gate have blessed lands, the Sword Gate has the many mountains of the Great Western Plains, and the Xiukui Dao Gate has its mountain temples. Even if what my martial uncle says is correct, it only means that the age of Supreme Yang’s prosperity is coming to an end.</p>
+<p>She observed the jade platform before her with a slightly heavy gaze. Purple Essence so dense that it had turned into cloudlike vapor suffused the space around her. Tinglan then turned toward the immortal seat to the side.</p>
+<p>The immortal seat was not tall and instead appeared small and delicate, making it clear that its original owner had been petite. Tinglan took a step back, performed a solemn bow, and only circled the immortal seat once.</p>
+<p>Strangely enough, the moment she stepped behind the immortal seat, all light dimmed until one could not see a hand before the eyes. Yet how could mere darkness obstruct the eyesight of a Purple Mansion Realm cultivator? Tinglan discovered several lines of elegant script carved behind the seat with a single glance.</p>
+<p>Cultivate the truth before attaining immortality. Be neither rash nor talkative. Seek the ultimate realm of Purple Essence, and sleep while embracing the primordial womb.</p>
+<p>The sentence seemed to carry a peculiar allure that kept Tinglan from looking away. Her gaze was filled with contemplation, as though she had gained a deeper understanding of Zimu’s words. As the female Daoist took a step to the side, a twisting pain seized her chest, and a powerful sense of suffocation surged up her nose. Her crimson lips trembled as she began to cough.</p>
+<p>“Cough… cough cough…”</p>
+<p>Tinglan coughed for a long while until the world spun around her. At last, from her parched throat, she expelled a strand of gray airflow that fell into the palm covering her mouth.</p>
+<p>She opened her left hand and squinted. It was actually a handful of incense ash. A chill spread through Tinglan’s heart. Enduring the intense urge to cough, she retreated behind the throne, turned her palm into a blade, and carved forcefully into her chest.</p>
+<p>Bang!</p>
+<p>Gray smoke billowed as a large mass of incense ash burst from her internal organs in a radiating spray. It mingled with the purple gold clouds in an unexpectedly harmonious way.</p>
+<p>So that was… the handwriting of a True Monarch!</p>
+<p>Tinglan immediately transformed into dense purple smoke that drifted apart. A wisp of purple smoke flew toward the jade platform, condensed back into a hand like white jade, and took the Dharma relic into its grasp. Only then did she slowly recondense the rest of her body, as the surging incense ash stopped erupting and gradually dispersed.</p>
+<p>“Cough… cough…”</p>
+<p>She coughed twice more before finally recovering. Color returned to her once pale face. Tinglan immediately knelt and kowtowed nine times.</p>
+<p>Everything before her eyes gradually faded as a solid sensation came from beneath her feet. The purple gold orb in her hand vanished, yet Tinglan was not flustered and slowly let out a breath.</p>
+<p>The Purple Essence Immortal Origin Profound Canopy had already returned to the purple gold illusion. Tinglan had also obtained the grand formation’s recognition and could return to the illusion at any time from this purple platform. Whether the Dharma relic was in her hand no longer mattered. She would neither have the opportunity to take the Dharma relic out to face enemies, nor would she bring the Dharma relic away from the blessed land.</p>
+<p>Still shaken, she stepped down from the platform and stood alone beside the stairs, gazing at the drifting clouds. She thought,In that case… securing the support of the Li Family is even more important than I thought. At the very least, Li Zhouwei and Li Ximing… two Purple Mansion Realm cultivators, one an alchemist, and one a genius in combat no weaker than Hengli.</p>
+<p>As for Ning Wan… I can do my best to win her over, but I do not need to help her in everything. The True Monarch shifting north to relieve pressure, and compensating southward if the north is lost, does follow the rules. Yet I received not the slightest news about the Stone Pond matter, which shows that the girl still harbors wariness toward me.</p>
+<p>Tinglan stood quietly on the steps. The morning glow had long since vanished. She focused her mind and gazed into the distance, where dark clouds stretched endlessly over Jiangbei and heavy rain fell without cease.</p>
+<p>“Someone come!” She called softly, and a purple robed cultivator quickly came up from below. Tinglan asked, “How is the north?”</p>
+<p>The man, whose features closely resembled Wun Wu, replied respectfully, “Everything is under control. Daoist Bai’s ambition has been steadily growing and can no longer be restrained. Brahma Cloud has been beaten back step by step, and his repeated requests for aid have yielded no results. As for Ping Wangzi, he does not dare abandon his place and flee. Left with no choice, he can only remain besieged day after day.</p>
+<p>“Just a few hours ago, Daoist Bai attacked his main formation and captured Ping Wangzi alive. He accused him of refining babies into a dharma artifact, calling him an unforgivable great demon, and has now imprisoned him.”</p>
+<p>Tinglan asked, “Oh? He could come up with such a charge? How much of it is true, and how much is false?”</p>
+<p>The purple robed man immediately replied, “I fear there is indeed some truth to it…”</p>
+<p>Tinglan nodded, deep in thought. The purple robed man looked slightly awkward and spoke quietly, “There is one more matter. News has come from the outer-sea that Li Zhouwei of the Li Family has appeared at our New Rain Marketplace…”</p>
+<p>“That is good news.” Tinglan smiled faintly, but noticing that something was off about his expression, she looked again. The man immediately replied, “He ran into Miss Li Queyi of the Li Family, who was gathering qi. It is said that he waited there for quite some time.”</p>
+<p>Tinglan’s expression turned uneasy. She frowned and said, “It was said a few days ago that she would be transferred to the outer-sea. Qianli told me and suspected that the Li family had its own arrangements. Zhaojing and the others are also in the outer-sea, so I passed down the order to let her decide everything herself. Yet now, why has she begun gathering qi?”</p>
+<p>She looked straight at him and asked, “Wun Wu has always been eloquent. We cannot listen to only his side. As the elder brother, have you clarified the situation from other angles?”</p>
+<p>The purple robed man nodded hurriedly and replied, “Queyi has a gentle and weak temperament. Meanwhile, Lingyanzi is muddle headed and incompetent, unable to control anything. The disciples below are anxious to advance to the Foundation Establishment Realm and wanted to borrow things from her…”</p>
+<p>Tinglan already understood before he could say more. She let out a cold laugh. “Muddle headed and incompetent? Not necessarily. He is hardly a simple character. He walked out of the grotto heaven with ease, and even Purple Mansion Realm cultivators could not pry anything from his mouth. He preserved everything with a single line that it might involve a True Monarch. On the surface he looks greedy and useless, yet he still broke through to the Foundation Establishment Realm even at over a hundred years old. You say he cannot control his disciples today. I say he chooses not to. Do you not even look at whose offspring he is?”</p>
+<p>The man dared not say more. Tinglan’s anger subsided, her mood shifting as she said with a sigh, “Enough. If he goes into seclusion, then let him. He has suffered plenty in this life. There is no need to trouble him over the Li Family’s affairs.”</p>
+<p>The man asked, “But should we bring Wun Wu back?”</p>
+<p>Tinglan replied, “No need. There is no one more suitable than him. He will handle things properly. Most of the disciples at Purple Gale Peak have gone into seclusion as well. Matters have nowhere to land for now. We will wait for further news from the Li Family.”</p>
+<p>She dismissed him, let out a breath, and rose on purple qi, heading outward from the formation. She passed through layers of clouds and mist and escaped into the great void, only to freeze in place.</p>
+<p>The great void was dark and hollow, boundless to the eye, yet not far away stood a woman.</p>
+<p>The woman wore yellow robes and a veiled hat. White gauze draped across her body as she stood quietly. Her pale hands hung at her sides, half concealed by light yellow sleeves, holding two golden rings twisted together.</p>
+<p>She merely stood within the endless great void, yet vermilion hues rolled off her into silver, settling into leaden tones. Tinglan retreated half a step and said respectfully, “Greetings, Daoist Master Qiushui. May I ask why the Grand Daoist Master has come to our Purple Smoke Blessed Land. Do you have any instructions?”</p>
+<p>Daoist Master Qiushui’s gaze passed through the veil and fell upon her face as she said softly, “I have come to pay a visit to Senior Zimu.”</p>
+<p>Tinglan felt a slight shock in her heart, yet her mind was quick and she immediately understood,She cultivates the Whole Pill Dao and excels in transformations of material nature. It seems she noticed the reactions of the Radiant Purple Profound Illumination Grand Formation…</p>
+<p>This meant that Qiushui was not within the grotto heaven at all, but somewhere in the Jiangbei region. Perhaps it was for the matter of the True Monarch’s reincarnation, but more frightening still, she might have been waiting near the sect gates all along.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1305.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1307.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

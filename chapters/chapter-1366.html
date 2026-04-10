@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1366: The Real And Fake Profound Command Token (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1365.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1367.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1366: The Real And Fake Profound Command Token (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing had only just halted in midair when snow and rain began to swirl. Ning Wan appeared beside him in white robes, her willow brows slightly knit, worry etched across her face. She cupped her hands toward Li Ximing and said softly, “Fellow Daoist Zhaojing… The lord has formed an Immortal Foundation… From the look of this celestial phenomenon, it is Dry Fire.”</p>
+<p>Li Ximing now understood this person’s identity. Mount Luoxia must have influenced this grand ancestor emperor not to cultivate Bright Yang. Once he cultivated his intrinsic divine ability, Luoxia would be unable to suppress him even if they possessed a thousand stratagems.</p>
+<p>Back then, Chu Yi cultivated Radiant Fire, which was somewhat closer in nature. Now he cultivates Dry Fire. Though it belongs to Fire Virtue, it is not as intimate as Radiant Fire. It is acceptable, yet it still may lead him astray.</p>
+<p>The two Daoist Masters watched from afar. After the shout from Jiangbei rang through the sky, several figures surged upward with fierce momentum. Their leader was broad and muscular, gripping a jet-black hammer, his face savage as he bellowed, “Surnamed Lin, you have quite the nerve! We are of the Mifan Dao lineage, and you dare act so arrogantly! If not for our hall master being in secluded cultivation, how could you have succeeded?!”</p>
+<p>With Daoist Bai of Locust Soul Hall dead, no one below knew whether the favors owed among the various Purple Mansion Realm Dao lineages still counted. They trembled with fear, yet they were already riding a tiger and unable to dismount. They dared not abandon the territory and flee, nor did they dare spread the news. Everything was kept secret as they put on a show.</p>
+<p>Li Ximing and the others naturally knew the truth and watched their performance with cold eyes.</p>
+<p>The flames around Lin Feng receded, finally revealing his figure, covered in pale white armor. His form shimmered faintly as he lifted his sword. Two flames, one pale white and the other light red, coiled along his body, making him appear awe-inspiring. Li Ximing did not look closely, listening instead to the voice resounding through the sky.</p>
+<p>“Ridiculous! A gathering of devil cultivators dares to claim inheritance of the Immortal Dao lineage? If not for Daoist Bai’s bluster and deception, how would you have had the chance to act so brazenly?!” He let out a cold laugh and shouted, “Why not reveal the Gui Dusk Profound Token so that we may be convinced?!”</p>
+<p>He spoke with absolute confidence. Those around him merely took it as provocation, but the two Daoist Masters at the horizon both froze for a moment. They exchanged glances and saw the same helplessness in each other’s eyes,It seems it truly has fallen into the lord’s hands.</p>
+<p>The burly man from Jiangbei fell silent. He raised his twin hammers, circulated his Immortal Foundation, and struck without warning.</p>
+<p>Though the opponent was a late-stage Foundation Establishment Realm cultivator, the youth showed no fear. He lifted his long sword and drove it straight toward the man’s face, saying coldly, “A trifling trick!”</p>
+<p>Pale red flames surged upward, shooting straight into the heavens. They exchanged several blows within just a few breaths, but then the youth’s clear, ringing voice echoed across the sky, “If not now, then when?!”</p>
+<p>Several streaks of light suddenly flared among the devil cultivators below, striking their own fellow disciples. Black qi dispersed and white light burst forth. Chaos erupted in an instant.</p>
+<p>“Wugui, Tianfu… you… you guys!”</p>
+<p>“Song Family! You actually… while the Capital Immortal Dao cannot spare attention, you side with this bastard!”</p>
+<p>Lin Feng stood proudly. A woman rode the wind and descended beside him, wrapping herself around his arm, her eyes filled with infatuation as she smiled, “You brat… you really did reach the Foundation Establishment Realm!”</p>
+<p>This woman was none other than long missing and rumored injured Song Yunbai of the Capital Immortal Dao!</p>
+<p>“Hahaha!”</p>
+<p>The youth stood with his sword held crosswise. Blazing flames reduced the opponent’s black qi to ashes. His other hand steadily released waves of dense black and white radiance as he held up a mysterious command token etched with intricate patterns. The waves of black and white brilliance dimmed even the flames in heaven and earth.</p>
+<p>The gathered cultivators below, who had assembled at some unknown moment, stared in shock and cried out in unison, “The Gui Dusk Profound Token!”</p>
+<p>This sight caused the many devil cultivators present to freeze. They instinctively scattered. The burly man before them panicked and shouted, “That is fake!”</p>
+<p>He gritted his teeth and finally drew a token from his sleeve. Radiance burst forth at once, black and white intertwining again. It was another Gui Dusk Profound Token!</p>
+<p>“My lord regards me as a confidant and personally entrusted this to me before entering seclusion! Cultivators of the Hall, obey and kill this man together!”</p>
+<p>The brilliance of the two command tokens intertwined in the sky. The one in the burly man’s hand shone more resplendently, casting a hazy glow across the heavens and suppressing the radiance from the other side. By contrast, the token in Lin Feng’s hand appeared somewhat mottled and worn, lacking that same grandeur.</p>
+<p>Moreover, the token in the burly man’s hand most likely came from Daoist Bai, who had been recognized by the various families. It naturally carried greater credibility. Confusion spread across the battlefield. Those who had been persuaded by Lin Feng quickly gathered to shield him.</p>
+<p>Li Ximing watched in silence. Ning Wan let out a soft sigh. “His Excellency is indeed formidable… he truly obtained it.”</p>
+<p>Li Ximing glanced her way in inquiry, and Ning Wan replied in a gentle voice, “The Mifan Dao lineage indeed possesses a Profound Token. We have only seen its image in ancient texts. This one was crafted by Sister Tinglan through a trusted friend. Though it matches the description and even incorporates many elements of the Mifan Dao lineage, it is ultimately not the genuine article.</p>
+<p>“Our original thought was that the lord’s inherent rank is extremely high. Even if what he held was false, with fate’s favor upon him, though it would not deceive the Mifan Dao lineage, it would at least draw out clues and grant him entry…</p>
+<p>“We did not expect… that the true token had already fallen from the great void long ago, or that someone had delivered it into the lord’s hands. It must have come into his possession back when he was still in the Qi Cultivation Realm.”</p>
+<p>Li Ximing nodded at once. The ancient token had not been made for display and naturally was not as dazzling as the one Tinglan crafted in this era. Hope stirred within him as he asked, “Then what of this Mifan Dao lineage…”</p>
+<p>Regret colored Ning Wan’s tone as she said, “It is difficult to control the situation now. The subsequent transformation of the Mifan inheritance is not something we can influence. Let us watch for now. It should not spread south.”</p>
+<p>Ning Wan held little interest in the Mifan Dao lineage. Li Ximing, however, possessed an important fragment within a grotto heaven and was unwilling to let this opportunity pass. Yet knowing what had occurred in the north, he did not dare act rashly or reveal his thoughts.</p>
+<p>He merely nodded slightly and said calmly, “That would be best.”</p>
+<p>The battle at Jiangbei grew ever more intense as the two conversed. Li Ximing’s brows knit tightly as he watched spiritual energy churn across the heavens. After a while, a surge of black qi rushed skyward. It was clear that someone had fallen.</p>
+<p>Soon the crimson light retreated, withdrawing westward. The people of Locust Soul Hall were filled with unease and hesitated rather than pursued, allowing the group to withdraw in a grand display.</p>
+<p>Ning Wan gazed into the distance and let out a long breath. “Fortunately, the lord has already reached the Foundation Establishment Realm. It is not like the Qi Cultivation Realm where one could disperse cultivation and start anew. Having cultivated the Dry Fire Dao, once he received its profundity, he stepped onto the road of its corresponding divine ability. He is no longer as terrifying as before.</p>
+<p>“He still carries a thread of fate upon him, and no one can stand in his way, yet he no longer possesses the power to seize Fruition Attainment from afar and overturn all with a single thought.”</p>
+<p>These words were precious information. Li Ximing listened carefully and pondered inwardly,Could it be that he forged a Dry Fire Dao foundation and thus deviated from the Bright Yang Dao, which brought about this transformation? Otherwise, with that former gaze that could seize a divine soul at a glance, who would dare approach him?</p>
+<p>Yet compared to such news, the attitude of Mount Luoxia in the north mattered more. Unease stirred within Li Ximing as he said quietly, “Now that the lord has reached the Foundation Establishment Realm, he may come to my lake to fetch Fei Qingya. Do you know of this matter? It should also be mentioned to Xiukui Dao.”</p>
+<p>No matter how much Li Ximing longed for the fragment of the Mifan inheritance, he understood that the True Monarch’s journey south was perilous. If it was mishandled, it could plunge his family into irredeemable ruin.</p>
+<p>Li Ximing raised his sleeves and cupped his hands. “I may need to make a trip to the southern border. As for your arrangements… will you require my assistance?”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1365.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1367.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

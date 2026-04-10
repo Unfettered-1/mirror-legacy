@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1359: Viewing Pavilion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1358.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1360.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1359: Viewing Pavilion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>In just a short moment, Li Jiangqian and the others arrived at full speed. They bowed upon the platform with joyful expressions, and spoke in unison, “Greetings, Daoist Master!”</p>
+<p>Li Ximing swept his gaze around and counted the number of people. At first glance, he saw Ding Weizeng kneeling excitedly at the front and nodded. He also saw Li Quewan, Xia Shouyu, and others, and felt slightly moved.</p>
+<p>There are already so many Foundation Establishment Realm cultivators under my command.</p>
+<p>However, since the earlier the spirit embryo was refined, the faster he would be able to use it, Li Ximing did not waste words and immediately began making arrangements.</p>
+<p>The Divine Technique of Pavilion View: Refining Within Fire required twelve Foundation Establishment Realm cultivators corresponding to the twelve subsidiary towers. They were arranged in alternating groups of six, taking turns to perform the refinement. Of course, if manpower were sufficient, twenty-four subsidiary towers could be built, allowing for faster refinement.</p>
+<p>He immediately began calling names, “Jade True Li Wen and An Siwei, True Essence White Ape, Bright Yang Cui Jueyin, True Fire Li Minggong, Hengzhu Ding Weizeng, Horn Wood Sun Bai, Dry Fire Xia Shouyu.”</p>
+<p>Aside from the two direct talisman seed disciples who need not spend time here, there were already eight cultivators whose attributes did not conflict with Bright Yang and were even beneficial.</p>
+<p>Li Ximing considered briefly and asked, “What of the two Foundation Establishment Realm cultivators from back then, Wen Yi and Wen Shan? How are they now?”</p>
+<p>Wen Yi and Wen Shan were devil cultivators from the Eastern Sea. They had been captured by the Li Family back then, and Li Ximing had suppressed them with a divine ability, locking them on the western shore to refine artifacts day after day with mana.</p>
+<p>Many years had passed by now, but Li Jiangqian reported respectfully, “These two brothers are already fortunate to have salvaged their lives. They have kept their heads down and behaved themselves over the years. They have been fairly diligent.”</p>
+<p>“Then transfer them over.”</p>
+<p>These two belonged to Suomo Ridge and were not an ideal match, but they would at least help make up the numbers, bringing the total to ten. As for the remaining two, Qu Buzhi was needed to inquire into matters in the north. After some thought, Li Ximing could only choose Fei Chingyi of Cold Essence and Miaoshui of Converging Water.</p>
+<p>Although these two were not a great fit and their effect would be inferior to the others, it was still necessary to gather all twelve people. The secret art specifically warned that among Bright Yang types, categories such as Veiled Yin could not be used, and Pit Water was also unsuitable, leaving Chen Yang unable to participate.</p>
+<p>With the orders given, the Foundation Establishment Realm cultivators each took their positions on the platform. Li Ximing reached into his sleeve and took out the Ruler of Manifested Mountains and Rivers.</p>
+<p>In truth, the Li Family still possessed several other treasures. One was the Sun Seeker Ring of unknown grade, but it had once triggered a resonance with the Immortal Mirror, so the Li Family no longer dared to take it out. It had been kept at the bottom of a chest and never used again.</p>
+<p>The second was the ancient dharma artifact known as the Profound Patterned Bottle, which could undergo different transformations according to different Dao lineages and was extremely wondrous. Whether it could be refined into a spirit embryo was still uncertain, since different mana produced different effects that did not resemble Bright Yang. If it were refined and then could not be nurtured, it would only invite ridicule. Moreover, it had already been taken away and used by Li Zhouwei.</p>
+<p>After weighing everything, the Ruler of Manifested Mountains and Rivers was the safest and already an excellent choice. The Ruler of Manifested Mountains and Rivers had long since been refined with his Bright Yang divine ability. It now released gentle heavenly light and quietly descended onto the central celestial platform as Li Ximing flicked his finger.</p>
+<p>Boom!</p>
+<p>Red and white flashes erupted as brilliant golden flames mixed with Bright Yang purple flame surged, forming a sphere of light atop the celestial platform. The Ruler of Manifested Mountains and Rivers blazed with radiance as the twelve Foundation Establishment Realm cultivators circulated their techniques at once. Twelve luminous channels lit up on the main platform, stabilizing the flames.</p>
+<p>Now that the platform was activated, six of them could rest while awaiting rotation, easing the strain on manpower. Li Ximing first measured with the heavenly light divine ability at his brow, calculating the amount and timing of Radiant Fire and Baleful Qi needed over the next three days.</p>
+<p>He handed a jade slip to the descending Li Minggong with brief instructions, and said, “I will leave the Viewing Pavilion in your care. Among everyone here, you cultivate True Fire and have some understanding of artifact refinement, and you can grasp the timing of each step. You will oversee the replenishment of Radiant Fire and Baleful Qi first.”</p>
+<p>Once Chu Minglian of the Ning Family arrived, Li Ximing could almost let go of the process entirely. He thought,Although Minggong cultivates True Fire and can attempt artifact refinement, her innate ability is not high. Chu Minglian has had ties with my family for many years. He might even pick up a bit of the Dao lineage this time.</p>
+<p>After arranging matters concerning the spirit embryo, he rode the light and descended on Zhijing Mountain with Li Jiangqian and the others.</p>
+<p>Within just a few days, the Li Family had set up formations and begun refining a spirit embryo. There was an entirely new atmosphere around the lake. Li Jiangqian hesitated as if he had something to say, but due to the successive changes, he first saluted, “Reporting to the Daoist Master, the Viewing Pavilion consumes manpower heavily, almost emptying the lake of Foundation Establishment Realm cultivators. I do not know how many years the refinement will take.”</p>
+<p>A spirit embryo was not as troublesome or demanding as a spirit artifact. After all, once refined, it only required constant nurturing to maintain its Purple Mansion Realm inherent rank. Li Ximing estimated that even a Purple Mansion Realm without a corresponding Dao lineage could finish refining it within a few decades. Even if the quality were poorer, it would still be a spirit embryo. With the ancient method of the Divine Technique of Pavilion View: Refining Within Fire and the use of twelve Foundation Establishment cultivators, the time should be shortened to within eight years.</p>
+<p>More importantly, there was the spiritual essence of Guarding Toward the White Yang given by Kuiqi. Although it had not yet been used, the fact that Kuiqi had specifically mentioned it suggested that it would greatly benefit the spirit embryo.</p>
+<p>Zhijing Mountain did not lack Radiant Fire and Baleful Qi, and with Purple Mansion Realm True Fire to support it, Li Ximing simply replied, “Just wait for a while. It will not take more than a few years. Bring out the Bright Yang provisions at home to take a look and finish the refinement as soon as possible.”</p>
+<p>Li Jiangqian acknowledged the order, while Li Quewan said softly, “Daoist Master, the sixteen pillars on the island have already had their boundaries delineated. The earth veins have shifted, and whether it is the former spirit fields or the flow of spiritual energy, everything has changed completely. The cave dwellings and palaces can no longer be used. We are now remeasuring the spirit veins and earth veins to redesign the palace layout.”</p>
+<p>Li Ximing nodded. Li Jiangqian then reported on the cultivation progress of several members of the family, mentioning that Li Xinghan, Li Zhouda, and his two younger brothers Li Jianglong and Li Jiangxia were all in seclusion attempting breakthroughs.</p>
+<p>Li Ximing was very satisfied and replied, “Nowadays, the Essence Gathering Pill holds no secrets for our family. The aptitude of the direct bloodline has steadily improved, and the probability of reaching Foundation Establishment Realm is quite high. However, restraint is still necessary. Foundation Establishment Realm is valued for quality, not quantity. Supporting them is a massive expense. Whether it is spiritual energy or provisions, each further step requires an enormous amount. Those with poorer aptitude are even more demanding.</p>
+<p>“Our family has sixteen prefectures and two mountains. Zhijing Mountain barely suffices for my own cultivation. Even counting the vast Milin Mountain, we can comfortably sustain about thirty Foundation Establishment Realm cultivators at most. Once the number of direct lineage Foundation Establishment Realm cultivators is sufficient, the granting of Essence Gathering Pills must be done with great care.”</p>
+<p>In truth, Li Ximing harbored even greater worries. The Li Family’s rapid expansion in strength was not a good thing, and the number of subordinate branches and mountain holdings was steadily increasing.</p>
+<p>He thus said softly, “Let us wait for a few of them to emerge from seclusion first, then discuss further.”</p>
+<p>He flicked his sleeve as he asked, “How are things along the riverbanks?”</p>
+<p>Li Jiangqian replied respectfully, “The changes have been extremely drastic. First, on the Jiangnan side, Daoist Master Zhugong has gone missing and her soul lamp dimmed. The Grace Covenant Gate was already a loosely organized faction, and with such an incident occurring so suddenly, not only did the lower ranks each speak with their own voice, even the direct lineages developed conflicts among themselves. The whole gate is nearly paralyzed, and the hostility between factions is intense. It is said they are on the verge of fighting.”</p>
+<p>Li Jiangqian had never thought highly of the Grace Covenant Gate. As expected, once Daoist Master Zhugong vanished, those below were nearly drawing blades against one another.</p>
+<p>“As for the Capital Immortal Dao, all the prefectures and cities under its rule are now gripped by fear. They are being toyed with by a group of unknown figures. Guan Gongxiao sends letters almost every few days. Now that he has heard our family has established a Purple Mansion Realm grand formation, he has guessed part of the truth and has written several letters in succession asking our family for help.”</p>
+<p>Li Ximing nodded without committing himself and replied, “Continue.”</p>
+<p>“And there is also the Locust Soul Hall… The situation there is even worse… We received reports of the Black Rat Daoist being killed, which was not unusual. But news I obtained early on indicates that Daoist Bai… was also killed! Even the legendary Mifan command token vanished without a trace. Although the few Dharma Protectors under his command tried to seal off the news immediately, that faction leaks like a sieve, and before long everyone knew.”</p>
+<p>“Daoist Bai died ahead of time!” said Li Ximing.</p>
+<p>“That is correct… It is said that his soul was utterly dispersed before his death. It seemed that all his mana and blood energy were completely drained, without even the slightest phenomenon manifesting. If not for the drifting garments and fallen dharma artifacts, the people of the Locust Soul Hall would have thought he had departed silently…”</p>
+<p>Li Ximing was taken aback and frowned as he said, “Sigh… So it seems Purple Smoke Gate’s stage has finally been smashed to pieces.”</p>
+<p>With matters unfolding this way, a sense of unease slowly rose in Li Ximing’s heart. Ning Wan was not only different from Tinglan in temperament, but also in circumstance. If he were in Ning Wan’s position, aside from maintaining stability and preventing matters from crossing the river, he likely would not have much ability to intervene further.</p>
+<p>As for the True Monarch… who knows what level of cultivation he has reached. Now that the Hall Master of the Locust Soul Hall is dead, it is unclear upon whom this karmic consequence will fall.</p>
+<p>He asked, “Has there been any word from Wang Quwan?”</p>
+<p>Li Jiangqian silently shook his head. Seeing Li Ximing sink into deep thought and judging that the matters at hand had been settled, he quickly added, “Daoist Master, there is also some good news… We have also found traces of father’s whereabouts. He was seen at Purple Smoke Gate’s market. At the time, we only knew that he was safe and residing in the Eastern Sea, which was a relief.</p>
+<p>“Now that news of the Daoist Master’s return has reached Zongquan Island, Zongquan has sent word back. Father was originally in seclusion around the Zongquan region, cultivating a secret art. He has now emerged from seclusion, and upon hearing of the Daoist Master’s return, sent a message home. He is preparing to enter seclusion again to break through to the Purple Mansion Realm!”</p>
+<p>These words finally caused Li Ximing’s eyes to light up as he said, “At last, there is news of him!”</p>
+<p>Li Zhouwei had not elaborated in the letter, but how could Li Ximing not understand the meaning? There was no need for Li Zhouwei to expose his whereabouts to the family. His intention was naturally to meet Li Ximing before entering seclusion.</p>
+<p>The Li Family was no longer what it once was. Back then, Xiao Yuansi had to labor bitterly to refine pills. Now, the provisions needed to push an Immortal Foundation into Shenyang could be fully prepared by Li Ximing. Moreover, the experience Li Zhouwei had gained from cultivating secret arts was itself extremely valuable.</p>
+<p>What was more, the two of them stood at the very core of the Li Family. After being out of contact for so many years, a meeting was urgently needed.</p>
+<p>I should have suspected it earlier. The Eastern Sea is naturally the safest place for him. Moreover, Zongquan Island is the territory of that Dragon Son Dingjiao, and there are even islands belonging to our family. There could hardly be a better place.</p>
+<p>He thought it over carefully, as he calculated the risk of Changxiao intercepting him midway. Although the current Li Ximing was no longer the Li Ximing who had just entered the Purple Mansion Realm and knew little of combat, someone like Changxiao would not underestimate him.</p>
+<p>Despite only having the Immortal Mirror for detection, no matter how great Changxiao’s divine abilities are or how precise his calculations may be, he will never manage to ambush me midway.</p>
+<p>Li Ximing did not hesitate. He took out another jade talisman and handed it to Li Jiangqian, speaking quietly, “I should have met the family members to celebrate the Purple Mansion Realm formation, but this matter is urgent. I will immediately make a trip to the Eastern Sea. Traversing the great void will be quick, and I will return shortly. If there is any news, simply crush the jade talisman to notify me!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1358.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1360.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

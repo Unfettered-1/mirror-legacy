@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1372: Treasured Elephant (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1371.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1373.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1372: Treasured Elephant (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Southern border.</p>
+<p>Years ago, the Azure Pond Sect had been attacked by the Great Konghai Temple. They had lost the Ten Thousand Mile Stone Pond and, along with it, Northern Dan Island. Now they had retreated to the coastal region of Hezhou, only several dozen kilometers away from Northern Dan.</p>
+<p>This place lay within the southern border, facing Northern Dan to the south. It was backed by Hengzhu Dao and the Azure Pond Sect. Yet because the retreat had been temporary, its defensive forces were rather thin.</p>
+<p>After all, Hezhou was not a crucial pass by any means. Beyond Hezhou, Yi Mountain City to the north was the true first fortress guarding the southern border. If the Great Konghai Temple seized this place, it would gain nothing and might even provoke Hengzhu Dao Gate into action.</p>
+<p>Both sides understood this clearly. The Azure Pond Sect need not have concerned itself with this land, yet the western stretch of the Stone Pond clung tightly to the southern border’s coastline and extended deep inland. Along that narrow strip lay the Shahuang Kingdom, known as the land south of Lingnan.</p>
+<p>The local Daoist Master Zhusheng was an ally of the Azure Pond Sect and a close associate of the Si Family. Once Stone Pond was lost, the entire region lay exposed to the claws of the Great Konghai Temple. The Supreme Yang Dao lineage had insisted on guarding the southern border for fear that the teeth would grow cold if the lips were gone.</p>
+<p>Li Ximing rode a streak of heavenly light in from the north. He was followed by a black-robed Yanhu carrying a spear. Landing nearby, he saw that the cultivator guarding Hezhou was an old acquaintance, a Mount Yue cultivator named Fei Luoya.</p>
+<p>The old Mount Yue cultivator stepped forward at once and bowed as he said, “Fei Luoya pays respects to the Daoist Master! Congratulations on unity at the lake! Congratulations to the immortal family!”</p>
+<p>This old fellow had once been a disciple of Mount Wu. He had survived until today and seemed to hold a respectable status. After Duanmu Kui had died, his disciples had scattered. Some had even joined the Azure Pond Sect. However, Fei Luoya had not immediately submitted but maintained ties with the Li Family. The Chi Family had never valued these Mount Wu cultivators. They seized their techniques and simply used them as expendable pawns.</p>
+<p>Fei Luoya soon realized the lake was not an ideal place to remain. After much maneuvering, he joined Yi Mountain City. Later, when Chi Ning took charge of the Azure Pond Sect, Fei Luoya relied on his keen instincts to rise swiftly and earn considerable merit.</p>
+<p>Now this Mount Yue cultivator had truly made something of himself. Several Azure Pond Sect disciples followed him respectfully. Li Ximing nodded with a faint smile as the old man said tearfully, “Seeing the Daoist Master is like beholding the radiant sun in the high heavens. I recall my former association with Senior Tongya, lofty as towering mountains. The memory fills me with sorrow…”</p>
+<p>Li Ximing had read his family histories and met this man years ago. He had not been so courteous then. Even the family ancestors had needed to tread carefully around him. Now, after worldly experience, he spoke pleasantly, merely seeking to invoke past ties.</p>
+<p>Li Ximing waved him off and said, “It is well that you are here. I come on behalf of Daoist Master Qiuhu to guard the southern border. I intend to visit the Shahuang Kingdom. Lead the way.”</p>
+<p>Li Ximing had not come to the southern border in vain. Since he was here, he would settle Yanhu’s matters and inquire about the Great Konghai Temple. Most importantly, he sought the Bright Yang spirit artifact in the hands of the Southern Shun Raksha King of Songzhou.</p>
+<p>This information had come through connections within the Supreme Yang Dao lineage. Now that he was at the southern border, crossing the Stone Pond would lead to Songzhou. Paying a visit and inquiring about the spirit artifact would make the journey worthwhile.</p>
+<p>Fei Luoya quickly stepped onto heavenly light and Li Ximing traversed the great void southward. He saw dense forests, sparse farmlands, and long narrow mountain ranges, quite different from the scenery of Yue State.</p>
+<p>He glanced below and asked, “What people inhabit this land? They appear to be barbarians.”</p>
+<p>Fei Luoya sighed. “The Shahuang are also barbarians. In ancient times they were called the Jiaozhi people. They are likely less orthodox than my Mount Yue. It is only because a Daoist Master cultivates here that it has taken on some semblance of order.”</p>
+<p>Li Ximing nodded slightly and asked the question he cared about most, “This Daoist Master Zhusheng… is he a Shahuang cultivator?”</p>
+<p>This was no simple question. Though the north and south were fractured and the Celestial Dynasty no longer existed, the line between the civilized and the barbarian remained distinct. Even a Mount Yue cultivator at the Foundation Establishment Realm would be regarded as inferior. If Daoist Master Zhusheng were truly Shahuang, then differences in culture and custom would make dealings with him difficult indeed.</p>
+<p>Fortunately, Fei Luoya shook his head repeatedly and said softly, “This Daoist Master bears the surname Liu, from a highly renowned family. In those years when the Chu State unified Jiangnan and styled itself the Southern Court in opposition to the north, it sent armies to pacify Jiaozhi and advanced as far south as the Champa Kingdom. It established the Annan Military Commission with seven prefectures and fifty-six cities. The Military Commissioner at the time was surnamed Liu, honored name Yi…</p>
+<p>“That military commissioner was a Daoist Master who had cultivated divine abilities. He fell when Chu perished. Daoist Master Zhusheng is his descendant, and is originally from Mushroom Forest Plain.”</p>
+<p>Li Ximing nodded at once and sighed inwardly,So he descends from a distinguished lineage! His strength must not be simple. And he keeps a Snow Ridge Listening Pine Marten as well. He cannot be underestimated.</p>
+<p>However… surnamed Liu, and a Chu Military Commissioner. The imperial surname of Chu was Liu. If one traces it back, his status must not be low. Perhaps his circumstances are not unlike my own family’s…</p>
+<p>In the later years of Chu, the state had descended into chaos. Right and wrong had been reversed to a terrifying extent. The throne rose and fell repeatedly until Xiao of Wu usurped it and the entire imperial family was overturned, suffering a fate even worse than Wei’s Li. In time, Wu State had lost its eastern lands and retreated into Shu.</p>
+<p>Passing over the Shahuang populace below, they soon beheld an immortal mountain. A cultivator in a high cap and broad belt rose upon the wind to greet them respectfully, “Greetings, Daoist Master Zhaojing. Our Daoist Master has awaited you for some time. Please allow your immortal carriage to rest briefly.”</p>
+<p>Li Ximing descended upon his light.</p>
+<p>Compared to Nine Mounds and Xiukui, Daoist Master Zhusheng’s immortal mountain was a tier lower. It was ordinary in appearance and even less expansive than Moongaze Lake. As he descended between the peaks, he saw a pavilion below with flames surging skyward. They were evidently in the midst of artifact refinement.</p>
+<p>A cultivator dressed as a Daoist reclined lazily beneath the pavilion. He appeared youthful and exceedingly handsome. Meditation cushions lay scattered about the pavilion. Upon seeing Li Ximing, the Daoist Master rose and said with a smile, “Greetings, Fellow Daoist Zhaojing!”</p>
+<p>Li Ximing’s gaze swept across a small table where several wine jars were placed. A long sword lay flat upon it, appearing entirely ordinary.</p>
+<p>Early Purple Mansion Realm with two divine abilities. A truly carefree character.</p>
+<p>Daoist Master Zhusheng cultivated the Jade True Dao. He was a direct beneficiary of True Monarch Shangyuan’s attainment of the Dao. His appearance was ethereal and refined. Though his robes were slightly disordered, he gave off an effortless naturalness.</p>
+<p>“Please!”</p>
+<p>The two sat at the table. Daoist Master Zhusheng poured wine and said smiling, “You have traveled south on my behalf. I must thank you. It is aid rendered across a thousand kilometers.”</p>
+<p>Li Ximing replied politely, “The transformation arts of you two fellow Daoists are truly profound. To deceive even a Maha face to face… I have gained much insight today.”</p>
+<p>“Ah.” The Daoist Master’s voice was clear. Turning his head, he said, “Invite Daoist Master Xianchan of Eastern Ridge.”</p>
+<p>After giving the instruction, he turned and said seriously, “After all, it is the singular nature of Jade True, known as Jade True Six Nine Void Uniting. Among the three Shamanic Daos, its transformations are the truest, the most enduring, and closest to the Immortal Dao. Although the True Monarch attained the Dao through jade and stone, emulating the ancient immortals and thus guiding Jade True closer to the Immortal Dao, its transformations have become even more authentic.”</p>
+<p>He took a sip of wine and said, “Xianchan also cultivates Cold Essence. Moreover, Ning Wan has just broken through and few have seen her. It is easy to conceal. This time, you seek me…”</p>
+<p>Li Ximing considered the events before and after. Hearing this, he surmised Ning Wan had her own arrangements in sending him. Since Buddhist cultivators had long been at odds with his own, he was willing to act within his means.</p>
+<p>He smiled. “It is the Great Konghai Temple, is it not?”</p>
+<p>Zhusheng burst into laughter and said casually, “Zhaojing is a man of understanding. As for the Great Konghai Temple… the real issue is the temple master behind it. He is a sixth-life Maha, a grave threat. Now that Baoqing has also succeeded, the Stone Pond has fallen into the hands of others…”</p>
+<p>He picked up the sword from the table, set it beside him, and said softly, “I do not like being coerced. I must be the one to take the initiative.”</p>
+<p>As soon as he finished speaking, wind and snow howled through the air as a youth in white robes descended upon the snow. With a round face and long eyes, he seated himself at the table with a look of keen interest.</p>
+<p>“Now we are all gathered!”</p>
+<p>This must be Daoist Master Xianchan, whose true form was the Snow Ridge Listening Pine Marten, a demonic creature. Li Ximing cupped his hands slightly in greeting. Daoist Master Zhusheng said in a serious tone, “Maha excels at calculation. Though my divine ability conceals us, we must act decisively and not delay. Since Zhaojing has arrived, I will speak plainly.</p>
+<p>“This move by the Great Konghai Temple has satisfied few, from the Supreme Yang Dao lineage to the various families of the Southern Sea. They merely fear the Temple Master of the Great Konghai Temple.</p>
+<p>“Fellow Daoist Miao of Thunder Island has spoken with me. The Southern Shun Raksha King of Songzhou has also sought me out. The arrow is already on the string. We have been waiting for your arrival as the east wind.”</p>
+<p>Li Ximing had come on Ning Wan’s behalf and had been expected to lend aid. Yet he did not wish to be drawn too deeply into the conflict, nor did he wish to be injured. After a moment’s thought, he asked softly, “What are your arrangements?”</p>
+<p>Daoist Master Zhusheng exchanged a glance with the demonic creature beside him and replied, “The Merciful One has many followers. This time, Stone Pond may not be reclaimed and will likely be divided among the factions. But severely wounding Baoqing is imperative. He believes Fellow Daoist Miao and the Azure Pond Sect are at odds and cannot unite. He assumes the Southern Shun Raksha King, like the Temple Master of the Great Konghai Temple, cannot move freely. He does not know that the Southern Shun Raksha now has a second Purple Mansion Realm, nor does he expect your arrival.</p>
+<p>“You need not fight. Simply proceed east of Lüfang and guard the sea, deterring a certain White Elephant. Whether the rest succeeds or fails, you need not intervene. Once the jade talisman we provide shatters, you may depart.”</p>
+<p>Li Ximing stroked his beard and nodded, understanding dawning within,These Purple Mansion Realm cultivators have arranged matters thoroughly. Kuiqi must have planned this long ago. A man as proud as he would not have let go of the matter of Stone Pond. Inviting me here was deliberate. It is more important that I not remain at Moongaze Lake.</p>
+<p>With the Immortal Mirror on his person, ambushes were of little concern to him. Nor did he fear risks along the way. In truth, he was already inclined to agree. He thought,Though aiding Ning Wan offers no immediate reward, unsettling the Buddhist cultivators is worthwhile. Moreover, the Southern Shun Raksha holds a spirit artifact. After this matter concludes, an approach would be entirely natural.</p>
+<p>Thus, he nodded and replied with a smile, “It is only my duty to lend aid. However, I also wish to meet the Southern Shun Raksha King and attempt to exchange for the spirit artifact.”</p>
+<p>Unexpectedly, Zhusheng nodded with a smile and said, “Qiuhu has already mentioned it. The Southern Shun Raksha King awaits your visit. After the battle, we may each need to tend to our wounds. You may proceed to the Southern Shun Raksha directly.”</p>
+<p>Li Ximing nodded in satisfaction. Their interests aligned, so there was no need for further pretenses. He accepted the jade slip and talismans from the other party and was about to ride off upon light when the Daoist Master said, “Fellow Daoist, wait a moment.”</p>
+<p>He took a small box from his sleeve, drew out a wisp of Li Ximing’s divine ability, formed a hand seal, and gathered the spiritual energy before saying, “This is a minor divine mystic from a spirit artifact of the Supreme Shaman lineage. It can conceal your cultivation. It is no longer especially effective in this age, but deceiving a foolish demon who relies only on a Spell Divine Ability will suffice. As long as you do not unleash your divine ability, it will last for three days.”</p>
+<p>Li Ximing nodded in understanding and departed on the wind. The man and demonic creature stayed among the mountains. Slinging his sword on his back, the Daoist Master asked, “It seems Zhaojing has support behind him. Changxiao would not dare act against him.”</p>
+<p>The Snow Ridge Listening Pine Marten shook its head and replied, “One cannot be certain. The Li Family is drawing ever closer to the Supreme Yang Dao lineage. It is possible he has already conferred with Hengzhu Dao Gate, and a group of Daoist Masters lie in ambush within the great void, waiting for Changxiao to appear!”</p>
+<p>“That is reasonable.” The sword cultivator rose into the clouds and said, “That demon likely will not act. Even if battle erupts, Zhaojing’s Heaven-Venerating Gate would more than suffice to hold him. Let the other factions make their move.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1371.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1373.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1326: Upheaval (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1325.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1327.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1326: Upheaval (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After Li Jiangqian finished speaking, the woman beside him nodded and said softly, “You may consider it at your discretion. When we returned from the old elder, he also asked about it, having thought it over as well. The present moment is not an appropriate time.”</p>
+<p>Since Li Minggong had spoken this way, Li Jiangqian naturally nodded. He committed the matter to memory, placed two letters on the desk, and said softly, “There is one more matter. There is news regarding Daoist Shouding.”</p>
+<p>When Daoist Shouding had left the Li Family, he had originally intended to go to the Chen Family, but Li Jiangqian had forcibly stopped him. Instead, he had sent letters to the Chen Family and Jingyi Mountain. Both replies had now been delivered.</p>
+<p>“One letter is from the Chen Family of Yuyang Prefecture. It contained mostly words of gratitude for our family’s warning. The messenger contacted Shouding and said that turmoil has also arisen within the Chen Family. If he were to come, he could first go to a stronghold in the southern border.”</p>
+<p>Li Jiangqian shook his head somewhat helplessly and replied, “Although Daoist Shouding was full of doubts, he could also see the intention to decline, so he did not go. The other letter was from Jingyi Mountain, arranging for him to travel through the southern border, so he could only head south in frustration.”</p>
+<p>Li Minggong exhaled lightly, but then saw Li Jiangqian say with some surprise, “Jingyi Mountain was rather strange. The letter was polite toward our family, yet it scolded Shouding outright. It seems this lineage is one with a rather strong temperament.”</p>
+<p>He joked as he escorted Li Minggong out, his thoughts still lingering on the earlier discussion.</p>
+<p>The Fei Family held a certain degree of autonomy on the northern shore, and the Li Family had not acted against them for many years. In truth, there had been many voices within the family around the matter. Regardless of the opinions voiced in the hall, the two great surnames, the Chen Family and the An Family, firmly maintained their positions, fully supporting the reduction of Fei autonomy and even annexation.</p>
+<p>Chen Yang is very clever. There is in fact no room for the Chen Family to make a second choice on such a sensitive issue… As for the An Family…</p>
+<p>The An Family’s old master, An Zheyan, was still alive. He had once paid his respects to Li Tongya, and his status rivaled that of Chen Donghe of the Chen Family. However, the true leader was his son, An Siwei.</p>
+<p>Master An was once one of the few Foundation Establishment Dharma Protectors of the Li clan and was highly valued for a time. But once the Li Family advanced to become a Purple Mansion Realm family, his shallow Immortal Foundation was no longer of much use. Later, he was captured by enemies. After his return, the younger generation all replaced him, and he remained low key. Yet he has spoken up several times on this matter, to the point that the Fei Family had begun to lose face.</p>
+<p>As for the various branches, most remained silent. Counting from the Zhouxing generation, there are four in total. Zhoufang and Zhouyang were busy seeking benefits for their juniors and had no mind to care about such matters, essentially following whatever the family decides. Xinghan and Zhouming were even less involved, and their voices were correspondingly faint.</p>
+<p>Li Chengqi, the sole remaining member of the Chengming generation, had a stern and eccentric temperament and was usually hard to read. Although Li Minggong and Li Xuanxuan had never taken a definitive stance, they had implied likewise that it was not appropriate to act against the Fei Family.</p>
+<p>Fei Qingya… As long as arrangements for Fei Qingya have not been made, all plans concerning the Fei Family are empty talk. She has only cultivated River Pure Qi. It will not be easy to explain things to Fei Chingyi, so we will need to find a reason to send him away… Strange indeed that none of the Purple Mansion Realm cultivators have made arrangements for her.</p>
+<p>Li Jiangqian was deep in thought when he suddenly heard the door softly sound. Footsteps followed, and two people hurried to the hall. One was large in build, honest and simple, and immediately kowtowed in greeting. The other did not even bother to bow and strode straight inside. Though imposing in presence, his expression was unpleasant and his face ashen.</p>
+<p>“Greetings to the family head!”</p>
+<p>Li Jiangqian’s heart stirred slightly. Of the two before him, one was Li Wen, who oversaw the Jade Court and was a veteran minister of several generations. The other was Li Chengqi, who held authority over Qingdu and was in the Qi Cultivation Realm, the sole remaining seedling of the Chengming generation.</p>
+<p>He immediately stepped down from the platform and asked, “What happened?”</p>
+<p>Li Chengqi’s face was drawn and pale as he spoke in a low voice, “Family head, your second uncle’s life jade has shattered.”</p>
+<p>“Second uncle?!”</p>
+<p>Nearly all of Li Chengqi’s descendants had been lost to family affairs. His daughter Li Xingsai had also died at the hands of a devil cultivator. He had only raised his two nephews as sons, namely the brothers Li Zhoufang and Li Zhouyang of the Zhouxing generation.</p>
+<p>These two brothers were powerful figures within the family who cared the most about the younger generation, holding considerable prestige. They were always concerned with securing protection and conferment for relatives and juniors, which displeased those managing the household. Li Jiangqian thus transferred them to watch over the eastern shore and brought Li Chengqi back to manage Qingdu, never expecting such an incident to occur.</p>
+<p>“How could this happen?!”</p>
+<p>Although his elder’s innate ability was not top tier, he was still a mainstay of the direct lineage and a prominent core member of the major sect of the Zhouxing generation.</p>
+<p>Li Jiangqian was shaken, anger flashing in his eyes, as he immediately asked, “Then what about eldest uncle? The two elders were together on the eastern shore. Has any news come back?”</p>
+<p>Li Chengqi shook his head grimly. Pain filled his rigid features as he gritted his teeth and said, “There is no news. Fortunately, the life jade remains intact and unharmed.”</p>
+<p>Li Jiangqian secretly let out a breath of relief. Although Eldest Uncle Li Zhoufang and Second Uncle Li Zhouyang had always advanced and retreated together, with similar status and cultivation, it was clear that their positions in Li Jiangqian’s heart were entirely different.</p>
+<p>For one thing, Eldest Uncle Li Zhoufant was none other than the father of Li Queyi, who cultivated in Purple Smoke Gate, and the family’s rising star, Li Jiangzong. Li Zhouyang was merely their uncle…</p>
+<p>Though this was cruel, a trace of relief did flash through Li Jiangqian’s heart. What remained was confusion and anger. He looked toward Li Wen kneeling before the hall when another set of footsteps sounded. Chen Yang, clad in black armor, approached from the side, knelt on one knee, and presented a letter with both hands.</p>
+<p>Li Minggong and Li Xuanxuan entered as well. Li Minggong’s expression was merely grim, while Li Xuanxuan showed both pain and anger. Neither disturbed him, standing silently to the side. Li Jiangqian gave a slight return salute, accepted the letter with a stern expression, read it once, then passed it to Li Xuanxuan.</p>
+<p>After the elder read it, he heard Li Jiangqian utter coldly, “Today our family engaged in a clash of spell arts with the Capital Immortal Dao upstream in the Wilderness. A group of Foundation Establishment Realm devil cultivators secretly entered the Wilderness, raided the eastern shore, breached two grand formations, and killed many people. Although Dharma Protector Cui arrived in time, it was already too late.”</p>
+<p>Li Jiangqian had already understood matters from the letter. With the Li Family and the Capital Immortal Dao clashing on the river, the distance and timing were predictable. An infiltration like this would be easily detected and contained, meaning they had been schemed against by others.</p>
+<p>“Recently the eldest and second uncles were on the eastern shore and should have been together with Dharma Protector An. However, their assigned duties differed. Today was originally the eldest uncle’s responsibility, but he had the second uncle go in his stead. It was precisely this swap that saved a life.”</p>
+<p>Burning with anger, Li Chengqi finished reading and handed the letter to Li Wen beside him. He prostrated himself on the ground and said sharply, “The Wilderness is filled with our family’s informants. This group of Foundation Establishment Realm cultivators appeared and vanished like ghosts, yet managed to infiltrate the eastern shore. They must have been aided by concealment dharma artifacts and are by no means ordinary. Someone deliberately sought to harm us… I beg the family head to investigate clearly.”</p>
+<p>Li Jiangqian naturally understood this. Those who harmed his family would never be mere devil cultivators or rogue cultivators. His expression grew heavy as other doubts arose in his heart.</p>
+<p>Li Wen then bowed and said, “Our family occupies the western part of the Wilderness and was attacked at its core. That means these people came from the eastern downstream. The downstream banks belong to the Capital Immortal Dao, Grace Covenant Gate, and Xuanmiao Temple.”</p>
+<p>Li Jiangqian shook his head and replied, “As long as one possesses a fine concealment dharma artifact, passing through the territories of these forces would not be difficult. We will wait for Dharma Protector Cui to arrive and ask.”</p>
+<p>Li Chengqi could only restrain his anger. Thankfully, the eastern shore was very close. Not long after the life jade in Qingdu shattered, a burst of commotion arose. Cui Jueyin descended onto the island and came up with an uneasy expression.</p>
+<p>Li Zhoufang arrived with him. This eldest uncle, who had always thought first of his descendants, no longer showed any trace of his usual simplicity. His face alternated between pale and green as he dropped to his knees with a thud.</p>
+<p>He trembled as he spoke, “Family head… Family head must avenge him. My younger brother worked diligently his entire life, yet was harmed by enemies. Not even his remains were left behind. He did not even have many children under his knee!”</p>
+<p>He cried in utter devastation, and even Li Jiangqian found the situation difficult to handle. This was no longer a moment to care about etiquette. After calming Li Chengqi and Li Zhoufang, he summoned Cui Jueyin forward and asked with cold anger, “Dharma Protector Cui, when you encountered the devil cultivators, how were they dressed, and did they reveal any traces of their movements?”</p>
+<p>Cui Jueyin hesitated somewhat. He glanced at Li Jiangqian, then turned to look at Li Chengqi. This middle aged man had lost a nephew he had watched grow up since childhood. The weight of his grief was not something others could easily understand. Seeing Cui Jueyin hesitate, he could hardly restrain himself.</p>
+<p>Seeing Li Chengqi’s agitated demeanor, Cui Jueyin finally said with an uneasy expression, “The exact number is unknown, but they were all at the Foundation Establishment Realm and each held dharma artifacts. These seemed especially helpful in breaking formations. The two grand formations were not sophisticated and were like paper… breaking as soon as they were touched.</p>
+<p>“Two of them exchanged spell arts with me. Whether it was Master An or Miaoshui, many cultivators present saw it… One used Converging Water, though his Immortal Foundation was unclear. The other was very obvious… He cultivated South Chou Waters and even took out rather high quality talismans to escape… He was certainly no ordinary individual.”</p>
+<p>“Later, I pursued them all the way to Grace Covenant Gate’s territory, only to find that they were also fighting a group of devil cultivators there, and the battle was extremely fierce. I had no choice but to withdraw.”</p>
+<p>As soon as these words were spoken, Li Jiangqian frowned, understanding why Cui Jueyin had hesitated to speak earlier.</p>
+<p>South Chou Waters!</p>
+<p>Only one Purple Mansion Realm cultivator was renowned throughout the world for cultivating South Chou Waters. It was the Capital Immortal Dao across the river, the very faction confronting the Li Family.</p>
+<p>How could this be possible?!</p>
+<p>Li Jiangqian was stunned inwardly, but Li Chengqi suddenly realized the truth. He dropped to his knees with a thud and cried out in grief, “So it truly is the Capital Immortal Dao. They pinned our main forces down on the river, then secretly sent cultivators to infiltrate the eastern shore and launch a surprise attack on us. As expected… this Capital Immortal Dao has long been plotting against our family!”</p>
+<p>Li Jiangqian helped him up and advised him, “There are many practitioners of South Chou Waters in Jiangnan. The Lingu Family also cultivates South Chou Waters. It is not yet possible to reach a conclusion with only one Immortal Foundation. Great uncle, please take care of your health.”</p>
+<p>Li Chengqi refused to rise, while Li Zhoufang was already in tears, gritting his teeth as he said, “There may be many who cultivate South Chou Waters, but we have only one enemy fighting our family.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1325.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1327.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

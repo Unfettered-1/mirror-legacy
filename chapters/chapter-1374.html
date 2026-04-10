@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1374: Tian Sanglin (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1373.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1375.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1374: Tian Sanglin (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing took a seat by the table. He could tell that this demon elephant was no simple being. He waved his hand and said, “Most demonic creatures at sea serve the Dragon Clan, especially those at the Purple Mansion Realm. Yet you seem unrelated to the Dragon Clan. You are on good terms with Buddhist cultivators, and yet you do not appear to cultivate Buddhist methods. That is rather uncommon.”</p>
+<p>After all, Buddhist cultivators are fond of their spirit beasts. Whenever they encountered a demonic creature, they would do their best to capture it and bring it into the Buddhist land as a mount. Demonic creatures loathed this behavior deeply, so there is naturally little reason for the two sides to get along.</p>
+<p>This demon elephant helped Buddhist cultivators, yet bore no sign of cultivating Buddhism. When questioned by Li Ximing, he sighed and said, “It is naturally related to my forebears!”</p>
+<p>Li Ximing neither agreed nor disagreed. With the other party’s temperament, resources, and circumstances, it was unlikely he was truly connected to any great figure. At most, he was borrowing a grand banner. Feigning surprise, Li Ximing asked, “May I ask which one?”</p>
+<p>The demonic creature hesitated, glanced at him, and said with a sigh, “Since you have asked, it would be improper to evade the matter openly. My ancestors once served the Qi State. Later we lived in the great desert. Twenty years ago, I broke through to the Purple Mansion Realm and left the north, wandering until I arrived here. The Qi State has fallen for many years now, so there is no patron left to rely on. The Dragon Clan is not inclined to concern itself with me either… Fortunately, I managed to secure a piece of land for cultivation.”</p>
+<p>“I cultivate around the Si Sea region, and I do not get along with Thunder Island. My closeness to the Great Konghai Temple in daily matters is merely to draw upon them as support.”</p>
+<p>Li Ximing found this rather strange.</p>
+<p>Among the four northern dynasties of Wei, Qi, Liang, and Zhao, Qi had been established when the Jie tribe entered the passes and replaced Wei, and was later slaughtered by the Tuoba Family. His own lineage was often called Wei’s Li. If one spoke frankly, they could hardly be considered friendly. No wonder the other party was so tense.</p>
+<p>Fortunately, the other party did not cultivate Buddhism and would not insist on settling such karmic ties. However, how much of his words were true or false remained unknown. Li Ximing would not fuss over it.</p>
+<p>He simply nodded. “You dwell in the outer-sea near Buddhist land. Is that not like bargaining with a tiger? Are you not afraid of losing your autonomy and being absorbed?”</p>
+<p>When he heard Li Ximing’s calm tone, and that the latter showed no sign of sudden hostility, Tuodu felt the taut string in his heart ease slightly and replied, “What choice do I have? Fortunately, the one at the Great Konghai Temple cannot act lightly. They send monks every day, and though it is exceedingly troublesome, it is still better than being forced into displacement and facing mortal danger.</p>
+<p>“After all, not everyone is as amiable as you. The Tuoba Family still remembers me to this day. Several Daos are eager to convert me, and even Chunyi Dao Gate…”</p>
+<p>He stopped abruptly and shook his head repeatedly. Li Ximing understood. After studying him for a moment, he spoke with some caution, “In that case… do you cultivate Radiant Essence?”</p>
+<p>Radiant Essence could neutralize Bright Yang. Unfortunately, this Dao lineage was equally rare nowadays. Li Ximing had yet to encounter it. If the other party cultivated the Qi State’s Radiant Essence, it would be troublesome indeed.</p>
+<p>Tuodu shook his head repeatedly and replied, “How could I have such fortune… I cultivate whatever my ancestors cultivated. Currently I cultivate Baleful Essence.”</p>
+<p>Li Ximing felt reassured and stroked his beard as he said, “That too is uncommon.”</p>
+<p>If Tuodu cultivated Radiant Essence and then fell into Buddhist land, there would be no need to think further. He would surely gain a formidable enemy. Taking the opportunity, he asked, “May I ask the name of the Qi Emperor?”</p>
+<p>“The High Ancestor of Qi was Qiji Tanluo. His Han name was Shi Chang.”</p>
+<p>Though this demonic creature was clearly a descendant of Qi, he spoke of the founding emperor with surprising casualness. He glanced at Li Ximing with some confusion and said hesitantly, “You should know better than me. Qiji Tanluo suppressed the Wei Crown Prince Li Xunquan, granted the Hetao[1] region to the Helian Family, and established the Tiefo State. It rose and fell through several generations and still stands beside Zhao State to this day.”</p>
+<p>Li Ximing was in Jiangnan, and news from the north was almost entirely cut off by Buddhist cultivators. Since he rarely encountered someone from there, he took the opportunity to ask, “What is the situation in the north now?”</p>
+<p>The demonic creature’s expression grew animated. Clearly, he had recounted this more than once. He replied with a cold laugh, “What else could it be? Zhao State has become a plaything ever since Fu Qiyan fell. The seven Daos stand above; four kings hold power locally; and there are eunuchs cultivating Veiled Yin in the court. It has long been nothing but an empty shell. Fu Qiyan thought he was killing his way in to become emperor. Who would have thought his descendants would become toys instead?</p>
+<p>“To the west, the Liang and Qiang are in chaos. To the east, Yan State is nothing more than the Murong Family. Slightly to the south is the Bo Lie King of the Gao Family, who has already unified the lands of Qi State. You could call him King of Qi and it would make little difference. Above them stand the Tiefo State and the Tuoba Family. The imperial house, the court, the feudal lords, and the Maha are all tangled together. It is far more chaotic than the south!”</p>
+<p>At last, the demonic creature’s expression carried some sincerity. He sighed deeply and said, “In such a troubled age… it is no place to rise to prominence. Even after reaching the Purple Mansion Realm, I think only of fleeing farther away. Without a True Monarch backing you, without a Golden Core Realm ancestor above you, without a Daoist Master father beside you, how could one dare to stand out in this situation? Not to mention… Mount Luoxia.”</p>
+<p>Li Ximing clicked his tongue. He had long known Zhao State’s situation was suffocating, but had not imagined it had deteriorated to this extent. The white elephant before him had tested him repeatedly and, sensing little malice, continued, “Fellow Daoist Li, I have also heard of your reputation. It is said your alchemy is peerless. My Baleful Essence has formed into a divine ability. Yet, it cannot mature without proper pills. I cannot even produce a spirit embryo to nurture a spirit artifact…</p>
+<p>“Most cultivators inland belong to the Supreme Yang Dao lineage. They look down on others. The nearby factions refuse to deal with me, and the Great Konghai Temple are Buddhist cultivators. If there is a chance in the future, I would ask you to refine some pills for me.”</p>
+<p>Since they had met by chance, Li Ximing was extremely cautious. Moreover, the other party stood on the enemy’s side, which could easily cause unnecessary misunderstandings. He frowned and said, “We shall speak of it another time. You should look after yourself. If you fall into Buddhist land, we will meet as enemies in the future.”</p>
+<p>The two sat beneath the sea and talked for quite some time. The demonic creature circled around topics of spirit artifacts, spirit pills, and spirit arrays, while Li Ximing probed about the north. Both understood each other without stating it outright. Then the jade pendant in Li Ximing’s sleeve flickered; the matter in the west had already been resolved.</p>
+<p>“Farewell!”</p>
+<p>Li Ximing flicked his sleeve and said no more, vanishing into the great void. The demonic creature sighed deeply and returned to the island with a hint of schadenfreude. Emerging from the great void above the sea, he saw brilliant light flashing in the western sky. The radiance of Buddhist land shimmered in hues of pink. Zhusheng and the others had already succeeded.</p>
+<p>“These cultivators from the Southern Sea and southern border are reliable. As expected, standing with the right side and lending support is far easier than fighting personally.”</p>
+<p>Feeling at ease, Li Ximing rode his light and flew toward Songzhou.</p>
+<p>Songzhou’s islands varied in size, forming a continuous archipelago divided into three main parts. Southern Shun Raksha lay in the southeastern corner, directly south of the current sea region. It was not far. Li Ximing crossed the strait in a streak of light and arrived.</p>
+<p>1. Hetao is a C-shaped region in northwestern China consisting of a collection of flood plains stretching from the banks of the northern half of the Ordos Loop, a large northerly rectangular bend of the Yellow River, that forms the river’s entire middle section. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1373.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1375.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

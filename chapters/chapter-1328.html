@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1328: The Fruit Of Vengeance (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1327.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1329.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1328: The Fruit Of Vengeance (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The autumn air of Moongaze Lake had yet to fade. Crimson and gold interwove across the mountains in a bright and pristine sky. It was the moment when the evening glow burned most vividly, dyeing the heavens a blazing red and leaving layers of vermilion clouds hanging along the horizon.</p>
+<p>The clouds rolled and surged as a single point of azure gold pierced through them, drawing in the alternating radiance of the sun, moon and the mingled brilliance of heaven and earth, before descending through the mountain forests and settling upon a great island within the lake.</p>
+<p>The dust sealed cave dwelling slowly shifted, shaking loose layers of accumulated ash. A wisp of red light slipped out from within, drifting and fading, then gathering and transforming before the grand formation into a woman clad in a long gown of cloud silk. At her waist hung a talisman engraved with a purple black mountain ghost, stirring faint currents of wind with each gentle step she took.</p>
+<p>She stepped forward and extended her hand, catching the point of azure gold from the sky. With a light twist of her fingers, the color vanished, scattering into specks of silvery light.</p>
+<p>“This is just the right chance to complete Scattered White Falling Feathers!”</p>
+<p>She rode the wind and headed toward the hall. After traveling for a short while, she saw an old man bowing before the hall, thin as a withered branch and with a full head of white hair.</p>
+<p>She smiled faintly and asked, “Guest Cultivator Qu… what brings you here?”</p>
+<p>Qu Buzhi had been standing there blankly, pondering how to report the matter. Startled, he looked up in shock and uncertainty. When he suddenly saw her, he froze for a moment before hurriedly saying, “Eldest miss, you have emerged from seclusion?”</p>
+<p>Li Quewan was the woman of greatest innate ability of her Jiangque generation, and she had personally been brought back to the island by Li Qinghong. Her status was exceedingly exalted, at least in Qu Buzhi’s eyes.</p>
+<p>The old man hurriedly bowed and sighed, “This time the family head will finally have support. It is still the matter of Jiangbei.”</p>
+<p>He had only just spoken when a series of footsteps sounded from within the hall. A young man in crimson robes strode down from the platform. When he reached the doorway, his eyes lit up, his expression a mixture of joy and concern, as he said with a smile, “You have come out of seclusion, little sister. Why are there no phenomena?”</p>
+<p>Li Quewan cupped her hands and replied softly, “It was a transformation of inherent nature. A single stretch of evening glow is sufficient. This is not a Dao lineage meant to be displayed openly before the world.”</p>
+<p>“Let us speak inside.” Li Jiangqian raised his hand first, closing the hall doors, then led her inside. Leaning out slightly, he turned back to ask Qu Buzhi quietly, “What is it?”</p>
+<p>Qu Buzhi hastily replied, “The Golden Tang Gate has been defeated. The members of the Situ Family are all gravely injured. Gate Master Situ Biao had his eyes removed and his internal organs taken out, and was made into Daoist Bai’s dharma artifact… The Golden Tang Gate has retreated deep into the mountains. Locust Soul Hall has withdrawn its forces and returned home. The Black Rat Dharma Protector has also returned to Baiku Prefecture. Trouble is bound to follow.”</p>
+<p>“I understand.” Li Jiangqian dismissed him. Only then did a smile appear on his face as he entered the hall and asked, “Congratulations, little sister. What kind of wondrous attainment is it?”</p>
+<p>Li Quewan cultivated the Golden Book of Singular Attunement[1]. The Immortal Foundation she refined was called Divine Singular Attunement. This Whole Pill method had left behind very few legacies. The name itself was something few had even heard of, let alone dared to speak of openly or inquire into.</p>
+<p>Thus Li Quewan replied, “Divine Singular Attunement takes the path of nurturing through the Whole Pill. It gathers immortal radiance, refines golden mercury, evades death, prolongs life, commands birds and beasts, and seeks the art of immortality through secret techniques, tempering the essences of heaven and earth in pursuit of longevity.”</p>
+<p>She seemed somewhat hesitant and shook her head as she said, “At its core, this is a Dao lineage of reclusive cultivation, seeking the enduring preservation of essence and life.”</p>
+<p>Li Jiangqian nodded as he said, “The Whole Pill Dao is something I have only heard of in the form of Secret White Mercury. It is not weak in combat. Divine Singular Attunement, on the other hand, leans more toward escape and the refinement of mercury medicines… That is quite suitable.”</p>
+<p>He smiled faintly and continued, “With elder brothers and uncles at home, they can look after you no matter what. Having this kind of path benefits the family far more than people like us. Unlike my Immortal Foundation, which only offers subtle assistance and normally requires me to take wooden materials and spirit herbs to increase my cultivation, it cannot be used for the family.”</p>
+<p>“Elder brother, that is not quite right.” Li Quewan smiled in reply. “Combat cannot be avoided. As the saying goes, one cultivates techniques to protect the Dao. Daoist Master Zhaojing was famed for his pill methods when he established his foundation, yet his cultivation was likewise first rate, the foremost among the four Xi’s. I have never heard of him losing a fight.</p>
+<p>“Even Daoist Master Yehui, who possessed three divine abilities, could not injure him. In the end, a Grand Daoist Master had to take action to force him to leave for the outer-sea. If he had only known how to refine pills, he could not have reached where he stands today.”</p>
+<p>Li Jiangqian hesitated, then nodded. Li Quewan continued, “The Divine Singular Attunement Dao naturally enhances transformations of inherent properties. It is likely stronger than Secret White Mercury. It can regulate the qi of yin and yang, aiding many transformations among the Five Virtues, mainly in water, fire, and metal.</p>
+<p>“The second point lies in transformation. This Dao allows changes of form and appearance, the disguising of dharma artifacts and formations, and even the concealment of one’s Dao lineage. If one breaks through to divine abilities, its transformative potential becomes even greater and is no longer confined to the human body.”</p>
+<p>Li Jiangqian nodded silently, deep in thought. Li Quewan continued with a hint of concern, “The Whole Pill Dao fears only three things. The first is Converging Water. Once this water descends, it can scatter mercury and turn it into sand. The second is Merging Fire. This fire is even more vicious, burning mercury and melting lead, destroying spiritual nature. The last is Origin Thunder, which is what is now called Prime Magnetism.”</p>
+<p>Li Jiangqian sounded somewhat regretful as he replied, “It is a pity. Converging Water is currently at its height and not easy to avoid. Merging Fire is also far from an obscure Dao lineage. As for Origin Thunder, it has vanished for a long time. I have heard it exists only in Wu State, so there is no need to worry too much.”</p>
+<p>Li Quewan nodded as well and said, “Moreover, there is also Scattered White Falling Feathers. It is an unheard of escape technique. In the past, I could never grasp it, but now, with the condensation of Divine Singular Attunement and the subtle resonance between the celestial phenomenon and the principles of transformation, I have finally completed the escape spell.”</p>
+<p>The cultivation of the Whole Pill Dao had always been peculiar. He had not expected the breakthrough phenomenon itself to aid cultivation. Li Jiangqian offered a word of congratulations and asked, “May I see it? I have never heard of a Whole Pill escape spell either.”</p>
+<p>“That would not be appropriate.” Li Quewan shook her head and explained, “This escape method is similar to the blood escape used by ordinary cultivators. Escaping with it greatly harms one’s vital essence and cultivation, so it should not be demonstrated casually.”</p>
+<p>Li Jiangqian nodded in understanding. At that moment, Li Xuanxuan pushed open the door and came in from the side. He was dressed in dark blue garments, his aged face smiling, as he held a small box tucked in his arms.</p>
+<p>“Wan’er!”</p>
+<p>Among Li Xuanxuan’s many descendants, aside from Li Ximing, few had truly amounted to much. If Li Zhouming was the jewel in his palm, then Li Quewan was the flesh of his heart. Now that she was before him, the two juniors bowed together.</p>
+<p>The old man set the box on the table, lifted them both up with one hand each, and said with a smile, “Congratulations, Quewan. Take a look at this…”</p>
+<p>Only then did Li Quewan take the box, which was about the size of a pillow. Inside lay a layer of golden cotton as padding, cradling a single silver gray droplet of mercury no larger than a fingernail.</p>
+<p>Li Quewan was immediately transfixed as she listened to the old man speak, “To the north in the river loop lies Tiefo State, territory of the devil cultivator Helian Family. During the north and south conflict, one of their people emerged, named Helian Changguang. He was shot dead by Xuanfeng at the Great Ning Palace and carried this treasure on him… It was unclear whether this mercury droplet was a spirit item or a dharma artifact.</p>
+<p>“This is something aligned with the Whole Pill Dao. We could not identify it, and since the Helian Family also possessed Purple Mansion Realm cultivators, it was never taken out and was kept until today. Later, when Ximing broke through to the Purple Mansion Realm, I remembered this item and brought it to him. He said it was a dharma artifact, not a spirit item, and that it could not be opened without Whole Pill spell arts.”</p>
+<p>Li Quewan first drew up a sliver of silver light and let it fall upon the mercury droplet. After a brief calculation, she picked it up, considered it for a moment, and said with delight, “It is undoubtedly a Whole Pill dharma artifact. Its age is ancient. Calling it a dharma artifact is fitting, yet calling it a legacy is even more so… It truly carries an archaic air.”</p>
+<p>She closed the mercury droplet within her palm and poured her mana into it. A burst of silver light flashed forth, and it was drawn into her sea of qi.</p>
+<p>“The refinement is actually this fast!”</p>
+<p>Li Quewan closed her eyes and sensed it for a breath before speaking softly, “This dharma artifact is an inner cultivation treasure stored within the dantian. It can assist in casting spells, clarify spiritual sense, and invigorate the spirit. When necessary, it can also serve as a medium for Whole Pill transformations. It also contains an internal incantation called the Translucent Bloodsilver Technique. It is an ancient devil technique that feeds on blood qi and uses lead and mercury arts to form a pill.”</p>
+<p>The status of this technique was clearly awkward. Li Quewan sighed and said, “In terms of preserving life alone, this technique is only slightly inferior to my Scattered White Falling Feathers. Unfortunately, it is a devil technique. Although several of its spell arts can be used, the Dao lineage as a whole is of no benefit to our family.</p>
+<p>“As for the dharma artifact itself, it can be taken out to face enemies or used to save one’s life. For our family, the artifact itself is actually the more valuable part.”</p>
+<p>Li Xuanxuan merely sighed and said, “As long as it is useful, that is enough. Although the Helian Family has declined and is surrounded by powerful enemies, they still have Purple Mansion Realm cultivators. It is best not to let them recognize it.”</p>
+<p>Li Quewan nodded slightly. This item resided in the dantian rather than hanging at the waist, so it was not easy to identify. Moreover, it was still unclear whether it belonged to the Helian Family or had been obtained personally by Helian Changguang. She decided to keep it for now and asked about the matters in Jiangbei.</p>
+<p>Li Jiangqian gave her a brief account and frowned as he finished, “As for the matter of second uncle being killed, the Capital Immortal Dao has already sent Gongsun Baifan to clarify it. Guan Gongxiao has been extremely anxious about this matter and wrote several letters to explain. It does not seem to have been done by the Capital Immortal Dao.</p>
+<p>“My earlier thought was that your seclusion was the best course, so you would not be dragged into this matter. Now that you have emerged, and since I have confirmed that the talisman seeds are indeed effective, I decided to tell you.”</p>
+<p>His expression darkened as he continued, “Several months ago, second uncle was killed, yet Daoist Master Tinglan has not shown herself for a long time. I suspect that matters in Jiangbei are gradually going awry. You are skilled in shamanic arts, so I ask you to examine it as well.”</p>
+<p>Li Quewan spent her days in seclusion and was unfamiliar with this second uncle. She merely sighed softly before immediately raising her head to ask, “Were any remains left behind?”</p>
+<p>Li Jiangqian shook his head heavily. Li Quewan now found the situation difficult and asked, “Does he have any descendants? We can try using blood essence. This method is not very accurate and may lead to misjudgment.”</p>
+<p>Li Xuanxuan immediately stroked his beard and said, “I will go fetch it.”</p>
+<p>The old man exited to the side. Only then did Li Jiangqian lower his voice and say, “Wan’er, act within your limits and do not injure yourself.”</p>
+<p>Li Jiangqian was clearly afraid that this matter involved the Purple Mansion Realm cultivators and might affect Li Quewan. Li Xuanxuan valued familial bonds, so Li Jiangqian did not say such words in front of him. Yet in the eyes of this Li Family Head, Li Quewan, as a Purple Mansion Realm seed, was what mattered most. As for others, whether mortals or cultivators, their deaths were merely a matter of greater or lesser loss.</p>
+<p>Thus Li Quewan replied gently, “It is fine. My shamanic arts are profound, and I carry talisman seeds with me. Unless I am calculating a Purple Mansion Realm cultivator directly, it is nothing of concern.”</p>
+<p>1. Previously known as Houshu Golden Book. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1327.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1329.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

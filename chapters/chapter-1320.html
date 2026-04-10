@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1320: Supreme Yang Transmutation Radiance (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1319.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1321.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1320: Supreme Yang Transmutation Radiance (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Pure white radiance surged forth from the snow, allowing Supreme Yin radiance to sweep over it. It emerged across the heavens and spread along the sky, gradually enveloping the vast palace complex standing amid drifting clouds and mist.</p>
+<p>In the next moment, pure golden red morning light flickered in the east, while hazy silver moonlight descended in the west. The dim and murky world within the mirror, long shrouded in gray skies and dark clouds, finally vanished as it was replaced by the clear and luminous radiance of the sun and moon.</p>
+<p>This independently opened grotto heaven revealed the wondrous sight of the sun and moon shining together. Heaven and earth stretched into the distance as clouds and mist coiled about, touching neither sky above nor ground below. They simply formed layers upon layers of cloud qi.</p>
+<p>Lu Jiangxian manifested his form within it and estimated the size of this world. It spanned roughly two hundred kilometers, and was comparable to the Li Family’s island at the heart of the lake, though with vertical separation. The entire realm was nearly circular, making it far more spacious in use.</p>
+<p>This was still far from the limit of this realm. The Hunyi Golden Core Mysterious Method relied on one’s inherent rank and used divine ability mana to form a world. As divine ability mana continued to flow in, this realm would gradually expand until the inherent rank could no longer bear it.</p>
+<p>However, like all grotto heavens, this realm has no great void. It will not give rise to fire veins or water veins, and it contains only things similar to my inherent rank. It cannot be considered a true world…</p>
+<p>More importantly, a grotto heaven does not naturally give birth to spirit items. If it is not linked to the manifest world, it can scarcely obtain spiritual energy, relying only on the great void to draw in a meager trace.</p>
+<p>Lu Jiangxian’s grotto heaven was further isolated from the great void. This meant that if he did not supply this realm with divine ability mana and Supreme Yin Moonlight, this world would possess scarcely any spiritual energy at all.</p>
+<p>“From the looks of it, the divine ability mana surging from the Immortal Mirror is endless. In one year, this place can gain another island at the heart of the lake. In ten years, it can rival Moongaze Lake. In a hundred years, it could compare with the territory of the Azure Pond Sect…</p>
+<p>“In truth, this is not slow at all. As long as the Heavenly Palace reaches the size of Moongaze Lake and flight is prohibited, with pavilions and towers spread throughout, no one would be able to tell its true extent.”</p>
+<p>Lu Jiangxian had once entered Anhuai Heaven of the True Essence Dao. That grotto heaven had been left behind by the renowned Tianwu True Qi Divine Fiend Essence True Monarch. He estimated that its territory was not even half that of the Azure Pond Sect.</p>
+<p>He lightly swept his sleeve, and threads of Supreme Yin radiance spilled, condensing within the clouds beneath his feet. In an instant, they formed a boundless pale platform. Osmanthus trees rose from the ground one after another, and at the center stood a moon white round table carved with profound patterns.</p>
+<p>He strolled to the side of the round table and flicked his sleeve, causing an assortment of items of varying sizes to appear upon its surface.</p>
+<p>The first things that met the eye were two small flasks. One was formed from Shaohui’s demonic body and divine ability. The other contained the Dharma Body soul of that male peacock. Both were the refined essence of Purple Mansion Realm demonic creatures.</p>
+<p>In truth, either of these flasks could be used to expand the grotto heaven, easily saving two or three years of effort. However, divine ability mana was inexhaustible, while Purple Mansion Realm essences were not easily obtained. Once Pristine Water returned, acquiring such things would be even more troublesome.</p>
+<p>The table also contained a golden bead and a green talisman. The golden bead contained the karmic fate left behind by Li Xuanfeng and was difficult to make use of for now. The green talisman had been prepared to help Li Zhouwei immediately achieve a second divine ability after breaking through to the Purple Mansion Realm.</p>
+<p>What remained was a faint silver glow, no larger than a finger. This silver light was the power of deduction obtained long ago from Liu Changdie. In essence, it was an extension of the Heaven Expanding Profound Talisman. In his early years, Lu Jiangxian had relied heavily on this art for convenience. Over time, it had been gradually expended, leaving only this thumb-sized remnant.</p>
+<p>“The Heaven Expanding Profound Talisman likewise shows no trace at all…” muttered Lu Jiangxian.</p>
+<p>After so many years of progress, Lu Jiangxian now also had some conjectures regarding the whereabouts of this talisman qi.</p>
+<p>“It should be like the Hunyi Immortal Wall, existing within some grotto heaven or secret realm. That is why Liu Changdie came into contact with this talisman yet left no trace behind. In truth, he merely happened to touch upon a certain grotto heaven…</p>
+<p>“He was active from Lixia Prefecture to the regions of Northern Yue and Jiangbei. There are only so many grotto heavens to begin with. Donghuo Heaven and Anhuai Heaven can already be ruled out. That leaves Wanglin Heaven of the Wanglin Upper Sect and Donghua Heaven of the Moonlight Origin Mansion.”</p>
+<p>Although Wanglin Heaven is not connected to the manifest world, it interacted with the great void to draw in spiritual energy. Lu Jiangxian clearly knew it was located in Jiangbei. However, Donghua Heaven of the Moonlight Origin Mansion was far more intriguing. It might be cut off from the great void entirely, leaving Lu Jiangxian unable to uncover the slightest trace of it.</p>
+<p>Moreover, there is another far more terrifying possibility. Following Li Jiangqun’s line of thought, if his previous life was the master of the Moonlight Origin Mansion, then could Donghua Heaven actually be this world within the mirror.</p>
+<p>If this inference held true, then the Heaven Expanding Profound Talisman was likely hidden either within Wanglin Heaven or within some secret realm concealed in Jiangbei. After a brief moment of thought, his divine sense flew out of this realm, passed through the great void, and settled before the Hunyi Immortal Wall.</p>
+<p>Chi Buzi stood quietly with his head lowered and eyes closed, seemingly unaware of the faintly glowing formation before him. Dazzling light spilled from the sea surface and draped itself over the man in green robes.</p>
+<p>Lu Jiangxian’s gaze settled upon this expanse of ocean. Although Chi Buzi had dived into the deepest reaches of the seabed, this place was no longer beneath the Eastern Sea. Within the layers upon layers of buried forbidden formations lay an immortal formation of forbidden grade, and this location was a secret realm opened atop that immortal formation by a high cultivator.</p>
+<p>Whether it is Chi Buzi or the cultivators of the three sects and seven gates, all of them believe they passed through layers of forbidden barriers and arrived within the immortal formation. In truth, that is not the case. They had already passed into another domain and entered this independent space.</p>
+<p>This secret realm is merely joined to the manifest world within the immortal formation…</p>
+<p>It was precisely because of this that this domain lacked the great void. That was why Li Jiangqun had dared to bring his group of friends here to chat freely back then, and even dared to claim that the True Monarchs themselves could not see this place.</p>
+<p>Moreover, this secret realm was unlike every other secret realm Lu Jiangxian had ever seen. After all, this secret realm dared to hang a sun.</p>
+<p>Above the thin seabed stretched layers of the terrifying Golden Crow Transmutation Profound Light. Passing through this massive radiance that rose thousands of meters high, one could behold the highest point of this immortal formation secret realm. There stood a sun blazing with boundless light.</p>
+<p>The stars in the heavens were not without meaning. In ancient texts, every star was linked to Fruition Attainment, Surplus Position, or Intercalary Position. Even comets that were not part of the ancient celestial offices carried omens of transgression. Although heaven and earth had since collapsed and the stellar order fallen into chaos, these stars would still respond when a True Monarch took action.</p>
+<p>When True Monarch Taiyuan acted in the past, the Supreme White Star moved in the heavens. Famous examples still remained, such as Mars associated with Radiant Fire and Jupiter associated with Orthodox Wood.</p>
+<p>As for the Supreme Yang[1] and the Supreme Yin[2], they were known to all, hanging openly in the sky. The Supreme Yang’s Fruition Attainment pointed directly toward Yingze. Unless one was a subordinate True Monarch of that immortal, no one would dare, nor be able, to hang a sun within their own grotto heaven. That would be no different from acting right under that immortal’s gaze.</p>
+<p>Lu Jiangxian was familiar with many grotto heavens. This secret realm was the only one that dared to suspend a sun high above. This meant that even if this immortal formation was not created by Yingze himself, it still belonged to the Supreme Yang Dao. He was further convinced of his conclusion by the expanse of Golden Crow Transmutation Profound Light.</p>
+<p>The Golden Crow Transmutation Profound Light was a Golden Core Realm profound radiance. It was light released from the entanglement between the Supreme Yang Fruition Attainment and the Surplus Position. This radiance usually existed for only a single instant before transforming into eighty-one kinds of spirit light, each one a treasure of the Desire-Origin Merging Fire tier.</p>
+<p>Let alone Chi Buzi, even if Pristine Water came in person, Du Qing could simply wash up and go to sleep once these thousands of meters of Golden Crow Transmutation Profound Light fell upon them.</p>
+<p>This is the real confidence behind Li Jiangqun daring to claim that True Monarchs would not dare look, and would not dare come.</p>
+<p>The immortal formation restrictions outside were terrifying, yet they could not completely stop a True Monarch. Someone from Yue Cultivating had likely already reached the level of bypassing such prohibitions. However, this Golden Crow Transmutation Profound Light was the true blade that hung overhead.</p>
+<p>After all, no one knows the basis by which this profound light judges. Whether it kills all intruders outright or evaluates morality and merit, no Golden Core Realm cultivator would come here to throw their life away.</p>
+<p>Then Li Jiangqun’s intent in inviting the various factions inside becomes clear. He was not a fool without defenses… There was likely an element of deterrence as well…</p>
+<p>Lu Jiangxian slowly withdrew his gaze and did not touch the Golden Crow Transmutation Profound Light in the sky. He already possessed the Supreme Yin Profound Light, and even if he obtained this, there would be no one to use it on. He simply followed the mountain path downward and landed beside a stretch of stone tables.</p>
+<p>The stone tables were covered with bronze wine cups, some upright and some overturned. The cups had long since been emptied. Some were placed neatly, revealing hints of their former owners’ personalities. He looked around the tables, and his divine sense settled on the white outer robe.</p>
+<p>The outer robe was white as snow, with faint silver Supreme Yin patterns along the edges that were not immediately noticeable. Its design was extremely simple, and at the collar hung a small crescent shaped jade that emitted a gentle glow.</p>
+<p>This was a very peculiar dharma robe. Despite having not the slightest fluctuation of spiritual energy, it exuded an almost imperceptible sense of nobility. With a single sweep of his divine sense, Lu Jiangxian knew this was likely Li Jiangqun’s possession. He had left this treasure here and had not taken it away.</p>
+<p>Li Jiangqun’s death is far too suspicious.</p>
+<p>Among the remaining items on the table was a plain and unremarkable jade flask. Lu Jiangxian understood that this was precisely the reason Chi Buzi dared not approach this place.</p>
+<p>The flask looked ordinary, yet within it was a sword intent as vast as the sea. It was like an ocean formed from condensed sword intent, ready to erupt at any moment and reduce any cultivator who tried to approach this place to dust.</p>
+<p>This was undoubtedly Li Jiangqun’s sword intent. As one of the apex figures of the Purple Mansion Realm, this flask of sword intent was naturally enough to make Chi Buzi deeply wary. Though Chi Buzi was formidable and possessed many spirit artifacts, he could not be compared to Li Jiangqun or Duanmu Kui.</p>
+<p>Lu Jiangxian watched for a moment, then withdrew. At the same time, the colorful dharma light of the formation before Chi Buzi finally receded. The azure-eyed man opened his eyes half a beat later and let out a long breath.</p>
+<p>With his gaze lowered, he gently waved his sleeve and swept away the formation inscribed upon the sandy ground. Only then did he stand up, bow deeply, and disperse into azure light.</p>
+<p>1. Referring to the Sun. ☜</p>
+<p>2. Referring to the Moon. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1319.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1321.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

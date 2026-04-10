@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1321: Supreme Yang Transmutation Radiance (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1320.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1322.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1321: Supreme Yang Transmutation Radiance (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Dong’a King Sea.</p>
+<p>The Dong’a King Sea spanned a vast area and contained many islands. The most famous of which was White Sand Island at the easternmost edge. Dense forests covered the island; hot springs boiled; and water veins and fire veins intertwined, forming a remarkable spectacle.</p>
+<p>Such scenery would be considered merely average inland, but it was prime treasured land at the edge of the outer-sea. It had once been the mountain gate of the leading immortal gate of the region, the Prime Spirit Gate, yet now it seemed rather lively with constant comings and goings.</p>
+<p>After passing through various cultivation sites that were half new and half old, the grand hall at the peak finally possessed an air of authority. Spirit formations shimmered with light; the doors of the cave dwelling were tightly shut; and a cultivator in white golden daoist robes was meditating with eyes closed.</p>
+<p>No one knew how long had passed before he finally let out a deep breath. The heavenly light at the center of his eyebrows flickered faintly, illuminating the hall on all sides.</p>
+<p>After taking that spirit pill, my cultivation has truly advanced by leaps and bounds.</p>
+<p>Li Ximing had used two great medicines that would make countless Purple Mansion Realm cultivators envious to refine this Supreme Yin Dao spirit pill. He had obtained three in total and had consumed one before entering seclusion to accelerate his cultivation.</p>
+<p>This spirit pill was refined by him and used by him. Thus, not only was its absorption extremely fast, its effects were also excellent, greatly shortening the time needed to cultivate his divine ability. Now, the Heaven Venerating Gate had finally been trained to nearly halfway completion and could already be considered initial mastery.</p>
+<p>The first divine ability of a Purple Mansion Realm cultivator was relatively simpler. After all, it was already a divine ability and did not require cultivation from the Immortal Foundation. However, Li Ximing’s path had been full of setbacks, as he was either injured or fleeing for his life. Taking this pill made up for the time he had wasted and even allowed him to progress much faster.</p>
+<p>It would be best if I could obtain some Bright Yang aligned treasures. Sigh, ancient spirit artifacts are far too precious. If Yuanxiu were willing to lend me the Huai River Map, I would advance a thousand miles in a single day.</p>
+<p>He assessed the contents of his storage pouch. Although his condition was excellent, the True Profound Heart Cleansing Pill had already been used up. He felt uneasy without Purple Mansion Realm healing pills.</p>
+<p>This is a good opportunity to leave seclusion and refine some pills. Moreover, the island has been trembling occasionally these past few days. Something may have happened outside, so I should go and take a look.</p>
+<p>Li Ximing stepped out of the cave dwelling. The hall was silent and empty. Several cultivators stood guard outside the hall, but even as Li Ximing walked straight out, they remained completely unaware, standing quietly in place.</p>
+<p>Li Ximing found this place suitable and entered seclusion on the spot after Tinglan had departed. He casually seized two or three cultivators and had them watch over the island, so that group of devil cultivators would not come to refine blood qi.</p>
+<p>He had been worried that these people might abuse his reputation, but he had given clear instructions. Now, seeing that he did not recognize any of them, his expression cooled slightly as he took a single step into the great void.</p>
+<p>His figure immediately transformed into light and vanished, soon forming atop another high platform. As expected, he saw a group of Qi Cultivation Realm cultivators gathered together, their expressions grave as they discussed something.</p>
+<p>This group of Qi Cultivation Realm cultivators was quite respectful. A fine jade table was set out, with all kinds of cultivators seated on both sides. The immortal seat at the highest point was empty, clearly symbolizing Li Ximing.</p>
+<p>Even if Li Ximing did not leave seclusion, he was still worthy of being displayed as a signboard. He treated the formation on the high platform as though it did not exist, stepped inside, and manifested beside the imposing immortal seat, frowning as he surveyed the scene.</p>
+<p>When this white golden figure appeared, the entire platform instantly fell silent. The leader froze for a moment before his face turned pale with shock. He collapsed as though he had seen a ghost, kowtowing as he cried out, “Greetings, Daoist Master.”</p>
+<p>Once these words rang out, chaos erupted. Chairs scraped; wine was spilled; and hurried footsteps rang out all at once. In the end, only the dull thuds of kowtowing remained. When Li Ximing turned around, the only sight was cultivators prostrated on the ground, trembling uncontrollably.</p>
+<p>Li Ximing spoke softly, “Where are the others? I said you were not to abuse my reputation. Is that something you cannot understand?”</p>
+<p>The cultivator at the very front, his hair completely white, was so frightened that he kowtowed without stopping and said respectfully, “Daoist Master… they are cultivators from the Dong’a King Sea… All of them heard that a Daoist Master was in seclusion on White Sand Island… so they voluntarily came here to trade. Now… White Sand Island has become the largest marketplace in the Dong’a King Sea… No sect has been established…”</p>
+<p>Li Ximing raised an eyebrow and glanced downward. As expected, he saw buildings that were half new and half old. A massive formation left behind by an unknown immortal gate from years past had been put to use by the cultivators of the Dong’a King Sea, allowing them to truly cling to life in this place.</p>
+<p>“The Prime Spirit Gate was destroyed; the few Foundation Establishment Realm cultivators of the Dong’a King Sea are gone; and demonic creatures run rampant… everyone looks to White Sand Island for safety and has settled nearby…”</p>
+<p>Li Ximing immediately understood. A Daoist Master of his stature was someone everyone knelt before in the mainland. How much more so would that be in the barren and sparsely populated outer-sea. The Dong’a King Sea was already impoverished, and upon seeing such a great figure, the cultivators had no thought of resistance. United from top to bottom, they clung to him like ants, hoping to borrow even a trace of protection.</p>
+<p>So this is the aftermath left behind by the destruction of the Prime Spirit Gate…</p>
+<p>Li Ximing frowned. Soon, an old man was carried up to him. At last, there was someone at the Foundation Establishment Realm, but unfortunately everything below his abdomen had been bitten off. With a pale face, he tilted his head back and spoke in broken phrases, “Daoist Master… the demonic creatures are rampant… we truly had no choice…”</p>
+<p>Clearly, the old man also knew that borrowing Li Ximing’s authority was a deadly affair. He even knew that Li Ximing would eventually leave seclusion, yet he had merely been quenching thirst with poison all along.</p>
+<p>“…”</p>
+<p>The surroundings were silent with fear; no one dared to speak. Li Ximing could tell from a glance that this man was afflicted with frost poison and did not have long to live. If he had not taken in some blood qi, he would not have lasted until now. Li Ximing sighed inwardly, yet his expression remained cold.</p>
+<p>He glanced at the old man and frowned. “Stand up and speak.”</p>
+<p>His Bright Yang divine ability manifested. The old man’s legs instantly grew back; the frost poison vanished into nothingness; and the gloom shrouding his face dispersed. Covering his face, he wept and fell to his knees with a thud.</p>
+<p>Li Ximing asked, “Since you borrowed my authority, where did these demonic creatures find the courage?”</p>
+<p>The old man trembled as he replied, “They… were somewhat wary at first. Later, they gathered information, captured a few cultivators to interrogate them, and then asked the noble scions of other seas. After that, they no longer believed…”</p>
+<p>These demonic creatures did not understand the situation well and naturally did not know that Li Ximing was cultivating there. Unless they questioned the Dragon Clan, asking anyone else would have been useless.</p>
+<p>Li Ximing could not be bothered to move and turned to the side. “Pass down the order. Tell those demon generals to roll over here and see me.”</p>
+<p>Unexpectedly, dark clouds had already gathered outside the moment his words left his mouth. Waves surged violently, and sharp howls that tore through the air rang out. Everyone looked up to see the sky darkened and the sea raging.</p>
+<p>If one stood on the high platform and looked outward, one could see a host of shrimp soldiers and crab generals standing atop the waves, clustered around a sinister young man in dark green robes with whiskers growing from his forehead.</p>
+<p>“Wu!”</p>
+<p>The demonic creature’s voice boomed like thunder. Its twin whiskers jutted fiercely into the air as it stood atop the waves.</p>
+<p>Suddenly, the great void tore open above him and a streak of golden colored light appeared.</p>
+<p>Pa!</p>
+<p>Before the crowd of demons could see clearly, a palm had already lashed across the demon general’s face. The head of the young man in dark green robes spun several times in an instant and snapped backward, leaving only the pitch black back of his head facing the island, while his blood soaked face stared blankly at the demons behind him, eyelids twitching mechanically.</p>
+<p>Only then did everyone see clearly the man clad in a white golden daoist robe before him. He had a fiercely gloomy expression. Heavenly light shone between this man’s eyebrows as he swept his gaze around, causing the demonic creatures on the waves to fall like rain. He withdrew his eyes and stepped into the great void, vanishing.</p>
+<p>Thud!</p>
+<p>Li Ximing appeared upon the immortal seat of the high platform and casually threw the demon general onto the ground as though tossing away trash. The demonic creature was naturally not dead, since his vitality was tenacious. He did not dare twist his head back, and kept his chest pressed to the ground as his lips trembled.</p>
+<p>The assembled cultivators showed little joy and instead were too frightened to speak.</p>
+<p>A dignified late stage Foundation Establishment Realm demon general, felled by a single slap…</p>
+<p>Li Ximing had been disturbed without reason several times during his cultivation. Although it was only ground tremors and he was not at a crucial stage, disturbing the cultivation of a Purple Mansion Realm cultivator meant this demonic creature could die a hundred times and still not repay the offense.</p>
+<p>Moreover, he only wished to remain in seclusion. Although exposing his whereabouts now was not particularly dangerous and others might not know which Daoist Master was present, this demonic creature forcing the cultivators of the Dong’a King Sea to rely on his name was ultimately an unpleasant matter.</p>
+<p>In the mainland, a Foundation Establishment Realm demonic creature could only be a demon general, yet it was already called a demon king in this desolate place. This demonic creature cultivated Pristine Water and resembled a shrimp-like flood dragon.</p>
+<p>Li Ximing restrained his temper, smiled faintly, and asked, “What background do you have, to dare disturb my cultivation?”</p>
+<p>Seeing that the demonic creature only begged for mercy and could not explain anything clearly, Li Ximing knew exactly what sort of thing the demonic creature was. He casually kicked the demonic creature in the chest and sealed his cultivation.</p>
+<p>His heart was icy cold as he thought,Pristine Water again, and a shrimp-like flood dragon at that. Running into me counts as your misfortune.</p>
+<p>He lifted the demonic creature, preparing to return and refine pills, only to notice that everyone around was trembling. Li Ximing silently glanced over them, and even more people began to shiver.</p>
+<p>The old man then came forward with a pale face. This time it was from fear rather than frost poison. He knelt at Li Ximing’s feet, trembling like chaff, and haltingly said, “Daoist… Daoist Master… thirty six days ago, the western… western upper sect of the Western Curtain Sea, the All-Seeing Immortal Gate, sent people to seek you, saying they came to visit the Daoist Master…”</p>
+<p>Li Ximing was slightly surprised and said, “That is quite well informed news.”</p>
+<p>The other party immediately began to kowtow in terror. Li Ximing said casually, “Did they say what they sought me for, and what background this Dao lineage has?”</p>
+<p>The old man shook his head repeatedly and kowtowed again and again before saying, “They only said… that someone had made an introduction…”</p>
+<p>Li Ximing’s expression grew thoughtful. He released the demonic creature in his hand and sat down on the seat, his ire toward the demon flood dragon easing considerably.</p>
+<p>Someone made an introduction… I do not know who it was, but it clearly means they already know my identity, yet still hold a friendly attitude and wish to meet me.</p>
+<p>If put this way, this foolish demonic creature may not truly be reckless. Perhaps the other side has some urgent matter and used a Fate Divine Ability to fan the waves, trying to force me out of seclusion.</p>
+<p>Li Ximing pondered for a few breaths, looked at the demonic creature on the ground, and secretly shook his head as he thought,It should simply be an outer-sea demonic creature without a brain. Otherwise, this would be far too rude.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1320.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1322.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

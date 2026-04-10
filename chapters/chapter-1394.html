@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1394: Please (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1393.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1395.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1394: Please (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Shanghuo County of Youxiang Prefecture in Zhao State.</p>
+<p>The bitter winter had arrived, and the vast world was covered in white. Youxiang Prefecture had once been under the governance of Qinling Temple. But, the monastery collapsed over time and fell into neglect. Later, a Master Monk returned from the south after attaining Dao and assumed the title of The Merciful One, restoring Qinling Temple and raising it anew.</p>
+<p>This Merciful One, Liaokong, behaved in unusual ways. He believed that without studying the scriptures, deliberate suffering did not truly accumulate blessings for the next life. The people of Shanghuo County no longer overworked themselves or maimed themselves to death. Instead they read sutras and recited sacred names. Thus they no longer needed to brave the wind and swallow snow to prove their piety in winter, and one ritual fell away.</p>
+<p>Of course, fewer people from Shanghuo County had ascended to the Pure Land in recent years. The common folk dared not resent the Buddhist cultivators. They could only blame their own lack of devotion. Now and then someone would crush a finger or break a leg and rejoice wildly, believing that they would surely accumulate merit through suffering and hardship.</p>
+<p>Within this tranquil land, streaks of multicolored light suddenly rose into the sky. More than a dozen Master Monks rode the wind as they arrived, mingled with numerous cultivators. The leader barked sharply, “He fled to this place. Search at once and do not let him escape!”</p>
+<p>The streaks of light scattered at once. The Master Monks and cultivators descended on the wind and began searching everywhere. Though their garments differed and they clearly belonged to different Dao lineages, they cast aside their prejudices and joined forces to surround the area.</p>
+<p>After some time, a surge of golden light erupted with a thunderous roar, accompanied by a shrill bellow.</p>
+<p>“He is indeed here!”</p>
+<p>In an instant the sky filled with multicolored light as everyone converged on the light. A shimmering grand formation emerged upon a seemingly empty snowfield. Within it stood a long bearded man dressed in Jiangbei attire, holding a formation plate.</p>
+<p>His face looked grim as he stood within the formation, somewhat at a loss. “How could they arrive so quickly… Brother Lin has only just begun his seclusion…”</p>
+<p>But when the Master Monks saw this scene, how could they let it pass? They immediately surrounded the grand formation. The leader’s voice was colored with hatred. “Good… Good… You fiend. You have shattered mountains and destroyed temples all along your path, ruining our inheritances and monasteries. Retribution has come at last, and now we have cornered you here!”</p>
+<p>“We may not belong to great sects, but we will not tolerate such humiliation. Fellow Daoists, strike together!”</p>
+<p>Golden light flashed and white vapors crisscrossed the air. All manner of dharma artifacts struck the grand formation together, producing resounding booms. The man within the formation staggered and hurriedly poured mana into it. Yet how could he withstand the combined assault of more than a dozen foes by himself, with such meager mana?</p>
+<p>“Han Li once said this formation is formidable, but its strength lies in concealment. It can be deployed at any time and is not restricted by terrain. It is by no means a formation suited for defense…”</p>
+<p>Despair surged within him. He hailed from the Wang Family of Jiangbei, and was named Wang Changyan. His parents had ventured north in their early years and vanished without a trace. As he grew, his innate ability emerged, and he gradually became a prodigy of the local Wang Family. It was only when Lin Feng swept across Jiangbei that the Wang Family pledged allegiance to Lin Feng, and he followed suit.</p>
+<p>Upon hearing that Lin Feng intended to head north, he was overjoyed. He had long wished to search for his parents but lacked the strength to do so. Thus he seized the chance to follow Lin Feng north, serving him loyally.</p>
+<p>Yet it was as though they were haunted the entire way. They kept encountering all kinds of devil cultivators and other cultivators, all of whom were slain by Lin Feng. After fighting their way here and seeing the enemies grow ever more numerous, Lin Feng decided to break through to the Purple Mansion Realm to travel more easily afterward.</p>
+<p>“But they have come far too many and far too fast!”</p>
+<p>In less than a quarter of an hour, the formation plate in his hand began to flicker. Fine cracks spread across it, and it grew scorching hot.</p>
+<p>Bang!</p>
+<p>The precious formation plate could bear no more and exploded into fragments that filled the sky. The shimmering grand formation faded with it, revealing his enemies before him. The leading monk, face flushed with fury, fixed his gaze upon the scene within the formation and shouted, “Only you, you wretch. Where is that fiend?!”</p>
+<p>Wang Changyan knew that Lin Feng was in seclusion within the cave dwelling beneath his feet and refused to say more.</p>
+<p>The monk did not strike immediately. Instead, grief threaded its way through his face and voice as he said, “Ever since the Maha fell and the various lineages scattered, our small branch has had no wish to contend with others. We remained in the mountains day after day only to pass on our Dao lineage. Who would have thought that you bastards would storm in, kill without cause, and destroy our temple. What justice is there in that?!”</p>
+<p>The others beside him gnashed their teeth. A cultivator stepped forward and shouted sternly, “There is no need to waste words. Force him to reveal the fiend’s whereabouts!”</p>
+<p>He strode forward and seized Wang Changyan, whose mana was already exhausted, in a few moves. Just as he was about to act, the heavy snow in the sky suddenly ceased. The snow beneath their feet melted at once, replaced by crimson flames.</p>
+<p>“Who dares?!”</p>
+<p>Red flames erupted from the cave dwelling below and rolled forth among them. Unable to withstand the divine ability, the Buddhist cultivators and other cultivators all fell to their knees, their kneecaps shattering and their organs rupturing.</p>
+<p>A man clad in red and white armor rode the flames out, threw back his head, and let out a long howl. The snow in the sky was swept clean, leaving only his proud figure standing tall.</p>
+<p>“A swarm of ants dares to block my path!”</p>
+<p>He brought two fingers together and expelled a gout of flame. In an instant, the cultivators below were burned clean away. Whether it was the monk crying injustice or the cultivator whose son had been slain along the way, none were left, not even ash. Even the fertile land beneath the snow was scorched dry, its moisture burned away as soil turned to sand and formed a desert.</p>
+<p>“Brother Lin!”</p>
+<p>Wang Changyan wept with joy, yet dark clouds gathered in the sky. A colossal golden body gradually emerged, half concealed within thick brilliant light. Its feet stood upon the clouds, trampling heaps of fiends piled like mountains. Behind it stretched a thousand arms, each gripping a long staff. A jade crown shone atop its head, within which was set a human head filled with fury.</p>
+<p>The lips on the pale-jade face slightly parted. Upon its tongue was another face, pink and vivid, eyes bulging and shot with blood. It opened its mouth and shouted, “Fiend! You dare to slaughter wantonly here!”</p>
+<p>“I am Maha of the Wrathful Dao, descending amid a rain of blossoms to subdue you, demon!”</p>
+<p>Wang Changyan nearly fainted from fright. He thought,What kind of Maha is this! So hideous, a head growing from a head. Even a fiend would not look worse!</p>
+<p>Even Lin Feng frowned at the spectacle. After looking twice, he could not suppress the disgust rising in his heart. Anger throbbed within him, as though he had seen this thing long ago and instinctively loathed it.</p>
+<p>He replied, “To hell with your Maha.”</p>
+<p>He immediately reached out and drew forth a long blade gleaming with red light. Holding it in hand and pointing it at the colossal figure in the sky, he rose into the air amid rolling crimson flames.</p>
+<p>“Fire, come!”</p>
+<p>As expected of a great figure, he had produced a spirit treasure at once. The Maha in the sky was nearly frightened into revealing his true form and fleeing, yet having accepted this task, he could only brace himself, take out a treasure artifact, and shout, “Fiend, you still dare to be arrogant?!”</p>
+<p>This gaudy treasure artifact lasted only a single breath beneath the raging Dry Fire spirit treasure. Barely sustained by stronger mana, it let out a strained creak as Lin Feng’s lips curved upward, then exploded with a thunderous blast.</p>
+<p>“Wretched fiend!”</p>
+<p>The Maha did not dare linger. He rode the wind and transformed into light to flee, streaking across the horizon. Seeing through his bluster, Lin Feng laughed and soared after him toward the north, leaving behind only flames in the sky and a parting sentence.</p>
+<p>“Changyan, wait here. I will return shortly!”</p>
+<p>The flames drifted down and enveloped Wang Changyan, clearly shielding him. He sat cross legged with a face full of relief, filled with emotion.</p>
+<p>“Incredible… To chase down such a terrifying Maha…”</p>
+<p>After sitting for some time, his heart gradually steadied and the wind and snow began to fall once more. Then, he noticed a black speck moving in the storm. After a while he saw an old man slowly approaching with a cane.</p>
+<p>At first he worried for the old man, but upon closer look he saw burn scars of ordination on the man’s scalp. Disgust rose in him. The cane stood planted firmly in the snow as the old monk pressed his palms together and sighed, “Fellow Daoist, you have come seeking your kin, have you not?!”</p>
+<p>Wang Changyan assumed the old monk had divined it with a divine ability. He remained silent and wary, yet the old monk continued, “Your senior brother and sister came from the south in those years and attained sudden enlightenment, gaining great renown in the dharma realm. Now you too have been called by destiny and have traveled a thousand miles. Borrowing this great man’s momentum could not be more fitting. Fellow Daoist… it is time to return to the Buddhist land.”</p>
+<p>Wang Changyan continued to watch him cautiously as the old monk smiled faintly and said, “I am the Abbot of the Great Mahayana Dharma Realm. Guided by destiny, I have come to receive you.”</p>
+<p>At that moment, the wind and snow abruptly ceased and brilliant light burst forth.</p>
+<p>The wind and snow over Shanghuo County flickered in and out, yet Lin Feng had already ridden the wind far away, passing one snow covered prefectural city after another. At first, monks still looked up at him, but soon the terrain rose higher and higher. The monks vanished, replaced by drifting immortal aura and swirling white mist.</p>
+<p>After pursuing for a while, Lin Feng drew a small flask from his sleeve. He blew upon it and a crimson flame leapt out, swelling in the wind. The surrounding snow vanished in its blaze and the earth split apart.</p>
+<p>Having already lost a fine treasure artifact to him, the Maha dared not meet the attack with his Dharma body. He hurled out several ordinary treasure artifacts instead. Yet this flame was no common fire. It swept through the air and instantly melted the gleaming artifacts into molten iron and gold. Then, as if oil had been poured upon the blaze, the renewed flames surged toward his back.</p>
+<p>The Maha was about to slip into the great void when a chill struck the center of his brows. That spirit treasure blade was already aligned with the great void, waiting for him to enter so it could descend from above and strike him unawares.</p>
+<p>“Damn it…”</p>
+<p>He could only circulate mana to bear the lesser harm. Streams of golden light surged from between his brows to block the raging flames behind him.</p>
+<p>The Dry Fire was unlike any other. When a single drop touched his mana, it swelled at once, draining the strength from his entire body as though he were engulfed in layers of Karmic Fire. His Dharma body cracked inch by inch and he could scarcely move.</p>
+<p>The layer of mana was pierced like thin paper. The Maha’s Dharma body, famed for its sturdiness, met the flames and was burned through like melting wax, leaving a gaping hole. Brilliant light flickered as he howled in agony.</p>
+<p>They say Foundation Establishment Realm and Purple Mansion Realm cultivators are no longer as fearsome as before. What nonsense is that? Since when does a mere Purple Mansion Realm cultivator pull out two spirit treasures and chase someone down like this?!</p>
+<p>No matter how grave his injuries, the Maha did not let his escape light falter and at last gained a brief moment to breathe.</p>
+<p>Yet Lin Feng closed in, blazing flames nearly licking at the Maha’s back. The spiritual energy grew denser as the chase continued. The Maha no longer dared to weave through the great void but instead burned vast amounts of mana to travel in the manifested world, barely maintaining his distance.</p>
+<p>As the terrain grew more complex, the Maha shrank his form and slipped past the flames, transforming into a pale skinned young monk in a sorry state. The robe on his back was burned through, charred black and red.</p>
+<p>He even retained habits from his mortal days, hissing through his teeth to ease the pain while lifting his robe to reveal calves bound in white cloth as he hurried forward.</p>
+<p>By now they had reached deep into the mountains. Faintly, a woodcutter’s song drifted through the forest. Lin Feng sensed something amiss and halted. Ahead, two Daoists were conversing with smiles upon a stone.</p>
+<p>The younger one stood by the stone, perhaps middle aged, with a slightly long face and phoenix eyes. He was simply dressed, with only six quaint little swords hanging at his waist like ornaments. He bowed respectfully.</p>
+<p>The elder wore a purple black Daoist robe. Though his face bore many wrinkles, he still carried the air of an immortal sage. He gazed forward with a gentle smile that inspired warmth.</p>
+<p>Lin Feng stopped. The monk dropped to his knees with a thud and kowtowed beneath the two Daoists, his head striking the ground loudly. The middle aged Daoist stepped over him and came before Lin Feng with a smile.</p>
+<p>“My lord, please!”</p>
+<p>Lin Feng frowned slightly and stepped forward. The elder Daoist leapt down from the stone and cupped his hands in salute.</p>
+<p>“Senior, please!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1393.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1395.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

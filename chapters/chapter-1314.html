@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1314: Baiku (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1313.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1315.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1314: Baiku (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Glacial Cloud Peak.</p>
+<p>Snow drifted down into the small courtyard as thick frost formed upon the steps. A group of white robed cultivators knelt before the cave dwelling. The man in front was somewhat stout, with a mixture of shock and joy on his face as he kept his forehead pressed against the ground.</p>
+<p>“My lord, congratulations on exiting your seclusion!”</p>
+<p>The wind and snow ahead stirred slightly as the young man strolled out of the courtyard, cloaked in frost and snowfall. He bent slightly, helped the middle aged man to his feet, patted his shoulder, and said with a smile, “Uncle Tongcai, there is no need for such formality on such a joyous day. The struggle between north and south greatly damaged my family’s vitality and now only a few elders like you remain. We must rely on your support.”</p>
+<p>Although Fei Tongcai was somewhat plump, he still possessed a certain mature charm. After all, the Fei Family was known for their good looks, and with Fei Chingyi cultivating Cold Essence, he carried an added air of chill and sternness.</p>
+<p>Fei Tongcai nodded repeatedly and reminded him, “You must go to the main household at once…”</p>
+<p>“I understand.” Fei Chingyi nodded and said quietly, “This matter cannot be delayed. There are hundreds, even thousands of eyes watching from the lake. If not for our ancestors being allies with the lake, we would not even have this mountain. The elder values old ties. Bring some spiritual items from the mountain and come with me.</p>
+<p>“You are the only one left in the family who met Li Qinghong back then. Come with me to pay respects at the lake. Using that connection, you may be able to exchange a few words with the old elder. This elder can be considered our family’s protective talisman.”</p>
+<p>“Understood. Understood!”</p>
+<p>Fei Tongcai hurriedly prepared the items and followed along, listening as Fei Chingyi said coldly, “In any case, Fei Qingyi has climbed onto a higher branch and bowed beneath the Si Family. We can no longer rely on her for our own affairs. We can only depend on ourselves.”</p>
+<p>The two flew for some time before exiting the grand formation, where they saw a black robed man standing calmly with his hands clasped. Upon seeing Fei Chingyi, he lowered his head slightly and said, “Fellow Daoist Fei, let us go to the island together.”</p>
+<p>“So it is Lord Chen.” Fei Chingyi hastily forced a smile and nodded as he said, “We were just about to go. Just about to go.”</p>
+<p>Chen Yang found him deeply displeasing. As one of the leaders of the new faction of senior figures alongside An Xuanxin and others, he had long regarded the Fei Family as a thorn in his side. There had come a point where he could not tolerate this semi-autonomous family on the northern shore, yet he had never managed to find any concrete evidence.</p>
+<p>He had once been sent to Floating South to clean up traces, handling the matter together with Li Jianglong at the time. Thus, he had some understanding of what had happened in the north and was even more aware of the matter with the True Monarch. With his cautious temperament, he had wished to turn over every blade of grass in Floating South.</p>
+<p>At such a critical juncture, Chen Yang felt even less goodwill toward Fei Chingyi. The hand resting on his sword tightened slightly, yet his face bore a smile as he chatted amiably all the way while escorting them.</p>
+<p>Fei Chingyi followed Chen Yang into the lake and found the hall within utterly silent. Stepping past the hall doors, he saw the crimson robed man seated at the upper end. He had been waiting for a long time and smiled as he looked at them.</p>
+<p>In truth, Fei Chingyi was very afraid of that smile, finding it chilling to the bone. The Li Family had risen from the remote and rugged lands of Mount Yue to rule Moongaze, cutting their way out of a brutal situation. Every generation had inspired awe in him, and that feeling had not eased even after reaching Foundation Establishment Realm. He bowed within the hall and offered respectful greetings.</p>
+<p>Li Jiangqian spoke a few words of congratulations, and Fei Chingyi answered each in turn, repeatedly emphasizing that the Fei Family was loyal and honest, harboring no disloyal intentions.</p>
+<p>Li Jiangqian was not satisfied with his response and still harbored doubts about his breakthrough. After watching him quietly for a while, he spoke, “The Floating South territory in the north once had deep entanglements with the Fei Family. The lake sheltered the northern shore for ten years, allowing it to endure. Now that land has been freed for several Purple Mansion Realm cultivators to conduct their affairs. The Fei Family should withdraw its hand. The lake already issued this instruction, yet it was not carried out satisfactorily.”</p>
+<p>The Fei Family likely did not dare to extend its claws into Jiangbei, yet the Fei Family was not comparable to the Li Family and lacked the lake’s capacity for swift and efficient action. Li Jiangqian suspected that many residual connections had been unintentionally left behind.</p>
+<p>When he raised this question, even Fei Chingyi himself did not know where his family had fallen short and could only respond, “It is my incompetence. When I return, I will certainly set things right.”</p>
+<p>Li Jiangqian had no intention of letting him handle matters blindly on his own. The difference between the Fei Family having a Foundation Establishment Realm cultivator and having none was enormous. He had deliberately sent Chen Yang to intercept Fei Chingyi before the formation precisely to prevent him from leaving and heading north.</p>
+<p>Now he merely said, “There is no need. You will temporarily reside at the lake. All information related to the north is to be sent to the island for handling. If there is even the slightest concealment…”</p>
+<p>Fei Chingyi nodded repeatedly, but Li Jiangqian’s gaze suddenly locked onto Fei Tongcai at the side, who was drenched in cold sweat. Without needing to say a word, Chen Yang immediately stepped forward, drew his sword, set it against the middle aged man’s neck, and shouted, “Speak!”</p>
+<p>Fei Tongcai hurriedly looked at his nephew, yet this terrified Fei Chingyi out of his wits. If not for having cultivated Snow On Pine and no longer sweating, he might well have been drenched himself. He immediately knelt as well, exchanged a glance, and replied, “I… I have only just emerged from seclusion. I do not know what news the family has received…”</p>
+<p>Li Jiangqian watched the two of them quietly. Fei Tongcai began kowtowing, speaking timidly, “Reporting to my lord, we received a secret letter some days ago. A former family member, who cultivates in Baiku Prefecture, sent a message back recently, hoping to obtain resources for assistance…”</p>
+<p>He called him a former family member, but Fei Chingyi understood that this was a reserve bloodline left behind by the older generation. Fear rose in his heart. When he received a subtle signal from above, Chen Yang, who held the sword, immediately growled in a terrifying tone, “We told your family long ago to withdraw. Knowing yet not reporting, and secretly maintaining contact. You are truly rebellious to the core.”</p>
+<p>“I truly did not know earlier!”</p>
+<p>Fei Tongcai could only kneel on the ground, trembling. Li Jiangqian still wore a smile, yet storm clouds gathered in his heart as he thought to himself,Baiku Prefecture. If it truly is Baiku Prefecture, then the Black Rat is in Baiku Prefecture. Wang Quwan and Wang He are also in Baiku Prefecture. The core families under the Wang Family of Jiangbei are concentrated around Baiku Prefecture…</p>
+<p>But since someone from the Fei Family was in Baiku Prefecture, this matter became entirely different. Li Jiangqian quickly stepped down, helped Fei Chingyi to his feet, and mildly reproached, “Protector Chen is being too harsh. This matter has not yet been resolved, and there is no need to rush.”</p>
+<p>Only then did Fei Chingyi relax somewhat, and Fei Tongcai stopped stammering. When Chen Yang questioned him, he replied softly, “That person is of my generation as well. He committed a mistake in his early years and was expelled by the family, cutting off contact. He cultivated for a time at Lake Xian, then later went to Baiku Prefecture and found work running a teahouse.</p>
+<p>“In recent days, it was said that unrest broke out in the prefecture and the grand formation of the mineral vein destroyed itself, enraging the Black Rat Dharma Protector. His livelihood was affected as well, and he happened to be at a critical juncture of breaking through in the Qi Cultivation Realm, so he came seeking help at the peak.</p>
+<p>“Rest assured, family head! Rest assured! Our family will have no further contact with this person.”</p>
+<p>Li Jiangqian clasped his hands behind his back. As he listened, his fists clenched tightly, veins bulging as strands of Radiant Fire leaked from between his palms, flickering in and out of brightness.</p>
+<p>On the surface, this matter appeared harmless to all. After all, the person had been expelled by the Fei Family. If he were to gain favor with the True Monarch, the unlucky ones would be the Fei Family. If he offended the True Monarch, the unlucky ones would still be the Fei Family. Yet with even a little thought, one would realize how pitifully false this so-called expulsion was.</p>
+<p>What if this person was expelled only under pressure from our family, as part of a cunning plan to leave multiple escape routes? Once he gains favor with the True Monarch, it would mean drawing hatred onto our family.</p>
+<p>He spoke in a rather gentle tone, “Why properly expel someone without reason? Why not speak the truth now?”</p>
+<p>But his voice carried an unconcealable chill. Chen Yang’s expression grew even darker as he stood silently in place.</p>
+<p>Fei Tongcai finally could not hold on any longer, lowered his head, and knocked it against the ground as he said, “Reporting to my lord… this matter was done by Fei Tongyu… when he led our Fei Family to submit to the lake back then, he secretly made preparations. He sent four lineages of family members out and, fearing discovery, barely dared to contact them over the years. He said that it was enough for those outside to know they were of the Fei Family. We did not need to know where they were. When the day came that the Glacial Cloud Fei Family no longer had any presence, he would have a chance to rebuild the family and continue the lineage.</p>
+<p>“This lineage only made contact recently as well…”</p>
+<p>Li Jiangqian was no ordinary figure, so he immediately understood the situation. Although Fei Tongyu had led his people to submit back then, he had clearly harbored misgivings toward the Li Family in his heart. He feared that his family would be worn down bit by bit by the Li Family until nothing remained, and that the northern shore would ultimately be seized. That was why he had dispersed his bloodlines. As for why they barely dared to make contact over the years, who else could they have been guarding against? Naturally, it was the Li Family.</p>
+<p>So this was the reason behind the so-called expulsions. It had originally been nothing more than a backup plan, yet it had been drawn in by the currents of fate in Jiangbei, sending one lineage to Baiku Prefecture. There was even a chance they might truly run into the True Monarch.</p>
+<p>He cast a heavy glance at Chen Yang and saw the gloom on his face, along with his deep disgust toward Fei Tongcai. Chen Yang was no simple figure either and had likely come to the same conclusion. Holding his sword, he spoke in a chilling tone, “The lake has not treated your family poorly all these years, has it?”</p>
+<p>Once those words were spoken, the two could only kneel and knock their heads to the ground, with nothing else to say. This matter had been done by Fei Tongyu merely to leave a path to retreat. No one could have imagined that such a thing would happen in the future, let alone that it would bring trouble in this way.</p>
+<p>The Fei Family are all known for their good looks. Perhaps one or two daughters might offer themselves and catch the True Monarch’s eye. If he truly accepts Fei Tongcai’s claim of severed ties, then when trouble later comes knocking, can it still be blamed on the Fei Family? Naturally, it is said that Li Jiangqian forced them.</p>
+<p>After pondering, Li Jiangqian returned to his main seat, signaling Chen Yang to withdraw his sword. For now, wary of the True Monarch’s methods, he maintained a pleasant expression and said calmly, “This matter ultimately stemmed from the excessive caution of those before us. There is nothing to dwell on at present. Qingyi breaking through to the Foundation Establishment Realm is a great matter. There is no need to let family members wander outside. Send someone to bring him back and have him break through at the peak.”</p>
+<p>This declaration left the two members of the Fei Family utterly confused. They could not tell whether it was good or bad, nor did they understand why such an order had been given. They knocked their heads in thanks.</p>
+<p>Chen Yang spoke quietly, “I wonder who should be chosen…”</p>
+<p>This matter was of real importance and was best handled by someone who knew the hidden details. If it were not inappropriate for Li Jiangqian himself to go, he had even considered making the trip personally, given that he carried talisman seeds.</p>
+<p>He shook his head slightly in distress, dismissed the two to wait outside, and only then replied, “Perhaps Protector Chen will need to make the trip. Fei Chingyi does not need to go. Take Fei Tongcai along to gain trust, then gather those direct lineage Fei Family members on the northern shore who are close to us and have been promoted, and go together to bring him back. Using Fei Chingyi’s breakthrough as the pretext to retrieve him should not cause too much trouble.”</p>
+<p>Chen Yang nodded respectfully. He did not take the opportunity to speak ill of the Fei Family, but instead voiced his concern, “This may be troublesome. I do not know if we will be on time. As for the matter of the mineral vein incident, there is most likely something suspicious behind it.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1313.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1315.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

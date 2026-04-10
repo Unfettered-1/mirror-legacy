@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1389: Heaven Whisker (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1388.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1390.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1389: Heaven Whisker (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Nuzi raised his sleeve, and The Merciful One rode in from the north on prismatic light with a group of Master Monks. They suspended groups of nearly naked men and women, stripped bare, infants clutched in their hands and under their arms, with their mana.</p>
+<p>When they arrived, The Merciful One stood broad shouldered and sturdy, clad in gleaming golden armor. His features were upright, but his four eyes were fierce as he bowed, “Reporting to my lord, the entire Situ Family has been brought!”</p>
+<p>Li Ximing looked down and saw a crowd of Situ Family members below. Some had a little cultivation, but most were ordinary mortals. As they drew near and saw the three Daoist Masters, hope flared in their eyes. They wept and wailed for mercy, kneeling within the prismatic light and kowtowing.</p>
+<p>Ning Wan sighed deeply. Kuiqi frowned heavily, anger faintly rising. Whatever their faults, the Situ Family were descendants of a Purple Mansion Realm cultivator. Being captured was one thing, but to be stripped and humiliated like livestock was another. Had the Situ Family not produced so few decent people over the generations, Kuiqi might already have acted.</p>
+<p>Nuzi raised his sleeve again. It fluttered in the wind and expanded instantly. Jade slips and dharma artifacts of all sizes poured out, piling into a mountain before the crowd. The Maha Nuzi smiled and said, “We did not take much. Everything has been handed over to the Supreme Yang Dao lineage!”</p>
+<p>He said solemnly, “It is the command of the Dharma Master and cannot fail. We sincerely hope the Supreme Yang Dao lineage does not intervene. If this matter comes to conflict, we cannot retreat!”</p>
+<p>In truth, even if the True Monarch had gone north, it would be difficult for the Supreme Yang Dao lineage to cross the river and wage war upon the mountain against Buddhist cultivators allied with the Great Desire Dao and the Emptiness Dao. Unless Louxing of Xiukui acted, they would never make such a rash move.</p>
+<p>Yet the Buddhist side had still delivered both the Dao lineage and the people, revealing how urgently they wished to avoid mishap and how firmly they were resolved to hold Mount Tangdao…</p>
+<p>The will of the Dharma Master? Is this aimed at the Golden Feather Sect?</p>
+<p>Kuiqi did not answer. He placed two fingers before his lips and blew gently. A gray wind descended from the air, sweeping over the heads of the Situ Family cultivators. It transformed into pure black Daoist robes that fell and covered their naked bodies.</p>
+<p>When he saw the three ignore him, Nuzi tactfully waved his hand. The Master Monks followed The Merciful One into the wind, and they turned into prismatic light and retreated north.</p>
+<p>Li Ximing rode his divine ability slightly downward. Any among the Situ Family with backbone had likely already died. Those remaining trembled in fear at the sight of him, kowtowing without cease.</p>
+<p>They pushed their women forward by the sleeves and cried, “Daoist Master… spare us!”</p>
+<p>“In those years it was all done by Situ Mo. It has nothing to do with us!”</p>
+<p>Li Ximing watched quietly, feeling something difficult to put into words.</p>
+<p>The Situ Family of former days. The Situ Family whose direct descendant could wipe out the Wan Family merely by passing over the lake. Now they have fallen into such a state.</p>
+<p>He simply stood quietly. Before him, a woman of the Situ Family, fair faced and tear streaked, crawled forward and kowtowed. She tried to seize the hem of his robe as if it were a lifeline, yet her hand, halted by fear, extended only halfway and hung uselessly in the air.</p>
+<p>Soon, failing to grasp that fleeting chance, she was dragged back by her family members and kicked aside, replaced by another who knelt in front, weeping and kowtowing.</p>
+<p>“Zhaojing?”</p>
+<p>Ning Wan’s gentle voice sounded by his ear. Only then did Li Ximing lift his head. He gave a faint, self mocking smile as if nothing had happened and shook his head. “How should these members of the Situ Family be handled?”</p>
+<p>Kuiqi descended on his divine ability, briefly glanced over them, and said softly, “The Situ Family never had many elites. Now they have either been slaughtered or taken into the Buddhist land. Those left are mostly collateral branches or illegitimate lines. Even if one or two are of the main line, they were not valued. Does Zhaojing have any thoughts?”</p>
+<p>Situ Mo had a deep enmity with the Li Family. As a cultivator of the Great Xiukui Temple, Kuiqi clearly did not wish to see him embark on a massacre. It was rare for him to speak so many tactful words.</p>
+<p>Li Ximing sighed and said, “I have no great thoughts on it. The monks in the north are cunning. If any here truly bore enmity with my family, they would not have been spared. They would have been taken to the Buddhist land long ago. Sending these people over was deliberate. They hope I will slaughter them and cut the grass by the roots, so that those Situ Family members in the Buddhist land may gain karmic destiny.”</p>
+<p>“Indeed.” Ning Wan smiled faintly, took a jade slip from her sleeve, and handed it to Li Ximing. “These are the Situ Family’s secret techniques for lifting prohibitions. Most can be opened. I have heard Situ Mo secretly altered them in the past two years, but the main lineage likely knows as well.”</p>
+<p>Ning Wan placed the item in Li Ximing’s hand. Clearly, Situ Ku’s long imprisonment by the Li Family had proven quite convenient.</p>
+<p>Li Ximing nodded and replied, “Once I sort through the various methods, I will send a portion to both households.”</p>
+<p>Kuiqi lifted his sleeve and swept it to either side, dividing both people and objects into three portions. He drew one portion toward himself and said quietly, “The lord has gone north, and little time remains. The various sects may lay out their moves in advance. So long as those few are not harmed, nothing counts as a major matter.”</p>
+<p>Li Ximing nodded slightly, hesitated, and asked, “I intend to refine a portion of a Supreme Shaman spirit embryo. Might senior offer some guidance…”</p>
+<p>He did not underestimate the network of the Supreme Yang Dao lineage. Kuiqi showed little surprise and waved his hand calmly. “If Zhaojing is earnest, come to Huyi once the lord has departed.”</p>
+<p>He departed as a gust of gray wind. After he had left, Ning Wan’s expression turned solemn as she asked Li Ximing, “Did Zhaojing notice the four eyed Merciful One beside Nuzi?”</p>
+<p>Li Ximing was slightly surprised and replied, “I took a brief look.”</p>
+<p>Ning Wan said seriously, “This man is called Bashan. My family has long known of him. My elders once mentioned that when Nuzi was still a Merciful One, Bashan was one of his subordinate Arhats. Because of his inborn divine power and exceptional innate ability, he was promoted step by step. Now that Nuzi has achieved Maha, he too has become a Merciful One!”</p>
+<p>Her expression darkened as she said, “This man must not be underestimated. His divine power may well be comparable to Xuanfeng’s. In terms of future prospects alone, Nuzi may not even match him. Back then, Nuzi had intended to make a move on Xuanfeng to complete a pair, but later, because the Great Ning Palace suddenly aligned with Anhuai and Metallic Essence manifested, he abandoned the plan…”</p>
+<p>Li Ximing frowned and nodded, while Ning Wan said worriedly, “If the Golden Feather Sect does not act… Jiangbei is beyond our reach. The struggle between north and south has already destroyed most of the lines we once pushed northward. Now that the Golden Tang Gate, this crucial point, is lost, the Buddhist cultivators can bypass the eastern flank. However one looks at it, this is no good…”</p>
+<p>Li Ximing sighed inwardly as Ning Wan continued, “I know Situ Ku is still in your hands. There are not many direct lineage members left in the Situ Family, yet they have many enemies. As for Situ Huo outside, some regard him as a thorn in the eye or a splinter in the flesh…”</p>
+<p>She said frankly, “That naturally includes me… So I hope you will keep them. Once the matters in the north have run their course and an opportunity arises, we can calculate through the bloodline. If he can be eliminated, that would be best.”</p>
+<p>Li Ximing nodded and parted from her. Behind him, the Situ Family members, upheld by heavenly light, could only cling to one another and sob in silence, watching as he rode light down to the lake.</p>
+<p>More than a year had passed. The buildings within the grand formation were already completed, most constructed around the profound pillar. Various cultivation pavilions wound upward, clinging between the columns.</p>
+<p>He glanced around and descended onto a platform. The Wanglin Blossom tree, graceful as a canopy, red flowers blooming in clusters, stood in the center. It was heavily guarded, and a white ape rested beneath it.</p>
+<p>Upon seeing Li Ximing, the ape rose and bowed. Li Ximing set the people down, exchanged greetings, and swept out his spiritual sense to search for someone.</p>
+<p>Soon, Li Jiangqian and Li Quewan arrived one after the other in the courtyard and saluted him. Li Ximing’s expression was grave as he ordered, “Bring Situ Ku up.”</p>
+<p>Li Jiangqian immediately sent someone below. After a short while, Ding Weizeng, clad in red armor, brought up an old man. The man’s gaze burned intensely, and upon reaching the hall he knelt in salute.</p>
+<p>Ding Weizeng had once been a cultivator under the Golden Tang Gate and had known this old man. It seemed he had come to see him off for the last time. Li Ximing nodded to him, allowing him to stay, and then looked at the old man on the ground.</p>
+<p>Situ Ku had actually lived decently within the Li Family during his confinement. Though his cultivation was sealed, he had been fed and cared for in the dungeon. The moment he raised his eyes and saw Li Ximing, he shuddered in fright and greeted, “Greetings, Daoist Master!”</p>
+<p>Li Ximing said casually, “The Golden Tang Gate has been exterminated by Buddhist cultivators. The Situ Family has been wiped out, leaving only a few branches. I brought back a group.”</p>
+<p>Situ Ku froze for a moment, then tears flowed as he kowtowed. “I will obey whatever the Daoist Master commands!”</p>
+<p>The Li Family had kept him for so long precisely because he was soft boned. Li Ximing was not surprised. With a light sweep of his sleeve, several rows of jade slips appeared neatly stacked to one side. He pointed at them, “Unlock them all.”</p>
+<p>Situ Ku hesitated as if to speak, but Li Ximing had already tossed Ning Wan’s jade slip before him. The old man hurriedly picked it up.</p>
+<p>Li Ximing turned to Ding Weizeng with a faint smile. “Your cultivation has advanced quickly.”</p>
+<p>“It is all thanks to the Daoist Master’s blessing!” Ding Weizeng lowered his head respectfully and replied, “I was blessed with a child, a girl, a few years ago. I named her Ding Yujing…”</p>
+<p>“Good.” Li Ximing turned and asked, “Is there one called Ding Mu still cultivating at Purple Smoke Gate?”</p>
+<p>Li Jiangqian quickly replied, “Yes, Daoist Master. The family has supplied him with spiritual resources all these years. A few years ago, he returned with his mother to visit relatives and was very cordial, offering thanks again and again…”</p>
+<p>Li Ximing nodded in satisfaction. On the other side, Li Quewan stepped forward, holding a pale golden jade slip, and bowed. “Daoist Master, the Heavenly Lustrous Gold Sutra is here.”</p>
+<p>Among all the inheritances of Golden Tang Gate, none was more precious than this. Situ Tang’s line had produced three Purple Mansion Realm cultivators. Though innate ability had played a role, the Heavenly Lustrous Gold Sutra was equally significant!</p>
+<p>Li Ximing scanned it. The technique was indeed impressive. As the foundation of the Golden Tang Gate, it reached the fifth rank and contained two secret techniques. Cultivating it led to the Engraved Stone, known in antiquity as the Gold Feathered Beast. The text claimed descent from the Heaven Whisker Dao lineage, whose patriarch was Daoist Master Tianxu[1], a cultivator of Xu State.</p>
+<p>As for its deeper origins, the text said little. Only at the end did it warn cultivators to wield sharpness with caution. Yet someone had left an annotation,Engraved Stone persists without relent, sharp and without regret, like the Gold Feathered Beast. It may ascend but cannot descend. To descend is to fall, often imprisoned and slain by earthly baleful qi. If cultivation breeds stagnant knots of qi, how is that different from imprisonment by baleful qi?</p>
+<p>Only someone with an abundance of confidence could annotate a Purple Mansion Realm technique. It was likely Situ Tang himself. Li Ximing shook his head inwardly,He sought only to cultivate divine abilities and act as he pleased without restraint. In truth, he did not care what became of Golden Tang Gate afterward.</p>
+<p>Though precious, the Si Family, Ning Family, and the Golden Feather Sect surely already possessed it. It would suit the juniors. Li Ximing put it away and examined the remaining techniques. Most did not impress him and were simply added to the family collection.</p>
+<p>Only one, the Grand Profound Magnetic Light Wondrous Art, was more unusual. Though merely a third-rate spell formula, it belonged to the Origin Thunder Dao and established the Immortal Foundation known as Primary Baleful Rite.</p>
+<p>Li Ximing studied it for a moment longer before giving orders, “The Golden Tang Gate has been exterminated. Quewan, calculate whether any here are direct descendants of a Purple Mansion Realm cultivator.”</p>
+<p>Li Quewan nodded, took Situ Ku’s blood, and formed seals with a jade token. Li Ximing turned to Li Jiangqian and asked, “How do you intend to deal with them…”</p>
+<p>Better they had all died at the hands of the Buddhist cultivators.Li Jiangqian did not truly wish to concern himself with the Situ Family, yet their bloodline was undeniably good. He replied, “If left to me, they would be absorbed into the Seven Families of Western Pool, their lineage and surname changed. Thus their former ties would be severed, and they would no longer bear the name Situ.”</p>
+<p>Li Ximing glanced at the trembling Situ Ku kneeling at his feet and at the sorrowful Ding Weizeng. With a light flick of his finger, a trace of divine ability entered through the old man’s brow and rose within him.</p>
+<p>“As for you, Situ Ku, if I release you, the monks will sooner or later seize you as provisions. For Weizeng’s sake, you will remain by his side, doing odd tasks and patrolling the shores. That will count as your contribution.”</p>
+<p>1. 天须(Tianxu) is the transliteration of Heaven Whisker. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1388.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1390.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

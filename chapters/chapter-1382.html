@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1382: Retrieving The Item (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1381.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1383.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1382: Retrieving The Item (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chi Buzi was not the least bit surprised to hear this and replied calmly, “Please.”</p>
+<p>Seeing how unperturbed he was, Daoist Master Fuxuan was already seventy percent convinced, though suspicion still stirred in his heart,The Supreme Circuit Spirit Mirror was left behind by the ancestor to suppress the Dao lineage. It gained extraordinary profundity after the ancestor’s breakthrough and subsequent fall. It is not something ordinary spirit treasures can compare to. Since Chi Buzi is this confident, perhaps he truly cultivated it himself.</p>
+<p>Even though Chi Buzi was now a Grand Daoist Master and had cultivated countless divine abilities and secret techniques, it was absolutely impossible for him to deceive the Supreme Circuit Spirit Mirror, which was tied to the very life of the Chunyi Dao ancestor and his Supreme Yang true inheritance.</p>
+<p>Daoist Master Fuxuan’s heart began to pound,Could he truly have found a Dao lineage left behind by the ancestor?</p>
+<p>Daoist Master Fuxuan raised his brows and said, “Chehong, go and invite the spirit treasure out!”</p>
+<p>Chehong cupped his hands and withdrew. Daoist Master Fuxuan turned to face Chi Buzi, his expression far more complicated as he said softly, “It belongs to the ancestor and cannot be moved lightly without cause. Chehong has gone to burn incense and bathe. I ask the Grand Daoist Master to wait three days.”</p>
+<p>Chi Buzi waved his hand indifferently. “It has been many years since I last saw Fellow Daoist Fuxuan. Ever since we parted ways over the matter of Song Fangshan[1], I have missed you greatly.”</p>
+<p>Daoist Master Fuxuan gazed at him deeply and replied, “You have overlooked one matter. I came personally to plead regarding Brother Chen Taojing, but Chi Wei refused to see me and sent you down the mountain to decline.”</p>
+<p>This old matter was clearly unsightly. It was no wonder Chi Buzi had received a cold reception when he came to the mountain. Yet Daoist Master Fuxuan did not stop and continued, “As for Song Fangshan, and later Yu Yuxie, even Li Chejing at the end, we tried to persuade them. The Azure Pond Sect has fallen to this state by its own doing.”</p>
+<p>“Not so.” Chi Buzi did not agree and replied, “Chi, Tang, Ning, and Si flourished in those days. The three Yuans were in their glory. Tang Shecheng and Yu Xiuxian both stood under Tang Yuanwu. The younger generation had Chi Zhiyun, Ning Wan, and Si Yuanli. Which of them was not a Purple Mansion Realm seed? Tang Shecheng was even compared to me. Everyone believed the next generation would usher in a prosperous age for the Azure Pond Sect.</p>
+<p>“Back then, we only worried there would be too many Purple Mansion Realm cultivators and not enough spirit artifacts to go around. Those with outside surnames were not considered trustworthy. If they lived too long, they might even become a liability. Who could have foreseen that Yu Xiuxian would be killed by Guo Er, that Tang Shecheng would fall while attempting the Purple Mansion Realm, that Yuanwu Peak would later foster Tang Sheju who also perished, and finally Yu Muxian would be killed by the Li Family with Yuansu’s backing.”</p>
+<p>He shook his head slightly and sighed. “It cannot be placed on one man alone. Back then, if there had been a few more Daoist Masters surnamed Yu or Li, would that truly have been a good thing?”</p>
+<p>Daoist Master Fuxuan fell silent before replying, “The Azure Pond Sect is ultimately that one’s domain. Even if he does not care or appear, his style influences it. You are one who seeks the Dao. With Pristine Water locking the Dao… it cannot be easy for you either.”</p>
+<p>Chi Buzi looked at him quietly. He was unwilling to say more within the Chunyi Dao Mountain Gate and only spoke thus, “To seek the Dao does not mean there is only one path before me. My lifespan is long. The immortal might of the True Monarch is unfathomable, but perhaps in a century or two, when the True Monarch ascends another level and the qi of Purifying Dew can be harvested, a path will naturally open.</p>
+<p>“If I cannot wait for such an opportunity and cannot become that great one’s subordinate, then by accumulating connections and spiritual resources now, I can seek a path to reincarnation. That too is a road.”</p>
+<p>He appeared broad minded and at ease. Daoist Master Fuxuan nodded inwardly and said, “That may be the only way. Speaking of subordination, I have heard that a Daoist Master of the Beihuan Sect is attempting the Golden Core Realm and intends to become a subordinate of Dry Fire. The chances are high. I wonder whether he will attain the Dao in this world, and by what means that one will assist him. It would be a sight worth witnessing.”</p>
+<p>The two soon fell silent. Although the two Daoist Masters had met in their youth and known each other early on, they were ultimately different kinds of people. Their Dao lineages conflicted, and what little they could speak of amounted to nothing more than idle talk.</p>
+<p>Fortunately, three days passed in the blink of an eye for a Purple Mansion Realm cultivator. Daoist Master Chehong changed into white robes and approached with neat and proper attire, holding a jade tray.</p>
+<p>The mirror upon the tray measured about twenty-seven centimeters across. Its body was snow white, its surface as clear as still lake water. It had cloud patterns supporting the moon on the frame, while the back bore intricate coiled hornless dragon motifs and feathered silver patterns that shimmered in interwoven light.</p>
+<p>Chi Buzi remained seated. He was not even facing the mirror directly, yet a sense of dread rose within him. His Fate Divine Ability pulsed with repeated warnings of danger.</p>
+<p>The Supreme Circuit Spirit Mirror!</p>
+<p>“As expected of a spirit treasure personally bestowed by the Supreme Yang Dao lineage and approved by an immortal… Its might is likely the pinnacle among spirit treasures.”</p>
+<p>Chi Buzi understood all too well how terrifying this object was. The fame of the Chunyi Dao ancestor Jiequn was largely built upon the Supreme Circuit Spirit Mirror. It was no exaggeration.</p>
+<p>When Jiequn had been granted this object, the lord personally said it had the bearing of a Dharma relic and should be nurtured carefully. Thus, Jiequn had bound his life to it and nourished it day and night with divine abilities. Although the ancestor had fallen later without breaking through to the Golden Core Realm, and the mirror lost its chance to become a Dharma relic, its power was likely unrivaled within the Supreme Yang Dao lineage in an era without Dharma relics.</p>
+<p>Daoist Master Fuxuan rose respectfully and performed a salute before holding the Supreme Circuit Spirit Mirror in his hands. Chi Buzi cast a slight glance and saw the surface ripple like water. It seemed to contain a world within, where a guqin[2] rested. An incense table was set before it and a bamboo grove behind, but everything was faint and indistinct.</p>
+<p>Daoist Master Fuxuan raised the spirit treasure. Chi Buzi cautiously stepped back and lit up four divine abilities in his hands without hesitation. Blue gray wove through surging green white energy. Daoist Master Fuxuan’s expression gradually grew solemn as he extended his senses.</p>
+<p>How could this not be our Dao lineage… The Supreme Circuit Spirit Mirror senses not the slightest impurity or anomaly. More than that, it carries a faint sense of familiarity. What else could it be but our lineage?</p>
+<p>The Xii Family’s Pristine Water Dao lineage, the Chougui Hidden Form, originated from ancestor Jiequn. It had been passed down orally by an immortal. After Jiequn achieved great accomplishment, he had deliberately extracted this Dao and left it for later generations. When Du Qing later attained the Dao, no one in the Xii Family cultivated Pristine Water anymore, so there was no reason for it to have spread outside.</p>
+<p>Chi Buzi has already cultivated it to completion. He must possess the method. If he had obtained it from some predecessor, he would never come to me of his own accord. This so-called opportunity seems to be real.</p>
+<p>Daoist Master Fuxuan felt both joy and worry in his heart. After all, this concerned the Dao Collection of ancestor Jiequn.</p>
+<p>Though he was certain it was his own Dao lineage, Daoist Master Fuxuan showed little on his face and spoke casually, “Fellow Daoist, you have fine fortune and temperament. There is no doubt you cultivated it yourself. It is only that this matter…”</p>
+<p>Chi Buzi raised his brows and replied, “Is it the Dao lineage of your gate?”</p>
+<p>The question struck directly at the heart of the matter and left Daoist Master Fuxuan no room to evade. He could only grit his teeth and nod. “It is!”</p>
+<p>Chi Buzi lowered his gaze without speaking. Daoist Master Fuxuan smiled bitterly inwardly. Their Dao lineage could not be allowed to spread, thus he had to say, “This opportunity…”</p>
+<p>Chi Buzi lifted his head cautiously as his eyes narrowed. He said, “If I obtained this opportunity, it is not merely a matter of taking benefits.”</p>
+<p>He glanced at Daoist Master Fuxuan and said lightly, “I do indeed require the assistance of Chunyi Dao. I need a direct blood descendant of your family to willingly help me. But the location of the opportunity cannot be revealed to your Purple Mansion Realm cultivators.”</p>
+<p>Daoist Master Fuxuan frowned as Chi Buzi said frankly, “Your gate holds the Supreme Circuit Spirit Mirror. If the location is disclosed and you go together, you will inevitably besiege me with the spirit treasure. I do not wish to be injured, nor do I wish to fall.”</p>
+<p>Daoist Master Fuxuan hesitated to speak, but Chi Buzi continued, “I know that the most precious thing within this hidden opportunity is a Supreme Yin spirit item. Let us do this. Your family sends one direct descendant cultivator with me. I will place a spirit treasure in your family’s custody as collateral.</p>
+<p>“Once the opportunity is opened, I will take the spirit item and use what is within to redeem the spirit treasure. Your direct descendant who accompanies me can also witness what lies inside, making it easier to divide the spirit item afterward.”</p>
+<p>Daoist Master Fuxuan knitted his brows tightly and remained silent, unable to find any major flaws in this proposal. After all, the Xii Family had no shortage of direct descendants, and there were even more whose Daos were already cut off. They were not afraid he would harm one of them…</p>
+<p>He pondered for a long time; he understood that Chi Buzi feared the Supreme Circuit Spirit Mirror. He would likely never allow the Purple Mansion Realm cultivators of Chunyi Dao to accompany him. The Orthodox Dao’s reputation meant little to a man as wary as Chi Buzi…</p>
+<p>After some time, he finally nodded slightly and said softly, “One spirit treasure is not enough… Our man will bring the Mind Clarifying Talisman of the Precious Pagoda. He will not fear deception by divine abilities.”</p>
+<p>Chi Buzi hesitated and replied, “I will add one more spirit artifact. No more than that. This is not some grotto heaven or secret realm.”</p>
+<p>Daoist Master Fuxuan nodded and thought inwardly,I should first ask for the Chougui Water Seeking Method in his possession. It was obtained by chance, but it might be more complete than our version. A careful look would serve as double assurance.</p>
+<p>Before he could speak, Chi Buzi waved his hand and said, “Fellow Daoist, what you say makes sense. But I am not of Chunyi Dao. I cannot perceive the transformations of the Supreme Circuit Spirit Mirror. You may understand it, but the opportunity lies in my hands. How could I not guard against you?”</p>
+<p>“What do you mean by that?” Daoist Master Fuxuan frowned, clearly confused.</p>
+<p>Chi Buzi continued, “The opportunity only says it requires the bloodline of one who cultivates this Dao. How do we know whether this Chougui Hidden Form is truly the same as yours of Chunyi Dao? Who knows whether Chunyi Dao truly has that standing? If it is not, I bring your man there and fail to open it, return empty handed, and your sect immediately denies everything. At worst, one minor direct descendant dies. You swallow my spirit treasure and spirit artifact and profit greatly!”</p>
+<p>A sharp intake of breath sounded.</p>
+<p>Only then did Daoist Master Fuxuan understand. He drew in a cold breath, as though just realizing such a scheme was possible. A chill rose in his heart even as he sighed and laughed in rebuke. “That is something only you, Chi Buzi, would come up with.”</p>
+<p>He turned and ordered, “Chehong, bring the Chougui Water Seeking Method.”</p>
+<p>Daoist Master Chehong had listened all along and now looked eager as he hurried away. Chi Buzi drank tea calmly. After a short while, Chehong returned carrying a golden jade slip. He opened it with a secret technique and handed it to Daoist Master Fuxuan.</p>
+<p>“Please!”</p>
+<p>Daoist Master Fuxuan looked confident. Chi Buzi took it casually and read from beginning to end with a frown. After a full fifteen minutes, having found nothing amiss even after repeated scrutiny, he finally spoke with relief, “As expected, it is sound!”</p>
+<p>The two Daoist Masters beside him relaxed slightly. Chi Buzi returned the jade slip and waved his hand. “Please send your man up. Older is fine, but not so old that he cannot walk… He will not withstand too much hardship.”</p>
+<p>Clearly, rather than send one whose Dao was severed, it was better to send an elder near the end of his lifespan. Daoist Master Fuxuan signaled to Chehong, who soon brought an old man forward.</p>
+<p>The elder bowed to the three and said in a hoarse voice, “Xii Jiankuan greets the three Daoist Masters…”</p>
+<p>“Why is it him?”</p>
+<p>Daoist Master Fuxuan appeared somewhat reluctant. Chehong said softly, “Many cultivate the Chougui Water Seeking Method, but he is the oldest among them. When we mentioned the matter, he insisted on coming, saying he has only a few years left and might as well contribute to the gate.”</p>
+<p>A sigh escaped Daoist Master Fuxuan. He waved his hand and transmitted through divine ability, “Judging by his account and the divine ability he displayed, this matter is likely genuine. It is only a single trip, though it will make the old man travel in vain…”</p>
+<p>Chi Buzi appeared unconcerned, holding his cup and drinking silently. He glanced at Xii Jiankuan kneeling below without surprise. He was far too shrewd. He had already calculated in secret that it would almost certainly be this man who would accompany him.</p>
+<p>He has only a few years left anyway. When he falls and you return from the Outer Heavens, can you make a dead Xii Family blood descendant speak? Even if you could, you would have to turn the Xii Family upside down… Let us see whether Taiyi would tolerate that.</p>
+<p>Even as the thought flashed through his mind, his expression remained leisurely. He laughed inwardly,Chunyi Dao. Whether Fuxuan or Chehong, they are no fools. But those who cling to rules and ancient orthodoxy cannot outplay me. As for that Supreme Yin spirit item, it cannot be spared. The Chougui Water Seeking Method has now fallen into my hands!</p>
+<p>All Chi Buzi’s maneuvering had been for the Chougui Water Seeking Method. Even if he ultimately had to part with the spirit item brought down from the heavens, it would not matter. Now, seeing the man delivered before him, he raised his hand and turned it lightly. Two objects appeared upon the jade table.</p>
+<p>One was a small cauldron of clear bluish sheen, shrouded in a layer of gray light. Runes coiled around it. The moment it settled upon the table, an atmosphere of damp rainfall spread outward.</p>
+<p>The Rain-Viewing Precious Cauldron.</p>
+<p>The other was a string of dark bluish black prayer beads. Each bead looked as though it had been formed from condensed pool water, plump and gleaming as if they would burst at a single touch.</p>
+<p>Ink Jade.</p>
+<p>Daoist Master Fuxuan hesitated to speak. He glanced at the spirit sword at Chi Buzi’s waist used for casting arts and sighed. “You emptied the Azure Pond Sect dry!”</p>
+<p>Chi Buzi smiled faintly. Having obtained the Chougui Water Seeking Method, his mood had clearly improved. He replied, “What should be taken, I will not spare a single piece. What should not be touched, I will leave entirely.”</p>
+<p>1. This is the first appearance of this name, and the only two appearances in the entire novel is in this chapter. ☜</p>
+<p>2. The guqin is a plucked seven-string Chinese musical instrument. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1381.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1383.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1392: Forged Successfully (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1391.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1393.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1392: Forged Successfully (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing settled the matter. The three before him all nodded in agreement. They took the pills and gave them to Li Jiangqian, who then instructed Li Jianglong and Li Jiangxia to select their dharma artifacts.</p>
+<p>The Golden Tang Gate possessed dharma artifacts of both Dui Metal and Geng Metal. These Metal Virtue artifacts at least did not conflict with Bright Yang. Li Jianglong chose a golden ring and accepted it with thanks. Li Jiangxia was far less reserved. He lifted them one by one to weigh in his hands, finally selecting two golden spears similar in shape and nearly identical in weight.</p>
+<p>“You may all withdraw… Quewan, remain.”</p>
+<p>Li Ximing flicked his sleeve. The three brothers departed in different directions. Li Quewan stepped from behind him to stand before him, upright and restrained.</p>
+<p>“Sit.” Li Ximing said softly, “There was one thing Jiangqian could not mention earlier. Wang Quwan enjoys the protection of our house. If he advances to the Purple Mansion Realm, many of the family’s secrets will no longer be concealed. As for sending him to Jiangbei, that will be his own opportunity. As for those brothers, I will have to trouble you to mediate among them more often.”</p>
+<p>Li Quewan hurriedly replied, “The young masters all understand the greater picture. Their insight and vision surpass mine. It should be I who seeks their guidance.”</p>
+<p>Li Ximing grew serious and asked, “What do you think of Jiangliang and Jiangnian?”</p>
+<p>Li Quewan hesitated briefly before answering, “Jiangliang learned under Senior Jueyin and is indeed intelligent. Yet he has long harbored the desire to venture outward. From what I see, he has already made friends beyond the lake. His heart truly does not lie here… As for Jiangnian, I have met him several times. His temperament is kind and gentle, unlike his brothers.”</p>
+<p>“Enough…” Li Ximing shook his head and said, “The Li Family has no shortage of daughters, yet none has emerged like my aunt. Minggong may be obedient, but she lacks resolve and decisiveness. When Chenghui fell in a single day back then, I knew trouble would follow.</p>
+<p>“As for the Zhouxing generation, the old elder once discussed them with me. Zhouming is inadequate. Zhouluo has ties to the Yang Family and holds little attachment to the lake. Our family has never forced anyone. Zhouda remains in seclusion and may not succeed. Though Xinghan possesses slightly greater innate ability, her parents are minor figures within the family and do not know how to guide her. They may instead burden her, and her temperament is hardly better.”</p>
+<p>Li Ximing sighed with emotion as he said, “It is often said that the conflict between north and south broke the backbone of the great families. That is no falsehood. Our house is already considered fortunate, yet we still bear the bitter fruit of those years. Are the two from Purple Smoke Gate not the same?”</p>
+<p>He let out another sigh. “As for Jiangqian’s brothers, they all have ambitions… perhaps too many ambitions. Zhouwei and I can keep them in check, but what of beyond the family? Whether in the north or the south, there are many eyes fixed upon them!”</p>
+<p>Li Ximing was in truth contemplating the matter of shaking the Fruition Attainment of Wei’s Grand Ancestor Li Qianyuan. His expression dimmed slightly as he instructed, “Take the copy of the Grand Profound Magnetic Light Wondrous Art and study it carefully. Prepare yourself by knowing both yourself and the other. We will not stir up these matters further. The Ruler of Manifested Mountains and Rivers will soon be refined. The lord still has more than a year.”</p>
+<p>He spoke no further. Stepping into the great void, he traversed space and arrived at Zhijing Mountain.</p>
+<p>“Only one year…”</p>
+<p>Li Ximing calculated on his fingers. One year was truly not enough for much cultivation. At most, he could refine the Embryonic Breathing Realm through six cycles and nourish the second divine ability with a single strand of qi.</p>
+<p>“But Bai Yinzi’s position is troublesome. He is across the river, and the Buddhist cultivators may interfere. If fighting breaks out and I suffer serious injuries, this year of cultivation will have been for nothing.”</p>
+<p>Having just considered this, Li Ximing quickly realized another matter. “In that case… I would even waste a strand of Profound Pass Crimson Fire Qi and end up making a trip to the Cui Family’s Chongzhou Island.”</p>
+<p>After weighing it all, Li Ximing changed his decision, “This year I shall focus on cultivating techniques. It may seem like sharpening the spear at the last moment, but it cannot be wrong. Jiangqian is in seclusion to break through, and there are fewer people at home to keep watch.”</p>
+<p>He sat quietly. Techniques had always been Li Ximing’s weakness. He was completely confident in alchemy, yet in combat he even lacked Li Zhouwei’s halberd skills. In his early years, his days were divided between cultivation and pill refining. It was no wonder his techniques were lacking. Now that he had become a Purple Mansion Realm cultivator, he would have to make up for it.</p>
+<p>“I do not possess such profound attainment as to turn decay into wonder. Techniques suitable for Purple Mansion Realm must be at least fourth grade. In Jiangnan, even the finest techniques do not exceed sixth grade. At present, I have some foundation in the fourth grade Heavenly Radiance, Hidden Light and the fifth grade Supreme Yang Resonance Radiant Art.”</p>
+<p>Heavenly Radiance, Hidden Light was an orthodox Bright Yang technique. It resonated with the heavenly light at his brow. It was not weak and could deal with opponents in daily combat, yet it was difficult to inflict lethal damage, and further improvement was hard. The Supreme Yang Resonance Radiant Art was of slightly higher grade and the technique Li Ximing had grasped fastest. He had trained it by the sea for several years and could now barely present it with confidence.</p>
+<p>“When Jiangqian received the bestowed techniques back then, there was far more than that. There was the fifth grade footwork technique Flame-Stepping Movement, the fifth grade escape spell Crimson Radiance of Li Sky, the sixth grade spell Great Li White Radiance, and the fifth grade spell Li Origin Barrier.”</p>
+<p>To speak plainly, this inheritance could establish a Dao lineage on the level of Crimson Reef Island. Yet they were all Radiant Fire techniques, and extremely difficult. They suited their original method, but they were inevitably troublesome for Bright Yang cultivation.</p>
+<p>Li Ximing had read them before. Setting aside Great Li White Radiance, which required Purple Mansion Realm Radiant Fire, only Supreme Yang Resonance Radiant Art felt natural. Now that his divine ability was complete, he reread them carefully. After a long moment of hesitation, he selected Flame-Stepping Movement.</p>
+<p>Compared to the others, Flame-Stepping Movement required the least use of Radiant Light and did not demand profound attainment. Like Supreme Yang Resonance Radiant Art, it required greater control of flame instead. This was undoubtedly easier to grasp for Li Ximing.</p>
+<p>“With Brilliant Yang King’s Axe in hand, my movements will inevitably be somewhat heavy. Heaven-Venerating Gate can reinforce the dharma body, but refining footwork is still preferable.”</p>
+<p>Li Ximing had also obtained a new palm technique recently. It lacked deep Daoist theory but employed talisman qi and was quite powerful. Meanwhile, Flame-Stepping Movement was a fifth grade footwork technique. If he gained some mastery, it would not be enough against Changxiao, but it would suffice in close combat against someone with little attainment like The Merciful One.</p>
+<p>He then took out the two methods and studied them.</p>
+<p>Radiant Fire resides in the heavens, ranked among the opposing stars[1], brilliant and resplendent. Thus calamity gathers in its Orthodox Position. Escape techniques are difficult. It is best to take only the footwork of stepping through flame…</p>
+<p>The Supreme Yang Resonance Radiant Art and Flame-Stepping Movement shared the same origin. Studied together, they complemented each other and filled each other’s gaps. With talisman qi guiding flame and qi, the results were barely satisfactory.</p>
+<p>1. 冲星(chōng xīng): a star in astrological opposition or forceful alignment, traditionally associated with confrontation, collision of influences, or disruptive celestial energy. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1391.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1393.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

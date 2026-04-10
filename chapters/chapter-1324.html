@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1324: Unyielding Backbone (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1323.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1325.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1324: Unyielding Backbone (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Baiku Prefecture.</p>
+<p>Yellow sand swarmed the city, whipped upward by raging winds until it surged into the heavens, mixed with pervasive metal poison that forced passing cultivators to squint. An elderly cultivator in white rode the wind through the swirling dust toward the city. The blast made him squint involuntarily, and he frowned as he looked below.</p>
+<p>How strange, this should be near the Capital Immortal Dao. It is at least a Purple Mansion Realm power. Allowing metal poison to rage unchecked like this, who knows how many thousands of common folk have died… Such a lack of virtuous governance…</p>
+<p>He glanced again with faint discomfort, guiding his wind descent as he muttered inwardly,No wonder. I heard they’re locked in a standoff with the Moongaze Immortal Family on the river. Once true fire was ignited, who would still care about metal poison… Hm… The Li Family is famed for the Orthodox Dao and would not stoop to such acts. Then this must be Capital Immortal Dao acting deliberately, forcing the Li Family to divert their strength to rescue people.</p>
+<p>What grievous sin!</p>
+<p>He let out a deep sigh. After hesitating for a moment, he finally shook his head and thought,I should still go down and take a look. Back when I followed the general to resist Buddhist cultivators, the local people never suffered like this. Now that the Immortal Dao flourishes, such calamities instead arise.</p>
+<p>The old Daoist passed through the clouds and indeed saw scattered bones lying about. Yet no one on the streets paid them any heed, as if these mortals did not exist at all. Instead, everyone was crowding around the teahouse.</p>
+<p>He halted his dharma light atop an eave and saw, to his surprise, a Qi Cultivation Realm cultivator engaged in combat with someone at the Embryonic Breathing Realm.</p>
+<p>“Huh?” the old Daoist exclaimed.</p>
+<p>He stared blankly for a moment. The Embryonic Breathing Realm youth was wielding a dharma sword, cutting down each incoming spell. Though it looked extremely strenuous, he not only held off the Qi Cultivation Realm cultivator but even displayed a hint of fluid elegance.</p>
+<p>“Oh,” the old Daoist murmured. He stepped forward two paces and stroked his beard as he observed the match.</p>
+<p>He saw the youth standing on the platform, blood staining his face even as his bearing inspired awe. His unyielding pride was like a sharp sword thrust straight toward the heavens. The sword in his hand grew ever fiercer, making onlookers itch to clap in admiration.</p>
+<p>The brocade clad young master facing him stood in stark contrast. He looked livid, and his hands trembled so badly he could not even form a proper spell seal. His eyes bulged red as he shouted harshly, “You… you… what demonic art did you use to block my Qi Cultivation Realm spell arts?!”</p>
+<p>The youth opposite him was only at the peak of the Embryonic Breathing Realm, yet his temperament stood worlds apart. His robes were tattered, but his expression was resolute as he lifted his chin and said, “You are but a frog at the bottom of a well. Have you never heard that human will can triumph over heaven? I possess fierce courage, an unbending backbone, and ambitions that tower to the clouds. With these alone, even if I am a mere mortal, divine abilities would not harm me in the slightest, let alone a trifling Qi Cultivation Realm like you.</p>
+<p>“You could not do anything to me when you were at the peak of the Embryonic Breathing Realm. Now that you have stepped into the Qi Cultivation Realm, you are still nothing but trash. Take this sword.”</p>
+<p>As his words rang out, wisps of white qi leapt from the blade. They not only shredded the spells before him into fragments but also crossed the air and slashed at the brocade clad youth.</p>
+<p>Blood sprayed out as the brocade clad youth fell to the ground with a ghastly expression, writhing in agony as he cried out hoarsely, “How could this be?! I cultivated for ten years without a single day of respite. Losing to you once should have been enough. I poured in endless effort just to obtain a strand of spiritual qi and barely broke through the Qi Cultivation Realm within three months. Why should I still lose to your three months of cultivation?!”</p>
+<p>The sword wielding youth slowly walked forward, his blade pointed straight ahead as he said coldly, “Ridiculous. You ask me why? Why not ask those cultivators whose innate ability is inferior to yours why their ten years of cultivation fell short of you? Ask those with poorer family backgrounds than yours why their ten years of cultivation still lagged behind you. Only a pampered wastrel like you, untouched by the mortal world, would still delude himself into demanding fairness.</p>
+<p>“If a beggar on the street were to pick up a treasure tomorrow and erase your ten years of cultivation with a flick of his finger, would you not also ask why?”</p>
+<p>The wastrel was struck dumb. He shifted five centimeters along the ground, leaving a trail of blood behind, while the surrounding crowd stood motionless like carved statues.</p>
+<p>The sword wielding youth planted a foot on his face as he smiled. “If cultivation were apportioned solely by effort, then the donkey turning the millstone would be the greatest immortal under heaven. My ambition soars to the clouds. Six months of cultivation is enough for me to kill you. You have no choice other than accepting it.</p>
+<p>“People like you cannot change anything, yet always pretend not to see. What you should truly resent are spiritual orifices and luck. Those are the most unfair things of all. How many people did you suppress with your family background? Now that it is your turn, you complain about lineage and opportunity, and still feel jealous and unwilling.”</p>
+<p>The wastrel’s eyes widened in fury as he groaned, “I did not…”</p>
+<p>But every expression changed before he could finish. The looks from the people around him shifted from pity to disgust, and shame surfaced on his face as the youth kicked him squarely in the chest.</p>
+<p>Crack!</p>
+<p>No one knew how many bones had broken, but the wastrel was instantly paralyzed. The youth slowly looked down at him, the expression on his face vanishing as a mysterious smile appeared on his face.</p>
+<p>“The world does not change according to your will. Do you understand? There is nothing unfair about it. The fact that I stand here is the greatest fairness.”</p>
+<p>The wastrel did not understand a word he said. When he saw the sword rising, his face changed drastically and he hurriedly begged for mercy.</p>
+<p>Contempt appeared on the youth’s face as he sneered coldly. “Wang Jie! You lose in combat and immediately kneel to beg for your life. You have neither an unyielding backbone, a heart that seeks the Dao, nor ambition that reaches the clouds. All that remains is a snake and rat’s existence, wagging your tail and begging for mercy. Spare you once, and you still do not repent. You deserve to die!”</p>
+<p>The wastrel could only howl in agony, but a thunderous shout rang out from the air above.</p>
+<p>“How dare you?! Do not harm my son!”</p>
+<p>A figure appeared in the sky as a massive palm pressed down through the air. The crowd erupted in cries of alarm as overwhelming pressure descended from above.</p>
+<p>“The Lord of Baiku City, Wang Bakong!”</p>
+<p>“Lin Feng is finished now!”</p>
+<p>Yet Lin Feng showed no fear at all as he stood unmoving. At the same time, an old Daoist appeared and lightly received the strike, sending bones on the ground flying in all directions as dark blood splashed everywhere.</p>
+<p>“I am Bai Yinzi. It is rare to see such a talent. I ask you, fellow Daoist, to restrain yourself.”</p>
+<p>Wang Bakong’s originally imposing face twisted with rage as he shouted harshly, “Where did this rogue cultivator come from, to dare to interfere in my affairs?!”</p>
+<p>Bai Yinzi had only reached the Foundation Establishment Realm by luck and was far weaker than his opponent. Yet unwilling to let such raw jade be destroyed, his scalp tingled as he quickly scooped up the youth and rode the wind away, calling out loudly, “Since the young master is not dead, an apology will suffice. Why must the City Lord resort to such force?”</p>
+<p>The youth stood silently behind him and clasped his fists in thanks.</p>
+<p>“Senior, thank you for your righteous intervention. Lin Feng is grateful.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1323.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1325.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

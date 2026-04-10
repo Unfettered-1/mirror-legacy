@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1315: Baiku (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1314.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1316.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1315: Baiku (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian understood the strangeness of it even better than he did. Yet this Fei Family individual had to be brought back. He shook his head and replied, “This cannot really be called a bad thing. Jiangbei is vast. Whether it is the Capital Immortal Dao or our family, our shadows here can no longer be erased. There will always be roles to play in the True Monarch’s script. There is no avoiding it, only whether the role is good or bad.</p>
+<p>“Detecting it in advance now is already a blessing within misfortune. Bringing him back does not necessarily mean we will run into the person himself. The situation has only just begun to change, and everyone’s cultivation will not be too high. At this time, a Foundation Establishment Realm cultivator cannot be an enemy, so nothing too terrible should happen. But if we do not bring him back, then there is a high chance that something will go wrong in the end.”</p>
+<p>Chen Yang nodded heavily, his head lowered as he continued to think. In truth, Li Jiangqian was not very willing to send him, but there were only a few truly capable Foundation Establishment Realm cultivators at his disposal, and each had their own shortcomings.</p>
+<p>Cui Jueyin excelled at internal administration and conducted himself with grace, but asking him to carry out deceitful and underhanded schemes was not feasible. Ding Weizeng was even more of a frontline battle general than Chen Yang. Although Qu Buzhi was shrewd, he was old and timid, always wanting to keep his head down. Li Jianglong and Li Jiangxia had yet to break through. There was truly not a single Foundation Establishment Realm cultivator who was as steady as Chen Yang and capable of navigating both open and hidden currents.</p>
+<p>I will send him openly and follow along myself as well, to observe along the river. If something truly happens, there will still be room to maneuver.</p>
+<p>Chen Yang left the hall, and Qu Buzhi brought the others over as well. The members of the Fei Family had just received good news and were all brimming with energy. Fei Tongcai composed himself and waited quietly outside the hall. Chen Yang adopted a solemn expression, apologizing and sighing, putting on the appearance of having acted too impulsively earlier. This left Fei Tongcai sweating profusely, easing the atmosphere somewhat.</p>
+<p>Chen Yang led the group forward with a smile on his face, pulling Fei Tongcai along as he spoke words of congratulations. Laughter immediately spread among the Fei Family, and they rode the wind northward.</p>
+<p>As soon as they entered Jiangbei territory, the sun grew noticeably fiercer, with none of the chill of early spring remaining. Chen Yang smiled. “The Capital Immortal Dao is, after all, not on good terms with our family. Everyone should wait here on the riverbank. Fellow Daoist Tongcai and I will go ahead to receive him.”</p>
+<p>The purpose of this group was simply to prevent Fei Tongcai from having too much contact with that Fei Family member. Once the person was brought back, he would only see Fei Family members thriving under Li Family rule. Chen Yang could not be bothered to bring along this group of deadweights, fearing they might cause trouble, so he left them behind.</p>
+<p>When they reached Baiku Prefecture at the southernmost edge of White Ye Stream territory, the area was already in utter chaos. The governance of the Locust Soul Hall was worse than none at all. Cultivators flew back and forth across the entire city as if it were uninhabited.</p>
+<p>Corpses lay strewn across the main roads. Yellow smoke billowed, and the stench of decay filled the air. There were hardly any passersby. Instead, one or two people knelt on the ground, moaning weakly from illness or hunger.</p>
+<p>Fei Tongcai frowned repeatedly at the sight. Chen Yang swept the area with his spiritual sense and said quietly, “It seems the formation of Baiku Prefecture was destroyed. The powdered spirit ores from the mineral vein have spread throughout the surrounding area.”</p>
+<p>Baleful Metal and Metal Poison were lethal toxins to mortals. The former was present in dharma artifacts, which was why the Li Family would always put away their dharma artifacts when encountering mortals. The latter was cold and severe in nature, and often found within mineral veins. In the past, when the Rui Family mined Green Origin Copper Essence for the Xiao Family, countless people had died because of this Metal Poison.</p>
+<p>That Black Rat Dharma Protector would never care about mortals… He would only let those below die as they may.</p>
+<p>Following the information he had been given, Fei Tongcai found the teahouse. The surroundings were indeed desolate beyond measure. The courtyard was in ruins, and corpses covered the nearby streets, leaving no place to step.</p>
+<p>However, since this teahouse was frequented by cultivators, it still appeared clean and orderly. They stopped when they saw a noisy scene. A group of people knelt on the ground while a man dressed in luxurious robes stood arrogantly in the courtyard.</p>
+<p>However, there was still one slender figure standing among the ring of kneeling cultivators. His refined face was filled with defiance as he listened to the lavishly dressed man shout, “Wretched servant! I am the son of the prefectural governor, and you dare not bow when you see me.”</p>
+<p>The refined young man before him replied coldly, “Why should I kneel to you? I, Lin Feng, kneel to Heaven above and to Earth below. A wastrel who flaunts power by relying on his father’s authority also thinks he can make me kneel?”</p>
+<p>He lifted his head, and an imposing presence surged from his slender frame. The dandy immediately flew into a rage, while the expression of the guest cultivator beside him darkened.</p>
+<p>The latter stepped forward, and said coldly, “Kneel.”</p>
+<p>Everyone was instantly shocked. Seeing that the guest cultivator was at the Qi Cultivation Realm, a pair of delicate sisters immediately rushed over to pull at him.</p>
+<p>“Brother Lin…”</p>
+<p>The young man stood firm without moving. Soon, the crowd parted as an elderly man stepped forward and said softly, “Please do not take offense. Please do not take offense. This old man is here to deliver spiritual resources to the Black Rat Dharma Protector. I ask that you give the Dharma Protector some face.”</p>
+<p>As soon as he said this, the guest cultivator and the dandy hesitated, as though they were about to relent. Yet the young man stepped forward instead and shouted, “You with the surname Wang. Do you dare to duel me?”</p>
+<p>“Ridiculous!” The dandy surnamed Wang’s gaze turned cold as he replied, “You are merely at the third stage of the Embryonic Breathing Realm, yet you dare challenge me, who stands at the fifth stage. Why would I not dare?!”</p>
+<p>Lin Feng shouted, “Good. Three months from now, you and I will fight to the death here. We will decide both victory and survival.”</p>
+<p>This immediately angered the dandy into laughter. He cast a cold glance at the elderly man who had stepped in to mediate, then flicked his sleeve and left, leaving behind a din of discussion within the shop.</p>
+<p>Chen Yang frowned slightly at the sight and patted Fei Tongcai beside him, only to see the latter shake his head as he said, “This Baiku Prefecture is quite interesting. The stage is set as if it were real. As for the main character, he truly has a bearing that inspires admiration. It really makes one feel respect.”</p>
+<p>Chen Yang glanced at him briefly and said quietly, “Go take a closer look.”</p>
+<p>When Fei Tongcai reached the front, the smile on his face grew ever broader. He stared at the young man and shook his head, “My lord… this Lin Feng is truly a rare talent. The aura he carries makes him seem almost like an immortal.”</p>
+<p>Chen Yang’s expression shifted slightly as he stepped closer and said, “He is indeed a remarkable figure. Even at the lake, such people are rarely seen…”</p>
+<p>There was no trace of Fei Tongcai’s earlier caution or distress. He quickly entered the teahouse, took the old man’s hand, and said with a smile, “Hail! Second cousin, it has truly been a long time.”</p>
+<p>The old man recognized Fei Tongcai as well. His face filled with astonishment as he hurriedly said, “How did you come to this place? What has happened at home?”</p>
+<p>“Chingyi has broken through to the Foundation Establishment Realm. We are here to bring you back to enjoy a good life.”</p>
+<p>The two exchanged sighs of emotion. There was not the slightest worry on Fei Tongcai’s face as he immersed himself in the joy of reuniting with an old acquaintance. Chen Yang, meanwhile, turned to look at Lin Feng.</p>
+<p>A look of honest warmth appeared on his face as he patted the young man’s shoulder and praised him, “Good child! I was watching from afar just now. This is what a true genius of the Immortal Dao should look like.”</p>
+<p>“Foundation Establishment Realm cultivator!”</p>
+<p>The courtyard instantly erupted into chaos. A group of cultivators all knelt down in terror. Just moments ago, the prefectural governor’s son had only feared authority. But now, faced with this person, the fear came from the depths of his heart. The two delicate young women beside him also knelt down.</p>
+<p>Only the young man remained fearless, standing proudly as he offered a salute and said, “Greetings, senior!”</p>
+<p>Chen Yang nodded repeatedly, his expression filled with admiration, and said with a sigh, “In my life, the people I admire most are those who cannot be bent by force. The ones I despise most are these wastrels and those with crooked minds and sinister schemes. Good child. For Jiangbei to produce someone so fearless in the face of danger truly proves it is a blessed land.”</p>
+<p>He pulled Lin Feng to sit beside the table and asked softly, “But with only three months, how will you defeat him?”</p>
+<p>Lin Feng slowly shook his head. His gaze was resolute as he replied, “This junior has his own plan.”</p>
+<p>“Good!” Chen Yang praised him. He reached into his sleeve, and took out a talisman as he spoke softly, “You and I have met by chance and spoken pleasantly. It has been truly refreshing. If you encounter danger in the future, you may use this talisman to escape. It can be considered my way of preserving a confidant.”</p>
+<p>“Many thanks, senior!”</p>
+<p>Chen Yang laughed heartily and replied, “I come from Moongaze Lake. A cultivator of the Fei Family has achieved the Foundation Establishment Realm and gained higher standing at the lake. We are here to take this old man back. He happens to be on the verge of breaking through the Qi Cultivation Realm, so he will go to cultivate at the lake.”</p>
+<p>The two sisters on either side cried out in surprise. Chen Yang smiled and said, “Just by looking at you sisters, it is clear you are also from the Fei Family. Truly blessed with beautiful appearances. Do you possess spiritual orifices? You may enter the mountain to cultivate together.”</p>
+<p>The elder sister immediately showed hesitation while the younger sister looked dejected. Yet they spoke in unison, “Brother Lin saved our sisters’ lives. We only wish to cultivate by his side.”</p>
+<p>But Lin Feng shook his head and replied, “Qingya possesses a spiritual orifice, so it is naturally best for her to cultivate under Moongaze. As for Qingfei, she will have to endure hardship and wander with me.”</p>
+<p>The three immediately fell into tender intimacy. Chen Yang watched with a smile, yet beads of cold sweat rolled down his cheeks, slid along his neck, and soaked into his collar. His lips trembled slightly, but he could not speak, maintaining only a stiff smile on his face.</p>
+<p>When Lin Feng turned to him once more, the faint struggle on Chen Yang’s face shattered instantly. He put on a hearty smile once more, called Fei Tongcai over, and said with a smile, “It is about time. After all, this is someone else’s territory, and our family is not on good terms with their Dao lineage. It is not suitable to stay here long.”</p>
+<p>Fei Tongcai led the elder of the two sisters over and nodded repeatedly. His old cousin followed as well. Lin Feng let out a soft sigh, held the younger sister, and escorted them out of the hall as he spoke with deep affection, “Qingya, rest assured. Wait for me for three years. In three years, I will reach the Foundation Establishment Realm and personally go to Glacial Cloud Peak to ask for your hand.”</p>
+<p>The younger sister pouted in jealousy, while a blush rose on Fei Qingya’s face. His words were utterly astonishing, yet no one present found them strange. Even Fei Tongcai nodded with a smile, his expression full of satisfaction.</p>
+<p>Chen Yang rose on the wind and led the group southward. Lin Feng silently put away the talisman, raised his head, and said coldly, “The Wang Family… covers the sky with one hand and tyrannizes at will. Just wait.”</p>
+<p>Yellow sand billowed and swept past him. He stood proudly as his cultivation continued to rise. In just a few breaths, another Embryonic Breathing Realm wheel condensed within his body.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1314.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1316.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

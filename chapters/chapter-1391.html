@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1391: Established Momentum (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1390.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1392.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1391: Established Momentum (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian cupped his hands as a brilliant Bright Yang radiance shone in the sky, and an armored man descended. He was tall, holding short spears in both hands. With long brows and golden eyes, his bearing was open and bold.</p>
+<p>He landed briskly in the courtyard, swept his gaze across the scene, and knelt as he said, “Jiangxia greets the Daoist Master!”</p>
+<p>He was not quite as imposing as Ding Weizeng, but comparable to Li Wen. Li Ximing’s eyes brightened slightly, and he nodded. Just then, someone was announced from outside the courtyard. A man wearing a feathered robe entered, a jade crown upon his head and a sword at his waist. His appearance was not as striking as Li Jiangxia’s. He saluted Li Jiangqian and Li Quewan before kneeling.</p>
+<p>Seeing the two emerge from seclusion one after the other, Li Ximing smiled and said, “Now we finally have people who can be put to use.”</p>
+<p>He then turned to Li Jiangqian, “You have lingered long enough at the early Foundation Establishment Realm. With your two brothers now out of seclusion and myself present to oversee matters, set aside what you are handling and focus on breaking through first. Leave the affairs of the family to Jianglong and Jiangxia for the time being.”</p>
+<p>Li Jiangqian seemed to have anticipated this and replied, “I respectfully obey your command, Daoist Master.”</p>
+<p>He turned back and said with a smile, “Then I shall entrust matters to my two younger brothers.”</p>
+<p>Li Jiangxia stepped forward, his voice firm and resonant as he gave a clear response. Li Jianglong was far more reserved and merely bowed. Li Ximing added, “Jiangxia has long been stationed on the eastern shore and is more familiar with it. Let him oversee things there for now. As for affairs on the island, leave them to Jianglong.”</p>
+<p>Neither showed any change in expression as they gave their thanks. Li Ximing tested their cultivation techniques and found their foundations solid. Li Jiangqian then said softly, “Since both my brothers are present, I have news to report.”</p>
+<p>Li Jiangqian took a letter from his sleeve, his expression slightly grave as he said, “Daoist Master, please have a look!”</p>
+<p>Li Ximing took it and saw that it was a handwritten letter from Wang Quwan.</p>
+<p>“Wang Quwan…”</p>
+<p>Li Ximing vaguely remembered what Wang Quwan had looked like in those years. Now he was already a well known cultivator in Jiangbei. Unfolding the letter, he found the tone still respectful and deferential.</p>
+<p>The letter inquired after the well being of the lake and also mentioned a woman.</p>
+<p>Wang Xiaoxiao of the Jiangbei Wang Family.</p>
+<p>Li Jiangqian waited until he finished reading before speaking carefully, “This Wang Xiaoxiao is indeed a very close blood descendant of Wang Quwan. From what I understand, she not only belongs to the lord’s side, she even brought him to meet Wang Quwan in person.”</p>
+<p>“Oh?”</p>
+<p>“The lord gave Wang Quwan several dharma artifacts as a gesture of betrothal for Wang Xiaoxiao, and he accepted them all. Not only that, this happened quite some time ago. Although the exact date is unclear, the letter states, ‘For many years we have maintained contact, yet out of reverence dared not speak much, nor dared to send letters to the lake.’ It certainly was not a matter of mere days.”</p>
+<p>Li Ximing kept his expression neutral, neither pleased nor displeased, and gave an indistinct response. He handed the letter to the two beside him. Both young men read it. Li Jianglong frowned, while Li Jiangxia’s expression changed.</p>
+<p>Li Jiangqian continued, “That is one matter. When the True Monarch departed, someone proposed it, and he temporarily delineated territory for the Wang Family along the northern side. Wang He’s faction was nearly eradicated by the True Monarch… As for the most important point mentioned in the letter, it says someone from the Wang Family accompanied the True Monarch across the river to the north. Whether that is true or not remains uncertain.”</p>
+<p>Li Jiangqian’s information was certainly not as swift as Ning Wan’s, yet was still remarkable. Li Ximing himself had only just learned of the True Monarch’s departure from Ning Wan. By the time he reached the shore, Li Jiangqian already knew as well. Most likely, Wang Quwan had sent the letter the moment Lin Feng left.</p>
+<p>He casually put the letter away and asked, “Who delivered it? Were any words left?”</p>
+<p>Li Jiangqian replied respectfully, “It was Wang Quyu. He has already reached the Foundation Establishment Realm. He withdrew after delivering it to the shore.”</p>
+<p>Li Ximing sat down in the courtyard, choosing his words carefully. “The lord has already departed. Send a reply stating that our family is interested in dharma swords. Wang Xiaoxiao may have seen them. Tell him to draw all the sword diagrams and send them over.”</p>
+<p>Li Jiangqian nodded repeatedly, yet still offered a reminder in a respectful tone, “Yes… but regarding Wang Quwan, I fear we must make preparations early.”</p>
+<p>Li Ximing naturally understood that Li Jiangqian had likely been on guard for quite some time. He asked calmly, “What do you all think?”</p>
+<p>Li Jiangxia’s expression darkened. He was the most straightforward among the brothers, but also the most domineering, unable to tolerate the slightest dissent. He replied coldly, “This junior has never met Wang Quwan, but I have heard Lord Ding speak highly of him. From what I see, he has no intention of remaining at the lake. He is the sort who bows only on the surface. He must be guarded against.”</p>
+<p>Li Jianglong’s expression was heavy. Without hesitation, he agreed quietly, “Third brother speaks rightly. Wang Quwan has never held true loyalty to our family. He is merely cautious and restrained, since he has been forced to bow his head. He is not someone who will remain beneath another for long. Our family has never underestimated him in this regard. Yet he also values face. The Daoist Master has truly shown him favor. Although the Jiangbei Wang Family lies beyond our immediate reach, he will still bow his head. Sooner or later, he will return to the lake.</p>
+<p>“But who knows what benefits he has obtained. The advantages the lord has given him may not bode well for our family in the future, even if he returns to the lake.</p>
+<p>“In this junior’s view, a man like him will never truly accept subordination. Even if he returns to the lake, our ability to suppress or placate him rests solely on the fact that he is only at Foundation Establishment Realm. Should he truly break through to the Purple Mansion Realm, he would become a calamity. Why go to such lengths? It would be nothing more than our family acting as his shield, feeding flesh to an eagle, allowing him to shelter beneath our eaves only to spread his wings one day.”</p>
+<p>Li Jiangqian glanced at his two younger brothers. His expression remained respectful and his tone steady as he said calmly, “Indeed. The Jiangbei Wang Family has been fragmented for years and is already a mess, yet he still cares for his kin. It would be better to leave him in Jiangbei, within the Wang Family there. Let him struggle on all sides, endure constant encroachment, and run back and forth currying favor between Capital Immortal Dao and Chengyun. Use the harsh geography to grind down his fortune and exhaust his spirit. Let his clan remain chaotic and divided; keep him restless day and night until he is unable to cultivate in peace.</p>
+<p>“Our family’s favor still hangs over his head. How could it be erased? Even if a phoenix were born from the flames one day and a Purple Mansion Realm cultivator arose from that land, he would still have to respectfully address the Daoist Master as senior. Compared to cultivating to the Purple Mansion Realm within our family and then being forced to separate, tearing apart the bonds of blood and obligation that once bound him, is this not far better? Moreover, there is Wang Xiaoxiao. She is no ordinary figure. How could she be taken lightly?”</p>
+<p>He smiled and continued, “If Wang Quwan is within our family, the entire Jiangbei Wang Family stands behind him, and the whole family takes him as their pillar with pride. But if he establishes himself in Jiangbei and unifies the fragmented Wang Family, that is another matter. There will be no stopping the resentment directed at him.”</p>
+<p>Li Ximing said nothing. He quietly gazed at the Wanglin Blossom tree to the east, his distant eyes wandering along the horizon.</p>
+<p>Li Quewan stood behind Li Ximing, listening to the discussion with a chill rising in her heart. Her almond eyes followed his gaze for a brief moment before she quickly lowered her head.</p>
+<p>The Daoist Master before her finally said, “This matter is already settled. I have other arrangements on the day the lord returns to the mountain. I must first retrieve the dharma swords and cannot go to receive Wang Xiaoxiao beforehand. That woman has surely fallen into another’s hands. There is no need to dwell on it.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1390.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1392.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

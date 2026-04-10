@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1388: Heaven Whisker (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1387.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1389.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1388: Heaven Whisker (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing raised his brows and looked north. The autumn dew was still falling in steady drops. He exchanged a glance with Ning Wan and hesitated, “Shall we go take a look?”</p>
+<p>Ning Wan nodded. “Indeed. Such a great disturbance cannot escape the notice of Sword Gate and Xiukui. We would have to come sooner or later. There is little to fear in going.”</p>
+<p>At this moment the great void trembled incessantly, stirred by dense golden qi that shot straight into the sky. It was hardly a smooth path, and Mount Tangdao was not far away. The two simply rode their divine abilities and arrived at a distant point from which the mountain could be seen in two steps.</p>
+<p>Mount Tangdao, with its undulating ridges and a main peak thrusting toward the heavens, was already completely enveloped in golden qi. Above it lay a dense expanse of white. It was neither cloud nor mist, but more like rolling smoke and sand, echoing one another and lingering without dispersing.</p>
+<p>The clouds in the sky had long since been dissolved, unable to transform the golden qi into autumn dew. Its rate of diffusion was far slower than its eruption. The white golden qi grew ever thicker as it rumbled from time to time.</p>
+<p>Faint streaks of prismatic light could be seen in the sky. Enormous golden bodies flickered in and out within the white qi and autumn dew one after another. At times, rays of light rose from the ground and ascended into the Buddhist land.</p>
+<p>Li Ximing steadied himself and watched, his expression troubled as he said in a low voice, “There is no doubt it is a Buddhist cultivator. The Golden Feather Sect truly intends to ignore this?”</p>
+<p>The destruction of the Golden Tang Gate could not have gone unnoticed by the Golden Feather Sect. With Golden Feather Sect’s current prestige, unless it was by order of Luoxia, no Buddhist cultivator would dare tear down the Golden Tang Gate without a word. How could Li Ximing not understand? It had most likely been sold for a handsome price.</p>
+<p>Ning Wan remained silent for a long while before speaking, “Situ Huo once promised to give the Mountain-Dimming Peak-Moving Cord to the Golden Feather Sect, but my elders stopped the transaction from proceeding. Later, when you fought Changxiao, I do not know what terms they reached in secret, but in the end that spirit artifact still went to the Golden Feather Sect. Judging by the Golden Feather Sect’s attitude, Golden Tang Gate was of little use from that moment onwards.</p>
+<p>“Now they even hand this mountain over to the Buddhist cultivator, abandoning a perfectly good Purple Mansion Realm formation and leaving it to these monks to smash apart… As for these Buddhist cultivators, a Purple Mansion Realm formation is precious no matter what. Even if it serves no use, would it not be better sold to some household? Why insist on this…”</p>
+<p>With Ning Wan speaking thus, her meaning was obvious. Li Ximing understood inwardly,What other intention could there be? Golden qi surged skyward, blanketing Jiangbei. What they sought was nothing more than spiritual aura.</p>
+<p>The Golden Feather Sect rarely intervened in matters of spiritual aura. After all, they possessed their own grotto heaven, presided over by a True Monarch of Dui Metal of the Metal Virtue. Anyone who cultivated the orthodox Metal Virtue lineage of the Golden Feather Sect could simply break through within that grotto heaven. Why stir up a great commotion in the outside world? Perhaps the Golden Feather Sect was acting like this for the sake of their Daoist Master Qiushui.</p>
+<p>While Li Ximing pondered this, Ning Wan’s gaze grew complicated as she said softly, “Yet the Dwelling Heart that Charges Profundity has always been advantageous through the ages. It can be considered quite good. Mount Tangdao being tossed about like this is hardly a good thing.”</p>
+<p>Li Ximing frowned as he glanced at her. Ning Wan stepped through the snow, drawing gradually closer, and he followed. When they were some distance away from the mountain and could clearly see the prismatic light and the Buddhist land, she finally stopped.</p>
+<p>Li Ximing swept his gaze over the scene and only then noticed something amiss. A glut of roiling black Baleful Qi had surged out of the mountain range, flowing along the hills like waves. The golden qi in the sky, with nowhere else to go, seemed drawn by something and began to descend drop by drop. For a time, white qi streamed like silk from heaven into the earth.</p>
+<p>Ning Wan caught a drop of autumn dew and said, “Metal Virtue cultivators have an incantation called Encounter Baleful Qi And Sink. When golden qi rests upon the mountain without cloud or mist, it cannot form the stern qi of autumn and winter. Thus it is drawn down by earthly baleful qi. Once it sinks, it transforms that baleful qi into Prime Magnetism.</p>
+<p>“Now that the grand formation of Mount Tangdao has shattered and been uprooted entirely, it no longer even qualifies to become a sealed prohibition. What remains are earth veins riddled with holes. This is precisely the moment when earthly baleful qi surges outward. Upon meeting gold in a single night, it turns into Prime Magnetism.”</p>
+<p>Her expression grew slightly dazed as she turned to look at Li Ximing, “It is one of the Three Thunders of this age, the Origin Thunder.”</p>
+<p>Li Ximing was briefly stunned. His own junior, Li Quewan, cultivated the Whole Pill Dao. He had long since learned that this Dao feared Converging Water first, Merging Fire second, and Prime Magnetism third!</p>
+<p>If this expanse of golden qi were to sink, three hundred years of Golden Tang accumulation would likely be enough to turn this mountain into treasured lands of Prime Magnetism. The earth veins and spiritual aura of all Jiangbei would change as a result.</p>
+<p>If Daoist Master Qiushui was breaking through, why would the Golden Feather Sect go to such lengths? Would that not be courting trouble for themselves?</p>
+<p>He quickly understood Ning Wan’s conflict and doubts and replied, “If it is not the Golden Feather Immortal Sect… and yet no Daoist Master of theirs appears to stop it…”</p>
+<p>The golden qi in the north had already begun to sink on a large scale. What had once been fine threads linking heaven and earth now changed, as if the white qi in the sky had been pierced through. It poured down like a waterfall, drilling straight into the earth veins.</p>
+<p>Even from such a distance, Li Ximing could sense black and silver hues interweaving within the mountain range. A strange aura rose upward, the mountains beneath his feet trembled, and metal and stone quivered.</p>
+<p>“So this is the power of Prime Magnetism…”</p>
+<p>Just as this aura rose, the entire mass of golden qi suspended in the sky shattered with a crash. As if drawn by some force, it collapsed downward, turning Mount Tangdao entirely bright white.</p>
+<p>Ning Wan still saw no cultivators from the Golden Feather Sect, yet black qi thickened beside them. Daoist Master Kuiqi descended riding a divine ability, clad in a pitch black Daoist robe, his expression dark.</p>
+<p>“Even if Qiushui himself comes now, it will be useless. Unless a True Monarch intervenes, no one can move it.”</p>
+<p>His gaze slowly fell on the mountain range within the white qi as he said, “It matters little that the Golden Tang Gate has fallen, but what Situ Tang obtained back then was the Dao lineage of the ancient Heaven Whisker Gate. It cannot be discarded lightly. Even if the Buddhist cultivator has obtained the jade slip and can open it without difficulty, secrecy will be hard to maintain. It should be taken back.”</p>
+<p>Now that Kuiqi had revealed himself, the prismatic light in the north could no longer remain calm. A streak of illusory radiance descended, condensing into a golden body before them.</p>
+<p>This golden body had six hands and four legs, with three faces upon its head. One bared its teeth, while another wept in sorrow. All were painted with exquisite patterns. Four arms held staff and cudgel, blade and sword, while the remaining pair pressed together before its chest.</p>
+<p>Its voice was benevolent. “Nuzi greets the three fellow Daoists!”</p>
+<p>Li Ximing frowned inwardly, while Kuiqi let out a cold laugh and said, “You dawdled for so many years before the Great Desire Dao finally found a place for you, old thing. We just saw Pi Jia earlier, and now you have come as well. The Great Desire Dao and the Emptiness Dao have truly drawn close these past years.”</p>
+<p>The Great Desire Dao again.</p>
+<p>When Li Ximing and Kuiqi had rescued Ning Wan and the others, they had fought Zhelu and Daisi of the Emptiness Dao. That faction had sought his death. It was Pi Jia of the Great Desire Dao who had intervened at that time. Now another of the Great Desire Dao, Nuzi, had appeared. Kuiqi’s words stemmed from that history.</p>
+<p>This Nuzi was clearly a Maha who had risen through the conflict between north and south. Though from the same batch as Daisi, he appeared much older and had waited many years. He did not grow angry and said calmly, “I have merely lived a few more years and was fortunate to receive the lord’s promotion. I now cultivate under Lord Pi Jia. Hearing that I have had many dealings with southern cultivators, he sent me here.</p>
+<p>“Our two Daos of Great Desire and Emptiness act under the command of the Dharma Master to eradicate the Golden Tang Demonic Gate that refines blood food. I wonder what instructions the Daoist Masters might have?”</p>
+<p>His tone was righteous and severe, bearing the demeanor of a proper cultivator, with none of the usual air of the two Daos. Li Ximing knew Kuiqi would not tolerate such words. Indeed, the black robed man’s expression only grew colder.</p>
+<p>“How shameless. When Situ Tang was at the height of his power, you said nothing. Now that the Golden Tang Gate is left with only one or two people, you stir up golden qi that soars to the heavens and autumn dew that spreads across the fields, wasting the climate, and call it demon eradication.”</p>
+<p>Nuzi pressed his palms together and replied, “At the very least, we remove harm for the people.”</p>
+<p>Though Ning Wan still harbored resentment toward the two paths, she hesitated when she sensed that a fight might break out.</p>
+<p>This matter harmed the interests of the Golden Feather Sect. If the Golden Feather Sect were willing to step forward and take the lead, Ning Wan and the others would certainly be willing to assist. But there was nothing but silence, and no one could discern what dealings lay within. The Supreme Yang Dao lineage thus had no legitimate grounds to act.</p>
+<p>Ning Wan could only speak coldly, “The lord has already gone north, yet the Buddhist Dao still has the leisure to stir trouble in the south. No matter what, Golden Tang Gate was once a Dao lineage of the Immortal Dao. How can it be exterminated without a word?</p>
+<p>“It was at least an Immortal Dao lineage, and Situ Tang obtained an ancient cultivator inheritance. There is no reason for it to be lost outside.”</p>
+<p>Unexpectedly, Nuzi burst into laughter and replied, “We have already made arrangements for the Immortal Dao!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1387.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1389.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

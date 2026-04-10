@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1381: Chunyi (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1380.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1382.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1381: Chunyi (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chunyi Island.</p>
+<p>Waves splashed high on reefs that stood firm against the sea.</p>
+<p>Chunyi Island was originally an archipelago. In its early years, it only had a single Immortal Mountain rising from the sea. Over generations, the people of Chunyi Dao Gate had gradually moved mountains and reclaimed land from the sea. It now covered seventy percent of the area of Crimson Reef Island.</p>
+<p>From afar, the Immortal Mountain and its surrounding islands appeared orderly. Crescent-shaped pools on the island shimmered with light. Cultivators refined the energy of Supreme Yin, rising on clouds and mist. The scene was pleasing to the eye.</p>
+<p>They were not far from Crimson Reef Island, which in turn lay close to the Sword Gate. Relations among the three factions had worsened over the years. The fighting had been especially brutal at Green Pine Temple. Even now, the spirit items formed from fallen cultivators had not been fully excavated. That alone spoke volumes.</p>
+<p>The Chunyi Dao faction seemed tranquil and harmonious, yet a streak of azure light raced across the island from the north before halting in front of the Immortal Mountain and transforming into a man.</p>
+<p>The youthful-looking man wore blue robes that matched his pale green eyes. Standing with his hands behind his back, he went unnoticed by the patrolling cultivators on either side. Only the formation upon the Immortal Mountain rippled faintly, and a figure soared into the air in response.</p>
+<p>This newcomer wore white robes embroidered with wave and crescent patterns, a pale silver jade belt at his waist. His features were striking, with a high-bridged nose, yet his eyes were filled with vigilance. He stopped at a cautious distance and examined the man carefully.</p>
+<p>“I am Chehong. Greetings, Grand Daoist Master… Might you be Daoist Master Buzi in person?”</p>
+<p>The man in blue was indeed Chi Buzi. His expression was calm as he replied, “Chehong… Chunyi Immortal Dao has truly produced many talents in recent years. In just a few decades, your grandfather and grandson have both become Daoist Masters. I wonder if Senior Yuanshang is present? A friend of the Supreme Yang Dao lineage comes to pay a visit, yet cannot even enter the gate.”</p>
+<p>Daoist Master Chehong recognized him from those words. His expression grew distant. Though wary of Chi Buzi’s formidable cultivation, he did not turn hostile and merely said coolly, “Grand Daoist Master, do not jest.”</p>
+<p>Daoist Master Chehong of Chunyi Dao showed no courtesy, as if only one sentence short of saying that the Azure Pond Demonic Sect could hardly be counted among the Supreme Yang Dao lineage. Chi Buzi, however, paid it no mind and said casually, “Chunyi Dao now has four Daoist Masters whose strength rivals Hengzhu, with Daoist Master Yuanshang presiding over all. Are you truly afraid of a lone wanderer like me?”</p>
+<p>Daoist Master Chehong’s expression was cold as he replied, “Grand Daoist Master need not jest with me. If there is nothing else, forgive me for not seeing you out.”</p>
+<p>Chi Buzi let out a laugh and raised his hand, palm upward. A gray-black energy swelled up in his palm and condensed into a sphere the size of his hand.</p>
+<p>“Take a look. What is this?”</p>
+<p>This threadlike gray water sphere was clearly a highly condensed divine ability. Daoist Master Chehong himself possessed this inheritance and needed no further examination. It was the divine ability Chougui Hidden Form!</p>
+<p>Daoist Master Chehong frowned. He had long known that Chi Buzi had broken through to the late Purple Mansion Realm. This Grand Daoist Master would not have traveled thousands of kilometers to their mountain gate merely to flaunt his divine ability.</p>
+<p>For a moment, he said nothing. Yet after observing more closely, a sense of unease rose within him, and his heart gave a sudden leap as a feeling of familiarity surged through him,This is our divine ability!</p>
+<p>Chi Buzi spoke casually, “I cultivate by refining my own nature, yet I have produced your gate’s divine ability. Should Senior Yuanshang not take a look?”</p>
+<p>Daoist Master Chehong remained silent, his gaze fixed tightly on Chi Buzi. The blue-eyed man said, “Some matters cannot be spoken of openly. One must enter the formation, must one not?”</p>
+<p>Chehong finally wavered and hesitated for a moment. The formations of Chunyi Island were no trifling matter. Even if Chi Buzi intended trouble, he would be restrained within them. With four Daoist Masters present, by all reasoning, his willingness to enter the formation was a gesture of sincerity.</p>
+<p>“Chehong, let him in.”</p>
+<p>A voice wrapped in divine ability echoed in his ear. Though unwilling, Daoist Master Chehong could only step aside and invite him in.</p>
+<p>The two flew into the grand formation and were met with drifting snow. A crystal-clear, circular jade pool stood at the summit platform. The water within was snowy-white and tinged with moonlight. It seemed like both liquid and heaps of fallen snow. The tables and chairs by the shore were half-buried beneath it. A middle-aged man in white robes stood beside the pool.</p>
+<p>Chi Buzi finally showed a more serious expression and cupped his hands in greeting. “So it is Fellow Daoist Fuxuan. Is Senior Yuanshang not present?”</p>
+<p>“My master has not been fond of travel in recent years and no longer emerges from seclusion.” This middle-aged man did not seem to share the strong prejudice of other Chunyi Dao cultivators. He nodded slightly and invited him to sit by the circular pool, speaking softly, “Truly worthy of being the treasured tree of the Chi Family. Had you followed Chi Wei’s wishes, the Azure Pond Sect and the Supreme Yang Dao lineage would not be as they are today.”</p>
+<p>Chi Buzi neither agreed nor denied with him. He merely smiled as he replied, “Surely you have seen it as well. I encountered a fortuitous opportunity and obtained an ancient technique, and have cultivated Chougui Hidden Form. I suspect this is your gate’s Chougui Water Seeking Method… I have come this time to verify it.”</p>
+<p>He raised his brows with a smile and continued, “The Chougui Water Seeking Method was bestowed upon the Xii Family from the Supreme Yang Dao lineage. It likely exists only within that house. Now that this Dao lineage has fallen into my hands, I need not elaborate further where the opportunity came from or which lineage it belonged to!”</p>
+<p>Daoist Master Fuxuan had allowed him inside; he had clearly understood something. The divine ability in Chi Buzi’s palm could not be faked. Whether it had truly been cultivated by refining his own nature was another matter.</p>
+<p>He merely raised his brows and said, “You say you cultivated it by refining your own nature. Why not stand beneath the Supreme Circuit Spirit Mirror and have it examined? That will reveal the nature of your divine ability.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1380.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1382.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

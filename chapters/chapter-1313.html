@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1313: Confirming The Succession (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1312.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1314.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1313: Confirming The Succession (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Chenghui had no children and left no written instructions, making the matter of succession extremely troublesome. After being delayed for so many years, Li Zhouda, the eldest and most talented among them, had already reached the mid-stage of the Qi Cultivation Realm. With only a few years before reaching the age to attempt the Foundation Establishment Realm, Li Zhouda personally went to see Li Xuanxuan, hoping to put this matter on the agenda.</p>
+<p>After all, breaking through to the Foundation Establishment Realm was a life or death barrier. It was the time when one most needed the arts and dharma artifacts left behind by Li Chenghui, even his direct legacy and standing. If it were not settled now, there would be nothing left worth settling later. Not only would the greatest value be lost, it would also leave people uneasy.</p>
+<p>As for the object that everyone secretly coveted, the Sixfold Profound Thunder Punishment Tokens, it was said to belong to the family and not included within the inherited Dao lineage. Yet nearly everyone knew that whoever obtained the Dao lineage first and achieved the Foundation Establishment Realm along the Thunder Dao would ultimately be the one to receive the dharma artifact.</p>
+<p>But there was an even more crucial matter. Li Chenghui’s father, Li Xi’e, had passed away a few days earlier. Although Li Xi’e was merely a mortal, the old man was Li Chenghui’s father. Even if he said nothing in ordinary times, in his heart he was certainly inclined toward his closest blood descendant, Li Zhoutui, as the successor. With his death, Li Zhoutui’s lineage had suffered a severe blow.</p>
+<p>Of course, even if the higher ups all thought this way in their hearts, outwardly they continued to say that they needed to wait for several elders to return. The polite words still had to be spoken.</p>
+<p>Li Jiangqian paused slightly, and Li Xuanxuan spoke in an aged voice, “There were originally three candidates. Zhouda, Zhoutui, and Zhouxun. Zhouda has the highest innate ability and the fiercest temperament, which suits the Thunder Dao very well. However, such a fierce disposition also brings difficulties…</p>
+<p>“Zhoutui is closer in bloodline, yet like Zhouxun, his innate ability is somewhat lacking…”</p>
+<p>In truth, everyone knew the situation of the three candidates. Li Zhoutui was originally the closest by blood and the most suitable. If he had not been so impatient and made that scene to steal the spotlight back then, it would have been settled as him, and today’s turmoil would not exist.</p>
+<p>Yet the elders in the family did not know restraint. That single outburst had ruined nearly all the goodwill the Foundation Establishment Realm cultivators had toward him. Li Zhoutui enjoyed such excellent resources over these years, yet his cultivation was only comparable to Li Zhouxun, who had gone out to tend the fields. Both were still at the Embryonic Breathing Realm, which only made matters worse.</p>
+<p>As for Li Zhouxun, his innate ability was passable. His family was poor in his early years, and he was taken in by Li Chenghui, which allowed him to gain some claim to succession. However, Li Chenghui may only have been observing him and never said a single word about it. Thus, at that time, it could not be decided as him.</p>
+<p>Later, he voluntarily gave up and went to the island to oversee the spirit fields. If Li Zhouda had not been ahead of him, his chances would have been considerable. But they had already dimmed with this comparison.</p>
+<p>Li Xuanxuan looked around. Everyone lowered their heads in thought, and no one stepped forward to speak. Seeing that there were no objections, he said, “Have Zhouda come up and take a look.”</p>
+<p>Moments later, a man in leather armor entered from the side. He was powerfully built, with a square face, thick brows, and large eyes. He bore some resemblance to Li Wen, yet where Li Wen had a simple and dull air, this man was clearly accustomed to bloodshed. He seemed far more ferocious, with bright and piercing eyes.</p>
+<p>He strode quickly to the front of the hall and bowed without the slightest fear. “Greetings to all elders and brothers.”</p>
+<p>Li Xuanxuan nodded. “This is Li Zhouda. He currently serves in the Jade Court, handling matters of subduing demons and eradicating evil.”</p>
+<p>The elder looked around again. Only Li Zhoufang hesitated for a moment and glanced at Li Xinghan. Li Xinghan, however, had a favorable impression of Li Zhouda and said softly, “I stayed by the lake for a time. This elder brother is conscientious and responsible, and he is considered very diligent among the family members.”</p>
+<p>Once Li Xinghan made her stance clear, Li Zhoufang said nothing further. Both sides were his own family members, and he would certainly not offend his promising younger sister just to speak for Li Zhoutui.</p>
+<p>Seeing this, the elder nodded and said, “The elders all think highly of you. You simply need to restrain your temperament.”</p>
+<p>Li Zhouda chuckled and bowed to each person. “This junior receives your instruction.”</p>
+<p>Li Minggong then stood and said, “I will take you to Qingdu. The various rites on the mountain should already be prepared.”</p>
+<p>The family members followed Li Minggong as they moved to Qingdu, leaving only Li Xinghan and a few others behind. Li Xuanxuan sighed. “He is good, and Jiangqian and the others are still overseeing the overall situation. We will not rely solely on him in the future. That is why I dared to choose him. There is no need for him to control Qingdu. Suppressing a few peaks will still be manageable.”</p>
+<p>Li Zhouda was excellent in every regard, except that his nature was too upright, his temper fierce, and he was not good with words. He had upheld justice within the family from time to time. Although this earned him the support of many family members, it was not considered safe on the path of cultivation.</p>
+<p>Li Jiangqian had been waiting for this matter to be settled. His gaze was somewhat deep as he took a sip of tea and replied, “If this matter spreads, Zhouxun stands alone and will be fine. However, there will likely be resentment within Zhoutui’s lineage.</p>
+<p>“That is one point. Second, Uncle Zhouda has a violent temper and cannot tolerate idle gossip. My suggestion is that once the formalities are complete, we immediately have him enter seclusion so he does not hear any of it. After a few years, when this matter has faded, there will be far fewer disputes.”</p>
+<p>Li Xuanxuan feared such troubles the most and could only sigh. In truth, everyone understood that at this point, Li Zhouda could no longer be avoided as the choice. Li Zhoutui would likely end up as nothing more than a Qi Cultivation Realm cultivator.</p>
+<p>The old elder glanced at Li Xinghan and said gently, “As for your Essence Gathering Pill, I sent people to inquire among the various families two years ago. Later, I obtained one refined by Jade True at Sword Gate and exchanged for it with our own resources.</p>
+<p>“There are also several pills prepared by the family for breakthroughs. I will go with you to your cave dwelling later and teach you the order in which to take them, so you can prepare to attempt the Foundation Establishment Realm.”</p>
+<p>The Li Family possessed a talisman pill that allowed a breakthrough without aftereffects, yet it could not be revealed. Thus, the Li Family had learned many methods over the years. Now Li Jiangqian coordinated multiple pills together, coating the talisman pill with a layer of pill casing and mixing it in. When the final breakthrough came, it would only feel as though the effect was exceptionally good.</p>
+<p>Li Xinghan bowed in gratitude and withdrew from the hall. Only then did Li Jiangqian wave his hand and dismiss those on either side. Seeing Li Xuanxuan’s troubled expression, he smiled and said, “Elder, there is no need to worry so much. He may be hot tempered and fond of fighting, but he is not foolish. Look at how he fights day after day, vents anger for the family, and risks his life when slaying demons. Is that not building a reputation? When the time comes, he is someone who can fight, is willing to risk his life, and has high cultivation. Does the family not lack such a direct descendant? Treating the right ailment can be quite interesting.”</p>
+<p>Li Xuanxuan stroked his beard as Li Jiangqian continued quietly, “I have received news that Li Quantao is already stationed at Lake Xian. His son has also gone to White River Stream and is said to be traveling in that area. The nearby families have not interfered.”</p>
+<p>“Rosy Glows of the Celestial Pavilion has already been transferred east to guard the Eastern Sea for Azure Pond Sect. He has been granted a larger territory, from Green Pine Island all the way to Tai’e Island by the Reef Sea, all under his sole authority. His current status rivals that of Sect Master Tantai Jin.”</p>
+<p>A smile appeared on his face as he continued, “There is also another piece of news. After Fei Qingyi married Qin Xian, she made her first public appearance and was invited to guard the Eastern Sea, still under that lord’s command. Tantai Jin even assigned her a sizable force. She is clearly being valued. That one truly knows how to read the situation.”</p>
+<p>Li Xuanxuan shook his head and replied, “When the Si Family was at its peak, she kept her distance and did not move, even cutting off contact with her own family. Yet she never forgot to curry favor with us, gifting Foundation Establishment Realm dharma artifacts without hesitation. Now that Ning Wan has emerged from seclusion, it immediately becomes a signal of the Si Family faction showing goodwill toward the Ning Family. Call it good fortune or cleverness, she has finally spread her wings from the sinking Fei Family ship and flown higher and higher.”</p>
+<p>Li Jiangqian paused briefly and stepped forward from the main seat. He pushed open the door, and looked toward the north as if sensing something.</p>
+<p>Dwelling Heart that Charges Profundity benefits the Immortal Dao, seclusion, and can clarify the Twelve Essences. Yet breaking through precisely when a True Monarch descends is somewhat suspicious.</p>
+<p>Heavy snow fell along the northern shore, gathering into a vast white expanse in the distance. Spring snow was not particularly remarkable, yet Li Jiangqian observed the extent of the snowfall and said with a smile, “It has come as soon as it was spoken of. After all these years, the Fei Family has finally produced another Foundation Establishment Realm cultivator of its own. But this Fei Qingyi may well become a headache again.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1312.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1314.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

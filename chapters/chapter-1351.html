@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1351: Snowfall Over The Purple Pavilion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1350.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1352.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1351: Snowfall Over The Purple Pavilion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing flickered to a spot not far away. However, before he could even deploy the Heaven-Venerating Gate, he sensed something. His gaze sharpened as he quietly watched the world before him.</p>
+<p>A small eight-pointed snowflake spun in the air and drifted gently down. He lifted his gaze slightly and saw the entire mountain range already filled with falling snow. It was gradually turning pure white. Li Ximing was first greatly alarmed, his mind briefly blank, then quickly realized what was happening,No pine resin. Thankfully, there is no pine resin…</p>
+<p>All the divine ability cultivators on Mount Xiaoshi lifted their heads with strange expressions. The eight-armed dharma wheel suspended in the air finally could not bear the strain as it emitted creaking sounds. In an instant, Mount Xiaoshi grew far colder as icy winds howled.</p>
+<p>The eight-armed dharma wheel dimmed down to almost nothing. White snow burst forth from it, the eruption accelerating at a terrifying pace. In an instant, it became a sky-reaching pillar of white snow amid the drifting flakes, accompanied by a mournful cry.</p>
+<p>Crack!</p>
+<p>The dispersing brilliant light was pressed down and scattered in all directions. A sky-piercing killing intent formed from Cold Essence condensed to the extreme surged out of the snow. Countless multicolored clouds filled the sky as a golden body rose up, revealing a noble dharma body covered with innumerable eyes.</p>
+<p>“Zhelu!”</p>
+<p>As the foremost figure beneath the Emptiness Dao Dharma Master, one who had achieved the turbid void Maha level of power, this Buddhist cultivator manifested himself seated amid raining mandala flowers of the Emptiness Buddha Land. His presence was majestic and clearly uninjured, radiating endless lotus blossoms falling like rain. Immediately, one Merciful One golden body after another appeared around him.</p>
+<p>Beneath Zhelu’s golden body, the white snow set off a small purple pavilion. An immortal maiden draped in falling snow stood there, her brows tightly knit and blood seeping from the corner of her lips as the sword in her hand pointed toward the sky.</p>
+<p>The sword was pure white. Its blade was long, its hilt short, square, and extremely simple, only half a finger thicker than the blade. Its body bore patterns of profound snow and the Supreme Yin rising to the heavens. Its surface depicted the harmony of heaven and earth as autumn passed and winter arrived. Radiance alternated across it as it radiated a sky-piercing killing intent.</p>
+<p>A Purple Mansion Realm spirit sword!</p>
+<p>How could Li Ximing not guess the origin of the sword?</p>
+<p>It is the famous Frosty Absolute Sword of the Azure Pond Sect. It must carry extraordinary methods. It seems they used this sword to break the formation by surprise.</p>
+<p>The Li Family was not even at Moongaze Lake when the Frosty Absolute Sword first displayed its might. No one knew which ancestor was still hidden in some corner. At that time, the sword was not yet called Frosty Absolute Sword, but it was already known as the Azure Pond Sect Master’s treasured trump card, one of the few spirit swords under heaven. It was said that after the chaos at Moongaze Lake, it had gained tremendous benefits and countless marvels, and thus came to be named Frosty Absolute Sword.</p>
+<p>The Frosty Absolute Sword had not appeared for many years even by the time the Li Family rose to prominence, yet its name still spread across the lands of Wu and Yue, known even among rogue cultivators.</p>
+<p>This was Li Ximing’s first time seeing this spirit sword. The moment he sensed the sky-piercing killing intent and spiritual snow, he knew this spirit artifact was extraordinary. It was likely the greatest spirit artifact he had ever encountered. However, he was not a lover of swords and did not lose himself in it. Seeing more and more Merciful Ones gathering around him, some in good condition and others not, he immediately turned his attention back.</p>
+<p>Amid the chaos, he indeed saw Chilu’s eyes gleam with excitement, his gaze burning with impatience. As the Merciful One’s eyes swept across the field, he suddenly spotted a golden body descending through the snow. It had three eyes on its face and two more on its chest, with many arms arranged around its body in the form of a lotus. The augmented radiance was extremely powerful, and judging by its aura, it seemed even stronger than Chilu.</p>
+<p>His eyes shone as he let out a fierce shout, “Five-eyed one! Quickly join me in surrounding and killing the remnant of Wei’s Li!”</p>
+<p>The situation was extremely clear. Once the Huixu Demon Subduing Grand Formation was broken, with several Purple Mansion Realm cultivators present and Tinglan and Qiuhu holding Boundless Water-Fire, the Buddhist Maha cultivators would not dare press too hard. They would not risk lives by forcing out the deepest foundations of the Supreme Yang. Once the formation was broken, escaping would not be difficult even if the two were in poor condition.</p>
+<p>Currently, for these Merciful Ones, the most valuable and easiest target to crush was none other than Li Ximing!</p>
+<p>The five-eyed Merciful One with lotus-like wondrous hands had just landed. Hearing Chilu’s shout, he raised his head in shock, his gaze landing on Li Ximing in the distance. It felt as if he had been struck by lightning. His legs went weak as he cried out in alarm in his mind,Oh no… that immortal family from Moongaze Lake!</p>
+<p>Ever since he had been seized by the Immortal Lord last time, the five-eyed Merciful One had lived like a rat. He had used to indulge freely back in his own territory for hundreds of years. Now he could not even step outside, as he buried himself in the temple and did not even dare to collect rent from the temple tenants!</p>
+<p>He was perfectly aware of how many sins his disciples and followers committed on a daily basis. Whenever he found excuses to slaughter them, those below all felt he had become temperamental and unpredictable. The five-eyed one lived in constant unrest, tossing and turning, unable to sit or stand in peace.</p>
+<p>He thought to himself,Who? Li Ximing? And you want me to kill Li Ximing? You bastard! Is courting death not enough for you that you have to drag me along too?!</p>
+<p>He was furious and frantic, his emotions a complete jumble. His face betrayed his rage, as it contorted into a ferocious expression with eyes wide in outrage. This was genuine anger, but Chilu took it for a display of divine ability and felt perfectly aligned with him, rejoicing inwardly,Good!</p>
+<p>Li Ximing had noticed him long ago. His first instinct had been to flee into the great void by taking advantage of the moment when the Merciful Ones had just landed and not yet reacted. He would also have the Surging Yang Star Command Treasure Disk protecting him as he broke free.</p>
+<p>After all, these Merciful Ones were no less threatening than Chilu. Once they attacked together, Li Ximing would not only be injured but might even be targeted by Daisi and others. However, most of these Merciful Ones were afflicted by the Boundless Water-Fire. As long as the flames on their bodies were not suppressed, they would naturally be cut off from the great void and could not enter it to deal with him!</p>
+<p>But he had only just entered the great void and had not yet had time to recover when his vision suddenly brightened. Aa middle-aged man wearing a Daoist robe, with hair and beard half white, was standing in the great void. He held a sword in his arms, his gaze sharp as a blade, yet a black talisman hung at his waist, shrouding him in a dark haze that made him difficult to perceive.</p>
+<p>Senior Ling Mei!</p>
+<p>Li Ximing was instantly overjoyed, yet he saw that this Sword Gate Daoist Master no longer had the courtesy and kindness he once showed. Killing intent filled his eyes as he shook his head, one hand already gripping the sword hilt as he waited quietly.</p>
+<p>In the very next instant, a splendid multicolored light chased after them into the great void, crossing the surging emptiness as it rapidly expanded, revealing a massive golden body. Its horse-like face with pitch-black eyes looked especially terrifying within the great void.</p>
+<p>It was Daisi… Judging by this speed, this had clearly been planned in advance!</p>
+<p>The radiant multicolored light, mixed with gold and seeming to have eyes of its own, descended directly on Li Ximing. Only then did it reveal a demon-subduing lotus covered in intricate patterns.</p>
+<p>The Three Retributions World Entering Lotus!</p>
+<p>From beginning to end, Daisi had been nurturing his own schemes. He had clearly been scheming against Li Ximing all along, harboring the intent to eliminate him early. Now that the situation had drastically changed, this Maha did not wait for the Merciful Ones to swarm in. He had already charged his treasure artifact and had been waiting for Li Ximing in the great void!</p>
+<p>Clang!</p>
+<p>At the same time, Ling Mei, standing behind Li Ximing, finally let out a cold laugh and raised his wrist. Golden qi surged as cold blades interwove, as if responding to the white snow and purple pavilion in the manifested world. A vast expanse of grim white sword light leapt forth in the great void.</p>
+<p>The Sword Gate was already the foremost in offense within the Supreme Yang Dao lineage, and Ling Mei was the leading sword cultivator of the Sword Gate. Though burdened by worldly matters in his youth and unable to form true sword intent, he was still top tier whether in sword arts or divine abilities. He had also prepared this strike for an unknown length of time. Li Ximing felt his vision turn completely white as a crisp, pleasant, and clear sword hum rang in his ears.</p>
+<p>Hum…</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1350.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1352.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

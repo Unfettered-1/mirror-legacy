@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1353: Returning To The Mountain (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1352.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1354.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1353: Returning To The Mountain (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing sighed emotionally. “Daoist Master Ling Mei truly possesses the might of a Sword Immortal…”</p>
+<p>He absolutely did not believe that someone capable of wielding such a sword lacked sword intent. Chen Yin, also a sword cultivator, added with a sigh, “Senior Ling Mei’s attainment in the Sword Dao has already reached the pinnacle. Even without sword intent, it is enough to make others submit. Even Duoling Sword Immortal from the Lacquer Marsh of the Wu State often comes to visit him, believing himself inferior, and has never gained the upper hand when crossing swords with him.</p>
+<p>“To possess the might of a Sword Immortal without sword intent. If he were to obtain sword intent, the sword light of today would surely be even more terrifying.”</p>
+<p>Li Ximing nodded in amazement, yet doubts arose in his heart. Riding the wind toward the lake, he asked, “Yet I have some doubts. After sword essence comes sword intent. How can one achieve sword might even higher than sword intent without passing through sword intent? It seems the Sword Gate’s sword manuals are truly earth-shaking…”</p>
+<p>Chen Yin nodded slightly, appearing to share the same suspicion. Ning Wan’s expression was complex, as though she had not yet recovered from the northern encirclement. Only after hearing Li Ximing’s words did she reply with faint interest, “Sword intent must come before divine ability. Once divine ability is achieved, no matter how high one’s sword cultivation may be, one will no longer have any connection to sword intent, unless it is the Nurturing Azure Heaven recorded in ancient texts…”</p>
+<p>Nurturing Azure Heaven… the young Sword Immortal Wang of those years…</p>
+<p>Only then did Li Ximing nod. Lost in thought, they continued toward the lake. The three emerged from the great void and landed on Zhijing Mountain, covered with gardenia trees. White jade pillars stood or lay scattered, still in their original places. The ground was cleanly swept, and the round tables and stools were just as before.</p>
+<p>Fresh clear water had even been replaced in the jade kettle, ready for Li Ximing’s return at any time.</p>
+<p>Li Ximing had not returned for many years. When he saw this familiar scene again, he felt deeply moved and waved his sleeve as he said, “My humble place is simple. Please forgive any shortcomings.”</p>
+<p>The two did not stand on ceremony and sat down one after the other. Li Ximing began to brew tea. Ning Wan looked somewhat uneasy and said with lowered eyes, “This time… it was thanks to Senior Tinglan’s full protection that I did not suffer serious injuries. As for the matters by the river, I will still have to trouble Zhaojing to assist once they are placed in my hands.”</p>
+<p>“That is only natural.”</p>
+<p>Li Ximing still felt uneasy at heart. This time, he had chosen to protect himself wisely, and the situation had not turned bad. He was not injured. Yet after seeing Tinglan’s condition just now… no matter how effective the Purple Smoke Gate’s spirit herbs might be, she clearly had no ability to act for the time being.</p>
+<p>Thus, he asked, “How did things reach such a state?”</p>
+<p>Ning Wan shook her head and said, “There were disturbances at Mount Xiaoshi. Tinglan suspected someone was making a move, but she did not expect that fate itself had tilted toward the Northern Buddhists. It was exploited by the Emptiness Dao to scheme against the two of us. We never imagined that Buddhist cultivators could calculate our whereabouts, and thus we were careless.</p>
+<p>“Fortunately, we had the Purple Throne Serene Spirit Pavilion. Such a spirit treasure is profoundly wondrous and capable of resisting external enemies. Zhelu was also wary of the trump cards in our hands. The Frosty Absolute Sword was in my possession, and I had originally planned to break the formation and leave. However, Tinglan was on guard against other Maha waiting outside, fearing that we would be suppressed again after breaking the formation, so we chose to hold our position quietly.</p>
+<p>“Later, the formation trembled several times, and we noticed that the traces of many Merciful Ones had disappeared. We realized that reinforcements had arrived to rescue us, and only then did we grit our teeth and break the formation…”</p>
+<p>Chen Yin clearly understood the situation and added, “Senior Ling Mei was also waiting for the right moment. If he had acted rashly, it would not have been easy to protect us all in retreat, nor would it have been easy to explain matters to his sect. Once Daoist Master Ning appeared together with the Frosty Absolute Sword, he then had sufficient justification to act…”</p>
+<p>Li Ximing pondered those words, as Ning Wan said, “I have heard that the Sword Gate is overly rigid. Those elders truly wish to withdraw from the world. Yet the Chenghua Hall allows collective petitions to request the enforcement of sword laws. If Senior had not stabilized the Cheng Family in advance, we would not have had even this bit of freedom today.”</p>
+<p>Chen Yin was not of the Supreme Yang Dao lineage, so he naturally remained silent. Li Ximing also said nothing and simply poured tea for her. After quite a while, Chen Yin set down his cup and finally spoke, “As for this incident, Fellow Daoist Luo from the southern border also contributed his efforts. However, he merely engaged the Merciful Ones in battle and may have been injured. He is also not very trusting of us, so he departed ahead of time.”</p>
+<p>Since Chen Yin had invited him, he must have been entrusted with this message and could not simply say nothing. He clearly did not wish for further contact, yet he had followed them all the way to the lake, evidently for the sake of saying this.</p>
+<p>As expected, Ning Wan frowned and asked doubtfully, “Daoist Master Luo… I have not heard of him…”</p>
+<p>Although Chen Yin had to mention him, the other party was not a good person. Moreover, both his companions were from the Supreme Yang Dao lineage, so he did not conceal anything and answered, “Fellow Daoist Ning need not worry. He is not an old acquaintance of the Azure Pond Sect either. His Dao lineage has deficiencies that need to be remedied, and he covets a certain inheritance within the Azure Pond Sect’s secret vaults. That is why he offered assistance.”</p>
+<p>Ning Wan fell into thought. Chen Yin lifted his sleeve and said politely, “Having left the Chen Family and manifested in the world by the river, there will inevitably be petty figures plotting against me. I must return at once to respond to the changing situation, so I will not trouble you further…”</p>
+<p>Seeing him about to leave, Li Ximing hesitated slightly and asked, “What about Senior Ling Mei on that side…”</p>
+<p>“There is no need to worry. Even though that Daoist Master Cheng has been cultivating in seclusion for a long time, he will certainly follow something of this scale. His sword path and cultivation are inferior to Senior Ling Mei’s, but he is still a high cultivator of Metal Virtue and will not come to harm…”</p>
+<p>Ning Wan also lifted her head and added, “Among all sects, Buddhist cultivators fear the Sword Gate the most. No matter how strong other Dao lineages are, it is not easy for them to leave behind contingencies. Some predecessors leave nothing at all. But sword intent can be preserved within the sword itself, and be passed down from generation to generation. This trump card can be called the greatest among all factions…</p>
+<p>“Our methods might at most destroy one of his golden bodies, but if the Sword Gate is pushed too far, killing a Maha would not be difficult. It might not even shake the Sword Gate’s foundations much.”</p>
+<p>Chen Yin nodded, sighed and gave a hurried salute as he rode the wind away.</p>
+<p>After he left, Ning Wan relaxed considerably. Leaning against the jade table, she revealed a trace of weariness and said softly, “The Li Family has not had it easy all these years. If Junior Brother Chejing were here, he would also be a first-rate figure by now… The Chi Family deserved their fate. I warned them long ago, yet Heyuan still fell into it.”</p>
+<p>She was reminiscing about the past. Perhaps Ning Wan believed that the Chi Family truly deserved their fate, but Li Ximing did not share much of that sentiment. If Chi Buzi were still in the sect, the Chi Family would still be living freely, and Li Ximing would still have to bow his head to Chi Buzi…</p>
+<p>Thus he replied, “Their family’s fortune declined and their strength weakened, making them a natural target for retribution under governance. The Ning Family was also set free…”</p>
+<p>Ning Wan smiled faintly, as she slipped a small box from her sleeve, placed it on the jade table, and said softly, “It was still hard on Fellow Daoist to make this trip. I am not very familiar with Senior Chen Yin and will have to visit him later to offer thanks. As for the ties between our two families, there is no need for formality. I have delayed your cultivation and made you travel thousands of kilometers from the Eastern Sea, so I must make it up to you.</p>
+<p>“This is a cultivation provision called the Surging Separation Treasure Leaf. It was obtained from the Eastern Fire Grotto Heaven and comes from a spirit flower grown beside the Suyuan Hua. It is a Purple Mansion Realm provision of the Radiant Fire Dao…”</p>
+<p>She opened the box. Inside lay a neatly placed, curled crimson long leaf. Its purple-black veins glimmered faintly in the light. Ning Wan had only just reached the Purple Mansion Realm. Where would she obtain so many treasures? Naturally, they had been left behind by the Ning Family’s Daoist Master Yuansu.</p>
+<p>A Radiant Fire provision?</p>
+<p>Li Ximing had once obtained a Horn Wood provision as a return gift from the Sword Gate. Purple Mansion Realm provisions were inferior to spirit items. Though they were of Purple Mansion Realm, most were minor offshoots of Purple Mansion Realm spirit items and were not easily obtained. Ning Wan taking this out specially truly startled Li Ximing.</p>
+<p>Rescuing Ning Wan could indeed be considered a small favor, but this matter had been initiated by Kuiqi, who had even provided payment for Li Ximing’s help. Ning Wan’s gesture clearly showed an intent to build ties as she said softly, “Radiant Fire conflicts with my own Dao, so this item is of no use to me. Since Zhaojing is skilled in alchemy, it will naturally be far more useful in your hands.”</p>
+<p>Li Ximing found it somewhat hard to accept and could only say, “Thank you for your kindness, but such a heavy gift is inappropriate. Let us treat it as a trust placed with me. If I truly refine a pill one day, I will send one to you.”</p>
+<p>After all, Radiant Fire items were quite valuable to the Li Family. Not only was Bright Yang related to Radiant Fire, but Li Jiangqian also cultivated Radiant Fire. Li Ximing naturally could not return it.</p>
+<p>Ning Wan clearly treated his words as polite convention, nodded slightly, and replied, “Matters between north and south are already troublesome, and now the Buddhist cultivators are interfering again. The Purple Mansion Realm grand formation cannot be delayed. If it cannot be established, things will only grow more difficult later.</p>
+<p>“I read the jade slip on the way. Senior Tinglan’s design is ingenious. The most troublesome part is actually these thirty-two profound pins. Give me three days, and we will set these thirty-two profound pins across the region and connect the earth veins. Then we can proceed.”</p>
+<p>Li Ximing could only wish that she would act sooner. His divine ability was still somewhat unsettled and needed minor adjustment, but he had already taken a pill earlier and these issues would recover with time.</p>
+<p>He set them aside and said seriously, “No matter. I have the Mountain-Charging Sea-Pacing Tiger. I can also handle connecting the earth veins. You should first recuperate your mana. I will drive in these mountain-piercing profound pins myself!”</p>
+<p>Ning Wan showed a genuinely heartfelt smile for the first time and said, “There is no need to rush, Zhaojing. Sister Tinglan fixed the positions several years ago. If there have been any earth vein changes in recent years, the key points will no longer be accurate. We also need to spend a few days waiting for the two Daoist Masters. It is best that all of us meet.”</p>
+<p>Ning Wan was clearly quick-witted as well. She laughed softly and then reminded him, “Moreover… Senior Kuiqi has a considerable attainment in formation arts. The Xiukui and Hengzhu inheritances are complete, and both alchemy and formations are strong. Those are all Origin Mansion legacies. Asking just one more question would greatly benefit your family’s formation!</p>
+<p>“Do not worry. I will not ask him to examine the formation plate. I will only ask about the earth vein nodes as he sees them. Once Tinglan’s profound pins are driven in and the earth veins shift and merge within the formation, there will be no need to worry about secrets leaking…”</p>
+<p>Li Ximing nodded inwardly. This woman had thought things through carefully and was clearly speaking to him as a Purple Mansion Realm cultivator with some understanding of formations. In truth, he did not fully understand it, but still nodded solemnly.</p>
+<p>Thus, he sat cross-legged briefly atop the jade pillar as light and darkness intertwined between heaven and earth. He still carried Xiukui Dao Gate’s spirit artifact in his sleeve. The Surging Yang Star Command Treasure Disk emitted a faint Bright Yang radiance, making his Heaven-Venerating Gate even more active.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1352.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1354.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1386: Golden Qi Soaring Into The Heavens (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1385.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1387.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1386: Golden Qi Soaring Into The Heavens (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Heavenly light blazed brilliantly, and flames roared fiercely upon the Viewing Pavilion. Chu Minglian, dressed in red, stood in the middle. He was completely absorbed as he controlled the Radiant Fire.</p>
+<p>Chu Minglian had refined quite a number of dharma artifacts in his life. He had originally forged Li Xuanfeng’s famous dharma artifact, White Lightning. Although its later advancement had largely relied on the Monarch Calling Command Golden Talisman, it had still greatly boosted his reputation.</p>
+<p>This spirit embryo was even more unprecedented, since it had surpassed the scope of a dharma artifact. For a cultivator skilled in artifact refinement, it was an immense honor and allowed him no room for the slightest lapse.</p>
+<p>Li Ximing saw his elder brother off from Moongaze, then rode a streak of light down onto the platform. Chu Minglian hurriedly bowed and said, “Congratulations…”</p>
+<p>Li Ximing waved his hand and cut him off. While inspecting the spirit embryo within the flames, he asked, “How is the Ruler of Manifested Mountains and Rivers progressing?”</p>
+<p>Chu Minglian hurriedly offered his congratulations, “Congratulations, Daoist Master. Everything is proceeding normally. Although my skill is not refined enough to complete this effortlessly, Daoist Master’s spiritual essence is of excellent quality. It not only makes up for my shortcomings, but has also elevated the very foundation of the spirit embryo to a higher level.”</p>
+<p>Li Ximing nodded. Though he was not proficient in artifact refinement, he at least possessed the Divine Technique of Pavilion View: Refining Within Fire. He saw through the dharma artifact with a single glance. He took note of the vast crimson glow within, grand and imposing, and thus nodded.</p>
+<p>“You have worked hard.”</p>
+<p>Chu Minglian repeatedly said he did not dare accept such praise. Li Ximing glanced to the side to see a white-robed female cultivator carrying a sword descend from the pavilion.</p>
+<p>Though her appearance was not striking, she carried herself with poise. Her skin was like congealed jade, and she appeared all the more graceful without adornment. She saluted Li Ximing, her voice crisp as snow as she smiled and said, “Greetings, Daoist Master!”</p>
+<p>Li Ximing was somewhat surprised. After taking a brief look, he nodded and said, “Good. Your breakthrough was indeed swift!”</p>
+<p>This woman was none other than Li Xinghan, who had been in seclusion for her breakthrough.</p>
+<p>Li Xinghan had entered seclusion at the founding of Locust Soul Hall, and more than four years had passed. It was truly fast. It only took Li Ximing a moment to understand why.Xinghan cultivates Jade True. With the True Monarch returning to position, this is an era when jade flourishes across the world. She also encountered Dwelling Heart that Charges Profundity, benefiting both Ancient Merging Dao and the Immortal Dao. It is favorable for seclusion and breakthrough. It is therefore nothing strange!</p>
+<p>She had likely come to the Viewing Pavilion to take over her shift. Li Ximing beckoned her closer with evident delight. Looking at the treasured sword on her back, he rose upon light and sighed, “Good, good. The old elder once mentioned that with Jade True returning to position, you were the least among the younger generation entering seclusion for breakthroughs to worry about. Yet only after seeing you in person could I truly feel at ease!”</p>
+<p>There was truly no one among the Zhouxing generation, aside from Li Zhouwei, one who could act as the main pillar. Even having one person of outstanding strength would suffice. Li Xinghan smiled slightly and saluted. “I cultivated the Jade True Dao Unification Technique and have achieved True Dao Unification[1]. A point of white radiance rests within my qihai acupoint; it is able to unite with the true essence of techniques and pursue the utmost in skill. It benefits talisman, pill, and artifact arts, as well as sword and blade craftsmanship. When cultivating spell arts, so long as the spell art is an escape spell or is cast through a dharma artifact as medium, it becomes even more effortless to wield.</p>
+<p>“The Immortal Foundation’s support also brings unification with truth. Once engaged in battle, I grow increasingly attuned, and the clarity of my eyes allows me to break illusions and perceive subtle details…”</p>
+<p>Now that True Monarch Shangyuan had attained Fruition Attainment, True Dao Unification was greatly strengthened, and was entirely different from what it had been in the Yu Family of old. Li Xinghan suddenly looked puzzled as she continued, “There is only one point I have yet to understand, and I wish to seek instruction. This Immortal Foundation also carries a certain minor profundity. If I am subjected to a transformation art, not only is the duration of the transformation greatly extended, it also becomes much harder for others to see through it… It sounds rather like the Dao of the Shamanic Talisman Dao.”</p>
+<p>Li Ximing led her up the mountain and nodded slightly. He had indeed learned quite a bit about this from Zhusheng, and began to explain, “Although Jade True has drawn closer to the Immortal Dao due to the lord’s breakthrough, at its root it remains one of the Three Shamanic Daos, the Six-Nine[2] Jade True. Transformation is naturally part of it.”</p>
+<p>He smiled and continued, “Quewan still knows some transformation arts, which are by no means useless. Moreover, the former Mount Yue state excelled in shamanic spell arts and was ferocious beyond measure. Though they have become obedient as lambs after a hundred years of cultivation, the shamanic spell arts remain stored in the archives. If you have time to look through them, it may prove beneficial.”</p>
+<p>Li Xinghan acknowledged, “I will keep the Daoist Master’s teachings firmly in mind.”</p>
+<p>Since he had met her, Li Ximing took the opportunity to ask, “I have been in seclusion for more than a year. How are matters at home?”</p>
+<p>Li Xinghan hurriedly said, “I was not the only one who broke through. Jianglong’s breakthrough took even less time. He entered seclusion later than I did, yet just as I emerged, he followed close behind with his own breakthrough. Recently, however, he accompanied Dharma Protector Chen to the eastern shore.”</p>
+<p>“The eastern shore…”</p>
+<p>As she spoke, Li Xinghan obediently poured tea for him. Li Ximing immediately deduced,That is nothing strange. The lord in the north is currently experiencing the mortal world and even made a round by the lakeside. There may well have been considerable benefit.</p>
+<p>Li Jianglong was in fact less familiar to him than Li Xinghan before him. Among Li Zhouwei’s children, only Li Jiangqian had had the chance to meet him a few times. Li Ximing quickly shifted the topic and asked, “Our family still bears the name of a sword immortal family. In earlier years we had some renown, but only a few mention it in the past ten or twenty years. Scarcely anyone among the younger generation wield the sword. You stand out alone. This inheritance must not be severed. You must watch over it carefully.”</p>
+<p>Li Xinghan acknowledged. Li Ximing continued, “I asked you some years ago, but have you mastered Threefold Moonlight?”</p>
+<p>Li Xinghan quickly replied, “The sword immortal’s legacy is profound and unfathomable. After many years of study, this junior has finally gained some progress. I mastered it several years ago.”</p>
+<p>Li Xinghan removed the cold-edged blade from her back and gently drew the sword. A chill radiance flared from her. Moon-bright sword light, large as a ship’s sail, shone briefly in the air before dispersing. However, it was quickly followed by three agile streaks of light like stars. With no enemy present, they merely hovered about the blade.</p>
+<p>Though her Sword Dao already surpassed the vast majority of sword cultivators, it still appeared immature compared with Li Ximing’s two brothers. This display of Threefold Moonlight was elegant, yet carried too much of a craftsman’s rigidity.</p>
+<p>Li Ximing quietly watched the sword light fade away. He glanced at Han Lin in her hand, lowered his head to sip tea, and said with a sigh, “Good… after so many years, Han Lin has finally seen Threefold Moonlight once more.”</p>
+<p>He changed the subject, saying, “However, I once promised that if you mastered Threefold Moonlight, I would forge a dharma sword of the Jade True Dao for you. I cannot break my word. Although Han Lin is extraordinary, it does not sufficiently accord with Jade True…”</p>
+<p>Li Xinghan hurriedly saluted in thanks. Li Ximing then took a jade box from his sleeve and instructed, “Chu Minglian happens to be by the lake, and the spirit embryo is nearly complete. This is a portion of the Foundation Establishment Realm spirit item Mingcui Flower. Take it back to the family and exchange it for a Jade True treasure. Then ask the old elder to bring out the broken sword left after Yu Mujian cast his blade. Your blade may be refined with that.”</p>
+<p>1. A Dao Foundation. ☜</p>
+<p>2. In Daoist numerology, 六九 (six-nine) denotes a symbolic cosmological pairing of six, associated with earthly structure and order, and nine, representing supreme yang and completion, commonly used to classify ritual lineages or spiritual branches. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1385.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1387.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

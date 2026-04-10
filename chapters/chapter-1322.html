@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1322: Yin Banishing Transformation (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1321.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1323.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1322: Yin Banishing Transformation (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing swept his gaze over the group of cultivators and frowned slightly. He knew that with more and more Purple Mansion cultivators closing themselves off to cultivate here, remaining in this place was becoming increasingly inconvenient. What could be stirred up today might disrupt him tomorrow and force him out of seclusion, leaving everything at the mercy of others.</p>
+<p>It is not that I distrust Xiukui or Nine Mounds. White Sand Island can still serve as a place to leave messages, but it is no longer suitable for closed door cultivation. It would be better to find another territory.</p>
+<p>With that thought, he no longer had any intention of remaining on White Sand Island. He cast another glance at the uneven mix of cultivators below and frowned inwardly,If I simply leave with a flick of my sleeve, this place will suffer again in a few years. Whether it is an immortal gate from the Western Curtain Sea or the surrounding powers, they may not dare come openly at first, but probing is unavoidable.</p>
+<p>However, if he continued to stay here, matters would only grow larger. Leaving aside the Dragon Clan, even the Great Boon Bronze-Color Temple of the Peacock Sea would likely send people to inquire once they heard that a Purple Mansion Realm power had appeared in nearby waters. Those monks were sly, and who knew what trouble might arise then?</p>
+<p>He paused briefly and finally said, “I have traveled the many seas and merely passed by this place. I did not expect you all to gather on this island and receive my protection. Now that I am leaving these waters, our destined ties have come to an end.”</p>
+<p>When the cultivators below heard his words, they realized they would not be pursued and all felt a wave of relief. Yet upon hearing that he was leaving, fear rose again, and they bowed with tears in their eyes.</p>
+<p>Li Ximing merely said, “The demonic creatures of the Dong’a King Sea are running rampant. Since I have come, I cannot simply watch as they wreak havoc…”</p>
+<p>If Li Ximing was a formation master, modifying the formations of White Sand Island would have been ideal. Unfortunately, he knew nothing of formations, and distributing pills would only sow discord, so he could only take out a few jade slips from his sleeve.</p>
+<p>These were several cultivation techniques and spell arts from inland regions, far better than the common goods these people carried. Li Ximing tossed the jade slips onto the table and shook his head as he said, “You are each cultivating some miscellaneous arts and cannot even contend with a few demonic creatures. Read through these one by one. For the next ten or so years, no demonic creatures will dare come. Rely on your own cultivation and pass your Dao lineage onward.</p>
+<p>“I will first make a trip to the Western Curtain Sea. When I return, I will give a bit of guidance to those at sea who have a chance to establish their foundation, and then I will continue traveling the seas.”</p>
+<p>The cultivators were both shocked and delighted. The old man stepped forward a few paces and said through tears, “May we know your honored name? The people of the Dong’a King Sea are filled with gratitude.”</p>
+<p>Name?</p>
+<p>Li Ximing had no interest in giving these people a banner to rally under, nor did he want any future trouble blamed on him. Could he really expect these penniless rogue cultivators to produce a few outstanding late stage Foundation Establishment Realm cultivators, or even a Purple Mansion Realm cultivator?</p>
+<p>Since he expected nothing of the sort, leaving behind a name and forming Dao lineage ties would only invite trouble. He turned and left, speaking casually, “There is no need for a name. If you all make less use of blood qi, that will be the best repayment to me.”</p>
+<p>He vanished into the great void, leaving behind a group who still dared not raise their heads. More than ninety percent of the cultivators broke out in cold sweat and looked toward the old Daoist Wu at those words.</p>
+<p>The old Daoist continued kowtowing without pause. With the crisis resolved, he relaxed entirely and pondered inwardly,Fortunately… several juniors of my Wu Family are at the right age, and that boy surnamed Han has gone west to train… In this way, my Wu Family gains the most…</p>
+<p>————</p>
+<p>Spiritual energy was sparse in the Far Sea, and travel through the great void was extremely fast. Li Ximing only traveled for half a day before crossing several seas and arriving at the territory known as the Western Curtain Sea.</p>
+<p>The seabed of the Western Curtain Sea was extremely shallow, with an average distance of less than three hundred meters from the surface. In shallower areas, many islanders waded into the sea to mine reefs in considerable numbers. Most were physically strong and well fed. Occasionally, a few reef miners drowned and their bodies floated up, yet those around them showed little deep sorrow, their expressions filled more with resignation and surprise.</p>
+<p>Achieving this under immortal governance was no easy feat. Judging from the expressions and bearing of the common people, life under the rule of the All-Seeing Immortal Gate was not overly harsh. With this understanding, Li Ximing continued westward and soon saw an immortal mountain rising from the sea along with several islands.</p>
+<p>He did not need to waste much time. The cultivators across the entire island were already in chaos, gathering below his feet. Li Ximing frowned inwardly,So perceptive… This family is no ordinary Dao lineage, and certainly not some outer-sea rogue cultivators who happened to achieve enlightenment. Judging by this response alone, they are already comparable to the Dao lineages of the mainland.</p>
+<p>Sure enough, he raised his head slightly to see several streaks of escaping light light up on the immortal mountain nearby. They raced over at great speed and transformed into two young men in flowing robes. They bowed together and said in unison, “We of the Zhao Family of Mount Thistle greet the Daoist Master! May we ask… if the Daoist Master has come here with any instructions?”</p>
+<p>Li Ximing felt slightly puzzled and thought he had encountered a family affiliated with the All-Seeing Immortal Gate, so he asked, “Is the All-Seeing Immortal Gate located here?”</p>
+<p>The two young men exchanged glances, their expressions shifting slightly. One of them replied respectfully, “If the Daoist Master seeks the All-Seeing Immortal Gate, then it is indeed our Zhao Family of Mount Thistle.”</p>
+<p>As he spoke, a figure emerged from the great void. The aged man wore a white feathered robe with a turquoise short robe beneath. His cultivation was only at the early stage of the Purple Mansion Realm, even inferior to Li Ximing.</p>
+<p>Such an elder who had broken through to the Purple Mansion Realm in his later years was naturally courteous upon seeing him. He clasped his hands and smiled, “So it is Daoist Master Zhaojing. I am Linyi of Mount Thistle. Please come inside so we may speak in detail.”</p>
+<p>When he heard the elder call out his Dao title, Li Ximing pondered briefly and asked tentatively, “Fellow Daoist… you are quite well informed.”</p>
+<p>Daoist Master Linyi smiled immediately and replied, “It was through guidance from the Daoist Master of Nine Mounds that I learned your Dao title. I heard you were cultivating in the Dong’a King Sea, so I went there to take a look. I happened to encounter the matter of White Sand Island and knew with near certainty that it was you.”</p>
+<p>When Li Ximing heard Nine Mounds’s name, his wariness eased slightly. All things considered, Nine Mounds’s reputation was far more reliable than Purple Smoke Gate or Xiukui. He nodded lightly and replied, “Let us settle nearby.”</p>
+<p>The old Daoist Master understood at once. The two traversed the great void and settled into a nearby pavilion. Linyi was likely seeking a favor and appeared very courteous. He had tea served, and a maid carried a crystalline tray with two small purple fruits upon it.</p>
+<p>Linyi said with a smile, “Zhaojing, please…”</p>
+<p>Li Ximing did not have a particularly good impression of him and merely nodded in acknowledgment before speaking, “What business do you have to seek for me… Let us speak of it first.”</p>
+<p>The Daoist Master immediately grew solemn, “Fellow Daoist need not address me by Dao title. My family does not value such customs. You and I share a connection. My surname is Yan and my given name is Dushui. You may simply call me Dushui.”</p>
+<p>Seeing his sincere expression, Li Ximing replied, “May I ask… where this connection lies?”</p>
+<p>Yan Dushui nodded and replied, “You are a descendant of ancient Wei, while I am a descendant of the ancient Yan State. In the early days, there were marriages with the imperial lineage. At that time… the imperial procession departed from Yan Mountain and traveled south in a grand array…”</p>
+<p>This was unexpected news to Li Ximing. He looked at him again and asked, “The ancient Yan State…”</p>
+<p>Yan Dushui did not know whether Li Ximing believed him. He raised his brows with a hint of melancholy and said in a weary voice, “Yan and Wei once watched over and aided each other. When the Wei State unified the north, our Yan State remained beyond the passes to balance the Sixteen Hu. Later, both families were shattered by Hu and Jie Buddhist cultivators. My family carried the Dao lineage of Yan State and fled all the way here… Only today do we finally meet…</p>
+<p>“It has been several hundred years since we last saw a descendant of Wei, yet my family longs for the past. Even these islands and mountain ranges are named after places of our former state. Many family members even changed their surnames to Yan in remembrance of what once was.”</p>
+<p>Li Ximing felt no real sense of closeness in his heart and instead silently shook his head. The first half of Yan Dushui’s words might have been true, but the further he went, the more hollow they sounded. The Wei State had not failed to restore itself in the past, and descendants of the Wei’s Li lineage had circulated outward long ago. It was impossible that none could be found at all.</p>
+<p>The descendants of Yan State were clearly not as close as the Cui Family, and their eventual submission to Wei State rule was likely unwilling. Now, with Li Ximing having reached the Purple Mansion Realm, they had come close only after inquiring through Nine Mounds. They were merely joining the excitement; there was plainly little genuine sentiment involved.</p>
+<p>Li Ximing merely clasped his hands and said, “It is often said that my family descends from the Wei’s Li lineage, but in truth, we do not know our ancestral origins. It is only because my Bright Yang achieved the Dao that various families made such conjectures…”</p>
+<p>“I understand!” Yan Dushui nodded in understanding and replied, “My family does not act ostentatiously outside. When our state’s mandate collapsed, we fled with several immortal gates. By the time we reached this place, almost all who remained were members of the royal house. We borrowed the names of those sects for use, and when going out, we also called ourselves the All-Seeing Immortal Gate.”</p>
+<p>The name of Yan State was clearly no match for that of Wei State, burdened with such heavy karma. These people had muddled through half willingly and half reluctantly for years. When Li Ximing fell silent, the old man immediately continued, “This time, in inviting an old acquaintance, I truly do have a matter to request…”</p>
+<p>He said solemnly, “My family accidentally discovered a treasure in a certain territory and have waited many years for it. It requires assistance from a Bright Yang divine ability. Previously, we also approached Daoist Master Yangya of the Cui Family in the Western Sea…</p>
+<p>“But whether it was the Eastern Sea or the mainland, he would no longer intervene and wished to settle the karmic ties of his ancestors. Our matter clearly involved the Cui Family’s forebears, so he was unwilling to act.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1321.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1323.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

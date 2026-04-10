@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1379: Seclusion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1378.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1380.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1379: Seclusion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing’s gaze darkened slightly as he said calmly, “If there was no ornament, it may simply have been put away. The fragment looks like an ordinary object. Master Baiyin could not possibly discern its true purpose. He may have stored it inside a storage pouch.</p>
+<p>“This man… must be closely watched! Since he passed through the great desert, the Golden Feather Sect most likely knows of his movements. However, if he continues north, he will enter the territory of the Golden Tang Gate. We should inquire with the Golden Feather Sect about his sword. Fortunately, it is a dharma sword. Our family has every reason to speak up and negotiate an exchange.”</p>
+<p>“I have already sent a few people over. We dared not act too aggressively. If it were not a sword, I might not have even dared to send anyone to investigate.” Li Jiangqian cupped his hands and said, “As for the north, a Foundation Establishment Realm cultivator from the Locust Soul Hall fell yesterday. It is clear that the lord has already begun to act. A few days ago, a Foundation Establishment Realm cultivator also perished in the Capital Immortal Dao. Guan Gongxiao has withdrawn his forces. The devil cultivators have already secured their foothold.”</p>
+<p>He took a small letter from his sleeve and said quietly, “Guan Gongxiao has once again requested reinforcements. He hopes our family will lend assistance.”</p>
+<p>Li Ximing gave no clear response.</p>
+<p>In the past, Yehui had schemed on behalf of Changxiao against their family. However, he had deliberately withheld his full strength and harbored ulterior motives. Li Ximing had ultimately escaped with his life. Though he held no goodwill toward the man, he had always instructed his family to maintain neutrality with the Capital Immortal Dao.</p>
+<p>Yehui also appeared unwilling to tear relations apart. He had also behaved himself during the years of Li Ximing’s absence. That did not mean he was weak. He had obtained the Douxuan Dao lineage and possessed several spirit artifacts. He was not someone to provoke lightly.</p>
+<p>Li Ximing still did not know where Changxiao was. Thus, he decided to extend some goodwill toward the Capital Immortal Dao. Li Jiangqian had clearly reported this news with a similar intention in mind. Li Ximing said, “Send him a reply. Tell him he has my verbal directive to hold fast to his mountain gate and wait for some time.”</p>
+<p>Li Jiangqian bowed and nodded. Li Ximing raised his brows and said, “Since he has reached Foundation Establishment Realm and three years have passed, the Locust Soul Hall has little ability to resist. If he intends to head north, he will likely set out within a year or two. Pay close attention to the matter of the sword. I only hope it is not that spirit embryo.”</p>
+<p>Li Jiangqian agreed and said softly, “There is one more matter to report, Daoist Master. Great Uncle Chengzhi… passed away earlier.”</p>
+<p>Li Ximing tightened his grip on the jade cup and finally let out a sigh as he said quietly, “I know.”</p>
+<p>Given Li Jiangqian’s control over the Li Family, he naturally knew that Li Ximing had met Li Chengzhi. He immediately lowered his head, changed the subject, and continued, “Fortunately, after Uncle Zhouming finished handling the lord’s affairs, he took the pills prepared by the family and successfully broke through to the eighth stage of the Qi Cultivation Realm. Now we are preparing to have him take that Talisman Pill to break through to the ninth stage of the Qi Cultivation Realm so that he may attempt the Foundation Establishment Realm.”</p>
+<p>“Good.” Li Ximing nodded and asked, “How are the family sacrifices? You have not sought a talisman, have you?”</p>
+<p>“No.” Li Jiangqian bowed and said, “Now that the Purple Mansion Realm grand formation has been established, we performed incense sacrifices and obtained three Talisman pills. As for talisman seeds, most of the children in the family have not yet grown. The direct line cultivators of the Crimson Palace are numerous, and their fertility is not very good. My younger brothers are all unmarried. Only Jiangzong has a child, not yet a year old.”</p>
+<p>Li Jiangqian handed over the three pills and said with a smile, “Earlier, I had thought of receiving a talisman to help the family, but we lacked the protection of a grand formation. Now there is no rush. I am only at the early stage of the Foundation Establishment Realm, and my cultivation speed is still fast. I can wait until after reaching the Purple Mansion Realm to receive the talisman and use talisman qi to elevate my divine abilities… At the very least, I can seek a strand of talisman qi at the middle or late stage of the Foundation Establishment Realm.</p>
+<p>“Thus this time, it was presided over by the old elder. I did not step onto the platform.”</p>
+<p>Li Ximing nodded and said with a sigh, “Indeed. People are often trapped in the hardships of the late Qi Cultivation Realm and late Foundation Establishment Realm, spending vast amounts of time. It is only upon reaching Purple Mansion Realm that they realize that it is divine abilities that are truly difficult to advance. No matter how wondrous the spirit pills, they add only a fraction…”</p>
+<p>At this point, Li Jiangqian reminded him, “Since Daoist Master has already broken through to the Purple Mansion Realm, Talisman pills can be taken again. The Sacrificial Ritual Method states that this pill can break through bottlenecks and advance cultivation. It should also have an effect on divine abilities.”</p>
+<p>Li Ximing pondered and replied, “I have considered this matter and am weighing it. Since you have brought it up, you may speak freely. Although I traveled the outer-sea and took quite a few spirit pills, Heaven-Venerating Gate has already reached minor completion. I still have two spirit pills in hand. With thus much accumulation, great completion is not far. I had thought it would take only five or six years more, so I considered saving them for the next divine ability.”</p>
+<p>Li Jiangqian understood at once and bowed, “Once the lord heads north and returns to the mountains, Jiangbei will surely erupt into contention. There will be many great battles. Not only the Immortal Dao Daoist Masters will be involved. Northern Buddhist cultivators may also intervene. It will not be so simple…”</p>
+<p>Li Ximing rose with his hands behind his back and said, “Indeed. My haste in seeking spirit artifacts everywhere is for the same reason. It will not only be mainland Daoist Masters, but those from both the mainland and the outer-sea will also come to take a look. Even if fate cannot be divided, someone like Fei Qingya is a prime spirit herb in their eyes. Moreover, with such generosity from that lord, whether Fei Tongcai or Master Baiyin, after so many years would they not expect a share? Not to mention those who would fish in troubled waters…”</p>
+<p>His expression remained calm and his tone firm as he said, “Now that we have a clue, everything else can be discarded, but the fragment must not be lost. This matter cannot be left to chance. I will write a letter to Ning Wan while immediately entering seclusion to take the pill and use the Talisman pill to raise my divine ability to great completion.</p>
+<p>“No matter when the True Monarch heads north, the return is fixed at six years and six months. Only when the return is certain will these people act. There is ample time!”</p>
+<p>Li Jiangqian nodded. The Daoist Master continued with his hands behind his back, “Fortunately, the Eastern Fire Grotto Heaven stands before us. Spirit items and spirit artifacts of Bright Yang are not scarce under heaven, and they are even easier to obtain than those of other Dao lineages. Once this matter is resolved, we must continue gathering information on spirit artifacts! For now, focus your efforts on investigating Master Baiyin.”</p>
+<p>He dismissed Li Jiangqian and wrote the letter to Ning Wan. Then, he sealed the grand formation and took out a Talisman pill. After wrapping it in divine ability, he swallowed it.</p>
+<p>Li Ximing had taken spirit pills more than once since breaking through to the Purple Mansion Realm. Even the finest of them only stirred his divine abilities slightly, inching forward like a thin donkey pulling a heavy millstone. Yet upon taking the Talisman pill, his divine ability seemed to connect to some unseen aura and immediately grew restless.</p>
+<p>Boom!</p>
+<p>The spiritual energy provided by the Talisman pill was but a drop in the ocean for a Purple Mansion Realm cultivator. Yet it was as though some barrier had been opened. His divine ability began circulating of its own accord. Delighted, Li Ximing swiftly swallowed a Qilin Radiance Illumination Pill. Mana within his body supported the divine ability as boundless radiance burst forth.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1378.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1380.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

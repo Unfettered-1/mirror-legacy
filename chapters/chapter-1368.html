@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1368: Mifan Spirit Sword (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1367.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1369.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1368: Mifan Spirit Sword (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“That lord has already reached the Foundation Establishment Realm. His influence is no longer what it once was. Let Chen Yang go without concern.”</p>
+<p>Li Ximing said no more. Li Jiangqian’s expression turned solemn, and he bowed in salute, “This junior understands…”</p>
+<p>Li Ximing watched him nod and said softly, “I still need to make a trip to the southern border. Qiuhu will oversee matters at home for the moment, but I am placing them in your hands first. Remember one thing. The direct lineage of my family must never be touched.”</p>
+<p>Even though Li Jiangqian was cautious by nature, Li Ximing still reminded him. He flicked a jade slip from his sleeve, placed it in Li Jiangqian’s hand, and waved him off, saying, “Retrieve these spirit items at once. There is also a stalk of Drum Profound Treasure Flower and a Golden Obedient Flame Fruit at home. Take them all out and have Minggong deliver them here.”</p>
+<p>Li Jiangqian immediately withdrew. Before long, Li Minggong arrived within the formation, bowed deeply, and said respectfully, “Greetings, Daoist Master!”</p>
+<p>Li Ximing helped her to her feet and said quietly, “These past years have been hard on you. You rose with the family from its humblest days and have always been diligent. In those early years, we had nothing of worth and you were shortchanged in cultivation methods. I obtained a Purple Mansion Realm spirit pill from the Eastern Sea. It can refine and purify the Dao foundation… It suits you perfectly.”</p>
+<p>Li Minggong was first startled and overjoyed upon hearing it was a Purple Mansion Realm spirit pill. Soon after, she frowned slightly, bowed again, and said gently, “It troubles the Daoist Master to remember me. This junior is deeply grateful. But my aptitude is dull. Beyond Foundation Establishment Realm lies a dead end for me. I am already advanced in age. Even with a higher Dao foundation, it would amount to little more than waste.</p>
+<p>“I only hope the Daoist Master will grant it to Jiangqian or Quewan… That would be putting it to proper use.”</p>
+<p>Li Ximing shook his head and replied, “Their contributions do not compare to yours, so they should not receive this great pill. That is the first reason. Second, the cultivation methods they practice are of extremely high grade. If it were not for my Purple Mansion Realm making us an immortal family, they would not even dare reveal them before others. The efficacy of this spirit pill is quite limited. It would not have much effect on the two of them, whereas it suits your Immortal Foundation.”</p>
+<p>At her side, Li Jiangqian had already presented the jade box. Li Ximing then took out another freshly copied jade slip, placed it in her hand, and instructed her, “Follow the cultivation method recorded in this jade slip to achieve the best effect. All the necessary spirit materials have been prepared. As for the treasured panacea for True Fire, the family has prepared one for you and taken an extra as a precaution. Make full use of them.”</p>
+<p>Li Minggong could only accept it with thanks. Her eyes brimmed with tears as she replied, “It is a pity for my younger brother Chenghui… He would have been the most suitable.”</p>
+<p>Li Ximing silently patted Li Minggong on the shoulder. He nodded to Li Jiangqian, and then transformed into heavenly light, streaking away. He flickered briefly above the island before pausing and descending onto the roof of a residence.</p>
+<p>After the Li direct lineage had moved to the island, their lives improved markedly. Li Chengzhi had spent the latter half of his life living in proper estates. The older he became, the more respect he commanded. Even while the island bustled with activity, this residence had long since been completed for him.</p>
+<p>Large red lanterns hung before the gate, flickering faintly. Li Ximing adjusted his sleeves and then raised his hand to knock.</p>
+<p>Creak.</p>
+<p>The door opened quickly, revealing an old man holding a lantern. He had no cultivation. After a glance, he said in a daze, “You… you are… the old master…”</p>
+<p>Li Ximing did not answer. The faint heavenly light flickering between his eyebrows said everything. Even if the servants had never seen him in person, who around the lake did not know of his majestic bearing as he rode colored clouds and commanded heavenly light?</p>
+<p>Clang!</p>
+<p>The lantern crashed to the ground and rolled several times. Pale yellow oil and flickering flames spread swiftly. The steward cried out, dropped to his knees, braced himself with one hand, and began knocking his head frantically against the floor.</p>
+<p>The quiet of the residence was shattered at once. A woman with refined eyes and graceful brows hurried down the steps. She wore a red skirt adorned with white blossoms and called out in confusion, “Uncle Dou? What happened?”</p>
+<p>Li Ximing said softly, “Shouyu.”</p>
+<p>The sound sent a chill racing down Xia Shouyu’s spine. Even after returning from the outer-sea so many years ago, she still regarded the voice that had changed her fate with a single sentence with both fear and reverence.</p>
+<p>Daoist Master!</p>
+<p>She hurried forward, but the Daoist Master in white and gold passed through the front courtyard like a streak of light and landed before her, “Take me to see Chengzhi.”</p>
+<p>She lowered her head at once and led him in. The inner room past the central hall was brightly lit. Faint sighs could be heard within, and a young man in red knelt quietly on the floor.</p>
+<p>Li Ximing gently waved a hand, stopping Xia Shouyu at his side. As he gazed at the portrait of the Daoist Master hanging high in the central hall, he stood in silence, just as he had on that deep night many years ago.</p>
+<p>Li Chengzhi was already very frail. Ordinary mortals lived only sixty or seventy years. Only those at the Embryonic Breathing Realm reached one hundred and twenty. Sun Bai had examined him, and several cultivators had lent assistance. For now, his condition remained stable.</p>
+<p>“The Daoist Master soars high across the heavens. What are you praying for? The old master has spoken to me several times. Cultivate well. Reach Foundation Establishment Realm first. That speaks louder than anything. You are the direct grandson of the Purple Mansion Realm. Once you achieve the Foundation Establishment Realm, you will stand at the very top.”</p>
+<p>Li Chengzhi coughed twice. Li Zhouming’s voice, however, was firm and no longer carried the grievance he once had on Mount Qingdu.</p>
+<p>“The old elder means well for me, but I know my own limits. My hope of reaching Foundation Establishment Realm is slim. If not for the old elder giving me things from time to time, I would likely be stuck in the late Qi Cultivation Realm like my elder brother… Father does not have many years left. If I enter seclusion now, I might not even see him in his final days. I may even force him to see me off. There is no reason for me to go into seclusion.”</p>
+<p>“You… you do not have the heart for cultivation…”</p>
+<p>Li Ximing lowered his gaze and finally pushed the door open. The room fell into chaos. Li Zhouming was first startled, then overjoyed. The old man on the sickbed struggled to sit up and bow.</p>
+<p>Li Ximing lightly flicked his sleeve, sending Li Zhouming and Xia Shouyu out of the room. He took a seat beside the bed as if releasing a breath, and looked at Li Chengzhi.</p>
+<p>His eldest son stared at Li Ximing blankly. “Father.”</p>
+<p>The two remained silent for a long time before the Daoist Master said softly, “Long ago, I once thought that if I had a son, it would be best if he excelled in artifact refinement. If not that, then formation arts would suffice. That would have been very important for the family.”</p>
+<p>“But you turned out to be a mortal. All I could grant you was a lifetime of peace.”</p>
+<p>Li Chengzhi was so startled by his arrival that he found himself without words. He stared blankly at the heavenly light flickering between his father’s eyebrows. Only after a long while did he say, “Thank you, Daoist Master. With a child like Zhouming, I can die without regret.”</p>
+<p>The lamplight in the room flickered. Father and son had been brought together by a grandson’s wishful insistence, yet they sat like strangers. There were no tears and no sighs. After waiting for fifteen minutes, the Daoist Master pushed the door open and stepped out.</p>
+<p>The central hall was dark and heavy with shadows. As the door opened, it faced the portrait hanging within. Li Zhouming knelt before the room, his forehead pressed to the ground, waiting in silence.</p>
+<p>Li Ximing stood quietly upon the steps. His gaze passed over the couple and settled within the hall. The portrait of the Daoist Master swayed faintly in the breeze. The tiny point of heavenly light, dotted in gold paint, glimmered faintly in the darkness.</p>
+<p>The Daoist Master in the painting stood lofty and aloof, his eyes indifferent, as if unchanged through the years. It stirred within Daoist Master Zhaojing a sudden sense of familiarity, one that pressed him into silence.</p>
+<p>Li Zhouming waited and waited for an unknown span of time. Then, he finally glimpsed a corner of white robes passing before him out of the corner of his eye. A voice followed with an instruction. “Go cultivate in peace.”</p>
+<p>Li Zhouming raised his head. The Daoist Master had already departed in a transformation of light. He knocked his head several more times, then hurried inside to look toward the couch. His father lay there with his head tilted to one side, as though asleep.</p>
+<p>Hurried footsteps and the clatter of weapons, loud and chaotic, echoed outside the courtyard, along with a shout.</p>
+<p>“By order of the family head, the grand formation will be adjusted today. The four direct lineages, major sects and minor sects alike, are to remain within their courtyards and must not step outside!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1367.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1369.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

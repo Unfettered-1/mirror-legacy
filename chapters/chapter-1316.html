@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1316: Entering The Game (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1315.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1317.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1316: Entering The Game (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chen Yang rode the wind as the group returned amid lively chatter. The black-robed man stroked his beard and laughed, clearly in high spirits, while Fei Tongcai reminisced with his cousin Fei Tonglu about the past, grinning so widely that he could hardly close his mouth.</p>
+<p>Their ancestor Fei Wangbai had been slain by Si Yuanli with a single sword strike in full view of all back when the two of them were cultivating. It had nearly become a heart demon for every member of the Fei Family. Yet now when the two spoke of the past, their faces were filled with blissful smiles, without the slightest trace of gloom.</p>
+<p>After crossing the river, a group from the Fei Family came to welcome them and exchanged greetings. These people did not know why the two were so happy and could only laugh along as they headed toward the lake.</p>
+<p>Unexpectedly, once they reached the northern lakeshore, they saw a refined and scholarly Foundation Establishment Realm cultivator standing guard by the bank. It was Cui Jueyin, who should have been stationed on the river.</p>
+<p>Cui Jueyin’s smile stiffened slightly as he met Chen Yang. Just as he was about to speak, he saw Chen Yang’s expression brighten and heard him call out clearly, “Greetings, Lord Cui. What a coincidence!”</p>
+<p>That single greeting left Cui Jueyin startled and uncertain. What kind of person was Chen Yang? He usually spoke in a low and forceful tone and rarely smiled. When had he ever laughed so openly? With his brows relaxed and his eyes bright, he hardly looked like his usual self.</p>
+<p>“Dharma Protector Chen…”</p>
+<p>Cui Jueyin replied, the doubt on his face gradually fading as he spoke gently, “I am acting on the orders of the main family to escort Dharma Protector Chen and Fellow Daoist Fei to the lake. The grand formation at Glacial Cloud Peak requires repairs. You may settle temporarily at the nearby peak offices. I will not see you off any further.”</p>
+<p>Fei Tongcai nodded repeatedly and sent the group back with Fei Qingya. He separated from the others together with Chen Yang and stood at Cui Jueyin’s side. The three of them flew straight to the lake. When they reached the main hall, there was not a single person to be seen on either side.</p>
+<p>Cui Jueyin closed the main doors and smiled at Fei Tongcai as he said, “Fellow Daoist, please rest for a while. I will take Dharma Protector Chen to make a report.”</p>
+<p>Fei Tongcai nodded with a smile. Fei Tongcai’s attitude toward him was quite peculiar. He was clearly only at the Qi Cultivation Realm of the Fei Family, yet when facing Cui Jueyin, who stood at the peak of the Foundation Establishment Realm, he neither lowered his head nor bent his waist. Not only did he show no fear toward a Foundation Establishment Realm cultivator, there was even a sense of easy familiarity, as though they were colleagues.</p>
+<p>Yet Chen Yang showed not the slightest displeasure. He went out together with Cui Jueyin and said with a smile, “Lord Cui, I encountered a genius in Jiangbei. He truly possesses an unyielding backbone, someone who cannot be cowed by force.”</p>
+<p>Cui Jueyin showed a hint of hesitation, clearly unwilling to listen, and spoke, “That Fei Qingya…”</p>
+<p>Chen Yang interrupted, “We can discuss it in detail later!”</p>
+<p>The two entered the hall, which was still completely empty. Only then did they see Li Jiangqian sitting in the center with a dark expression. His eyes were narrowed, as though two floodborn beasts had just walked in, drawing a look of wariness from him.</p>
+<p>When the two walked up the seat, Cui Jueyin bowed fully, while Chen Yang only gave a slight salute. Li Jiangqian set down the vermilion brush in his hand and continued to read the sect records, saying nothing at all.</p>
+<p>The atmosphere inside the hall immediately congealed. The hearty smile on Chen Yang’s face gradually stiffened, while Cui Jueyin knelt firmly on the ground, a faint sheen of sweat appearing at his neck. The entire hall remained utterly silent.</p>
+<p>As time slowly passed, Cui Jueyin finally said in a low voice, “Family head, I fear that Baiku Prefecture truly… is the place where that one has taken up residence.”</p>
+<p>Chen Yang remained standing straight, his face full of confusion, which left Cui Jueyin sweating profusely. Then he heard Li Jiangqian speak softly, “Wake Lord Chen up.”</p>
+<p>Cui Jueyin hurriedly rose to his feet and formed hand seals, casting several spell arts in succession. Yet Chen Yang did not react in the slightest, leaving Cui Jueyin no choice but to lift his sleeve and, taking advantage of a moment of inattention, deliver two hard slaps across Chen Yang’s face.</p>
+<p>Pa, pa!</p>
+<p>Both blows were delivered with great force, reddening Chen Yang’s cheeks. He staggered back two steps with a vacant expression, then dropped to his knees with a thud. His lips trembled endlessly, as though he wanted to speak, yet not a single sound came out.</p>
+<p>Li Jiangqian rose to his feet. He still did not look at Chen Yang, turning to the other side. He saw wisps of purple smoke drifting out and rolling restlessly along the ground from the corner of his eye.</p>
+<p>He immediately bowed and said respectfully, “Greetings, Daoist Master.”</p>
+<p>A woman in an autumn yellow robe stepped gracefully into the hall. Cui Jueyin reacted just as swiftly and bowed respectfully, while Chen Yang alone stood straight in the middle of the hall, clasping his hands as he said, “May I ask which Daoist Master stands before me…”</p>
+<p>At this point, Li Jiangqian no longer knew what to say. He could only remain kneeling and speak respectfully, “I beg you, Daoist Master, please save him.”</p>
+<p>Fortunately, Tinglan was broad minded and acted as though she had not heard anything. She brought two fingers together and lightly tapped the point between Chen Yang’s brows.</p>
+<p>Chen Yang immediately staggered back a step. His eyeballs turned bright yellow in an instant, then released a burst of radiance that burned them away completely, leaving behind only two pitch black hollows. He collapsed onto the ground with a thud, and his clothes were visibly soaked.</p>
+<p>He groped about for a while, ignoring the blood tears dripping down as he began knocking his head repeatedly against the floor. Tinglan casually picked up a sheet of rice paper from the desk, took up the vermilion brush, and sketched a pair of eyes with just a few strokes.</p>
+<p>She immediately tossed it at Chen Yang’s face. Two eyeballs sprang out within the pitch black sockets, leaving only a blank sheet of paper drifting down onto the ground.</p>
+<p>Tinglan had yet to achieve a Fate Divine Ability; however, destroying his eyes first and shaping them anew was clearly a clever workaround of the art. She allowed Chen Yang a moment to recover before speaking softly, “With all the necessary parties now in place, the True Monarch naturally revealed himself. That is not bad at all. Finding the lord so quickly also spares us trouble later.”</p>
+<p>Her tone was light as she looked at Chen Yang with his head lowered and smiled, “You truly have some ability. Standing before the lord, you can still manage to sweat.”</p>
+<p>There was nothing left in Chen Yang’s eyes but deep terror and wariness. The hands bracing him against the ground looked pale and were even trembling slightly.</p>
+<p>Li Jiangqian then said respectfully, “Daoist Master, there is still a Qi Cultivation Realm cultivator who personally met the lord and returned. He is waiting outside… Would you like to see him?”</p>
+<p>Tinglan shook her head and sat down in the main seat, a trace of shock flashing across her face as she said gently, “There is no need to see him. He is beyond saving. His original mind has been completely annihilated. What has replaced him now is the version of him that exists in the lord’s mind. If the lord thinks he is cheerful, then he is cheerful. If the lord thinks he is optimistic, then he is optimistic. One day, if the lord decides he should go save him, he will pick up a blade and go, and no one will be able to bring him back. As for you…”</p>
+<p>Tinglan glanced at Chen Yang and said softly, “After all, you are at the Foundation Establishment Realm, and I intervened in time. If you stay put until the lord departs, this matter will be considered settled.”</p>
+<p>It had only been a brief span of time, but Li Jiangqian had observed quite a lot. Chen Yang was abnormal, yet Cui Jueyin remained completely unaware, which clearly meant the influence was far more widespread. He therefore asked quietly, “Should everyone be isolated from him… and let him stay alone?”</p>
+<p>Tinglan pondered briefly, then replied, “This matter is up to you. As long as the lord is not mentioned, he can be considered harmless, but it is still best to keep contact to a minimum. As for that little girl…”</p>
+<p>Tinglan swept her gaze across the group once again and said softly, “Give her a quiet environment, and assign a few female cultivators from the Fei Family to live with her. There is no need to select outstanding talents.”</p>
+<p>Li Jiangqian nodded repeatedly and bowed. “This junior understands.”</p>
+<p>Tinglan said meaningfully, “You must understand that the lord will leave sooner or later, but they may not be able to. Even mortals are prized delicacies, so even a scrap of corpse might not be left behind. If they are cultivators, their uses are even greater. Those who are willful and unruly are difficult to use, but those who are obedient and sweet, or aloof and cold, are still fine materials.”</p>
+<p>Li Jiangqian raised his head slightly, understanding dawning on him in an instant. Killing intent surged, then quickly subsided, and he said respectfully, “Daoist Master, thank you for the guidance!”</p>
+<p>Tinglan then said leisurely, “Ning Wan is watching over the matters of Li Quantao and his son, as well as Jiangbei. It just so happens that I am making a trip there.”</p>
+<p>She looked at Li Jiangqian and smiled, “The Li Family truly is of the Wei’s Li lineage, and Li Zhouwei is indeed a true White Qilin. That is genuinely impressive, enough to rival Tulong Jian.”</p>
+<p>Though Tinglan’s words seemed unprompted, their meaning was perfectly clear to Li Jiangqian. She was plainly saying that since Li Jiangqian himself had not been greatly affected, and had been able to command calmly through this series of upheavals, the Daoist Master, and even other Daoist Masters were even more confident in the bloodline of the Li Family.</p>
+<p>A son of the White Qilin… a Golden Core bloodline… Only then could one barely escape the lord’s influence.</p>
+<p>After she finished speaking, she transformed into purple smoke and dispersed. Li Jiangqian voiced his respectful farewell, then calmly raised his head and took his seat at the head position. Below, Chen Yang was sweating profusely, clearly harboring deep fear over his actions along the way.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1315.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1317.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

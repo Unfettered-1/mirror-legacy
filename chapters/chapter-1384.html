@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1384: Turning Glows Into Mountain (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1383.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1385.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1384: Turning Glows Into Mountain (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing was secretly alarmed and began to ponder,The rumors say that one must raise medicine-humans for many years and nurture them with one’s aura. That may be somewhat difficult for rogue Purple Mansion Realm cultivators, but it is far too simple for a sect. They could prepare eight or ten at a time. It would be even easier if the subject is of humble origin. If it is a clan disciple… then a single order claiming reassignment to the outer-sea or dispatch to the southern border would be more than sufficient. One could break into the great void midway, swallow it in a single gulp, and never return for years. Who would ever know?</p>
+<p>Even if the method has limitations and cannot cultivate eight or ten at once, as long as there are one or two, one could still attempt a breakthrough since they were not cultivated by oneself in the first place. It would at least be an additional safeguard…</p>
+<p>And using this Profound Method of Continuation to break through in divine abilities… what reasoning lies behind that…</p>
+<p>Li Ximing did not have the Profound Method of Continuation on hand for reference. With his current cultivation and insight, he could only calculate the benefits of seizing another’s Immortal Foundation to advance his cultivation. Yet all of that was premised on possessing a Purple Mansion Realm cultivation method to begin with. Without such a method, even if one pushed the Immortal Foundation up to Shenyang, would one not simply be left staring helplessly?</p>
+<p>The true effect of continuation likely hinges upon a crucial key point. As Daoist Master Yuansu once said, one must use many Purple Mansion Realm spirit items as assistance. Only then can the method truly achieve its effect…</p>
+<p>Moreover, the Profound Method of Continuation varies from house to house… Each lineage has its own approach. Changxi claimed he was too lofty in his youth to use it. I doubt that. Perhaps he only said so to draw closer to me. In truth, he likely had no particularly effective method at all.</p>
+<p>Li Ximing remembered Changxi’s words from back then with perfect clarity,But I knew nothing of this Dao, relying solely on my own clumsy research… and everything failed in the end. I could only accept them as guest cultivators.[1]</p>
+<p>That was Changxi’s exact wording. This method could be used freely in Chi Wei’s hands, yet in his hands, it yielded nothing even after a hundred years. That is simply the gap between Dao lineages.</p>
+<p>When Chi Wei sought out Cen Lufu to refine pills back then, it was likely for the same reason…</p>
+<p>And in those days, Changxi’s Dao lineage was truly in decline. Naturally, he possessed no superior methods worth mentioning. The only respectable techniques he had, the Divine Technique of Pavilion View: Refining Within Fire and the Profound Light Mountain Chasing Scripture, have now both fallen into my family’s hands…</p>
+<p>Li Ximing would neither seek out nor easily obtain the Profound Method of Continuation. At most, if he chanced upon it someday, he might casually glance at it to resolve a lingering doubt. With a quiet sigh, he carefully reviewed everything in his mind.</p>
+<p>Daoist Master Yuansu died without cultivating further, so he certainly never used it. Yuanxiu definitely did not have it in his early years. As for his final technique in later life, that is harder to say. As for Yuanwu… I have heard nothing.</p>
+<p>Li Ximing’s brows relaxed. At last, he had gained insight, and the conjecture in his heart gradually took full shape,No wonder… Yehui possesses three divine abilities, while Changxiao is a Grand Daoist Master…</p>
+<p>Eight or nine out of ten Purple Mansion Realm rogue cultivators of this world had incomplete Dao lineages. The Profound Method of Continuation could significantly shorten the time required for breakthroughs. Yet even if they possessed an excellent method, they lacked a Purple Mansion Realm cultivation technique. Like Zhugong, they could only rely on the continuation effect to break through. But doing so brought substantial subsequent costs, which would likely be difficult to gather.</p>
+<p>On the other hand, those Purple Mansion Realm cultivators of Jiangnan’s Supreme Yang Dao lineage, who hold relatively complete Dao lineages and abundant resources, either demanded strict perfection in their divine abilities or adhered to the Orthodox Dao. Since they lived in stability without formidable enemies pressing them, everyone accommodated them. They were unwilling to shorten time by lowering themselves through the use of another’s Immortal Foundation. As a result, they often become Grand Daoist Masters with one or two incomplete final techniques. Only then do they require continuation, which instead makes their cultivation appear slower.</p>
+<p>Of course, there were also figures like Chi Wei within the Supreme Yang Dao lineage. However, his actions eventually labeled the Azure Pond Sect as a demonic sect.</p>
+<p>Only rogue cultivators of the outer-sea like Changxiao, Yehui, and Guo Shentong, who by chance obtained complete Dao lineages and perhaps even possess exceptionally refined Profound Methods of Continuation, could act without restraint. Their cultivation speed then surged dramatically upward!</p>
+<p>In those days, everyone called them geniuses. But once they reached the Purple Mansion Realm, one could see it was not fate at work. There were reasons behind it…</p>
+<p>He let out a breath. Just as he was about to begin six cycles of cultivation, he reconsidered. Still uneasy, he slowly closed his eyes and stirred his spiritual sense.</p>
+<p>After a moment, a court guard ascended the steps, bowed respectfully, and reported, “Congratulations, Daoist Master. The family head instructed that he was to request an audience once you emerged from seclusion.”</p>
+<p>“Let him come up.” Li Ximing gave the order.</p>
+<p>He had been concerned about the Ruler of Manifested Mountains and Rivers atop the Viewing Pavilion. Fortunately, he had already refined this ancient dharma artifact. The distance was not great, and with his Bright Yang divine ability linked to the great void, a quick calculation at his fingertips revealed that the refinement of the Ruler of Manifested Mountains and Rivers was nearing completion, lacking only a final tenth.</p>
+<p>Joy surged within him. He had intended to summon Chu Minglian to report and inquire about the details, but since Li Jiangqian had already sent word ahead, he decided to hear him out first.</p>
+<p>Soon Li Jiangqian arrived, bowed before the steps, and said respectfully, “Congratulations, ancestor, on the great completion of your divine ability!”</p>
+<p>Naturally, Li Jiangqian could not tell whether his divine ability had truly reached completion. It had simply been arranged in advance that this seclusion was for perfecting his divine ability. Every time Li Ximing emerged from a retreat, someone would congratulate him on its completion. It was nothing more than polite words, and he was used to it.</p>
+<p>The young man in crimson continued concisely, “Granduncle, Lord Rosy Glows of the Celestial Pavilion, has returned from the outer-sea. He is currently upon the lake and requests an audience with you, Daoist Master.”</p>
+<p>“Brother Xizhi has returned!” Li Ximing was overjoyed and rose at once, saying, “Why has he not been invited in? No… I shall go receive him myself!”</p>
+<p>The Daoist Master dispersed into light, traversed the great void, and flew out over the lake in the blink of an eye. Looking ahead, he saw the Pavilion Master in embroidered robes riding upon rosy clouds. He hurried forward with a smile.</p>
+<p>“Brother Xizhi!”</p>
+<p>Li Xizhi smiled and cupped his hands. “Greetings, Daoist Master.”</p>
+<p>Li Ximing pulled him along toward the mountains, sighing with emotion. “Daoist Master, Daoist Master… what kind of Daoist Master. It is Daoist Masters who grow heartless. We are brothers. Third brother, do not put on such formalities. It makes us seem distant.”</p>
+<p>Li Xizhi descended alongside him. After all these years, he still carried that air of elegance and nobility, though long experience in high office had lent him a quiet authority. He smiled and said, “You have truly cultivated a divine ability. As your brother, I am the happiest of all. I call you Daoist Master willingly and with confidence. Once the word is spoken, it is clear that our family now has a Purple Mansion Realm cultivator.”</p>
+<p>Li Ximing laughed heartily. He had been rushing about for years and had scarcely found time to see his brother. At this moment, he was filled with emotion and said, “Has something happened at Splitreed Island?”</p>
+<p>Li Xizhi shook his head and said softly, “After so many years, what could have happened? My cultivation has been unable to advance for many years. I am thinking of making a move.</p>
+<p>“I cultivate the Dawn Dew Gathering Technique. Though it belongs to the Azure Pond Sect Dao lineage, it was left behind by a member of the Chi Family, or rather obtained by a Chi ancestor. It was already complete when it was acquired. Although it has been refined for over five hundred years, its core spell remains that transmitted by the Daoist who founded it.</p>
+<p>“That Daoist left no name but cultivated in the region of Xia Mountain. Many years ago, Lingu Xia also practiced this technique. I asked the Lingu Family. He later went to Xia Mountain as well and disappeared. Either he went seeking an opportunity, or he has entered seclusion to break through to the Purple Mansion Realm.”</p>
+<p>Li Ximing nodded gravely, filled the teacups, and said softly, “As for the Heavenly Glow Dao lineage, I inquired earlier in the Eastern Sea with Supreme Yang and Nine Mounds. I fear it will not be easily obtained.”</p>
+<p>Li Ximing had not neglected to consider Li Xizhi’s situation. He had asked specifically when he had been at Nine Mounds. One was a representative of the Supreme Yang Dao lineage, while the other Nine Mounds of the outer-sea. Yet, both were evasive when speaking of this lineage. Lingdu had been somewhat tactful, but Houfu had shaken his head outright.</p>
+<p>He brought up the matter and said somewhat indirectly, “The meaning from both lineages is that although the two places appear different, they are in fact the domain of a single party.”</p>
+<p>He referred to Xia Mountain and Luoxia. One was the resting place of Heavenly Glow, the other its beginning and end. In the words of these two great Dao lineages, both belonged to the territory of Majestic Light gathering the glow.</p>
+<p>1. This line appeared in Chapter 1064. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1383.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1385.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

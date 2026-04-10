@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1367: The Real And Fake Profound Command Token (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1366.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1368.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1367: The Real And Fake Profound Command Token (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Ning Wan nodded. After a moment of hesitation, she finally asked, “The Southern Sea has been unstable of late. If you have the time, I would ask you to make a trip there on my behalf.”</p>
+<p>“I remember.” Li Ximing nodded repeatedly as he replied, “A few days ago, Senior Kuiqi mentioned it as well. Maha Baoqing of Great Konghai Temple at Stone Pond in the Southern Sea. I have kept it in mind.”</p>
+<p>Heavenly light flickered between his brows as he suddenly added, “He has a Merciful One under him named Zhuzhen… who once made a move against my elder brother.”</p>
+<p>Zhuzhen was not a particularly formidable figure. Ning Wan did not wish to sow discord and only feared he might fall into an ambush, so she said tactfully, “Zhuzhen actually feared you, so he secretly held back. In doing so, he enhanced Xizhi’s reputation.</p>
+<p>Li Ximing replied quietly, “That was not a good thing, since there is no reputation worth enhancing. A tall tree draws the wind, especially one built upon a Buddhist cultivator. They also claim my family descends from the Wei’s Li lineage. Once such destiny is forged, who knows what variables may arise in the future!”</p>
+<p>He shook his head and said with a faint smile, “It is just as well that he fears me. If anything had truly happened, I would not be speaking with this attitude today.”</p>
+<p>Though his smile was faint, the killing intent within it was anything but small.</p>
+<p>Who was Li Xizhi? Of the four Xis, only Li Ximing and Li Xizhi remained. Li Ximing had been carried in his elder brother’s arms since he was a child. Though they had been separated for many years and were not as close as he had been with Li Xijun, their bond was not to be underestimated.</p>
+<p>What happened to Li Xijun had not been justified. Xiao Chuting had come in person back then to question him. Since Li Ximing had given him an answer, he could only bury his hatred for Crimson Reef Island deep within. Now another grievance had been added. If Zhuzhen had killed Li Xizhi and formed a blood feud with the Azure Pond Sect and the Li Family, Baoqing would not have the divine ability of the former Great Konghai Temple Master to protect him.</p>
+<p>Ning Wan nodded and said softly, “If you travel to the southern border, you may visit Fellow Daoists Zhusheng and Xianchan. They are connections left behind by Senior Yuanxiu and have poor relations with Great Konghai Temple.”</p>
+<p>“Very well.” Li Ximing stood with his hands behind his back, appearing unconcerned, yet he sighed inwardly.</p>
+<p>He understood that the arrangements had been set from the moment Kuiqi had brought him back. Whether matters at the Azure Pond Sect and the Southern Sea were urgent was secondary. The key was to move him, a descendant of Wei’s Li who cultivated Bright Yang, away.</p>
+<p>The various families did not know how much control Mount Luoxia held over this grand ancestor emperor. Perhaps Luoxia even disdained the Li Family entirely. Perhaps it cared for no one aside from Li Zhouwei. Perhaps if Li Ximing were to speak before Lin Feng, he might explode into fragments before uttering a word. Yet the Li Family at least served one clear purpose, it revealed who harbored restless intentions toward the grand ancestor emperor.</p>
+<p>It was clear that Mount Luoxia’s prestige across the north and even the mainland remained formidable. Only the Dragon Clan had made a move. Even though Luoxia’s relationship with the Dragon Clan had never been cordial, the latter could only lurk furtively within the Eastern Sea.</p>
+<p>Whether it was Li Ximing himself, the Supreme Yang Dao lineage, or even the Golden Feather Sect, none could afford to take risks.</p>
+<p>As his thoughts reached this point, clarity dawned within him,Even without the affair in the north, I would likely have returned to Jiangnan now. When the True Monarch visits the lake, whether as a guest at the Purple Smoke Gate or in Huyi Mountain, I must remain under their watch.</p>
+<p>Though the True Monarch is merely going to the lake to fetch a woman, and his impression of my family is not poor, and though he is less harmful to innocents after reaching Foundation Establishment Realm, there is always the unexpected. What if something goes wrong?</p>
+<p>If the True Monarch harbors displeasure and does something at Moongaze Lake, they must restrain me at once to prevent me from rushing to aid in a moment of rashness, lest I disrupt both sides’ arrangements.</p>
+<p>The arrangements of the Supreme Yang Dao lineage in recent days, the overt and covert benefits they have given me, likely serve largely to ensure I follow their plan and stir no trouble, sparing everyone embarrassment and preserving Jiangnan’s strength.</p>
+<p>From the moment he had attained the Purple Mansion Realm, Li Ximing had experienced too much. He was no longer the same person he was before. He raised a hand slightly and said softly, “I must make arrangements within my family. I will depart at dawn.”</p>
+<p>Ning Wan trusted him somewhat, so she nodded as she watched him leave. She turned to gaze toward Jiangbei and murmured, “He broke through to the Foundation Establishment Realm calmly and without strain. It will be difficult to claim a share of the secret treasury of the Mifan lineage… Better to see whether there are any promising seedlings instead.”</p>
+<p>————</p>
+<p>The lake surface shimmered brilliantly. At first glance, one took in the purple-golden profound pillar, radiating solemn majesty. Farther off, a golden-red beam pierced the heavens from the Viewing Pavilion, casting a golden reflection across the water.</p>
+<p>Li Ximing pondered quietly as he descended on a streak of light, passing through his family’s Zhaoguang Profound Purple Spirit Formation. Beneath the tallest profound pillar, veiled in hazy purple radiance, lay the inner formation.</p>
+<p>The inner formation had once contained buildings, but were now reduced to ruins. Li Ximing had been pressed for time when he had established the formation and had never stepped inside. In recent days, he had been preoccupied with the matter of the spirit embryo. After finally settling that, he had then hurried to Zongquan Island to meet Li Zhouwei. It was only now that he had the leisure to enter.</p>
+<p>As he passed through the hazy purple light, he saw a pale yellow surface smooth as glazed glass, etched with faint purple patterns. They were clearly formed by the transformation of the formation’s mana. A brief glance revealed a perfectly round expanse, little more than a five hundred meters across.</p>
+<p>The spiritual energy is quite good. The island’s spiritual energy has been steadily rising with no sign of stopping since the grand formation was established. It has already reached the level of Zhijing Mountain within the inner formation. It is sufficient even for Purple Mansion Realm cultivation…</p>
+<p>This area was not small, but the Li Family’s palatial structures had never been grand. The former main hall for governance had been only a little over a hundred meters. There was ample space within the inner formation to erect many buildings.</p>
+<p>However, at the moment, the ground was level and empty. The ruins had clearly been cleared away. One saw only the yellow glass-like surface and the purple haze of the formation dome. Several cultivators at the Qi Cultivation Realm were constructing halls and pavilions. Li Ximing glanced around and spotted Li Jiangqian standing with hands behind his back.</p>
+<p>Seeing Li Ximing, Jiangqian first showed delight, then a trace of worry, and bowed. “Greetings, Daoist Master! The north…”</p>
+<p>Li Ximing and the other Daoist Masters had been high in the sky and could perceive events in the north through divine ability alone. The family clearly knew nothing of the battle just fought there.</p>
+<p>Li Ximing first scanned the great void with the Immortal Mirror. Finding no one spying from the great void, he said solemnly, “Jiangqian should have made the arrangements. None of our direct lineage on the northern shore needs to go. Let him take her as he pleases. As for the River Mountain Sutra, it was only mentioned in passing. If it comes to fruition, so be it.</p>
+<p>“The lord has reached the Foundation Establishment Realm and will arrive soon. Send people at once to prepare!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1366.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1368.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

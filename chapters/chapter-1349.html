@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1349: Bright Yang Killing (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1348.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1350.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1349: Bright Yang Killing (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing felt only slight pain. The divine ability beneath him shivered once and the black smoke dispersed.</p>
+<p>Fortunately, although this spirit light was extremely powerful, the thunder within it was far inferior to the flames. The source of the thunder was unknown, while the flames carried a hint of Radiant Fire, refined in an awkward manner. Li Ximing’s Bright Yang was closely connected to Radiant Fire, so he suffered no great damage.</p>
+<p>Yet even as that spirit light fell, Chilu had closed the gap to the gate and met Li Ximing’s Profound Fire of the Three Phases’ Guard. The pagoda suppressed the flames, and only then did two long spears manifest in his hands, thrusting through the fire toward Li Ximing’s dharma body.</p>
+<p>On the other side, the three-eyed Merciful One was not idle either. While he continued to shake the divine ability, he used the eye between his eyebrows to gather radiance once more. Dense white light had already accumulated there, while the remaining two eyes were fixed on the figure in the white golden daoist robe, clearly waiting for the right moment.</p>
+<p>Li Ximing merely activated the Supreme Yang Resonance Radiant Art, transforming it into two beams of purple flame that bound the incoming golden spears. He then swept out heavenly light with a flick of his sleeve, illuminating the sword-wielding Merciful One that was rapidly sneaking closer.</p>
+<p>Unfortunately, Chilu’s empowered dharma body was no longer something any of the previous Merciful Ones could compare to. The Supreme Yang Resonance Radiant Art lacked sufficient mastery and held out for only a brief moment before being shattered by the two golden spears. At the same time, the winged tiger let out a roar and lunged to bite beneath his robes.</p>
+<p>Li Ximing had no choice but to step back, retreating into the heavenly gate and using his divine ability to block the two golden spears. A loud explosion rang out, his face turning pale as Heaven-Venerating Gate began to sway once more, clearly strained under the combined assault from Chilu and Pingling outside the gate.</p>
+<p>His lack of proficiency in spell arts was finally exposed. He had far too few methods to deal with enemies. Even though the Profound Fire of the Three Phases’ Guard raged fiercely and burned the opponent’s pagoda until it creaked, clearly unable to hold on, he still had to withdraw the Purple Mansion Realm spiritual flames and force them toward Chilu to stall him, while channeling all of his mana into the disk-shaped spirit artifact hidden in his sleeve.</p>
+<p>At this moment, although the sword-wielding Merciful One was illuminated by heavenly light, he still advanced through the radiance. Li Ximing had no choice but to turn his head and release Heavenly Radiance, Hidden Light, inwardly sensing that things were about to go wrong.</p>
+<p>Sure enough, how could Pingling miss such a perfect opportunity? The long-accumulated white light in its third eye burst forth. Chilu, an old and seasoned Merciful One, naturally lit up with fierce intent as well and roared angrily, shaking the divine ability together with him. The white light seized the moment, piercing through the heavenly light and descending on Li Ximing.</p>
+<p>Mountain-Charging Profound Veil and Stable Earth Spirit Containment lit up simultaneously. This gossamer-like veil exerted its effect several times, but finally shattered under that inch of radiant brilliance, only weakening it slightly before it landed upon Li Ximing’s sleeve.</p>
+<p>Li Ximing was slightly startled that the brownish yellow Stable Earth Spirit Containment was like nothing before the white light, offering no resistance at all. He only managed to shake out purple flames at the last moment, blasting forth a burst of brightness.</p>
+<p>This is… the orthodox brilliant light of Buddhist cultivators. This brilliant light originates from the Twelve Essences. The brilliant light of Buddhist cultivators truly is one of the Twelve Essences, the Brilliant Essence.</p>
+<p>In an instant, Li Ximing recalled what Changxi had mentioned before his death, as well as Li Zhouwei’s earlier reference to White Banyan’s mention of the Brilliant Essence. His wrist had already been seared red, and Heaven-Venerating Gate was affected, suddenly dimming.</p>
+<p>Enduring the sharp pain in his arm, he forced his mana to surge once again. Yet Chilu shook off the Profound Fire of the Three Phases’ Guard, and the two golden spears pierced through the heavenly light, stabbing viciously toward his chest.</p>
+<p>At this critical moment, Li Ximing deliberately ignored his injuries and instead let out a cold smile, shaking a glittering golden object from his sleeve.</p>
+<p>The Surging Yang Star Command Treasure Disk!</p>
+<p>The eight-directional runes engraved upon the disk were already glowing at their brightest. There were layers upon layers of delicate pale white incantation patterns wrapped around the front edge, nearly turning pure white, while the center shone with dazzling golden brilliance as it hung before the chest of the white golden robed Daoist.</p>
+<p>Li Ximing had secretly and steadily infused mana into it for a long time, refusing to waver even at the cost of injury. Now the golden brilliance at the center split apart, forming four stars from top to bottom in a slanted, northward-facing angular pattern. The foremost point of golden light was calm yet imposing, astonishingly freezing the two golden spears in place.</p>
+<p>The Heavenly Radiance took hold, unleashing the killing light of Bright Yang!</p>
+<p>After receiving divine ability empowerment, Chilu himself possessed some capacity for foresight and had received an early warning. He felt a chill rise up, a burning pain in his chest, and the two hands holding shields recoiled to block in front of him.</p>
+<p>The Bright Yang killing light descended from the Surging Yang Star Command Treasure Disk without a sound, like opening a skylight in a dim attic. A strand of golden white radiance fell, illuminating the two golden shields Chilu had barely raised before him.</p>
+<p>The two golden shields turned to flying ash without any suspense, leaving not a single drop of molten gold to fall. The Bright Yang killing light dimmed slightly before gently landing upon Chilu’s arms.</p>
+<p>All the golden runes densely covering those golden body arms lit up at once, shining to the extreme, then instantly exploded into black smoke. In the next moment, both arms turned to flying ash.</p>
+<p>Chilu’s pupils filled with golden fluid, pouring down like tears as he staggered back two steps and cried out, “Ouch!”</p>
+<p>Li Ximing’s face turned pale as the mana of his divine ability rapidly drained away. The divine ability beneath his feet had no choice but to retract, allowing the three-eyed Merciful One to break free. The Surging Yang Star Command Treasure Disk in his hand was scorching hot. Seizing the moment, he sent the Profound Fire of the Three Phases’ Guard surging after Chilu.</p>
+<p>At such close range, Chilu had taken a direct hit from the Bright Yang killing light. Not only were both arms destroyed, but as the radiance dispersed, his eyes were scorched by heavenly light, tears streaming nonstop as dizziness washed over him. Yet his reaction was extremely quick. The pagoda could not return in time, but he fished out a round alms bowl from his waist and released its radiance.</p>
+<p>If Stable Earth Spirit Containment had not failed and he had not been struck by the opponent’s treasure radiance, Li Ximing’s condition would have been far better. Even so, he slammed a mass of flames into the opponent’s dharma body, and drew in a breath to summon his divine ability.</p>
+<p>The Heaven-Venerating Gate suddenly manifested and smashed downward. Chilu’s round alms bowl ignored everything else, including his own protection. It shot upward and slammed violently into the underside of the radiant pass. The alms bowl, which had been nurtured for an unknown number of years, immediately exploded, releasing intense brilliant light.</p>
+<p>Yet Chilu’s choice was undoubtedly the most correct one in these circumstances.</p>
+<p>After taking this art head-on without warning, he absolutely could not allow himself to be suppressed beneath the radiant pass. If the empowerment from the Buddhist land weakened, he might never rise again from beneath the radiant pass with his sudden injuries. It was better to let Li Ximing suppress the treasure artifact instead.</p>
+<p>Yet, since a Buddhist cultivator’s treasure artifact was inferior to begin with, there was a high chance it would never be recovered once suppressed. It was better to gamble and blow it up, preventing it from benefiting the enemy.</p>
+<p>Chilu truly lived up to being under the Golden Lotus Throne. Even in such dire straits, he instantly made two correct judgements that instantly stemmed his losses and even caused Li Ximing’s divine ability to waver.</p>
+<p>But as a result, the unhindered Profound Fire of the Three Phases’ Guard was already pouring down on this Merciful One, radiating a terrifying aura that made the heart quake.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1348.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1350.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

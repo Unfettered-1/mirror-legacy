@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1357: Ruler of Manifested Mountains and Rivers (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1356.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1358.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1357: Ruler of Manifested Mountains and Rivers (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Ning Wan shook her head slightly in embarrassment and replied, “My family elder obtained a Bright Yang spirit artifact, but it did not suit their use and did not match my Cold Essence. It was therefore exchanged with the Southern Shun Raksha King of Songzhou in return for my current protective treasure.”</p>
+<p>After all, spirit artifacts carried certain secrets. Although Ning Wan did not state it outright, she possessed many fine items as the inheritor of Yuansu’s legacy. After a moment, she continued, “Sister Tinglan’s spirit embryo is indeed good, but it does not belong to the Bright Yang Dao. Since Purple Smoke Gate had the right of first choice, they naturally selected the more suitable one. The one left in Chunyi Dao Gate’s hands is Bright Yang.”</p>
+<p>Li Ximing did not find this regrettable. With Yuansu nearing his end, everything must have been arranged long ago, and he would not have kept a spirit artifact for himself. Since it was all a matter of exchange, knowing its whereabouts was enough.</p>
+<p>He murmured, “Then it must be one of the Golden Feather Sect, Songzhou, or Chunyi Dao Gate.”</p>
+<p>The Golden Feather Sect possessed an abundance of treasures, but Li Ximing judged that he had nothing that could truly move them. Songzhou and Chunyi Dao, on the other hand, seemed easier to negotiate with, so he asked, “The Southern Shun Raksha King… what kind of figure is he? What Dao lineage does he cultivate?”</p>
+<p>As soon as Li Ximing asked, Ling Mei stroked his beard and replied, “I know him. He is a mid stage Purple Mansion Realm cultivator and the Grand King of Songzhou. His influence has expanded rapidly in recent years and he has become a serious threat to Thunder Island. If not for the fact that he cultivates the Shamanic Talisman Dao and that the Miao Family cultivates lightning which restrains him somewhat, Thunder Island would have already been pushed to extinction. You can consider approaching from this angle.</p>
+<p>“As for Chunyi Dao, they regard themselves as the orthodox Supreme Yin lineage and are quite rule bound. Items of the Bright Yang Dao do not suit them well, and a spirit embryo is also less valuable than a spirit artifact. In my view, it may even be easier to obtain.”</p>
+<p>The connections of the Supreme Yang Dao lineages were naturally beyond what Li Ximing could match on his own. With Kuiqi and the others making introductions, it might become much easier. Li Ximing nodded repeatedly and replied, “When the time comes, I will have to trouble you all.”</p>
+<p>He paused briefly, then continued politely, “In that case, if there is no spirit embryo available, do you fellow Daoists have any Bright Yang ancient dharma artifacts that I could study?”</p>
+<p>Li Ximing had already made his plans. He had obtained the Refining Fire In The Viewing Pavilion from Changxi, and the high platform by the shore had also been completed. Regardless of whether he obtained a spirit artifact or a spirit embryo, refining one himself would never be wrong. That meant he needed to think carefully about the spirit embryo, and using an ancient dharma artifact would certainly be best.</p>
+<p>This surprised the group somewhat, because cultivators of the Supreme Yang Dao lineages usually selected an ancient dharma artifact as early as the Foundation Establishment Realm and used it all the way into the Purple Mansion Realm. It was like Li Zhouwei, who, if he were planning to break through to the Purple Mansion Realm, could immediately begin refining the Da Sheng Halberd into a spirit embryo.</p>
+<p>Yet as soon as he finished speaking, all three nodded almost simultaneously. Kuiqi even raised his brows and smiled, “Huiyu, bring out the Bright Yang ancient dharma artifacts from the treasury!”</p>
+<p>The black robed Daoist who had been wiping a dharma sword on the highest stone steps immediately stood and saluted. Kuiqi nodded and said, “We already had ancient dharma artifacts back then. Our household should be considered well stocked, with a total of three. Zhaojing may choose one. There is no need to be polite.”</p>
+<p>Since he had spoken so quickly, Ning Wan and the others could only let it be. Ancient dharma artifacts were not like ordinary dharma artifacts of today. Their numbers were limited, and even among Purple Mansion Realm cultivators, there was no precedent for gifting them so casually.</p>
+<p>Li Ximing was taken aback and shook his head. “There is no reason for me to accept Xiukui’s gifts for nothing.”</p>
+<p>Kuiqi laughed heartily, stood up, and said with a hint of delight, “Since all fellow Daoists are gathered here today, I will not say much. I will certainly not treat you unfairly. Not only will you be allowed to choose one item, I will also gift you a strand of spiritual essence, a Bright Yang provision…”</p>
+<p>A sharp glint flashed through his eyes as he spoke seriously, “My Xiukui… wants Fei Qingya.”</p>
+<p>Once these words were spoken, Li Ximing finally understood. The Li Family had been associated with a True Monarch and brought back Fei Qingya. Although she was a problem at present, once the True Monarch departed, she could very well become a valuable asset. Xiukui was clearly tempted.</p>
+<p>Ling Mei was not surprised; he had come to the same conclusion as Li Ximing. Ning Wan, having only recently broken through to the Purple Mansion Realm and lacking understanding of these matters, looked thoughtful.</p>
+<p>Kuiqi smiled and said, “I had thought that if she did not cultivate Cold Essence, she would cultivate Purple Essence. I never expected that when the two of you were trapped in the north, she ended up cultivating Pit Water through a twist of fate… With Xiao Chuting in the Northern Sea as well, such a fine seedling… seems destined to belong to my Xiukui!”</p>
+<p>There were many subordinate Daoist temples beneath the Great Xiukui Temple. They did not only cultivate the Xiukui Dao, but also focused on Pit Water and the Shamanic Talisman Dao. Li Ximing immediately began to calculate.</p>
+<p>If Fei Qingya was not killed, it would still be very inconvenient to keep her within the family. Although she currently held the Li Family in high regard, she bore the Fei surname and had the potential to reach the Purple Mansion Realm. The Fei Family was also entangled with the troubles of the Sima Family. Once her cultivation rose, there was no telling how many matters would be dragged into the open.</p>
+<p>More importantly, the impression Xu Xiao had left was far too deep, and Li Ximing still harbored misgivings. His talisman seeds and dharma mirror were major secrets. If an external Purple Mansion Realm cultivator like this emerged, many things would become impossible to conceal. If the Fei Family developed ambitions, they could waver between friend and foe, or even break away entirely.</p>
+<p>As for marriage alliances, Li Ximing had considered it as well. However, she was a woman of a great figure. If she married into the Li Family, it would amount to offending a True Monarch. It might well be unprecedented in all ages.</p>
+<p>Sending her into a Supreme Yang Dao lineage would instead allow him to form ties with a future Daoist Master. The only concern remaining was if she remained in Xiukui Dao Gate and achieved success in cultivation. If the Fei Family came seeking favors, the involvement of a Supreme Yang Dao lineage would make any turmoil far more dangerous.</p>
+<p>Li Ximing had lingering worries, but with Kuiqi having spoken so far, he could only say with a sigh, “It is not that I refuse. I fear that her worldly attachments will be hard to sever, and that she will be unable to focus on cultivation after entering the mountains, wasting your gate’s provisions.”</p>
+<p>Kuiqi caught the implication and smiled, “Zhaojing may rest assured. Our Dao has clear vows upon entering the temple to clarify the mind and attain the Dao, pledging not to let family ties obstruct the Dao. As for the Fei Family, my coastal prefecture is full of mountain ranges. There is no lack of space for a single family. They can be relocated to the coast and, according to custom, settled within the deep forests and established as a temple.”</p>
+<p>Clearly, although the main Daoist Masters of the Great Xiukui Temple all bore the Lin surname and clans held sway under their rule, the Daoist temples scattered across the land were not merely ornamental.</p>
+<p>Li Ximing nodded and replied after some consideration, “That would be good. It is just that she originates from Moongaze Lake, and my family customarily sends provisions each year. I do not know whether your temple has regulations regarding whether they can be accepted.”</p>
+<p>This would reinforce goodwill from the Li Family, and it also revealed how much importance Xiukui placed on Fei Qingya. Kuiqi raised his brows and replied briskly, “No problem!”</p>
+<p>Li Ximing judged that the Lin Family had its own pillar figures, and that Fei Qingya was merely an added bonus. He relaxed considerably. At that moment, a black robed Daoist approached holding a jade tray.</p>
+<p>There were three treasures on the tray: a ring suffused with lingering heavenly light, a long spear of slender and elegant form, and a dharma ruler resembling green jade.</p>
+<p>The black robed Daoist presented the three ancient dharma artifacts before them and bowed respectfully. He first pointed to the ring. Three points of Radiant Light gleamed upon it, its body of gold and jade, as he said respectfully, “This is the Outer Frontier Ring. It is an ancient dharma artifact that the Grand Daoist Master obtained from the Northern Buddhists in his early years, dating roughly to the early Liang era. It can dissipate mana and transform into light to escape. The three points of Radiant Light upon the ring can transform into three streams of heavenly light to fend off enemies.”</p>
+<p>This ring was capable of both offense and defense and was exceedingly ornate. It was clearly an auxiliary dharma artifact once carried by nobles of the Wei State royal families.</p>
+<p>The Daoist then picked up the spear and said respectfully, “This is the Heaven-Piercing Radiant Spear. It was obtained from the Eastern Fire Grotto Heaven. Its age is indeterminate, but it is at least earlier than the Liang and after Emperor Gong. It can transform into light to pierce and wound enemies. It possesses formidable power, though it places certain demands on weapon technique.”</p>
+<p>The remaining jade ruler was gentle and lustrous. It was over a foot long, and engraved with patterns of mountains and rivers. He said, “This item is the Ruler of Manifested Mountains and Rivers. It is also from Eastern Fire and dates even earlier, likely before Wei Emperor Gong. It can summon mountains and rivers to cover an area, empower the user within it, move upon heavenly light, and also perceive the movements of enemies.”</p>
+<p>Li Ximing glanced over them. As expected of the Great Xiukui Temple’s collection, none of the three items were simple. The Daoist had only given a brief description, but each possessed deeper mysteries. Since he cultivated the Bright Yang Dao, Li Ximing could discern most of it at a glance.</p>
+<p>That ring is likely the most valuable. Its functions are comprehensive and very useful for Foundation Establishment Realm cultivators, but I have already cultivated a divine ability. Even if it were refined into a spirit embryo, I already possess many of its functions… It does not truly stand out.</p>
+<p>This spear is an offensive weapon tied to weapon technique rather than profound arts. It would be fine for practicing spells, but I have never been fond of spears or swords since childhood. To start training them only after reaching Purple Mansion Realm would be laughable, even if my divine ability is clear and not inferior to ordinary cultivators…</p>
+<p>This ruler is steady and dignified, though some of its profundities overlap slightly with Heaven-Venerating Gate…</p>
+<p>After surveying them all, he naturally judged these dharma artifacts with the discerning eye of a Purple Mansion Realm cultivator. Hearing Ning Wan’s evident admiration, he knew that even the Azure Pond Sect’s items could not compare. He reached out and picked up the Ruler of Manifested Mountains and Rivers.</p>
+<p>Kuiqi took a sip of tea and explained casually, “This Ruler of Manifested Mountains and Rivers is of very exacting specifications. It was likely a plaything of an imperial scion who had the qualifications to compete for the heir position. As such, it is refined but lacks divine might. Once its spirit embryo is supplemented, it can be put to use.</p>
+<p>“It measures about forty centimeters in length, two point seven centimeters thick, and four centimeters wide. The material is Crane-River Azure Jade, which is now nowhere to be found and extremely fine. The tail is carved with Yang Apex, while the head with Heavenly Radiance. Mountains and rivers are depicted, but no deities are inscribed. It is only one step short of the specifications of Wei Crown Prince.”</p>
+<p>He clearly had deep knowledge of the dharma artifacts in his treasury and looked at the Ruler of Manifested Mountains and Rivers with some reluctance, revealing a trace of emotion. He continued, “At that time, I had been punished and sent to guard the treasury. The Ruler of Manifested Mountains and Rivers was on the three platforms to the left. I often wondered whether he ever took that final step. The owner of such an elegant dharma artifact should have brought the Wei State a long period of peace.”</p>
+<p>Li Ximing nodded. No wonder the dharma ruler felt unexpectedly heavy in his hand. Since its material surpassed the other two, it also meant a higher upper limit and greater suitability as a spirit embryo. This neatly filled the regret he had felt earlier.</p>
+<p>Feeling at ease, he smiled and said, “My thanks to you for making this possible.”</p>
+<p>Kuiqi smiled and waved his hand. He turned and gave an order, “Go bring the spiritual essence.”</p>
+<p>The black robed Daoist immediately withdrew. Li Ximing gently stroked the warm, smooth surface of the Ruler of Manifested Mountains and Rivers and found himself liking it more and more. The Wei and Li styles were nothing more than two types, either domineering and fierce or calm and grand. The Ruler of Manifested Mountains and Rivers was clearly the latter, making it hard for him to put down.</p>
+<p>This will be my first Purple Mansion Realm spirit embryo!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1356.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1358.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1400: Heaven And Earth (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1399.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <span class="btn disabled">Next &#8594;</span>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1400: Heaven And Earth (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing glanced at the Purple Mansion Realm spirit material before him. Although it was precious, it stirred little in his heart. He said softly, “It belongs to the Capital Guard Dao lineage. I have fought Yehui before.”</p>
+<p>Daoist Master Xuan Yi cast an imperceptible glance at him and nodded.</p>
+<p>“Indeed. This item is called Consecration Silver. Its origins are extremely ancient. The Mifan Dao lineage possesses it only because it was inherited from the Wanglin Upper Sect. Other dharma artifacts may be fine, but they mean little to me now. Moreover, you control a lake within the mainland, so you lack nothing. Though he carries many treasures, none compare to this box of spirit material.”</p>
+<p>Having secured the item, Li Ximing was far more at ease, yet he had no intention of letting go of the benefits before him. He nodded. “I know. The Capital Guard Dao lineage is nearly extinct now. Only the Capital Immortal Dao is widely known beyond the mainland. Yehui was no weak opponent when he faced me. This item can indeed be considered precious.”</p>
+<p>“Capital Guard…”</p>
+<p>A trace of irony crept into Xuan Yi’s expression as he replied, “The various Immortal Daos may not always hold the upper hand against Buddhist cultivators, but it is rare for an entire Dao lineage to be suppressed. Yehui may appear imposing, yet when his Capital Guard Dao meets a monk, the fight becomes far from comfortable.”</p>
+<p>“Oh?”</p>
+<p>This was Li Ximing’s first time hearing that the Capital Guard was almost extinct. Xuan Yi lowered his voice, his tone fanning the flames, “After Suxikong attained Dao, temples across the nine provinces wept. The Capital Guard Dao lineage declined and never prospered again. Several major sects submitted to Mount Douxuan. Later, when Emperor Wu ascended the throne, he claimed to cleanse the mainland as he destroyed temples and broke mountains. The Capital Guard Dao lineage was severed in its entirety. To this day, were it not for Yehui obtaining the Douxuan Dao Collection… this Dao would not be seen at all. In truth, this Boundless Essence is also his sore point.”</p>
+<p>Li Ximing suddenly understood and offered his thanks.</p>
+<p>Xuan Yi grew serious. “These four dharma artifacts all belong to Mifan. If you are willing, I will take three from this box of spirit materials and leave two for you, along with the dharma artifacts… only…”</p>
+<p>Xuan Yi paused, then said with a sigh, “I only hope Master Baiyin can come to my Jingyi Mountain for a visit.”</p>
+<p>His divine ability remained subtly wrapped around Master Baiyin as he spoke. The young man seemed calm, yet the Black Cloud Silver Sparrow Bottle at his waist flickered faintly, revealing his firm resolve.</p>
+<p>Master Baiyinis someone he must have.</p>
+<p>Master Baiyin kept his head pressed tightly to the ground. He did not move and spoke not at all, yet his hands trembled faintly where they touched the floor. Even now, he still did not understand why a group of Merciful Ones had fought over him, nor why they had insisted on naming him specifically.</p>
+<p>Li Ximing fell briefly silent and said softly, “Master Baiyin has some acquaintance with my family. When we once gathered qi in the great desert, we stayed in his temple. Though the friendship is not deep… I must still ask how you intend to handle him.”</p>
+<p>Daoist Master Xuan Yi laughed softly. He lifted his robe slightly, revealing a pair of black boots with silver-lined patterns. Removing the Black Cloud Silver Sparrow Bottle from his waist, he said aloud, “This Pure Corner Merit Bottle was passed down by my master and is a treasure of our Dao lineage. Yet the bottle is heavy. For one whose fate is not strong, holding it is a death sentence. My journey to the mainland this time was to find a child who could bear it with his own body.”</p>
+<p>The corner of his lips curled as he said with a smile, “This person cannot be without cultivation. As for people like Su Yan or Xiao Yuan, I could not compete for them, and having them carry a bottle would be a waste of talent. Master Baiyin is at least at the Foundation Establishment Realm. If a child cannot be found, an old man will do.”</p>
+<p>Li Ximing did not fully believe him and reminded him meaningfully, “Master Baiyin does not have much lifespan left.”</p>
+<p>Xuan Yi neither confirmed nor denied it. Li Ximing looked to the side and asked, “And you?”</p>
+<p>Only then did Master Baiyin lift his head, his face covered in sweat and filled with confusion.</p>
+<p>Xuan Yi came from generations of Eastern Sea cultivators. He had only spoken a few extra words out of regard for the Li Family’s Orthodox Dao standing and Li Ximing’s presence. In truth, he did not care about Master Baiyin’s opinion.</p>
+<p>He laughed lightly and said teasingly, “You old fool, do you not see what a great opportunity this is? Zhaojing has said your lifespan is short. What joy is there in simply living out your few remaining years? Stay by my side and I will feed you some spirit herbs. When death comes, I may even grant you another path. It is better than sitting and waiting to die.</p>
+<p>“If you leave here today, you are bound to die. A Daoist Master cannot follow you every day. Would that not put him in difficulty? Only by staying with me do you have a chance to live!”</p>
+<p>His words were half true and half false, spoken to suit both sides. Master Baiyin began knocking his head against the ground. “Thank you, Daoist Master. I understand!”</p>
+<p>Li Ximing held his teacup silently. Master Baiyin’s response eased much of the tension. Since the old man had made his decision, he did not wish to create further complications and asked, “Senior Changxi made many arrangements before his passing. Does Jingyi Mountain know anything of them?”</p>
+<p>Xuan Yi waved his hand and took a sip of tea. He said, “Nothing serious. I am only helping him look after Kong Gumo. It is Zhugong who gathered that person’s entire family, which leaves me somewhat embarrassed. If Kong Gumo amounts to anything in the future, she will be the first he resents.”</p>
+<p>He seemed to have a good relationship with Zhugong and looked as though he regretted her shortcomings. He lifted his boot and said, “She has had little contact with Buddhist cultivators and let them swallow her weapon. I will not speak of her further. Many thanks to Zhaojing for making this possible.”</p>
+<p>Before Xuan Yi could finish speaking, snowflakes started drifting down from the sky. His expression tensed as he lowered his crossed leg.</p>
+<p>“Qiuhu has arrived! It has truly been a long time!”</p>
+<p>Li Ximing knew Ning Wan had arrived. Whether or not Xuan Yi had anything to hide, Ning Wan’s arrival took precedence over this Eastern Sea cultivator. He rose immediately to greet her.</p>
+<p>The fairy wrapped in wind and snow gracefully descended onto the platform. She glanced around and first looked toward Li Ximing in praise.</p>
+<p>“Zhaojing is truly formidable. I did not go to Wang Xiaoxiao’s side, but Senior Kuiqi did. I heard the Merciful Ones returned empty handed. I never expected that you would go and take that Supreme Yin dharma sword.”</p>
+<p>Li Ximing was briefly stunned and immediately understood, a chill running through his heart,So the bald monks were waiting there for me all along. No wonder there were so few people in the west.</p>
+<p>Although he had the Immortal Mirror for protection, the situation in Jiangbei had been chaotic, with countless eyes watching. Had he truly gone to the Wang Family, he might not have been gravely injured or killed, but he would certainly have returned empty handed.</p>
+<p>Xuan Yi appeared dignified in front of Ning Wan. His earlier carefree manner vanished and was replaced by a more serious tone.</p>
+<p>“Fellow Daoist Ning!”</p>
+<p>It was clear they had met before. Ning Wan returned the courtesy. “Greetings, Brother Qu.”</p>
+<p>Xuan Yi rose to his feet, appearing somewhat hurried as he said, “Since Fellow Daoist Ning has returned, the matters in Jiangbei must be nearing their end. I must depart at once lest I be intercepted.”</p>
+<p>With that, he secured the Pure Corner Merit Bottle at his waist, distributed the items, and said hastily, “That fellow from Xuanmiao Temple named Sumian looks like a decent man, yet he is secretly bent on joining the Devil Dao. He also has some resources and obtained quite a few of Changxi’s treasures. Zhaojing should be cautious and not fall into the old man’s schemes one day.”</p>
+<p>Li Ximing shook his head inwardly. The elder Sumian of Xuanmiao Temple had long spoken ill of Jingyi Mountain, and now this Xuan Yi, though carefree and unrestrained, was just as merciless in his words!</p>
+<p>Which one can I trust? Perhaps neither can be trusted!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1399.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <span class="btn disabled">Next &#8594;</span>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

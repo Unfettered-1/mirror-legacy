@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1308: Hidden Place (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1307.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1309.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1308: Hidden Place (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Dangjiang felt a chill spread through his heart. “Then what do you mean…”</p>
+<p>Chi Buzi fixed him with those pale green eyes. “This move cannot be avoided. Once Pristine Water sees me and grows suspicious of my cultivation, do you think he will politely ask where my Purple Mansion Realm technique Chougui Hidden Form came from? Whether I have it or not, he will not say a single word. He will simply reach out and immediately look through my memories.”</p>
+<p>“If that happens, it will no longer be a matter of just one technique. Whether or not anything can be found, I am certain to die. Though you may remain safe in the heavens, you will suffer heavy losses as well, and you should not think of seeing anyone again.”</p>
+<p>Dangjiang felt anxiety rise in his heart and replied, “What do you mean by that? Are you not the one chosen by the Mansion Lord? That so-called Pristine Water True Monarch is only at the Golden Core Realm. How could he kill you?”</p>
+<p>Chi Buzi glanced gloomily at him and answered, “Chosen or not, the Mansion Lord grants a path when destiny arrives. If it can be walked, then walk it. If it cannot be walked, even if one dies, who would care? Does the Mansion Lord lack a single Purple Mansion Realm cultivator, to the point of returning from the Outer Heavens just to save me? It is fine to invoke his name now and then, but do not take it seriously yourself.”</p>
+<p>Dangjiang frowned, his mood growing anxious as he pondered,That is true. Who among those in the heavens does not dabble in some divine abilities…</p>
+<p>Seeing that he could not offer anything more, the hope in Chi Buzi’s heart faded, and he continued in slight disappointment, “My cultivation is meager and not worth mentioning. If something happens to me, I fear it may disrupt the affairs of the Immortal Mansion…”</p>
+<p>Dangjiang glanced at him as Chi Buzi continued, “I am relying on you to make an appeal and find a way out for me. If you can meet Lord Zhen’gao from before, we may be able to gain some assurance.”</p>
+<p>Dangjiang hesitated for a while. He himself needed Shaohui’s help to see Zhen’gao and naturally had little confidence. Yet this matter concerned the survival of Chi Buzi’s Dao lineage and could not be ignored.</p>
+<p>He stood up and replied, “You know that lord as well. He is not someone one can see at will. I only know where Lady Shaohui’s Immortal Pavilion is, but I can ask on your behalf.”</p>
+<p>Chi Buzi still harbored doubts. He was a direct descendant of the Green Pine Supreme Yang Dao lineage; he was sharp and well informed after so many years. He grabbed Dangjiang and said, “The Mansion Lord controls yin and yang and may have incarnations manifest in this world. Back then there was an immortal called Yingze who also governed yin and yang. I do not know whether they are the same being…”</p>
+<p>Hearing this made Dangjiang’s scalp go numb. He dared not say much more and replied, “You want me to ask about the Mansion Lord’s mortal incarnation? First, I have nowhere to ask. Second, I do not have the life to ask. I cannot even find out the name under which that Immortal Official Li descended to the mortal world. This shows that the matter involves profound secrecy. What ability do I have to inquire into it?”</p>
+<p>“It is not that I am asking you to inquire directly…” Chi Buzi looked at him, feeling a slight headache. He actually knew some secrets. Many people in the world were searching for Yingze, yet he never showed himself. That could hardly be a good thing.</p>
+<p>Thus he replied, “This Pristine Water is known as one of the Six Sons of Chongming. His master is the immortal who governs yin and yang. He belongs squarely to the Qingxuan Dao lineage. There are so many immortals above him that one hand cannot count them all. I am not afraid of him clashing with the heavens. I am afraid that what he knows will trigger some change…”</p>
+<p>At this point, Dangjiang also felt his heart turn cold. He had only been a minor underground water official in his memories of his previous life. How could he have memories of so many formidable figures? He said with some alarm, “I understand…”</p>
+<p>Chi Buzi persuaded, “Sound things out indirectly. Ask carefully…”</p>
+<p>Dangjiang lifted his head again. Concealing his unease, he strode out while cursing, “If it really comes to smooth talking, you may not be more nimble than me. Who needs you to say so much?!”</p>
+<p>After he exited through the courtyard gate, Chi Buzi calmly returned to his seat. After all, this was someone else’s grotto heaven. Even when alone, he revealed not the slightest emotion. His eyes gently closed as he entered meditative stillness right there.</p>
+<p>White snow drifted beside him, slowly piling up within the courtyard. A fragrant osmanthus scent spread through the air. It should have been a scene that calmed the mind, yet as he sat in stillness, his heart was far from tranquil.</p>
+<p>Chi Buzi’s words had not only been a plea for help but also a test. He had discerned Dangjiang’s stance from that brief exchange and incisively grasped the key point.</p>
+<p>Chi Buzi was not important to the heavens. The Mansion Lord had acted casually, and Zhen’gao had not given Dangjiang any special orders either. This man was brooding by nature and cold in temperament. A deep suspicion arose within him from this single piece of information alone.</p>
+<p>This Mansion Lord is most likely Yingze. Yet after so many years without a trace, he clearly does not wish the world to know of his existence and must be carrying out some scheme in secret. His relationship with Pristine Water cannot be good. Since he is an immortal level being, the opportunity he granted me could not possibly expose himself, nor could it allow Pristine Water to harbor any suspicion.</p>
+<p>Once Pristine Water probes my memories, he will find nothing at all. As for me, if I fail to complete all my plans before Pristine Water returns, then losing my life, being subjected to whatever Pristine Water devises, and ultimately perishing without a sound will be the only outcome. Then what role does Zhen’gao play? A method to seek Golden Core is so precious. How could I possibly obtain it in just a few short years…</p>
+<p>He sensed that something was amiss, and a shadow immediately fell over his heart,Could he be using me this way, having me capture demons and offer them up for him all these years, knowing it will never be enough? When Pristine Water arrives, my death will be my death, while he will have already profited immensely. He will not need to find any method for me to seek Golden Core at all…</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1307.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1309.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

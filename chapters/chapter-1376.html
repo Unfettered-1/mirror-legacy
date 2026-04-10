@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1376: Brilliant Yang Kings Axe (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1375.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1377.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1376: Brilliant Yang Kings Axe (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The old man carrying the tray stepped forward and presented the Brilliant Yang King’s Axe to Li Ximing with both hands. Li Ximing accepted it lightly, feeling heat scorch his palm as the patterns upon it brightened and dimmed.</p>
+<p>Tian Sanglin examined it closely as he continued, “This object once hung in the pavilion atop Northern Return Peak within the Eastern Fire Grotto Heaven. According to Ning Tiaoxiao, the master of that cave dwelling was named Li Guangfu. He was neither extravagant nor wealthy and had already fallen into decline. When the various families stormed the grotto heaven, the dwelling was almost completely empty.</p>
+<p>“The master cleared away everything, leaving behind only the Brilliant Yang King’s Axe, a symbol of authority and glory. The Cui Family held him in great respect. It seems no one had ever dared to take the Brilliant Yang King’s Axe.”</p>
+<p>Li Ximing listened carefully. Tian Sanglin dismissed the old man and said, “The axe body should be forged from Grace-Bestowed Prolonged Radiance Bronze and refined with the Purple Mansion Realm spirit item Radiant Light Origin Essence and Heavenly She[1] Stone. That is why it carries the light of Radiant Fire.</p>
+<p>“When Ning Tiaoxiao retrieved this item, he judged that Ning Wan’s Cold Essence was incompatible with it. Bright Yang and Radiant Fire together, however, could assist me in refining my Dharma Body…”</p>
+<p>Li Ximing nodded slightly and asked, “To be frank, senior, I have only recently reached the Purple Mansion Realm and have yet to obtain a suitable weapon. When I requested the Supreme Yang Dao lineage’s help in reaching out to you about this item, I had the intention of trading for it.”</p>
+<p>After all, Li Ximing was seeking a fine spirit artifact. If the other party had no intention of trading it or felt no need to do so, any further words would be meaningless.</p>
+<p>Tian Sanglin nodded. “Zhaojing, do not overthink it. Since Ning Wan consulted me about this matter and I allowed her to invite you here, I naturally have my own considerations.”</p>
+<p>Li Ximing smiled and nodded as the other continued, “Bright Yang is inherently domineering, and this object is a king’s axe. After I finished refining my dharma body, using it myself did not align well with the Shamanic Talisman Dao. Its applications are conventional. In battle, it is somewhat heavy and not ideal for fending off enemies. Moreover, it cannot be allowed to fall lightly. If a strike misses, it instead harms one’s divine abilities and mana.”</p>
+<p>At this point, Li Ximing understood that this spirit artifact could complement his own divine ability. A combination of suppression from the Heaven-Venerating Gate and a single cleaving strike of the axe would be nearly impossible to evade without Body Divine Abilities.</p>
+<p>As expected, one’s own divine abilities pair best with one’s own spirit artifact.</p>
+<p>Having encountered so many of the Merciful Ones, Li Ximing’s worries had grown heavier by the day. Now, upon seeing such a spirit artifact, it was impossible not to feel tempted. Stroking his beard, he said, “May I ask what senior requires?”</p>
+<p>Tian Sanglin rose from his throne and clapped his hands lightly. “First, I want the Nine-Colored Profound Mercury!”</p>
+<p>Those words rendered Li Ximing silent, his lips parting yet no words emerging.</p>
+<p>The Nine-Colored Profound Mercury had been obtained during the siege and killing of Wang Fu. A dignified Purple Mansion Realm spirit item falling into the hands of the Li Family had only remained there because Hengzhu valued reputation and upheld the Orthodox Dao, allowing them to preserve it on their behalf. Had it been another Dao lineage, even if they refrained from outright seizing it, it would likely have been forcibly traded away long ago.</p>
+<p>After Li Ximing reached the Purple Mansion Realm, the item had been sent to Moongaze Lake, intended for Li Quewan’s future breakthrough into the Purple Mansion Realm. There had never been any thought of using it otherwise…</p>
+<p>Yet if this item could be exchanged for a Bright Yang spirit artifact, Li Ximing would not hesitate much. The pressing priority was to strengthen himself and stabilize the situation before Li Zhouwei’s breakthrough. Should any upheaval arise in matters concerning the True Monarch, the value of a spirit artifact would far surpass that of the Nine-Colored Profound Mercury gathering dust in storage.</p>
+<p>As for Quewan… she is still far from the Purple Mansion Realm. We can wait until Zhouwei emerges from seclusion before making further plans.</p>
+<p>Yet Tian Sanglin had not finished speaking. He turned his head and continued, “Besides this item, I also want a spirit pill, the Bright Truth Harmonizing Divine Pill. It flowed out from the Great Ning Palace. It is not in your possession, but the Si Family has it, the Gao Family has it, and even the three sects and seven gates each hold a portion…”</p>
+<p>Yet he did not stop. “And if I lose this spirit artifact, the foundation of my Southern Shun Raksha lineage will weaken. At the very least, it must be compensated with a spirit embryo. Naturally, you can trade a Supreme Shaman spirit embryo as the price to my Southern Shun Raksha.”</p>
+<p>Li Ximing had at most hoped that the other party would request assistance in suppressing Maha. After all, he and the Buddhist cultivators were already mortal enemies, and at worst he would suffer injuries. But a spirit artifact was tangible strength. Unfortunately, the Southern Shun Raksha had long secured its foundations in Songzhou and had no mortal enemies to exploit, leaving no such opportunity.</p>
+<p>Every demand now meant heavy losses. His brows furrowed with faint displeasure. In short, the Southern Shun Raksha not only wanted to secure spirit pills and spirit items, but also required a spirit embryo as compensation!</p>
+<p>The price is truly too great.</p>
+<p>He slowly straightened and said softly, “Senior, the Nine-Colored Profound Mercury is already a rare spirit item in this world, especially in these times when the Whole Pill no longer manifests. It would be one thing to ask for that alone, but you have also asked for the Supreme Yang Dao lineage’s Bright Truth Harmonizing Divine Pill and a Supreme Shaman spirit embryo.</p>
+<p>“If I had such influence, I would not have needed to come to the Southern Sea at all. I could simply seek out a few friends and refine a spirit artifact myself. Would that not be far better?”</p>
+<p>Li Ximing remained amiable outwardly and smiled as he said, “If this were Xiukui’s Surging Yang Star Command Treasure Disk, I would not hesitate in the slightest. I would even throw in my Mountain-Charging Sea-Pacing Tiger without a second thought. But as senior yourself said, this spirit artifact is quite heavy and not some profound marvel.”</p>
+<p>Tian Sanglin was advanced in years and sharp of eye. He did not yield in the slightest and shook his head. “That is not correct. The Nine-Colored Profound Mercury is precious. Are Radiant Light Origin Essence, Grace-Bestowed Prolonged Radiance Bronze, and Heavenly She Stone inferior? The difference amounts only to one pill and one spirit embryo to make up the gap. It is already quite fair.”</p>
+<p>He laughed heartily and said, “I do not know whether to call you fortunate. If it were someone else, knowing only that this object is heavy, they might not fare much better even if they obtained it. It only shows remarkable effect when paired with certain divine abilities. I happen to have some experience, and I have indeed seen another king’s axe!</p>
+<p>“Precisely because it is a king’s axe, it dominates the world when strong, and invites calamity when weak. Once it falls into the hands of a cultivator whose Bright Yang divine ability has reached great accomplishment, this spirit artifact reveals an entirely different bearing!”</p>
+<p>Tian Sanglin had never looked like a benevolent figure. He already bore the appearance of a devilish overlord, and now his gaze was laden with meaning, his smile carrying a faint chill, “Therefore, I know its worth. In the eyes of your family, this object is truly a treasure…”</p>
+<p>His attitude was resolute and left no room for compromise. In truth, Li Ximing knew the demands, though painful, were not unreasonable. Yet he still sighed. “I do have some refining methods for spirit embryos. Though I am not versed in the Supreme Shaman Dao, I could consult Xiukui. But this Bright Truth Harmonizing Divine Pill, such a precious spirit pill, I would have to expend an enormous amount of personal favor to obtain it…”</p>
+<p>Tian Sanglin said nothing and merely took a sip of tea. Li Ximing’s eyelids twitched. Just as he was about to speak, a gust of gray wind swept into the hall and transformed into a young man.</p>
+<p>He was tall and thin, clad in black robes and black boots, bearing the look of a devil cultivator. A red mark adorned the space between his brows. Gray cloth bands were tied around both sleeves. A jade pendant hung at his waist, and a large bow was slung across his back. His complexion was slightly sallow, giving him the air of a hunter.</p>
+<p>He strode briskly into the hall. Upon suddenly seeing Li Ximing, his pupils widened slightly in recognition and a flicker of shock crossed his face.</p>
+<p>However, the devil cultivator quickly reined in his emotions. With a peculiar look in his eyes, he first bowed to Tian Sanglin. “Greetings, my king!”</p>
+<p>Tian Sanglin nodded. The young man then turned and said gently, “I am Jiao Zhongzi. Greetings, Fellow Daoist Zhaojing.”</p>
+<p>Seeing him stride in from outside the hall with a bow on his back, head held high and chest out, Li Ximing was momentarily distracted. He coughed lightly. “Greetings, Fellow Daoist…”</p>
+<p>Li Ximing replied with slight embarrassment, “As for what happened before… I offended you.”</p>
+<p>Jiao Zhongzi waved his hand and sat down to the side with a smile. “I heard from the Miao Family that a cultivator had come to Southern Shun Raksha to exchange for a spirit artifact. So it is Fellow Daoist Zhaojing. You have come to exchange for the Brilliant Yang King’s Axe, have you not?”</p>
+<p>Though he cultivated the Shamanic Talisman Dao, a faint flicker of flame glimmered between his brows. Li Ximing took note inwardly and smiled wryly. “That is correct. It is only that my lake is impoverished. I fear I cannot satisfy senior.”</p>
+<p>“Oh?” Jiao Zhongzi responded softly and glanced at Tian Sanglin seated above. An unspoken exchange quickly passed between them. Then he smiled and said, “It seems we must trouble you to refine a spirit embryo. It is not that my king intends to make things difficult for you. Our Shamanic Talisman Dao is not like the Purple Mansion Golden Core Daos. We lack the means to refine spirit embryos, nor do we have the corresponding Dao lineage for nurturing one slowly. Only your Purple Mansion Golden Core Daos have cultivated the Supreme Shaman Dao. We would merely borrow it for use…”</p>
+<p>Jiao Zhongzi was clearly far more eloquent than Tian Sanglin, and his attitude was unexpectedly amicable. He smiled and said, “My king has one himself. It is only that I have yet to obtain a spirit embryo since my breakthrough. Thus I thought to ask Fellow Daoist for assistance. Whether you require a dharma artifact or any materials, you may name your price.”</p>
+<p>The implication had shifted. Tian Sanglin had demanded that he provide a spirit embryo outright, but Jiao Zhongzi’s words had turned into a matter of assisting in refinement, which was far less burdensome. Li Ximing’s eyes brightened as he thought it over. Tian Sanglin remained silent, as if acquiescing.</p>
+<p>Li Ximing was rather tempted. He nodded while remaining inwardly cautious,Could it be that the old and the young are playing good cop and bad cop, inflating the price from the outset?</p>
+<p>1. 阇 (shé) is a phonetic transliteration character, most commonly used in Buddhist loanwords from Sanskrit. It usually does not carry an independent semantic meaning in Chinese and often functions purely for sound. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1375.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1377.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

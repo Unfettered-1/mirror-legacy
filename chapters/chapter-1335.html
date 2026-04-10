@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1335: Ghost Corpse (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1334.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1336.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1335: Ghost Corpse (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Wilderness.</p>
+<p>Li Jiangqian glanced at the retreating cultivators, then looked down to see the large and small families of the Wilderness all gazing upward. His golden eyes swept across the scene as he fell into silent contemplation.</p>
+<p>The culprit crossed the river and was saved by my family; we even fought a battle in the Wilderness… I do not know which scheme this belongs to, nor whether it involves someone from the north. In any case, the Wilderness must be handled carefully.</p>
+<p>If Lin Feng had killed Daoist Bai’s men and took the items across the river, that would indeed form a favorable tie. However, Lin Feng remaining in the Wilderness would not be a good thing. The more people came into contact with him, the greater the trouble it would bring to his own family, making him difficult to deal with.</p>
+<p>But if it was not Lin Feng, and instead some family deliberately disrupting the arrangement, or some figure from the opposite shore, then it would be even more inappropriate to make careless contact, since it would only end up dragging trouble onto oneself.</p>
+<p>As he was pondering, the cultivators on both sides gathered around him. Ding Weizeng, his expression grave, stepped forward and saluted as he said, “Greetings, family head. Matters here are settled, but we must swiftly return to reinforce the river. Although the Capital Immortal Dao has withdrawn due to trouble in the north, we must still guard against these people taking risks to cross the river!”</p>
+<p>Ding Weizeng deeply despised the Capital Immortal Dao and was most wary of the north. Even now, his thoughts were about the river, so Li Jiangqian followed his lead and nodded. “I will trouble Dharma Protector Ding to make this trip. Dharma Protector Cui may remain. As for matters by the river… I will need you to keep a closer watch.”</p>
+<p>Ding Weizeng rode the wind and departed first. Cui Jueyin walked up next and asked quietly, “Family head, the Locust Soul Hall has crossed the river, and everyone saw it. The person who was rescued should still be in the Wilderness. How should this be handled?”</p>
+<p>Li Jiangqian exchanged a glance with Li Minggong. Naturally unwilling to intervene too deeply, he replied, “Relax for now. We do not yet know what sort of person he is. There is no need for us to be too deeply involved. Let him remain, and do not seek him out, lest we become entangled in the end. Simply leave behind a single favor.”</p>
+<p>Cui Jueyin agreed, and everyone withdrew on the wind. Before reaching the lake, they saw Li Xuanxuan standing in the rain, stroking his beard with evident unease. It was unclear how long he had been standing there. Li Jiangqian quickly explained the situation to him in detail, then had Chen Yang escort him back.</p>
+<p>They soon arrived at the hall, where Li Quewan was waiting inside the main hall, silently looking at several jade slips in her hands.</p>
+<p>Upon seeing Li Jiangqian, an anxious look surfaced on her face as she asked, “How did it go?”</p>
+<p>Li Jiangqian shook his head and replied, “Hard to say. Daoist Bai is astonishingly incompetent. Aside from a single command token, he is utterly useless. The devil cultivators under him are even more chaotic. It really is difficult for him… after all this trouble over two years, he has not managed to find even one trusted subordinate.”</p>
+<p>He sat upright in the main seat, then said with a solemn expression, “But it also shows one thing. That so-called Gui Dusk Profound Token is truly no ordinary item. Taken alone, it is at least an ancient technique grade dharma artifact. Who knows how many methods a Daoist Master left inside it, or whether there might be one or two Purple Mansion Realm divine abilities within to preserve his life?</p>
+<p>“The lords of the north naturally have nothing to fear. But if he is pushed too far and lashes out indiscriminately at our family, it would ruin matters. That is why we did not press him too hard and let him withdraw.”</p>
+<p>Li Quewan let out a breath of relief and shook her head, saying, “It is best to have him stay far away. There are no direct descendants in the Wilderness now, so let them do as they please.”</p>
+<p>“Indeed.” Li Jiangqian sighed and said, “I saw a few characters under his command, who might bring trouble later. That fellow is no different from a plague god. Even striking him would dirty one’s hands, so it was best to send him away early.”</p>
+<p>Worry flashed across Li Quewan’s face. She placed several jade slips in her hand onto the table. Each one had a dull texture and seemed to be quite old. She said softly, “Just now, while you were out with the Dharma Protectors and guest cultivators, someone came from the river. He reported that he was acting on the orders of Li Quantao, who guards Lake Xian, and brought these items to ask for our family’s opinion.”</p>
+<p>Li Jiangqian immediately grew suspicious and asked, “What did he say, and where is he now?”</p>
+<p>“He is still on the island.” A trace of helplessness appeared on Li Quewan’s face as she continued gently, “Li Quantao guards Lake Xian, which is close to several sea inlets. Some days ago, he encountered a group of people whose behavior seemed suspicious, so his subordinates detained them for questioning. As it turned out, those people actually claimed to be from the Locust Soul Hall!</p>
+<p>“The people of Lake Xian naturally did not believe them. After all, no matter how shabby the Locust Soul Hall might be, its members would still carry identification tokens. So they opened these people’s storage pouches to verify their identities and only then discovered that they cultivated the Mifan Dao lineage of Mount Xiaoshi.”</p>
+<p>Li Jiangqian fell into contemplation as he listened, and Li Quewan finished, “Only then did those people realize they had caused trouble. They reported it to Li Quantao, and after questioning them one by one, it became clear that they were all surviving inheritors left behind from Mount Xiaoshi back then. Now, having heard that the Mifan Dao lineage was flourishing again, that someone had obtained a Purple Mansion Realm command token and could establish a Dao lineage recognized by the various sects, they finally came to seek refuge.”</p>
+<p>The more Li Jiangqian listened, the more it felt off to him. After pondering for a long moment, he asked doubtfully, “Could a group of real players have arrived?”</p>
+<p>Before Li Ximing broke through to the Purple Mansion Realm, there were already three factions in Jiangbei: Floating Cloud, Hidden Cloud, and Brahma Cloud. In truth, these Dao lineages had been falsely established by Purple Mansion Realm cultivators to open a hidden trove, luring the descendants who had fled Mount Xiaoshi to come and seek refuge. Later, it indeed succeeded, drawing in enough people for Chengyun Gate to instigate the underground palace incident.</p>
+<p>Sure enough, Li Quewan nodded, clearly harboring the same doubts, and replied, “Moreover, the Mount Xiaoshi Dao lineage that was lost abroad was not limited to just one or two lineages. Chengyun Gate only managed to lure one or two with its trap. There must be more out there. It seems that those overseas remnant lineages actually took the great commotion stirred up for the lords of the north seriously and truly regarded the Locust Soul Hall as a continuation of the Dao lineage. They believe there was some protection or favor to be found.”</p>
+<p>This matter was unexpected, yet still reasonable. Li Quantao had not known the full story, so he had genuinely grown wary. With Qianlizi away and unable to contact Ning Wan, he had sent the matter to the lake instead.</p>
+<p>“These people stayed in the outer seas for so many years without being exposed, yet were captured as soon as they crossed Lake Xian. If Li Quantao is now inexplicably entangled in such a matter, he has probably already stepped deeper into the game.”</p>
+<p>Li Jiangqian found it both amusing and troublesome. Li Quantao’s move was clearly favoritism. After all, these jade slips had already been unsealed and anyone could read them; storing them in the treasury would also count as a gain. Yet this group had traveled thousands of kilometers from the outer-sea, and it was unclear what role they were playing. They were not easy to provoke at present.</p>
+<p>Li Minggong took one of the jade slips and said softly, “Does the old elder know about this?”</p>
+<p>Li Quewan did not yet understand why she was asking and replied hesitantly, “The old elder has been waiting outside the lake for you to return, so he does not know yet.”</p>
+<p>Li Jiangqian, however, understood what Li Minggong meant. Li Quantao had been used by the Ning Family in the scheme concerning the Hongxue inheritance, something the old elder had already found hard to bear. Now that the Daoist Master was missing and the situation only growing more dangerous by the day, Li Quantao still concerned himself with Moongaze Lake. Li Jiangqian feared that this would only cause distress if the old elder heard of it.</p>
+<p>He walked a few steps around the hall and asked, “How is this cultivation method?”</p>
+<p>Li Quewan’s expression was complicated as she replied, “Most of these manuals are ones we have already had before. However, there is one cultivation method that is somewhat interesting. It is called the Huai Water Ghost Yin Refining Method. It uses the remains of cultivators to craft dharma artifacts. The technique must be cast before death in order to preserve the body and prevent it from dissipating into a spirit item. It is quite ingenious, but… it has special requirements for the Immortal Foundation.”</p>
+<p>She took out the jade slip, showed it to the two of them, and explained, “This kind of dharma artifact is not something just anyone can refine, and each person can only refine one. Once refined, it is called a Ghost Corpse. It is best refined by cultivators of Hurricane Ghost Yin. If not, the next best would be Supreme Shaman, Xiukui, or Baleful Essence. At the very least, it must belong to the same broad ancient category. Others generally have no chance of successfully refining it.”</p>
+<p>Li Minggong skimmed it briefly. Even without recognizing it outright, she could tell just by listening, and replied, “It looks sinister at a glance and is clearly not a good thing. This is exactly the method Daoist Bai used to refine Situ Biao…”</p>
+<p>Li Quewan nodded solemnly. When she saw Li Jiangqian’s sudden look of realization, she inferred, “This at least proves… that Daoist Bai did not come away empty handed. He must hold quite a few inheritances of the Mifan Dao lineage. As for how he obtained them, that is something worth deliberating.”</p>
+<p>Li Jiangqian nodde. “He wiped out Brahma Cloud. Who knows where he seized it from. After all, his slogan back then was that Ping Wangzi had refined an infant and defiled the Mifan Dao lineage, and that he was upholding justice by eliminating him. It might very well have been some kind of devil technique… But if it did not come from Fanyun…”</p>
+<p>Li Minggong thought carefully for a moment and said softly, “I saw that Situ Biao’s Ghost Corpse flew out from the Gui Dusk Profound Token. Either this dharma artifact can contain such a thing, or this spell art came from the Gui Dusk Profound Token itself!”</p>
+<p>Li Jiangqian and Li Quewan suspected the latter as well. Li Jiangqian paused first, making sure there were no Purple Mansion Realm cultivators nearby, before speaking in a grave tone, “If it truly came from the command token, then Purple Smoke Gate must be holding quite a number of Mifan Dao lineage inheritances… This dharma artifact was likely not crafted on the spot based on what I said back then, but was designed with great care and probably planned long ago. My casual mention of the Mifan Dao lineage simply provided the opportunity for exactly what they wanted.</p>
+<p>“On closer thought, it is not strange at all. The most famous Dao lineage in Jiangbei is Mifan. It has already been paved repeatedly by many Purple Mansion Realm cultivators. From Foundation Establishment Realm cultivators down to ordinary mortals on the ground, everyone knows the name Mount Xiaoshi. Even if I had not brought it up, anyone trying to raise a banner in Jiangbei would think of Mifan, and only Mifan would be the most credible!”</p>
+<p>He said softly, “That is to say, there was probably a consensus on this matter much earlier, with Mifan decided upon from the start. Qianlizi once said that each arrival would leave behind some secret realms or grotto heavens. This time, it is likely that Mifan will descend…”</p>
+<p>Li Jiangqian’s voice grew even softer as he continued, “Then could it be that the Gui Dusk Profound Token is not some temporary stopgap at all… but a genuine supreme treasure with the chance to open the Mifan Secret Repository?”</p>
+<p>Li Quewan’s expression turned solemn as she exchanged a look with Li Jiangqian, and the same four words appeared in both their minds.</p>
+<p>Immortal Mirror fragment!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1334.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1336.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

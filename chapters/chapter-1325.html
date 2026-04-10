@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1325: Unyielding Backbone (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1324.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1326.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1325: Unyielding Backbone (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Sigh.” Bai Yinzi shook his head, keeping an eye on the potential pursuers behind them as he said, “It was only a casual act. Let us find a place to settle in Jiangbei and talk things through properly.”</p>
+<p>He had completely forgotten about the matter of metal poison. Wang Bakong glared furiously and was about to give chase, but the brocade clad youth on the ground suddenly groaned. The tension broke as he fainted away.</p>
+<p>Wang Bakong had no choice but to stop, his eyes reddening as he cried out in distress, “That little beast uses such vicious methods.”</p>
+<p>Tears welled in his fierce eyes as he lifted the youth and ground his teeth. “Wang He refused to see me and made me wait at the foot of the mountain for months. That is how this man took advantage of the opening and brought such calamity upon you.”</p>
+<p>His expression darkened as he held his eldest son, vicious thoughts surging in his heart.</p>
+<p>“So be it. So be it. I thought that being close to the Capital Immortal Dao, and with my lineage close to Wang He, we would naturally receive some care. I never imagined he could be this heartless.”</p>
+<p>Wang Bakong swept a sharp gaze around, and the people below immediately whispered among themselves and dispersed. Guards stepped forward from both sides, only to be struck twice by him, sent flying off the platform as they spat blood.</p>
+<p>“Useless.” He issued an order in a low, grim voice, “Call someone over. Is Wang Quwan also cultivating in the Jiangbei region?”</p>
+<p>A cultivator at the side nodded hurriedly and replied quietly, “It is said that he is cultivating in this area. No one knows why he does not return to his own lineage’s mountain. Whoever goes to visit is turned away without meeting him.”</p>
+<p>“I understand.”</p>
+<p>Wang Bakong turned and left with the youth in his arms. Wang Jie’s face was covered in cold sweat as he suddenly awoke, his lips trembling as he muttered about unyielding backbone and ambitions that reached the clouds.</p>
+<p>————</p>
+<p>Moongaze Lake.</p>
+<p>Another early autumn had arrived. The trees by the lake shed red and yellow leaves in scattered profusion. The old man rode the wind swiftly over and descended before the main hall. Seeing two figures standing inside the hall, he bowed without stepping over the threshold.</p>
+<p>The person seated above wore a crimson robe, holding a brush in midair with a contemplative expression. The one beside him was dressed in palace attire. She was dignified in appearance, with a green spherical bead cradled in her hand.</p>
+<p>When he saw Qu Buzhi come to pay his respects, the man seated above raised his brow, then turned to Li Minggong and said, “Great aunt’s words make sense. Since Zhuang Pingye is returning to the Great Desert, it is only right to give him a warning. Have him pass a message to Zhuang Cheng and tell them not to go to Jiangbei.”</p>
+<p>He pondered for a moment and continued, “Say that our family is engaged in a major conflict with the Capital Immortal Dao, involving the Purple Mansion Realm, and that it is extremely dangerous. Tell the Zhuang Family not to come east, lest something unforeseen happen… Zhuang Cheng is already a well known figure in the Great Desert, so he should not ignore such advice… As for how effective it will be…”</p>
+<p>Li Jiangqian let out a faint sigh and said, “That will depend on the will of those above. If they are already meant to be involved, there is no avoiding it no matter how one tries.”</p>
+<p>Li Minggong nodded slightly, and Li Jiangqian turned. “Report.”</p>
+<p>Only then did Qu Buzhi enter the hall and bow, speaking respectfully, “My lord, Wang Jie has been defeated for the second time… It is said that he nearly lost his life this time, and only survived because his father returned in time. He intended to take revenge, but Lord… Lord Lin was rescued by an old Daoist at the Foundation Establishment Realm.”</p>
+<p>Qu Buzhi was not foolish. He had long been involved in northern affairs and maintained contact with the Capital Immortal Dao. Though he did not know the truth, he had already vaguely guessed that Lin Feng’s identity was extraordinary. When he addressed him as Lord Lin, Li Jiangqian paused slightly. Not only did he fail to correct him, he also did not ask about the identity of that Foundation Establishment Realm cultivator.</p>
+<p>Instead, he asked solemnly, “Did you follow my instructions?”</p>
+<p>Qu Buzhi nodded. “This subordinate followed your orders precisely. All the information was gathered from casual talk in taverns. Strangely enough… Perhaps the matter itself is intriguing, but it spreads with astonishing speed, as though everyone is delighted in mentioning it.”</p>
+<p>Li Jiangqian nodded silently, and Qu Buzhi continued, “The information on the other side has also been conveyed to Lord Gong[1]. He was most grateful and instructed me further. He said they have obtained intelligence that the Black Rat Dharma Protector has already investigated the origin of the mineral vein and has come to suspect Lord Lin. He personally went to Baiku Prefecture, presumably to meet Wang Bakong.”</p>
+<p>Li Jiangqian gestured for him to withdraw, then turned to Li Minggong and said softly, “Affairs on the northern shore have always been handled by Chen Yang. It is said that Fei Qingya’s cultivation speed is astonishing. When she first arrived, she was only at the fifth stage. Now she has already broken through to the sixth stage of the Embryonic Breathing Realm, surpassing most of our family’s direct descendants.</p>
+<p>“Daoist Master Tinglan gave no instruction on what kind of spiritual qi to bestow upon her. Daoist Master Qiuhu has also sent no message. For now, we can only let her consolidate her cultivation. This matter will likely require us to decide for ourselves.”</p>
+<p>Li Minggong pondered for a moment and asked, “What is your idea…”</p>
+<p>Li Jiangqian smiled faintly and said, “River Pure Qi.”</p>
+<p>The Li Family’s River Mountain Sutra had yet to be unsealed. How could they possibly miss such an excellent opportunity? Once Fei Qingya consumed River Pure Qi, her future cultivation would inevitably require subsequent techniques. As long as she emerged from seclusion within three years and the matter was mentioned in passing, Lin Feng would very likely resolve the issue for her sake.</p>
+<p>Many matters that the Purple Mansion Realm could not accomplish might not be impossible for a True Monarch.</p>
+<p>Li Minggong’s eyes lit up as she nodded repeatedly. Li Jiangqian leaned back and smiled, “Dharma Protector Chen is extremely attentive toward her, fearing she might lack suitable techniques to cultivate. He not only sent her a portion of River Pure Qi, but also found her a rather good complementary cultivation method. He said that since their techniques are similar, it would be easier to give her guidance.”</p>
+<p>Li Minggong looked at him and shook her head with a helpless smile as she replied, “Who can blame him, when our Dharma Protector Chen is such a warm hearted fellow?”</p>
+<p>Li Jiangqian smiled. “However, Dharma Protector Chen has also sighed repeatedly that the family’s inherited techniques are sealed by secret arts, with the method of opening them lost. No one knows what kind of genius could possibly unlock them. It is truly regrettable!”</p>
+<p>With the matter settled between them, Li Jiangqian set pen to paper and said, “As it happens, Dharma Protector Chen’s family produced some fine children. They have already come of age, possess quite high innate ability, and have reached the Qi Cultivation Realm. They came to the family to report Qi Ingestion. One is his second son, Chen Jinxi, and another is his nephew, Chen Jinbao. Both are quite good. According to the elders, they are no worse than the An Xuanxin brothers.”</p>
+<p>This was the first such assessment Li Minggong had heard. She looked up with mild surprise and nodded as she said, “The Chen Family has always been low key. I knew there were a few such people, but I did not realize they could be compared to the two brothers of the An Family. Truly fine innate ability.”</p>
+<p>Li Jiangqian nodded silently, rubbing the jade cup in his hand as he replied, “Jiangliang has also reached the Qi Cultivation Realm, so it is just right to assign him a subordinate. The members of the Chen Family are all renowned as capable ministers and effective hands. It is rare to find any useless ones, so it is quite suitable.”</p>
+<p>Li Minggong smiled and nodded, a trace of relief rising in her heart,Fortunately, Zhouwei produced many descendants. Without him, relying only on Xinghan, Zhoufang, and at most Jiangzong and Zhouda, it would likely be impossible to keep so many geniuses in check.</p>
+<p>Li Jiangqian was pondering something, and merely said casually, “That Fei Chingyi is still fairly obedient. He no longer dares return to the northern shore and focuses every day on handling affairs within the region, as if trying to make amends for his mistakes. Aside from being a bit clumsy in his actions, his attitude is quite positive.”</p>
+<p>Li Minggong let out a sigh and replied, “How could he not be proactive? Everyone in the Fei Family is watching anxiously, afraid that you might be dissatisfied.”</p>
+<p>Li Jiangqian let out a snort of laughter. “This matter does not lie with me. The Fei Family has its share of fortune. Fei Qingyi, Fei Chingyi, and Fei Qingya. Regardless of whether they turn out well or poorly, at the very least they have managed to keep this line of fortune alive.”</p>
+<p>1. Referring to Guan Gongxiao. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1324.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1326.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

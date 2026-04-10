@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1356: Ruler of Manifested Mountains and Rivers (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1355.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1357.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1356: Ruler of Manifested Mountains and Rivers (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing and Tinglan had finalized the grand formation back then and proposed modifying the Profound Peak Gate’s original formation plate. This was naturally the result of Tinglan’s alterations. Changxi’s grand formation followed the Stable Earth Dao and specialized in defense, so it would never have produced such a manifestation of spirit light.</p>
+<p>Perhaps Ning Wan noticed that the traces of these modifications did not fully match the original Stable Earth patterns of the formation plate and gained some understanding from it, but she found it inappropriate to say much and simply noted, “One of them is the main command refined by Tinglan within the formation. When Zhaojing used his divine ability to summon it, it appeared.”</p>
+<p>Li Ximing naturally understood. He raised his hand lightly, and a vein-like golden light flashed across the sky for an instant as a twenty-centimeter-long command token with a purple base and yellow patterns fell into his hand.</p>
+<p>He was fairly satisfied with the formation. As he took out a jade talisman and used divine ability to inscribe it and connect with the formation, he reflected inwardly,Changxi’s gate was also a poor gate that rose from nothing. Its techniques were merely somewhat unique, allowing it to accumulate a bit of wealth.</p>
+<p>The most valuable thing in the entire Profound Peak Gate was the mountains it moved year after year… The formation plate of Profound Peak Gate was never particularly good to begin with, and it certainly cannot compare with those of the Supreme Yang Dao lineages… This is passable in its current state.</p>
+<p>After all, when Yehui had attacked the gate itself, there had not been the slightest reaction from the Profound Peak Gate’s grand formation, let alone any release of spirit light.</p>
+<p>Li Ximing was in high spirits. Only then did he see Kuiqi slowly surveying the area from midair and giving a slight nod. This Daoist Master of the Great Xiukui Temple was more direct than Ling Mei and Ning Wan. He did not offer many words of congratulations but instead said softly, “If Zhaojing needs to construct any grand formations in the future, you may come find me in Huyi Mountain.”</p>
+<p>At this moment, the Purple Stable Valley Pillars across the lake were already giving off a faint glow. The sky above seemed unobstructed, yet cultivators around them found it difficult to take even a single step. Li Ximing finished inscribing the jade talisman, granted access to the outer formation, summoned Li Jiangqian, and casually handed it over.</p>
+<p>“I will leave the matters on the lake to you for now. These Purple Stable Valley Pillars are protected by a Purple Mansion Realm grand formation to prevent internal sabotage and are difficult to approach. First, plan out the surrounding territory. I will return shortly.”</p>
+<p>Although the island at the heart of the lake was in ruins, such matters could be entrusted to Li Jiangqian and Li Quewan without further instruction. They could not keep the Daoist Masters waiting any longer. Li Ximing gestured invitingly, and the four of them passed into the great void and flew toward the territory of the Great Xiukui Temple.</p>
+<p>Using their Purple Mansion Realm divine abilities to traverse the great void, they traveled at astonishing speed despite the steepness of the great void and the abundant spiritual energy of Jiangnan. They descended into the temple halls atop Huyi Mountain, where several Foundation Establishment Realm cultivators were sweeping snow from the long staircase amid a sea of white.</p>
+<p>When the mountain snow encountered Ning Wan, it visibly intensified. Li Ximing glanced at the long staircase halfway up the mountain and saw Cui Jueyin waiting beneath the temple steps. The man stood respectfully amid the vast snowfield, likely unmoving for several days, reduced to a thumb-sized black dot among the snowdrifts.</p>
+<p>Ning Wan called out, “Zhaojing!”</p>
+<p>Li Ximing took a seat and accepted tea. The sharp-eyed Kuiqi had clearly seen the scene and shook his head with a smile, “After so many years, the Cui Family remains the same… Unfortunately, after crossing the sea several times, they were gradually frightened out of their wits, and Purple Mansion Realm cultivators have become rare on Chongzhou Island… Everyone seeks Bright Yang, yet this open and upright Dao leaves them feeling guilt and fear toward Bright Yang itself. How could they ever obtain it? They might as well cultivate something else…”</p>
+<p>Li Ximing sighed inwardly, unsure how to respond. Kuiqi was likely speaking out of sentiment, but Ling Mei noticed Li Ximing’s awkwardness. He reversed the Frosty Absolute Sword in his hand, passed it to Ning Wan, and said, “Thanks are owed to Qiuhu[1], to allow me the fortune of wielding such a spirit sword.”</p>
+<p>Although Ning Wan was not afraid that Ling Mei would fail to return the sword, having it in her hands brought greater reassurance. She accepted it with thanks. Kuiqi murmured a few instructions and sent people away, then turned serious as he said, “The matters in Jiangbei are the most urgent right now. Tinglan is injured; the Purple Smoke Blessed Land cannot be mobilized for the time being; and Zhugong’s whereabouts are unknown. The affairs along the river will likely still require Qiuhu to oversee. After all, Clear Hearing is a Fate Divine Ability. For now, we can only rely on you.”</p>
+<p>Ning Wan seemed to have anticipated this and replied gently, “I am not afraid to shoulder this matter, but I have not achieved my divine ability for long. It is difficult for me to influence the opposing situation. If the north makes any schemes, I will not be able to withstand them for the time being.”</p>
+<p>“These monks still harbor wicked intentions!” Kuiqi sighed and finally showed a trace of displeasure as he replied, “Zhelu will not dare stir trouble for now. You should be even more cautious on your own and not range too far. Those bald monks will have no means to act. With Zhaojing on the riverbank, reinforcements can arrive at any time.”</p>
+<p>At this point, he deliberately turned his head and added, “As for Zhaojing, there is no need to involve yourself further. You have only just returned to the mainland, so you must be even more wary of others’ schemes. Do not touch the affairs of the higher-ups. Simply keep an eye on the movements of the Northern Buddhists. After all, Zhaojing’s Heaven-Venerating Gate is highly effective. If anything happens, we will arrive quickly. Just do not stray too far from Jiangnan.”</p>
+<p>“Alright!” Li Ximing naturally had no intention of interfering and agreed readily.</p>
+<p>Ling Mei calmly took a sip of tea and said softly, “There is also the Great Konghai Temple in the Southern Sea at the Azure Pond Sect. Although Daoist Master Zhusheng and that Snow Ridge Listening Pine Marten managed to deal with it, Qiuhu cannot divide her attention. If Zhaojing has the capacity, lend a hand so that nothing goes wrong.”</p>
+<p>Ning Wan replied gently, “If it can be done… that would be best. I have already lent a wisp of divine ability over there.”</p>
+<p>Li Ximing raised his head in slight confusion, while Ling Mei continued ever softer, “The Great Konghai Temple seized the Southern Sea and Qiuhu was unable to rescue it in time. Two Daoist Masters from the southern border intervened out of regard for Daoist Master Yuanxiu. One cultivated Jade True, making transformations as real as reality itself. The other was a demon cultivator of Cold Essence who blocked Baoqing. That Maha sensed something amiss and immediately retreated.</p>
+<p>“Having taken the Southern Sea, the Temple Master of Konghai Temple is already satisfied, but Baoqing has both karmic destiny and personal grudges with the three Yuans. He will certainly come to seek revenge.”</p>
+<p>Ling Mei seemed somewhat contemplative as he continued, “Although that demonic creature spoke fiercely, this karmic destiny cannot be severed.”</p>
+<p>The sword cultivator’s expression was complex as he said softly, “You have only seen Yuanwu in his frail old age. Back then, he was also extremely arrogant. As the senior brother among the three Yuans, clad in iron wings, silver robes and black brocade boots embroidered with gold, he stepped directly onto another’s face before thousands of cultivators at Stone Pond while holding the All-Encompassing Vast Treasure Pagoda and forced them to say that Buddhism was inferior to the Immortal Dao.</p>
+<p>“At that time, Yuansu and Yuanxiu were already deeply at odds, to the point of open hostility. Baoqing foolishly blundered into it. Yuanxiu even joked that one talisman would suffice and smashed Baoqing to death with his golden talisman. If the Temple Master of Konghai Temple had not personally intervened, Baoqing would not even have had a chance to reincarnate with Yuansu present.”</p>
+<p>Kuiqi stood to the side. Although his brows were tightly furrowed, he could only say with a sigh, “Although I do not like Yuanwu, that action truly vented some anger. My master, Grand Daoist Master Louxing, even praised him at the time. It was precisely because arrogant people shared similar temperaments that Yuanwu ended up associating with Situ Tang.”</p>
+<p>Li Ximing had little memory of Yuanwu, recalling only Yu Muxian under his command. At the time, he and the Tang Family had exerted immense pressure on the Li Family. He had never imagined that Yuanwu had been so rampant in his youth and sighed. “Year after year, how many heavenly talents have risen.”</p>
+<p>Kuiqi turned his head slightly and saw a woman approaching through the snow nearby, holding a black treasure box in her hands.</p>
+<p>Kuiqi casually took it, placed it before Li Ximing, and said with a smile, “This is the Qilin Radiance Illumination Pill. It is an item from the Eastern Fire Grotto Heaven and was also the spirit pill consumed by the Bright Yang Purple Mansion Realm cultivators of the past. My family ancestor has examined it. This pill can repair the dharma body and suffuse the front and back with radiance. Whether for comprehension, healing, or cultivation, it is highly useful.</p>
+<p>“However, this spirit pill focuses on gentle nourishment. Its strength lies in steady, unbroken efficacy, so it is not suitable for use during combat. Zhaojing should take note of this.”</p>
+<p>Li Ximing nodded repeatedly. He was not lacking pills for combat at the moment, so he was naturally delighted. He carefully took the box and opened it, revealing three golden spirit pills inside, each inscribed with white qilin-like patterns. Although many years had passed, the pills retained abundant spiritual qi due to excellent preservation and looked exceptionally fine.</p>
+<p>“The alchemy methods of Eastern Fire are truly impressive. They possess a unique kind of elegance.” Li Ximing remarked with feeling.</p>
+<p>Seeing Kuiqi bring out the pill, Ning Wan paused slightly and said softly, “Speaking of this, I once heard my family elders mention that there was also a spirit flower in the Eastern Fire Grotto Heaven back then. It was said to bloom and wither each year, its fallen petals turning into beetle-like insects. It was obtained by Daoist Master Qiushui at the time. Now it lies in the Golden Feather Sect, along with a Qilin Radiance Refining Method. It should be this very Qilin Radiance Illumination Pill.”</p>
+<p>Hearing this made Li Ximing envious. The Eastern Fire Grotto Heaven had yielded so many Bright Yang items back then, each extraordinary, yet his own side had not received a share. He could not help but ask, “There were many Bright Yang spirit artifacts in the Eastern Fire Grotto Heaven. Do you know how they were divided at the time and which families they went to? I still do not possess a suitable spirit artifact since my breakthrough. I should exchange for one or two.”</p>
+<p>Kuiqi seemed to have anticipated this question and replied softly, “I was guarding fellow cultivators in the great void at the time of the Eastern Fire affair and did not personally take part, so my gains were limited. The main beneficiaries were the Golden Feather Sect and the Azure Pond Sect. Mount Changhuai, Purple Smoke Gate, Chunyi Dao Gate, and the Chen Family all gained something as well. The Profound Peak Gate and Crimson Reef Island controlled several sea entrances and took some leftovers.”</p>
+<p>Most of these names were unsurprising, but the inclusion of Chunyi Dao Gate and the Chen Family gave Li Ximing some pause. Ning Wan understood the matter better and added, “The three sects and seven gates all sent disciples to take a share, but what they obtained were mostly inconsequential items. What truly mattered was the portion left after the lord took the main peak, as well as several important side peaks.</p>
+<p>“In total, three spirit artifacts and two spirit embryos were obtained. The spirit artifacts were divided among Mount Changhuai, the Azure Pond Sect, and the Golden Feather Sect. One spirit embryo went to Chunyi Dao Gate, and the other is in Purple Smoke Gate’s hands…”</p>
+<p>“In the Azure Pond Sect’s hands?”</p>
+<p>At the time, Yuanxiu was in seclusion, and the Azure Pond Sect was represented by Daoist Master Yuansu. That meant the item had fallen into the Ning Family’s hands. Li Ximing’s eyes lit up, though he secretly wondered,Tinglan has one as well? She never mentioned it.</p>
+<p>What the Azure Pond Sect possessed was a spirit artifact, while the spirit embryo in Purple Smoke Gate’s hands still required nurturing and was naturally inferior. Although a spirit embryo refined by the Cui Family would certainly be far superior to Li Ximing’s own crude efforts, a spirit artifact was undeniably better.</p>
+<p>He immediately asked, “That spirit artifact…”</p>
+<p>1. Referring to Ning Wan. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1355.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1357.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
