@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1197: Qingxu (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1196.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1198.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1197: Qingxu (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Two hours later, cold winds roared, whistling through the gate cracks and chilling them down to the bone. After another moment, the ground beneath them shook violently, as if Baleful Qi were erupting. Xia Shouyu’s vision flickered between black and gray, and dust began to fall from the roof.</p>
+<p>“Ah!”</p>
+<p>The old temple master, barely a Qi Cultivation Realm cultivator, couldn’t even stay on his feet. He rolled on the ground and cried out, “It’s over! This demon head eats people by nature. How could we listen to him?! He’s injured and can’t move freely, so now he must be swallowing up the entire temple… we’re doomed!</p>
+<p>“I heard people from the next island say great divine ability cultivators have worlds inside their stomachs… with all this shaking… if we aren’t being moved into his belly, then what is this?Ah… we’ll have to live in the dark inside his stomach from now on!”</p>
+<p>Xia Shouyu was also terrified, but she remembered how Li Ximing had not eaten anyone earlier on the island. She forced a smile and said, “Grandfather, what are you saying? The Daoist Master commands heavenly light. His stomach must be bright as well. We would even save on lamps…”</p>
+<p>After a while, the shadows outside moved and screams sounded ceaselessly. The two were terrified, clinging to each other in tears, yet still did not dare leave the room. Only when dawn approached did they hear shouts from outside, “Temple master! My lord! Come out quickly!”</p>
+<p>The voice was full of cheer, making them think that perhaps the inside of the stomach was not bad after all. They opened the courtyard door and saw bright heavenly light. Two yellow-robed monks knelt before them, their clothes covered with dust and their expressions both shocked and delighted.</p>
+<p>“My lord! The mountain is gone!”</p>
+<p>“What?”</p>
+<p>Xia Shouyu and the old temple master were shocked. They rose into the air and indeed saw that the barren mountain and rugged terrain had been completely cleared away. The towering peak that had blocked their view had disappeared without a trace. Now, a vast, open plain shrouded in morning mist stretched before their eyes, spanning what seemed like thousands of acres.</p>
+<p>Splash…</p>
+<p>Clear spring water gushed from the ground. The old temple master’s legs gave out and he fell to the floor with a thud. Moments later he jumped back up, hurried to the ground’s edge, grabbed a handful of soil and wept, “Good… good… no more digging through the mountain from now on…”</p>
+<p>Xia Shouyu wiped her tears and, remembering the screams she had heard earlier, asked the two monks beside her, “Why did I hear shouting at dawn?”</p>
+<p>One of them hurriedly replied, “Baleful Qi filled the sky at midnight, so some bold disciples went out to take a look. Some had their eyes burned by the Baleful Qi, some had their legs crushed by falling rocks, and one secretly lit a fire to smoke leaves and had his hand blown off by a fire stone…”</p>
+<p>“Haha.” Xia Shouyu snorted coldly and cursed, “Good-for-nothing wretches. Lazy, useless wastrels. It’s lucky nothing important was ruined, otherwise beating them to death wouldn’t be too much!”</p>
+<p>The old temple master was still kneeling on the ground in a daze. Xia Shouyu had to push his shoulder with some effort and said, “Grandfather… the ancient pill formulas! Hurry and send people out… we cannot delay!”</p>
+<p>Only then did the old temple master come back to his senses. He nodded repeatedly and shouted in panic, “Someone! Everyone, gather!”</p>
+<p>When everyone assembled, the old temple master issued all the orders and then stood helplessly in the hall, muttering to Xia Shouyu, “I’ve heard some Foundation Establishment Realm lineages have mountain-moving arts, but even they need to lay formations and spend months. How could anyone flatten a mountain in seven hours? He is certainly a great divine ability cultivator, and surely one from Nine Mounds Mountain. Serving him well is a fortune countless people can’t obtain!”</p>
+<p>Xia Shouyu had long known that the old demon was formidable, but not to this extent. She lifted her chin slightly with pride, though she still remembered the Foundation Establishment Realm path Li Ximing promised her. A woman’s caution lingered in her heart, but she kept it hidden.</p>
+<p>He even promised a Foundation Establishment Realm pill… but the old man must not know. There are so many eager men below. I work day and night for them; it would be fine if they take a few small benefits, but this opportunity must not be stolen.</p>
+<p>————</p>
+<p>Li Ximing circled the surrounding sea, stepping on light. The seabed was not deep, and sunlight illuminated the waters into a crystal blue, showing the clear hue of Converging Water.</p>
+<p>He wandered for some time until he finally found a cave with some spiritual qi. As expected, the region was so barren it held only coral and white sand. The demonic creature inside the cave had no human prey to eat and possessed abundant Pure Qi, so he simply drove it away.</p>
+<p>Since he was relying on his current cultivation and the Mountain-Charging Sea-Pacing Tiger technique, his mountain-moving ability was not on par with Changxi’s Stable Earth divine ability, but it was far from weak. Moreover, that barren mountain was completely cut off from water veins and spirit veins while connected only to the earth vein. It was essentially just a pile of dirt and rocks on the ground. Moving it was effortless.</p>
+<p>“Qingxu Temple… most have ordinary talent. Only Xia Shouyu is exceptional enough to be useful… her background is clean, poor, and she knows her place…”</p>
+<p>For Xia Shouyu to receive such praise from Li Ximing meant her talent was truly outstanding. In this desolate end of the sea, resources were pitifully scarce. Even as a part of Qingxu Temple’s upper ranks, her resources were nothing compared to the mainland. Reaching the late stage of Qi Cultivation Realm purely through effort was no small feat.</p>
+<p>Since he promised her a Foundation Establishment Realm path, she would be capable of crossing seas to Unison Sea or Scarlet Pristine Sea once she formed her foundation. She would certainly not remain at this place. How could he waste an Essence Gathering Pill? Naturally she would be brought back to the lake to be used properly.</p>
+<p>He had already arranged a place for Xia Shouyu. He took out a formation plate and casually set up a formation inside the cave, then retrieved a True Profound Quintessence-Gathering Pill from his robe and thought,I can wait while they gather the pill formulas. I can suppress the flames, repair my body, and search for information… There is no rush to return. The end of the sea is far safer than Jiangnan…</p>
+<p>Li Ximing suddenly understood why Xiao Chuting often ran to the Northern Sea. That Daoist Master was not only pursuing his own path but also using such trips to avoid countless overt and covert probes. He put aside all thought and entered seclusion.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1196.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1198.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

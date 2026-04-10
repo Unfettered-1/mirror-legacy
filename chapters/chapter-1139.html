@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1139: Suspicion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1138.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1140.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1139: Suspicion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The words hit home, making Dangjiang choke in anger as he snapped, “Even a minor heavenly official has more prestige than you, a so-called Daoist Master of the lower realm!”</p>
+<p>Chi Buzi immediately understood.</p>
+<p>So this stupid donkey’s life in the heavens isn’t going well at all.</p>
+<p>Chi Buzi naturally assumed the ‘heaven’ Dangjiang spoke of was one of the grotto heavens, such as Anhuai Heaven or Luyu Heaven[1], the very domains of Immortal Lords. As for this so-called Palace of Radiant Purity Supreme Yin, it sounded like a mere sect office. After a few words, he had already discerned Dangjiang’s situation.</p>
+<p>Glancing subtly toward the courtyard gate, suspicion stirred in his heart,Why haven’t I seen anyone else? This is the Immortal Lord’s grotto heaven, but only Dangjiang is here to receive me?</p>
+<p>He declared loudly, “Enough of your talk! I acted under the Immortal Lord’s command to set the formation and perform the rite. How dare you stop me?”</p>
+<p>The shout frightened Dangjiang out of his wits. He quickly tugged at Chi Buzi’s sleeve and whispered, “Quiet down, will you?! Just because the lord granted you a summoning formation, you think you’re someone important? There’s Immortal Officials and generals outside. If you cause trouble, I won’t be able to save you!”</p>
+<p>Chi Buzi narrowed his eyes slightly, immediately shifting his tone to align with the other’s and whispered, “I’m unfamiliar with this grotto heaven… will you be the one guiding me in from now on? I’ve gone through great trouble to capture a Purple Mansion Realm demonic creature. That’s no small offering even in a grotto heaven. It benefits both of us. You need to protect my credit and make sure it counts toward your merit. If you swallow it or fail to safeguard it, then what’s left for us to discuss in the future?”</p>
+<p>Dangjiang knew Chi Buzi was shrewd, but he hadn’t expected him to spin so many twists of logic so quickly. Momentarily flustered, he replied, “According to the feedback in this command token, your contribution has been recorded. I’ll need to report your merits at the main hall. Do you have any particular reward in mind?”</p>
+<p>Chi Buzi’s eyes lit up at once as he answered, “That… that immortal position inheritance you carried back then, do you still remember it? My Chougui Hidden Form was forged using that very thing! I ask only for that, nothing else!”</p>
+<p>Dangjiang frowned, uncertain whether such a thing still existed, and said, “That item was bestowed from the heavens and is tied to the Purple Mansion Realm itself… I do have some connections up here, including a high-ranking official from one of the upper palaces. I can ask around.</p>
+<p>“But if I recall correctly… you already had the Foundation Establishment Realm technique and spiritual qi for Chougui Hidden Form back then and cultivated an Immortal Foundation without the Purple Mansion Realm chapter. You never truly achieved a divine ability and relied on that treasure’s resonance to break through…”</p>
+<p>Chi Buzi frowned as well, clearly realizing something was amiss. Sure enough, Dangjiang continued, “But now you intend to cultivate Purifying Dew, and you don’t even have an Immortal Foundation. The situation is not the same as before. If that treasure ends up wasted, you’ll have no one to blame but yourself.”</p>
+<p>“That’s true…”</p>
+<p>Chi Buzi furrowed his brow. When he was granted that divine law, he only knew it might allow him to rekindle his cultivation path; the rest had been unknown. Arriving here was already beyond expectation, how could he have thought so far ahead? Now that he understood the situation, realization struck him at once,Right. The Purifying Dew method isn’t secured yet, and Taiqing would never want to see me advance. It’s fine if I don’t complete it, but if I manage to form the fifth divine ability, the Purifying Dew, before Taiqing returns and fails to break through… I’ll die without leaving even a corpse behind.</p>
+<p>He fell silent for a while, and Dangjiang spoke softly, “Why not ask for something else instead? I’m in charge of techniques here, and heaven certainly has no shortage of spiritual qi. I could request the Purple Mansion Realm technique and spiritual qi for Purifying Dew, and you can cultivate it yourself.”</p>
+<p>Chi Buzi’s mindset had shifted entirely. He shook his head and said, “No. Even if you brought it, I wouldn’t dare cultivate it. It would do me no good.”</p>
+<p>Although he knew the man before him was prone to boasting, Chi Buzi could only grit his teeth and said, “You said you had connections in heaven, so ask around for me. You know my strength and skill well. If I achieve the Golden Core Realm outside the grotto heaven, it would only benefit you. Even bringing me into the grotto heaven someday would earn you plenty of favor.”</p>
+<p>Dangjiang nodded silently. No matter how grand heaven was, a Golden Core Realm True Monarch still commanded respect. On ordinary days, even immortal generals and minor gods would honor such a guest.</p>
+<p>The thought tempted him, and he said, “The person I’d need to ask is quite formidable, but on account of me, he won’t refuse. I can inquire for you.”</p>
+<p>Chi Buzi nodded, half convinced, and asked, “But how do I return now? And once I’m back, how will I see you again? I can’t be catching a Purple Mansion Realm beast every single time. I’m no Golden Core Realm True Monarch.”</p>
+<p>Dangjiang shook his head. “Just jump into the pool and you’ll return. I’ve already recorded your merit in the command token. In the future, if you wish to reach this place again, activate the formation through a divine ability and project your spiritual sense. You won’t be able to enter in person as you did today, only your consciousness will be transmitted.”</p>
+<p>“That’s fine.” Chi Buzi sighed, seemingly ready to depart. He stepped to the pool’s edge, placed one hand on the jade-white lamp base, and felt its solid texture. When he reached for his storage pouch, he realized he could not open it.</p>
+<p>His expression softened, and his once-light steps came to a sudden halt. He turned his head and said, “May I at least see the scenery outside?”</p>
+<p>Dangjiang sensed nothing amiss and replied with a mocking smile, “I’m afraid it might frighten you to death!”</p>
+<p>He led Chi Buzi to the courtyard’s gate and gently pushed it open. Streets blanketed in cold snow stretched outward; silver moon lanterns glowing upon every corner; and patterns of golden laurel blossoms glimmered across the walls. In the sky, white-robed cultivators flew past, and farther still loomed faint golden palaces and a massive jade bridge spanning the heavens.</p>
+<p>Chi Buzi squinted at the view, but in the end, he did not dare to step outside. He turned back into the courtyard.</p>
+<p>I can’t leave through the gate… and there’s nothing in this courtyard I can take with me.</p>
+<p>The youth’s green eyes flickered as he carefully surveyed his surroundings before smiling. “Fellow Daoist Dangjiang, your robe is quite splendid and elegant. Why not gift me one?”</p>
+<p>Dangjiang looked puzzled. “What nonsense is that? You think something like this is yours to take?”</p>
+<p>Chi Buzi merely smiled without replying. Taking another step, he glanced at the moon-white lamp base. It was sealed, revealing nothing within. The jade tiles beneath his feet were fitted tightly together, without a trace of dust or debris.</p>
+<p>He showed an earnest smile and spoke with great sincerity, “Fellow Daoist Dangjiang, I’m but a mortal man unfamiliar with heavenly treasures. Would you allow me to take a small keepsake back with me? Something I could look upon from time to time, to remind myself that I have indeed set foot within a grotto heaven.”</p>
+<p>Hearing this, Dangjiang felt quite flattered. Laughing heartily, he nodded again and again, saying, “Of course, that’s only natural!”</p>
+<p>1. 渌 (lù) means “clear, pure water / clarity, pristine” and 语 (yǔ) means “speech, language.” Together 渌语 conveys the idea of a celestial, pure language or utterance. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1138.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1140.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

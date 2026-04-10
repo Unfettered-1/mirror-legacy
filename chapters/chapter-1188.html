@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1188: Inquiring (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1187.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1189.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1188: Inquiring (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Although Cui Jueyin had suspected he might know Ding Weizeng’s whereabouts, he had never imagined Ding Weizeng was right here in the palace. No wonder he had searched everywhere without finding even a trace.</p>
+<p>His heart lifted at once and he replied, “My deepest thanks, great king!”</p>
+<p>Ying Hebai led him downward, past layer after layer of coral, until they reached a verdigris-bronze palace. After Cui Jueyin waited for a moment, a man with a hawk-like jaw and tiger-like whiskers rushed out of the hall.</p>
+<p>Ding Weizeng’s aura had not changed much, yet his eyes were filled with urgency. The burly man rushed up and grabbed his hand, speaking in a low voice, “Is there any news of the Daoist Master?!”</p>
+<p>Cui Jueyin had not expected that to be his first question. He hesitated and shook his head, and Ying Hebai said with a smile, “Fellow Daoist Ding fell into the river, and my younger sister brought him back. We placed him in the Pristine Water Pool of this river palace and healed all his injuries. Had we been even a moment slower, he would have been left with hidden wounds that even Purple Mansion Realm cultivators could not fully cleanse.”</p>
+<p>Cui Jueyin gave a slight nod. Ding Weizeng spoke softly, “The Golden Tang Gate surrounded me. I escaped using my Immortal Foundation but was severely wounded. I fled to the great desert first. I was worried about Chenghui and intended to return immediately, but it took longer than expected. My injuries were too heavy and I fell to the west.</p>
+<p>“I had stopped breathing for a long time before several mortals revived me. They had crossed the mountains from the Golden Tang Gate’s territory seeking refuge. After waking, I went into seclusion for half a day, then continued flying east to return. Midway, I encountered a devil cultivator and fought. I killed him but reopened my wounds and fell into this river stream…”</p>
+<p>Ding Weizeng made it sound simple, but fainting repeatedly was no small matter. A Foundation Establishment Realm cultivator would not lose consciousness unless their injuries were truly life-threatening. Had his Immortal Foundation not been so tenacious, he likely would have perished long ago.</p>
+<p>Cui Jueyin let out a deep sigh and asked, “Since you were healing here at the riverbed, why did you not write a letter back? I searched so bitterly for you.”</p>
+<p>But Ding Weizeng replied softly, “Miss Ying brought me back. I did not know the situation at the time, but I learned after inquiring that the lake was not in danger. I only wished to make use of this treasured land to recover quickly, then head to the Eastern Sea to search for the Daoist Master…”</p>
+<p>Cui Jueyin understood immediately. Ding Weizeng was truly worried for Li Ximing. This man held little attachment to Moongaze Lake, cared nothing for rank or authority, and was loyal only to Li Ximing.</p>
+<p>“Sigh… even several Purple Mansion Realm cultivators cannot find him. What can a Foundation Establishment Realm cultivator do? Even if you found him, how could you help? Return to the lake with me first. Let us stabilize things there.”</p>
+<p>Ding Weizeng shook his head and said, “That is not certain. If the Daoist Master is injured and has no one attending him, there is risk. Whether I can find him or not… even if I search all the way outward, diverting the attention of those who harbor ill intent is already good for him!”</p>
+<p>Drawing the attention of Purple Mansion Realm cultivators… he really does not care about his own life!</p>
+<p>Cui Jueyin, though loyal to his duty, could not imagine throwing away his life like that. He sighed inwardly. Since he could tell that Ding Weizeng had recovered seven or eight tenths of his strength, and recalling how gravely he had been injured only half a year ago, immediately realized that Ying Hebai must have used excellent spirit items to heal him. A favor had already been accrued.</p>
+<p>He cupped his hands and said, “I thank the great king on behalf of the lake.”</p>
+<p>Ying Hebai waved with a hearty laugh and escorted them outward. At the palace entrance, he finally nodded and said, “I heard that the Daoist Master Zhugong from the outer-sea has been a frequent guest of the Purple Smoke Gate lately. There may be changes ahead. It is best for the lake to be cautious.”</p>
+<p>————</p>
+<p>Moongaze Lake, Vermilion Bud Pavilion.</p>
+<p>The lake rippled gently beneath perfect daylight. The glow of the bluestone lamp base had faded away. A woman in a long skirt stood within the pavilion. Several talismans were attached to her sleeves. One hand lay on a cloth covered in markings on the table, while the other pressed down on a green jade mortar.</p>
+<p>Ten grams of red ochre, ten grams of golden quintessence, one and a half grams of white origin, and five grams of stir-fried golden silkworm… nothing is wrong, yet strangely it will not transform…</p>
+<p>She examined the half-gold, half-black powder at the bottom of the jade mortar. It refused to turn to white-gold no matter how long she observed it. She had no choice but to withdraw her mana and set down the jade pestle, thinking,Could it be due to the spiritual aura of Dwelling Heart that Charges Profundity? Metal is born from earth, yet this aura harms earth, leaving insufficient nurturing qi, preventing transformation. I should add another one and a half grams of red ochre and try again.</p>
+<p>She drew a jade box from her sleeve, revealing pieces of crimson red-ochre spirit stones and was about to take one when a cultivator outside the pavilion announced, “My lady, the third young master has arrived.”</p>
+<p>“Please let him in!”</p>
+<p>Li Quewan quickly set down what she was holding and put away the marked cloth on the table as the tall Li Jiangxia strode quickly along the corridor. When he approached, he cupped his hands and smiled, “Greetings, elder sister!”</p>
+<p>Li Quewan invited him to sit. “The third young master has arrived.”</p>
+<p>The young man raised his brows and glanced at the jade mortar on the table before saying casually, “I do not often come to sit with sister here. It is rare for me to visit, yet I am disturbing you. My apologies.”</p>
+<p>Li Quewan lifted the jade mortar and said gently, “It is nothing troublesome. Some relatives in the family obtained a method of the Metal Virtue lineage, but the spirit item they require for gathering qi does not grow in Northern Yue and must be collected from the Western Sky Plateau, so they sought help from the family. Since it is merely a Qi Cultivation Realm spirit item and not rare, I thought to adjust its properties and refine a portion for them.”</p>
+<p>Li Jiangxia nodded. After a moment of hesitation, he drew a box from within his sleeve and said quietly, “I also came with something for sister to examine.”</p>
+<p>He placed the stone box lightly on the table. When he opened it, Li Quewan saw a piece of dark metallic ore inside, its luster flowing and its cut surface mirror-like, reflecting their faces.</p>
+<p>She picked up the metal stone, weighed it in her hand, and examined it closely. She looked surprised as she asked, “Where did this come from? It is neither Dui nor Geng in nature. It is very likely Xiao Metal. This substance is extremely rare in Jiangnan and found more often in the north. I cannot name its exact variety, but it is without doubt a Foundation Establishment Realm Xiao Metal spirit item.”</p>
+<p>“The north…”</p>
+<p>A thought formed quietly in Li Jiangxia’s mind,It seems Brother Pei’s inheritance must indeed originate from northern cultivators…</p>
+<p>He was about to ask more when someone hurried up from below and announced respectfully, “My lord and lady, a message has arrived from the island. The two of you are requested to return there at once!”</p>
+<p>Li Quewan immediately stood, handed the metal stone back, and asked, “Did they mention what it is about?”</p>
+<p>The messenger bowed and said, “Many people have arrived on the island. Purple qi is drifting. They came aboard an extremely luxurious spirit boat, and it has already docked at the island’s edge.”</p>
+<p>Li Quewan understood at once from that single sentence and thought,It must be the younger ladies returning from the Purple Smoke Blessed Land!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1187.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1189.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

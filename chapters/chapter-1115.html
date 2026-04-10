@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1115: Sophistry — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1114.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1116.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1115: Sophistry</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Though the Capital Immortal Dao had retreated, they could march southward at any time, and Li Ximing could not afford to ignore it.</p>
+<p>Fortunately, only direct descendants like Guan Gongxiao and Guan Lingdie were still in decent condition after the battle on the river, though Gongsun Baifan and the others had sustained serious injuries. The Capital Immortal Dao was not a lineage known for healing, and while Bright Yang could at least stimulate regeneration, Ye Hui was likely even worse in that regard. His only real strength lay in his abundant blood qi.</p>
+<p>At the very least, there won’t be any major movements in the short term. As long as Shanji Prefecture is dealt with… the Wilderness will become a prolonged tug-of-war. As for whatever else Ye Hui is planning, that remains to be seen. Then there’s Wenhu’s Dao lineage…</p>
+<p>Now that he knew Mifan Temple had a spirit storage hidden within Mount Xiaoshi, Li Ximing did not mind claiming a share of it. He immediately commanded, “Bring Wenhu up!”</p>
+<p>Li Chenghuai soon flew up the mountain, dragging along a disheveled man bound in iron chains that clinked with every step, leaving a faint trail of blood behind him.</p>
+<p>Wenhu had not been subjected to much torture in the dungeon, but his cultivation had been sealed, and the wounds he had suffered over a year ago had yet to fully heal. Although the Li Family had treated him fairly, blood still oozed occasionally from his injuries.</p>
+<p>This man was calculating and shrewd. Years ago, he had deliberately allowed Hongfu Mountain to fall into the Li Family’s hands, enabling them to hold the Floating South territory with minimal casualties. As a result, he had earned no hatred from the Li Family, kept his presence to a minimum, and had lived comfortably up to this day. If not for the Mifan three sects’ inheritance being in his possession, Li Ximing would not even have remembered him, much less allowed him to linger in the dungeon.</p>
+<p>Looking at him now, Li Ximing had little to say beyond ‘lacking in fortune’. A thought even surfaced in his mind,Once I’ve taken the Dao lineage from him, perhaps I could exchange him for An Siwei with Ye Hui… Since this involves Mount Xiaoshi, Ye Hui just might agree to the trade. Hm…</p>
+<p>But as he examined Wenhu, whose cultivation had been sealed and whose lips were bound to prevent spellcasting, a faint heavenly light flickered between his brows, and he silently rejected the idea,This man is no ordinary figure, and with Mount Xiaoshi and Mifan involved, handing him over to the Baiye Capital Immortal Dao might pose too great a threat… It’s better to kill him.</p>
+<p>Li Ximing casually removed the seal on Wenhu’s mouth. Seated at the head of the hall, he watched as the man writhed on the ground, struggling to rise, and rasped out, “Criminal Wenhu pays respects to the Daoist Master!”</p>
+<p>Wenhu’s so-called crime was merely ‘deceiving’ the Purple Mansion Realm cultivator, referring to the absence of Daoist Chidu of the Capital Immortal Dao. As the one who had given assurances, the blame had fallen on him. Wenhu had never protested his innocence and silently accepted it.</p>
+<p>Li Ximing did not speak, merely glancing at him. Truthfully, Li Ximing held a certain appreciation for the man’s talent and cunning. Yet this was a conflict at the level of the Purple Mansion Realm, far beyond what his own wishes could dictate.</p>
+<p>To Purple Mansion Realm cultivators, most Foundation Establishment Realm cultivators were nothing more than pawns. What truly mattered was prestige and reputation. Wenhu had originally been a subordinate of Daoist Master Ye Hui. In Li Ximing’s hands, he was a bargaining chip, not a piece to play.</p>
+<p>If Li Ximing were to openly accept him, it would forge a true enmity; not only that, but it would also break the established rules. If Wenhu reappeared, he could expect to see Ye Hui tearing through the great void with his own hands to reclaim him.</p>
+<p>Wenhu immediately understood the situation he was in with just one glance. The blade was already at his neck, and he bowed deeply, “Your humble servant pays respects to Daoist Master Zhaojing… The Mifan Dao lineage never intended to slight you, Daoist Master. I was merely following instructions passed down by a senior and never expected to end up in such a state.”</p>
+<p>Despite his words, Wenhu’s heart was filled with bitterness. He had clearly taken a stand for Baiye Capital Immortal Dao. No matter how much he tried to shift the blame to the Dao lineage or Floating Cloud Cave now, it would be hard to regain Li Ximing’s trust.</p>
+<p>Sure enough, when he tried to lay the blame on Floating Cloud Cave, Li Ximing made no comment. He only asked calmly, “Where is the Dao lineage of Hidden Cloud Cave?”</p>
+<p>Wenhu’s heart thudded as he realized his death was near. Sweat poured down his face, but what could he do before a Purple Mansion Realm cultivator? The only reason he still had a chance to speak was because they were conservative and unwilling to violate heavenly order by immediately searching his soul.</p>
+<p>But once the name Hidden Cloud Dao lineage was spoken, terror gripped him to the core. Thoughts raced through his mind as he replied, “Daoist Master, I can write down the Hidden Cloud Dao lineage for you right now. Not just that… I have also noticed traces of other Dao lineages of Mifan in Mount Xiaoshi.”</p>
+<p>Li Ximing’s expression grew subtly strange. While part of him recognized the truth in Wenhu’s words, he also frowned at the man’s cunning. Silently, his killing intent deepened.</p>
+<p>He smiled slightly as he asked, “Oh?And which one might that be?”</p>
+<p>Wenhu spoke with utmost respect, “Daoist Master, I once cultivated in the Southern Sea. Under Daoist Chidu’s orders, I searched for traces of the Mifan Dao lineage and sensed something in Danjungwulo… but I secretly concealed it, and no one knows.”</p>
+<p>Suspicion stirred in Li Ximing’s heart. He had already seen through Wenhu’s excuses, but he deliberately asked, “Why did you not report this to Chidu?”</p>
+<p>Wenhu wiped his sweat away as he answered, “I was not entirely ignorant of the Mifan Dao lineage’s intentions, nor of the plans of the Daoist Masters. Thus, I privately communicated with those of like mind and did not wish to report to Chidu…”</p>
+<p>Li Ximing interrupted softly, “Hidden Cloud Dao lineage.”</p>
+<p>Li Chenghuai immediately held out a jade slip. Wenhu had no choice but to take it and begin carving rapidly. After fifteen minutes, he had written out a scripture titled Xiaoshi Tombwind Yin-Conducting Art.</p>
+<p>Wenhu continued inscribing on another jade slip while Li Ximing casually took the scripture, reading with his spiritual sense as a faint heavenly light flickered between his brows.</p>
+<p>“Xiaoshi Tombwind Yin-Conducting Art, a fourth grade Foundation Establishment Realm technique of the Hurricane Ghost Yin.”</p>
+<p>With his divine abilities, Li Ximing could clearly discern whether a technique had any issues. When Wenhu finished the next inscription, it turned out to be the Xiaoshi Sky-Cleansing Scattered Cloud Art, likely the one Chang Yun had mentioned as obtained through harmful means.</p>
+<p>“Xiaoshi Sky-Cleansing Scattered Cloud Art… a fourth grade Foundation Establishment Realm technique of the Floating Cloud Body.”</p>
+<p>Li Ximing deliberately asked, “Where did this one come from?”</p>
+<p>Wenhu wiped his sweat again, his face filled with fear, and answered respectfully, “It came from Fu Dou. I used certain methods to torture him, forcing him to spill everything in a short time…”</p>
+<p>Li Ximing chuckled softly, “I heard it took you no more than fifteen minutes to storm the mountain. Quite the skill you have, it seems.”</p>
+<p>The man trembled with fear as he accepted a jade slip, then began writing again. After another fifteen minutes, he presented another jade slip, saying, “Song of the Feathered Guest”</p>
+<p>At last, Li Ximing showed some interest. It was half a manual of secret techniques that seemed quite profound.</p>
+<p>Wenhu bowed deeply, speaking with an air of practiced composure, “This was passed to me by my master before his death. He said our ancestor had obtained it from the body of a fallen direct descendant of Wanglin Upper Sect. It allows one to fold feathers into a robe and was originally a formidable defensive technique…</p>
+<p>“As you can surely tell, Daoist Master, this is likely a technique between fifth and sixth grade, a Purple Mansion Realm art. Only half remains now, and as for the rest…”</p>
+<p>He raised his brows and continued, “I have secretly investigated, and it may very well be in the hands of that direct descendant of Mifan in the Southern Sea!”</p>
+<p>Li Ximing glanced at him and put the item away. When he looked at Wenhu trembling and kneeling on the ground in fear, his voice came out softly, yet it made Wenhu’s very soul quake.</p>
+<p>He spoke with a hint of amusement, “You dare lie to me.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1114.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1116.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

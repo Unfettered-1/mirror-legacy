@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1106: Taking Stock (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1105.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1107.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1106: Taking Stock (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After some discussion, Li Zhouwei set the matter aside and turned to another topic. “Moreover, now that I have revealed my presence, I fear that falling into the eyes of watchful people will not be a good thing.”</p>
+<p>Li Ximing nodded and sighed. “I finally understand why those Purple Mansion Realm cultivators nurture powerful Foundation Establishment Realm cultivators. If we had one or two more reliable pieces on the board, you wouldn’t have needed to enter the battlefield yourself! How are your injuries?”</p>
+<p>“Though quite severe, they are not serious.” Li Zhouwei’s wounds were not minor, though they did not hinder his daily functioning.</p>
+<p>Li Ximing simply said, “Send Sun Bai here. Tomorrow, I will make a trip to the Eastern Sea, capture a demonic beast, and refine it together with our family’s treasured panacea. That should heal your injuries quickly. Once you take the Talisman pill, enter seclusion and break through to the late stage of the Foundation Establishment Realm first.”</p>
+<p>After giving his instructions, Li Ximing glanced around to make sure no one was present in the great void. Only then did he use secret techniques to transmit his voice, “What does Minghuang think about the matter of receiving the talisman?”</p>
+<p>Li Zhouwei had long wanted to ask him about this and seized the chance to reply, “Now that you have broken through to the Purple Mansion Realm, has the talisman qi undergone any transformation?”</p>
+<p>Li Ximing paused slightly and shook his head. “No, none at all. It remains the same. It’s able to kindle fire, draw in qi, and refine mana. I rarely engaged in combat before breaking through to the Purple Mansion Realm, so among all the brothers, I am the least skilled at harnessing talisman qi. Moreover, the Heaven-Venerating Gate itself can draw fire, so for the moment I cannot discern any new abilities.”</p>
+<p>Li Zhouwei pondered for a moment before replying, “I have been considering the matter… First, our family’s Purple Mansion Realm grand formation has not yet been built, and erecting an altar to request the talisman would draw great attention. Many eyes are already watching you because of me, so it is best to proceed cautiously. If it truly cannot be helped, we should at least conduct the ritual at the Profound Peak Mountain. And one more thing…”</p>
+<p>Li Zhouwei paused briefly, then transmitted his words quietly over mana, “Since I am about to reach the late stage of the Foundation Establishment Realm, wouldn’t the talisman qi’s ability to enhance cultivation become wasted? Why not wait until I break through to the Purple Mansion Realm? With two Daoist Masters in our family and an Exalted Immortal Artifact in hand, perhaps we could plan a venture to the southern border or the Four Seas and bring back a Purple Mansion Realm demonic creature…</p>
+<p>“By then, we will also be able to observe the various mystical differences in detail. Perhaps this method could even aid in cultivating one’s divine ability… catching our enemies off guard, and possibly serving as a trump card.”</p>
+<p>“Purple Mansion Realm demonic creature?!”</p>
+<p>Li Ximing had truly never considered such a possibility and was momentarily stunned. Having broken through to the Purple Mansion Realm himself, he understood how difficult it was to encircle and slay a Purple Mansion Realm cultivator. Yet the more he thought about it, the less reason he found to discourage Li Zhouwei. Though difficult, it was not impossible, and since Foundation Establishment Realm talisman qi could be used to advance one’s cultivation, it would be far better to save it for improving divine abilities rather than spending it in the late stage of the Foundation Establishment Realm.</p>
+<p>“Good…”</p>
+<p>He nodded repeatedly, and the two gathered their thoughts. At that moment, Qu Buzhi had already sought permission to enter from outside the hall.</p>
+<p>Kneeling, he said, “Greetings, family head. Greetings, Daoist Master. I have brought Daoist Miaoshui.”</p>
+<p>Behind him rested a solid and sturdy stone coffin. The old man opened it, revealing a woman whose body had been severed into three parts, cut through at the neck and the abdomen. Her belly was hollow, and only a shriveled heart remained within the abdominal cavity .</p>
+<p>“Daoist Miaoshui was cut into three pieces. Although the mana at the wound sites was neutralized in time and she took the Wanglin Blossom, her life was still in grave danger. The family head ordered Guest Sun to piece her back together… and with the aid of my Concealed Containment Palace secret technique, we barely managed to save her.”</p>
+<p>Though the old man was cunning and more skilled at fleeing than fighting, he still possessed a trace of compassion. His brows furrowed as he looked at Miaoshui and pleaded, “I have known her for years due to matters concerning the water veins. Although Miaoshui once roamed the Eastern Sea in her youth and her mana is not entirely pure, she is a good girl that’s usually quiet and well-behaved…”</p>
+<p>Li Ximing glanced at Miaoshui and nodded. “It is enough that she still lives.”</p>
+<p>He took a pill from his sleeve and placed it inside Miaoshui’s abdomen. A beam of heavenly light descended from between his brows, and the life-giving energy of Bright Yang manifested. Miaoshui’s complexion immediately turned rosy. She suddenly exhaled sharply and sat up straight, looking around in a daze.</p>
+<p>After two breaths, she climbed out of the coffin. Her eyes, bright and clear, were filled with tears as she bowed, “Thank you, Daoist Master!”</p>
+<p>Li Ximing inclined his head slightly, faintly surprised. After brushing against death, Miaoshui’s gaze seemed clearer than ever, and her entire demeanor had changed.</p>
+<p>Tears streamed down her face as Li Ximing said, “But your injuries were too severe. The Juque Court has been damaged. Techniques and spell arts related to them can no longer be cultivated, and breaking through to the Purple Mansion Realm is impossible. After some time, when the opportunity arises, I will help you heal the Juque acupoint.”</p>
+<p>Miaoshui wept uncontrollably. As she had been hacked into three pieces, she had felt herself dying bit by bit. It was a torment and shock no one else could understand.</p>
+<p>She kowtowed and said, “Thank you, Daoist Master, for saving my life. I do not hope for divine abilities, nor do I seek any such marvelous arts. Having been granted even a single thread of life, I feel a joy beyond words. All else matters no more, I only wish to return to my mountain, see my parents once again, and embrace them in tears.”</p>
+<p>Li Ximing’s expression grew complicated, while Li Zhouwei nodded and dismissed the two. He then said, “Ding Weizeng displayed remarkable power in Floating South, fighting many alone and retreating with ease. If not for him and the Chongming Profound Insight Screen, Floating South might have been lost for a time. Even so, he has suffered heavy injuries.”</p>
+<p>He swept his sleeve over the desk and three dharma artifacts immediately floated onto the table. Each gleamed with radiant dharma light, their edges smooth and their inscriptions intricate. All of them were supreme-grade artifacts.</p>
+<p>Li Ximing nodded and smiled at the sight. “The Capital Immortal Dao has spent so many years in the Eastern Sea and then reaped a great harvest in Jiangbei. They are indeed overflowing with wealth. With these three dharma artifacts… the losses at Floating South and the Wilderness are almost negligible!”</p>
+<p>Li Ximing’s words were rather conservative. Even the life of a rogue Foundation Establishment Realm cultivator from the Eastern Sea might not equal the value of a single one of these artifacts. The few Profound Peak Gate guest cultivators who had died at the hands of the Capital Immortal Dao were certainly worth less than these dharma artifacts.</p>
+<p>Li Zhouwei chuckled. “It is precisely because these dharma artifacts are powerful that refining them takes time… a month or two at least.”</p>
+<p>“That’s simple.”</p>
+<p>Li Ximing raised an eyebrow, gathered mana into his mouth, and blew gently. A stream of Radiant Light swept over the artifacts, and all three were immediately refined by his divine ability.</p>
+<p>Heavenly light lifted them into the air. The first to stir were the series of cold-iron rings wielded by Guan Kan. These silver rings, eighteen in total, were each about the size of a fist and all bore Pit Water patterns.</p>
+<p>Li Ximing said casually, “These are the Pit Metal Chain Rings, a high-grade dharma artifact of the Pit Water, primarily used for binding and entanglement. Though inferior to the Six Profound Thunder Punishment Tokens or the Profound Insight Screen, they can nearly match Minggong’s Scarlet Flame Lamp.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1105.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1107.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

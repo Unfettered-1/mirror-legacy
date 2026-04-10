@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1116: Arranging All Matters (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1115.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1117.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1116: Arranging All Matters (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“You dare lie to me.”</p>
+<p>When Li Ximing uttered those words, violet flames surged across the mountainside, and heavenly light illuminated everything. The stone bricks grew scorching hot as blazing radiance shone down. Wenhu’s face was already pressed to the ground; he was too terrified to lift it as the air filled with the sharp hiss of flesh being seared.</p>
+<p>Leaving aside the consequences of deceiving a Purple Mansion Realm cultivator, to have a Purple Mansion Realm cultivator utter that simple statement in person was already a form of psychological torment on a completely different level for any cultivator.</p>
+<p>Whatever Wenhu might have been thinking, Li Chenghuai, standing to the side, felt a chill race up his spine just from hearing those words. Even though he was not the one who had lied, fear still crept into his heart.</p>
+<p>Uncle now… truly carries the aura of a Daoist Master!</p>
+<p>Li Ximing’s heart held little anger as he looked down at Wenhu lying on the ground. There was more regret than anything else.</p>
+<p>The man’s lie was half-truth and half-falsehood, and executed with considerable skill. The Mifan direct descendant he spoke of was most likely the one lured away by the Capital Immortal Dao and deceived into death and obliteration. The Purple Mansion Realm had been involved in that affair, and it was deeply buried. Had Chang Yun not mentioned it in passing, Li Ximing truly would not have been able to verify it.</p>
+<p>Wenhu’s mention of a Mifan direct disciple was not baseless. Such a person had indeed existed and had interacted with him. By using that detail, Wenhu could guard against Li Ximing’s divination techniques and ensure that the finer points of his story would not be mistaken. After all, someone unfamiliar with the other Mifan Dao lineages could never have fabricated such a figure out of thin air.</p>
+<p>As long as Li Ximing lacked concrete information, Wenhu could have continued weaving his tale. If not for the fact that they had obtained Fu Dou’s head and used sophisticated shamanic arts to divine that he had died by ambush, even the Xiaoshi Sky-Cleansing Scattered Cloud Art would have been difficult to use as evidence.</p>
+<p>In the span of a single breath, he spun a story with a beginning and an end. If not for his incomplete planning and his eagerness to prove his worth, he might have revealed more of the Xiaoshi Sky-Cleansing Scattered Cloud Art, or at least left fewer loose ends…</p>
+<p>Li Ximing sipped his tea, while Wenhu lifted his face that was scorched black from the heat. It was hard to see if he had any tears. Catching Li Ximing’s look, Li Chenghuai stepped forward and gripped Wenhu’s chains. “If you just confessed everything, the Daoist Master would have judged it accordingly. Why go to such lengths?”</p>
+<p>Wenhu opened his eyes, though they had been burned white, and lifted his head. “I have spent my life scheming and fighting in the Southern Sea. Whenever a plot succeeds, it is only natural that I claim victory. When it fails and I am bested, then I deserve to lose. There is no reason for me to sit and wait for some Daoist Master’s judgment.”</p>
+<p>Li Ximing set down his jade cup and said with a nod, “Very well!”</p>
+<p>As soon as the words rang out, a surge of heavenly light swept through the violet flames, tearing Wenhu’s flesh and bones apart and reducing him to ash. The various chains and rune-etched iron clasps on his body melted cleanly away as well. A Foundation Establishment Realm cultivator who had been kneeling on the ground had been scattered into nothingness in the span of a single breath, vanishing like cloud smoke.</p>
+<p>Clang.</p>
+<p>Several warped and charred fragments of iron fell to the ground, the remnants of Wenhu’s shackles. He had cultivated the Hurricane Ghost Yin, which was countered by Bright Yang. A single sweep had completely dissolved even his cultivation, without so much as a ripple of a phenomenon left behind.</p>
+<p>Li Chenghuai stood quietly to the side and exhaled softly. Li Ximing placed three jade slips on the table, rubbed the center of his brow, and asked, “Chenghuai, one is the Hurricane Ghost Yin; the other is the Floating Cloud Body. Both are fourth grade techniques and would greatly benefit the family’s foundation. See if there’s anyone in the family interested in cultivating them.”</p>
+<p>Li Chenghuai thought for a moment and replied, “I’ll check who among the younger generation is at the point of beginning the Qi Cultivation Realm.”</p>
+<p>Li Ximing merely tasked him with making the arrangements. But no matter which family members he chose, none could possibly match the spirit storage of the Mifan lineage at Mount Xiaoshi. He asked, “We brought back people from Floating South and Hidden East after destroying sects and seizing leverage over esteemed families. Since they all come from the same cave domain, is there any talent aligned with Unified Qi among them?”</p>
+<p>Li Chenghuai replied, “I will look into it.”</p>
+<p>He immediately sent someone to investigate, and before long, a palace guard returned with a jade slip. Li Chenghuai took it and began reading.</p>
+<p>The benefits of sound household governance was quickly evident. Li Chenghuai had clearly been paying attention to these details long beforehand and had meticulously recorded everything. Without needing to delay, he glanced through the slip and reported, “There is one surnamed Wang whose qi aligns with Floating Cloud Body, currently at the late stage of the Qi Cultivation Realm. There is also a guest cultivator surnamed Huang who practices Floating Cloud Body. As for Hurricane Ghost Yin, there is no one whose qi aligns with it.”</p>
+<p>Li Ximing said casually, “The Wang Family branch in Jiangbei is vast, and Wang He still serves in the Capital Immortal Dao… They are difficult to discipline in Mifan territory. Since this Wang family member is already at the late stage of the Qi Cultivation Realm, support him and help him attempt Foundation Establishment Realm if possible. That will also help stabilize the people relocated from Floating South.”</p>
+<p>As he gave the order, a premonition formed in his heart,This time, we can forget about claiming much from the spiritual trove. We’ll just test the waters first. It’s not a matter that will be settled in one or two attempts, we can revisit it once the younger generation rises.</p>
+<p>Li Chenghuai understood and prepared to withdraw after receiving his orders. But then the Daoist Master, dressed in white robes embroidered with golden patterns, closed his eyes and exhaled softly. “Chenghuai, destiny and timing, talent and wit, innate ability and cultivation; few ever possess all these at once. We often believe that cultivation and scheming are of utmost importance, but we must also remember that in this world… even the most brilliant cannot reach the Purple Mansion Realm if their fortune is exhausted, nor wield divine abilities if their fate is too shallow.”</p>
+<p>“I am enlightened.”</p>
+<p>Li Chenghuai knew he was referring to Wenhu and answered respectfully. Li Ximing mused aloud, “Summon the Zhouxing generation… and also invite the old master.”</p>
+<p>————</p>
+<p>Mount Qingdu.</p>
+<p>Mount Qingdu had now been developed with several pavilion towers, and the forest had thinned. What was once a secluded retreat for a few Foundation Establishment Realm direct descendants had become the bustling peak of the family chief, with streaks of light from flight techniques rising and falling everywhere and people hurrying about.</p>
+<p>Li Quewan descended onto the mountainside. The silver-white pendant at her neck shimmered faintly as she walked, her face contemplative. Now in the seventh stage of Qi Cultivation Realm, she was considered one of the mainstays of the Li Family.</p>
+<p>Li Quewan had gone to Northern Mount Yue but returned empty-handed, so she was feeling somewhat dejected.</p>
+<p>Profound Shamanic Spells truly are far too difficult…thought Li Quewan.</p>
+<p>The Profound Shamanic Spells was a shamanic spell art obtained from a talisman seed. In truth, calling it a shamanic spell art hardly did it justice. It was a grand compendium of shamanic spell arts, containing an astonishing number of techniques, primarily in three branches: Transformation, Shamanic Talisman Dao, and Spirit Manipulation.</p>
+<p>The shamanic art was exceedingly complex, yet it was divided into only three major chapters, without even a first, second, or third tier. Despite its profound and mysterious nature, the chapters were arranged so carelessly that they seemed thrown together at random.</p>
+<p>After all, it is an ancient cultivation art. Simplicity was considered a virtue.</p>
+<p>Li Quewan did not practice many spell arts. Aside from her regular cultivation, almost all her time had been devoted to Profound Shamanic Spells, yet she had barely scratched the surface. Following Li Jiangqian’s advice, she had focused more on transformation techniques for self-preservation, while the rest were merely calculation methods.</p>
+<p>After all, the opening line of Profound Shamanic Spells stated, “Only upon attaining the first profound mysteries may one begin to practice shamanic spell arts.” When Li Quewan pondered this phrase, she realized that the so-called first profound mysteries… referred to the Purple Mansion Realm.</p>
+<p>In ancient times, one could hardly be considered accomplished without at least one divine ability… truly enviable.</p>
+<p>Li Quewan shook off her thoughts and turned her gaze toward Mount Qingdu. She had visited only a handful of times, yet she had always harbored deep reverence for this place.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1115.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1117.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

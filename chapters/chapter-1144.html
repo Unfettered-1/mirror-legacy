@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1144: One Talisman, One Decree (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1143.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1145.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1144: One Talisman, One Decree (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing traveled through the great void, surrounded by heavy purple-black mists. As he sped onward, the white misty mountain reappeared. Ye Hui was still mounted on the scaly bird-beast with a golden beak and pale pupils.</p>
+<p>He glanced at Li Ximing from atop the beast, a divine ability gathering in his hands as he spoke, “Zhaojing was wise to take a step back to release the Profound Peak Gate and sacrifice Kong Haiying. Truly, you understand the bigger picture. I owe you for that and offer my thanks.”</p>
+<p>Li Ximing solemnly examined him. The man’s smile was courteous. Unlike his sharp, mocking tone toward Changxi, Ye Hui had always maintained his composure before Li Ximing. Even when their divine abilities had clashed, he had still preserved a degree of decorum.</p>
+<p>His attitude carried an air of detachment, as if what happened among subordinates was their own affair. Whether a chariot captured a cannon or a general was trapped, it was all just a game of chess. To hold a grudge would simply mean their opponent was too narrow-minded.</p>
+<p>It was precisely Ye Hui’s composure and Li Ximing’s caution that had allowed both families to maintain some room for negotiation at the Purple Mansion Realm. Now, within the great void, Ye Hui thanked him once again, and Li Ximing could only reply, “Fellow Daoist, you need not say that. Since the Profound Peak Gate is to be moved upon, I naturally must take action.”</p>
+<p>Ye Hui regarded him deeply, as if weighing something, before replying, “Very well. Then today, I shall properly witness the might of your Bright Yang divine ability.”</p>
+<p>The great void erupted in violent ripples as his words rang out. Vast torrents of purple water surged down, filled with human-headed fish leaping within. The white misty mountain rose once again, its snowy peaks standing tall.</p>
+<p>Radiant light rose behind Li Ximing in response, brilliant heavenly light flooding upward to illuminate the void. The Heaven-Venerating Gate reappeared and a bright white heavenly gate adorned with intricate patterns stood within the great void. Dragon banners and phoenix carriages passed through; jeweled standards and fluttering pennants swayed in the air; and ranks of golden-armored soldiers emerged.</p>
+<p>Battle cries erupted as golden-armored troops charged through the gate. The human-headed fish swam through the purple waters, the divine ability rippling in waves. The white mountain above the gate suddenly descended, and Li Ximing felt the mounting pressure as his divine ability trembled.</p>
+<p>The human-headed fish riding the purple currents no longer scattered at the first clash. Instead, they firmly resisted the charge of the golden-armored army, forcing them back bit by bit. The white misty mountain, too, began to balloon in size.</p>
+<p>Earlier, uncertain of his opponent, Ye Hui had acted cautiously. But now that open combat had been agreed upon, he no longer held back. He unleashed his full strength, suppressing the Heaven-Venerating Gate until it shook violently.</p>
+<p>This was their first true clash, and Li Ximing realized that Ye Hui’s earlier bouts had been mere probing attempts. Now, he was using his real strength. The purple tide thickened, its hues deepening severalfold as it forced the heavenly light back within a radius of only ten meters. But it was unable to advance any closer.</p>
+<p>His past year or two of cultivation had brought little improvement to the Heaven-Venerating Gate. As his disadvantage mounted, Li Ximing was forced to ignite the heavenly light between his brows and channel his divine ability to the full to resist the South Chou Waters. The tides parted as Ye Hui appeared between them.</p>
+<p>The stern Daoist Master wore a dark blue robe. He still held the same sword in his arms, but it was now shining with a dazzling glow. Two treasures manifested behind him.</p>
+<p>A round, flattened jade sphere etched with the intricate talisman-like patterns, no larger than a palm, floated on his left, while a long, broad object of black with white markings, resembling a long talisman, hung on his right. Both gleamed brilliantly as they appeared.</p>
+<p>Forming a hand seal, Ye Hui declared, “Still the wind, calm the waters; let the law manifest the primordial.”</p>
+<p>The pair of talismans vanished. Instantly, a chill surged through Li Ximing’s heart, forcing him back a step as fierce purple flames rose beneath his feet. Heavenly light shone down upon him as he thought to himself,He truly has inherited the Douxuan Dao lineage. No wonder he carries spirit artifacts!</p>
+<p>No sooner had he raised his purple flames than a thunderous vibration resounded in his mind. A round, flat jade talisman was caught by the heavenly light with a clang, and the talisman turned toward his face.</p>
+<p>A blinding bolt of lightning crashed down on him. The silvery white lightning was ferocious, exploding across his purple flames in surging waves. Forcing himself to remain calm, Li Ximing suppressed the urge to summon the Mountain-Charging Sea-Pacing Tiger. Instead, he formed a seal, and a beam of radiant sunlight rose from his palm to block the lightning.</p>
+<p>But just as he completed the seal, a long black talisman with white patterns leaped out from the other side. A muffled chant rang out, and a torrent of crimson True Fire dove downward like a flock of fierce birds. Li Ximing had barely managed to block the lightning; exhausted, he had no strength left to ward off the fire. The Heaven-Venerating Gate behind him was pinned down by two divine abilities and unable to move.</p>
+<p>Gritting his teeth, he consoled himself that with his Bright Yang nature, enduring fire was preferable to lightning. He focused on shielding himself from the thunderbolts as the heavenly light at his brow flared once more, sending out a stream of bright white Heavenly Radiance, Hidden Light to counter the True Fire.</p>
+<p>As expected, his hastily refined Heavenly Radiance, Hidden Light was no match for Ye Hui’s spirit artifacts. Though the radiant light managed to divide the True Fire into two streams and weaken it slightly, the blazing inferno still rained down upon him.</p>
+<p>Li Ximing now possessed the dharma body of the Purple Mansion Realm, and no longer had a mere mortal shell. The searing flames of True Fire flowed over his form like boiling water, causing white smoke to rise wherever it passed.</p>
+<p>After taking the full brunt of True Fire, Li Ximing’s dharma body blazed fiercely, glowing with a glazed brilliance. The lightning was no common lightning, nor the fire ordinary fire; neither could be quelled by simply using divine ability. The flames from another’s dharma artifact were not something talismanic qi could restrain. Ye Hui had already raised his dharma sword, its tip aimed straight at Li Ximing’s face as he muttered incantations.</p>
+<p>Li Ximing could no longer bother to decipher the murmured spell. A flicker of yellow light danced before his eyes, making them sting, and clusters of halos appeared from the west, each linked to the next; none of them looked easy to handle.</p>
+<p>This old fox is fighting for real now!</p>
+<p>Before Ye Hui could complete his spell, Li Ximing forcefully activated his divine ability, burning his vital qi. The Heaven-Venerating Gate behind him flared with a blinding radiance, purple flames erupting as he broke free for an instant. He swept everything aside, and in that same moment, vanished.</p>
+<p>The purple waters instantly fell still as the white misty mountain collapsed into emptiness. The struggling Radiant Light within the great void faded, and only then did the halos behind Ye Hui dim. He sighed softly and stepped into the void, giving chase.</p>
+<p>In the blink of an eye, Li Ximing fled afar, his body still wreathed in flames. Fortunately, the Bright Yang Dao excelled at mastering fire; this True Fire would leave no lasting harm. It was not like Merging Fire that grew fiercer with time, so he ignored it and pressed on, alert and wary,Ye Hui truly means to duel, perhaps to make a show of power. If he can leave me slightly wounded, he’d probably take it gladly!</p>
+<p>The sudden appearance of those two spirit artifacts had startled him deeply. Now, with Ye Hui closing in from the west and lightning and fire gathering behind him once more, Li Ximing had no choice but to flee eastward.</p>
+<p>Yet Ye Hui’s speed within the great void remained superior; he was even faster than before. The South Chou Waters surged around them, purple waves rippling beneath Li Ximing’s feet and reflecting his shadow. He cursed inwardly, hesitating for an instant.</p>
+<p>They had already left the bounds of the Profound Peak Gate. His possible routes were few: toward Sword Gate, Xuanmiao, Xiukui, or straight east to the Eastern Sea. Sword Gate and Xiukui would only watch from the sidelines, and fighting in another sect’s territory or crossing into the mortal realm would surely earn their anger.</p>
+<p>That left only Xuanmiao Temple. Without hesitation, Li Ximing shifted his path of light and sped toward its domain.</p>
+<p>Heading for Xuanmiao Temple at least gives me a fallback. If Ye Hui truly means to harm me, there’s still Sumian… and if he refuses to intervene, I can descend into the mortal world. Xuanmiao Temple lies in Jiangbei, would Ye Hui dare fight there?</p>
+<p>To descend into the mortal world of Jiangbei would be a last resort, a desperate measure if his life hung by a thread. Other cultivators would surely intervene, yet disturbing every Purple Mansion Realm cultivator in Jiangbei and Jiangnan would ruin his reputation. Worse, it could disrupt the True Monarch’s arrangements, which was no trivial matter.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1143.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1145.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

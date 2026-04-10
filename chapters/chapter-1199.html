@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1199: The Western Shores Blood Scripts (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1198.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1200.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1199: The Western Shores Blood Scripts (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chen Yang’s face was filled with joy as he replied, “The Capital Immortal Dao withdrew overnight and vanished without a trace. The entire Wilderness lay empty and deserted. It was only when we reached Shanji Prefecture to the east that anyone came to intercept us. It seems both Shanji and the Profound Peak Gate Mountain have been occupied.</p>
+<p>“Kong Guxi and his men were overjoyed and returned to the Wilderness, leaving two behind to reorganize their forces. The rest came with Kong Guxi to the lake to offer congratulations and thanks. They are now waiting beyond the island.”</p>
+<p>“Good!” Li Zhouluo rose cheerfully to his feet.</p>
+<p>Chen Yang bowed, smiling just as brightly; the two even looked somewhat alike. Chen Yang then took out a jade box and said, “Family head, both dharma artifacts are inside, and I now return them to the family.”</p>
+<p>He first presented the jade box, then drew a dark-colored bead from his robe and said respectfully, “Family head, a devil cultivator came to plunder a few days ago. We set up an ambush with members of the Kong Family and Lord Ding. Although the devil cultivator managed to escape by sheer luck, we still gained an unexpected reward.</p>
+<p>“This is the dharma artifact that the devil cultivator left behind to cover his retreat. It was originally a self-detonation artifact, but unexpectedly, Gate Master Kong summoned a spirit mountain that narrowly suppressed it, allowing it to survive…”</p>
+<p>He knelt respectfully, raising both hands to present the black bead resting in his palms, and said, “This item is called the Ni Water Bead, and is forged from extremely pure Ni Water Frost Iron. Although the material itself is not particularly rare, the refining technique is masterful. It is a Cold Essence dharma artifact.”</p>
+<p>This too was an exceptionally good piece of news. Li Zhouluo nodded in delight. The Li Family’s rules were strict; anything offered up could not be immediately examined by him, so he merely instructed Dili Guang to take the bead for inspection, while he asked, “I have often heard that devil cultivators move in groups of three to five. I didn’t expect even Dharma Protector Ding’s intervention to let them slip away. It seems this group is not simple; did you notice anything?”</p>
+<p>Chen Yang nodded repeatedly. “Family head, your judgment is precise. When I acted together with Dharma Protector Ding, we noticed that though they seemed wreathed in devil qi, their cultivations were all pure and refined. They were likely not rogue devil cultivators, but rather disciples of some other Dao lineage in disguise. Fearing greater trouble, we refrained from killing them even when the chance arose and only forced them to reveal their dharma artifact before letting one escape.</p>
+<p>“These people are formidable. They also held back their full strength in previous raids, yet we couldn’t discern which Dao lineage they belonged to. Dharma Protector Ding and I discussed it and believe they are most likely cultivators from the outer-sea.”</p>
+<p>Li Zhouluo nodded slightly and looked at Dili Guang beside him. The youth from Mount Yue answered, “Family head, this dharma artifact is indeed exceedingly pure, and shows no trace of being refined through blood sacrifice.”</p>
+<p>Only then did Li Zhouluo speak, “The family will decide on this matter later, and your contribution will be recorded. As for the Capital Immortal Dao’s withdrawal, it should be the result of several Purple Mansion Realm cultivators’ deliberation, agreeing to yield Shanji Prefecture… Dharma Protector Ding has worked hard during this period. The seniors wish to see you; let the Kong Family members come in first.”</p>
+<p>Chen Yang withdrew after bowing. Li Zhouluo waited for a moment before Kong Guxi hurriedly entered from outside the hall, lifting his robe as he came.</p>
+<p>“Greetings to the family head!”</p>
+<p>Kong Guxi’s eyebrows were raised high, his eyes bright and spirited, and the wrinkles on his face had smoothed out. His old face seemed to mirror the fate of Profound Peak Gate, like clearing skies after rain, as it was radiant with excitement and vigor.</p>
+<p>He knelt firmly on the ground and said respectfully, “The Capital Immortal Dao has withdrawn! Congratulations, family head!”</p>
+<p>Kong Guxi was a man unbothered about saving face. Though a late-stage Foundation Establishment Realm cultivator, he knelt without hesitation before Li Zhouluo, forcing the woman behind him, Kong Qiuyan, to kneel as well. In the past, whenever she saw members of the Li Family, she would always lower her head, her eyes nearly shut. But now, she lifted her chin properly, and a look of gratitude appeared in her eyes.</p>
+<p>On the other side, Fu Yuezi knelt motionless like a stone statue, his eyes calm, as if none of this concerned him.</p>
+<p>Li Zhouluo helped the sect master to his feet with a smile and said, “This is also a joyous occasion for you, gate master. All of Profound Peak Gate’s establishments in the Wilderness shall remain under your administration. The agreement between our two families still stands. Our family will not occupy a single portion of your territory.”</p>
+<p>Kong Guxi answered softly in assent, but the Li Family clearly wished to have nothing further to do with the matter. Li Zhouluo spoke gently, “Since the enemy has withdrawn and the Wilderness has returned to your control, morale must not scatter again. The banner of Profound Peak Gate must be raised as soon as possible. Gate master, you should quickly mark your boundaries, recruit a new batch of disciples, and begin rebuilding Profound Peak Gate.”</p>
+<p>When those words rang out, Kong Qiuyan, behind Kong Guxi, could hardly believe it. There were no free meals in the world. Their family had received such a great favor, leaving behind most of their Dao Collection and sending away all guest cultivators, yet even that might not have freed them from the Moongaze’s shadow.</p>
+<p>She had thought that freedom would require countless sacrifices to obtain, yet it was being offered before her so easily. She looked at the other party in confusion and even mild shock.</p>
+<p>Fu Yuezi moved for the first time; beneath his golden mask, his face seemed to show a faint smile. Only Kong Guxi remained kneeling in a daze, unable to answer for a while.</p>
+<p>To the two others, these words were great news. But to Kong Guxi, they carried an entirely different meaning,Your family’s ancestor and our Daoist Master made an agreement, and my family has already fulfilled it to the utmost. Now that our Daoist Master is missing, how could we still care for more? The Wilderness is yours, rebuild your gate quickly. What follows will be solely Profound Peak Gate’s affair.</p>
+<p>At present, the matter of Profound Peak Mountain Gate remained unsettled, and the Capital Immortal Dao watched them like a tiger eyeing prey. Only Fu Yuezi was skilled in combat within the Kong Family, but what could he alone accomplish in the Wilderness? To re-establish the gate now would be an extremely perilous endeavor.</p>
+<p>From another angle, Profound Peak Gate had nothing left for the Li Family to exploit. Their mountain gate was lost; their Purple Mansion Realm spirit artifacts and resources had already been offered up to the Li Family; and their grand formation had been destroyed. What remained, the Fool’s Mountain Chase Dao lineage, a few Foundation Establishment Realm treasured panaceas, dharma artifacts, and supplies, was hardly worth the Li Family’s interest.</p>
+<p>He could only bow and say, “The Wilderness is in chaos and lies in ruins. We must first bring it back to order before considering the rebuilding of the mountain gate.”</p>
+<p>Though Li Zhouluo was still waiting for news from Shanji Prefecture, his attitude remained firm as he replied, “There’s no need for formality, gate master. My family has no intention of encroaching on Profound Peak Gate’s Dao lineage. The territory of the Wilderness will be handed back to your gate, and all resources stored within the mountains will be returned intact by the Jade Court Guards. The subsequent arrangements will be left entirely to your gate.”</p>
+<p>Kong Guxi looked awkward and uneasy, but he was unable to insist further. With deep shame, he said, “I must ask the family head to grant us some time…”</p>
+<p>Li Zhouluo nodded and spoke softly, “Rest assured, gate master. Take your time to put the Wilderness in order. With the three great mountains moved from Shanji, Profound Peak Gate’s foundation still remains.”</p>
+<p>Kong Guxi judged that the Li Family was not pressing him to rebuild the gate immediately, and he let out a quiet sigh of relief. Li Zhouluo said little more to him after giving his instructions and tactfully sent him off. The two behind him, however, were in good spirits as they followed him out of the main hall.</p>
+<p>Li Zhouluo instructed his people to inquire about the situation in Shanji Prefecture. Since the Capital Immortal Dao was gone from above and Profound Peak Gate off his hands, his mood was brimming with delight as he said with a smile, “I heard Xinghan has just returned from the west. There’s good news to share with her, bring her in quickly!”</p>
+<p>Dili Guang immediately went out, and before long, a travel-worn and dusty Li Xinghan entered the hall, a sword strapped to her back. She said respectfully, “Greetings to the family head!”</p>
+<p>“Rise, my sister!”</p>
+<p>Li Xinghan had indeed just returned from the great desert and had also heard of the Capital Immortal Dao’ retreat. Joy filled her heart as she offered her congratulations to Li Zhouluo.</p>
+<p>Her elder brother then asked, “How are things on the desert side?”</p>
+<p>Li Zhouluo most likely already knew the situation, but he still wanted to hear it firsthand from someone who had been there. Li Xinghan sighed and said, “There were countless devil cultivators. Dharma Protector An said the desert never used to have so many, but their numbers have grown in recent years. We drove them all out, yet the section of the ancient wall has completely collapsed. It can no longer gather qi.”</p>
+<p>“What a pity.”</p>
+<p>Most of the Li Family’s Bright Yang techniques depended on that ancient wall to gather qi. Now that their Purple Mansion Realm cultivator was gone and their source of qi was disrupted, it was a troublesome matter.</p>
+<p>Li Zhouluo lamented, “I received reports as well. The desert outpost lies beyond Mount Xiping and was difficult to maintain to begin with. The family always saw it as a thankless posting, and none of the direct descendants wanted to go. Now that the wall has collapsed, they’re all saying to abandon it.”</p>
+<p>Li Xinghan frowned and advised, “Family head, our family’s market remains unopened due to entanglements with the Capital Immortal Dao. It’s ninety percent complete but is currently left idle in Milin. Though it’s not suitable to open now, it must be opened sooner or later. If we can hold the desert outpost and maintain more traffic, it will greatly benefit the market. Their words are merely the complaints of those who pity their own comfort, pay them no mind.”</p>
+<p>Li Zhouluo laughed heartily and asked, “I heard you brought something for fifth brother, didn’t you?”</p>
+<p>Li Xinghan was not surprised. She had obtained the White Falcon Metal openly and fairly, trading her own resources for the family’s supply, and Li Zhouluo naturally knew that. She replied, “That’s right. I acquired seven taels of White Falcon Metal in the desert. It was meant for fifth brother; I’ve already sent it to him.”</p>
+<p>Li Zhouluo shook his head. “You send it today, and it’ll probably be turned into some beauty’s hairpin within a month. You don’t know his temperament. A few years back, he kept asking me for various metals. He’s useless at most things, but he’s got quite the knack for crafting hairpins.”</p>
+<p>Li Xinghan sighed and said, “I guessed as much. But it was the first time he ever asked me for something, so I couldn’t bring myself to refuse. It’s not anything important anyway, so I just let him practice his craft with it.”</p>
+<p>Li Zhouluo, in good spirits, chuckled and shook his head. He took a black-scroll with silver edging from the desk and said, “Let’s set that aside, I have excellent news to tell you.”</p>
+<p>He smiled and continued, “A few days ago, several elders in the family were talking and mentioned you. The old elder brought up your dharma artifact. Since our Daoist Master is not currently in the family and forging standards are high, they decided you should inherit one of the family’s swords for your own use.”</p>
+<p>Li Xinghan, who had always loved the sword Dao, became instantly excited and asked, “Heavens… which sword is it?!”</p>
+<p>Li Zhouluo unrolled the scroll in his hands slowly and said with a smile, “It is roughly one meter and two hundred eighty centimeters long and weighs about forty-six kilograms. It is as bright as flowing water, pure as white frost…”</p>
+<p>Han Lin!</p>
+<p>Li Xinghan knew the measurements of every dharma sword in the family by heart. The moment Li Zhouluo recited the length, she guessed it immediately.</p>
+<p>Shock and joy flashed across her face as she exclaimed, “How could it be Han Lin…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1198.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1200.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

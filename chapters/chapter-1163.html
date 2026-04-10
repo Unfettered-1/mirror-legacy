@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1163: Fiend — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1162.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1164.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1163: Fiend</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>At the ends of the earth.</p>
+<p>The small island was covered in dense jungle, with wild beasts darting through the undergrowth. Scattered villages lay hidden within the jungle. The spiritual energy was faint, yet a turquoise, unfathomably deep hot spring bubbled at the center of the island. Several streams of clear water flowed outward into the forest.</p>
+<p>By the spring, a cultivator in black robes sat cross-legged in silence. After half a day had elapsed, another cultivator in brown robes arrived, landed beside the pool, and cupped his hands respectfully, saying, “Fellow Daoist Feng, I’ve borrowed the Fire-Repelling Shield.”</p>
+<p>The rogue cultivator surnamed Feng immediately leaped to his feet, clearly having been lost in thought, and replied, “Many thanks, Fellow Daoist Fang! Quickly, bring it here!”</p>
+<p>The man surnamed Fang pulled a crimson jade pearl from his sleeve and said with some reluctance, “Be careful with it… I had to pawn my family’s heirloom, the Noon Pavilion Talisman Brush, and even pay an extra spirit stone as rental. If that brush weren’t so unique, they’d never have agreed to lend it out…”</p>
+<p>The rogue cultivator Feng glanced at him and said patiently, “Rest assured. I’ve visited this island many times. These savages were raised here by my ancestor for our descendants’ use. Fearing that they might produce someone powerful, he never even taught them to read.</p>
+<p>“This island has always been lacking in spiritual energy. But when I came today, I noticed a faint trace of spiritual qi. It is surely due to some disturbance in the earth veins beneath that boiling spring at the island’s center.”</p>
+<p>He infused the jade pearl with mana, and it instantly swelled and expanded, transforming into a crimson barrier covered in runes that enveloped them both. As he led the way into the lake, he said, “I once visited Master Alchemist Xia of Mu Sea. He mentioned that when a spring’s water turns clear green and surges from deep underground with an ascending flow, it becomes a Cavern Spring. There exists a great Dao lineage within the mainland that cultivates this Dao; it is called Pristine Water.”</p>
+<p>The cultivator surnamed Fang asked, “Pristine Water? What sort of water is that? And what level does one reach upon mastering it?”</p>
+<p>Feng dusted his robe, pointed above, and said, “Higher than the heavens, of course.”</p>
+<p>The surrounding lake water grew increasingly hot, and the cultivator surnamed Fang cried out in alarm, “Higher than the heavens? That must be the Dao lineage of a Foundation Establishment Realm cultivator!”</p>
+<p>Feng merely smiled and shook his head. “That’s called the Purple Mansion Realm! They are cultivators of the Purple Mansion Realm Dao lineage. Don’t be fooled by those so-called lords of the island who can move mountains and fill seas. One glance from such a cultivator could end them instantly.”</p>
+<p>Changing the subject, he said, “Still, whatever lies within this cave has stirred such a great commotion that the island’s spiritual energy is surging. It must be a spirit item of the Foundation Establishment Realm. If we can obtain it, the rest of our lives will be free of worry.”</p>
+<p>The cultivator Fang sighed. “I’m relying on your guidance, Fellow Daoist. I’m just a lowly cultivator of unrefined qi. Even with a fine treasure, what could I do? You, at least, cultivate orthodox qi. If fortune smiles upon you, remember to give me a hand when you rise.”</p>
+<p>They entered the earth vein as they spoke. Scalding steam mixed with tongues of flame on either side, making their dharma artifact buzz under the heat. The cultivator Feng’s mana was clearly weakening, so he handed control to his companion and said grimly, “So fierce! We haven’t even reached the depth of the earth vein, what kind of terrifying earth fire is this?”</p>
+<p>Fang clearly lacked his companion’s Dao lineage experience and had never seen such earth fire before; he could only pretend to understand and nod. Feng’s expression shifted several times before he gritted his teeth. “How many pills do you still have?”</p>
+<p>Fang muttered the count of the few pills left in his pouch, and Feng decided firmly, “Our pills are enough. Since we’ve come this far, how could we return empty-handed? We must go deeper into the earth vein. Even if we gain nothing, at least we’ll see what lies below!”</p>
+<p>He gritted his teeth, pushed his mana to the limit, and flew for nearly fifteen minutes. At last, the steam before them began to ease, and the flickering firelight seemed to reveal an open space ahead.</p>
+<p>The cavern floor was smooth and paved with slabs etched in countless intricate patterns. A jet-black flame leaped atop an altar-like platform at its center.</p>
+<p>Excitement surged through their minds. Before they could recover from the shock, Feng took advantage of a moment when the flame dimmed and peered ahead. Faintly, he saw a skeleton beside the fire!</p>
+<p>The skeleton sat cross-legged, seemingly long dead by the look of it. A golden storage pouch, metallic in texture, lay beside it, gleaming even brighter in the flickering flames.</p>
+<p>Feng’s heart trembled violently, and greed flared within him,A cultivator’s resting place! My fortune has come!</p>
+<p>He immediately retreated and whispered, “I can’t hold on much longer! We must go!”</p>
+<p>Both men were at their limits, and the surrounding flames brightened with the pulsing rhythm of the earth vein. Fang already felt the soles of his feet burning; he nodded repeatedly, and together they vanished swiftly into the sea of fire.</p>
+<p>Once the two departed, only endless fire remained. The skeletal fingers twitched, flesh and skin instantly regrowing. A silver-white Daoist robe shimmered to life, revealing a dignified and handsome face.</p>
+<p>Li Ximing let out a long breath, feeling a rare sense of relief,Someone’s coming!</p>
+<p>Trapped by Changxiao’s Mulberry Concord Ninefold Profound Method, Li Ximing could not leave this place. The flames within his body would flare up like a beacon the moment he stepped out, forcing him to suppress them with spirit items. Months had passed, and he had already consumed over a dozen drops of such treasures. His only hope now was that someone would arrive from outside.</p>
+<p>This spring is subtle and unassuming, likely formed from a shift in the earth vein. It won’t draw much attention, but that’s also the problem. Few come here… After waiting months, all that appeared was a first stage Qi Cultivation Realm cultivator!</p>
+<p>A mere Qi Cultivation Realm cultivator was of no use. Had he not deliberately suppressed the flames within him, those two would never have even noticed his presence. So Li Ximing left them alone, casting a long line to lure in bigger prey.</p>
+<p>Qi Cultivation Realm cultivators won’t do… At least a Foundation Establishment Realm cultivator must come, only then might there be a chance of escape.</p>
+<p>The only medicine he had capable of healing a Purple Mansion Realm cultivator’s wounds was a single True Profound Heart-Cleansing Pill. However, his storage pouch still held several treasured panaceas and supplementary ingredients. As a Purple Mansion Realm alchemist, he had gradually developed a treatment plan over the past few months. Unfortunately, the main ingredient required the flesh of a Foundation Establishment Realm demonic creature; something impossible to refine while trapped here.</p>
+<p>If I can bait a few Foundation Establishment Realm cultivators, have them gather a few spirit items for me, and then capture a Valley Water demonic creature, I can concoct a pill to temporarily suppress my injuries.</p>
+<p>After pondering briefly, he channeled his Immortal Mirror, sending his spiritual sense outward to watch the two men depart. Yet before they even left the island, the black-robed cultivator surnamed Feng seized the moment when his companion’s mana was spent, drew his sword from his storage pouch, and sliced the man into pieces without hesitation.</p>
+<p>How decisive… Now he doesn’t even have to return the dharma artifact; he can just claim it for himself.</p>
+<p>Li Ximing watched coldly as the black-robed cultivator departed the island, a strange feeling rising within him,So now I’ve become one of those storybook villains, a Purple Mansion Realm fiend sealed within the earth vein, waiting for some foolish youth to release me by accident, only to be slain seventy-eight chapters later after countless twists and turns by an Immortal Sword. What a beautiful tale indeed.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1162.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1164.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

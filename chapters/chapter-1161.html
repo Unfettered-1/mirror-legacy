@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1161: Retreat And Running (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1160.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1162.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1161: Retreat And Running (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Guan Gongxiao cupped his hands; he still looked puzzled. He raised his head so his forehead was no longer pressed to the ground and said slowly, “I am dull witted and still do not understand. From the report of the disciple who came to surrender from Profound Peak Gate, the person in that secret chamber was Fu En. Daoist Master Zhaojing checked it. I took his belongings afterwards, and those around me also said it was Fu En.”</p>
+<p>Before Ye Hui could answer, Guan Gongxiao respectfully kowtowed again. “I understand what Daoist Master means. Everything can be weighed, but Kong Haiying is a Purple Mansion Realm seed with high innate ability. How could this matter be compromised? If we let it slide, and Kong Haiying breaks through, he may pose just as much threat as Li Ximing.”</p>
+<p>Ye Hui showed a trace of approval at last and nodded. He pressed his forefinger and thumb together, flipped over the brownish jade pendant in his hand, and revealed the gilded inscription on it.</p>
+<p>【Kong】</p>
+<p>The Daoist Master said in a low voice, “How could I not know? I have seen Kong Haiying with my own eyes. I’ve fought him, drank with him, and even worked with him to deal with that fool Guo Er. I would not mistake his aura for anyone else.”</p>
+<p>His expression grew complicated as he said, “The person in that secret chamber was indeed Kong Haiying. His aura was unmistakable. No matter how many errors there are, this point will not be wrong.”</p>
+<p>Guan Gongxiao suddenly understood and said respectfully, “I understand now. This is the Li Family’s show of sincerity. They spread word that it was Fu En to keep their clean reputation, while actually offering Kong Haiying to us with cupped hands as a subtle plea for peace. No wonder… no wonder…”</p>
+<p>Once he grasped that point, everything clicked into place and he continued, “Therefore, with Floating South heavily garrisoned and Profound Peak Gate left thin in the Wilderness, the reasoning is the same. If Daoist Master had not pointed it out, I would have made a great mistake.”</p>
+<p>Ye Hui’s gaze did not stay on him. Instead it passed through everything before him and locked intently on the characterKongin his hand. A hollow feeling rose in his chest,It is as good as completely finished…</p>
+<p>Guan Gongxiao remained thoughtful and said respectfully, “Rest assured, Daoist Master. The Kong Family Dao lineage… I will eradicate it completely…”</p>
+<p>Halfway through his words, Ye Hui shot him a tired look. The corners of the Daoist Master’s eyes were sharp, and his exhaustion made him seem even more brutal, which immediately unnerved Guan Gongxiao.</p>
+<p>Ye Hui said coldly, “Leave some face for Purple Smoke Gate. Kill kill kill… they have come all the way from the outer-sea to Jiangbei, and you are still obsessed with killing. Look at Chengyun Gate and learn from Zhong Qian. Chengyun Gate has already become the leader of the orthodox path in Jiangbei, and you are still running around killing people here!”</p>
+<p>Guan Gongxiao bowed in fear and exclaimed, “I know my wrongdoing!”</p>
+<p>Ye Hui slammed the jade pendant onto the table with a sharp crack. “When you’re in the mainland, you follow mainland rules! If I hadn’t personally gone there back then, Gongsun Baifan would have long defected to Chengshui Marsh. How would he ever have served under you, Guan Gongxiao?!”</p>
+<p>Guan Gongxiao lowered his head as he replied, “The five hundred thousand people of the Wilderness already hate our Capital Immortal Dao. If we don’t use them as blood food, we’ll just leave behind countless enemies for nothing!”</p>
+<p>Ye Hui grew slightly angry and scolded, “You still think like someone from the outer-sea! Li Chenghui already showed you the example long ago, yet you still haven’t learned! Why is the territory of Hidden Cloud still in chaos today? Take the Wilderness, spare the five hundred thousand people, show great mercy, and reverse the Heavenly Principle! Depose heirs of small families, raise the lesser branches, and let minor sects punish their own. In doing so, the foundation of Profound Peak Gate’s populace will dissolve, and when they return under Purple Smoke Gate’s banner, there’ll be no chance for correction. One or two Foundation Establishment Realm cultivators will remain at most, and after three generations, all hatred will fade!”</p>
+<p>Guan Gongxiao could only answer softly. Daoist Master Ye Hui’s tone grew calmer. “I will not show myself often afterward, nor will the Baiye Capital Immortal Dao. Dissolve great families, divide the spirit fields, forbid annexations, and abandon the path of blood qi. We must claim the mantle of orthodoxy.”</p>
+<p>Guan Gongxiao said in a low voice, “There are many arts of blood qi within our Dao lineage. We can only rely on outer-sea outposts for supply.”</p>
+<p>Ye Hui shook his head and said, “Learn from the north. Apply pressure and taxation until the lower ranks secretly refine blood qi themselves. Then you can purge demons under the name of defending the Dao, and acquire blood qi. There are lessons to learn from the east, south, west, and north… You still have much to improve.</p>
+<p>“Learn from the Li Family’s control and governance over their people, but don’t imitate their rigid self-restraint. Learn from the Golden Feather Sect’s restrictions on annexation, but not their complacency. You may learn from Chengyun’s manipulation of public sentiment and its shift toward righteousness, as well as their subtle way of deceiving disciples into bitter cultivation while their masters draw in their qi. You can even study Situ Mo’s opportunism…</p>
+<p>“And that blood qi, let your disciples use it less in the future. Only take some when injured. Don’t let others see you covered in murky qi and take you for a demonic cultivator!”</p>
+<p>The Daoist Master rose and walked down a few steps, glancing at Guan Gongxiao’s expression. His tone finally carried a trace of earnest weight, “Your aunt died young and bore me no child. I have no wish to remarry. The future of the Capital Immortal Dao will belong to you and your Guan Family. Were it not for your mother’s dying wish, I’d have long replaced you as young master. You’d better conduct yourself well!”</p>
+<p>Tears welled in Guan Gongxiao’s eyes. He kowtowed three times in deep respect and said, “Uncle, I will remember every word of your guidance. You are the master of the Capital Immortal Dao, whether for a hundred or a thousand years. I will serve faithfully without ever wavering.”</p>
+<p>“Haha!” Ye Hui laughed twice and scolded, “Get out… You sure learn flattery fast.”</p>
+<p>After Guan Gongxiao withdrew, Ye Hui sighed softly. Standing up, he murmured, “A junior like Gongxiao may not be a bad thing. Perilous talents like Li Zhouwei, if they don’t soar, will fall into the abyss. Mediocre ones like Kong Guxi are fated to collapse from being too unbalanced. Those like Zhong Qian and Li Xijun are gifts of heaven, but too rare. Having just one who is willing to learn and listen is enough.”</p>
+<p>————</p>
+<p>Wilderness.</p>
+<p>As dusk deepened, Kong Guxi exited the hall and saw a group of people rushing up the mountain peak. They were led by his elder brother, Kong Guli. His face was filled with alarm and fear as he shouted, “Ninth brother! The Capital Immortal Dao has attacked!”</p>
+<p>The situation was dire, and Kong Guli forgot all formality and called him ‘ninth brother’ outright. Kong Guxi had no time to mind it; his limbs went numb as he asked, “How many have come?!”</p>
+<p>Kong Xiaxiang stood to the side, the pride between his brows long faded, as he said anxiously, “It’s said that Capital Immortal Dao’s young master Guan Gongxiao personally leads the force! More than ten Foundation Establishment Realm cultivators are with him, and the sky is filled with dharma light. Our men caught a glimpse from afar and immediately retreated.</p>
+<p>“I’ve already gone down to issue orders, telling each prefecture’s direct disciples and cultivators to escort as many civilians to safety as possible. Most of them remain loyal…”</p>
+<p>Guan Gongxiao has come!Kong Guxi was shocked and gritted his teeth as he said, “We made evacuation plans years ago, but they’ve arrived so fast, and I doubt we can hold them back. Survival will be difficult…”</p>
+<p>As he spoke, Kong Guxi immediately turned back toward the hall and called out, “Qiuyan! Take everything with you!”</p>
+<p>As soon as he finished speaking, Kong Qiuyan responded and withdrew. But a deafening roar rang across the sky as blazing gray clouds billowed overhead, their white-red light reflecting across the heavens. Rings of cloud surged toward them.</p>
+<p>Boom!</p>
+<p>A torrent of overwhelming Merging Fire poured down, violently shaking the mountain’s formations. The grand hall trembled as Kong Guxi was forced to rise into the air and rush beyond the formation.</p>
+<p>The man in the sky stood upon rings of clouds as he held up the Merging Fire Command in a hand. Gray flames roared behind him. Who else could it be but Guo Hongjian?</p>
+<p>“Kong Family remnants! Come out and die!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1160.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1162.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

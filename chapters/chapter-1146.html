@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1146: Inkling — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1145.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1147.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1146: Inkling</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Lake Xian.</p>
+<p>In truth, Lake Xian was connected to the Eastern Sea. Thus, the waters that were glimmering with silver light beneath the midday sun were in fact seawater. Several crab-like demon soldiers patrolled the surface, far more numerous than in past years. Clearly, the eruption of Profound Peak Gate’s war had even the surrounding demonic creatures tense.</p>
+<p>Just as peace seemed to settle in the area, the great void suddenly tore open. Torrents of purple flame surged out, scorching the pale lake surface into a hollow depression. Vast clouds of steam billowed upward and yellow-white salt crystals formed across the reefs, only to melt away moments later.</p>
+<p>A Daoist Master in a white-gold Daoist robe rode a tiger out from within the purple blaze. He had barely landed on the lake’s surface when the northern sky split once more. Three streaks of yellow radiance shot forth from the void, forcing Li Ximing to hastily veer south.</p>
+<p>When he reached the outlet where Lake Xian met the sea, the three streaks of light had already caught up. A chill ran down his spine, and he muttered inwardly,What kind of spell art is this?!</p>
+<p>Thunder roared within the void, and True Fire surged upward. He could faintly sense the sealing power of the Western Sky Plateau advancing from the west; it had to be Ye Hui approaching. With no time to counter the spell art, Li Ximing turned to flee further.</p>
+<p>Fortunately, I dispelled the True Fire earlier; there’s no trace of it within the void anymore. It’s a pity that my aura is locked by the Pure Profound Radiance of the Three Primordials. Ye Hui likely doesn’t know this… meaning, if I can just evade that Pure Profound Radiance of the Three Primordials, I can escape unscathed!</p>
+<p>The Pure Profound Radiance of the Three Primordials moved with astonishing speed. It was already upon him the moment he finished his thought. Li Ximing hesitated briefly, then slipped into the great void, taking several strides before glimpsing the radiance streaking after him.</p>
+<p>“As expected! It’s merely a spell art. Its ability to traverse the void cannot compare with my Mountain-Charging Sea-Pacing Tiger. It falls short!”</p>
+<p>He rode his tiger, appearing and disappearing in turns, shuttling repeatedly between the void and the mortal world. Though the spell art could also pass through the void and moved faster in bursts, it lacked his flexibility. With repeated crossings, its speed began to falter.</p>
+<p>Uncertain whether Ye Hui could sense him, Li Ximing focused on widening the gap. He sped across the sea for nearly half a quarter-hour without sight of his pursuer, only that persistent spell art chasing behind. At last, he turned and released a burst of purple flame, freezing it in place.</p>
+<p>He was about to unleash his divine ability when he saw the Pure Profound Radiance of the Three Primordials scatter like dust in the wind. A hazy yellow mist lingered, and from within came Ye Hui’s voice, “I was instructed by Purple Smoke Gate to spar with Fellow Daoist, not to harm you. My apologies for any offense. This exchange has yielded much insight; should the chance arise again, let us spar once more.”</p>
+<p>The voice echoed throughout the void. Li Ximing glanced around but saw no sign of Ye Hui. The flame in his palm faded away, and the wounds on his body began to throb faintly once again.</p>
+<p>What madness has seized that old fool! Wounds scorched by True Fire heal with great difficulty. Fortunately, this one isn’t too severe, so it won’t take too many years to recover,thought Li Ximing.</p>
+<p>He stared at the remnant of the spell with a heavy expression, took two silent steps back, then urged his tiger to dive once more into the void toward the mainland. After only a few strides, his face grew taut, shadowed by suspicion and fear.</p>
+<p>No… something’s wrong… A spar? Impossible! Ye Hui’s purpose was never a mere spar. There’s definitely something wrong here!</p>
+<p>Ye Hui had only recently cultivated the Western Sky Plateau technique and likely had never displayed it before others. Li Ximing had never even heard of it. The reason he had fallen into such dire straits must have been tied to that divine ability. If it had only been the Eastern Feather Mountain technique, how could it have driven him into such humiliation?</p>
+<p>The Dao lineage of the Capital Immortal Dao had long been cut off from the world and was shrouded in mystery. What could a technique like the Western Sky Plateau, one no one had ever heard of, possibly represent? Could Ye Hui truly be unaware of that?</p>
+<p>The Western Sky Plateau was so domineering that, when used as a surprise, it could make even a Purple Mansion Realm cultivator suffer a grave loss and create an enormous advantage. How could such a technique be used merely for a spar? Now that it was revealed, it would never again catch anyone unawares. For Ye Hui to go to such lengths, it could never be as simple as a mere spar!</p>
+<p>Someone is trying to drive me toward the Eastern Sea! Someone wants to harm my family…But the thought had barely surfaced in his mind when Li Ximing froze,No… if they intended to harm my family, they’d target me first. Whether I realize the scheme or not, I would surely return home, and the road back might already be laid with traps or ambushes…</p>
+<p>It’s even better if they expect me to notice the plot. In that case, I’ll rush home in panic and might overlook the hidden snares. No, it’s safer to stay outside. As long as I’m not trapped by a formation, my family should remain largely unharmed. The rest… can be sacrificed if need be.</p>
+<p>Li Ximing suddenly pulled the Stable Tiger around. Pouring every ounce of his divine ability mana into the spirit artifact, he pushed its concealment and escape abilities to the utmost, diving headlong into the great void to flee toward the depths of the Eastern Sea. Yet in the very next instant, suspicion surged again to its peak, and he halted once again.</p>
+<p>No, that’s wrong… I’m not some ordinary Purple Mansion Realm cultivator. If there are formations along the way, I can detect them with the Immortal Mirror. I could return safely and they wouldn’t be able to ambush me.</p>
+<p>Before the thought even finished forming, his body reacted. He forced the Stable Tiger to halt, then wheeled it around once more, flying back west toward the inland seas. His mana circulated so violently that the Stable Tiger’s eyes blazed with intense white light. The mana patterns of the Stable Tiger Dao spread swiftly across its stone body, leaving behind long streaks of pale brilliance.</p>
+<p>Li Ximing had only half-finished his incantation after turning around when he suddenly stopped again. The light drained from the Stable Tiger beneath him as it came to a complete standstill, standing motionless and alone within the vast void.</p>
+<p>The void stretched dark and endless, and from afar, a lone figure approached in measured strides. The man walked as though he was strolling through a courtyard, yet his pace within the void was faster than Ye Hui’s. Everywhere he passed shone with light, as if he were carrying a moving radiance. The instant Li Ximing stopped, that figure vanished from afar and appeared directly before him.</p>
+<p>When he felt the overwhelming aura saturating the void, Li Ximing felt a chill like ice seep into his heart, making him tremble uncontrollably as he thought,Whether west or east… it no longer matters. He came to take it himself… how fitting, to come in person…</p>
+<p>He lifted his head to look. The man wore a feathered robe of pale yellow and white, each plume etched with fine circular patterns that almost resembled scales. Beneath it gleamed a bright white inner robe, and on his back hung a sword.</p>
+<p>His exposed fingers were fair and smooth, and in them he held a twelve-sided glaze lantern with a bronze base. Soft yellow light flowed from it, illuminating the surroundings with gentle glow.</p>
+<p>The Daoist Master’s features were kind and composed, with a high nose and broad cheeks broad, giving him a scholarly air. Yet his willow-leaf eyes carried a faint, chilling majesty as he lifted his brows and looked over serenely.</p>
+<p>Li Ximing felt that chill surge from his heart straight into his mind. The pain racking his dharma body grew sharper, and he forced himself to keep his expression unchanged.</p>
+<p>“Late stage Purple Mansion Realm cultivator, Changxiao!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1145.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1147.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

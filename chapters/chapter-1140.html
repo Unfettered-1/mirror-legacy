@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1140: Shaohui (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1139.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1141.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1140: Shaohui (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Dangjiang readily agreed, patting his sleeve only to find it empty. The hollowness of his purse made his heart flutter with unease, yet he refused to show it as he smiled. “The heavens have strict rules. I cannot simply bring things with me when I visit this residence. But since nothing here is ordinary, wait a moment.”</p>
+<p>He strode quickly to the front courtyard and pushed open the door. Two graceful and beautiful maids stood outside, their robes fluttering like clouds, though unadorned by any patterns. One held a jade-green pipa[1] trimmed with white, while the other carried a flower basket piled with jade-like herbs.</p>
+<p>Dangjiang glanced at them and asked, “What kind of spirit herb is that?”</p>
+<p>One of the maids replied, “Reporting to my lord, today the Dipper points to the virtue of recompense, the Yin energy pervades the earth, and the celestial timekeepers convey Heaven’s mandate. The Supreme Yang gathers the Steed that Sweeps the Profound Blossom, while the Supreme Yin trims the Golden Branch of Laurel. The cosmic pivots remain constant, and the Twelve Essences draw directly from the heavens.”</p>
+<p>“The Golden Branch of Laurel.” Dangjiang nodded. “May I take a branch?”</p>
+<p>The maid immediately plucked a branch of white laurel. Tiny white blossoms dotted its surface, and the cut of its stem revealed golden rings swirling in spirals. The branch emanated a faint chill.</p>
+<p>Dangjiang hadn’t been sure she would oblige, but he felt relieved when she complied. When he turned back, he found Chi Buzi murmuring thoughtfully, “The Supreme Yang gathers the Steed that Sweeps the Profound Blossom, the Supreme Yin trims the Golden Branch of Laurel…”</p>
+<p>Dangjiang lifted his head proudly. “Daoist Master Chi, keep it well! A branch of heavenly laurel descending to the lower realm is no small thing!”</p>
+<p>Chi Buzi sincerely offered his thanks, taking the spiritual item and tucking it into his sleeve. With a slight nod, he replied, “Then I shall take my leave. Each year, I will draw a formation to inquire of you. Send word if you have discerned the path to my Golden Core.”</p>
+<p>Dangjiang seemed reluctant to part and asked, “How about once every three months? That way I can make a few more trips… at least I’ll have something to do. You can tell me about the affairs of the lower realm when you return.”</p>
+<p>Chi Buzi was still unaccustomed to the term ‘lower realm’, and frowned as he said, “Do your job properly. Don’t mess things up, or I’ll have nowhere to claim my merit later.”</p>
+<p>Dangjiang could only nod, but suddenly remembered something and said anxiously, “I just recalled something. There’s an Immortal Official in the heavens, surnamed Li, who has reincarnated to cultivate. If you ever encounter him, and if he still remembers his time in the heavens, please ask him when he plans to return… I can’t stand this job another day!”</p>
+<p>Chi Buzi frowned and made a note of it, then asked, “What kind of work do you even do?”</p>
+<p>“Cataloguing spell arts and revising the Dao lineages.” Dangjiang spoke with a mournful expression. Chi Buzi’s expression turned odd, his jaw tightening as he glared at him in barely contained fury.</p>
+<p>Chi Buzi had once devoted himself tirelessly to the Jiutian Pavilion, refusing to leave even for rest. Now, that same pavilion served as the Immortal Lord’s grand archive within the grotto heavens. It was a place countless Purple Mansion Realm cultivators would break their heads trying to enter!</p>
+<p>As he took in Dangjiang’s pitiful expression, he cursed, “Useless fool! Blessed and you don’t even know it…”</p>
+<p>Chi Buzi stepped into the pool with a sharp flick of his sleeve and his figure dissolved like water. Dangjiang miserably pushed open the door and one of the maids stepped forward to say respectfully, “Reporting to the Immortal Official, that branch of the Golden Laurel has already been registered under your name. If the remaining branches are not needed, the basket will be sent to the authorities for record.”</p>
+<p>“What?” Dangjiang froze as though he had been struck by thunder. His heart dropped instantly, and regret flooded him as he thought,Damn it… this thing isn’t free?</p>
+<p>He had shown off so boldly, but now regret gnawed at his chest. Having only recently attained the rank of Immortal Official, he had spent all his hard-earned merit to summon a heavenly laborer. He had nothing left in reserve.</p>
+<p>A chill spread through his heart as he asked, “How is this… accounted for? Why was it sent here in the first place…”</p>
+<p>The maid replied, “The outputs of all domains and prefectures must be submitted to the celestial palaces. This rule was set by Immortal Official Liu some time ago. They are routinely offered in the courtyard for ready use.”</p>
+<p>Ah… damn that Chi dog, he’s ruined me!</p>
+<p>Dangjiang’s face turned pale with pain as he quickly asked, “Can this be charged under Chi Buzi’s name instead? He’s the one who took it. It has nothing to do with me!”</p>
+<p>The maid lowered her gaze and said softly, “It was gifted by you, my lord. Heaven and earth bear witness.”</p>
+<p>————</p>
+<p>The Cape.[2]</p>
+<p>The depths of the sea were shrouded in darkness, with icy undercurrents winding through the reefs. The spiritual energy here was nearly nonexistent; even Purple Mansion Realm cultivators could no longer traverse through the void upon nearing this place and would be forced to return to the manifest world to fly.</p>
+<p>The terrain rose sharply at the farthest depths of the cape. Seawater cascaded endlessly downward, while the mist drifted upward. It lay close to the Outer Heavens, yet was cut off from the great void. There was no place in all heaven and earth more hidden than this.</p>
+<p>Faintly glowing white formation lines shimmered softly within the dim cavern. The light before Chi Buzi’s eyes gradually faded away. He examined his surroundings and confirmed it was indeed the cave dwelling he had condensed using Heavy Murk’s ability to control earth.</p>
+<p>He exhaled softly, adjusted his sleeve, and turned his palm over to reveal a snow-white branch of laurel radiating a faint, hazy glow. The cross-section of the branch gleamed with golden veins; it was clearly a treasure of the highest grade.</p>
+<p>His gaze lingered on the laurel branch for a long while. As the cave filled with the frigid aura of Supreme Yin, he retrieved a jade box from his storage pouch and placed the branch inside.</p>
+<p>It truly is a treasure of the Supreme Yin lineage… so spirit items from that place can indeed be brought out… but why can’t I open my storage pouch there?</p>
+<p>He held the jade box as his eyes dropped and he contemplated in silence. After a moment, his thoughts settled,This single spirit item alone rivals any demonic creature of today’s age. In that case… the Heavenly Glyph Bright Profound Sacrificial Method truly is a means to communicate with the grotto heavens. But… must the offering necessarily be a demonic creature?</p>
+<p>Chi Buzi’s eyes gleamed with a peculiar light as understanding dawned upon him.</p>
+<p>The Purple Mansion Realm demonic creatures of the Eastern Sea are almost all tied in some way to the Dragon Clan, and are impossible to slay. But spirit beasts too can be considered ‘demonic’… Those few Maha in the north delight in keeping such beasts. Not only do many of those beasts become Merciful Ones, those ancient Merciful Ones liked fusing with those spirit beasts, forming destinies akin to the Purple Mansion Realm. Are they not far more plentiful than true demonic creatures?</p>
+<p>The more he pondered, the brighter his eyes grew,Excellent… though the Merciful Ones are difficult to kill, they are far more numerous, and easier to deal with than those of the Purple Mansion Realm. They only have a Maha behind them, so perhaps the merit might count as a full share… or even half a share would do…</p>
+<p>He could think of no better sacrifice than the Merciful Ones, and realization dawned upon him,It seems that exalted one despises the northern Buddhist as well.</p>
+<p>He hesitated briefly, then sat cross-legged within the cave as he began to examine the Golden Branch of Laurel within the jade box. This spirit item surpassed even the Supreme Yin Moonlight in grade; it was an exceedingly rare treasure. Merely placing it before him was enough to stir waves of Supreme Yin Qi through the chamber.</p>
+<p>The young man gazed quietly at the cluster of white blossoms, eyes glinting with boundless ambition. Resting his chin upon one hand, he murmured softly, his tone reverent and rhythmic like a chant, “All Fruition Attainment revere the Supreme Yin. The Supreme Yang is the first to manifest by day, and all light follows its course… The profound radiance of the Supreme Yin descends upon the Bingzi water… guiding pristine and uniting the two principles…”</p>
+<p>1. Pipa (琵琶) is a traditional Chinese four-stringed lute, played upright with the fingers, known for its bright, expressive sound. ☜</p>
+<p>2. Should be referring to Qunyi Cape. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1139.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1141.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

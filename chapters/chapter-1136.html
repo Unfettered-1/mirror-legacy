@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1136: Duties (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1135.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1137.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1136: Duties (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chi Buzi burst out from the void, tearing through the air in fluttering azure robes. One glance was enough to enrage him, and his voice thundered like rolling clouds, “You vile creature! I used my divine abilities to capture you, yet you still dare to eat humans! Seeking death, are you? If I don’t capture you today, all my cultivation in divine abilities will have been in vain!”</p>
+<p>The spirit sparrow sped through the air. Her feathers bristled in fury and she ground her teeth as anger filled her chest,You… you lackey of Pristine Water, you utterly shameless zealot! Azure Pond Sect kills more people every year than I have feathers on my body, yet you dare speak righteously about eating humans!</p>
+<p>She had cultivated in the outer sea for many years, and was long accustomed to a graceful immortal’s bearing. She rarely revealed her true form, and she was treated as a Purple Mansion Realm immortal cultivator wherever she went. Ever since attaining enlightenment, she had rarely partaken of blood food. But now that she had been driven into a corner, she had been forced to act out of desperation. Chi Buzi’s insults cut deep, yet she had no chance to explain. She didn’t turn back as she sped forward.</p>
+<p>Chi Buzi continued to curse as he flew after her. Man and beast darted through the great void, vanishing and reappearing as they went. The chase carried them all the way to the far eastern reaches of the Eastern Sea. When the spirit sparrow saw the edge of the sea ahead, she turned sharply and slipped through the void, heading back the way she came.</p>
+<p>Chi Buzi pursued at a steady pace, deliberately herding her eastward and never allowing her to turn back. Shaking his head, he said, “Fellow Daoist, that won’t do.”</p>
+<p>He immediately drew a cauldron from his sleeve and tossed it into the air. It expanded into a massive green cauldron the size of a small house. Chanting an incantation, Chi Buzi flicked his sleeve toward it, and a clear ringing sound echoed as he intoned, “Shift the Palace of Celestial Signs, let there be rain.”</p>
+<p>The spirit artifact was itself an extension of Pristine Water. As Chi Buzi activated his divine ability, the technique Heavy Murk transformed into rolling gray mists that swept across the sky and sea, shrouding everything in gloom.</p>
+<p>The Purple Mansion Realm spirit sparrow suddenly saw the world around her shift. Rain poured down in sheets, turning the sea and sky into a gray, seamless expanse. Fear gripped her heart, and she immediately fled into the great void.</p>
+<p>But Chi Buzi followed close behind. After flying for some distance, the sparrow found him on her tail once more, forcing her to return to the mortal realm. Blinking rapidly, she realized that the void around her was unnaturally uniform. She could no longer tell where she was.</p>
+<p>What kind of spirit artifact is this?!</p>
+<p>She landed at random and reentered the mortal realm, only to find the same endless gray rain stretching in all directions. Mist swirled beneath her feet; she had no idea where she was or which way she had flown.</p>
+<p>Gritting her teeth, she dove into the fog below. An instant later, she burst out of the clouds above, straight into Chi Buzi, who stood with his hands behind his back, watching her coldly.</p>
+<p>This spirit artifact is no ordinary tool… it’s an ancient spirit treasure!</p>
+<p>Chi Buzi didn’t give her a chance to react. The Pristine Water he had been gathering in his hands cascaded down in a torrent. Without a Body Divine Ability to shield herself and already wounded, she was struck head-on. Feathers and bones alike seemed to melt under the force as a shrill cry was torn from her throat.</p>
+<p>That divine ability truly shook her very life force. Manifesting her body again elsewhere, the spirit sparrow flew blindly on, despair in her heart as she cried within,Eighty or ninety percent of Azure Pond Sect’s spirit artifacts must have fallen into this bastard’s hands… A late-stage Purple Mansion Realm cultivator, carrying three spirit artifacts and a formation besides, still stoops to ambush and deceive a junior like me…</p>
+<p>She flew for what felt like an eternity, only to be caught again. The divine ability struck her again, dulling her speed even further. The formation Chi Buzi had unleashed was incredibly powerful, and the already wounded spirit sparrow now faced a spirit artifact that seemed to belong to an ancient age. Despair clutched at her heart.</p>
+<p>As she flew, she kept a close eye on her surroundings. Occasionally, she glimpsed small islands through the mist, which at least meant the spell did not trap her in a loop. It was not as overbearing as Ning Tiaoxiao’s spirit artifact from years ago…</p>
+<p>But the Eastern Sea is vast and boundless… With such a mystical formation, combined with Chi Buzi’s deliberate encirclement, escape has become near impossible! How can I survive trapped beneath this spirit artifact’s rain curtain, letting the Pristine Water divine ability slice me apart bit by bit?</p>
+<p>She grew increasingly distressed, while Chi Buzi kept his attention on her. This spirit sparrow was, after all, a rogue cultivator who had attained the Dao through the Lesser Yin lineage. Though there were no tales of her great fortunes, one could never afford to underestimate a Purple Mansion Realm being.</p>
+<p>He slowed slightly, and the spirit sparrow suddenly turned around. Her Lesser Yin divine ability surged at full force, white threads of light forming before her. Chi Buzi did not recognize the exact spell, but he had long since learned her background and could make a fair guess,The Lesser Yin divine ability Sunken Fragrance, an ability born from the mingling of nascent splendor and growing chill. It governs cold yet carries fire, rules over yin yet holds dryness. Since Sunken Fragrance is a Spell Divine Ability, it must combine cold and arid natures, manifesting as flame.</p>
+<p>So he moved calmly, fingers forming a tight seal. Sure enough, the white threads ignited into pale yin flames, scattering the surrounding rain into mist. Even the gray haze beneath them began to fade. Chi Buzi could not allow her to continue and flicked his finger.</p>
+<p>“Clear Dusk Rain!”</p>
+<p>Torrents of rain poured down, momentarily suppressing the flames. His opponent fought back with all her strength, making the fire surge and shrink erratically within the downpour. Regret stirred in Chi Buzi’s heart as he sighed inwardly, The Lesser Yin Monarch Fire of Cold and Dryness should be suppressed by the Pristine Water’s Purifying Dew; it’s a perfect counter. If only I possessed that divine ability, capturing this creature would be effortless. Unfortunately, I have yet to obtain the Purifying Dew.</p>
+<p>The Azure Pond Sect’s inheritance was incomplete. The Purifying Dew technique, rooted in the Dew Tribulation Falling Petal Art, had lost its vital method of gathering qi. The Chi Family had collected various versions of the art for many years, yet all of them contained fundamental flaws in qi gathering. Thus, even as a direct descendant of the Chi Family, Chi Buzi could not successfully cultivate it.</p>
+<p>Though Pristine Water still reigned supreme, the qi gathering for Purifying Dew had always failed. Chi Buzi had not dared to question it within the Azure Pond Sect, but now, out in the Eastern Sea, he understood clearly. Who else but the Pristine Water Origin Talisman True Monarch himself could have willed it so?</p>
+<p>As long as the True Monarch’s will was behind it, every qi gathering method would inevitably fail. The specific spiritual energy required for the Chi Family’s technique had never been found in any ruin. Chi Rui had tried to harmonize it with the Converging Water method but failed repeatedly, while Chi Wei had attempted substitution using Horn Wood to complement Spiritual Sustenance, but it was to no avail.</p>
+<p>While he contemplated, the spirit sparrow suddenly darted forward, turning defense into offense. Her pale yellow beak snapped open, revealing rows of fine, razor-sharp teeth, and a surge of deep white light burst forth.</p>
+<p>Chi Buzi finally grew solemn. The spell in his hands shifted form, and the massive cauldron emerged from the great void to stand before him. His pupils deepened from pale azure to dark blue.</p>
+<p>“Spring’s Echo!”</p>
+<p>It was a powerful divine ability that served as both a Life and Body Divine Ability. His body instantly transformed into flowing spring water that merged with the great cauldron. Soft sounds of bubbling springs began to rise from the cauldron.</p>
+<p>After fifteen minutes, the spirit sparrow’s desperate deep-white light finally overturned the cauldron with a thunderous clang. The spring water burst forth from the vessel, and a voice echoed faintly from within the bluish-gray liquid, “The spring flows endlessly, the murkiness lies within the water, neither condensing nor ceasing, neither parching nor ending. Though the monarch flame may rage, how can it harm me?”</p>
+<p>Thus the spring water pressed down on the deep white light, while the cauldron descended once more to suppress it. The light gradually dimmed, and the surrounding gray murk thickened again, sealing everything within.</p>
+<p>That single divine ability alone revealed a depth of cultivation far beyond what this demonic creature could ever reach. Despair surged within her chest. She had only just broken through, and no matter how she struggled, before Chi Buzi, whose cultivation, divine abilities, formations, and mastery of spell arts far surpassed her own, she was utterly powerless.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1135.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1137.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

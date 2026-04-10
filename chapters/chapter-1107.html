@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1107: The Sword Gates Retrieval (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1106.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1108.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1107: The Sword Gates Retrieval (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei had been restrained earlier by the Pit Metal Chain Rings, but he had fortunately, and unexpectedly, subdued them with his Immortal Foundation, or he would have faced far more trouble.</p>
+<p>He said, “This item may not be highly lethal, but its restraining power is remarkable. Against cultivators with powerful Dharma Bodies, it is a tier above most tools, perhaps enough for one or two people to trap them.”</p>
+<p>Li Ximing nodded. Such tools were of little use to him, but they were treasures to Foundation Establishment Realm cultivators. He replied, “This artifact is primarily for restraint and works well, but our family has no Pit Water Foundation Establishment Realm cultivator. The closest we have is Miaoshui, a single cultivator aligned with the Water Virtues.</p>
+<p>“She contributed greatly in this battle, but many were injured. The Pit Metal Chain Rings are precious, and casually granting them is not a wise way to manage the family. Let us store them for now and only bring them out in wartime.”</p>
+<p>Li Zhouwei put away the Pit Metal Chain Rings, then picked up the pitch-black Capital Dao Bell. Sweeping it with his spiritual sense, he said in mild surprise, “It is Pure Essence.”</p>
+<p>Pure Essence was the most common Dao lineage among rogue cultivators, especially in Jiangnan. Eight out of ten rogue cultivators belonged to the Minor Pure Spiritual Qi Dao lineage. Most of them never advanced beyond the Embryonic Breathing Realm, and a single dharma artifact might be passed down for three generations. As a result, Pure Essence Embryonic Breathing Realm artifacts were extremely common.</p>
+<p>Pure Essence cultivators were plentiful at the lower levels, but far fewer reached Foundation Establishment Realm. Still, they comprised a significant portion of cultivators in that realm. As for Pure Essence cultivators who reached the Purple Mansion Realm, Li Ximing had never even heard of one. Foundation Establishment Realm artifacts of that lineage were rare too, and those he had seen were crude and unimpressive. This was the first time he had encountered one of such fine quality.</p>
+<p>He turned the black bell over and examined it closely. Its material, refining techniques, and formation patterns all reflected a contemporary style.</p>
+<p>Li Ximing frowned. “How strange. Guan Gongxiao, the dignified young master of the Capital Immortal Dao, personally refines a dharma artifact for nurturing and cultivation, yet instead of using Capital Guard, he chose Pure Essence…”</p>
+<p>Exchanging a glance with Li Zhouwei, he said, “It seems the Capital Guard and Pure Essence share some connection. Interesting.”</p>
+<p>The Pure Essence Dao had no pronounced strengths or weaknesses, yet the Capital Dao Bell was of even higher grade than the Pit Metal Chain Rings, nearly rivaling the Yang Radiant Red Sparrow Banner[1]. Li Ximing allowed Li Zhouwei to keep and use it himself, then turned his attention to the small mirror.</p>
+<p>The mirror was no larger than a palm and cast in an antique bronze hue, with two concentric rings etched with galloping beasts. Though its patterns were the most ornate among the three items, its quality was the lowest, and even its refining technique was unimpressive.</p>
+<p>Li Ximing glanced at it and said, “This dharma artifact is the Copper-Wing Bright White Mirror. Its frame is forged from Virtue-Bestowed Copper, while the mirror surface is crafted from White Crane Glazestone, a material of the True Essence Dao. The artifact is not very old and was likely prepared specifically for our Heavenly Light.”</p>
+<p>Li Zhouwei was not particularly interested in the item and planned to bestow it upon Ding Weizeng. He slipped it into his sleeve for the moment.</p>
+<p>At last, Li Ximing spoke, “That old fox Ye Hui… who knows what tricks he’s playing. I had better quickly resolve the matters in Shanji Prefecture, and as for Mount Xiaoshi… I should pay a visit to Chengyun Gate.”</p>
+<p>He mounted Heavenly Light and vanished into the great void, leaving Li Zhouwei in the hall, pacing in thought. Li Wen entered from below, his face still a little pale.</p>
+<p>He stepped into the hall and knelt, saying, “Master, the old elder sent someone to inquire about An Siwei. He said that Elder An, our guest cultivator, has returned to the lake but has not spoken a word. He cannot be left in such disheartenment.”</p>
+<p>An Siwei had been captured by the Golden Tang Gate, and that fellow Situ Mo had holed up. Unless someone from the Purple Mansion Realm went personally, there was little Li Zhouwei could do. He could only send back words of concern from their true personages and have someone deliver the message first.</p>
+<p>Folding his hands behind his back, he rose and asked Li Wen, who was still in the hall, “The old elder has been asking every single day. Quite frequent. Has he been sending messages through the Jade Court?”</p>
+<p>Li Wen, himself a Foundation Establishment Realm cultivator serving in the Jade Court, understood the situation well and replied, “There is no record in the Jade Court, so the old elder must have sent a trusted aide, delivering the message to the Eastern Shore first.”</p>
+<p>Li Zhouwei’s suspicions were confirmed. The Eastern Shore was currently being overseen by Li Jiangxia, the son of Madam An, and it was clearly this young man’s people who were running back and forth between the two sides.</p>
+<p>He merely tapped his brush and said, “He is certainly anxious.”</p>
+<p>Li Wen lowered his head and pretended not to have heard. Li Zhouwei said, “Send a reply through the Jade Court and explain it clearly to the old elder. The Golden Tang Gate would not dare harm the family elder, nor would the Golden Feather Sect. If he were to fall into the hands of the Capital Immortal Dao a bit earlier, he might suffer some hardship, but his life would not be in danger.</p>
+<p>“What is monumental for the Foundation Establishment Realm is, in the eyes of the Purple Mansion Realm cultivators, merely a word or a token. He can rest assured.”</p>
+<p>He dismissed Li Wen with those words, then finally began tending to his injuries.</p>
+<p>Li Zhouwei had suffered primarily head injuries in this battle. Two fractures ran through his frontal bone. Although the flesh and skin on the outside had healed, injuries involving bone and sinew were far harder to treat. The rest were wounds inflicted by water bindings when he had taken Guan Kan’s life, and those were healing quickly with medicine.</p>
+<p>————</p>
+<p>Li Zhouwei cultivated in the hall for a little over ten days, occasionally pausing to send replies, when Kong Guxi and the others unexpectedly returned.</p>
+<p>Sumian had kept his word, and Xuanmiao Temple had indeed put forth genuine effort. The injuries of the Profound Peak Gate cultivators had greatly improved; the lightly wounded were nearly healed, and even the severely injured would recover within half a year. Only Kong Guxi’s expression was sour.</p>
+<p>Li Zhouwei summoned Li Chenghui and questioned him closely, learning that Xuanmiao Temple had built a courtyard on the mountain where Changxi had passed away and even named it. As it faced Lake Xian directly, they called it Gehu[2] Peak, symbolizing tribulations like a vast lake, now separated from the temple by this peak.</p>
+<p>Whether this development was good or bad was hard to say. The Kong Family was in dire straits and still had to seek Xuanmiao Temple’s aid for healing. Kong Guxi had naturally worn a fawning expression when he went, but he had fallen silent after returning to the Wilderness.</p>
+<p>After Li Chenghui finished reporting, Li Zhouwei replied, “It’s fine if he feels unsettled, perhaps it’s his way of showing loyalty. In any case, send someone to placate them. We’ll still need Xuanmiao Temple’s healing in the future, so don’t let Profound Peak Gate’s people become too resistant.”</p>
+<p>After all, Xuanmiao Temple was of the Treasure Earth Dao lineage, which was highly skilled in healing arts. With such a resource to exploit, neither Li Ximing nor Li Zhouwei would let the opportunity slip easily.</p>
+<p>Li Chenghui answered and withdrew. Light and shadow shifted in the hall, weaving together as Li Zhouwei mended a few more patches of flesh. At last, Li Ximing tore open the great void and descended.</p>
+<p>He held a horned beast tightly bound by Heavenly Light. It was no larger than a calf, yet its aura was fierce and menacing. Though unable to move, its eyes still glared furiously.</p>
+<p>Li Ximing casually tossed the beast to the ground and smiled. “It’s truly difficult to find a demon general without backing these days. I roamed along the rivers, all the way to Wu State, and questioned the local families. This demonic creature happened to be devouring humans when it crossed paths with me.”</p>
+<p>He then drew a jade box from his sleeve and opened it casually, revealing a spirit herb as lustrous as fine jade. Striking the horned beast unconscious with practiced ease, Li Ximing continued, “Purple Smoke Gate sent the Burning Flame Pill Manual, and the pill techniques within will benefit me greatly. There’s also a Purple Mansion Realm pill recipe called True Profound Heart-Cleansing Pill, said to be capable of purging karmic tribulations.</p>
+<p>“This beast belongs to the Pure Essence Dao, making it a perfect match. Here is the Jade Ganoderma Azure Orchid gifted by the Shen Family; one furnace yields six pills, so it’ll be enough for all of you.”</p>
+<p>1. Previously known as Yang Li Red Sparrow Banner. ☜</p>
+<p>2. 隔 (gé) means to separate or stand across and 湖 (hú) means lake. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1106.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1108.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

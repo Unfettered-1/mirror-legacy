@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1153: Cursed Fire — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1152.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1154.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1153: Cursed Fire</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing cultivated within the earth vein for some time until he managed to wear down nearly half of the black flame within the Juque acupoint. The brilliant Bright Yang purple flame had gained the upper hand once again, yet he was forced to stop.</p>
+<p>As he gradually expelled the flame from the Juque acupoint, the invisible and deep black flames surrounding him had grown increasingly intense. The stone walls nearby had already been melted layer after layer, and the heat was spreading into the earth vein. If he continued, the vein itself would transform into a fire vein, turning the island into a molten volcano.</p>
+<p>No matter how stable this place is, I can’t let a Purple Mansion Realm flame burn unchecked… It would not only draw cultivators to investigate but might even boil the tens of thousands of people living on this island alive.</p>
+<p>Li Ximing withdrew his hand. Fortunately, his cultivation was no longer what it had once been. Having just brushed past death, his understanding of Bright Yang and the great void had deepened considerably.</p>
+<p>He immediately drew out the Mountain-Charging Sea-Pacing Tiger and activated his divine ability, causing the entire earth vein to rumble and shift several centimeters to the left. Then, with a flick of his finger, a clear sound rang out as a gush of cold water spurted from the wall.</p>
+<p>Hiss!</p>
+<p>He linked the earth vein to a nearby water vein, and groundwater immediately poured in. Steam billowed around him as the water vein vaporized, forcing the Baleful Qi within the earth vein to sink and dissipate. The dense flames still filled the area, but now it was turning all incoming water into vapor.</p>
+<p>The earth’s water is insignificant before Purple Mansion Realm spell arts, but it flows endlessly. It can prevent the accumulation of Fire Baleful Qi, keep it from affecting the surface, and stop the island from showing abnormal signs that might draw attention.</p>
+<p>As expected, the vaporized water from the veins surged upward through the gaps in the earth and escaped to the surface. The remaining groundwater tried to fill the space but couldn’t approach, leaving only a region of dark flames and endlessly rising steam.</p>
+<p>Now, what reaches the surface is no longer Fire Baleful Qi. The vapor will condense into water and form a large spirit spring. Such geomantic fluctuations happen often, leaving almost no trace and causing no harm to those on the island.</p>
+<p>A feat nearly impossible during the Foundation Establishment Realm was now effortless for Li Ximing. After using the Mountain-Charging Sea-Pacing Tiger to reinforce the earth vein slightly, he sat cross-legged once more and calculated the passage of time. Several months had already gone by.</p>
+<p>The jade pendant at home has not been crushed, so nothing too serious must have happened. Besides, I’m in the outer-sea and not gravely injured. I still have much of my strength. The family should be able to hold out, and even if Changxiao bears me ill will, he likely won’t trouble them.</p>
+<p>Secondly… since this matter was handled through Purple Smoke Gate, it would have been fine if I had simply died outright. Had Changxiao killed me, Tinglan and Sumian could have pretended nothing had happened. But since I survived, their reputations would suffer if they ignored it. They’ll have to protect my family, at least to some extent.</p>
+<p>Only Zhouwei is in danger now. Thankfully, he has long been in seclusion, cultivating within the lake. I wonder how he is faring. The Mulberry Concord Ninefold Profound Method… is becoming more and more troublesome to deal with.</p>
+<p>Li Ximing had been afflicted by this art for a long time now. Though much of the flame within the Juque acupoint had been expelled, the surface of his body now glimmered like flowing glass beneath the relentless heat, growing ever more fragile.</p>
+<p>The Valley Wind Leading Fire technique is not so wondrous as to seize another’s flame for one’s own use. It can only control one’s own fire… or fire without a master. Otherwise, I wouldn’t have to suffer like this…</p>
+<p>Though still troubled, the relief of having escaped from Changxiao’s grasp brought a faint trace of amusement amid his bitterness. He thought,If I, Li Ximing, could truly seize another’s fire for my own, they might well believe I was the reincarnation of some Fire Virtue True Monarch.</p>
+<p>It was not only the bottleneck in expelling the internal flame that troubled him. The Mulberry Concord Ninefold Profound Method was also producing increasingly severe side effects in his dharma body. His forehead throbbed with pain as twin flames, one internal, one external, burned fiercely. Even his mana and divine ability now carried an icy chill that refused to dissipate. Suppressing the fire was his only option, but the sharp pain in his forehead and the spreading coldness of his mana were not so easily dispelled.</p>
+<p>At least the Heaven-Venerating Gate managed to drive most of the fire out from the Juque acupoint. That’s something to be grateful for.</p>
+<p>Now that his Juque acupoint had stabilized, his dharma body would not collapse. Though the flames burning on his skin were troublesome, Li Ximing could still move and cast spells even under the pressure of the Mulberry Concord Ninefold Profound Method.</p>
+<p>But it’s unwise to wander around in this condition… If I return, I might run into Changxiao again.</p>
+<p>When he had escaped amid that torrential storm, he suspected the Dragon Clan had acted, perhaps by chance or through some pawn, to shield him from Changxiao’s pursuit.Xiao Chuting has been stationed in the Northern Sea day after day, it couldn’t have been him. The others have no reason to intervene. Senior Tulong is in the Southern Sea… so it must have been a dragon. Unfortunately, that means I’ve used up Zhouwei’s favor with the Dragon Clan. I truly owe him.</p>
+<p>Li Ximing knew full well how valuable that favor was for Zhouwei’s path to the Purple Mansion Realm. Having reached that stage himself, he understood even more clearly the prestige and influence of the Dragon Clan. All he could do was feel silent guilt and sigh.</p>
+<p>He tried hard to divert his attention, remaining seated for several days while repairing the Juque acupoint. Yet the flames on his body grew fiercer by the day; his dharma body cracked in several places; and anxiety finally filled his heart.</p>
+<p>What a vicious spell art! The Earth-View Bloodstone is still in my family’s treasury… but even if I had it here, it would be no more than a drop in the ocean against a Purple Mansion Realm injury.</p>
+<p>To preserve his dharma body, he had to suppress the flames on his surface. But doing so meant retreating from the Juque acupoint, wasting the months of suppression he had just achieved. If he did not suppress the flames, his body would continue to burn and weaken to the point of collapse all the same.</p>
+<p>Li Ximing could resort to spirit items to sustain himself, but the Mulberry Concord Ninefold Profound Method was not the same as Ye Hui’s True Fire. Such Foundation Establishment Realm remedies could only treat the symptoms, not the cause. It merely prolonged his life for a few more years while squandering his accumulated resources.</p>
+<p>If I don’t want to sit here waiting for death, I’ll have to take the risk and go out to search… but in this state, surrounded by blazing fire, I’m like a beacon in both the great void and the mortal world. Who wouldn’t see me?</p>
+<p>After long contemplation, he silently lifted his head. His gaze pierced through layers of reefs, landing upon the tens of thousands of wild tribesmen inhabiting the island, barbarians even more savage than those of Mount Yue.</p>
+<p>Since ascending to the Purple Mansion Realm, Li Ximing had comprehended many divine mysteries. Like all who reached this realm before him, he understood how to absorb blood qi, how to reshape the body, and how to let Shenyang occupy the dharma body; it came as naturally as eating or drinking. All the more so because he was an alchemist.</p>
+<p>With but a thought, and through his mastery of alchemy, he could easily refine a suitable pill to resolve his condition. With such a pill to suppress the flames, aided by his divine ability, he could expel the fire without taking any risk or paying any price.</p>
+<p>Li Ximing stared in silence for a brief moment, his ears twitching slightly before he finally closed his eyes. He drew a small stone box from his sleeve, flicked it open, and revealed the clear, gleaming spirit water within. He took two small sips, then sealed himself off once more, entering seclusion to suppress the flames.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1152.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1154.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

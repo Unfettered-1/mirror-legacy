@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1189: Good News From The Purple Smoke Gate — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1188.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1190.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1189: Good News From The Purple Smoke Gate</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Purple mist swirled as the ancient longboat hovered in the air, casting a purple reflection over the lake. A girl in a pink dress gazed into the distance. Her face was round, and her ears small and delicate. She was Li Queyi, the second young lady of the Jiangque generation.</p>
+<p>Li Queyi stood on the boat as the younger girls clustered around her. It was clear they had not gained entry into the sect. Their spirits were low, and they kept their heads down without daring to speak.</p>
+<p>Li Queyi grew even more uneasy as she felt the longboat glide beneath her feet.</p>
+<p>They were returning from the Purple Smoke Blessed Land, escorted personally by a Purple Smoke Gate spirit boat, which was quite prestigious. But the spirit boat’s landing place carried different meanings. Whether it stopped over the lake or the island mattered greatly. Since the Li Family’s Purple Mansion Realm cultivator was missing, their prestige could not afford any further damage.</p>
+<p>While Li Queyi fretted, another girl beside her, cold in temperament and only eleven or twelve years old, looked up proudly. Her features had yet to mature, but her delicate appearance was already evident.</p>
+<p>Beaming with confidence, she whispered to her companion, “So this is the Purple Smoke Blessed Land. What an amazing place. The so-called cultivation ground of fairies and divine maidens is nothing more than this!”</p>
+<p>Li Queyi glanced at her uneasily, then looked ahead again. When the spirit boat finally descended and settled atop the island, she saw the Purple Smoke Gate cultivators disembark on their own, without insisting on a formal reception. Only then did she breathe a sigh of relief and quietly follow behind.</p>
+<p>“Greetings, fellow Daoists!”</p>
+<p>They immediately saw an elderly man in dark blue robes come forward to receive them. The young cultivators leading the Purple Smoke Gate escort did not recognize him. Although they were puzzled why no Foundation Establishment Realm cultivator had come to greet them, they still greeted him warmly, “Congratulations, senior! Truly congratulations! The gate has accepted two disciples of your esteemed family. It is indeed a joyous event.”</p>
+<p>The elderly man was slightly surprised but smiled. The children were soon led forward and dispersed like flowing water, leaving two girls standing before the hall, one older at seventeen or eighteen, and the other barely past ten.</p>
+<p>The girl in the pink dress was, of course, Li Queyi. Li Xuanxuan was not surprised. Li Queyi was second only to her elder sister Li Quewan among the Que-generation girls in talent. The family had sent her with high expectations. He nodded with a slight smile.</p>
+<p>The other girl, however, was surprising. She was a little daughter from the more remote branch of the first lineage. She was dressed in white with a rather cold temperament. Li Xuanxuan had seen all these children before. This one was called Li Quexi. Since she had been brought in from outside the island, her generational name had been added later, not following the four-lineage naming system.</p>
+<p>“Good, very good!”</p>
+<p>Li Xuanxuan was delighted, but the Purple Smoke Gate cultivators across from him paused. Someone had recognized him. They had not expected Li Xuanxuan himself to receive them. Calling out to him felt inappropriate, so after hesitating a few breaths, they pushed Lingyanzi forward.</p>
+<p>This old man was already very advanced in age. Years ago, he had been harmed by Changxiao Gate and fled for his life, only to be saved by Li Tongya. He had been to the Li household before and was now one of the elders they respected.</p>
+<p>Li Xuanxuan saluted him and said, “Senior… I trust you have been well.”</p>
+<p>Lingyanzi, his hair and beard completely white, gripping a wooden staff, looked at him with complex emotions and nodded silently.</p>
+<p>Lingyanzi had seen all the Xuan-generation members of the Li Family. In their youth, Li Xuanfeng and Li Xuanling had even joked with him. He remembered himself back then, bloodied and half-dead, resting on Lijing Mountain, with steady middle-aged men and spirited youths around him. All those scenes were vivid in his memory. Yet now, only a shriveled, frail old man stood before him with raised eyes.</p>
+<p>Lingyanzi muttered, “You are… Xuanxuan… the eldest brother, yes…”</p>
+<p>Li Xuanxuan nodded gently, replying, “You still remember, senior. Of all those on the mountain that day, only I remain.”</p>
+<p>Lingyanzi’s voice was hoarse with age. “Of course I remember. I crawled back from the brink of death… how could I forget…”</p>
+<p>The two felt each other to be both familiar and unfamiliar. Their greetings were not quite greetings, warm yet not warm, and tinged with a faint trace of fear. Two people who had survived by clinging to the edges of time, both afraid the other might say something that stabbed like a needle, fell into silence.</p>
+<p>Li Zhouluo, who had stayed behind Li Xuanxuan, quickly stepped forward and said respectfully, “Honored elders, please take your time. Leave the matters here to this junior.”</p>
+<p>Li Xuanxuan indeed had much to discuss with Lingyanzi, so the two old men walked into the hall. Li Quewan and Li Jiangxia soon arrived on the wind, and arranged matters for the Purple Smoke Gate disciples.</p>
+<p>A Foundation Establishment Realm cultivator from Purple Smoke Gate was very cordial and said with a smile, “I am When Wu[1], cultivating on Shepherd Peak. I specifically requested this assignment to meet your family head…”</p>
+<p>He kept one hand behind his back and strolled casually as he chatted with Li Zhouluo and the others. When they heard this rare male cultivator from Purple Smoke Gate speak, they listened as he continued with a smile, “This matter is rather interesting. It was originally the esteemed family’s disciples coming to Purple Gale Peak to take a master. Although Li Queyi is older and has already drawn qi, she cultivates Jade True Qi, a method our gate has in abundance and not considered a deviation, so Lingyanzi favored her.</p>
+<p>“But just after Li Queyi was decided, my master, Peak Master Qianlizi of Shepherd Peak, returned to the gate. The master took a liking to Quexi with one glance, sought permission from the gate master, and accepted her.”</p>
+<p>The man appeared spirited, his eyes glowing faintly as though he had cultivated some kind of ocular art. Joy flowed through his gaze as he said softly, “This is truly a fortunate connection. As the senior brother, I naturally had to come to the island. First, to personally inform the family head and fulfill proper courtesy. Second, to meet her family and offer a proper explanation.”</p>
+<p>Li Zhouluo suddenly understood, nodding inwardly before smiling, “This is excellent news. Since senior has such intentions, I will personally bring you around the island.”</p>
+<p>Shepherd Peak was far beyond Purple Gale Peak, which had nearly lost its lineage several times under Lingyanzi. Qianlizi was a renowned Foundation Establishment Realm cultivator, known as the Glass Treasure Vase. Even this senior brother possessed late Foundation Establishment Realm cultivation, which was a testament to their lineage’s strength.</p>
+<p>Moreover, despite the earlier confusion, Li Zhouluo noticed clearly that even Lingyanzi, being both peak master and an elder, followed half a step behind When Wu. The other Purple Smoke Gate cultivators looked to When Wu first. Clearly, this senior brother held considerable status.</p>
+<p>I wonder if this was arranged by the Daoist Master… In any case, gaining another disciple is ultimately a good thing…</p>
+<p>These days had brought few good tidings, so Li Zhouluo’s heart felt lighter. Meanwhile, the eldest sister Li Quewan held Li Queyi in one hand and Li Quexi in the other, her thoughts drifting elsewhere:</p>
+<p>From what I see, Lingyanzi’s disciples are all either weak in cultivation or have stagnated. He probably chose Queyi because her talent is high and she is already in the Qi Cultivation Realm. If he took someone still in the Embryonic Breathing Realm, he would die before they even reached the Foundation Establishment Realm.</p>
+<p>Since Shepherd Peak is so strong and Purple Gale Peak so frail, Lingyanzi has little time left to protect his disciple. From now on, these two younger sisters will likely live utterly different lives…</p>
+<p>1. The original name should be Wen Wu (闻武), but the surname clashes with Wen Yi (温遗) so it has been changed to When Wu. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1188.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1190.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

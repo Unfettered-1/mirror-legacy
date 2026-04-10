@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1147: Fleeing To The Eastern Sea (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1146.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1148.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1147: Fleeing To The Eastern Sea (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Changxiao’s fame was widespread. He had once escaped from a grotto heaven with Guo Shentong under the scheming of a Purple Mansion Realm cultivator, carrying away treasures that had shaken all of Jiangnan. When he later attained the Purple Mansion Realm and founded his own Dao lineage, he became known as one of the few cultivators most skilled at manipulating fate itself.</p>
+<p>Yet his face appeared gentle and sincere. Were it not for the shrewd gleam in his eyes, he might have seemed almost simple-minded. The manner in which he lifted the lantern was soft, and his voice was deep and steady.</p>
+<p>“Fellow Daoist Zhaojing! It has been some time, are you well?”</p>
+<p>A chill ran through Li Ximing’s heart, yet he managed to answer calmly, “Greetings, Senior Changxiao. I was merely sparring with Fellow Daoist Ye Hui and was taking this route back. I did not expect to meet you here. May I ask what instructions you have for me?”</p>
+<p>Changxiao lifted his lantern slightly, keeping a certain distance from Li Ximing while firmly occupying the western expanse of the great void. He gazed at him quietly before speaking, “I once had a disciple’s disciple. His mortal name was Wang Fud, and his Dao title Yu Fuzi. Years ago, he was stationed at the Eastern Sea. He was somewhat frivolous by nature, though quite gifted… Unfortunately, he was later slain by cultivators of the Hengzhu Dao Gate.</p>
+<p>“At first, I did not know the reason. Later, I learned that it was you, Fellow Daoist, who sought the Radiant Sky Stone and conspired with Hengzhu Dao Gate to take his life. Heaven and earth both bear witness to this and the traces remain in the Eastern Sea. Fellow Daoist Zhaojing, surely you have not forgotten?”</p>
+<p>His expression remained composed as his eyes stayed fixed intently upon Li Ximing, as though searching for the slightest change of emotion. The man before him lowered his brows, his manner seemingly respectful. After a careful examination, Changxiao found nothing particularly remarkable about Li Ximing. His attire was proper, and his demeanor merely timid and uneasy, enough to make Changxiao frown slightly.</p>
+<p>Li Ximing…</p>
+<p>In the instant Changxiao pondered, Li Ximing’s body burst forth with a radiant brilliance. Heavenly light flooded the void as blazing Bright Yang energy surged outward. A towering celestial gate rose behind him, with dragon banners, luan carriages, jeweled canopies, and banners of light all manifesting together.</p>
+<p>Supreme Yang Illusion Radiance and Heavenly Radiance, Hidden Light converged as one, climbing the ornate white heavenly gate while clouds of color surged skyward, rushing straight toward Changxiao’s face.</p>
+<p>As the surging Bright Yang divine ability charged toward him, Changxiao raised his sleeve, revealing his forearm. Forming a seal with one hand, he said, “Fall!”</p>
+<p>Suddenly a field of white points, brilliant and dense as it lay suspended in the blackness of the great void, appeared behind him. At his single utterance, the Bright Yang divine ability before him shattered completely, countless radiant lights scattering in every direction.</p>
+<p>Li Ximing was nowhere to be seen.</p>
+<p>The moment those words were spoken, Li Ximing knew his suspicions had been correct. Changxiao had not come with good intentions. Fearing an ambush, he gave no reply. The mana he had been storing up surged into the Mountain-Charging Sea-Pacing Tiger, which transformed into a streak of light as he stepped into the air and fled.</p>
+<p>The matter of Wang Fu… what justification is there for that?! The Radiant Sky Stone was clearly bait, and its hidden aim was Tulong Jian. That it ended up in my family’s possession was the natural outcome of struggle, how could blame possibly fall upon us?!</p>
+<p>Li Ximing had been present when Wang Fu died. At the time, the man had spoken clearly, “He hated Jinlian… and so he wanted me dead!”</p>
+<p>It was evident that Wang Fu had been nothing more than an abandoned pawn. Changxiao was merely using the pretext as leverage! Li Ximing fled at full speed, yet Changxiao remained unhurried.</p>
+<p>He strolled leisurely through the great void, pinching his fingers to calculate. After doing so thrice, he vanished from where he stood, a streak of radiance cutting across the void as he gave chase.</p>
+<p>“Fellow Daoist Zhaojing… you took a Purple Mansion Realm spirit item belonging to me. The calamity tied to it has led you to the Eastern Sea. Tell me, who here can save you?” said Changxiao.</p>
+<p>Li Ximing’s divine ability and spell had merely meant to distract. His Heaven-Venerating Gate had struck and withdrawn in an instant. Now, riding his tiger and hiding his presence, he found the void around him shifting from its deepest black to an ashen grey, then slowly growing brighter.</p>
+<p>He’s already caught up,thought Li Ximing.</p>
+<p>Changxiao approached swiftly from the south. Li Ximing, having barely broken free, could only dash eastward. Turning aside would only shorten the distance between them. The marvels of the Stable Tiger Dao gradually took effect, and his figure began to fade into obscurity.</p>
+<p>While Li Ximing fled with desperate speed, Changxiao hardly seemed to move at all. Holding his lantern, he watched the figure ahead grow fainter.</p>
+<p>Then he suddenly spoke, his voice drifting, rustling like wind over leaves, as it slipped through the void and entered Li Ximing’s ear. “So the Mountain-Charging Sea-Pacing Tiger truly is in your hands. That old man of Profound Peak Gate was clever enough to know that keeping you alive was the priority… but that means little.”</p>
+<p>The lantern in Changxiao’s hand brightened a touch as its twelve silver-gilded points each ignited with a thumb-sized flame. The flames themselves did not chase outward, yet waves of potent True Fire energy surged along the lantern’s light. Li Ximing’s dim silhouette became starkly visible again as the searing force of True Fire blazed toward him.</p>
+<p>Heat rolled across Li Ximing’s back; it was painful but still bearable. Yet the lantern’s power clearly grew stronger the closer it drew, as the scorching intensity mounted with every moment.</p>
+<p>“True Fire again!” muttered Li Ximing.</p>
+<p>It was hardly surprising. Years ago, Changxiao had entered Douxuan Heaven as a Purple Mansion Realm cultivator’s pawn and must have inherited the Douxuan Dao lineage. The spirit artifact in his hand would naturally be of the same origin. Likewise, Ye Hui’s Dao lineage, seized from Zhang Lingshu, also came from Douxuan Grotto Heaven, a domain famed across the lands for its multifaceted arts. Their spirit artifacts, of course, were near identical in nature.</p>
+<p>Ye Hui and Changxiao share the same Dao lineage. His earlier affront against my family was merely a show. Then it must have begun even earlier, back when the Mifan three sects first provoked my family!</p>
+<p>Whatever Changxiao seeks from my family, his schemes began long ago. My own breakthrough must have disrupted his plan in some way, hence the upheaval we face now…</p>
+<p>Ye Hui, however, never truly wished to offend me completely. In the end, he even withdrew his spell arts. It seems he was never wholly aligned with Changxiao, but rather held under his control! That explains his contradictions, his cautious restraint, and perhaps even his faint hope that I might escape from Changxiao’s grasp!</p>
+<p>Li Ximing’s spiritual sense spread through the great void, dodging the waves of True Fire. When his gaze met Changxiao’s willow-leaf eyes, his heart thundered like a bolt of lightning as he thought,And that, exactly that, is what Changxiao exploited! Why else involve Ye Hui unwillingly in this matter? His reluctance and restraint are the very keys to the scheme!</p>
+<p>Changxi had left the Mountain-Charging Sea-Pacing Tiger as a hidden safeguard for Li Ximing. To ensure he would appear openly in the Eastern Sea, fighting and sparring along the way, only Ye Hui, acting under Purple Smoke Gate’s orders and unwilling to completely offend the Li Family, could have been chosen to act. The layers of assurance lulled Li Ximing into a false sense of safety, choosing to fight rather than immediately flee to Moongaze Lake with his spirit artifact.</p>
+<p>How much Ye Hui truly understood of this scheme was uncertain, yet it was precisely his half-hearted compliance and his attempts at balance that became part of Changxiao’s greater design!</p>
+<p>A single Purple Mansion Realm cultivator could travel silently through the void, but two in combat would draw far too much attention. Once their battle reached the Eastern Sea and ceased, the watching cultivators would disperse. Even those observing from afar, like Sumian and Tinglan, likely withdrew. Only then did Changxiao arrive calmly, trapping him within the desolate and unguarded expanse of the Eastern Sea.</p>
+<p>I cannot claim to have grasped all of his schemes… but I’ve seen through at least this much.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1146.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1148.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

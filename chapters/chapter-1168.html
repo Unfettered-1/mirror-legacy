@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1168: Unexpected (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1167.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1169.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1168: Unexpected (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The glow of the Shamanic Talisman Dao golden talisman flowed across Li Chenghui’s body. Thunder surged beneath his feet, and a fierce golden light rose from his back. The young man’s thoughts were quickly interrupted.</p>
+<p>Boom!</p>
+<p>Situ Mo had been deceived and had nearly lost track of him. His panic and fury were beyond words. The agitation on his face was no longer an act of pretense, but the true, seething wrath of a hunter bitten by his own prey.</p>
+<p>The master of the Golden Tang Gate shone brilliantly, the rhombus-patterned golden robe upon him flickering with layer after layer of runes. As he stepped forward and reached out to seize the air, his speed became utterly different from before.</p>
+<p>A surge of red and violet radiance flowed over Li Chenghui’s body, and all the purple thunderlight gathered beneath his feet. His expression was calm, without fear or worry, only a deep, icy stillness. He stepped through the air, moving just a fraction faster than Situ Mo and narrowly evading capture.</p>
+<p>Situ Mo, however, showed no hint of regret. As long as Li Chenghui remained within the range of his spiritual sense, escape was impossible. What truly terrified him was the thought of Li Chenghui vanishing again in an instant again. It had left him drenched in cold sweat.</p>
+<p>The gloom on his face quickly subsided, replaced by a chill, merciless calm. A glimmer of gold rose from the back of his head, transforming into a white gourd that gleamed like snow.</p>
+<p>A spell art… or a dharma artifact?</p>
+<p>Li Chenghui had no time to discern which. A tide of frost-colored brilliance poured out of the gourd, shining down like heavenly light that tore through the clouds and enveloped his body.</p>
+<p>Situ Mo was in no way slow. As he closed the distance again, he joined the fingers of both hands, pressing them together at the middle joint and murmured, “Receive the righteous color of the West, let the qi arise…”</p>
+<p>Situ Mo had deep and extensive battle experience. As he chanted his spell, the golden needles and golden blade flew from his side, soaring into the air to seek the Chongming Profound Insight Screen. The faint azure glow it emitted revealed its position, proving that his strike had forced the dharma artifact to manifest.</p>
+<p>The cascade of cold misty light poured down upon Li Chenghui. He already knew Situ Mo’s past attacks had rarely been at full strength. Thus, he raised the thunder in his palm, prepared to resist the oncoming frostlight.</p>
+<p>Yet at that moment, the bluish radiance on his body rippled unexpectedly. The brilliance of the Blessing Art appeared, and the streaming frostlight scattered away as if reflected off a smooth, round stone—he did not even need to act.</p>
+<p>It was his first time using this talisman, and he was unfamiliar with it, but the result was a pleasant surprise. He immediately raised his thunder as a sharp whine split the air above.</p>
+<p>Clang!</p>
+<p>A dark-golden Ruyi Scepter[1] appeared above his head and came crashing down. Li Chenghui rose with lightning flickering around him, turning his power to resist. A white explosion burst in midair, scattering brilliant sparks across the sky.</p>
+<p>Unfortunately, gold was born of earth yet different from it, and was able to restrain thunder. The Ruyi Scepter easily shattered the lightning, striking the bluish light on his body and producing a crisp crack.</p>
+<p>Crack!</p>
+<p>Li Chenghui knew that the protection of the Blessing Art had reached its limit. Seizing the last remnants of its glow, he took several hurried steps forward, forming a hand seal and uttering, “Yang Arise…”</p>
+<p>Before the spell seal in his hand was even completed, he felt a wave of chill coming from behind. The Geng Metal’s cold fiendish energy surged in, striking the dark glow of the Shamanic Talisman Dao on his body. The black radiance rippled like the rising and falling of tides and vanished in the blink of an eye.</p>
+<p>The power of Concealment had been invaded by the cold fiend energy and shattered completely!</p>
+<p>Pff.</p>
+<p>Li Chenghui spat out a mouthful of blood that turned into searing lightning as it scattered. His cultivation was far inferior to his opponent’s; his years of training could not compare; and his lightning arts were countered by the enemy’s elements. To even speak of fighting back with spell arts was futile.</p>
+<p>Enduring the pain, the young man continued to ride his lightning forward. Situ Mo’s eyelids twitched as he saw him persistently flying east, his expression growing darker and more vicious.He still refuses to end it!</p>
+<p>The snake-like gray cord slithered up his sleeve. As soon as Li Chenghui gained a bit of distance, Situ Mo hurled the spirit artifact forward.</p>
+<p>Since Li Chenghui’s talismans were now destroyed, the spirit artifact slipped into the great void and locked onto him once again. The golden-patterned mountain-and-river light curtain of the gray cord descended from the heavens, sealing the eastern path completely.</p>
+<p>Hatred surged through Situ Mo’s chest as he watched Li Chenghui trapped like a bird in a cage within the curtain of light. Yet even so, a faint sense of powerlessness welled up in him, and he muttered under his breath, “You… you fool! You would throw your life away? How many of your Li Family do I have to kill before you understand?!”</p>
+<p>Li Chenghui raised his spear, his eyes fixed steadily on the man before him, and said quietly, “You can kill me if you wish. Since killing me won’t bring anyone out, killing others will be just as useless. Once you’ve served your purpose, let’s see who will protect you.”</p>
+<p>Situ Mo felt a surge of hot blood rise in his chest, choking him to the point where he could neither swallow nor spit it out. Everything was now laid bare. Li Minggong and the others would surely arrive as reinforcements, Ding Weizeng without the Chongming Profound Insight Screen would soon fall, and his own people were also on their way.</p>
+<p>Since Li Chenghui refused to return to the lake, there was no option left but to kill him.</p>
+<p>Still unwilling to give up, Situ Mo asked, “Zhaojing’s plan has failed. How long do you think Li Zhouwei can keep hiding? What good will your meaningless death do?”</p>
+<p>Li Chenghui fell silent. He glanced at his opponent, his striking eyes devoid of emotion, and replied, “Kill me if you wish. When my family’s forces arrive, they will kill you in turn.”</p>
+<p>Boom!</p>
+<p>The light curtain of the Mountain-Dimming Peak-Moving Cord began to tremble, as though someone had drawn near. At last, Situ Mo gave up hope. He looked at Li Chenghui one final time and said, “Whether I live or not is uncertain, but you must die first.”</p>
+<p>Standing under the golden canopy of light, Situ Mo drew his blade. He watched the silver-armored, black-robed youth spit out a bright, blood-stained bead of light as blood slowly seeped across his face. Situ Mo’s eyes lit up, and two coarse laughs rumbled from his throat.</p>
+<p>He had long held a grudge against the Li Family, and seeing this sight brought him a dark satisfaction.</p>
+<p>Li Chenghui’s eyes bulged from their sockets as his body turned into motes of light amid the raging thunder. His skin and flesh peeled away, dissolving into bloody lightning pulp. The suffocating thunder swelled through the radiance as six thunder-sanction sigils took form, greedily devouring every trace of mana within him.</p>
+<p>Situ Mo stepped back without hesitation. The Mountain-Dimming Peak-Moving Cord, now wrapped around all the thunder, was hurled heavily into the distance. Clutching the Purple Mansion Realm talisman in his hand, he leapt into the sky.</p>
+<p>Boom!</p>
+<p>No matter how powerful the thunder was, it could not prevail before a true Purple Mansion Realm spirit artifact; one embodying both Earth Virtue and Metal Virtue. In the end, all its might dissolved into a dull, drawn-out rumble. The raging lightning surged and clawed, eager to strike at Situ Mo, but every bolt was imprisoned within, unable to escape even a single inch.</p>
+<p>As the radiance of the Mountain-Dimming Peak-Moving Cord faded, all the pale golden light faded into the sky. Situ Mo raised his brow and took everything in at a glance.</p>
+<p>1. Ruyi Scepter is a ceremonial or magical scepter whose name means “as one wishes.” In cultivation lore, it often serves as a dharma artifact that bends to the wielder’s will, symbolizing authority and the power to make one’s intent reality. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1167.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1169.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

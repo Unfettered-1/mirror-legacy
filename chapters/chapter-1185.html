@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1185: Admonition (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1184.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1186.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1185: Admonition (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouluo saw his attitude and had no choice but to step aside and rise from his seat, replying, “Master Kong, please get up quickly. You are a Foundation Establishment Realm cultivator and a senior. I cannot bear such courtesy.”</p>
+<p>Kong Guxi did not allow him to assist in any way. He pushed himself up with ease, his voice low and respectful as he replied, “When it comes to the grace of preserving our Dao lineage, there is no such thing as seniority. Several younger members of my family bear deep gratitude toward your esteemed family. The Profound Peak Gate has preserved its last spark only because of Moongaze Lake. Whatever orders the lake gives in the future, we will never refuse.”</p>
+<p>Li Zhouluo nodded. Moongaze Lake’s situation was truly difficult, and they were currently trying to ease tensions with the Capital Immortal Dao across the shore. He had feared Profound Peak Gate might cause trouble, but now he spoke softly, “The lands on the eastern shore will be lent to your gate for now. Just patrol them occasionally; there is no need for your gate to do anything else. As for the Baiye Capital Immortal Dao, I ask that you endure the humiliation for the moment. Do not provoke them further and create unnecessary trouble.”</p>
+<p>Kong Guxi nodded quickly, speaking with firm sincerity, “I have already instructed the younger disciples. Profound Peak Gate is weak now. We will be polite even to rogue cultivators and will never cross the river to stir up trouble again. If we cause trouble for your esteemed family once more, there will be no need for your family to act. I will personally deal with any foolish disciples.”</p>
+<p>Li Zhouluo reminded him, “Do not cause trouble. By then, it will not be a matter of just one or two disciples.”</p>
+<p>Kong Guxi agreed, and Li Zhouluo continued, “The Wilderness is no ordinary place. No family will allow him to occupy it indefinitely. Once the Daoist Masters reach an agreement, the Capital Immortal Dao will certainly retreat, and you will have to return. How many disciples have you gathered?”</p>
+<p>Kong Guxi felt his heart turn cold like ice and said quietly, “Family head, aside from a few Foundation Establishment Realm cultivators that are direct descendants, we have four Qi Cultivation Realm disciples, ten that cultivates various unrefined qi, and a few at Embryonic Breathing Realm…”</p>
+<p>He found it difficult to continue and said quietly, “When the mountain gate fell, some surrendered and some died. After moving to the Wilderness, we barely gathered a few people, but then we were attacked again. The Capital Immortal Dao sent the very cultivators who had previously surrendered to us, and their presence caused everyone to waver.”</p>
+<p>After these repeated blows, even the most loyal disciples knew the Profound Peak Gate was beyond saving. Even though Kong Guxi loudly proclaimed that a Purple Mansion Realm cultivator would soon emerge, they all knew they might not live to see that day. The Capital Immortal Dao also had a Purple Mansion Realm cultivator. If they defected, would they not be held accountable later?</p>
+<p>Thus, when the Wilderness fell into decline, Profound Peak Gate lost not only many loyal clan members but nearly all its disciples as well.</p>
+<p>“Sigh.”</p>
+<p>The Profound Peak Gate of the three sects and seven gates now had only a handful of stragglers left. Such a group would not even be enough to staff a single branch hall in the former Profound Peak Gate. Li Zhouluo could only fall silent, while Kong Guxi spoke nervously, “I noticed many rogue cultivators on the eastern shore. The Profound Peak Gate hopes to send people to take a look and accept a few disciples…”</p>
+<p>The eastern shore had always been Li Family territory. Kong Guxi naturally did not dare meddle with the Li Family’s own cultivators, so he could only set his sights on rogue cultivators.</p>
+<p>Li Zhouluo replied, “This is not a major issue, but you must be careful. The conduct of rogue cultivators is difficult to judge. Do not let them tarnish the Profound Peak Gate’s name.”</p>
+<p>Kong Guxi nodded repeatedly. He realized this Zhouxing generation family head was easier to speak to than the previous one, and his heart relaxed. Having gained approval, he took out a jade box from his sleeve and said respectfully, “Profound Peak Gate has lost nearly all its people, and many dharma artifacts have been left unused. They serve no purpose in our hands, and with so many devil cultivators about, we struggle to defend ourselves. I thought it best to give them to the cultivators of your esteemed family, so these items can be put to proper use.”</p>
+<p>Li Zhouluo declined at first. “What is the gate master saying?”</p>
+<p>But Kong Guxi immediately offered him an easy step down, replying, “There is no other intent. My gate’s cultivators are nearly gone. The few younger ones we have cannot wield these dharma artifacts to any meaningful effect. They are always injured, and I fear it may hinder their cultivation path. If your esteemed family’s Foundation Establishment Realm cultivators could use them, each dharma artifact would be put to proper use. It is only for the sake of protecting our younger generation.</p>
+<p>“I also heard that the lake will even send people over specifically to fend off devil cultivators, which makes me even more embarrassed. We cannot let the cultivators of your esteemed family make the trip for nothing.”</p>
+<p>Li Zhouluo argued with him for a while, pretending he could not outtalk the old man, and finally agreed. Kong Guxi hurriedly and eagerly opened the jade box, revealing a chain of bright red jade pearls inside.</p>
+<p>The old man supported the bottom of the box with one hand, and lifted the jade bead chain with the other. He hung it across four fingers, flicked it twice, and pressed his trembling index finger against his middle finger as he smiled, “This is an ancestral item of my family, called the Muddy Red Jade Treasure. Wearing it boosts blood qi and protects the body. It is very powerful. It used to be an ancient dharma artifact and could transform into a red jade chain to suppress enemies, though it no longer retains that ability.”</p>
+<p>Seeing the look on Li Zhouluo’s face, he immediately clarified, “It was shattered in a battle once… The Daoist Master later reassembled it, so it no longer counts as an ancient dharma artifact. But it is still formidable…”</p>
+<p>He quickly set it down, lifted the jade box’s false bottom, revealing a small glass-clear bottle inside, with a piece of gray material within. Kong Guxi said, “This was left behind by the Daoist Master of my gate. He once answered the invitation of another Daoist Master to eradicate a sea monster and obtained this spirit item. It is a scale from a Purple Mansion Realm demonic creature. It does not count as a Purple Mansion Realm spirit item, but it can be considered Purple Mansion Realm nourishment. If your esteemed family needs it, it is excellent material for forging armor.</p>
+<p>“I heard the Daoist Master privately say that if forged properly, it may not be inferior to an ancient dharma artifact.”</p>
+<p>Aside from the glass bottle in the center, the lower layer also held a Foundation Establishment Realm dharma artifact on each side. Their grade was not high, and ordinary enough that they needed no mention, so they had labeled jade slips.</p>
+<p>After setting them down, Kong Guxi finally took out a pair of bright golden, intricately patterned miniature cymbals, shaped like two tiny straw hats, and choked out, “This final item… was prepared for Fellow Daoist Chenghui’s descendants… but I heard he passed away young, leaving no bloodline behind. I am deeply ashamed, and can only ask the family head to accept it on his behalf, as a token of Profound Peak Gate’s gratitude.”</p>
+<p>Li Zhouluo could see clearly that the small cymbals were forged with Geng Metal and a certain Dao lineage. He was not sure if the Dao lineage was True Essence or Purple Essence, but it carried an aura of profound unity. They were not only powerful but also harmless even for injured thunder cultivators to wield. It was clear that Kong Guxi had put great thought into this…</p>
+<p>But Li Zhouluo himself cultivated Geng Metal. Whether this gift was truly meant for a supposed descendant or for him was difficult to say…</p>
+<p>The young man thought to himself,Master Kong is quite something.</p>
+<p>He set the jade box aside, took out only the small cymbals, and said, “Since it is meant for a senior’s descendant… someone come!”</p>
+<p>A Jade Court cultivator immediately stepped forward, and Li Zhouluo said, “Take this item and store it in the family treasury.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1184.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1186.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

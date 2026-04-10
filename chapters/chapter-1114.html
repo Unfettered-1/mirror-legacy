@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1114: Detailed Explanation (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1113.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1115.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1114: Detailed Explanation (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Once Li Ximing descended into the lake region, he did not head straight for Zhijing Mountain but instead rode toward the central islet. For once, he had some leisure time.</p>
+<p>The vast courtyard on the island was dominated by a white-blossomed tree which was over a hundred meters tall. Its leaves shone smooth and translucent, casting no shade beneath it. Palm-sized five-petaled spirit flowers were scattered throughout its branches, their scarlet and white hues interwoven throughout.</p>
+<p>It was the Wanglin Blossom!</p>
+<p>A snow-white old ape, clad in simple stone armor with a staff resting on its knees, sat beneath the tree. As Li Ximing approached, the white ape opened its eyes, rose to its feet, and said respectfully, “I greet the Daoist Master.”</p>
+<p>Li Ximing nodded. The first task the old ape had taken upon joining the Li Family was to guard the Wanglin Blossom, a duty it had fulfilled for over seventy years. After the great battle on the river, it had returned here to heal and continue its watch beneath the tree.</p>
+<p>Li Ximing gazed at the Wanglin Blossom tree for a moment. Over the years, his clan had harvested no less than eight hundred or even a thousand spirit stones from it, not to mention the many cultivators whose lives had been saved because of this flower. Even Miaoshui had relied on it just days ago.</p>
+<p>Even the scraps that slip through the fingers of a Golden Core immortal descendant have brought endless benefits to my family!</p>
+<p>On the other side of the courtyard stood another tree. However, this was only the size of an ordinary one. It was a mountain persimmon. Brimming with spiritual essence, it twisted and swayed in the corner on its own, but froze the moment it noticed Li Ximing looking at it.</p>
+<p>This tree was, of course, the spirit persimmon transplanted from Mount Quanwu. Though of humble origins and at the Qi Cultivation Realm, its fate had been far from ordinary. It had already gained sentience and cultivation as it nibbled on spirit herbs and sipped spirit water on ordinary days. It had reached about the mid-stage of Qi Cultivation Realm.</p>
+<p>The Li Family also had a Snake Dragon Fruit tree, though of much lower grade, and it was kept only in the spirit garden of the island. After taking everything in, Li Ximing drew a small box from his sleeve and casually opened it. Inside lay a golden Horn Wood tassel needle, the Horn Wood Golden Tassel, a gift from Sword Gate!</p>
+<p>“This is an excellent item for nourishing spirit plants…”</p>
+<p>As soon as the box opened, the Wanglin Blossom tree stirred restlessly, while the mountain persimmon tree in the corner stopped pretending altogether, stretching its branches forward. It dared not touch Li Ximing himself, so it secretly tugged at the white ape instead.</p>
+<p>Li Ximing infused his divine ability into the needle, circulating heavenly light as he waved his hand and dispersed the Horn Wood Golden Tassel. The light streamed down upon the two spirit plants, causing them both to rustle and sway in excitement.</p>
+<p>He had no understanding of the art of nurturing spirit plants, so he merely applied it to those two and instructed the white ape to watch over them carefully before turning away.</p>
+<p>He flew down to land on Zhijing Mountain. After a short while, he saw a young man in a crimson-black robe descending on Radiant Fire. The youth came up from the mountainside to the courtyard and bowed deeply, “Jiangqian greets the Daoist Master!”</p>
+<p>Li Ximing had only met Li Jiangqian a few times. He beckoned him closer. Facing this junior to whom he had once granted talisman seeds, he did not withhold a warm smile as he asked, “So, Jiangqian, you are here, but where is Quewan?”</p>
+<p>Li Jiangqian replied, “Reporting to the Daoist Master, my younger sister has encountered a bottleneck in her cultivation of the arts. She has gone to Northern Mount Yue to collect shamanic methods and could not accompany me. I have come up the mountain by my father’s order to deliver a message.”</p>
+<p>“Speak, then.”</p>
+<p>Li Ximing poured tea and listened while Li Jiangqian spoke, “A few days ago, the Wu Family from southern Shan Prefecture came to visit. Their Foundation Establishment ancestor, Wu Shaoyun, came in person and brought gifts of thanks. He said it was to express gratitude to the Daoist Master for eliminating devil cultivators near their estate while passing by. My father was unaware of this matter and sent me to inquire.”</p>
+<p>Li Ximing, of course, knew what this was about. He sipped his tea and replied, “I clashed with Ye Hui and happened to pass by the Wu Family’s lands. My escape light probably burned one or two of those devil cultivators to death. Ye Hui followed behind me and manifested divine abilities. He likely crushed a few of the Wu Family’s people as well. Their family head certainly knows how to wave a big banner and make a fuss.”</p>
+<p>Li Jiangqian immediately understood, and without showing any timidity before the Daoist Master, he replied, “So that’s how it is. Profound Peak Gate also has a Wu Family guest cultivator related to the southern Wu Family; this incident must have embarrassed him greatly…”</p>
+<p>Li Ximing responded briefly, “Just explain it clearly to your father.”</p>
+<p>Li Jiangqian continued, “Shanji Prefecture has suffered several attacks in recent days. We haven’t been able to hold the area. A great deal of supplies was looted, and we even lost one of the towns…”</p>
+<p>That did not surprise Li Ximing in the least. Shanji Prefecture had always been a burden in his hands. He asked, “How does your father plan to handle it?”</p>
+<p>Li Jiangqian replied respectfully, “Father had long begun relocating the people of Shanji to populate the Wilderness. The hearts of the Profound Peak Gate people have not scattered, and with our family’s support, many prominent families and even esteemed families are willing to follow. Other than the Sword Gate’s territory, which remains untouched, most of the common people have already set out. Father regards this matter as highly important and is personally escorting them.”</p>
+<p>“Good.” Li Ximing nodded and said, “Profound Peak Gate will almost certainly have to rebuild its foundations in the Wilderness from now on. This is a necessary step, so leave it to your father.”</p>
+<p>After a brief moment, Li Ximing asked, with a tone that carried a faint, unreadable meaning, “How is Chengzhi these days?”</p>
+<p>His eldest son, Li Chengzhi, was a mortal. Li Ximing had seen him once after attaining the Purple Mansion Realm. His son had brought along his grandson, Li Zhouming, who was at the early stage of Qi Cultivation Realm. Both had been timid and drenched in sweat. Li Chengzhi’s hair was completely white, and he had not dared look at Li Ximing directly. After a brief visit, he had promptly withdrawn.</p>
+<p>Although Li Zhouming possessed some cultivation and had been sent over by the eldest son early on, Li Ximing’s repeated closed-door cultivation sessions meant they had rarely met. Yet Zhouming’s understanding and fear of the Purple Mansion Realm was even deeper than his father’s, making him behave even more pitifully.</p>
+<p>At Li Ximing’s question, Li Jiangqian immediately answered, “Family Elder Chengzhi has grown old and is no longer active. Family Uncle Zhouming is currently serving in Milin Mountain…”</p>
+<p>Li Ximing knew perfectly well that Jiangqian had little to say. His eldest son, Li Chengzhi, though distant from him, still had some sense, but the lack of cultivation was fatal. As for Li Zhouming, whom he had personally interacted with, the boy was undeniably mediocre and even somewhat greedy. The fact that Li Jiangqian had refrained from speaking ill of him was already saving face; there was nothing praiseworthy to mention.</p>
+<p>He lowered his eyes slightly without revealing any emotion and simply replied, “Let them be. Chengzhi is old now and sometimes cannot keep Zhouming in line. Don’t let him think I’m paying them any special attention; I’d rather avoid prompting him into doing something foolish.”</p>
+<p>Li Jiangqian had assumed Li Ximing mentioned them as a subtle hint for him to look after them. But after hearing his words, he could only nod, his thoughts gradually clearing,The Daoist Master is not entirely indifferent to the family after all… At least those few words touched precisely on the key matters concerning the two seniors. It would be impossible to know them so clearly without some degree of attention.</p>
+<p>Li Ximing waved his hand, dismissing him, and began mentally tallying matters,There are now three major matters. First, the Purple Mansion Realm grand formation. I must wait for news and watch how events unfold. Second, resolving the situation in Shanji Prefecture and securing Profound Peak Gate’s position. Third… I must deal with Ye Hui once and for all, so he stops opposing my family day after day.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1113.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1115.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

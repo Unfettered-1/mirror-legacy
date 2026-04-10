@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1110: The Profound Peak Mountain Gate (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1109.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1111.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1110: The Profound Peak Mountain Gate (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Kong Guxi felt the ground beneath his feet grow lighter as the portal-like opening appeared. Dark mountain ranges undulated unevenly below him, shimmering with scattered light. He glimpsed two or three figures darting about here and there, their flight lights streaking across the darkness like meteors.</p>
+<p>It was a sight he had seen countless times before, and they were already above his sect’s mountain gate. Li Ximing’s back loomed before him as the newly ascended Daoist Master stared intently at the immortal pavilions below, a sight that sent a chill of dread crawling up Kong Guxi’s spine.</p>
+<p>He hunched his shoulders and tucked his hands into his sleeves, following Li Ximing as they flew a circuit around the gate. Soon, he heard the Daoist Master’s words of praise, “Your gate has deep reserves and excels at shifting mountains and altering terrain. Spiritual energy thrives in every corner of this land, with many unique spirit mountains. Five of the Twelve Essences are complete, and of the Five Virtues, eight are present with three of them of the Earth Virtue. Remarkable… truly remarkable!”</p>
+<p>Though Profound Peak Gate might not match other immortal sects in certain respects, its spirit mountains were second to none. Changxi had labored diligently for centuries, shifting mountains into Profound Peak Gate like a tireless mole preparing for winter, and the result was a mountain gate that was undeniably alluring.</p>
+<p>“No wonder Ye Hui covets this mountain gate so deeply. His Baiye Capital Immortal Dao was only recently established. If he were to obtain this mountain gate, it would save him centuries of effort!”</p>
+<p>Li Ximing wandered the grounds for a while and found the disciples pitifully few. Only the main hall held a handful of figures, among them his junior Li Jianglong, who was studying a jade slip intently beside a pile of books taller than himself.</p>
+<p>Li Ximing nodded faintly and made no move to meet him. He continued his circuit, seeing many kinds of secret realms along the way, yet there was not a single spirit artifact. There was not even anything remotely connected to the Wind-Listening White Stone Mountain.</p>
+<p>He only stopped before Profound Peak Gate’s treasure vault, pausing briefly with his hands clasped behind his back as he turned to speak, “Gate Master… is there truly no Wind-Listening White Stone Mountain inside?”</p>
+<p>Kong Guxi already understood his intent and fell to his knees, “I have never known of any Wind-Listening White Stone Mountain! If I am hiding even the smallest thing, may I die instantly and vanish from the Dao!”</p>
+<p>Li Ximing had not truly believed that Daoist Master Changxi would leave such a spirit artifact in the vault. If so, there would be no reason to hide it from him. Thus, he said again, “Take me to the seclusion locations.”</p>
+<p>Kong Guxi visibly turned pale, bowed deeply, and answered in a quiet voice, “May I ask… which person does the Daoist Master wish to see?”</p>
+<p>Li Ximing replied casually, “Kong Tingyun.”</p>
+<p>Kong Guxi only nodded and led him swiftly through the mountains, producing the command token to unravel formation wards. They twisted through winding paths, descended beneath a spirit mountain, broke through another formation, and finally came upon a cave dwelling.</p>
+<p>When they reached a stone platform within the cave dwelling, Kong Guxi used the command token to activate the formation. Only then did a tightly sealed stone door emerge upon the cave wall. Without saying a word, Kong Guxi collapsed to his knees with a thud, curling into a trembling ball.</p>
+<p>Li Ximing naturally understood his meaning. If he insisted on seeking the Wind-Listening White Stone Mountain, the sealed chamber would have to be opened, and once the stone door was breached, Kong Tingyun would almost certainly die.</p>
+<p>He did not enter. Instead, he paused in thought, puzzled,The Cheng Family said that once the Wind-Listening White Stone Mountain is activated, it grows as large as a mountain. It is unlikely such a thing could be hidden within this small sealed chamber… and even if it could, it would be easy for me to detect…</p>
+<p>He walked out as Kong Guxi repeatedly kowtowed behind him. Even after leaving the secluded cave dwelling, Li Ximing remained utterly perplexed.</p>
+<p>It was clear that the Wind-Listening White Stone Mountain could not be found within Profound Peak Gate. Daoist Master Changxi must have used some unknown means and prepared contingencies for the spirit artifact. Since he had chosen not to reveal them to Li Ximing, finding it now would be exceedingly difficult.</p>
+<p>He promised the Sword Gate the southern shore of Lake Xian and the eastern part of Shanji Prefecture; it could not be more obvious that this was Changxi’s arrangement for after his passing. If that is the case, then wherever the Wind-Listening White Stone Mountain is left, the old man must have calculated it carefully…</p>
+<p>Li Ximing could only leave with regret, though he kept the matter in mind,Ling Mei also specifically instructed that there is no urgency to this matter. That old fox Changxi lived for over four hundred years, so there is no way he would pin all his hopes on me alone. I should wait and see how things develop.</p>
+<p>Li Ximing still held the secret of the devil fetus that Sumian acquired from Changxi, and such matters would require careful investigation. Acting rashly could very well backfire.</p>
+<p>No matter how mild-mannered Sumian appears now, he is still an old Purple Mansion Realm cultivator. If cornered, the threat he poses would be no less than that of Ye Hui.</p>
+<p>Kong Guxi was still shaken and lost in thought as he followed Li Ximing down the mountain. Li Ximing set him down at the edge of the Wilderness and said, “Send a few people back to search again. If this spirit artifact remains missing, you will have a hard time explaining yourself to Wanyu.”</p>
+<p>Kong Guxi could only nod obediently. His appearance mirrored his state of mind; his hair had rapidly turned gray in just over a month. Once he had still looked somewhat youthful, but now he bore the full visage of a middle-aged man on the cusp of becoming elderly.</p>
+<p>Li Ximing gave him another look and was struck by how much he resembled Li Xuanxuan during those years when his inner demons had taken root. Though they were two entirely different people, their expressions had become eerily alike.</p>
+<p>Every family has its own troubles… and in hardship, none are spared,thought Li Ximing.</p>
+<p>He withdrew his gaze and slipped into the great void, heading northward. As he entered the territory of Chengshui Marsh, the great void grew noticeably rugged, prompting Li Ximing to quietly praise,What remarkable fortune… The finest land in all of Jiangbei, Chengshui Marsh, has been swallowed up by him alone.</p>
+<p>Li Ximing tore open the void and returned to the mortal realm, catching sight of a vast expanse of shimmering marsh waters from afar. From above, countless dark water cypresses stood tall within it, their leaves rustling softly in the passing breeze.</p>
+<p>Chengshui Marsh…</p>
+<p>A complex look flickered in Li Ximing’s eyes. This was one of the most renowned great marshes, beneath which countless corpses of cultivators from both north and south lay buried. He swept the area with his spiritual sense and thought,Chengshui Marsh was once a land of Converging Water, yet the wood qi here is so abundant that even after being flooded by Converging Waters, so many water cypresses have still grown. Compared to Moongaze Lake, it is closer in nature to a marshland, and perhaps in another hundred years, it will become a Mansion Water treasured land.</p>
+<p>All things in the world were in constant flux, and nothing remained unchanged forever. Moongaze Lake, with its deeper water level, belonged to the Pit Water Dao and had long since stabilized; otherwise, the remnants of Lingyu Gate would not have chosen that location in the past.</p>
+<p>The four shores surrounding Moongaze Lake were closer in nature to Mansion Water marshlands, with water levels similar to Chengshui Marsh, though their spiritual energy was far inferior. Riding a beam of light through the skies, Li Ximing descended above the bustling market built upon Chengshui Marsh.</p>
+<p>The Li Family had maintained a foothold in Chengshui Marsh as well. Years ago, when his junior Li Quewan was beginning Qi Cultivation Realm, the transformative spiritual qi of the five phases required for her training had been harvested from Chengshui Marsh. A shop in the market had served as a cover for the operation, and the family still maintained people here to this day.</p>
+<p>If I recall correctly, the He Family oversees this site.</p>
+<p>Forming a hand seal, Li Ximing slipped through the formation of the market atop the marsh as if it were nothing, passing through the great void and emerging within the market itself.</p>
+<p>After all, not even Chengyun Gate, much less the Golden Feather Sect, would be extravagant enough to protect a mere market with a Purple Mansion Realm grand formation. Nearly ninety percent of market towns in Jiangnan were unfortified against cultivators of the Purple Mansion Realm. Gazing below, Li Ximing saw a teeming sea of people as the streets bustled with life.</p>
+<p>With a sweep of his spiritual sense, he clearly caught every bit of the surrounding chatter.</p>
+<p>Minghui the Merciful One of Lotus Temple has brought the temple’s cultivators here… to Chengshui Marsh, to engage in a Dao debate with Daoist Master Chengyun?</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1109.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1111.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

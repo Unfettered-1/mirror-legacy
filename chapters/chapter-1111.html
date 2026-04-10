@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1111: Fish Bait (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1110.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1112.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1111: Fish Bait (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Minghui… sounds so familiar…</p>
+<p>The name stirred something in Li Ximing’s memory. After all, anything even slightly related to the Purple Mansion Realm was hard to forget once heard. Realization dawned on him,So it’s from Murong Xia’s side!</p>
+<p>When Murong Xia had journeyed south in pursuit of Dao attainment in the past, he had avoided the Sword Gate-Xiukui path, likely fearing it would provoke the spirit pine Daoist Master[1]. Nor had he dared to take the Profound Peak–Purple Smoke path, since he was wary of being slain by Daoist Master Zipei. Instead, he had chosen the Azure Pond path, which led straight to Li Ximing’s own territory after crossing the river.</p>
+<p>At that time, Murong Xia had clashed briefly with his family. Li Tongya had even intervened, only to be stopped by a monk from Lotus Temple named Minghui. It was very likely the very same figure spoken of in rumors.</p>
+<p>There was conflict between us back then, and my family already has plenty of enmity with Buddhist cultivators. It is best not to meet at all!</p>
+<p>He was about to step into the great void when a figure rose into the air above the marketplace. It was an elderly man with white hair and black robes, whose appearance did little to inspire confidence. Yet his expression remained respectfully composed as he approached and bowed, “By order of my family’s ancestor, I have been waiting here for you, Daoist Master. He has been at Yebai[2] Pavilion for quite some time and requests that you follow me there.”</p>
+<p>Li Ximing glanced at him, a hint of curiosity flickering in his heart,For a mere Foundation Establishment Realm cultivator to perceive my presence… it must be Chang Yun’s doing. What marvelous means did he use to let this man see me?</p>
+<p>I have never heard that Daoist Master Chang Yun possessed divination arts… and yet he knew I was coming? Even if he could not predict a Purple Mansion Realm cultivator’s whereabouts, to divine my visit and its relation to him shows an astonishing mastery.</p>
+<p>He withdrew his gaze, letting it rest briefly on the black-robed elder as he asked, “Fellow Daoist Chang Yun’s divination is remarkable indeed; he already knew I would be coming to visit.”</p>
+<p>The old man still looked slightly nervous and hurried to reply, “Daoist Master, my family’s ancestor only sent word that a certain Daoist Master would visit today. He did not say who it would be…”</p>
+<p>That explanation seemed far more reasonable. Since Chang Yun had already sent someone, Li Ximing saw no reason to go and come again, so he simply said, “Lead the way.”</p>
+<p>The black-robed elder bowed at once and began leading the way. Li Ximing glanced at him, the heavenly light between his brows flickering slightly, and spoke as if in passing, “I see that Chengshui Marsh is rich in spiritual energy and abundant in spirit items. It is an excellent place for nurturing talent. Surely many notable figures have emerged here in recent years?”</p>
+<p>Since a Daoist Master had spoken, the elder dared not be careless and quickly replied, “Daoist Master, several esteemed families have risen in Jiangbei in recent years, and many rogue cultivators have achieved Immortal Foundation and dispersed north and south. Moreover, quite a few Dao lineages from the northern regions have sent people here to Chengshui Marsh to harvest its vital energy.”</p>
+<p>“Oh?” Li Ximing asked, “Since the spiritual energy here is so abundant and talents are flourishing, I suppose the blood qi methods of the Eastern Sea are no longer in use?”</p>
+<p>The old man quickly nodded in reply. ”Exactly. Our gate master and the Daoist Master had long since given the order. The era of the Eastern Sea is over. Our gate now stands as a proper orthodox gate. Those who cultivate blood qi have been sent to garrison the Eastern Sea, and those who once practiced a few devil techniques have all restrained themselves. Our disciples now go out regularly to hunt demonic creatures and suppress evil, cleansing Chengshui Marsh and its surroundings. Devil cultivators are now almost nonexistent.</p>
+<p>“Nowadays, common folk are migrating here in droves, and we have gained a name even in Jiangbei. Our Chengyun Gate is the most renowned for eliminating evil and upholding the Dao!”</p>
+<p>A flattering smile spread across the elder’s face as he continued, “Daoist Master, you may ask anyone here: the rogue cultivators, family cultivators, commoners, or disciples. All will tell you that Chengyun Gate is the foremost righteous gate in Jiangbei!”</p>
+<p>Li Ximing felt a tangle of emotions as he listened. For this man to speak with such certainty before him, Chengyun Gate’s conduct was likely indeed as clean as he claimed.</p>
+<p>The rogue cultivators and commoners might not know, but Chengyun Gate had once been nothing more than a gathering of devil cultivators. Yet after a few decades and a new generation of disciples, native Jiangbei geniuses trained from Qi Cultivation Realm onward, their power had stabilized, and the sect had transformed into an orthodox Daoist force.</p>
+<p>If another fifty years pass, who will remember that Chengyun Gate’s founders were devil cultivators who committed every evil and feasted on human flesh?</p>
+<p>Their disciples and descendants, grandsons of their bloodline, will stand in glory, eliminating evil and upholding the Dao, and they will not remember what once was. And Chengyun Gate? A gate that rids the world of evil will then be beyond reproach.</p>
+<p>His gaze grew darker,Who will remember the sins of those ancestors who rose to power through devil techniques? Who will care? Are the good deeds of their descendants not good deeds? Yet those good deeds are built upon the capital gained by their forebears’ slaughter and cannibalism…</p>
+<p>No matter how he pondered it, Li Ximing understood that with Zhong Qian’s intervention, Chengyun Gate would almost certainly become the foremost righteous sect in Jiangbei, rivaling Sword Gate and Hengzhu Dao Gate. The stories of devil cultivators, the killings, and the blood-refining atrocities would all be buried beneath the endless piles of corpses they themselves had slain.</p>
+<p>These devil cultivator elders who spent a lifetime devouring humans will, after centuries of breathing spiritual qi atop the peaks, change to become Daoist elders of the righteous path. Who will care? The grateful commoners under their rule? The rogue cultivators they save? Even the descendants of Chengyun Gate themselves will not remember.</p>
+<p>The affairs of the world are a murky blend of purity and filth beyond reckoning. Nothing captures it better than this.</p>
+<p>————</p>
+<p>Yebai Mountain.</p>
+<p>Yebai Mountain was the highest point of Chengshui Marsh, which had once served as the imperial mausoleum of Ning State. The mountain stood at the very heart of the tomb grounds. Chengyun Gate had occupied the mountain and built a pavilion atop the peak, naming it Yebai Pavilion after the mountain itself.</p>
+<p>Though called a pavilion, the structure was sprawled across a vast area, winding and turning upon itself. The main hall was enormous. A plain-looking young man sat within, dressed in a long robe of white feathers and black mystic patterns. He had a light-collared white soft armor beneath, a blade at his waist, and a jade gourd in hand.</p>
+<p>Across the table from him sat a kindly-faced, slightly plump monk in a brown-yellow robe. Studying a jade cup in his hands, he smiled and said, “Fellow Daoist Chang Yun! If my calculations are correct, that Daoist friend of yours will arrive here within the next two hours.”</p>
+<p>Daoist Master Chang Yun’s gaze lingered on the jade flask in his hand. After a few seconds, he seemed to sense something and finally said, “Fellow Daoist Minghui, your divination is truly impressive.”</p>
+<p>Monk Minghui chuckled softly. “Though this old monk has not yet ascended to the Maha seat, I have not come away empty-handed. My Non-Retrogression ground is certified beneath the lotus throne of Maha’s Buddhist land, and there is still a place reserved above. With patience and perseverance, Maha is within reach!”</p>
+<p>Daoist Master Chang Yun paused briefly before replying, “Fellow Daoist, your fortune is truly remarkable. How many ordinary monks could ever attain such a destiny? You are both the Lotus Temple’s chief disciple and the envoy to the south. Back when the Yue Cultivating Sect advanced northward and Shangyuan made his move, Maha Jinlian even risked his own reputation and sacrificed the life of another Merciful One to shield the way, all to secure you the title of a monk who brings peace amidst turmoil. Naturally, the Maha seat is within reach!”</p>
+<p>Minghui smiled. “That is because my master has now completed his eighth lifetime of cultivation and become an eighth-generation Maha. The Way of Virtue flourishes, and with a seat vacant in the Buddhist land, I now have this opportunity…</p>
+<p>“Look at Master Monk Xuwang of the north-south dispute. The Way of Emptiness held no seat for him, yet he stubbornly refused to become a Merciful One. It was only after slaughtering all the Azure Pond Sect cultivators at Mount Bianyan that he attained Non-Retrogression, and even then, he sits only beneath the Golden Lotus, the same seat as mine…”</p>
+<p>The monk chuckled and said, “In the end, all of this is thanks to the favor my Maha has shown me!”</p>
+<p>Daoist Master Chang Yun felt some disdain in his heart. He had little fondness for the monk, but Minghui was backed by Jinlian, an eighth-generation Maha, and he himself was destined for a Maha seat. Chang Yun could not afford to be dismissive.</p>
+<p>He responded with a polite smile just as a voice sounded from outside the hall, “Daoist Master, please!”</p>
+<p>1. This is either referring to Daoist Master Ling Mei or the spirit pine Tianjiao (Chapter 1053&amp;1054). ☜</p>
+<p>2. 业 (yè) means karma, cause-and-effect, deeds and 柏 (bǎi) means cypress (a sacred tree often planted at tombs or ancestral sites). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1110.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1112.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

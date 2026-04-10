@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1155: Qian and Xia (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1154.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1156.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1155: Qian and Xia (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After pondering for a while, Li Jiangqian called someone over and ordered, “Go and tell Kong Guxi clearly that Crimson Reef should abandon any thought of meddling in our territory. If they want to harvest resentment qi, they can do it under their own outer-sea dominion. There’s more than enough there; there’s no need to come to us.”</p>
+<p>Once the messenger departed, Li Jiangqian drew out a letter, frowned, and said impatiently, “I’ll write to Jiangxia immediately. The Wilderness can be abandoned; as long as the Profound Peak Gate people withdraw safely, that’s enough. That boy had better keep himself alive; if he dies at the hands of Capital Immortal Dao or Crimson Reef, I, as his brother, will have to avenge him myself.”</p>
+<p>Li Quewan nodded silently. At that moment, another figure emerged like wind from the shadows. He was draped in a pitch-black dharma robe, and had a piece of dark jade hanging from his waist. Li Jiangqian quickly stepped aside and bowed respectfully.</p>
+<p>“Granduncle.”</p>
+<p>Li Chenghuai nodded slightly, his expression solemn, and replied, “I went north for a look. The Capital Immortal Dao has made its move. They sent Wang He to consolidate the Wang Family’s power in Jiangbei.”</p>
+<p>The Wang Family of Floating South was tied to their arrangements at Mount Xiaoshi in the north. The matter directly affected Floating South’s stability.</p>
+<p>Li Jiangqian asked, “How did it go? Our family is in some trouble now. Wang Quwan is still in seclusion by the lake, and with the head of the Wang Family in Floating South absent, I doubt they can withstand Wang He’s pressure…”</p>
+<p>To his surprise, Li Chenghuai shook his head and answered, “The current head of the Wang Family is Wang Quwan’s younger brother, Wang Quyu. He defied opposition within the family and refused to meet Wang He outright. Then he led his people out to meet your younger brother and has now joined our mountain defenses to stand guard together.”</p>
+<p>Li Jiangqian nodded lightly and paced twice before his seat. It was the first good news he had heard in a long time. Li Chenghuai, too, looked somewhat gratified as he added, “I had thought Floating South would be the first to fall into turmoil. After all, more than half of the Wang Family’s main lineage remains under the Capital Immortal Dao’s influence. Yet this timely aid has steadied Floating South. They may still appear to be playing both sides, but this move of theirs is undeniably beneficial. Once all this passes, they should be rewarded.”</p>
+<p>Li Jiangqian nodded. “The Wang Family has deep roots in Jiangbei; they have the capital to gamble on both sides. With his elder brother in seclusion by the lake, it makes sense that Wang Quyu refused to meet Wang He. It shows he has firm control over his branch of the family.”</p>
+<p>Li Chenghuai sighed. When Li Jiangqian mentioned the matter concerning Crimson Reef Island, his brief relief vanished, and he replied gravely, “The cultivators of Crimson Reef Island are not easy to handle. Their Merging Fire technique harms both nature and life; it’s vicious beyond measure. You’d best consult your elder brother Chenghui about this.”</p>
+<p>————</p>
+<p>Eastern Shore.</p>
+<p>Deep within the dense forests of the Eastern Shore, continuing further east toward the border between the Wilderness and the shore, stood a mountain. It was not grand in stature, yet it was filled with many pavilions and halls. Cultivators came and went in constant streams, giving the place a lively air.</p>
+<p>At the summit, a broad-shouldered man with golden eyes exhaled slowly within the grand hall and rose to his feet. Heavenly light shimmered faintly around him as he stepped forward. Several trusted retainers immediately approached and bowed respectfully.</p>
+<p>“Third young master!”</p>
+<p>Li Jiangxia lifted his chin slightly and asked, “How long has it been?”</p>
+<p>“My lord, two months have passed.”</p>
+<p>Li Jiangxia possessed extraordinary talent in cultivation, second only to his elder brother Li Jiangqian. His resources were among the finest, and he had never once worried about bottlenecks in his cultivation, only that his foundation might not yet be firm enough or his spell arts too few. After two months of effort, he had advanced smoothly to the fifth stage of the Qi Cultivation Realm, with energy to spare.</p>
+<p>Settling his mind, he asked calmly, “Has anyone seen the Daoist Master?”</p>
+<p>As the overseer of all the families along the Eastern Shore, Li Jiangxia was known for his generosity and open character, which naturally drew many loyal followers to his side. They had all gathered to report with several local officials. But at his question, they all hesitated and shook their heads.</p>
+<p>Li Jiangxia’s expression darkened immediately. He ordered them to recount the recent events, and his eyelids twitched uncontrollably as he listened. Then he asked, “Where are the elders currently stationed?”</p>
+<p>The gathered cultivators lowered their heads and muttered uncertainly. At last, a guest cultivator who was apparently from the Wilderness stepped forward. He was an early stage Qi Cultivation Realm cultivator who had joined only a few years ago. His surname was Fu, and he had once belonged to Profound Peak Gate before changing his allegiance.</p>
+<p>The man seemed rather quick-witted as he smiled. “My lord, I received word from my kin through Kong Guxi that Elders Minggong and Chenghui are both stationed in the Floating South territory.”</p>
+<p>Li Jiangxia raised his eyes at that, took note of the man, and after sweeping his gaze around the hall, waved his sleeve as he said, “Everyone return to your duties. There’s no need for so many people here.”</p>
+<p>He paused, his expression somewhere between amusement and a smirk. “Master Fu, you stay.”</p>
+<p>The others hurriedly withdrew, leaving only a few trusted aides in the hall. Just then, the Jade Court Guards brought up a letter from below. As Li Jiangxia tore open the seal and began reading, he remarked, “You do keep yourself well-informed.”</p>
+<p>He glanced through the letter and saw that his elders were indeed in Floating South. Understanding dawned upon him,So Crimson Reef Island is getting involved too… Li Jiangqian intends to abandon the Wilderness. A sound strategy, perhaps; the cultivators of Profound Peak Gate can be relocated easily enough. But, Li Jiangqian, have you thought about the five hundred thousand common folk living in the Wilderness?</p>
+<p>Neither Crimson Reef Island nor the Capital Immortal Dao will pass up a chance to profit. Once the land is abandoned, they won’t bother with any noble talk of resettling the people to strengthen Shanji. They’ll strip it bare, take everything, and leave nothing behind!</p>
+<p>Irritated, he waved the Jade Court Guards away. Master Fu, pleased by the praise, stepped forward with a smug expression. Seeing that the hall was surrounded by Li Jiangxia’s retainers, he cupped his hands and murmured, “Young master, the Capital Immortal Dao eyes us like a tiger and will surely send troops east. The Wilderness and the eastern shore have long benefited from your kindness and are our bulwarks. We cannot afford to lose them. I hope you will prepare early.”</p>
+<p>Li Jiangxia folded his hands behind his back and asked, “What preparations do you suggest?”</p>
+<p>Master Fu lowered his voice and said, “When the Capital Immortal Dao attacks, first abandon a few outlying strongholds along the shore. Once the enemy touches Floating South, split forces toward the second young master to relieve pressure. If the Profound Peak Gate’s formations cannot hold, cede the Wilderness and withdraw to the eastern shore. Our elders will be compelled to come to the rescue. Even if the Wilderness is lost, your strength will be preserved.”</p>
+<p>Li Jiangxia understood his meaning at once. He glanced to the side and said, “If our elders come to defend the eastern shore, Floating South will be caught between the Golden Tang Gate and the Capital Immortal Dao. Their retreat will be cut off by cultivators crossing the river, and my second brother’s forces will be routed. We will lose both ground and people.”</p>
+<p>Master Fu smiled and said nothing. He watched Li Jiangxia tuck the letter away and look up at him. The young man’s golden eyes glittered as he lifted one foot, revealing a black-iron boot threaded with golden lines.</p>
+<p>Master Fu froze at the sight, saying, “Young master, you are—”</p>
+<p>Thud.</p>
+<p>Suddenly a tremendous force struck him as a heavy kick landed in his chest. The sound of bones cracking rang out as he was hurled through the air. He crashed through a pillar with a thunderous impact, and continued through several more columns as he spat blood.</p>
+<p>Splat.</p>
+<p>Li Jiangxia’s gaze turned icy as if he might tear the man apart on the spot. He stepped forward, reached out, and drew a gleaming sword from a retainer’s hand with a metallic ring. He aimed its bright point between Master Fu’s brows.</p>
+<p>“You dog-born wretch. If there is to be a struggle for power, it will be the Li Family who takes from the Li Family. Who do you think you are, coming here to sow discord and play your treacherous double-dealing games?”</p>
+<p>Master Fu had no idea where Li Jiangxia’s sudden strength had come from. His chest burned and he opened his eyes to meet merciless golden pupils. The young man’s usual frankness and generosity were gone, replaced by a cruel, terrifying sharpness.</p>
+<p>“Young master!”</p>
+<p>Li Jiangxia pressed the sword against his throat. The retainers nearby had long known this man had courted danger, but not to this extent.</p>
+<p>They hurriedly pleaded, whispering, “The Fu Family is an external family to Profound Peak Gate. In such a crisis, it is not appropriate to—”</p>
+<p>Profound Peak Gate.Li Jiangxia hesitated for a moment.</p>
+<p>He then seized Master Fu by the collar and hoisted him up with one hand. The muscular man struggled, cold sweat pouring from his brow, as Li Jiangxia’s voice cut through him like ice, “If those words escape your lips again, Profound Peak Gate will be kneeling on Pingya Island. Kong Guxi will flay you alive to protect his ancestral Dao lineage!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1154.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1156.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

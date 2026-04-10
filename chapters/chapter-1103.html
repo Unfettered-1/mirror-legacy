@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1103: Walking In The Great Void (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1102.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1104.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1103: Walking In The Great Void (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The fierce clash instantly dissolved into chaos. A flying sword drifted uselessly into the sky; a spellcaster nearly bit off his own tongue; and the devil cultivator who had raised his shield halfway froze in terror, letting his head be chopped off without resistance. The Wu Family cultivators on the other side lost all will to fight and nearly tumbled from the sky.</p>
+<p>Xiao Chuting was likely not here, and Li Ximing had no interest in paying them any attention. Without pausing for even a second, he vanished in a flash of heavenly light beneath his feet, flying toward a distant, untraceable horizon.</p>
+<p>Yet even though he merely passed them from a considerable distance, the devil cultivator in the front was caught off guard. Li Ximing’s escape light brushed him from afar, and purple flames roared up as heavenly light flared. A sudden pressure struck his chest; his hair and beard were incinerated in an instant; and his robes burst into flames with a sharp whoosh.</p>
+<p>Had he been an ordinary cultivator, it might not have been so bad. But as a devil cultivator, his flesh and skin were seared along with his robes. The onlookers were struck dumb, too terrified to even attempt fleeing.</p>
+<p>Fortunately for him, Li Ximing had only appeared before him for a brief moment and paid him no mind, racing several kilometers away before vanishing entirely. Even so, the devil cultivator screamed in agony as his dharma robe was reduced to ashes.</p>
+<p>Before the group could even breathe a sigh of relief, the great void split open once again. The sky, which had only just cleared from rain, darkened with heavy clouds, and solemn, reverent chants echoed through the air. Ye Hui materialized before them, clad in a deep blue Daoist robe. His eyes, bright with spiritual light, swept over the surroundings.</p>
+<p>At that moment, Ye Hui was operating his Body Divine Ability, South Chou Waters, at full power. Nearly half his body had transformed into a purple halo and was further strengthened by Eastern Feather Mountain. That single glance struck like a thunderbolt under clear skies. Ye Hui vanished in a moment, but only after he disappeared did the six cultivators react, crying out in pain as purple light dragged them down from the air.</p>
+<p>Li Ximing had not yet left the Xianyou region. The moment the spiritual energy eased even slightly, he slipped back into the great void, but Ye Hui’s purple light flared again right behind him. South Chou Waters was indeed fast, forcing Li Ximing to take another of his blows. Looking up, he saw the Profound Peak Gate’s mountain gate just ahead.</p>
+<p>But Ye Hui was already upon him again. The dharma sword in his arms gleamed as every ghostly blue rune upon it lit up. Ye Hui’s face remained cold and grim as he pursued Li Ximing. He formed seals and chanted an incantation, and once more, a wisp of white qi leaped from his lips.</p>
+<p>When the white qi shot forth, Li Ximing felt not only the ground beneath his feet sink but also the great void before his eyes shift. The Stable Earth formation light of Profound Peak Gate dimmed in an instant, as though veiled by a hazy white glow, and even the great void under his feet grew uneven and unstable.</p>
+<p>Eastern Feather Mountain still has such power?</p>
+<p>Li Ximing’s spiritual sense stirred. The great void around Profound Peak Gate had become as still as dead water, and the entrance to the Purple Mansion Realm formation now appeared hazy, shifting between near and far. He had known that the divine ability mana of Eastern Feather Mountain could affect the great void, but he had not realized it could wield such subtle influence.</p>
+<p>He spat out flames and slipped free of the great void, entering the manifested realm of Profound Peak Mountain. A vast expanse of purple radiance blanketed the mountain like smoke and mist, drawing the awed attention of cultivators across Shanji Prefecture. Ye Hui sat calmly atop it, astride a pitch-black crow.</p>
+<p>No wonder Ye Hui is confident he can drag this out for three to five years. With entanglement like this, escaping him will be truly difficult. Even if he cannot kill me, he could easily wear me down to light injuries over the course of a few years.</p>
+<p>Li Ximing could not enter, but he felt little discouragement. As long as Ye Hui was determined to entangle him, even entering Profound Peak Gate would only mean being trapped in another place. For now, it made little difference if he remained outside.</p>
+<p>But he had already prepared his retreat before coming here. How could he let himself be trapped so easily? He watched coldly as Ye Hui’s purple radiance swirled above Profound Peak Gate.</p>
+<p>Still… could Daoist Master Qilao possibly remain seated through this?</p>
+<p>He let out a cold laugh as he slipped into the great void once again. Though he could not enter Profound Peak Gate, he darted back and forth around it, circling and weaving in an unending pursuit. Even after taking several blows from a divine ability, the purple aura remained locked over the mountain gate for fifteen minutes.</p>
+<p>Li Ximing knew that Sumian cared deeply for his reputation, so he deliberately kept the stalemate with Ye Hui going. As more and more cultivators gathered around, Li Ximing slipped into the great void again and finally saw Daoist Master Sumian reveal himself in the distance.</p>
+<p>The old Daoist sighed and spoke, “Fellow Daoist Ye Hui… cease your actions. I gave my word to Daoist Master Changxi to safeguard Profound Peak and cannot stand idly by.”</p>
+<p>Daoist Master Changxi had died within Sumian’s own Xuanmiao Temple, and even his corpse had been delivered to its gates. Which cultivator in Jiangnan or Jiangbei did not know of this? Lake Xian remained under Xuanmiao Temple’s protection; the Capital Immortal Dao had simply chosen not to attack. But now that Ye Hui had brought the fight to the mountain gate itself, Li Ximing was striking again and again without Sumian showing himself. Such inaction would leave his reputation in tatters.</p>
+<p>Sumian had cultivated his reputation for centuries, much of which was tied to his legacy after death. Naturally, he could not abandon it. Forced into action, he stepped into the great void, and with that, Ye Hui finally halted his assault.</p>
+<p>“So it is Daoist Master Qilao.”</p>
+<p>Ye Hui chuckled and replied, “I was merely sparring with Daoist Master Zhaojing. I did not expect the disturbance to grow so large as to trouble you, old master. In that case, let us end it here.”</p>
+<p>He seemed to share a fairly cordial relationship with Sumian. After casting a deep look at Li Ximing, he turned back with a smile and asked Sumian, “I wonder, Daoist Master Qilao, how long a term did you promise to Daoist Master Changxi? I have been meaning to meet with you these past few days precisely to discuss matters concerning Profound Peak Gate. If swords can be turned into silk and peace achieved, that would naturally be best.”</p>
+<p>Sumian responded briefly. Meanwhile, Li Ximing brushed away the lingering mana from his wrist without paying Ye Hui any attention and said plainly to Sumian, “I recall you saying you would heal the people of Profound Peak Gate. One member of the Kong Family has been crippled, and three others gravely injured. I will send them to you when the time comes; I’ll trouble you with their care.”</p>
+<p>Li Ximing had no intention of exchanging hollow courtesies with Ye Hui. Since Sumian had appeared, it showed he valued his reputation and was not one to break his word. The people of Profound Peak Gate were severely wounded, and if someone else could be troubled to tend to them, there was no need for Li Ximing to do it himself.</p>
+<p>Sumian simply nodded at his words, watching as Li Ximing offered a perfunctory bow and departed. Ye Hui too flicked his sleeve and took his leave soon after, leaving Sumian with a throbbing headache.</p>
+<p>I still need to find a way to resolve this matter. Time is growing short, and I must devote my energy to that devil fetus[1]. I cannot afford to keep wasting time dealing with these two…</p>
+<p>Sumian let out a weary sigh and made his way back to Xuanmiao Temple, pondering quietly as he went,I must also find a way to open the treasury of Mount Xiaoshi and resolve this matter quickly. Otherwise, idle eyes will keep turning this way one after another, dragging me into their mess and tying my hands.</p>
+<p>1. This is referring to the Essence Stone Devil Fetus that Changxi gave him before his passing. Refer to Chapter 1086. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1102.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1104.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

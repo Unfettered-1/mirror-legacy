@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1179: Shouyu — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1178.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1180.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1179: Shouyu</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Sea’s end.</p>
+<p>The sky was a deep blue as a streak of flight raced past, carving a bright red trail through the heavens. It was headed toward a place where spiritual energy was thin. After flying for more than half a day, it descended onto an island and transformed into a woman.</p>
+<p>She wore a slightly oversized brown Daoist robe with an incongruous brocade coat thrown over it. She had autumn yellow cotton boots that barely completed the outfit.</p>
+<p>She oriented herself for a moment, then flew toward the island’s center. As scattered tribesmen came into view below her, she nodded inwardly and thought,Once I finish checking things here, I can take these people away. They can open new fields in the wild hills back at the temple. A few thousand as seed stock will do.</p>
+<p>She reached the island’s heart and indeed found a great turquoise hot spring bubbling without pause. Its spiritual qi was still fairly abundant, which delighted her. She thought,If the spring vent remains after I collect the goods, it will be very useful. The only thing is, that devil cultivator said there is a gout of flame below. If I move the items away, this big spring will likely vanish as well.</p>
+<p>She let out a cold laugh as she muttered, “Fine abacus you keep, Fellow Feng. You dared seize my Fire Repelling Shield. Pawning it with the Noon Pavilion Talisman Brush is one matter, but the item is still mine. Where do you think you can take it?”</p>
+<p>She tossed the Fire Repelling Shield lightly into the air and it spread into a sheath of red light. She examined the surroundings with care and, once certain the spring posed no problem, slipped beneath the surface.</p>
+<p>Her cultivation far surpassed that of the two junior cultivators from before, and her speed was in another league. She quickly reached the bottom of the spring and followed the earth veins downward. After fifteen minutes, she slipped into a region where flames roared.</p>
+<p>Xia Shouyu’s attainment was not shallow. Joy flickered across her face,There is indeed fire beneath the cavern spring waters.</p>
+<p>She pinched off a wisp of flame and examined it closely, surprise stirring in her heart,This is spell art fire, not a natural fire. There may truly be a cultivator’s cast-off beneath. To wield such force even after death, he must have at least reached Foundation Establishment.</p>
+<p>The woman moved cautiously, but within the flames, a pair of eyes flickered with hesitation,How can it be just a ninth stage Qi Cultivation Realm cultivator…</p>
+<p>Li Ximing had waited here for more than half a month. His luck was unusually good, since another person had arrived. After observing her for a few moments and listening to her muttering, he immediately understood the situation.</p>
+<p>So the one who killed and stole the treasure has himself been slain, and it seems the one who killed him was the lender of the Fire-Repelling Shield. He must have shown his face in some market and been discovered. The Eastern Sea really is in chaos… another life gone.</p>
+<p>Li Ximing quickly dismissed the thought with a hint of bitterness. The end of the sea was nothing like the prosperous Jiangnan, the heart of the world. This cursed, barren place did not even see the shadow of a single Foundation Establishment Realm cultivator.</p>
+<p>The woman before him, Xia Shouyu, was probably one of the few notable figures in this region. The ease with which she had retrieved her dharma artifact marked her as a local power.</p>
+<p>Of course… anyone capable of the Foundation Establishment Realm wouldn’t come to this forsaken corner. It would be better to head to the Shallow Sea or the Unison Sea, and pledge to some established power. It’s surely preferable to eating dust where the spiritual energy is thin as air.</p>
+<p>Ninth stage of the Qi Cultivation Realm or not, there would be no stronger figure in this wasteland. Li Ximing could only grit his teeth and accept it, though watching her inch through the flames left him uncertain how to proceed.</p>
+<p>Cultivators of the Eastern Sea don’t dare get entangled in Purple Mansion Realm affairs. If I show the face of the righteous path, she won’t believe me. It would be better to take on a demonic guise; coercion and temptation might make her feel safer!</p>
+<p>He recalled once meeting an old ghost in the Eastern Sea who claimed to be righteous yet demanded a demonic creature be brought for blood food, promising a rich reward in return. Even he, Li Ximing, hadn’t believed it, and had fled as far and fast as he could!</p>
+<p>Judging by her mismatched garb, she was cobbled together from scraps. Even as a local figure, she likely lacked any powerful backing. It may even be that she doesn’t know what the Purple Mansion Realm stood for.</p>
+<p>Luring a Foundation Establishment Realm demonic creature here doesn’t necessarily require a Foundation Establishment Realm cultivator. There are plenty of ways to trick one, someone at the ninth stage of the Qi Cultivation Realm might manage it just fine. Conveniently, she fits the bill.</p>
+<p>Meanwhile, Xia Shouyu was so elated she could have danced right there if the timing weren’t so ill. She thought,The remains of a Foundation Establishment Realm cultivator! A true Foundation Establishment Realm cultivator! If there’s even one Foundation Establishment Realm dharma artifact down here, my household will be rich beyond measure!</p>
+<p>She hurried forward through the flames, warding them off with careful steps. After a full circuit of inspection and a round of talisman probing to ensure safety, she finally approached the skeleton and cast a thread of dharma light to seize the storage pouch on the ground.</p>
+<p>Boom!</p>
+<p>But the instant her dharma light spread from her hand, the surrounding flames surged up, devouring the radiance completely. In a heartbeat, it crumbled to ash and vanished.</p>
+<p>Xia Shouyu hesitated for a moment, then bent down, extending her arm with utmost care to pick up the storage pouch by hand.</p>
+<p>Crack.</p>
+<p>A faint scraping sound brushed by her ears. Xia Shouyu’s heart jolted as she yanked her hand back, only to find it would not budge. A chill gripped her arm, biting deep enough to hurt.</p>
+<p>A skeletal arm had already risen from the flames, its five bony fingers clamped tightly around her wrist.</p>
+<p>Every hair on her body bristled. Mana surged wildly through her arm as years of refined footwork and movement techniques sprang instinctively to life. Her free hand reached for the storage pouch at her waist.</p>
+<p>But she could not move!</p>
+<p>Her mana vanished as though swallowed by a bottomless abyss. No motion followed, no resistance remained and Xia Shouyu stood frozen in place like a statue.</p>
+<p>Li Ximing seated her before him with ease. Subduing a Qi Cultivation Realm cultivator was effortless for him. As his skin slowly surfaced, he gave thought to what kind of face to show; not his own, of course, but one that looked nothing like a good person.</p>
+<p>A face came to mind. A face with sharp brows, ashen eyes, and a sinister air. Cruel and vicious; the kind that looked ready to devour someone alive. The face of Li Yuanjiao.</p>
+<p>Second uncle…</p>
+<p>Li Ximing faltered slightly.</p>
+<p>Memories often struck without warning, like an unreasonable storm crashing into his mind. This Daoist Master Zhaojing, who had been hunted to the brink of death by a great cultivator in the Eastern Sea, who hadn’t shed a tear even then, now found his eyes turning red.</p>
+<p>Li Ximing had always feared Li Yuanjiao. Oddly, when Li Yuanjiao died, he had cried, though never as he did for his own father, Li Yuanping. In later years, he thought of his uncle only on memorial days. Yet now, in that sudden flash of recollection, it was as if he had seen him again, like lightning, brief and piercing. And instead of fear, he felt a deep ache of longing.</p>
+<p>Damn it.</p>
+<p>Li Ximing cursed inwardly. His face shimmered and shifted until it became completely blank. There were no features, and no expression. Now, though it bore no monstrous visage, it was far more terrifying than any face could be.</p>
+<p>The woman opposite him made no sound. After all, she couldn’t move, nor could she speak. Her pupils had dilated to their limits, as if she might faint at any moment.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1178.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1180.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

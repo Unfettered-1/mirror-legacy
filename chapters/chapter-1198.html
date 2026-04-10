@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1198: Two Letters — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1197.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1199.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1198: Two Letters</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Island at the heart of the lake.</p>
+<p>Li Zhouluo was dressed in a black robe as he wrote at his desk beneath the dim glow of lanterns. Dili Guang stood silently below the steps, saying nothing.</p>
+<p>An old man was walking up the steps, his back straight, features upright, cheeks sunken and face deeply aged. His expression was solemn, and the dark sword hanging at his waist gave off an air that inspired fear.</p>
+<p>Li Zhouluo raised his brows slightly in surprise. When he saw the old man arrive before the hall, he quickly put down his brush, rose, and said quietly, “Elder Donghe has come… why not send word in advance… it’s too much to trouble the elder for such a trip.”</p>
+<p>Chen Donghe had rapidly grown thin in recent years, becoming ever more silent and increasingly unlike his old self. His skin clung to his bones. Standing in the hall, after finishing his salute, he said in a hoarse voice, “I have grown old, old-fashioned, and dare not speak much in the hall. I only came to pay my respects to the family head.”</p>
+<p>Li Zhouluo rarely wore the formal attire of the family head. Unless the occasion was extremely formal or absolutely necessary, he would not take out that robe. The times he had worn it in these past years could be counted on one hand; ordinarily, he still preferred his usual black robe.</p>
+<p>Chen Donghe glanced only once, yet clearly recognized the cut and style of that black robe.</p>
+<p>The last person in the family to habitually wear a black robe had been Li Yuanjiao, the one personally entrusted by Li Tongya before his death. He could barely be considered the founding pillar of the third lineage, though Li Yuanjiao had been formally adopted into the first lineage. At that time, however, he could still be regarded as belonging to the third lineage.</p>
+<p>The young family head before him was likely signaling the legitimacy of his lineage, expressing a wish to emulate and learn from his predecessor. But he likely could not compare with Li Yuanjiao in ability.</p>
+<p>Chen Donghe had barely cast a glance as Li Zhouluo smiled. “Elder Donghe is too modest… our family is in need of capable people. Chen Yang has repeatedly achieved merit on the eastern shore. He has driven devil cultivators back many times, even turning defense into offense and nearly capturing one alive. Elder still deserves congratulations.”</p>
+<p>“It is Moongaze who deserves the congratulations.” The old man replied with that single line, then asked, “I heard in the past two days that Fei Chingyi of the Fei Family has thoughts of breaking through to the Foundation Establishment Realm. He came to the hall seeking an Essence Gathering Pill. Is that true…”</p>
+<p>Li Zhouluo felt a faint headache. The matter was indeed true, and it had been stirring up quite the commotion these past few days. He nodded and said, “Yes, all the family branches have their eyes on that pill. He’s staying in the side hall, waiting to see me.”</p>
+<p>Chen Donghe had immense prestige within the family. He had stepped away from positions of real power years ago and rarely met with others. If not for how noisy this news had become, it likely wouldn’t have reached him.</p>
+<p>Yet, instead of prying into the Fei Family matter, the old man said, “I heard… there’s a shortage of manpower on the lake. Now that Fei Chingyi is going into seclusion, I can’t sit idle any longer. I came out to await orders for lake duties.”</p>
+<p>Li Zhouluo was pleasantly surprised. After all, the post at Qingdu was still vacant and there was no suitable candidate. Li Jiangxia had returned to the eastern shore, while Chen Donghe’s reputation could easily put everyone at ease.</p>
+<p>Thus he said, “Elder, your righteousness is admirable. I’ll entrust the Qingdu matter to you and draft the official document at once. I must trouble you, elder.”</p>
+<p>Chen Donghe slightly lowered his eyelids, offered a respectful bow, and withdrew.</p>
+<p>The Qingdu post was a task bound to offend others. Li Zhouluo was relieved to see Chen Donghe taking the initiative to support him. Inwardly, he thought,It must have been the old elder himself who persuaded him to come out and help me… ah…</p>
+<p>Li Zhouluo had no time to dwell on it. The Fei Family affair already had his head spinning. He took out a letter from his desk; it was from the master of Jiutian Pavilion in the Azure Pond Sect, his paternal grandfather, Li Xizhi.</p>
+<p>The letter mentioned many people and was written with heartfelt concern. It also said that Li Xizhi had gone to the Southern Sea to suppress devil cultivators and could not often return home, but he included several words of warning.</p>
+<p>“Fei Qingyi… has grown increasingly close to Qin Xian, the Peak Master of Siyao Peak within the sect, and there are signs that a marriage may soon be arranged…”</p>
+<p>Though Fei Qingyi seemed indifferent to worldly matters, she was by no means simple. A few days ago, she had visited Li Xizhi herself, saying that both her parents had passed and there were no elders in her family. She had earnestly asked Li Xizhi to act as her elder and accept Qin Xian’s proposal on her behalf.</p>
+<p>In his letter, Li Xizhi specifically noted that Qin Xian was a close confidant of Tantai Jin, who had long represented the interests of the Si Family. How much of this arrangement was genuine affection and how much political calculation remained hard to tell.</p>
+<p>Against that backdrop, Fei Chingyi’s breakthrough took on a different meaning. With Fei Qingyi now climbing high, the entire Fei Family had acquired a new air around them. If Fei Chingyi were to achieve Foundation Establishment Realm as well, it would leave Li Zhouluo uneasy.</p>
+<p>After thinking for a long while, he finally ordered, “Let Fei Chingyi come in.”</p>
+<p>Dili Guang immediately withdrew, and not long after, a man in white robes entered the hall. His features were refined and elegant, with a smooth and rounded face. The space between his brows and eyes was narrow, his lips red, and teeth white. His looks could only draw sighs of admiration.</p>
+<p>He bowed and said, “Fei Chingyi pays respects to the family head!”</p>
+<p>It was Li Zhouluo’s first time seeing him, and he couldn’t help but remark, “What fine looks you have, Chingyi. They say the men of the northern shore Fei Family are the most handsome. It seems that’s true.”</p>
+<p>Fei Chingyi answered respectfully, while Li Zhouluo asked about the Fei Family’s current affairs, including the harvest of Spirit Paddies, and whether the cultivators assigned by the elders to oversee the peak offices were fulfilling their duties.</p>
+<p>The Fei Family had only been under the Li Family’s allegiance for a generation, and the Li Family had treated them gently. Those assigned to manage their affairs were either Fei family members or those friendly to them. Naturally, Fei Chingyi’s words painted everything as harmonious and orderly.</p>
+<p>After some polite exchanges, Li Zhouluo’s expression turned serious as he said, “Breaking through to the Foundation Establishment Realm is a matter of life and death. Since you are preparing for it, have you informed your family? Have you sent word to the Azure Pond Sect, and how did they reply?”</p>
+<p>The young man clearly hesitated for a moment before replying, “I’ve already sent a letter. My sister’s instructions were… there’s no need for further correspondence from home. Everything should proceed according to procedure: report to the lake authority first, then forward to the Azure Pond Sect. As for the Essence Gathering Pill… it will also follow the lake’s established rules.”</p>
+<p>Clearly, whether Fei Qingyi could provide this pill or not was uncertain, but at the very least, she dared not do so openly. Her attitude toward the Fei Family was strictly by the book.</p>
+<p>Li Zhouluo asked, “Since Qingyi’s wedding is approaching, she indeed should not be disturbed. The matter of the pill will be handled according to the lake’s arrangements. You cultivate Cold Essence, and this Essence Gathering Pill must be allocated based on merit. The quota will be discussed among the peak masters, not decided by me alone. You should first pay respects to the old elder and hear his opinion.”</p>
+<p>Fei Chingyi nodded repeatedly, then hesitated and said, “A wedding?”</p>
+<p>The young man’s expression was one of genuine astonishment. He was in utter shock and disbelief, without the slightest trace of pretense. Li Zhouluo’s heart jolted.</p>
+<p>Fei Qingyi never even mentioned her marriage to the Fei Family! This…</p>
+<p>At this moment, Fei Chingyi stood staring blankly at the floor, his pupils dilated. Li Zhouluo felt a trace of embarrassment. He instantly realized that Fei Qingyi’s estrangement and avoidance of the Fei Family were not mere pretenses, nor simply to distance herself from his branch alone.</p>
+<p>Passing the small bamboo slip from Ding Weizeng requesting an audience to Dili Guang, he hesitated before saying, “It seems our family received the news a little earlier. I only heard that it’s a joyous affair; Daoist Friend Qingyi and a certain peak master from within the sect have developed feelings for each other, and their affection runs deep.”</p>
+<p>Fei Chingyi’s face showed both shock and delight. He was about to ask more when Dili Guang stepped forward and respectfully interrupted, “Family head, Guest Cultivator Ding has brought an urgent report.”</p>
+<p>“Good! Quickly, let him in!”</p>
+<p>Li Zhouluo responded in delight. Fei Chingyi, perceptive enough despite his confusion, could only take his leave. Once he hurriedly disappeared down the corridor leading from the side hall, Li Zhouluo’s smile faded, and he said quietly, “Bring Ding Weizeng in.”</p>
+<p>Only then did Dili Guang withdraw, but a clatter of hurried footsteps came moments later. To everyone’s surprise, it was Chen Yang who burst into the hall first, his Dharma robe disheveled and a faint red scratch on his neck.</p>
+<p>His face, however, was alight with joy as he bowed and said, “Family head, the Capital Immortal Dao has retreated!”</p>
+<p>Li Zhouluo leapt to his feet from the main seat, his expression filled with excitement as he exclaimed, “What?! …Where are the people of Profound Peak Gate? What’s the situation at the borders?”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1197.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1199.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1149: Profound Method (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1148.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1150.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1149: Profound Method (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Mount Luoxia… even this can somehow be linked to Mount Luoxia…</p>
+<p>Thick gray mist spread across the sea’s surface, seemingly about to close in at any moment and rain thunder. Li Ximing had no time to think and darted into the great void. The spiritual energy within was already in turmoil from the fluctuations of thunder, rising and crashing like mountainous waves all around.</p>
+<p>Changxiao’s voice boomed through the void, echoing in every direction. Li Ximing clearly felt the pull of the gray mist. Whether it was a divine ability or a spirit artifact, the smoke possessed a sealing energy, though it was not its true strength. Li Ximing forced the Mountain-Charging Sea-Pacing Tiger technique to surge, tearing himself free long enough to start fleeing again.</p>
+<p>Changxiao tore into the void after him. Li Ximing urged his spirit artifact to full speed and drew out a True Profound Heart-Cleansing Pill, swallowing it quickly. As his dharma body began to circulate energy, the effects of the Treasure Bottle Merging Profound Method gradually diminished. Yet Changxiao calmly raised the silver disk in his hand, shining its light straight at his opponent.</p>
+<p>Another spirit artifact, without question!thought Li Ximing.</p>
+<p>Changxiao had inherited the lineage of Douxuan Dao and had been a Purple Mansion Realm cultivator for countless years. Whether it was the lantern, the silver disk, or the gray mist outside, any single one of these formidable spirit artifacts left Li Ximing at his wits’ end. When he saw the silver disk raised once more, a chill ran through his heart,Should I escape from the great void… or face him head-on?</p>
+<p>To flee the great void meant facing the thunder outside, which was just as perilous. It was merely a choice between Supreme Yin and thunder.</p>
+<p>But there are great advantages in the great void!</p>
+<p>They were at the edge of the Unison Sea; beyond it stretched the far Eastern Sea, where spiritual energy grew increasingly thin, unlike the dense spiritual energy of the Shallow Sea. Flight within the great void would become ever more efficient the farther one went; it could be fivefold, even tenfold faster.</p>
+<p>Li Ximing hesitated slightly, then finally summoned the Heaven-Venerating Gate. Instead of feigning a counter-attack, he anchored it upon himself. A bright white heavenly gate adorned with intricate patterns rose above his head, allowing heavenly light to pour down upon him.</p>
+<p>The silver disk’s brilliance shone brightly, yet before it could reach the gate, it was met by a solid and dense brownish-yellow light curtain. The Mountain-Charging Profound Veil forced the Supreme Yin light downward, but ultimately blocked it. Li Ximing’s heart loosened in relief,Fortunately, it works!</p>
+<p>But then realization struck him,Changxiao is not Ye Hui. I can’t shuttle back and forth between the great void and the mortal world. Doing so won’t buy me time, it will only make me fall into his spell!</p>
+<p>What was Changxiao famed for? Manipulating fate and excelling in divination arts.</p>
+<p>His combat experience was in truth rather meager. When Li Ximing had shuttled repeatedly between the two realms, Changxiao had read him perfectly. Skilled in divination, the man had already calculated his landing point and lay in wait with divine abilities and spirit artifacts on the other side.</p>
+<p>He had already taken two hits, one of white light, and the second from the Treasure Bottle Merging Profound Method. Both had struck him mid-transition, leaving no time to defend. To endure two late stage Purple Mansion Realm spells head-on was no small feat; an ordinary Purple Mansion Realm cultivator would have been utterly ruined.</p>
+<p>Even if I must shift realms, it must be sudden. I must enter the mortal world without warning. If I wait for him to cast his spell to respond, he’s mastered divination to the point where he’ll predict my actions in advance.</p>
+<p>For the moment, he had managed to block the opponent’s spirit artifact. Yet the Supreme Yin radiance was steadily growing stronger. Having learned his lesson, Li Ximing resolved that even if the Mountain-Charging Profound Veil began to fail, he would never again cross back to the mortal world to interrupt the opponent’s spell.</p>
+<p>There’s no need to think about it. That thunder must be waiting in the mortal world. The moment I step out, a bolt of Profound Thunder will strike right at my chest. How could there be any chance to turn things around out there?</p>
+<p>His thoughts stirred, and both the Supreme Yang radiance and the Bright Yang purple flame surged from his hands, shooting straight up into the great void to intercept the oncoming small jade bottle. A muffled boom echoed in the void.</p>
+<p>Boom!</p>
+<p>Though the Supreme Yang radiance and Bright Yang radiance burned brilliantly, they fell back at a speed visible to the naked eye as they were pressured by the jade bottle inch by inch. At least this time, it was not as abrupt as before.</p>
+<p>But Changxiao’s divine ability had already manifested. Layers of white mist surged from the great void, turning the entire realm into a quagmire. The mist crept up along the Heaven-Venerating Gate, seeking to anchor his divine ability within the great void itself.</p>
+<p>No matter how he fought, Li Ximing’s goal was merely to delay his opponent, not to get entangled by divine abilities. The Heaven-Venerating Gate rose high to block the Supreme Yin radiance, while the Mountain-Charging Profound Veil sank downward to meet the opponent’s divine ability.</p>
+<p>The Heaven-Venerating Gate held firm, but the Mountain-Charging Profound Veil was no match for the opponent’s strength. After a brief struggle, Li Ximing realized he could not afford to stall in the same way anymore. Thus, he unhesitatingly chose the Supreme Yin radiance over the Treasure Bottle Merging Profound Method, causing the Heaven-Venerating Gate to blaze with dazzling light.</p>
+<p>The Supreme Yang radiance and Bright Yang purple flame exploded in midair, momentarily forcing back the small bottle. The Heaven-Venerating Gate shot upward toward his opponent, while Li Ximing mounted the tiger beneath him, braving the Supreme Yin radiance as he fled eastward at full speed.</p>
+<p>With the Heaven-Venerating Gate no longer blocking it, the silver radiance swam through the air like a fish as it shot toward Li Ximing. He pushed the Mountain-Charging Sea-Pacing Tiger to its limit, and his spiritual sense stirred as a dim yellow halo rose from his body.</p>
+<p>Stable Earth Spirit Containment!</p>
+<p>This wondrous technique was also inherent to the Mountain-Charging Sea-Pacing Tiger, though Li Ximing had never used it before. The reason was simple; Stable Earth Spirit Containment reduced all damage except that of the Twelve Essences and Fire Virtue. His previous injuries had come either from True Fire or from being caught off guard, leaving the technique of little use until now.</p>
+<p>Now, the faint yellow halo wove around his dharma body like threads of silk. When the Supreme Yin radiance struck it, its power was reduced by several degrees, exploding upon his body and leaving only holes of varying size.</p>
+<p>The injury was neither severe nor mild, comparable to when Ye Hui had burned him with True Fire. Yet this time, Li Ximing seized the chance to finally widen the gap between them.</p>
+<p>Quick to learn,thought Changxiao.</p>
+<p>Changxiao was momentarily hindered by the technique and frowned slightly. His cultivation was profound, and he could clearly see the Stable Earth radiance surrounding his foe. With a wave of his hand, the twelve-cornered lantern tore through the great void from the mortal world, returning to his grasp, ready to counter with True Fire.</p>
+<p>The sight made Li Ximing’s heart tremble,So there wasn’t just thunder waiting for me in the mortal world, he’d placed the lantern and its True Fire out there as well. If I’d realized it a moment later and made the same mistake again, I’d have been dead for sure!</p>
+<p>Changxiao had a grim expression as he pointed his finger forward. The great void surged with white flames. But before Changxiao could even begin chanting, Li Ximing darted away like a fish and slipped back into the mortal world.</p>
+<p>Since the lantern had been recalled, only thunder remained in the mortal world. Since he now had Stable Earth Spirit Containment shielding him, there was no better time to flee.</p>
+<p>The instant Li Ximing stepped out of the great void, countless bolts of silvery thunder appeared before him. The radiance of Stable Earth Spirit Containment flared brilliantly, dispersing each strike as it came.</p>
+<p>Although Stable Earth Spirit Containment was far stronger against thunder than Supreme Yin radiance, this thunder had built up for too long. Li Ximing’s dharma body was struck until black smoke billowed from it, but he endured the bolts and sped ahead. The damage was not even as severe as what he had suffered from the Treasure Bottle Merging Profound Method.</p>
+<p>He waited for Changxiao to return to the mortal world, intending to find a good moment to slip back into the great void. But Changxiao never appeared. After darting through the torrential rain for some time, unease began to rise in Li Ximing’s heart.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1148.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1150.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1151: Thunder (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1150.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1152.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1151: Thunder (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Thunder roared across the heavens. Silvery-white lightning surged along the spear and extended two meters outward. Though heavy rain still fell in the distance, the raindrops nearby rose into the air, turning into glistening spheres that slowly evaporated and shrank amid the thunder’s radiance.</p>
+<p>The light from the lantern in Changxiao’s hand grew increasingly brilliant, dispersing the lightning bit by bit. It revealed the pale hand holding the spear, lightning curling affectionately around the wrist before leaping onto the purple-white feathered sleeve.</p>
+<p>Only then did he clearly see the figure before him: a female cultivator with a high nose bridge, graceful brows, and almond eyes. Purple radiance flowed within her pupils, her black hair cascading behind her like a waterfall. A purple mark glimmered between her brows, and thick coils of lightning discharged upward behind her, gathering into a vast purple-white disk.</p>
+<p>Changxiao could not tell whether this disk was a divine ability or a spirit artifact. It loomed as large as a mountain, covered in countless cracked patterns of lightning. Suspended above the sea, the woman under the disk seemed like a mysterious bird hovering in the storm, her spear leveled directly at the center of Changxiao’s brow.</p>
+<p>The surging waves fell as the sea stilled. The falling rain, drawn by the power of Prime Magnetism, hovered above the surface, shrinking until each drop vanished. In that moment, the sea calmed to become as smooth as a mirror, perfectly reflecting the mountain-sized thunder disk and the birdlike woman within it.</p>
+<p>Changxiao lifted his lantern and a thick white mist gathered once more around him. Purple-white lightning flickered in his pupils as he softly asked, “Are you a dragon?”</p>
+<p>Boom!</p>
+<p>A vast rumble filled heaven and earth. The silver spear flipped and stood upright amid the storm with a metallic clang. The female cultivator stood suspended in the air, clad in a robe of purple-white lightning feathers and boots patterned with fine silver veins. The long feathers trailing from her cloak grew ever longer, dragging through the currents of thunder.</p>
+<p>Her voice was clear and cold, echoing with the thunder around her, “I am thunder.”</p>
+<p>In the instant after her words fell, a barrel-thick pillar of silver lightning slammed down from the sky. Changxiao reacted swiftly, raising his silver-patterned disk above his head. The Supreme Yin radiance upon it shone faintly for a moment, then flared brighter as he infused it with his mana.</p>
+<p>Another deafening crash followed, even louder than before. The thunder that came after was more majestic still, shaking the disk violently as it gleamed with blinding light.</p>
+<p>Changxiao watched in silence as purple-white lightning surged like a tide, rippling back and forth within the dark clouds and revealing a hazy figure within. The lantern in his hand burned ever brighter.</p>
+<p>The mirrorlike sea was blanketed in purple-white light, reflecting the massive thunder disk above and below. The horizon began to reveal a faint golden glow.</p>
+<p>“It’s dawn.”</p>
+<p>The morning sun slowly climbed over the horizon. The long night had ended, and rays of sunlight pierced through the clouds, casting light upon Changxiao’s face and deepening the contemplation in his willow-leaf eyes.</p>
+<p>The Daoist Master understood that his plans had gone completely awry. Even if he subdued this woman by force, he would no longer find Li Ximing in the east.</p>
+<p>Though the Mulberry Concord Ninefold Profound Method could be used to locate him, Li Ximing was also a Purple Mansion Realm cultivator, he would not be foolish enough to turn back. The Heaven-Venerating Gate excelled at suppression and concealment; he must have fled under its power, leaving no trace behind.</p>
+<p>With his profound cultivation and years of experience, Changxiao quickly came to a conclusion. The Dragon Clan would never personally intervene in the current situation. The woman before him could only be a fortunate cultivator from some grotto heaven who had received thunder’s favor.</p>
+<p>Changxiao raised his head, his voice cold as he said, “It seems Fellow Daoist gained some fortuitous encounter after devouring thunder, becoming a thunder of the Dragon Clan. Yet with merely Purple Mansion Realm cultivation, you already display such arrogance.</p>
+<p>“I merely passed through the sea region under your watch. If you wish to aid one of your bloodline’s descendants, that is reasonable. For the sake of the Dragon Clan’s face, I will overlook the matter concerning Li Ximing.”</p>
+<p>He lifted his bright lantern, preparing to traverse the great void, when thunder suddenly erupted across heaven and earth. Purple-white lightning cascaded like a waterfall, and Changxiao’s expression turned colder as he turned his head.</p>
+<p>The thunder that had long gathered between heaven and earth now rumbled to life. The sea surged with uncountable aquatic beasts; silver and azure scales and limbs rose high above the surface, then swiftly sank back into the depths.</p>
+<p>The woman hovered within the purple-white lightning pool disk that was covered in shattered thunder patterns. The dark clouds of the storm converged toward it, like stars surrounding the moon, encircling the thunder pool between heaven and sea.</p>
+<p>“Then I shall not overlook it.” Her bright, crystalline voice echoed across heaven and earth, “After all, the Dragon Clan’s face is worth something. Yours is not.”</p>
+<p>————</p>
+<p>East of the Eastern Sea.</p>
+<p>The torrential rain over the channels of the sea only came to a stop when the massive thunderstorm wound its way into the distance. Only a few fragments of broken wood spun slowly within the lingering whirlpools.</p>
+<p>A damp, cold wind blew toward the shore. When it reached land, ripples formed in the great void, and a streak of radiance appeared. The heavenly light had barely appeared when fierce flames manifested around it, boiling the sea into mist as it streaked swiftly across the surface before descending toward a nearby island.</p>
+<p>Upon landing, the heavenly light transformed into a cultivator clad in white and gold robes. He staggered forward a few steps before collapsing to his knees.</p>
+<p>Li Ximing had just escaped from the storm. When he saw Changxiao appear to fall into trouble, he seized the chance to flee without looking back. He had plunged headlong into the great void.</p>
+<p>When he reached the eastern reaches of the Eastern Sea, his speed through the great void had grown astonishingly fast. Detecting no trace of his pursuer, he decided to conserve his Supreme Yin Profound Light and kept flying eastward with all his strength, believing it would make him harder to track.</p>
+<p>He did not know how long he had flown before faint specks appeared in the great void ahead, and a distant end came into view. Only then did Li Ximing suddenly realize,I’ve reached the end of the sea!</p>
+<p>The great void behind him was utterly silent; Changxiao had not followed. Yet Li Ximing dared not relax. He forced his heavily wounded body to turn south and fly for half a day across the desolate region. Only after confirming through his Immortal Mirror that no one was nearby did he go back into the mortal world.</p>
+<p>Now he knelt upon the sand, stirring up clouds of dust that revealed pale bones buried beneath. Out at sea, the wooden fragments still drifted and spun. Li Ximing could not help but cough.</p>
+<p>“Cough… cough…”</p>
+<p>He spat out a mouthful of bright blood, which struck the sand with a clatter like stone upon stone. It scattered into fine white dust and wriggling insects that scurried away, while those that fell into hollows mixed with his blood and solidified into clams, remaining motionless within the stone.</p>
+<p>The flames of the Mulberry Concord Ninefold Profound Method still flickered faintly upon his body, melting the yellow sand beneath him into patches of crystalline glass. Li Ximing felt heat surging through his entire being, a clear sign that his dharma body was severely damaged.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1150.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1152.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

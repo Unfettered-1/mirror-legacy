@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1143: Opening Scene (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1142.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1144.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1143: Opening Scene (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake.</p>
+<p>White blossoms drifted across Zhijing Mountain. A Daoist Master in a white-gold Daoist robe sat calmly at a table, streams of bright light flowing across the floor like water. They rippled softly against the jade pillars and cast luminous halos around them.</p>
+<p>Li Ximing had spent months cultivating in peace. Time flowed like water as his cultivation slightly improved and his divine ability grew more refined. His innate ability was far from poor, so his efforts were never wasted. The heavenly light was radiant, making it a perfect time for cultivation, yet he suddenly opened his eyes, stepped forward, and appeared above Moongaze Lake, gazing eastward.</p>
+<p>Above Shanji Prefecture, a purple hue gathered like ink, darkening the entire sky. With his Purple Mansion Realm eyesight, he could see a beam of escaping light speeding rapidly toward Moongaze Lake from the distant horizon.</p>
+<p>“Ye Hui has made his move.”</p>
+<p>Sure enough, a streak of light shot upward from below. Li Jiangqian halted before him, face grave, and reported respectfully, “Reporting to the Daoist Master, Daoist Master Ye Hui has appeared at Profound Peak Gate in Shanji Prefecture. He’s using his divine ability to suppress the great formation. The eastern shore is shaking, and several domains have sent urgent messages.”</p>
+<p>Li Chenghui arrived a moment later, leading several cultivators on a streak of lightning. Their faces were equally tense. Li Ximing’s calmness was at odds with the unease and apprehension spreading among those by the lake as he asked, “Have the people within the mountain gate already been evacuated?”</p>
+<p>“Reporting to the Daoist Master, as per your orders, everyone was evacuated six months ago. Only a few old elders of Profound Peak Gate refused to leave,” replied Li Chenghui.</p>
+<p>Li Ximing had not told his family about the events at Xuanmiao Temple. For one, Li Minggong and Li Chenghui lacked talisman seeds; some matters were better left unheard, lest they become loose ends.</p>
+<p>Secondly, his family’s cultivators had little to do in the affair; it was a scheme of Purple Mansion Realm cultivators. He preferred to keep such things buried, so that the Li Family would not be implicated if trouble arose.</p>
+<p>The horizon was now glowing with the deep purple radiance of a divine ability, yet Li Ximing remained unhurried. The Hundred Mountains Spirit-Containing Formation at Profound Peak Gate was not something Ye Hui could breach quickly, and the gate’s cultivators no longer had the means to open it.</p>
+<p>He simply asked, “What of Profound Peak Gate’s spirit items and stored resources?”</p>
+<p>Li Jiangqian replied respectfully, “Over the past half year, Kong Guxi has relocated three mountains to the Wilderness. The earth veins there have been disturbed so much that they can no longer be moved for the time being. More than half of the treasury has been transferred, and all cultivation manuals and inheritances have been evacuated. Nearly everything that can be moved has been. Most of the low-grade resources have been sealed within the great formation, as the Wilderness is too barren to store them safely.”</p>
+<p>“Good.”</p>
+<p>Li Ximing had a clear understanding of the situation. The Li Family had no shortage of spirit paddies and herbs, and leaving some within Profound Peak Gate would serve as an offering for the lost spirit items. As for the rest of the treasures, their loss was of little consequence.</p>
+<p>He ordered calmly, “Have everyone in Shanji Prefecture withdraw immediately.”</p>
+<p>With that, he vanished from above the lake. He stepped through the great void and reappeared over Shanji Prefecture in the blink of an eye.</p>
+<p>Thick black-purple qi surged over Shanji Prefecture, plunging the entire city into shadow. Below, a crowd of Capital Immortal Dao disciples encircled the mountains Daoist Master Changxi had built over a lifetime. The peaks were protected by a faint yellow barrier of light, but as soon as it flared, it was quickly smothered by a wave of dark-purple divine ability.</p>
+<p>Li Ximing raised his brows slightly.</p>
+<p>Another mountain formed of condensed white mist loomed above Profound Peak Gate. It soared into the clouds and towered majestically amid the swirling black-purple aura. Several disciples of Profound Peak Gate, tiny as ants, fled through the dark qi on streaks of wind.</p>
+<p>He stepped closer. The sky above the mountain gate brightened suddenly as colorful clouds rose, dispersing the black qi. The boundary between light and darkness grew sharp and clear. The fleeing disciples rushed toward the radiant light in streaks of crimson glow as though seeing salvation itself.</p>
+<p>The Capital Immortal Dao cultivators who had been laughing like cats toying with mice immediately grew solemn and turned to retreat. Those who had been closest to the front even bowed deeply and greeted him as Daoist Master before hastily withdrawing.</p>
+<p>Li Ximing did not spare them another glance. Standing alone before the colossal Eastern Feather Mountain and the Capital Immortal Dao cultivators in the sky, his presence remained undiminished. The heavenly light around him radiated brilliantly, illuminating half the firmament.</p>
+<p>No matter how many Capital Immortal Dao cultivators were present, the true confrontation was between Ye Hui and Li Ximing. Both were disciples of prestigious lineages, so who among them didn’t understand this? Every other cultivator fell silent, not daring to speak.</p>
+<p>Li Ximing looked a t Ye Hui, who stood atop the Eastern Feather Mountain, the Bright Yang purple flames behind him flickering faintly, and asked, “Senior Changxi has only just passed away, and you are already moving to annex Profound Peak Gate? Isn’t that a bit too hasty, Daoist friend? Have you consulted Senior Sumian on this matter?”</p>
+<p>Ye Hui’s light laughter floated down as he replied, “You misunderstand, Daoist friend. I know of a demonic disciple hiding within these mountains and merely came to eradicate him. If I truly sought to harm the Dao lineage of Profound Peak Gate, wouldn’t it have been easier to head straight for the Wilderness? I have no designs on this mountain gate. Once the matter is clear, I shall withdraw.”</p>
+<p>What a fine excuse…</p>
+<p>Li Ximing knew full well what was really happening, but he hadn’t expected Ye Hui to put on such a righteous façade. He sighed. “Daoist friend, since you claim to be acting for the sake of eradicating evil, there’s no need to heap false charges. Allow me to exchange a few moves with you!”</p>
+<p>“Please.” Ye Hui’s tone held no hint of irritation; both men spoke as if discussing matters among friends. As his voice rang out, the two vanished into the great void, their divine abilities trailing behind them.</p>
+<p>The purple mist and multicolored clouds that had filled the sky dissipated. The towering white mountain of condensed vapor melted away, revealing a clear and radiant sky once more. Below, the trembling and terrified people of Shanji prostrated themselves, knocking their heads on the ground in relief.</p>
+<p>Everything had happened too swiftly. Only the clear sky remained, filled with cultivators of Capital Immortal Dao, hovering on their qis. They were led by a man in a black Daoist robe, silver lapels framing his sharp brows and deep-set eyes. This was the Capital Immortal Dao’s first disciple, Guan Gongxiao.</p>
+<p>His eyelids twitched; he too was clearly taken by surprise. As he stood silently before the vast Purple Mansion Realm formation, he felt the eyes of the surrounding cultivators turn toward him. Guan Gongxiao knew exactly what they meant, yet he could only stare blankly at the immense formation before him.</p>
+<p>He left us here? To attack the Purple Mansion Realm formation?</p>
+<p>Ye Hui and Li Ximing had soared into the great void to duel, and Ye Hui had seemingly forgotten that his followers were supposed to be assaulting the mountain. What could a group of Foundation Establishment Realm cultivators possibly do against a Purple Mansion Realm formation? Even if Profound Peak Gate’s grand formation wasn’t built for offense, few would dare to face its counterattack.</p>
+<p>Guan Gongxiao could almost picture Li Zhouwei bursting out from within the formation with an army at his back to cut them down like wheat.</p>
+<p>He barely managed to keep his composure and forced himself to speak, “Stay calm and continue draining the formation’s energy! The Daoist Master has already planned for this!”</p>
+<p>He spoke thus, but Ye Hui had always acted as he pleased. He had led the group here immediately after emerging from seclusion, without sharing any plan, and Guan Gongxiao had no idea how to break the formation.</p>
+<p>The Daoist Master’s intentions are impossible to fathom… What purpose does standing here serve? Are we just waiting to expose ourselves? Does he think this great formation will unravel on its own while we chip away at it?</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1142.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1144.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
