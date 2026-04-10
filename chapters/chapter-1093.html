@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1093: Might of the Halberd Commander (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1092.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1094.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1093: Might of the Halberd Commander (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei had always faced a disadvantage in his battles against the Capital Immortal Dao. The reputation of the Bright Yang Dao lineage was too well known, and any cultivator with a Dao lineage inheritance understood that Radiant Essence restrained Bright Yang. Guan Gongxiao had even prepared a Radiant Essence sandstorm for this purpose, and who knew what other trump cards.</p>
+<p>But the Capital Guard Dao lineage was so ancient that many cultivators did not even know it existed, making its weaknesses difficult to exploit. Now that he had uncovered this truth, whether by dharma artifact or spell art, he would always have a countermeasure.</p>
+<p>As that thought flashed through his mind, a dull thud rang out as the Da Sheng Halberd swung high. Li Zhouwei finally coughed up a mouthful of blood, while Radiant Light shimmered across his chest, and the scales of his Yuan’e armor shifted restlessly.</p>
+<p>Yuan’e had been commissioned by Li Xuanfeng years ago, and forged with the full effort of the cultivators of the Azure Pond Sect. One of its functions was to assist Li Zhouwei in traversing with heavenly light, enhancing his footwork until it was ghostlike. Moments ago, when he had used heavenly light to move, it was thanks to both Flowing Sun Refraction and Yuan’e.</p>
+<p>Yuan’e also had another function; it could enhance mana and resist spell arts. Except for spell arts based on Radiant Essence, all other spell arts striking the wearer would have their force distributed across the armor’s six-thousand and two-hundred scales, granting them tremendous protection.</p>
+<p>It was thanks to this armor that Li Zhouwei had escaped Fu Dou’s grasp time and again.</p>
+<p>Now, even after taking Guan Gongxiao’s spell head-on, he merely spat out a mouthful of blood. That pale blood rose into the air, spreading a strange peony-like fragrance. When he saw Li Zhouwei injured, Guan Gongxiao secretly sighed in relief but then noticed a dark mountain rising in the sky.</p>
+<p>“Someone from Profound Peak Gate has fallen!”</p>
+<p>Li Zhouwei had noticed it even sooner. It wasn’t merely that someone from Profound Peak Gate had fallen; two guest cultivators had already been grievously wounded and been forced to retreat. His own forces had dwindled to twelve, all of them injured. Fu Yuezi and Cui Jueyin were barely holding the line, each struggling to restrain four opponents, and were only just managing to keep the situation from collapsing.</p>
+<p>The Capital Immortal Dao had yet to suffer any serious injuries…</p>
+<p>Just then, thunder roared across the heavens, silver ripples spreading as crackling lightning surged into view. Li Chenghui rode the thunder as he fought two opponents while advancing. Cui Jueyin, glancing up from below, finally understood why Li Chenghui had been so delayed.</p>
+<p>“The Capital Immortal Dao has more people intercepting him!”</p>
+<p>The two opponents Li Chenghui faced were both direct descendants, not guest cultivators, so he was under immense pressure. It was clear that he would not be able to free himself. Li Zhouwei briefly glanced across the field, deflecting the spell arts of Guan Gongxiao and Gongsun Baifan before sending the Yang Radiant Red Sparrow Banner streaking off to intercept Guan Lingdie.</p>
+<p>When she saw the ferocious flames bearing down on her, Guan Lingdie let out an incredulous laugh. After a brief moment of hesitation, she turned to the people beside her and ordered, “You and you, go stop him first!”</p>
+<p>The direct lineage cultivators on either side were clearly reluctant to face Li Zhouwei and hesitated. However, an old man, Guan Kan, stepped out from behind them, releasing Cui Jueyin to intercept the banner. Li Zhouwei shook his head at the sight, the flames around his body flickering even brighter.</p>
+<p>The Capital Immortal Dao may be a great Dao lineage of the Eastern Sea with powerful forces, but their command is far from unified.</p>
+<p>Guan Kan, a cultivator at the late Foundation Establishment Realm, joined the two to hold Li Zhouwei in place. Riding a current of water, he sped forward and drew over ten interlinked cold-iron rings from his sleeve. The aged cultivator squinted as he inspected them, then gently tossed the dharma artifact forward.</p>
+<p>Seizing the moment while Li Zhouwei was distracted by Guan Gongxiao’s Radiant Essence sandstorm, he chanted loudly, “Light covering five thousand kilometers, green overturning a thousand peaks, summon the Pit Water and bind all obstacles.”</p>
+<p>His Immortal Foundation, Grieving River Departure, roared to life and resonated with the cold-iron rings suspended in midair. Waterlight gathered within them, bursting forth as torrents of water that twisted into cords and lashed at Li Zhouwei.</p>
+<p>Li Zhouwei retreated on a path of heavenly light, but the cold-iron rings were not ordinary artifacts. The water cords they unleashed were incredibly fast, coiling rapidly around his weapon.</p>
+<p>This old man is no ordinary foe… likely an elder of the Capital Immortal Dao.</p>
+<p>The water cords dispersed and reformed endlessly; they were impossible to dispel. Empowered by late Foundation Establishment Realm mana and the strength of an Immortal Foundation, they became the most difficult threat for Li Zhouwei to deal with. Guan Gongxiao and Gongsun Baifan were of little concern with Yuan’e and Supreme Yang Resonance Radiant Art protecting him; what he feared was precisely this softness overcoming hardness.</p>
+<p>He hurriedly channeled his mana, recalling the Yang Radiant Red Sparrow Banner that had flown out. He intended to match Radiant Fire against Pit Water.</p>
+<p>Guan Gongxiao reacted swiftly, and his black bell was about to intercept but a deep voice rang out, “Descend!”</p>
+<p>Another dharma artifact?</p>
+<p>Guan Gongxiao froze for a moment as a brilliant Radiant Light surged into the sky. Clouds of many colors blossomed overhead, and the swirling mist parted to reveal a heavenly gate descending from above, its towering corner towers stabbing at his eyes with searing light.</p>
+<p>He cursed under his breath, “I forgot about the Li Family’s suppressive Immortal Foundation!”</p>
+<p>The Capital Immortal Dao possessed a similar Immortal Foundation, Eastern Feather Mountain, which ultimately manifested as a Spell Divine Ability. Yet even so, such Immortal Foundations wielded immense power at the Foundation Establishment Realm and could seize a decisive advantage. Two white bastions crashed down onto his carefully nurtured black bell dharma artifact, crushing it so forcefully that he spat blood.</p>
+<p>It was the Heaven-Venerating Gate!</p>
+<p>Li Zhouwei’s attainment of the Radiant Essence Scripture had always been rooted in the Heaven-Venerating Gate. At first, he had mistaken it for the Radiant Origin Pass and thought it quite different from Li Ximing’s path. It was only after his own family had a Purple Mansion Realm cultivator that he understood the true renown of this Immortal Foundation.</p>
+<p>Li Zhouwei’s figure appeared on top of the descending gate, and Guan Kan’s cold-iron rings were suppressed beneath it. At last, the old man nodded, shook his sleeves, and descended from midair, clutching talismans to continue the fight.</p>
+<p>Though the Heaven-Venerating Gate was of exceptionally high grade, it was still ultimately an Immortal Foundation focused on suppression. Li Zhouwei’s combat experience far surpassed that of Li Ximing in his day, and he had deliberately refrained from revealing his Immortal Foundation in the beginning.</p>
+<p>Now, he had suppressed his enemies’ two most formidable dharma artifacts in one stroke. With the Yang Radiant Red Sparrow Banner freed and recalled to his side, he faced his foes beneath the radiant light of the Heavenly Gate. His Immortal Foundation and banner resonated with one another, and though the situation remained perilous, he was holding his ground.</p>
+<p>It had to be said that with Guan Kan entering the fray, he was now facing two late-stage Foundation Establishment Realm cultivators and one mid-stage. Two of the late-stage ones were even direct descendants of the immortal gate. Even the famed Tuoba Chongyuan of the past had faced nothing greater than this.</p>
+<p>Although Guan Kan was a step below the Li Xizhi of old, Guan Gongxiao was far superior to Yu Yuwei, and Gongsun Baifan was leagues ahead of Quan Yi. Unfortunately, Li Zhouwei’s cultivation was slightly weaker. Tuoba Chongyuan could suppress three opponents at once, whereas Li Zhouwei was fighting on the edge of danger and occasionally spitting pale blood.</p>
+<p>Any Foundation Establishment Realm cultivator of real ability was never easy to kill. Those who had refined their Dharma Body or possessed extensive amounts of mana could even hold off many for a time. The three pressed Li Zhouwei so hard that he could only focus on defense. It was clearly a battle they were winning inch by inch, yet Guan Gongxiao’s frown only deepened.</p>
+<p>The reason was simple; the black flames around Li Zhouwei had already surged skyward.</p>
+<p>“Do not take his halberd head-on!” Guan Gongxiao shouted the warning sharply. Gongsun Baifan knew the words were meant for him, as half of those black flames had been forged by his own strikes. But he cultivated the blade. How else could he fight but by clashing blades? He couldn’t simply stand still and let himself be cut down.</p>
+<p>Gritting his teeth, Gongsun Baifan exchanged a few more blows and prepared to withdraw. But Li Zhouwei, pressing forward under the assault of two opponents, pursued him relentlessly. At last, the black flames rose high enough to flow like a current. A faint smile appeared on Li Zhouwei’s blood-stained face as he drew a deep breath, and the flames streamed into his nose and mouth.</p>
+<p>It was none other than the Armor Cycle Soul-Refining Halberd Art!</p>
+<p>The unease in Guan Gongxiao’s heart was finally confirmed. Li Zhouwei raised his halberd once more, and he exhaled a gout of black flame from blood-flecked lips and teeth. The moment it left his mouth, it expanded rapidly, scattering sparks in all directions.</p>
+<p>Boom!</p>
+<p>A torrent of thick, shadowy flame erupted forth. Li Zhouwei turned his head, his eyes glinting with a hint of ferocity. The gaze sent a chill into Guan Gongxiao’s heart deeper than any cold or sinister stare ever could.</p>
+<p>“He…”</p>
+<p>Li Zhouwei’s surging black flames were reflected in Guan Gongxiao’s pitch-black pupils. Two arms, formed entirely of black fire, burst out from beneath his ribs, sending waves of black radiance surging toward the sky.</p>
+<p>The black flames he had exhaled condensed into two halberds, which fell into the grasp of those shadowy arms. As the arms slowly straightened and the halberds angled toward the ground, Guan Gongxiao’s throat grew dry at the sight.</p>
+<p>“What sort of devil technique is this?… Isn’t his family supposed to be orthodox…? We’re the cultivators of the Eastern Sea!” muttered Guan Gongxiao.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1092.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1094.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
