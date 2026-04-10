@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1265: Upholds Martial Force And Preserves Truth (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1264.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1266.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1265: Upholds Martial Force And Preserves Truth (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei nodded awkwardly. His tongue began to tingle faintly as Li Qinghong continued pouring tea into his cup, and he did not know whether he should drink it. He hurriedly changed the subject, “Have you heard any news of the Daoist Master?”</p>
+<p>Only then did Li Qinghong set down the jade pot and reply, “That day, he was pursued all the way here, so I acted openly and intercepted Changxiao. Changxiao is extremely cunning. The moment he saw me, he feared offending the dragons, and his attacks became hesitant and restrained. Once he slipped away, he could not be found again even the next day.</p>
+<p>“We did not fight for long. He never had much will to fight in the first place, and the longer it went on, the more he sensed that something was wrong. It took him all of a breath to flee. Now he is hiding in some corner, observing the situation, and remains a hidden danger.”</p>
+<p>Li Qinghong’s expression turned serious as she said, “He has already offended you all beyond repair. It is now a hatred that will not end until death. He does not dare harm you, but he has no such reservations when it comes to harming Ximing…</p>
+<p>“As for Ximing, he was struck by Douxuan’s spell art. At first, I was rather worried. Who would have thought that he would be lively again after only a few years, sending letters home and even establishing ties with the Tantai Family.”</p>
+<p>Li Zhouwei let out a breath of relief, pondered for a moment, and asked, “There is one matter in which I must trouble you.”</p>
+<p>He took a jade box from his sleeve, placed it on the table, and said, “I ambushed and killed Situ Mo, and also seized a dharma artifact from a disciple of Changxiao Gate. It belongs to the Mansion Water Dao and is of quite good quality. After studying and consulting for a long time, I discovered an imprint of Changxiao Gate within the artifact. The method is extremely refined and can be sensed by Changxiao disciples within a certain range…</p>
+<p>“This Mansion Water dharma artifact has some reputation, and holding it risks being discovered. I myself would be fine, but I cannot pass it on to family juniors, and trading it outside would greatly reduce its value. There is a dharma artifact that has caught my eye, but this matter has delayed it.”</p>
+<p>He lifted his head slightly, rested his hand on the cup for a moment, then withdrew it and said, “If there is a suitable dharma artifact here for exchange, that would be the most convenient.”</p>
+<p>Li Qinghong glanced over it and replied, “Bring it over and let me have a look; you should not have to run around everywhere. Since you already have your eye on something, it is best to neutralize the danger of this item.”</p>
+<p>She smiled and shifted the topic, “Of course, this place was only hastily established, and I do not really have any dharma artifacts to exchange with you.”</p>
+<p>Li Zhouwei nodded and opened the jade box, revealing a small jade green gourd inside. Its treasure light was normally brilliant, yet it was suppressed by the Profound Thunder overhead and now appeared faintly dim.</p>
+<p>Li Qinghong extended her slender hand, and the gourd was immediately drawn into her palm by the force of Prime Magnetism. She glanced over it twice.</p>
+<p>Boom!</p>
+<p>At once, a bolt of Celestial Thunder descended from the heavens and struck the gourd with a thunderous crash. Purple lightning washed over it, and a gout of deep black smoke billowed out from within the gourd, instantly dissipating in the thunder filled secret realm.</p>
+<p>The green gourd was instantly renewed, as even the former owner’s imprint was washed away. Li Qinghong nodded, “This item is indeed rather marvelous and should have been passed down from ancient times. It seems it was originally refined to become an extremely sophisticated Pristine Water dharma artifact. Midway through the process, whether due to insufficient materials or some accident, it was converted into Mansion Water instead.”</p>
+<p>She paused slightly and said softly, “Yuanzi.”</p>
+<p>The white robed female attendant who had led him inside earlier entered the pavilion, knelt firmly on the ground, and received the gourd with both hands. Li Qinghong said, “Send this dharma artifact to the Yingshou tribe at the seabed. Instruct them to modify it. See whether they can change its color and appearance while increasing its power without reducing it, then return to the Thunder Pool with a reply. Zhouwei, do you have any requirements?”</p>
+<p>Yuanzi nodded respectfully and stood to the side holding the dharma artifact. Only now did Li Zhouwei feel the presence of a Dragon Clan domain, and he hurriedly said, “There are not many requirements. Just do not let this item conflict with Supreme Yin or Pit Water.”</p>
+<p>Li Qinghong shook her head with a smile, “The Lie Sea is originally part of the outer-sea and has little reputation; it is merely an appendage of the Reef Sea. The Reef Sea only sends subordinates here to extract resources, and the local demonic creatures and cultivators live difficult lives.</p>
+<p>“After the Thunder Pool was established, they all came under my authority. With one layer of exploitation removed and my own demands being few, they are very grateful. Send the dharma artifact over, and they will surely refine it perfectly for you.”</p>
+<p>Li Zhouwei gave a heartfelt smile as he nodded. “There is no need to make it overly elaborate. In the end, it will be traded to someone else. If too much is invested, I would be reluctant to part with it.”</p>
+<p>Only then did Li Qinghong turn her head and say, “No need for extravagance. Do it according to your wishes.”</p>
+<p>“Yes!” Yuanzi bowed, held the dharma artifact, and withdrew.</p>
+<p>Li Zhouwei picked up the conversation again. “According to what you said, the Metallic Essence is now in the hands of Mount Changhuai and Daoist Master Zipei. Daoist Master Zipei has already reincarnated…”</p>
+<p>He hesitated, and Li Qinghong interrupted, “Daoist Master Zipei of the Purple Smoke Gate obtained a portion of True Essence, but did not use it for reincarnation and ultimately gave it to the Dragon Clan. Purple Essence is very close to True Essence, yet she refused it. According to the Dragon Clan, first, she was trying to attain the Purple Essence Fruition Attainment and did not wish to leave any leeway in her heart that might hinder her ascent. Second, she had no choice but to give it away, for even if she reincarnated, she would not obtain what she sought. Ordinary Metallic Essence would have been fine, but this particular portion would require a Dragon Monarch to act personally and might even create boundless karmic slaughter.”</p>
+<p>Li Zhouwei nodded in understanding, yet a trace of unease appeared in Li Qinghong’s expression as she said, “However, according to the Dragon Clan, Zipei’s exchange seems to have completed my thunder body. Without her, there might have been nothing left at all after devouring the thunder. I hope that if I encounter cultivators of the Purple Smoke Gate in the future, they will receive more care…</p>
+<p>“If there is an opportunity at home, you should also try to remain on good terms with this gate. At the very least, avoid creating conflicts. It would not only put me in a difficult position, but could also be exploited by those with ulterior motives.”</p>
+<p>These words were unexpected to Li Zhouwei. His expression grew solemn as he nodded and said, “I will find an opportunity to mention this to the family. So this portion of Metallic Essence is truly that important. Important enough to prompt a Dragon Monarch to act?”</p>
+<p>Li Qinghong replied, “Now that the reestablishment of the True Essence Fruition Attainment has become a settled fact, this Metallic Essence is naturally important. A few years ago, the Muhai Dragon King came to visit and mentioned something even more significant…”</p>
+<p>Her expression turned complex as she continued, “The dragons do not merely hope to take a share of True Essence. They are determined to take a share. Even Dragon Monarch Xiyang intervened in the matter of Shangyuan True Monarch, partly for the sake of allowing this True Essence to descend into the world…”</p>
+<p>Li Zhouwei hesitated, pondered for a moment, and asked, “Could it be that True Essence has an even deeper and more important use for the Dragon Clan?”</p>
+<p>Li Qinghong nodded and leaned slightly forward. Her voice was gentle, yet carried the weight of thunder as she said, “The Tianwu True Qi Divine Fiend Essence has its divine profundity shine within, while its fierce might overflows outward. Its upright nature restrains excess, and its benevolent authority is boundless. It does not dwell alone, nor abide in isolation. Entwined serpents form its aspect, and balanced yin and yang form its heart. It slays demons, upholds martial force, and preserves truth.</p>
+<p>“True dragons, true dragons… How could they be without truth?”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1264.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1266.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

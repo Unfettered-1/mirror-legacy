@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1211: Purple Stable Valley (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1210.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1212.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1211: Purple Stable Valley (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xuanxuan landed in front of the main hall. The chamber was brightly lit, and Li Zhouluo was still inside. He seemed to have just finished handling government affairs and was now practicing a spell art. His fingers formed a seal as five or six dazzling golden blades of light swirled around his hand, emitting sharp, piercing whistles.</p>
+<p>As soon as the elder entered, the young man opened his eyes, ceased his spell, descended from the main seat, and respectfully greeted him, “Old elder, you’ve come.”</p>
+<p>Li Xuanxuan nodded and coughed once. “You’ve worked hard these days. The matters on the western shore are troublesome. It’s quite difficult to manage when you’re caught between several lineages and have no close allies. Have you heard about Xixuan’s situation?”</p>
+<p>Li Zhouluo bowed and answered, “This is the duty of the younger generation. As for the elders’ affairs… There have been murmurs of discontent across the island, but nothing directed at you, old elder. Most of the blame falls on Qingdu, with talk of treacherous men among them sowing discord within the clan.”</p>
+<p>He guided Li Xuanxuan to a seat at the side and said, “I’ve read the letters you sent me earlier. The matter is indeed thorny.”</p>
+<p>Li Xuanxuan shook his head. “In the old days, our forebears decreed that disciples of the main sect who lacked spiritual orifices were forbidden from serving as officials or engaging in commerce. The island is steeped in spiritual qi, and the main sect holds great prestige, so these children live here without separating from the family. They wish to keep their sect identity while secretly entering officialdom. After much thought, I still believe these two bans must not be lifted. If one carries the title of a main sect descendant into the bureaucracy, even a fool would have people bringing him bribes. Let a few cunning ones in, and the damage would be immeasurable.”</p>
+<p>Li Zhouluo replied quietly, “I’ve also given this some thought. The island is indeed too stifling; everyone lives uneasily under Qingdu’s watchful eyes. These two bans must never be relaxed, but other areas could be adjusted. Oversight over their wealth could be eased a little. It is hard to fault them gaining resources through their cultivator kin. The methods of competition used by the collateral branches cannot be applied to them either, lest harmony among the four lineages be broken. In the end, they are still mortals. A little indulgence does no harm.”</p>
+<p>Li Xuanxuan replied hoarsely, “Do not underestimate mortals. These are the parents of future cultivators. I fear that this might nurture a trend of decadence. The family system must change, but not in your time. You are the sole descendant of the third lineage. If you offend the rest of the clan, your entire branch will be isolated.”</p>
+<p>Li Zhouluo had not considered this. He nodded slightly, listened respectfully, and heard the elder continue, “For now, the plan should be to keep things stable for a few years, ensure you withdraw with your reputation intact, and earn a good name for yourself. That way, the third lineage can maintain close ties with the other two. This is a matter of great importance.”</p>
+<p>Dili Guang had already withdrawn. Li Zhouluo personally served tea to the elder and listened as Li Xuanxuan asked, “How many have received protection now?”</p>
+<p>Li Zhouluo replied, “I have strictly followed family law and did not grant it lightly. Only the orphaned children of a few fallen uncles and brothers who were cultivators received protection. The mortal family members pleaded earnestly and I grew soft-hearted. I gave a few minor official positions for placement at my discretion.”</p>
+<p>He did not expose the Zhoufang brothers, only saying he had been soft-hearted. Li Xuanxuan sipped his tea and replied, “Tomorrow morning, bring a group to my courtyard to plead for Xixuan’s sake. Bring Zhoufang along as well, I’ve noticed his recent anxiety. After the plea, you are to bring Xixuan out.”</p>
+<p>Li Zhouluo answered respectfully, and the elder continued, “When you bring him back here, say that you could not bear to see your kin suffer and that you have already considered granting protection and promoting certain mortals.</p>
+<p>“As for the selection, let Qingdu handle it. Use a covert assessment method that weighs character, parental merit, learning, loyalty, and filial conduct. The chosen juniors will undergo a three-year evaluation, and the list of names will be announced at the family rites in three years.”</p>
+<p>Li Zhouluo nodded in understanding, and the elder went on, “Do not mention the number of names in the list. Let them have a few peaceful years. When three years have passed and you’ve promoted people from each lineage, you should have enough prestige to step down. Then let Jiangqian step forward to play the hard role. That child is fierce, sharp-minded, and fearless; he’ll make them suffer well enough.”</p>
+<p>Li Zhouluo was filled with respect for the old man. Few in the family understood his awkward position, and Li Xuanxuan had always been the one who truly thought for his sake.</p>
+<p>Moved, he replied quietly, “My deepest thanks, Elder.”</p>
+<p>Li Xuanxuan nodded. “Though the island’s factions share the same aim, few stand out as leaders. Of the four who gave you trouble that day, Chengzhen and Xie’e are easily appeased, and Xixuan is now detained. Only Chengdan remains stubborn, deeply loyal to the family and shrewd in his actions. It’s best to send him away for a time. Once he’s gone, the rest will be leaderless. I came here discreetly, but my presence is already known. Word will spread across the island soon enough. You understand what must be said, there’s no need for me to…”</p>
+<p>He had yet to finish when hurried footsteps sounded outside the hall, and Dili Guang’s anxious voice drifted in. “Family head, urgent news from the island.”</p>
+<p>Li Zhouluo saw Li Xuanxuan nod and said, “Bring it in.”</p>
+<p>Dili Guang strode forward, bowed deeply to the two, and said respectfully, “Young Master Zhouming has arrived on the island. He went to the courtyard of Yuanwan’s lineage and caused a great commotion. Tonight, the family members called elders from other lineages to intervene, but they were all scolded by the young master until they fled in embarrassment. The elders were left in an awkward position.”</p>
+<p>Li Zhouluo was taken aback, but Li Xuanxuan showed no surprise. He rose calmly and said in an even tone, “That troublesome brat is stirring up trouble again. Let’s go and bring him back ourselves.”</p>
+<p>Li Zhouluo understood that the elder intended to lend Zhouming his support and nodded, “After you, old elder.”</p>
+<p>The two rode the wind together and soon descended upon a sprawling estate on the island. The residence was grand and ancient in style, yet the main courtyard lay in disarray. Several middle-aged men stood about, faces flushed with anger, while the air buzzed with noise and confusion.</p>
+<p>Li Zhouming, dressed in a red robe, sat casually in the center of the courtyard, a fan resting by his side and a faint smile on his lips. Surrounded by people who dared not voice their anger, he exuded the air of an unrestrained scion.</p>
+<p>When Li Xuanxuan and Li Zhouluo descended into the courtyard, the crowd erupted into exclamations and hastily knelt. Li Zhouming also leapt up from his seat and bowed, “Greetings, ancestor! Greetings, family head!”</p>
+<p>Li Xuanxuan gave him a sweeping glance and said, “You’ve caused trouble again! What position do you have, to speak before so many elders? How dare you presume to lecture your brothers here?”</p>
+<p>Li Zhouming quickly answered, “Ancestor, I was just passing through and heard weeping from the courtyard. I thought Uncle Xixuan might have passed away from old age, so I came to inquire, only to learn he has gone to reside on Mount Qingdu.”</p>
+<p>He clasped his hands together and said angrily, “I saw them already dividing the inheritance and mourning before the man has even died. The fury in my heart… I simply couldn’t hold it back.”</p>
+<p>“You… that’s slander!”</p>
+<p>The middle-aged man beside him flushed red with anger, while Li Zhouming laughed and said, “Not dividing the inheritance? Then what is it?”</p>
+<p>A wave of commotion swept through the crowd, but Li Chengdan immediately stepped forward, pulling people apart and silencing them with glares until the entire courtyard fell quiet.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1210.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1212.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

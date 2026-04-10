@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1207: Three Profoundities (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1206.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1208.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1207: Three Profoundities (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>End of the sea.</p>
+<p>The coral cave shimmered with light as seawater churned, lifting the layers of fine white sand in the cave like cascading waterfalls. The sand drifted across the ground in rippling waves while countless pale shells darted between them, stirring up glimmers of reflected light.</p>
+<p>A Daoist dressed in robes of white and gold rested his hands upon his knees. Streams of Bright Yang spiritual qi surged from his body with each breath, and faint purple flames flickered into being and gently circled around him.</p>
+<p>Li Ximing had refined three True Profound Quintessence-Gathering Pills in quick succession, suppressing most of the burning flames raging within his Juque acupoint. His condition had improved considerably.</p>
+<p>He still possessed a good number of spiritual items and treasured medicines, and even more spirit water. He had treated himself accordingly, combining the White Waterfall Cold Spring obtained from the Purple Mansion Realm Assembly with his own Cloud Platform Flower to refine a furnace of pills. After consuming them in one breath, the glass-like burns that marred his Dharma Body gradually faded and his complexion returned to normal.</p>
+<p>More than a year passed in a blur. By his estimate, his injuries had recovered seventy percent, and his collection for Qingxu Temple was nearly complete. When he finally opened his eyes, the cave brightened instantly. He retrieved a jade pendant from his sleeve and examined it; no major trouble had befallen his household.</p>
+<p>“This jade pendant has been infused and nourished with my own energy before I secretly handed it to grandfather. Since it has yet to be crushed, it means no calamity threatening our family’s survival has occurred.”</p>
+<p>Casually storing away the formation plate within the cave, Li Ximing stepped outside. The seawater remained a brilliant blue, but the seabed had changed completely. Fine white sand now covered everything, and a few white shells, already at the Embryonic Breathing Realm, could be seen scuttling busily along the ocean floor.</p>
+<p>“How strange…”</p>
+<p>Li Ximing immediately understood. He was no expert in formations and couldn’t seal away his divine abilities. The cultivation of a Purple Mansion Realm cultivator of the Bright Yang Dao had altered the local spiritual energy. The coral cave should have produced Brightstone day and night, but the meager spiritual energy of the end of the sea had instead birthed layer upon layer of white sand.</p>
+<p>Even so, it had drawn passing demonic creatures to settle. Judging by the scene, the place was already on its way to becoming a minor spirit land. Li Ximing’s gaze swept across the surroundings, noticing one or two digging marks not far away; perhaps left by Qingxu Temple or another group that had come to harvest.</p>
+<p>Remarkable… Radiant Stone is used for palace construction throughout Jiangnan, the larger the better. This is the first time I’ve seen it treated as common spirit sand for collection.</p>
+<p>Since destiny had led him here, and the land beneath his feet brimmed with vitality, Li Ximing raised his hand, pressed two fingers to his lips, and exhaled a puff of Bright Yang purple flame.</p>
+<p>The purple flame hovered before him. Li Ximing took out a jade pot, a Qi Cultivation Realm item that he carried merely for tea. Forming seals and channeling his divine ability, he imprinted three to five layers of inheritance upon it before sealing the purple fire within.</p>
+<p>Li Ximing’s control over fire was formidable. The jade pot instantly turned a purplish-red, radiating searing heat and waves of Bright Yang brilliance. With a casual flick of his wrist, he tossed it back into the cave.</p>
+<p>The once-stagnant white-sand waterfall began to flow again. Li Ximing estimated that his purple flame would continue burning for seventy to eighty years before dispersing. Amused, he lifted a brush to inscribe a phrase,Valley Wind.</p>
+<p>With a flick of his sleeve, he vanished. In the blink of an eye, he crossed hundreds of miles and reappeared above Qingxu Temple. A sea of rippling grain stretched before him, the wind sweeping across fertile fields. The temple complex stood in orderly clusters, utterly transformed from what it had been a year prior. The monks in yellow robes were no longer scattered across the hills but mingled among farmers clad in coarse cloth and short tunics.</p>
+<p>Descending in a streak of light, he manifested within the highest temple courtyard. The surroundings were empty; indeed, many of the monks seemed to have shed their robes and gone to cultivate farmland instead.</p>
+<p>Li Ximing seated himself at a stone table in the courtyard. As footsteps approached, he heard the sharp voice of Xia Shouyu, the woman sounding thoroughly displeased as she snapped, “It’s just a single pill formula! Half a month has passed, and I still don’t have it? Are those people so powerful that you must make things this difficult?”</p>
+<p>“Shouyu… even the best cook can’t make a meal without rice. Without resources, what can we trade for it?”</p>
+<p>More noise followed, clearly several people had come. Irritated, Xia Shouyu responded with a cold laugh, “No resources? Do you think I can’t see through your little schemes? You’re just coveting the few pills the Daoist Master gave me. I’d dare to hand them over, but do you worms dare to take them?”</p>
+<p>The men trailing behind her were clearly members of the Xia Family. Their expressions varied; the leader glared at her, ready to retort, but swallowed his words out of fear and said instead, “Now that’s unfair. The Daoist Master’s return is uncertain, and the temple hardly has resources to spare.”</p>
+<p>“Bah!-”</p>
+<p>Xia Shouyu shoved the door open, ready to unleash another tirade, yet the words froze in her throat. The courtyard was awash in radiance. A man in white-and-gold Daoist robes sat by the stone table, casually reading a pill scripture. A glimmer of heavenly light flickered between his brows, enough to make one’s heart tremble.</p>
+<p>Thud!</p>
+<p>Before Xia Shouyu could step fully into the courtyard, her knees buckled and she fell to the ground with a thud. The others behind her turned pale and collapsed one after another, toppling like gourds rolling on the ground.</p>
+<p>In an instant, people were kneeling everywhere; outside the courtyard, within it, along the steps. One even slipped over the threshold, half his rear sticking up, yet none dared move. The ground was filled with human statues.</p>
+<p>Clearly, neither the protective formation of Qingxu Temple nor the courtyard’s internal formation had any effect on this Daoist Master’s movements.</p>
+<p>Xia Shouyu was terrified out of her wits, trembling as she stammered, “Daoist Master, this lowly one failed to welcome your arrival from afar. Please forgive the offense…”</p>
+<p>Li Ximing lifted his gaze from the pill scripture and gave a noncommittal nod. There was no need for politeness toward these outer-sea cultivators. He simply raised a brow and said, “The pill formula.”</p>
+<p>The pill formula!</p>
+<p>Xia Shouyu kowtowed, immediately pulling a jade box from her storage pouch. She turned to the trembling men behind her, now all meek and panic-stricken, who hastily produced the pill formulas from their sleeves and handed them to her.</p>
+<p>She shot them a fierce glare before turning around to respectfully present the items with both hands. A thick stack of beast-skin scrolls rested atop the jade box. Sliding it forward an inch, she said reverently, “This past year, I sent all the temple cultivators out to search far and wide. Every known, visible, and rumored source across the end of the sea has been investigated. All findings are gathered here.”</p>
+<p>Li Ximing picked up the scrolls one by one and read them in silence. No one on the ground dared to move. Before long, the old master of the temple arrived, saw the scene, and wordlessly dropped to his knees as well. As expected, most of the scrolls he scanned were nonsensical fabrications. Only three pill formulas seemed credible, each involving ancient spiritual materials.</p>
+<p>First, the Azure Manifestation’s Treasure Manifestation Divine Peak Pill, using the Supreme Concealed Origin as its main ingredient. Second, the Supreme Yin’s Unified Qi Heart-Lifting Pill, made with the Pure Yin Maternal Medicine as its base. The last, the Capital Guard’s Purplewater Immortal Marsh Pellet, refined from the Crimson-Headed Profound Soul and the Immortal Pure Unified Essence.</p>
+<p>It had to be said, ancient cultivators were truly overflowing with wealth. None of these spirit items were below the Purple Mansion Realm grade. The Supreme Concealed Origin itself was a supreme treasure of the Azure Manifestation; who in their right mind would use something like that for pill refinement?</p>
+<p>As for Pure Yin Maternal Medicine, he had never even heard of it. The Immortal Pure Unified Essence was known to be a Pure Essence Purple Mansion Realm spirit item, and the Crimson-Headed Profound Soul was almost certainly a precious spirit item belonging to the Capital Guard as well.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1206.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1208.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

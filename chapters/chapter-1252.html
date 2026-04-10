@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1252: Bei Sea (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1251.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1253.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1252: Bei Sea (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Purple Smoke Blessed Land.</p>
+<p>For centuries, ethereal purple qi had lingered among the mountains, dyeing heaven and earth a constant shade of purple. The scattered ranges revealed a sea of layered and undulating purple clouds, steeped in immortal grace.</p>
+<p>Radiant light drifted through the mountains as a woman in white and purple robes arrived riding the wind. Her face was round, her eyes bright, and her ears delicately small. Though her clothes were not especially ornate, they were clean and proper, lending her a pleasing grace.</p>
+<p>Someone called out from halfway up the mountain, “Junior Sister Queyi!”</p>
+<p>When she followed the voice, she saw a man hastily riding the wind toward her. When he reached her, he smiled and said, “You’ve returned quite early today!”</p>
+<p>This was Li Queyi of the Purple Smoke Gate, now at the third stage of the Qi Cultivation Realm. She quickly bowed and greeted him, “Greetings, Senior Brother Huang! I was supposed to be practicing swordsmanship, but I received a sudden message from the gate. They’re sending me to the Eastern Sea, so I came back early.”</p>
+<p>For the past half-year, the Purple Smoke Gate’s Eastern Sea outpost had been beset by calamities; mountain collapses, tsunamis, shattered islands, and the shifting of both earth and fire veins. The gate was in disarray; even half the personnel sent to Moongaze Lake had been transferred away.</p>
+<p>Knowing this, the second senior brother frowned and asked in puzzlement, “Why would they send you there? You’ve only cultivated for such a short time. How does that make sense? If something happens, how will they answer to your family? Does master know about this?”</p>
+<p>He clearly understood Li Queyi’s background. If she were sent out while still in the early Qi Cultivation Realm and something happened, the gate would never be able to explain it to the Li Family.</p>
+<p>Li Queyi smiled in reply. “They’re not sending me to fight, of course. I cultivate the Jade True Dao, and the island’s formations are also of that lineage. I’ll just be handling logistical work.”</p>
+<p>“That makes more sense…” Though he agreed aloud, worry still clouded his expression as he descended with her toward the peak.</p>
+<p>Purple Gale Peak’s location was not bad. It was set on the right of the encircling mountains. If it were aligned a bit straighter, it would face Shepherd Peak on the opposite side. When the morning light rose, the whole scene gleamed golden.</p>
+<p>After much hesitation, Senior Brother Huang asked again, “About what we discussed last time, have you managed to find the White Spur Root needed for the Virtuous Treasure Pill? There aren’t many alchemists in the sect, so scheduling one’s turn is troublesome. I’ll need to book a slot early.”</p>
+<p>He gave an embarrassed smile and said, “I don’t mean to press you, junior sister… just borrowing a bit of help. Your senior brother’s purse is tight, but once I gather enough resources, I’ll repay you tenfold.”</p>
+<p>A trace of weariness showed on Li Queyi’s face, yet she forced a smile and said, “I’ve already written to ask about it. If there’s any news, it will surely be sent over. Please don’t worry, senior brother.”</p>
+<p>The Purple Smoke Gate did not treat its disciples poorly, yet not every disciple came from an influential background. Lingyanzi was a solitary old man whose disciples were mostly from humble families or small clans of mere Qi Cultivation Realm heritage. The old fellow was hopeless at maintaining relationships, yet had a soft heart; always choosing to accept disciples of lesser standing. When he had once issued a gate-entry token to the Li Family, they too had only been a Qi Cultivation Realm family.</p>
+<p>That second senior brother was now striving for the Foundation Establishment Realm. The gate had already provided him with a portion of resources, and Lingyanzi had offered some as well. But the more resources, the better. So he often turned to Li Queyi for help.</p>
+<p>Li Queyi was utterly weary. Everyone on the peak called her ‘junior sister’ with such warmth, praising her more than anyone else, but their eyes were really fixed on what she carried in her pouch. If those items had been her own, it might not have mattered, but they were all begged from her family. She was forced to ask again and again, and each time it grew harder to open her mouth.</p>
+<p>Lingyanzi had no sense for management. The senior brothers were not bad men, but even good men could grow ruthless for the sake of the Foundation Establishment Realm. Time and again they came to her in private, humbling themselves to ask for aid. Each time Li Queyi picked up her brush to write home, grievance welled in her heart.</p>
+<p>I never expected these senior brothers to be like Wun Wu[1] of Shepherd Peak, who arranges everything meticulously, selects the best techniques, and smooths relations with the pill and artifact peaks for his juniors… But must they press me again and again like this…</p>
+<p>I knew when I came that this peak’s domain was poorer than the others. I thought if I simply behaved well and cultivated diligently, it would be fine. But who could have known how bitter such poverty could be? How could this not be suffering?</p>
+<p>Lingyanzi treated her kindly, but even he had privately requested resources from the Li Family twice. Li Jiangqian had immediately seen the problem and mentioned it subtly in his letters. From that, Li Queyi understood that it was the cost of currying favor with Lingyanzi. The old man had to support so many disciples that he did his best to stretch every spirit stone into two.</p>
+<p>A few days ago, Wun Wu had brought Li Quexi to visit her, hoping to deepen their sisterly bond. She had no idea what kind of pills Shepherd Peak had provided her cousin, but the girl’s cultivation speed was astonishing. Hearing that her cousin was even sending the spirit items she obtained back home made Li Queyi’s heart grow dimmer still. Though she claimed that her trip to the Eastern Sea was an assignment from the gate, it had in truth been arranged privately. She had begged a senior sister from the Xiao Family within the Purple Smoke Gate to help her, all just to find a place to hide for a while.</p>
+<p>Yet Li Queyi could understand her senior brothers’ desperation to break through to the Foundation Establishment Realm, so she could only speak humbly, “I don’t ask for any repayment in the future. My family has some spare means, so let me help my brothers. I’ve already written home, and if they manage to send anything, it will be delivered to the master. I’m leaving for the outer-sea soon; senior brother may collect it from him directly.”</p>
+<p>After a slight bow, she excused herself and returned to her room, feeling a chill settle over the entire peak, leaving her lost and helpless.</p>
+<p>How did it come to this… Poverty I could endure, but must fellow disciples, instead of helping one another, fight to take what little I have? Meanwhile, the prosperous Shepherd Peak brothers are generous and upright, clearing every obstacle for my cousin without hesitation…</p>
+<p>————</p>
+<p>Bei Sea.</p>
+<p>Bei Sea was part of the Unison Sea region. Its waters were not vast; if one removed the reefs and small islands, the remaining sea was smaller than two Splitreed Islands. Yet it was overflowing with spiritual treasures, the very essence of the Unison Sea.</p>
+<p>The Dragon Clan had long upheld the ancient rule of sea herding. In past ages, the Dragon Sons served as governors drifting among the seas, but now it resembled a feudal division. Each Dragon King ruled a fixed domain of the ocean, but those territories had always lain beyond the Unison Sea, scattered between the Qunyi Strait and Shiqi of the Scarlet Pristine Sea.</p>
+<p>The Unison Sea itself was akin to the Dragon Monarch’s direct dominion and should not have been divided for sea herding. Yet there were exceptions. Three Dragon Kings over the past thousand years had been exceptionally favored and enfeoffed within it. Bei Sea was the smallest among them but the closest to the heartland; its shore bordered Yinzhou, where many dragons resided. It was so near the capital that it showed the extraordinary favor bestowed upon its Dragon King.</p>
+<p>The central waters were calm and still as several small boats drifted upon the sea. On the foremost boat, a man crouched at the bow, his eyes glinting green as he peered ahead. After watching for a while, he turned back into the cabin and spoke softly, “Young master, the Changliu Strait lies ahead.”</p>
+<p>Inside, a young man reclined lazily against the boat’s side. His golden eyes gleamed faintly in the cabin’s dim light. Upon hearing the man, he merely replied, “Slow the boat. Follow the coast westward and look for a settlement. There’s no need to go directly into the strait.”</p>
+<p>The green-eyed man quickly rose, leapt to the bow, and drew a pair of sticky, dark-green hands from his robe, slowly steering the boat forward.</p>
+<p>1. Previously known as When Wu. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1251.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1253.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

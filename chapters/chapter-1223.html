@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1223: Intercalary Of Valley Water (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1222.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1224.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1223: Intercalary Of Valley Water (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chi Buzi waited for a few breaths before Dangjiang finally stepped forward and bowed. “Immortal general… This man was personally chosen by the venerable one back then and permitted to ascend in pursuit of the Dao. Now that he has begun to accumulate immortal merits, he comes specially to pay his respects, hoping for your guidance so that he may one day aspire to form his Golden Core.”</p>
+<p>He knelt down sincerely, discreetly tugging at Chi Buzi’s sleeve to signal him to present the command token. Although Chi Buzi was a Purple Mansion Realm cultivator of great status, he too dropped to his knees without hesitation, his expression calm and respectful.</p>
+<p>“This humble cultivator has successively offered two demonic creatures in sacrifice to exchange for immortal merits as resources for my cultivation. Everything is recorded within this command token. I humbly ask for your guidance, my lord.”</p>
+<p>Immediately, an immortal soldier descended from the platform, received the command token from Chi Buzi, and delivered it to Lu Jiangxian, who had manifested as Zhen’gao. “My lord, within it are six hundred and forty-one strands of immortal merit.”</p>
+<p>Zhen’gao nodded slightly, glanced at the two of them, and said, “Then seek the Intercalary Position.”</p>
+<p>Dangjiang could no longer quite understand what was being said, and even Chi Buzi hesitated. His Azure Pond Sect Pristine Water Dao lineage was formidable enough to suppress other cultivators, but precisely because it originated from Pristine Water, his understanding of the Golden Core was surprisingly shallow. Though he had gathered much information over the years, he was far too shrewd not to seize such an opportunity to ask a few more questions.</p>
+<p>He immediately bowed in reply. “My lord… this humble cultivator’s Dao lineage is crude; my cultivation is shallow; and I am completely ignorant regarding the matter of the Golden Core. It is only by the grace of an immortal lord in Anhuai Heaven that I was granted the hope of advancement. What you have said is too profound; I beg your explanation.”</p>
+<p>Lu Jiangxian quietly chuckled in his heart,So he’s using me as his backing!</p>
+<p>He had studied countless scriptures and cultivated according to immortal formulas; his knowledge of the Golden Core, both in theory and in practice, far surpassed that of Chi Buzi, and he was quite confident in it.</p>
+<p>Such secrets could not be lightly passed on. Yet Chi Buzi would never act without gain, and Lu Jiangxian, who intended to make further use of him, was not stingy. He said softly, “In your current situation, that True Monarch of Pristine Water cannot be removed, so you have no hope of Fruition Attainment; you know this well. Worse yet, you are a descendant of his Dao lineage, and he is watching you closely, unwilling to even let you attain the Surplus Position. If you confront him directly along the Dao of Pristine Water, it will be nothing short of courting death. Only the Intercalary Position remains open to you.”</p>
+<p>Chi Buzi’s breathing suddenly grew heavy, and he whispered, “This humble cultivator dares to ask, my lord… which Intercalary Position must I attain?”</p>
+<p>Both the Surplus Position and Intercalary Position were utterly obscure and beyond reach for ordinary cultivators. Even direct disciples of the Purple Mansion Realm only knew of their existence, while the Golden Core Dao lineages of the three sects and seven gates possessed no cultivation art or scripture that could explicitly instruct one on how to attain either the Surplus or Intercalary Position.</p>
+<p>No matter how much he had seen before, Chi Buzi had never lost sight of what truly mattered. The answer to this question carried the weight of Mount Tai across the entire world; its value was beyond imagination.</p>
+<p>Yet Zhen’gao acted as though he had heard the simplest of questions and shook his head. “That depends on your divine abilities. There is an intercalation between Pristine Water and Valley Water. Of the five divine abilities, Spring’s Echo, Heavy Murk, and Chougui Hidden Form, all belong to the intercalary of Valley Water. Yet you chose to cultivate Clear Dusk Rain, and that brings trouble.”</p>
+<p>Chi Buzi reacted swiftly; his face changed several times over as that calm statement sank in.</p>
+<p>Pristine Water and Valley Water share an intercalation.</p>
+<p>What did that imply? It meant that Chi Buzi could use this relationship to seek the Intercalary Position of Valley Water. His expression, once as steady as Mount Tai, finally cracked, revealing astonished enlightenment. Bewilderment and comprehension surged and intertwined in his eyes.</p>
+<p>Chi Buzi had long harbored theories regarding Valley Water and Mansion Water from his cultivation experience and the ancient texts he had gathered. In the past, he had even speculated that Yingze was a True Monarch of Mansion Water and had taken desperate measures to prove his loyalty.</p>
+<p>Now that he knew there existed divine abilities tied to the intercalation of Valley Water, more than half the fog in his mind dispersed. Yet merely knowing that Pristine Water and Valley Water were intercalated was not the key; the real question lay in which Immortal Foundation should be used to fill the gap, and what method could lead to forming the Golden Core.</p>
+<p>Countless thoughts surfaced in his mind, but relying on his cultivation insight, he suppressed his excitement and replied, “In generations past, the seniors of our Dao lineage sought only the Surplus Position of Pristine Water, never daring to dream of an Intercalary Position. By the time it came to my generation, I had already discerned the True Monarch’s intent and pondered pursuing the Intercalary Position… but I never thought that Clear Dusk Rain would ruin everything.”</p>
+<p>Zhen’gao had picked up a jade slip and was reading it casually as he replied, “Had you not cultivated Clear Dusk Rain, the affinity with the Valley Water Dao would have been marvelous. But Clear Dusk Rain is a late-coming rain, the proper fruition of Pristine Water, and therefore incompatible with Valley Water.”</p>
+<p>Chi Buzi finally understood. The Chi Family already possessed Heavy Murk and Spring’s Echo; only Clear Dusk Rain had come from the Azure Pond Sect’s archive. Suspicious by nature, he immediately blamed Pristine Water in his heart and said softly, “Now… I beseech you, my lord, to show me the path through this confusion!”</p>
+<p>Zhen’gao rubbed the command token in his hand, and its light instantly dimmed. Dangjiang looked on in distress, but Chi Buzi remained utterly unconcerned, waiting respectfully as Zhen’gao spoke, “There exists a divine ability called Morning Cold Rain in the Mansion Water lineage. Do you know of it?”</p>
+<p>Of course Chi Buzi knew. Without a moment’s hesitation, he answered, “This humble one has heard of it. Morning Cold Rain of Mansion Water often manifests over the Eastern Sea, and many descendants of Pristine Water demonic creatures practice this Dao.”</p>
+<p>Zhen’gao spoke softly, “If you are to attain divine ability, you should cultivate this Dao.”</p>
+<p>Chi Buzi was slightly stunned, unease rising in his heart. After all, if a Purple Mansion Realm cultivator attained the wrong divine ability, it would mean certain stagnation. The Purple Mansion Realm cultivators in Jiangnan would only use their final divine ability to patch their Dao, and even then, they would calculate endlessly to avoid any conflict among their powers. It was no simple matter.</p>
+<p>Moreover, it was pure absurdity to think that a Pristine Water cultivator could use the divine ability of Mansion Water to attain the Intercalary Position of Valley Water. Had he heard such a claim earlier, Chi Buzi would have slapped the speaker to dust without hesitation.</p>
+<p>He could not comprehend it at all until Zhen’gao raised his brows and said, “Morning Cold Rain; when falling snow meets the light of dawn, it turns into a sharp, cold rain. The rain dwells within the snow that serves as its valley. Thus, it forms the intercalation of Valley Water within Mansion Water. Moreover, it can connect above with the three Valley Water intercalations and below with Clear Dusk Rain. Though not as ideal as using the other two Valley Water Daos, it still forms a viable Dao.”</p>
+<p>The more Chi Buzi listened, the more sense it made. He quickly nodded, a trace of trust rising in his heart.</p>
+<p>At the very least, this method still involved four Pristine Water divine abilities, and it remained within the bounds of worldly logic. Even if there was no chance of striking for Golden Core, his life would be secure. Chi Buzi instead felt that skipping Clear Dusk Rain to cultivate three Pristine Water Daos and then two Valley Water Daos would be nothing short of a joke.</p>
+<p>The elders and the various scriptures have long made clear that cultivating even one divine ability outside Metallic Essence would result in your progress halting. Cultivate two? Even if you manage to, how many days could you last before your body explodes and you die?</p>
+<p>He privately thought that even if both paths lay before him, he would still choose four Pristine Water divine abilities and one Mansion Water divine ability. In fact, he was glad he had already cultivated Clear Dusk Rain, otherwise it would have been harder to refuse. He then said, “This Morning Cold Rain…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1222.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1224.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

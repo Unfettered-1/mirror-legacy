@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1236: Merit Conferment and Dao Stipend (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1235.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1237.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1236: Merit Conferment and Dao Stipend (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian sent his men down and waited in the hall. Before long, a noisy commotion could be heard outside, and a line of figures quickly gathered before the main hall. After some hesitation and shoving, no one dared to step inside.</p>
+<p>Creak.</p>
+<p>Finally, Chen Donghe and An Siwei led the way into the hall, each followed by three of Qingdu and the Jade Court’s core figures. After saluting, Li Jiangqian, who still treated the two elders courteously, straightened and said, “Elders, please come in first.”</p>
+<p>The hall doors closed tightly, leaving only the two of them standing inside. Li Jiangqian pointed to the stack of letters on the desk and said, “There are twenty-two candidates within the family for conferment. Uncle Zhouluo granted each of them three places of protection; they may remain within the island, hold border posts, and receive annual rewards.</p>
+<p>“All their activities over the past three years are recorded here. Suspicions, evidence, reports suppressed by Uncle Zhouluo, and past stains buried in the family archives are all marked in red.</p>
+<p>“I need the two divisions to cooperate. Qingdu’s men are not to move. The Jade Court’s men will go to summon them. Separate those brought in and confine them in the halls; no interrogation, no torture.”</p>
+<p>Chen Donghe hesitated to speak, while An Siwei bowed and reminded him, “Family head, the family has been honest these three years. Those chosen for conferment have no visible faults. Even if some actions were intentional, there is no proof. To pursue old matters may invite resentment.”</p>
+<p>“It does not matter.” Li Jiangqian smiled slightly and replied, “I only ask that you two elders keep everyone under watch. It will be enough to clamp down on the rumors.”</p>
+<p>The two nodded in understanding. Li Jiangqian personally walked down and opened the door for them. As the main doors swung open, the whispering crowd kneeling outside instantly fell silent.</p>
+<p>Li Jiangqian smiled and said, “One more thing, have Qingdu and the Jade Court pass the message to all lineages. Any household granted conferment found guilty of corruption or crimes against Qingdu will see its privileges reduced; one offender will implicate the entire house.”</p>
+<p>The gathered crowd dispersed, and people were led up the mountain one after another. After waiting for a while, Li Jiangqian saw a man with a patterned headscarf being dragged up the path. He had been waiting for him. The smile vanished from his face as his expression turned cold, and he glared sharply at the man.</p>
+<p>Li Chengzai’s heart had already turned cold. When the Jade Court Guards had come knocking in the middle of the night, saying one man’s crime implicated an entire residence, Li Chengzai’s heart had sunk instantly.</p>
+<p>What had his old man gone to do? To plead guilty!</p>
+<p>Li Xixuan had rushed back midway to Qingdu to beg for leniency, but Li Chengzai had not known that. All he knew was that his father had gone to plead and had not returned even by midnight. Earlier, he and several brothers had sat together in anxious discussion, uncertain where their father might be facing punishment.</p>
+<p>His fear deepened under Li Jiangqian’s cold glare,Father always said the eldest young master was ruthless. With this move, our family’s conferments will be gone, all five of them… Truly, he was a step ahead, and father walked right into his hands!</p>
+<p>The heavy doors shut tight as he was dragged into a side courtyard and locked inside. Darkness fell, and the formation sealed the place from the outside world, cutting off all communication. His heart turned to ash. When a servant entered with tea, he gave no response at all.</p>
+<p>“My lord, please…”</p>
+<p>He turned his head slightly, finding the servant’s face vaguely familiar. After a brief pause, he asked, “Are you from the Ren Family?”</p>
+<p>Li Xixuan’s principal wife was from the Ren Family, and the Eastern Residence had close ties with them. He quickly grabbed the servant’s hand, forcing his rarely used mind to work as he stammered, “Help me… send word to the Eastern Residence… divide the household immediately… whoever can be saved, save them…”</p>
+<p>The Ren Family servant glanced at him and replied, “You think too highly of me, young master. I’m just a lowly servant; how could I manage such a thing? Besides, right after you were taken away, the people of the Eastern Residence already divided up their assets.”</p>
+<p>Li Chengzai went limp, sitting in a daze for half the day before muttering a single word, “Good.”</p>
+<p>While Li Chengzai struggled inside, the outside was quiet save for hurried footsteps. Moonlight spread like water. Li Jiangqian stood before the hall doors as Chen Yang bowed slightly and said softly, “Family head, Lord Xixuan is still in the Qingdu courtyard. The Eastern Residence has already panicked and split their holdings. The western side had long been divided, so there’s no movement there; only two more branches have separated.”</p>
+<p>“That’s enough.” Li Jiangqian said casually, “When Elder Xixuan descends from the mountain, he’ll find his Eastern Residence already gone. His children, now divided and resentful, will blame him alone. As the old elder said, better the resentment fall not on brothers or the family, but on Elder Xixuan himself.”</p>
+<p>He let out a faint sneer as he continued, “When parents err, brothers and sisters stand united in shared grievance. Doesn’t that make them closer? No bonds are broken, and the family stays blameless. It was Li Xixuan who confessed first, and only then did I send men to make arrests. Now that the Eastern Residence has exposed itself, everyone understands the reason behind these widespread seizures!”</p>
+<p>At that moment, even Chen Yang felt a chill crawl up his spine. After a brief moment of silence, he clasped his hands and said, “I fear he won’t cooperate… Elder Xixuan, being in the center of it all, knows the truth too well. If he starts spreading word…”</p>
+<p>“I’m not afraid he won’t cooperate.” Li Jiangqian flicked his sleeve, clasped his hands behind his back, and strode into the hall with a faint smile. “When parents love their sons, they plan far ahead. What benefit would the Eastern Residence gain if he exposes the matter? Nothing but repeated division and disintegration at my hands. He’s grown old and no longer dares to stand against me, who holds power.”</p>
+<p>“Besides…” Taking his seat at the main position, he lifted his brush and said, “Is there any difference between pleading for leniency and admitting guilt? If one is innocent, why beg for mercy?”</p>
+<p>Li Jiangqian cast him a sidelong glance and finished, “Go and summon Cui Jueyin.”</p>
+<p>Chen Yang left in a flash, and soon Cui Jueyin entered from outside the hall, clearly having waited for some time. Li Jiangqian raised his brows and said with a smile, “Lord Cui, the matter we’ve discussed these past two months, has it been settled?”</p>
+<p>Cui Jueyin bowed slightly and replied respectfully, “In accordance with the family head’s instructions, I have selected three great Dao lineage manuals: Six Chapters Seeking Immortality’s White Dawn Chapter, the comprehensive record of the Scaled Beasts Inquiry Technique, and the general outline of the Spiritual Talisman Method from the family’s six hundred and sixty-seven Dao Collection volumes.</p>
+<p>“These three Dao lineages have been revised and supplemented with content from other Dao lineages, and are now named White Dawn, Inquiry of the Law, and Spirit Talisman.”</p>
+<p>He presented the three volumes with both hands. Each was bound in white, gold, and violet covers, with intricate patterns that exuded an ethereal aura. Li Jiangqian flipped through them twice and nodded.</p>
+<p>“My thanks, elder.”</p>
+<p>Cui Jueyin stepped aside respectfully, while Li Jiangqian turned to Chen Yang below and said, “Bring in the family members from each side courtyard.”</p>
+<p>Everyone filed in, heads bowed and faces uneasy as they stood neatly below. Li Jiangqian smiled and said, “First, I must congratulate all of you. Elder Xixuan has shown great righteousness by entering the mountain to take responsibility. The family has reviewed the matter, and thanks to Uncle Zhouluo’s keen insight, the chosen conferment candidates have been verified. Though there were doubts, all have now been cleared; the conferments remain valid.”</p>
+<p>A collective sigh of relief rippled through the crowd below. They exchanged furtive glances, many turning to glance at Li Chengzai.</p>
+<p>Li Chengzai was now certain his old father had gone to plead guilty. Fortunately, nothing incriminating had been found; otherwise, his entire household would have been hated beyond measure.</p>
+<p>He silently rejoiced as he listened to Li Jiangqian continue, “I have called everyone here today for an important matter. I intend to open new paths within the family. Using Milin as the main site, we shall establish three branches of study, White Han, Inquiry of the Law, and Spirit Talisman, to allow family members who cannot cultivate to pursue learning. It will also serve as a modest contribution to the family’s strength.”</p>
+<p>The people below lifted their heads in confusion, looking up at the platform. Li Jiangqian smiled and explained, “The conferment system will continue as before, but only the descendants of cultivators who have sacrificed for the family will be eligible. The conferment shall extend solely to the generation possessing a spiritual orifice. If their offspring lack one, their inheritance and assets will be kept in reserve by the lake, awaiting a future descendant with a spiritual orifice, upon which the family’s merit will be restored.</p>
+<p>“As for the path of studying the Dao scriptures, examinations will be held in Milin every five years during the ancestral rites. Those who show skill in the three branches and possess upright conduct shall be granted posts and rewards within the family. They may remain on the island, receive stipends and honors; this will be known as the Dao Stipend.”</p>
+<p>The courtyard fell silent. Cui Jueyin, clearly prepared in advance, drew several golden scrolls from his sleeve that were already written and sealed, and passed them down to Chen Donghe and An Siwei.</p>
+<p>The Li Family’s conferment privileges were far from being as unshakable as Mount Tai. If one lacked ability, even an earned post could be stripped away. The rewards and residence rights lasted for only one generation. If this Dao Stipend system could truly work, would it not be better than conferment itself?</p>
+<p>Everyone now raised their brows in interest. Li Jiangqian continued, “This path will have three ranks. Later, the family will establish academies in every prefecture and even send members abroad from the island. All households, come forward to copy the scriptures.”</p>
+<p>Leaning back on the high seat at the main hall, he watched the crowd below as dozens of fervent gazes drifted toward the three manuals. A few Foundation Establishment Realm cultivators were among them, lining up obediently to make copies. Li Jiangqian’s gaze wandered over their delighted faces.</p>
+<p>I will never allow you all to gain authority so easily… Only by chaining your minds to the endless annotations of the Dao scriptures, aging white-haired over study and exhaustion, will you lose the heart to scheme elsewhere. Only then will you climb, bit by bit, into a power system wholly detached from the sixteen prefectures, the two peaks, and one Mountain. Only then can future troubles be prevented…</p>
+<p>He smiled faintly, raising his head slightly amid the chorus of gratitude and reverence toward the family head after the scripture-copying concluded.</p>
+<p>Besides, it’s not without benefits. The more they study Dao scriptures, the better they can educate their offspring. Their children with spiritual orifices will grow up learning these three manuals from the start; it might even help their future cultivation.</p>
+<p>“This is the method of the Merit Conferment and Dao Stipend!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1235.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1237.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

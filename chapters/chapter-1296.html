@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1296: Locust Ghost (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1295.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1297.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1296: Locust Ghost (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Jiangbei, Floating South.</p>
+<p>The mountain ranges within Floating South were not tall. In fact, there were only three major mountains across all of Jiangbei. The nearest was Mount Tangdao of the Golden Tang Gate. By the time one reached this region, the terrain had already leveled out, and even the highest point, the Floating South Main Peak, rose no more than a little over a few hundred meters.</p>
+<p>The name Floating South Main Peak had been given by the Li Family. Ever since the Li Family withdrew from Floating South and took the Cloud Veiling Sky Ascent Formation with them, the mountain had been left vacant. In the aftermath, waves of rogue cultivators and devil cultivators had flooded in, each keeping silent as they quietly hid themselves within mountain cave dwellings.</p>
+<p>First, none dared to name the mountain, fearing that it might displease the Li Family, so they all claimed they were merely gathering qi on the mountain. Second, there were simply too many rogue cultivators hiding in this region, each occupying their own peak, making it inconvenient to say much.</p>
+<p>A few months earlier, there had even been a group of devil cultivators and rogue cultivators who gathered together to offer tribute to the Li Family as payment for gathering qi. The Li Family had politely declined, and the cultivators returned greatly disappointed. Yet only a few months later, they came again with friends in tow, and the number of cultivators in this region multiplied severalfold.</p>
+<p>Jiangbei was truly prosperous. Even the lowest grade spirit fields here would be enclosed and fought over if they were placed in the outer-sea. If one could reside in the mainland and wait for spirit items to emerge from the land without effort, who would be willing to struggle about in the outer-sea?</p>
+<p>Moreover, there were those secrets that made one’s heart race. The Li Family had always treated Floating South as a buffer zone. They did not nurture a population there, and instead used it as a territory for harvesting spirit items. As a result, there had never been many common folk. With the arrival of these devil cultivators and rogue cultivators riding the winds, many cultivator descendants appeared, along with the establishment of small gates and minor temples, gradually forming the early shape of the Eastern Shore Wilderness.</p>
+<p>It had been a scene of peace and tranquility, yet the radiance in the heavens shattered that calm.</p>
+<p>“Hahahahaha!”</p>
+<p>Intense black and white light intertwined and shot straight into the sky. An elderly cultivator clad entirely in black robes threw his head back in a long howl as he hung arrogantly in midair. Rings of ghostly light floated around him, accentuating his sinister aura.</p>
+<p>The radiance was so intense that nearly the entire White River Stream region could see it clearly. One cultivator after another rose into the air on the wind, lifting their gaze with envy or astonishment.</p>
+<p>“I am Daoist Bai. Today, I have obtained the Gui Dusk Profound Token and gained the recognition of the Mifan Dao lineage, inheriting the lineage in succession and reviving the ancient sect.”</p>
+<p>At the same time, dark clouds and lightning filled the sky, thundering dramatically. The assembled cultivators stared at him in stunned silence, exchanging bewildered looks.</p>
+<p>“Could those rumors be true? He is actually acting with such confidence.”</p>
+<p>“He still dares to reveal himself openly after obtaining such a treasure. Does he truly think the Capital Immortal Dao and the Moongaze Immortal Family are merely for show?”</p>
+<p>An uproar broke out below as discussions erupted everywhere. The elderly man in the black Daoist robe lifted his head proudly, black clouds coiling behind him. At the same time, a young man appeared amid the eastern clouds. With high brows, deep set eyes, and a Daoist manual in hand, he clearly looked like a core figure of an immortal sect. His expression was cold as he forced a faint smile.</p>
+<p>“I am Guan Gongxiao. On behalf of the Baiye Capital Immortal Dao, I extend my congratulations to you. The reemergence of the Mifan Dao lineage is truly a great joyous event for the cultivators of Jiangbei.”</p>
+<p>He tilted his head slightly and gave an order, “Come, offer congratulations on behalf of my immortal gate.”</p>
+<p>As his words fell, cultivators at his side stepped forward holding jade trays and presented them. The crowd below collectively froze for a moment, while Daoist Bai’s sudden tension eased, replaced by boundless joy as he thought, I bet right!</p>
+<p>He immediately let out a low chuckle and accepted it without ceremony while suppressing the greed on his face. He cupped his hands as he said, “Greetings, gate master. This was not arrogance on my part. Reestablishing the mountain gate with this token required such a display. I have surely offended many, and I ask for your forbearance.”</p>
+<p>Guan Gongxiao nodded slightly, displaying the bearing of a great sect, and replied, “So that is how it is.”</p>
+<p>Daoist Bai had no idea what his reply was meant to address. His mind was bursting with exhilaration. He lifted his head high, only to see the clouds to the south disperse as well. Radiant Fire surged forth, and a young man revealed himself.</p>
+<p>The young man’s eyes were a noble gold. He wore an outer robe patterned with Radiant Fire motifs, stood upon surging flames, and had brows set close to his eyes. His gaze was long and narrow, giving the impression that he was not someone to provoke.</p>
+<p>It is a golden-eyed direct descendant of the Li Family!</p>
+<p>The Moongaze Immortal Family was renowned throughout Jiangbei. Li Zhouwei’s forceful slaying of the Golden Tang Gate’s master and his effortless escape after shattering a spirit artifact had spread widely on both shores. The newcomer was recognized at once.</p>
+<p>The golden-eyed noble descendant spoke calmly, “Congratulations, fellow Daoist. My Moongaze family offers the Floating South territory as a gift… Dharma Protector Qu.”</p>
+<p>An old man came forward carrying a jade tray. The cultivators below were instantly filled with envy,This Daoist Bai truly has incredible luck!</p>
+<p>Amid the intertwining black and white currents, Daoist Bai genuinely displayed the bearing of a Devil Dao magnate. He returned Li Jiangqian’s courtesy but said nothing more, simply sweeping the items from the jade tray into his sleeve.</p>
+<p>Li Jiangqian sized him up and saw that the expression on his face could not be concealed at all. He guessed that the command token’s influence was considerable and clicked his tongue inwardly,Who knows whether this is the influence of a True Monarch or the methods of a Daoist Master? That expression, those movements, that unrestrained delight. He could practically be an actor.</p>
+<p>Guan Gongxiao let out a cold laugh as he said, “The family head is truly generous. Does Floating South even still count as your family’s territory? It was his to begin with, yet you have the nerve to present it as a congratulatory gift.”</p>
+<p>Li Jiangqian shot him a fierce look and replied just as coldly, “Oh? Lord Guan may not excel at combat, but you are quite skilled at healing. After taking my father’s halberd strike years ago, you can already come out and show yourself so soon.”</p>
+<p>Guan Gongxiao clearly could not hold his composure. He snorted coldly, gripping his Daoist manual as gusts of fierce wind whipped around him. Yet his other hand remained behind his back, not even forming a seal.</p>
+<p>This Guan fellow is being far too perfunctory.</p>
+<p>Li Jiangqian maintained his composure and stared at him coldly. Qu Buzhi muttered inwardly, unable to bear watching any longer. Revealing anger on his face, he stepped forward and drew his wooden staff dharma artifact, as though a fight could break out at any moment.</p>
+<p>The discord between the two sides was nothing new. It was the reason those in Floating South and Hidden East were living so comfortably. This was all within the expectations of the onlooking cultivators, who watched as though enjoying a spectacle.</p>
+<p>Daoist Bai, however, said with a smile, “I ask that the two lords give me some face. Today is a great joyous day for my Dao lineage.”</p>
+<p>As soon as these words were spoken, the tense standoff dissolved at once. Daoist Bai himself had not expected his words to be so effective. Joy and exhilaration surged again in his heart. He lifted his head and cupped his hands toward Guan Gongxiao, “I will rely on the gate master for much care in the future.”</p>
+<p>Which of the cultivators below lacked discernment? They immediately understood,This old man is siding with the Capital Immortal Dao.</p>
+<p>In truth, Daoist Bai’s choice was not wrong. He came from a devil cultivator background and had used every underhanded method imaginable. The Li Family was famed for the Orthodox Dao. How could they compare to the familiarity of the Capital Immortal Dao, which also originated from the outer-sea?</p>
+<p>Having already taken over the Li Family’s territory, he had offended them once already. If he allied with the Li Family, any use of bloodshed would invite criticism. Who could say whether the Li Family might harbor thoughts of eliminating demons and upholding the Dao? By contrast, the Capital Immortal Dao would certainly support Daoist Bai, who had occupied the Li Family’s buffer zone. This choice was indeed the correct one.</p>
+<p>The assembled cultivators immediately turned to look at Li Jiangqian. The Li Family’s family head had lost face in public, and as expected, his expression was icy, making onlookers feel a chill in their hearts.</p>
+<p>Yet Li Jiangqian was secretly delighted. As he watched his rival Guan Gongxiao smile and nod, he could tell that every inch of the man’s body was likely filled with resistance, to the point where he probably wanted nothing more than to slap Daoist Bai across the face.</p>
+<p>What kind of person is Daoist Bai? He’s nothing more than a stumbling block on the path of the True Monarch, yet he still tries to curry favor. When the time comes, even the vast Capital Immortal Dao will be tripped up along with him.</p>
+<p>Joy bubbled in his heart while his face remained cold. Seizing the opportunity, he decisively cut off the other party’s paths and turned away without mercy, flicking his sleeve as he left.</p>
+<p>Seeing Li Jiangqian turn and leave without a second thought, Guan Gongxiao cried out inwardly. His reactions were quick, however, and he immediately said tensely, “That Li fellow has finally left. Our two sides are still facing off along the river. Fellow Daoist, you tidy things up here. I must return to hold the line.”</p>
+<p>How could Daoist Bai possibly stop him? He naturally let him go and even smugly escorted him part of the way, making Guan Gongxiao’s scalp prickle and his spine grow cold as he muttered in his heart,Do I still dare hand Hidden East over to him later? The more I give, the closer we become, and then he might come to my sect seeking aid.</p>
+<p>He flew faster and faster, fleeing in panic. Daoist Bai returned, his face full of cold laughter as he looked down at the assembled cultivators and spoke leisurely, “Fellow cultivators of Floating South, I, Daoist Bai, have obtained the Mifan Dao lineage here. I shall naturally establish this lineage and spread its inheritance. Are there any among you who are unwilling to establish this Dao lineage together with me?”</p>
+<p>After speaking, he raised the command token high in his hand. Rays of light shone downward, yet not a single person dared to move. Even Daoist Huang, who was at odds with him, had gone pale and still did not dare make a move.</p>
+<p>Who knew what miraculous effects this command token possessed?</p>
+<p>Daoist Bai burst into loud laughter. He felt that his strength could nearly rival that of a declining immortal sect if he took in so many powerful cultivators at once. He was secretly pleased with himself.</p>
+<p>Those Orthodox Dao sects cling too tightly to lineage and kinship, selecting only their own year after year. How could they compare to my inclusiveness?</p>
+<p>He immediately rode the wind down, and sycophants rushed forward at once, asking, “Gate master, our Dao lineage should have a name.”</p>
+<p>Daoist Bai stroked his beard in satisfaction. He felt that Mifan sounded unpleasant and was unwilling to use it, so he said aloud, “The inheritance has not yet been fully gathered, so it is not suitable to call it Mifan. I cultivate the Locust Shade Ghost. By uniting the strength of all cultivators, we shall call it the Locust Soul Hall. What do you say?”</p>
+<p>How could the cultivators have any objections? They all nodded submissively, dispersed on their own, and waited for Daoist Bai to summon them one by one.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1295.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1297.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

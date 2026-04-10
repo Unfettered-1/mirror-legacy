@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1268: Unified Metal (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1267.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1269.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1268: Unified Metal (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The secret technique, Imperial Edict, served to increase authority and compel others. Its use was limited, but it could command mortals and low level cultivators without issue. The remaining two secret techniques had shown some progress, yet neither had been completed, so no effects had manifested and their usefulness was not significant.</p>
+<p>However, secret techniques were never meant to strengthen combat arts. Even if all nine were perfected, they would still offer less aid in actual combat than a single technique such as the Armor Cycle Soul-Refining Halberd Art.</p>
+<p>Li Zhouwei pondered for a moment, suppressed his doubts, and reminded himself to ask Li Qinghong later. He then calmed his mind and entered seclusion. Cultivating Yang Origin was not difficult. Time passed quickly and a faint tremor came from outside the cave dwelling. He slowly opened his eyes as Yuanzi’s respectful voice sounded from outside.</p>
+<p>“My lord, the Yingshou clan has personally reported that the dharma artifact has been fully refined. They respectfully request your presence to inspect it.”</p>
+<p>The cave’s stone doors rumbled open. Li Zhouwei rose and appeared beside her in a flash of light. Yuanzi bowed and led the way. The old Daoist followed her with the same respectful air, accompanied by a youth wearing a silver coronet and feathered robe. He seemed to be a cultivator of the Northern Sea’s Xi Family; he did not dare to speak, following quietly with lowered eyes.</p>
+<p>Li Zhouwei deliberately slowed his steps, yet the youth still did not speak. Only when Li Zhouwei stepped onto the ritual platform did the boy finally seize the moment and say, “Xi Nanqing of Celestial Cloud Monastery greets my lord.”</p>
+<p>Li Zhouwei gave a soft hum, glanced at him while turning to board the carriage, lifted the curtain slightly, and replied, “The Xi Family of the Northern Sea, long devoted to the cultivation of thunder, are all of the Orthodox Dao. We should have more dealings.”</p>
+<p>Xi Nanqing acknowledged his words softly and said nothing more. The carriage rose upon thunder, drifting upward through thick layers of clouds. Li Zhouwei glanced down. The Daoists on the mountain dispersed in an orderly fashion, while the old Daoist retrieved cushions and mats from the cave dwelling and distributed them to several middle aged cultivators nearby who appeared to be older men without heirs.</p>
+<p>He withdrew his gaze. The purple white glow of the Thunder Pool appeared within the clouds, surrounded by layers of black mist as though endless lightning brewed within it and radiating a dangerous and heavy presence.</p>
+<p>Following the same path as before through the thunder liquid, he ascended the silver white pavilion. Li Qinghong was still seated where she had been, her long hair now loose. A blue gold gourd now lay on the desk. The woman’s pale violet eyes landed on him as she smiled and said, “Minghuang, take a look at this dharma artifact.”</p>
+<p>Li Zhouwei sat down and hefted the gourd lightly. It felt much heavier. Li Qinghong said, “It differs little from our earlier estimations. This dharma artifact’s glaze was reforged into a complete form, filled with Unified Metal of the Tang Division[1] Xin Metal, adding seven kilograms in weight. It now carries the additional ability of Converging Water to erode an enemy’s mana, making it even stronger than before. The Yingshou clan came here to construct formations, and are first class whether in refining methods or cultivation. This is not something that can be casually repaired or repainted. Even its original owner would not recognize it if it were placed before him.”</p>
+<p>“Converging Water is the gathering point of a hundred flowing rivers. With the addition of Tang Division Xin Metal, Unified Metal becomes the metal of collection and preservation. It allows the gourd to hold spirit water and nourish it within, slowing the dissipation of spiritual energy. Even some talismanic waters crafted by Immortal Foundations can be stored inside.”</p>
+<p>“Many thanks, my lady.” Li Zhouwei nodded repeatedly as he listened. He received the item and slipped it into his sleeve before saying, “Unified Metal truly is unusual. I have hardly ever seen it within the mainland. If it is a metal suited for storing things, then I suspect the few dharma artifacts in the family capable of holding spirit items were all adjusted with this material.”</p>
+<p>Li Qinghong smiled faintly as she replied, “Although I do not cultivate the Metal Virtue, I have read some secret records recently. Your guess is almost certainly correct. Unified Metal is now extremely rare, which is why ancient dharma artifacts were often able to preserve spirit items, but modern artifacts mostly cannot.</p>
+<p>“Speaking of this… the matter of the Three Metals has troubled the family for a long time. Even though the Water Virtue has never been fully attained, it is still called the Five Waters. So why is Metal instead divided into three? My brother Yuanjiao and I have studied this many times, yet gained nothing. I asked about it…</p>
+<p>“It turns out that both of those Daos already have individuals who have reached Fruition Attainment, and all of them now reside in the Outer Heavens. Their states are beyond ordinary description. According to the Dragon Clan, these two Daos are simply difficult to cultivate and still cannot be fully attained, thus leaving them in today’s awkward and incomplete state.</p>
+<p>“Although the mainland and outer-sea occasionally display spirit items belonging to those two Daos, there are pitifully few Foundation Establishment Realm cultivators aligned with them. Purple Mansion Realm spirit items of those Daos no longer manifest in this world and exist only as ancient remnants or as components taken from ancient dharma artifacts. As for Purple Mansion Realm cultivators of those two Daos… it is said that fewer than ten have appeared in the past thousand years. All were peerless talents, yet they mistook their Dao and perished in the early stages of the Purple Mansion Realm. Only one remains in the present age.”</p>
+<p>Doubt rose in Li Zhouwei’s heart as he responded, “I have heard that there exist methods for transference and refinement among the various Daos. Converging Water dissolves impurities while Dui borrows from Geng Metal. Could these two Golden Dao Virtues be obtained through similar methods?”</p>
+<p>Li Qinghong shook her head and said, “That is unknown.”</p>
+<p>Li Zhouwei grew thoughtful, and suddenly recalled the matter of the Jiang Family, thinking to himself, No wonder… no wonder the Wang Family’s Daoist Master destroyed an ancient spirit artifact just to obtain Six Xin Unified Metal. The empty shell is still kept in their household. So Unified Metal truly no longer forms in this world. With the Wang Family’s mastery over Xiao Metal, if conversion were possible, what metal could they not transform? Why would they travel so far only to destroy an ancient spirit artifact? If even they cannot do it, then conversion must be impossible.</p>
+<p>His thoughts cleared. Feeling that he had gained much, he nodded, “No wonder it is said that once the Three Metals appear in the world, the Metal Virtue becomes complete. Seeing it this way, it truly is complete.”</p>
+<p>After the time it took to drink a cup of tea, Li Zhouwei asked, “There is another matter I wish to ask, my lady. Does my lady know anything about secret techniques? Are there any examples of someone reaching the late Foundation Establishment Realm where secret techniques already showed noticeable Dao attainment?”</p>
+<p>Li Zhouwei knew that asking Li Qinghong was essentially asking the Dragon Clan. Since he carried destiny, the Dragon Clan would not find fault with it, so he dared to ask. Yet Li Qinghong paused, then shook her head and answered, “I have never cultivated secret techniques at all, so naturally I know nothing about them.”</p>
+<p>Li Zhouwei could only give up. After chatting a short while in the Thunder Pool, he finally rose to take his leave and said, “I am indebted to you this time, my lady. When I return, I will circle around the Reef Sea and exchange for a dharma artifact at Tai’e Island, then follow the sea down to Scarlet Pristine Sea to obtain supplies, and finally return to the region of Zongquan Island for secluded cultivation.”</p>
+<p>Li Qinghong nodded and escorted him out of the pavilion, speaking softly, “The old elder is advanced in years. Please urge him to take good care of his health. I am confined within this pool and cannot leave, yet I miss him dearly. Since I have already cultivated the thunder body, if thunder is born from a rainstorm over Moongaze Lake and flashes across the water’s surface, take it as my visit to my uncle.”</p>
+<p>“I will certainly convey your words,” replied Li Zhouwei.</p>
+<p>As they walked to the edge of the Thunder Pool, her rosy lips parted slightly. She hesitated for a moment, as if wanting to give some advice, yet, mindful of her status, she swallowed the words.</p>
+<p>Li Zhouwei took note, offered a long respectful bow, and without making any promises or vows, rose upon a streak of light and departed westward.</p>
+<p>1. Tang Division (塘部). One of the division of the Three Metals (三金) system. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1267.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1269.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1291: Why Seek The Intercalary (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1290.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1292.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1291: Why Seek The Intercalary (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Sima Family truly still has some reserves. Otherwise, how could they be a family passed down from the Ancient Zhou State?</p>
+<p>Lu Jiangxian pondered deeply and murmured, “What a pity he did not know that this thing must be spat out after success.”</p>
+<p>It was the same words as those spoken by members of the Underworld’s judiciary at the time. Lu Jiangxian had seen them through his divine sense, and confirmed they were not the same as the pair present during Li Ximing’s breakthrough. They were likely officials responsible for the Southern Sea or for Stone Pond, both with bizarre appearances.</p>
+<p>This shows that the Underworld’s judiciary is also aware of this method.</p>
+<p>Although Lu Jiangxian could read Dao methods, the truly important secret repositories were clearly encrypted, and some were even passed down orally. Such matters were ultimately difficult to fully grasp, and he did not dwell on them, thinking to himself,There is still plenty of time. The clues will only grow more numerous. As for Chi Buzi witnessing this, who knows what he is thinking? Given that seeking the Dao means more to him than anything else, he should be even more certain that the way forward lies with me.</p>
+<p>After Li Ximing had attained the Purple Mansion Realm, the Dao collections that Lu Jiangxian came into contact with grew explosively. Most importantly, he had obtained a small portion of the Nine Mounds Dao Lineage.</p>
+<p>The inheritance of Daoist Master Yuandao’s Nine Mounds Dao Lineage was well ordered and carefully preserved. Not only did it require seal decryption, but each Dao also had corresponding incantations. Fortunately, this Dao lineage was generous and the libraries available to inner disciples were rich in content. Although they did not involve many Purple Mansion Realm techniques, the knowledge gained still greatly broadened Lu Jiangxian’s horizons.</p>
+<p>Nine Mounds is a Supreme Yin Dao lineage. These Purple Mansion Realm techniques are of little use to me. Instead, this account of the Three Profundities is worth examining.</p>
+<p>According to the descriptions of the Nine Mounds Dao Lineage, the cultivation path of this world originally had three branches, known as the Three Profundities. They were Qingxuan, Douxuan, and Tongxuan. No matter how the Dao lineages of the world transformed, tracing them upward always led back to these Three Profundities.</p>
+<p>The famous Green Pine Supreme Yang Dao lineage of Jiangnan and the Nine Mounds Dao Lineage of the Peacock Sea both originated from Qingxuan.</p>
+<p>Moreover, according to the edict proclaimed by the Golden Feather Sect, both Majestic Light Luoxia and Golden Feather belong to the Tongxuan Dao lineage. Nearly the entirety of Jiangbei is Tongxuan Dao’s lineage territory.</p>
+<p>As for Douxuan, no orthodox branch has yet been found. There are quite a few who obtained remnant lineages. One is the Capital Immortal Dao, and another is Changxiao Gate. They received inheritances, yet they are not considered orthodox.</p>
+<p>From this, the predicament of the Capital Immortal Dao in Jiangbei becomes clear. Its Dao lineage differs from all others, and at its root, is still an imported counterfeit. The only one that can barely be considered of the same gate, Changxiao Gate, is sharpening its blades as well. No wonder Ye Hui dares not remain in Jiangbei for long.</p>
+<p>After sorting through the Three Profundities system, Lu Jiangxian immediately gained a much clearer understanding of the residual framework of the manifest world. He also understood where the subtle yet recurring discrimination and prejudice among Purple Mansion Realm cultivators came from.</p>
+<p>As for his former self, the foremost of Qingxuan and Supreme Yin, who might even have possessed the Supreme Yang, how he fell to this state was a truly intriguing matter.</p>
+<p>“At the very least, this Luoxia is almost certainly not something good. The Dragon Clan are somewhat better, but in the end they are still another species. The road to restoring strength is long indeed.”</p>
+<p>At present, the main body fragment within the Mifan Secret Repository was not something easy to obtain.</p>
+<p>The Mifan Secret Repository hangs in the great void and remains sealed at all times. It only opens for a few days each year, hanging there in plain sight, yet I cannot take it.</p>
+<p>With all eyes in Jiangbei watching and Li Qianyuan being forced to reveal himself, Lu Jiangxian remained so cautious that he did not even show his head. He had no idea how many True Monarchs surrounded that small area, and no matter what, he had no intention of retrieving anything out of thin air.</p>
+<p>Moreover, from the flourishing spiritual energy in Jiangbei to Li Qianyuan’s reincarnation and possession, everything had clearly been arranged in advance. Almost everyone along this entire path had been replaced by members of the Tongxuan Dao lineage. Chengyun Gate was even affiliated with the Golden Feather Sect. The sense of danger could not have been stronger.</p>
+<p>“Perhaps obtaining that fragment will still depend on this True Monarch.”</p>
+<p>He lightly swept his sleeve across, and the mirror surface on the jade platform and the jade slips alike all vanished. A trace of purple lightning appeared in his palm, and Lu Jiangxian’s expression grew somewhat complicated.</p>
+<p>Li Qinghong.</p>
+<p>Li Qinghong had received both talismans and registers. Back then, she had entered the grotto heaven with Xi Zikang. Lu Jiangxian watched her fight all the way from the south of the grotto heaven to the north, until she ascended the Hall of Thunder.</p>
+<p>At the end, she gazed upon the boundless dragon body of Beijia. But when Li Qinghong transformed into a lightning body amid thunder devouring, the connection of the talisman seeds had not been severed. It had even granted Lu Jiangxian a portion of feedback. Although it only slightly enhanced his divine sense, it was better than nothing.</p>
+<p>Although Lu Jiangxian only had a limited understanding of the ambitions of the Beijia Dragon Monarch, placing such a crucial eye within the Dragon Clan was undoubtedly an excellent move. Even if Li Qinghong could only remain stationed at the Thunder Pool, it was already enough for Lu Jiangxian to glimpse part of the truth.</p>
+<p>This Beijia Dragon Monarch not only harbors immense ambition and seeks to become a true dragon, but they have even begun preparing to break through to the Dao Embryo Realm.</p>
+<p>The matter of the true dragon involved Qingxuanzi[1], yet no matter how Lu Jiangxian looked at it, a true dragon was, at the very least, an existence above the Dao Embryo Realm.</p>
+<p>“Back then, even a True Hornless Dragon at the peak of the Dao Embryo Realm could not accomplish such a thing. How could it be done without a Dao Embryo inherent rank? Although the Dragon Clan has improved generation after generation and continues to scheme in order to carry on the great undertaking of their predecessors, they will still need a Dao Embryo.”</p>
+<p>He pondered for a long while before finally looking toward Shaohui, who was waiting to one side.</p>
+<p>This Lesser Yin immortal maid immediately bowed and said, “My lord, this subordinate has completed a work titled the Majestic Gui[2] Yin-Seizing Divine Scroll. The contents are complete, with movement techniques, spell arts, and methods all included. It can be cultivated into a divine ability, and I have brought it to the manor.”</p>
+<p>This Lesser Yin immortal maid had been transformed from the demonic sparrow Fuyu. In her previous life, she had cultivated the Lesser Yin path. Lu Jiangxian had her compile the texts using the authority of the Zhen’gao. The immortal maid was very honest and had organized the scriptures through which she had achieved divine abilities in her previous life in one go.</p>
+<p>This was no small undertaking. After all, she had once been a demonic creature and now possessed a human body. Without a solid foundation in Dao methods, organizing such materials would have been truly difficult. Lu Jiangxian took a look and nodded to himself.</p>
+<p>This efficiency is far higher than Dangjiang’s.</p>
+<p>The Majestic Gui Yin-Seizing Divine Scroll culminated in the Sunken Fragrance state and was a rare fourth-grade technique. Given Shaohui’s own limitations, being able to push this method to the Purple Mansion Realm was already her limit. Naturally, its rank was not particularly high.</p>
+<p>Lu Jiangxian merely nodded slightly and said casually, “It is passable.”</p>
+<p>Even the cleverest cook cannot make a meal without rice. After Shaohui finished writing the Majestic Gui Yin-Seizing Divine Scroll, asking her to write other Purple Mansion techniques would truly be asking too much.</p>
+<p>Lu Jiangxian could only say, “There are still Dao collections within the manor. Read them carefully. The affairs at the Zhen’gao are numerous, so arrange them properly.”</p>
+<p>The woman in tea-white robes soon withdrew. Lu Jiangxian thought to himself,At Chi Buzi’s pace, it will not be long before someone from the Northern Buddhist side meets disaster.</p>
+<p>1. Appeared once in Chapter 694. ☜</p>
+<p>2. 癸 (guǐ) is one of the Ten Heavenly Stems. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1290.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1292.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

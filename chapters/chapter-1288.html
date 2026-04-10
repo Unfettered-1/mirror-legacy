@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1288: Having Chosen The Exclusive Position (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1287.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1289.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1288: Having Chosen The Exclusive Position (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Ning Wan sat quietly upon the azure jade seat, seemingly unmoved by Yuanxiu’s words. This matter could not be concluded simply because the old man claimed it was no longer in his possession. The Xinyou Pristine Marsh Seal was an exceptionally precious spirit treasure. Even in ancient times, it was an object of renown, valuable enough to make even a Purple Mansion Realm cast aside restraint.</p>
+<p>She merely glanced at the old man’s hand resting upon the jade seat and said softly, “When the Xinyou Pristine Marsh Seal fell into the hands of the seniors back then, it was convenient for scheming against others and brought immense benefit. No matter what, this item is a spirit treasure of the Azure Pond Sect. It is of the dignified Supreme Yang Dao lineage, and even if its master is temporarily absent, it would not allow it to be taken away so easily.”</p>
+<p>Ning Wan was clearly unconvinced. Yuanxiu hunched over and replied, “Ordinary people would not dare. That only means the one who took it was no ordinary person. What belongs to Yuansu belongs to him. I would not hide it.”</p>
+<p>These words caused Ning Wan to fall into slight contemplation. Genuine doubt arose in her heart, and she asked, “Senior refuses to say, but if it truly has reached the point where it cannot be spoken of, why take it today? If it was because the lord is in the Outer Heavens, why did the lord not secure it earlier?”</p>
+<p>Yuanxiu sat in place like an ancient tree and spoke quietly, “The Xinyou Pristine Marsh Seal is the seal of the Feathered Serpent. The Feathered Serpent is the progenitor of Pristine Water. This item is far more useful than you imagine. The reason it was in Ning Tiaoxiao’s hands was because the lord consented. Once he died, the item was naturally lost.</p>
+<p>“The lord failed to consider one thing. Even if Daoist Master Donghua, Li Jiangqun, left behind a reincarnation treasure for Ning Tiaoxiao within the Xinyou Pristine Marsh Seal, he would never use it even in death. He was that kind of person. Even if he gritted his teeth and swallowed blood to die, he would never nourish an enemy.”</p>
+<p>Ning Wan’s expression gradually changed as she listened to the old man calmly explain, “When Ning Tiaoxiao died back then, Zipei believed I was greedy and wanted to seize this item from the Ning Family. Thus she insisted on handing it to Ning Heyuan. But she underestimated me. As long as this item was in the hands of the Ning Family, the moment I looked away, it would be schemed away by others. I am a Grand Daoist Master of the Azure Pond Sect. They may not know whether the lord had given instructions, but Ning Heyuan was different. This was a death talisman.</p>
+<p>“If he had known better at the time, he might not have died.”</p>
+<p>Ning Wan hesitated to speak, and Yuanxiu continued, “This cannot be blamed on her. How could such matters be spoken of to those outside the Dao lineage? She was deeply protective of Yuansu. If I had insisted on taking it by force, she would certainly have fought me. I could only leave. But as I departed, I saw Puyu divining. With the depth of the Penglai Dao lineage, he may have long harbored suspicions.”</p>
+<p>Ning Wan listened in silence as the old man mused, “I watched you grow up as well. For the sake of the ties between our two houses, I will advise you once. The Xinyou Pristine Marsh Seal is not something you can touch. When I am dead and you sit alone upon this Pristine Gui Pool, only then will you know how troublesome it is.”</p>
+<p>He laughed hoarsely for a while and said, “When that time comes, you will no longer be the master of the Ning Family. You will be the master of the Azure Pond Sect. Whether you wish it or not, it will no longer be the Ning Family of the Azure Pond Sect, but the Azure Pond Sect of the Ning Family.”</p>
+<p>Ning Wan’s expression was complex. As a sect cultivator bearing the Green Pine Supreme Yang Dao lineage, having grown up and cultivated in the Azure Pond Sect, she had long been marked by the Azure Pond Sect itself. With Pristine Cadence Heaven above, she could not leave even if she wished to. At most, she could imitate Chi Buzi, using travel as a pretext to leave the family, but she absolutely did not possess the right of esteemed families to break away and establish independence.</p>
+<p>Chi Buzi, the naturally cold, parentless madman…</p>
+<p>Her expression darkened slightly, yet Yuanxiu continued to ponder for a moment before speaking. With his lifespan nearing its end, the old man showed more fluctuations of expression than usual on his once rigid and severe face, and he said slowly, “The Cold Essence divine ability, Clear Hearing. Back then, Yuansu did not hesitate to join forces with Tianwan to choose this fine method for you. Tianwan completed it decades ago, and now you have refined this Fate Divine Ability as well. Matters in the north still require you to make a trip.”</p>
+<p>Seeing Ning Wan frown, Yuanxiu casually laid out the sequence of events and said with a smile, “You likely do not know yet. The Li Family is now a Purple Mansion Realm immortal family. They are now the Moongaze Immortal Family. If you pass through that region, you may also pay them a visit.”</p>
+<p>Suspicion appeared on Ning Wan’s face as she asked, “A Purple Mansion Realm immortal family… Is it not Li Xizhi?”</p>
+<p>Yuanxiu’s gaze grew complicated as he replied, “It is Li Xizhi’s younger brother, named Li Ximing. He was originally an utterly unknown figure. Who would have thought he had talent hidden within, cultivated diligently, and attained the Bright Yang divine ability? He is known as Zhaojing and is also an alchemist, though his quality remains uncertain.</p>
+<p>“From his bearing, Bright Yang does not seem adept at alchemy either. He cannot compare with Qing Tangyin, and is likely a figure of Hengxing’s level.”</p>
+<p>Ning Wan’s brows lifted as she revealed a trace of delight. The Li Family was geographically a close ally of the Azure Pond Sect, and moreover, relations between the Li and Ning Families had always been good. There were bonds from the previous generation and ties of marriage afterward. How could Ning Wan not be pleased? She had once helped Li Chejing and spared Li Xuanfeng. These were all favorable destinies. She thought to herself,Aside from that madman Ning Hejing, relations between my Ning Family and the Li Family are not bad at all. Li Yuanqin was even a driving force behind the decline of the Chi Family. It could not be better.</p>
+<p>After giving it some thought, she was still unsure whether his temperament suited an alliance. After all, there were always many people of eccentric disposition in the world. She could not help but ask, “What is the temperament of Daoist Master Zhaojing like?”</p>
+<p>Yuanxiu’s eyes narrowed as he said, “Pure and kind, gentle and not resentful. Bright Yang cultivates with restraint rather than violence, akin to the ancient Cui lineage. Soft of ear and quick of heart, benevolent and compassionate, and places the ancestral commands of his family above all else.”</p>
+<p>Ning Wan nodded repeatedly as she listened. Yuanxiu did not have many days left, and there was no need for him to deceive her in such matters. His eye for judging people had always been incisive and held great value for reference.</p>
+<p>She replied, “Such a Purple Mansion Realm cultivator is truly a blessing for the Azure Pond Sect.”</p>
+<p>Yuanxiu snorted and said with a cold laugh, “Without Chi Wei, there would be many more blessings for the Azure Pond Sect. My lifespan is nearly spent. I once forced Li Xuanfeng to swallow a pill and cut off his path to the Purple Mansion Realm. Li Ximing does not trust me either.</p>
+<p>“You are more suitable than I am to take charge of the Azure Pond Sect. At present, the one governing the sect is a descendant of Yuandao, the Nine Mounds Tantai Family. In the future, the Azure Pond Sect will not lack Purple Mansion Realm cultivators. It will be up to you to take the lead.”</p>
+<p>Ning Wan knew well that she could not step outside the bounds of the Azure Pond Sect. Yet to serve as the leading figure of the Azure Pond Sect of the Supreme Yang Dao lineage for a generation was also an identity greatly beneficial to the Dao lineage. With her status shifting, her perspective also changed, and she said, “Senior Yuandao. That too is destiny. Although Nine Mounds belongs to the Supreme Yin Dao lineage, it shares the same root as the Azure Pond Sect. Back then, Senior Yuandao studied at the Azure Pond Sect. Now the Azure Pond Sect gains a member of the Tantai Family. It is a complete resolution.”</p>
+<p>Yuanxiu’s emotions grew complicated at the mention of Yuandao. He lowered his head and said, “Have you asked? Qing Tangyin has truly reincarnated, has he not?”</p>
+<p>Ning Wan nodded silently. Yuanxiu’s gaze gradually turned cold as he replied, “Zhang Tianyuan has also fallen. Back then, he was a minor figure whom no one cared to look at twice. He only bullied family cultivators, and even Yuansu did not remember him.”</p>
+<p>Ning Wan did not wish to be drawn into their grudges. This generation of Purple Mansion Realm cultivators had advanced in a uniform wave due to the inheritors of the Immortal Mansions. They were all familiar with one another, and the enmities and affections between them were intricately tangled.</p>
+<p>She merely rose from her seat and took her leave, saying, “I will go oversee the matters in the north at once.”</p>
+<p>Si Boxiu replied, “I’ll break through at Stone Pond.”</p>
+<p>She transformed into frost and snow and coalesced before the entrance of the cave dwelling. Her white robes fluttered as she was about to leave, yet she felt that his words were somewhat amiss. From behind came a rumbling, crashing wind, a dull, heavy sound.</p>
+<p>Crash!</p>
+<p>When she heard the rustling of trees from behind, Ning Wan paused and glanced slightly to the side. The moist scent of forest wood rushed toward her, and the chirring sound of crickets grew louder and louder. She saw the old man struggling to stand from his seat. Both hands gripped the armrests of the throne tightly, and his chest thrust forward with all his might. It seemed as though endless gales were surging behind him, blowing him outward.</p>
+<p>Yet Ning Wan could not feel even the slightest breeze.</p>
+<p>Chirp chirp…</p>
+<p>All the clothing on the old man’s body was dragged forward by the raging wind behind him. The loose garments hollowed inward, outlining Si Boxiu’s thin, shriveled frame. His knees drew inward, pressing together. Flesh sprouted roots and shoots, fusing his two legs tightly into one. His feet elongated excessively, crawling unceasingly along the ground.</p>
+<p>He suddenly lifted his head, a gurgling sound coming from his throat. Only then did Ning Wan realize something was wrong.</p>
+<p>A cricket, dark brown all over and slick with an oily sheen, was perched within Si Boxiu’s pupil. Its two antennae, black tinged with green, extended out of the eye socket and swayed leisurely. Si Boxiu seemed unaware of the insect in his eye as he pressed his lips together with intense focus. Foreign limbs kept protruding from between his lips, then shrinking back as if in pain.</p>
+<p>Ning Wan’s pupils widened slightly. Si Boxiu’s one normal eye noticed Ning Wan’s gaze, and a hint of something like hope rose within it. Branches and leaves split from his left hand in ever greater numbers, gripping the armrest tightly, while his right hand suddenly let go.</p>
+<p>Most of his body rose into the air, as if in a tempest. Only a remnant root still anchored him to the soil, the rest drifting weakly. The other hand finally freed itself and rose toward Ning Wan.</p>
+<p>Ning Wan still felt no wind at all. Whether with spiritual sense or divine ability, she sensed only calm within the cave dwelling. The pool below showed not the slightest ripple. Yet Si Boxiu was utterly exhausted. The hand he had freed had returned to a normal appearance, full of wrinkles, revealing his aged state.</p>
+<p>He gestured to Ning Wan, curling all four fingers and leaving only the index finger extended, forming the sign of one. Immediately after, the old man suddenly opened his mouth. Countless jade green insects suddenly burst forth, flapping their wings and soaring. Ning Wan saw clearly that the inside of his mouth was lined with wood grain and seemingly extremely rigid.</p>
+<p>Yet he bared snow white teeth like a tiger or leopard pouncing on prey and seized the moment to bite down viciously on his own index finger.</p>
+<p>Boom!</p>
+<p>The Body Divine Abilities of the Orthodox Wood Dao were solid. This strike resounded like thunder, sending sparks flying and violet lightning surging. The old man lifted his head. His one remaining normal palm was still facing her, but the index finger was gone.</p>
+<p>Even with Ning Wan’s composure, she could not help but retreat two steps. She watched as Si Boxiu revealed a smile laden with meaning. The old man still held that index finger in his mouth, while his left hand slowly loosened.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1287.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1289.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

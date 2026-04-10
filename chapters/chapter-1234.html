@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1234: Eastern Residence (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1233.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1235.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1234: Eastern Residence (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian had always been smooth with words, so Li Xixuan could not tell what he was really thinking. His scalp tingled, and he only wished to reach the hall quickly. Quickening his pace as he saw the doors before him, he replied, “Yes…”</p>
+<p>Li Jiangqian smiled and nodded. “I was thinking the same thing, so I discussed it with the family head early this morning. The family members who’ve received conferments must be carefully supervised. If anyone from their bloodline, young or old, commits a mistake, their conferment will first be suspended, pending review and reconsideration. This will prevent anyone from slipping through by mixing the clear with the murky.”</p>
+<p>“Ah…” Li Xixuan stood as if struck by lightning, frozen for a moment and nearly stopping in his tracks.</p>
+<p>What had Li Xixuan come here to do? To plead guilty! Yet with one sentence, Li Jiangqian had made it so that if he did, his entire family’s conferment would be stripped away!</p>
+<p>He stood there dazed for a long breath, hastily gathering his thoughts before speaking, “This… seems rather harsh. After all, every household has its young and old, surely you don’t mean…”</p>
+<p>Li Jiangqian sighed, shook his head, and interrupted, “Elder, your heart is too soft! How could this be called harsh? The Eastern Residence will surely never make a mistake. You need not worry about the other lineages…oh—Dili Guang is here. Please, elder, after you!”</p>
+<p>Li Jiangqian timed it perfectly, cutting him off right as they reached the hall doors. Before Li Xixuan could respond, Jiangqian bowed lightly, transformed into a streak of golden-yellow light, and soared into the air. Dili Guang stepped forward respectfully. “My lord, the family head is currently receiving the cultivators from the Purple Smoke Gate. Do you have urgent business?”</p>
+<p>Li Xixuan exhaled twice, bowed slightly, and withdrew without a word. As he descended the steps, he sensed something was wrong and began to think,Such a major decision settled just like that? Not a single whisper across the island? I let that boy frighten me!</p>
+<p>He was about to turn back, but then fear struck him again,No… no, I can’t. After what he just said, how could I still go up there to plead guilty? He’s adept at twisting black into white and white into black. He’d turn it into me willingly offering to give up my family’s conferment to uphold family discipline. They’d all hate me to death…</p>
+<p>Li Xixuan’s limbs went cold. He trembled for a while and thought,There’s no way out… unless Minggong comes out of seclusion, I’ll be tormented to death by that boy… I must go and beg the old elder!</p>
+<p>————</p>
+<p>Noise filled the courtyard, but it was quiet inside Li Zhouluo’s inner hall. Cui Jueyin stood at the center of the grand hall, slightly turned to the side, hands clasped together as he reported upward, “Family head, this is Fairy Wei and Daoist Cao.”</p>
+<p>“Greetings, family head.”</p>
+<p>The two bowed slightly, and Li Zhouluo promptly replied, “Greetings to both esteemed immortals.”</p>
+<p>The Purple Smoke Gate had sent Wei Danying, Tinglan’s trusted aide, dressed in a yellow feathered robe and looking rather uneasy. Daoist Cao, on the other hand, was tall and broad-shouldered, with a full black beard. He held a small, thin child of about eight or nine by the hand.</p>
+<p>It was clear they had come to resolve Daoist Cao’s romantic entanglement. Cao Chu himself seemed perfectly at ease, his face bold and hearty. His fists were as large as vinegar bowls, his robe shimmering faintly with heavenly light. The thin-handed child, Ding Mu, could barely hold one of his fingers.</p>
+<p>In a deep voice, Cao Chu said, “I’ve grown quite fond of this child, so I must trouble the lake to part with him.”</p>
+<p>Everyone knew in their hearts who it was that he was so fond of. Wei Danying hesitated before saying, “Family head, I believe you’re already aware of Daoist Cao’s situation. Since he has the intention to take a disciple, according to the Purple Smoke Gate’s rules, I’ve come to ask your approval in person… when the time comes, we’ll bring the child’s family along as well.”</p>
+<p>It was clear Wei Danying wasn’t close with Cao Chu, and since she also knew the matter was somewhat indecent, her words were deliberately vague. Li Zhouluo couldn’t embarrass her, so he nodded and said, “To be accepted into the Purple Smoke Gate is this child’s blessing. As for his future cultivation resources, the lake will prepare an additional share for him. His family may accompany him as well; please, rest assured.”</p>
+<p>“Good!” Cao Chu appeared quite pleased, bowing with a broad grin. His voice was naturally loud, and his cheerful shout echoed through the hall, making Wei Danying flush with embarrassment.</p>
+<p>She quickly said, “Daoist Cao, you may go down first…”</p>
+<p>Cao Chu didn’t argue. He simply clasped his hands, nodded cheerfully, and left. The frail child, Ding Mu, followed in silence, led along by his large hand. The child was moving stiffly like a puppet, yet with a faint smile on his face.</p>
+<p>Li Zhouluo watched the pair leave with a slight frown, while Wei Danying exhaled softly, raising her brows with a faint smile as she said, “This must have troubled you, family head. Daoist Cao is a rather unruly man in the sect, and most cultivators avoid his peak altogether. Fortunately, he confines his attention to his wives and concubines, and his conduct is still within bounds…”</p>
+<p>Li Zhouluo had seen the glow of Cao Chu’s mana earlier and felt equally embarrassed,So Cao Chu cultivates the Bright Yang Dao… well, that does suit him after all…</p>
+<p>Both tacitly dropped the subject. Wei Danying’s expression dimmed slightly as she said, “Changxiao Gate and Hengzhu Dao Gate have been fighting fiercely in the Light Boat Sea these past few years. Changxiao Gate has suffered heavy losses, which could have been to our advantage. Since our Purple Smoke Gate has little influence in the outer-sea, it would’ve been a good opportunity to extend our reach.</p>
+<p>“But something happened in the Eastern Sea, forcing When Wu to be reassigned. The situation is quite dire. The earth veins beneath our Purple Smoke Gate’s sea territory shifted violently; the fire beneath the earth erupted, spewing molten lava. They say the blaze was visible from five hundred kilometers away…”</p>
+<p>“The dragon kin from beneath the sea have all surfaced. It’s said the seabed is now engulfed in baleful fire; countless creatures, both demon and human, have perished.”</p>
+<p>The Purple Smoke Gate’s strength overseas had never matched that of Changxiao Gate or Hengzhu Dao Gate, though they had invested much effort in the outer-sea over the years. Judging by Wei Danying’s expression, this calamity was no minor blow. Since both the earth veins and fire veins were shifting, and underwater at that, the water veins were likely disrupted as well. The combined upheaval would devastate formations and architecture alike.</p>
+<p>Li Zhouluo’s expression grew grave as he asked softly, “Has the cause been determined?”</p>
+<p>Wei Danying looked somewhat troubled and replied, “It’s either the work of a Purple Mansion Realm cultivator highly skilled in the Earth Virtue, or a genuine upheaval of the earth veins, a calamity beyond anyone’s control. In any case, our gate’s Daoist Master has already gone to investigate, and other cultivators are being stationed across the Eastern Sea.</p>
+<p>“With so many of our people being redeployed, our assistance here may be limited. If progress slows on your side, please don’t take offense.”</p>
+<p>Li Zhouluo nodded slowly to show his understanding. It was clear the Purple Smoke Gate had their reasons for bringing this up. His own formation work could wait, so he said quietly, “No matter. It’s best that the Purple Smoke Gate tend to its own affairs first.”</p>
+<p>Wei Danying took her leave and departed from the hall. Li Zhouluo escorted her partway northward, and judging from the route she took, she was most likely headed toward Xuanmiao Temple.</p>
+<p>Daoist Master Sumian of the Treasure Earth Dao lineage, an Earth Virtue cultivator well-versed in earth veins. It seems they intend to request his help.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1233.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1235.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

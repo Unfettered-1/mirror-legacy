@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1281: Forming Pills In A Hundred Days (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1280.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1282.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1281: Forming Pills In A Hundred Days (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Boundless Water-Fire immediately opened a passage with a thought from Li Ximing. The jade box shot inside, and the Heavenly Origin Essence broke through the water and fell into the furnace.</p>
+<p>Boom!</p>
+<p>The roar of surging floodwaters immediately resounded in the room, along with the sound of terrifying waves. Heavenly Origin Essence was Valley Water, and the pill furnace became the valley. Thus, Valley Water naturally found its use. Once refined into the pill, it also fulfilled Valley Water’s original intent. The spirit water was suited for alchemy to begin with, so Li Ximing refined it as effortlessly as water flowing into a channel. He wrapped the Heavenly Origin Essence in purified pill liquid and tapped the pill furnace. The pill fragrance shifted several times within a single breath as the Boundless Water-Fire boiled away.</p>
+<p>A full hundred days passed. Tinglan watched anxiously as layers upon layers of rain clouds suddenly rose in the sky, dark yet refusing to fall. The entire island grew damp and stifling. The once dry sand and soil quickly grew wet, faintly showing signs of turning into muck.</p>
+<p>Boom!</p>
+<p>Muffled thunder rumbled within the dark clouds. Only the sound could be heard, and no light could be seen. Tinglan watched the sky from afar, a hint of delight on her face.</p>
+<p>She counted the days and nodded. “A pill formed in a hundred days is also a good omen.”</p>
+<p>Creak…</p>
+<p>The hall doors slowly cracked open. She lifted her brows to see dense white mist surging out through the gap and pouring down the steps. There was not the slightest trace of a fragrance, yet wherever it passed, plants sprouted and insects began to chirp, brimming with vitality.</p>
+<p>A Daoist Master in golden white daoist robes stepped out. Smiling, he raised his head slightly, made a gesture of congratulations, and said, “Congratulations, Tinglan!”</p>
+<p>The woman’s eyes shone brightly as Li Ximing continued with a smile, “The Profound Owl Crossing Scene Furnace is truly a fine treasure. With its assistance, timing, terrain and harmony were all in place. We obtained four in total!”</p>
+<p>“Excellent!”</p>
+<p>In the art of alchemy, a furnace in the Embryonic Breathing Realm could still yield a dozen or so pills. After the Qi Cultivation Realm, it was usually fewer than ten. By Foundation Establishment Realm, it dropped to six to nine. At the Purple Mansion Realm, three or four spirit pills was already a fine result. That was why Tinglan had gladly agreed when Li Ximing had guaranteed within three pills.</p>
+<p>Now there were two extra, which meant an entire additional batch, essentially double the output. How could Tinglan not be astonished and delighted? She said repeatedly, “Zhaojing is truly a genius in alchemy. Even if Senior Xiao were here, this pill would only yield about this many! Truly… a peerless talent!”</p>
+<p>Tinglan’s words were sincere. Li Ximing was not yet a hundred years old, yet he already matched elders who had toiled in this path for centuries. How could he not deserve the praise of peerless talent?</p>
+<p>But what kind of figure was Xiao Chuting? Though they both began from the divine ability of immortal families, Li Ximing knew exactly how vast the gap was. Leaving everything else aside, when Li Ximing achieved Purple Mansion Realm, the one he faced had been Changxiao. When Xiao Chuting acted, the one opposite him was Daoist Master Tianyuan of the Golden Feather Sect. In the end, the Man On Creek had not suffered the slightest injury. Not a single Xiao Family direct descendants had fallen. They had only lost Chen Taojing.</p>
+<p>Li Ximing did not dare compare himself to such a figure, and he said solemnly, “Fellow Daoist, you flatter me too much. If Senior Xiao was here, he would refine at least six spirit pills.”</p>
+<p>Tinglan was full of joy and did not care whether it was four or six. She watched as Li Ximing flicked his sleeve and took out a jade box. He opened it gently, revealing four brilliantly shining pure white pills streaked with golden patterns.</p>
+<p>She replied, “Good, good, good…”</p>
+<p>Li Ximing smiled. “This pill came from my own hands, so I understand it to some extent. A Valley Water pill must be stored in a container no matter what. Exposure to the manifest world will diminish its nature, and exposure to the great void will cause it to vanish at once. It must be kept with care.”</p>
+<p>“Thank you for the reminder, Zhaojing!” Tinglan might not have been unaware, yet she still responded politely. When she saw Li Ximing turn his palm and reveal the golden pill furnace, she hurriedly waved her hands and said, “That will not do. You obtained four already, which far exceeds expectations. I must thank you. Please accept the Treasure Elephant Furnace as a return gift!”</p>
+<p>“Oh?” For a moment, Li Ximing truly felt tempted. He did not have a pill furnace on hand. Although the Treasure Elephant Furnace was not an ancient dharma artifact, it was still a top grade item among dharma artifacts and would be comfortable to use. Such a pill furnace was worth a great deal, yet it could not be compared with two Purple Mansion Realm spirit pills. Taking one from her would not be excessive.</p>
+<p>As he hesitated slightly, Tinglan smiled and said, “The Treasure Elephant Furnace is something I obtained from the Thundercloud Temple Grotto Heaven. I do not have my master’s great capabilities, so I did not obtain any spirit artifacts or thunder stones. I only obtained some Dao lineage inheritances and dharma artifacts.</p>
+<p>“This furnace was refined after Thundercloud Temple sealed its grotto heaven, so it is not an ancient dharma artifact. Still, the furnace body is not inferior. It was made using the True Fire’s True Flame Goldstone and the Supreme Yang’s Cloud Watching Mantra Liquid.”</p>
+<p>Though these two items were only at the Foundation Establishment Realm, they had been rare spirit items even among Foundation Establishment Realm cultivators in the past. Now, even Purple Mansion Realm cultivators held only a few. Li Ximing exchanged a few polite words, then accepted it with clear fondness.</p>
+<p>He returned the Profound Owl Crossing Scene Furnace to Tinglan. She then used the Upper Minister Vessel to store the rest of the Boundless Water-Fire. The two of them took their seats. Tinglan smiled at him, set the jade box on the table, and introduced, “The Heavenly Quintessence-Expelling Pill is refined from Heavenly Origin Essence. In ancient times, it could revive the dead and restore flesh to bare bones. Now, if the soul has dispersed first, even this pill cannot save them. However, healing a Purple Mansion Realm dharma body and extending one’s lifespan are no problem.</p>
+<p>“This item can also relieve calamities of all fires, dissolve injuries from golden Astral Qi, drive out the impurities of the Immortal Foundation, and elevate one’s Dao attainment. It must not touch the ground, and it will dissolve the moment it meets earth.</p>
+<p>“This pill also has some minor uses that Zhaojing likely will not need. It can ease the weakness that follows childbirth for a Purple Mansion Realm cultivator, and it can speed the nurturing of a divine ability after ingesting another person’s Immortal Foundation.”</p>
+<p>She smiled slightly and said, “Driving out the impurities of the Immortal Foundation sounds enticing, but in truth it is not as powerful as an entire portion of Heavenly Origin Essence. If Purple Smoke Gate is to use this pill, we usually use it like this…</p>
+<p>“For example, if one has a third grade method at the Foundation Establishment Realm, then later switched to a fourth grade method of the same qi, one would take this pill when breaking through to mid-stage Foundation Establishment Realm. It can not only increase cultivation and solidify the foundation, it can also refine the Immortal Foundation.”</p>
+<p>Li Ximing did have the pill formula in hand, yet the pill’s origin, its lineage, or the many records of what followed after consuming it were clearly only known within Tinglan’s Dao lineage. The reason she spoke with such detail was tied to the unspoken rules within alchemy.</p>
+<p>When an alchemist completed a batch, they usually estimated a number. If the refinement succeeded, any extra was often left unmentioned and treated by default as additional resources for the art. Although Li Ximing had handed over four, Tinglan did not believe he had only refined four pills.</p>
+<p>Explaining things this clearly was also her way of drawing a line in favors. Earlier, Li Ximing had promised it would be within three, yet in the end he had produced four. That was not a small matter.</p>
+<p>He probably refined five. He must have known how precious the pills were, and did not take too many for himself.</p>
+<p>This not only gave Purple Smoke Gate ample face, it also showed his restrained conduct. That was why Tinglan gifted the Treasure Elephant Furnace to show her appreciation.</p>
+<p>Li Ximing only nodded with a smile as he thought,The Profound Owl Crossing Scene Furnace is truly formidable, and controlling Boundless Water-Fire is easy for me. This batch produced six…</p>
+<p>Among those six, at least one was due to the Profound Owl Crossing Scene Furnace. Another had come from the many convenient factors aligning with a bit of luck. Li Ximing quietly kept only two for the sake of befriending the Purple Smoke Gate.</p>
+<p>There was no other reason. In the end, it was the Supreme Yang Dao lineage, and his own Fate Divine Ability was still in another person’s hands…</p>
+<p>Besides, Tinglan has gained plenty this time. When she needs alchemy again, she will still have to come to me. After a few more times, my own reserves will be ample as well.</p>
+<p>He was very fond of the Heavenly Quintessence-Expelling Pill. His junior, Li Minggong, had a somewhat lacking Immortal Foundation. He might be able to find her a way out with this pill.</p>
+<p>After the two of them settled the matter, Tinglan thought for a moment and then grew solemn. “There is something I need to tell Zhaojing…”</p>
+<p>Li Ximing’s brows lifted as Tinglan continued, “This matter is important, but it is not urgent. It is one of the reasons I came this time. Earlier, I feared it would affect your alchemy, so I did not bring it up. Now that the pill is complete, I should explain it clearly to you.”</p>
+<p>She said with gravity, “A True Monarch will soon reincarnate to cultivate in Jiangbei. There is a little more than a year left.”</p>
+<p>Li Ximing froze, shock written on his face. “What?!”</p>
+<p>Tinglan quickly reassured him, “This is a matter that can be as big as it sounds. Fortunately, it is not in Jiangnan, but in Jiangbei. The remaining route also heads north, and it has little to do with our Jiangnan side. It is only that your esteemed family once left traces in Jiangbei, so you should pay a bit of attention.”</p>
+<p>Li Ximing looked uneasy. He shook his head with a touch of anxiety and replied, “Ha… It has not even been that long. How are we running into this kind of thing again?”</p>
+<p>Tinglan seemed thoughtful as she said, “Fellow Daoist, you are not thinking of returning inland now, are you? I fear that would be inconvenient. Even if you go back, it will not help much. Instead, it may draw the attention of those with ulterior motives. Luoxia still shows respect to Purple Mansion Realm immortal cultivators. One usually will not lose face at the Purple Mansion Realm. So long as you do not bring disaster upon yourself, at most one or two direct descendants may be dragged in. It will not reach the point of endangering survival.”</p>
+<p>She sighed softly and explained, “After all… Luoxia must also consider our feelings. If a Purple Mansion Realm cultivator was truly wiped out because of this, future reincarnations would not be easy. It would stir immortal resentment and public anger, and it would look bad on the surface as well.</p>
+<p>“I asked Yehui. He does not seem to be planning to rush back either. Li Jiangqian can shoulder matters, so there is no need to worry.”</p>
+<p>Clearly, once it involved a True Monarch, Yehui no longer wished to concern himself with the Capital Immortal Dao. Li Ximing, after all, came from an immortal family, and he was one of the very foremost in valuing clan matters among the Purple Mansion Realm cultivators. Tinglan understood this and feared he might act rashly and end up losing even the pill. That was why she chose to speak only after the alchemy was finished.</p>
+<p>Once she finished, Li Ximing pondered before saying, “I only hope those stewards know their place and keep in closer contact. They would not dare to be otherwise.”</p>
+<p>Tinglan seemed to recall something amusing. The corners of her mouth lifted slightly as she replied, “They are far more frightened than your esteemed family. The True Monarch’s reincarnation must play the clown, and their identity is extremely sensitive with a Devil Dao background from Capital Immortal Dao. For a family like yours that has claimed the Orthodox Dao for generations… in the usual stories, you are the side accompanied by beauties. The young miss starts off a bit willful, but in the end she still submits beneath him, and it is not impossible to gain a little benefit.”</p>
+<p>Li Ximing sighed as he shook his head and replied, “I have read more storybooks than you. There is another kind written like this. The protagonist is righteous and incisive, and my so-called Orthodox Dao is exposed as ugly. Instead, the Devil Dao witch is genuine and lovable. No family comes through clean. If you truly want to uncover faults, who has none? It is best not to touch it at all. That little benefit is not worth it.”</p>
+<p>Tinglan laughed when she heard that. “You see things clearly… That is true… As for Moongaze Lake…”</p>
+<p>“Hey!” Li Ximing did not dare let her continue. A True Monarch’s divine abilities were vast. Who knew whether some inspiration might be drawn from it? If things truly developed into that sort of scene, Yehui would laugh his teeth off. Li Ximing hesitated for a moment, then began to write a letter.</p>
+<p>Although the juniors in the family are clever, there is no guarantee that none will be affected by fate. Jiangqian carries talisman seeds as well. I still need to write a personal letter to ensure the family’s authority remains in grandfather’s and Jiangqian’s hands.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1280.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1282.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

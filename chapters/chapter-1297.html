@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1297: Locust Ghost (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1296.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1298.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1297: Locust Ghost (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake.</p>
+<p>Li Jiangqian rode the wind all the way back to the lake and landed in the hall. Only after the doors shut tight did a smile appear on his face. He put away the scrolls on the table and, seeing the puzzled look on Li Xuanxuan’s face, said with a smile, “A muddle headed madman with only a bit of petty cleverness, not even real wit, yet he frightened Guan Gongxiao into unease. He himself cannot plan more than two steps ahead. It was clearly he who brought the man here.”</p>
+<p>He explained casually to Li Xuanxuan, and the old man merely stroked his beard. He replied, “No wonder Ming’er likes watching plays. In the end, the world itself is a stage. Once you step onto it, one layer of drama is piled atop another.”</p>
+<p>Although the old man was strict with Li Zhouming and usually called him a rascal or a brute when mentioning him, he was affectionate at heart. He let himself slip occasionally and called him Ming’er. Li Jiangqian smiled and shook his head. Soon, Qu Buzhi came up and reported on the northern affairs.</p>
+<p>“Locust Soul Hall? Truly an outer-sea character. Even the naming is careless.” Li Jiangqian sneered as he said, “It does not even sound like anything good. At best it should be called a cave. He clearly thinks he can establish a Hall level power.”</p>
+<p>There were not many Immortal Halls remaining in the present age. One was the Beiming Hall of Empress Beiyao, which could not be considered a power, merely a place of residence. The nearest true Immortal Hall was the Victory White Hall on the Great Western Plains, known to the outside world in the present as the Pure Victory Dao.</p>
+<p>The Pure Victory Dao claims to be the Dao lineage of the Lesser Yang Devil Monarch, passed down by the Devil Lord Xiyan. It produced two consecutive Purple Mansion Realm cultivators. That is no small feat. What sort of thing is Daoist Bai, to dare call himself a Hall?</p>
+<p>Although such distinctions are not strictly enforced in the present age, there were certainly established conventions. Looking through several hundred years of records, where in Jiangnan or Jiangbei had there ever been a faction that dared call itself a Hall? This was nothing more than ignorance breeding fearlessness.</p>
+<p>Li Xuanxuan shook his head helplessly and sighed, “He can no longer tell what is what. He thinks himself another Daoist Master Changyun. No matter what, he is only at the Foundation Establishment Realm. I fear he will ruin himself before the True Monarch returns.”</p>
+<p>Li Jiangqian shook his head in reply. “That will not happen so easily. No matter what, he can still toss about for a few more years. After all, he is someone favored by fortune.”</p>
+<p>With Daoist Bai standing at the forefront, matters in Jiangbei could now be observed calmly. Li Jiangqian had someone escort Li Xuanxuan away, then called another person over and instructed, “Daoist Master Ning is in Jiangbei. Anyone sent toward the Azure Pond Sect will certainly come up empty handed. She cultivates Clear Hearing. Summon them back at once to avoid offending the immortal presence.”</p>
+<p>He sent people to deliver the message, while he began to scheme,Li Quantao is close to my family, and now he will be drawn into northern affairs again. The two Daoist Masters will certainly preserve his life. If he were to obtain the Hongxue Dao lineage, Daoist Master Ning would benefit, but Li Quantao’s gains would not be small either.</p>
+<p>After all, Hongxue Gate belonged to the Wei’s Li branch, and its Dao lineage was not weak. It was only annihilated overnight after Daoist Master Guanxue fell. There must be a considerable Dao Collection left behind.</p>
+<p>Li Quantao does not look like someone destined for the Purple Mansion Realm, but with these things in hand, who could resist attempting it? If he were to die, there would be no need to protect the Hongxue descendants, and the Dao Collection would inevitably return to the Azure Pond Sect. If a Daoist Master intervenes, it would both safeguard the Wei’s Li lineage and perhaps even allow a share of the spoils.</p>
+<p>————</p>
+<p>Eastern Sea.</p>
+<p>The waters around Zongquan Island were calm and tranquil. Several fishing boats circled on the sea surface as a blazing golden radiance approached from afar, stirring up surging waves across the sea.</p>
+<p>After emerging from the Lie Sea, Li Zhouwei first went to the Reef Sea to meet members of the Deng Family. Deng Yuzhi was greatly delighted and could not bear to part with the dharma artifact Li Zhouwei offered. He exchanged it for the White Abundance Fan and refused to accept the previously agreed Golden Tang Gate resources, saying that the two artifacts were now of similar value and there was no need for further trouble.</p>
+<p>With a face full of joy, he brought out his child, a lively youth named Deng Buyan. Father and son escorted Li Zhouwei out to sea and even invited him to visit again the following year.</p>
+<p>Li Zhouwei could only sigh at the rarity of such sincerity. Following the water veins onward, he stopped at the marketplaces of two families without finding anything worthwhile, then flew all the way toward the Scarlet Pristine Sea, heading for Zongquan Island.</p>
+<p>Riding heavenly light from afar, he soon halted near the island. After a brief assessment, he felt that Zongquan Island seemed somewhat larger than he remembered. Doubt arose in his heart, and he did not descend. However, the cultivators on the island all recognized him. Soon, a white haired old man, none other than Zong Yan, rode the wind out to meet him.</p>
+<p>Zong Yan had once been the master of Zongquan Island. He had survived under the Hui Clan by bowing and scraping. After Li Yuanjiao arrived, he had assisted from the sidelines in governing the island. Li Zhouwei had also broken through to Foundation Establishment Realm here, so the old man naturally knew him well. He came to greet him before the formation but did not open it proactively.</p>
+<p>This was a rule of the Li Family, meant to guard against devil cultivators who could change their appearance and deceive formations. Li Zhouwei dispelled the formation and entered, and the old man said respectfully, “My lord.”</p>
+<p>Li Zhouwei waved his hand. Zong Yan was a Son of Diyang and had no children of his own. He once had an adopted son who had been killed by a devil cultivator while traveling two years earlier, after which he took no more. He lived alone, yet his state of mind remained remarkably steady.</p>
+<p>After all, he no longer had to worry about being eaten.</p>
+<p>Li Zhouwei glanced at him, set the earlier question aside for the moment, and asked, “How many years do you have left, senior?”</p>
+<p>Zong Yan understood what he was asking and could only sigh, “I reckon I have another twenty or thirty years at most.”</p>
+<p>On Shiqi Island, the Sons of Diyang produced by the Nurturing Springs could not seek an Immortal Foundation. Zong Yan had long been stalled at the late stage of Qi Cultivation, merely waiting for death.</p>
+<p>Li Zhouwei noted this and asked, “Why does Zongquan Island seem a bit larger than before?”</p>
+<p>Zong Yan replied, “My lord, the northern earth veins underwent a great upheaval a few years ago, with dense smoke rising everywhere. Many nearby islands were affected. Zongquan lies along one of those earth veins as well. Not only did the island grow larger, even the formations were affected and became much weaker.”</p>
+<p>Only then did Li Zhouwei understand. He pinched his fingers to calculate the directions and said, “No wonder. That Purple Smoke marketplace lies to the north. So they are all on the same earth vein.”</p>
+<p>Zong Yan nodded repeatedly and replied, “Exactly so. A few years ago, Miss Queyi entered the Purple Smoke Gate and even came to Zongquan to ask whether the island lacked anything. She serves at the nearby marketplace and is usually very busy.”</p>
+<p>“Queyi…”</p>
+<p>As a Foundation Establishment Realm cultivator, Li Zhouwei naturally remembered names. After thinking for a moment, he recalled her. The girl had been gentle and delicate, quite likable, and not often seen smiling.</p>
+<p>He mused, “So she earned Purple Smoke Gate’s favor. Just right, I still have some unused items on hand. I will go to the marketplace.”</p>
+<p>He left some low tier spirit items he no longer needed on Zongquan, then rode his light toward the northwest. After flying for a while, he saw a vast expanse of purple, with a large island appearing before him.</p>
+<p>It was the New Rain Scattered Reefs of the Purple Smoke Gate. This place could originally only be called a large island. After the earth vein shifted, it became a cluster of scattered reefs, bustling with people and with many minor factions. Li Zhouwei steadied his mind and watched for a moment, then smiled faintly and transformed into light as he slipped inside.</p>
+<p>Near the marketplace, a woman in purple stood atop violet black reef stone. Her face was round and cute. With both hands forming seals shaped like a small jar, she guided the shimmering light on the sea surface with complete concentration.</p>
+<p>After a few breaths, a streak of colorful light wriggling like a fish landed in her palm and circled once. She carefully stored it into a jade bottle, when she suddenly heard a deep voice beside her, “What are you doing?”</p>
+<p>The round faced woman quickly turned her head and saw a tall man standing beside her. He wore golden white soft armor patterned with black profound markings. Though a faint smile rested on his face, his eyes carried a fierce aura that inspired awe without anger. He held a halberd in his hand as he stood over the sea.</p>
+<p>“Uncle?!”</p>
+<p>Li Queyi’s eyes widened in disbelief, as she nearly let the jade bottle slip from her hand. Joy immediately surged across her face as she smiled. “My lord, that you are safe and unharmed is truly wonderful.”</p>
+<p>Only then did she react. Before Li Zhouwei could ask further, she said respectfully, “I am gathering Purple Essence of the Azure Heavens, merely completing a sect task.”</p>
+<p>“Oh?” Li Zhouwei nodded lightly.</p>
+<p>Li Queyi felt waves of warmth wash over her just from him standing there. After so many years alone outside, she had never felt so at ease, as though even the spirit wind beneath her feet had become far more solid. She smiled and said, “Uncle, this is…”</p>
+<p>Li Zhouwei did not answer her right away. Instead, he glanced at the jade bottle in her hand and asked, “Purple Smoke Gate does not have you cultivating within the sect and instead sends you out to gather qi? How many hours does it take each day?”</p>
+<p>Li Queyi quickly replied, “It was my own wish to gain experience. It only takes an hour a day. This month, the senior sister on duty is in seclusion, so I am gathering on her behalf as well, taking two hours.”</p>
+<p>Li Zhouwei seemed somewhat dissatisfied with this answer. Lost in thought, he relaxed his grip and the halberd immediately dissipated. He raised his brows and said, “Is this truly gaining experience? Where are your senior brother and your master? Has the family arranged anyone to watch over you?”</p>
+<p>Li Queyi hesitated slightly before answering, “My master and senior brother are both within the gate. I felt the peak was somewhat stifling, so I came out to sea. Though I have tasks to do, it is very quiet.”</p>
+<p>“Quiet?” Li Zhouwei immediately sensed something off. Seeing Li Queyi lower her head, he did not know who in the family was in charge or whether anyone had handled the relevant arrangements.</p>
+<p>After a few questions, Li Queyi replied, “Earlier, it was Uncle Zhou Luo…”</p>
+<p>Li Zhouwei then understood and said gently, “Come, take me to the one in charge. I will handle this for you.”</p>
+<p>Li Queyi’s eyes reddened slightly. She led him inside, speaking in a soft, fragmented manner along the way.</p>
+<p>The buildings of Purple Smoke Gate were all brand new, and were clearly recently constructed. The patterns on the ground glowed faintly. Cultivators on either side smiled and nodded when they saw Li Queyi, showing that she had good relations with them. Yet when they saw Li Zhouwei, many began whispering among themselves, clearly recognizing him.</p>
+<p>Soon, a middle aged man descended from above. His eyes shone brightly, and two talismans, one gold and one white, hung at his waist. He looked at Li Zhouwei with both shock and reverence, then bowed and said, “Wun Wu[1] of Shepherd Peak greets you, my lord.”</p>
+<p>That single address was full of deference, clearly treating him as a future Purple Mansion Realm cultivator. It was Li Zhouwei’s first time meeting this man. Though his appearance was ordinary, his bearing was quite exceptional.</p>
+<p>Li Zhouwei said gently, “So you are Fellow Daoist Wun. I am Li Zhouwei of Moongaze.”</p>
+<p>There was no need to say more. Wun Wu confirmed his suspicions and hurriedly led them onward. As Li Zhouwei guided Li Queyi, he smiled and said, “I have been away from the lake for many years, and only now learned that a direct member of my family has earned Purple Smoke Gate’s favor. So I came here to have a look. By chance, I encountered her gathering qi. After waiting for quite a while, we came together to pay a visit to the gate.”</p>
+<p>“So that is how it is.”</p>
+<p>Though the words were polite, Wun Wu felt a chill run through his heart. He hesitated and glanced at Li Queyi, then said kindly, “Queyi has always been diligent and obedient. To have a disciple like her is a blessing for Purple Gale Peak.”</p>
+<p>Li Queyi glanced at Li Zhouwei’s back. He nodded as he said, “Purple Gale Peak. I remember now. It is Lingyanzi.”</p>
+<p>Their exchange came to an end. Wun Wu escorted Li Zhouwei to the hall, where the latter took a seat inside. Purple robed disciples immediately came forward to pour tea. Li Zhouwei did not drink it and instead said, “Purple Gale Peak is poor and not very quiet, is it?”</p>
+<p>Wun Wu understood what he meant. However, he himself had been urgently dispatched to the outer-sea and had not even known that Li Queyi had come out ahead of time. He could only sigh deeply and explain, “This matter is something I must explain to you properly, fellow Daoist.”</p>
+<p>1. Previously known as When Wu. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1296.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1298.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

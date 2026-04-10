@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1226: Nine Mounds (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1225.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1227.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1226: Nine Mounds (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Xia Shouyu immediately bowed and stepped inside. Immediately a cacophony of voices rang out, “my lord” to the left, “honored mistress” to the right, and shouts of reverence that shook the air. At times, old men wept with joy; at others, middle-aged folk pleaded in despair. Soon cries of reluctant farewell whose meanings were hard to grasp followed. Chaos reigned for a full fifteen minutes. There were chickens flying, and dogs scrambling; until all was silent again.</p>
+<p>Xia Shouyu hurried out and respectfully reported, “Daoist Master, all matters in the temple have been settled. A drought of three months harmed the people during my breakthrough. I have left the resources bestowed by you with the temple, to send men to purchase rice and compensate the villagers.”</p>
+<p>It was clear Xia Shouyu had sensed something of Li Ximing’s stance. Her act served both as a test of his temperament and a final gesture of restitution toward her temple. Li Ximing saw through it and nodded slightly. Then the two rose upon threads of heavenly light and flew toward the horizon.</p>
+<p>Still kneeling, Xia Shouyu could only faintly see through the shifting veil of heavenly light. The crowd below was still kneeling, bowing again and again. Her heart was heavy with mixed feelings. Then, as darkness like spreading ink bled across her vision, heaven and earth went utterly black.</p>
+<p>“The great void!”</p>
+<p>As they traversed the great void, Li Ximing spoke, “You’ve done well. I cultivate in Jiangnan, among the immortal families, and our name carries weight in the Orthodox Dao. You’re clever and perceptive, but when you enter the family, you must leave behind those outer-sea habits of conduct.”</p>
+<p>Relieved, Xia Shouyu bowed deeply. Li Ximing casually reached into his storage pouch, drew out a robe embroidered with moon-lake patterns along with a pair of silver boots, and tossed them into her hands.</p>
+<p>“We’re about to meet some guests.”</p>
+<p>Her garments were a mismatched patchwork and hardly fit for formal company. Though the robe was not a Dharma robe, it was fine, supple spirit cloth, costly and elegant, matching well with the silver boots. As she touched the fabric, affection welled in her heart,Tsk, tsk… this fabric, this spiritual qi; it must be genuine Jiangnan work.</p>
+<p>She draped the robe over herself, silently admiring its texture and aura, not daring to interrupt him. Li Ximing, meanwhile, moved through the great void in deep thought,The Nine Mounds Immortal Mountain, yes, it’s worth visiting. The Tantai Family there are friends of Si Boxiu, whom I first visited back in the day. My relations with the Sima Family are fairly cordial at the moment. The Tantai Family is also well connected to the inland seas, and their news is reliable. There’s no harm in meeting them.</p>
+<p>Having settled on his destination, he traveled for a short while through the great void before breaking through its veil. The sea beneath his feet gleamed with hues of bronze-green and iridescent red; it was unmistakably the Peacock Sea.</p>
+<p>Xia Shouyu, who could not comprehend the workings of the great void, was stunned speechless by their speed. Li Ximing, however, grew wary as he saw flocks of peacocks darting frantically through the sky.</p>
+<p>He immediately concealed his presence and thought,What’s wrong with this flock of peacocks? They’re flying about like they’ve lost their matriarch…</p>
+<p>He slipped into the great void once again. Though he didn’t know the exact location of the Nine Mounds Immortal Mountain, he flew toward the most turbulent region within the void and emerged again into the mortal world. Sure enough, a vast mountain range rose from the sea, towering above the waves in majestic grandeur.</p>
+<p>The entire range glowed with a purplish-red hue, its slopes blanketed in maple trees rarely seen in the outer seas. The sea breeze stirred the foliage into crimson waves. Li Ximing cast a single glance over them before descending to the foot of the mountain.</p>
+<p>Before him stood a colossal mountain gate, over three-hundred and thirty meters tall and entirely white. Bold characters were carved in grandeur on the right side,The Great Path of Sublime Unity and Truth.</p>
+<p>On the left,The Mountain of Pure Moon and Spirit Ease.</p>
+<p>Li Ximing glanced toward the center, where characters gleamed in gold,The Nine Daos of Supreme Mound.</p>
+<p>Just as various sects recognized the Li Family as part of the Wei’s Li Dao lineage, aligned against the Daos of Radiant Essence, each Dao lineage sought to trace its roots as far back as possible. Such names carried immense significance, and Li Ximing took careful note of them.</p>
+<p>At that moment, a cultivator flew out from the mountain, eyes showing mild surprise, and bowed respectfully. “Greetings, Daoist Master. I am Tantai Muming of the Nine Mounds Dao Lineage. I did not know an immortal had arrived; pardon my failure to welcome you sooner. Please, enter the mountain and rest for a while.”</p>
+<p>Li Ximing had heard at both the end of the sea and the Peacock Sea that the masters of Nine Mounds Immortal Mountain were known for their hospitality and wide circle of acquaintances. Tantai Muming clearly had experience with grand figures; his reception was smooth and unhurried, and his momentary astonishment was simply because he did not recognize Li Ximing.</p>
+<p>Behind him, Xia Shouyu was still awed by the towering mountain and colossal gate. Yet with the Daoist Master standing before her as a pillar of strength, she felt little inferiority, only pride. Straightening her back, she calmly stepped forward, careful not to bring shame upon Li Ximing.</p>
+<p>Li Ximing nodded slightly and replied, “So this is the cultivation place of Daoist Master Tantai. I have long heard his esteemed name. The last time I conversed with Senior Yuan Xiu, he spoke highly of him. Since I was passing through the Peacock Sea for some leisure, I thought it fitting to pay a visit.”</p>
+<p>Li Ximing did not give his own name, yet Tantai Muming looked pleasantly surprised and nodded. He said, “So you are a friend of Daoist Master Yuan Xiu, how discourteous of me! Please rest in the pavilion while I invite my elders.”</p>
+<p>Although Li Ximing spoke familiarly, Tantai Muming remained cautious and did not hastily grant him entry. He sent word to the elders instead and offered a polite apology, “A few days ago, the Great Boon Bronze-Color Temple in the north caused a disturbance. Our Grand Daoist Master was invited to the bronze mountain to discuss important matters with the peacocks and has not yet returned.</p>
+<p>“However… our Daoist Master Lingdu is within the sect, currently debating the Dao with Daoist Master Houfu. They’ve been at it for three months now. I’ll send someone to inform them.”</p>
+<p>Li Ximing’s eyes lit up as he thought,Daoist Master Houfu is here too!</p>
+<p>Daoist Master Houfu was of the Great Xiukui Temple, a temple known for its upright conduct and unentangled relations with the Li Family. He had even attended Li Ximing’s celebration years ago. Knowing that Houfu was present gave Li Ximing greater confidence.</p>
+<p>It only took a few breaths for two Daoist Masters to approach through the air.</p>
+<p>The elder in front, stooped and holding a wooden staff, was clearly Lingdu. Behind him, tall and thin, dressed in ritual robes, was the familiar Houfu. As they drew near, Lingdu looked slightly puzzled and said, “Greetings, sir…”</p>
+<p>Li Ximing returned a genial smile, but Houfu recognized him immediately. He stepped forward, forcing a faint, awkward grin. He said, “Senior Lingdu, this is the Daoist Master from Jiangnan, Zhaojing.”</p>
+<p>Daoist Master Houfu seldom traveled to Jiangnan, but when he did, he traveled grandly, with gongs sounding and spirit steeds pulling his chariot. The Li Family had once sent congratulations for such an occasion.</p>
+<p>Li Ximing quickly bowed and smiled. “Greetings, Senior Houfu! I hadn’t expected to find you here, what a delightful surprise!”</p>
+<p>Though Houfu was technically of the same generation as Li Ximing, the latter’s courteous address made his smile broaden a little. He replied, “You flatter me… Zhaojing, you’ve done quite well!”</p>
+<p>Li Ximing caught the hint, Houfu was alluding to the fact that he had survived unscathed from his encounter with the Grand Daoist Master Changxiao. Yet Li Ximing knew better than most how much of that had been luck.</p>
+<p>He deflected the praise with a smile, while Elder Lingdu examined him up and down in surprise and said admiringly, “So it is the imperial scion, Zhaojing! I am Cao Xiyan of Nine Mounds Immortal Dao, titled Lingdu. An honor to meet you, Daoist Master.”</p>
+<p>“I dare not accept the title of imperial scion, merely a rumor spread through Jiangnan.”</p>
+<p>Li Ximing hastily declined, but Lingdu’s smile said he didn’t quite believe it. Lifting his sleeve in welcome, he said, “Please, Zhaojing—this way.”</p>
+<p>The three of them rode the wind into the mountain. Cool breezes carried falling maple leaves across the slopes. A bronze chessboard stood beneath the tallest tree. The black and white stones were clashing fiercely, the game clearly mid-battle.</p>
+<p>Li Ximing felt a flicker of unease and glanced at it,All these years and I’ve never once touched a chess piece. Heaven forbid they ask me to play.</p>
+<p>Fortunately, Lingdu promptly moved the board aside. Houfu stood behind him with hands clasped behind his back, smiling as he said, “Zhaojing, you’ve been quite the elusive one these past two years! I just asked the senior lady; Lady Tinglan has been looking everywhere for you. She questioned my Great Xiukui Temple and even came to Nine Mounds Immortal Mountain, all in her haste to find you!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1225.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1227.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

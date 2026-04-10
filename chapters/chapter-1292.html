@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1292: The Meeting Of Two Sects (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1291.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1293.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1292: The Meeting Of Two Sects (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>On the twenty-first day of mid-spring, Daoist Master Yuanxiu of the Green Pine Supreme Yang Dao lineage attempted Dao attainment at Stone Pond in the Southern Sea. Heavenly thunder resounded and furious waves surged sky-high. The attainment failed. Wind and clouds stirred, demonic entities emerged, and he was consequently bound and slain by the Underworld’s judiciary.</p>
+<p>After three days, the winds ceased and rain fell. The spiritual aura of the Southern Sea changed accordingly.</p>
+<p>Li Jiangqian held the letter in his hand in slight shock. He read it over several times but still found it hard to believe. He muttered, “This is far too abrupt. There was no prior decree, nor any invitations sent out to observe the rite. He simply went to the Southern Sea to break through. There is no telling whether it ranks higher or lower compared to the many Purple Mansion Realm breakthroughs before.”</p>
+<p>He continued to hold the letter, steadying his thoughts,It is hard to say. Perhaps the Purple Mansion Realm cultivators had advance notice, and minor cultivators like us simply did not know. It is said that Daoist Master Yuanxiu cultivated Orthodox Wood. The Southern Sea enjoyed a period of abundant resources because of it.</p>
+<p>He turned the small letter over and saw written on it,Autumn Lake Fairy has broken through to the Purple Mansion Realm and achieved the Cold Essence divine ability.</p>
+<p>The sentence was brief, yet it was enough. Ning Wan’s cultivation method differed from Yuanxiu’s. Daoist Master Yuanxiu’s Orthodox Wood Dao was rare in the world and unlike the Wood Virtue most people imagined. Few knew his divine ability. Ning Wan, however, had already gained renown during her Qi Cultivation Realm days, and Cold Essence was a Dao lineage commonly seen in Jiangnan. With heavy snow falling, even scraps of rumor from the Azure Pond Sect made Autumn Lake Fairy’s divine ability widely known.</p>
+<p>“The Azure Pond Sect is going to change masters again.”</p>
+<p>The Si Family had few members and had never exercised strong control over the Azure Pond Sect. Now that Yuanxiu was dead and Si Yuanli was in seclusion, Tantai Jin and Si Tongyi would inevitably act according to Ning Wan’s orders.</p>
+<p>Upon hearing this, Li Xuanxuan, who was sitting beside him, immediately understood. Stroking his beard with a smile, he reminded him, “Quickly send the congratulatory gifts.”</p>
+<p>This was no small piece of good news for the Li Family. Li Jiangqian was in excellent spirits. He called someone over and instructed, “I recall there is still a portion of Dotted Pine Frost in the treasury. Although it is only a Foundation Establishment Realm spirit item, it suits a Daoist Master well. And also…”</p>
+<p>He pondered for a moment. Most of the Li Family’s current reserves were with Li Ximing, leaving little that could be readily presented. Yet congratulatory gifts could never be delayed. Not only did their value matter, their timeliness was an equally crucial sign of sincerity.</p>
+<p>Thus he continued, “Back then, father brought back a basket of extremely valuable Water Pearls. The intention was to refine them into a set of dharma artifacts, but there were many pearls, a full sixteen of them. Complete sets are difficult to refine, and they were never used. Perhaps they could be used as a congratulatory gift.”</p>
+<p>Li Xuanxuan winced at the thought. There was a reason the basket of Water Pearls had never been refined into artifacts. Each was a Foundation Establishment Realm spirit item, sixteen in total, with interlinked auras. The elders were frugal and truly considered them too precious.</p>
+<p>He hesitated and said, “This gift is far too heavy. It is already on the level of something a Purple Mansion Realm cultivator would personally give. It would be a pity to break up the pearls and send them separately. Perhaps we should think of another approach.”</p>
+<p>Li Jiangqian nodded. He actually hoped the other party would owe the Li Family more favors. In his heart, he quietly thought of Li Xuanfeng’s relic, White Lightning. That item likely qualified as a spirit artifact embryo. The question was whether it could be taken out.</p>
+<p>But since Li Xuanxuan had spoken, he naturally complied and listened as Li Xuanxuan said, “Then copy a portion of the Cold Pine Dew Snow Technique Manual and send it to the Daoist Master. Also explain to her that our Daoist Master is cultivating abroad and is unaware of affairs within the mainland, so he cannot visit personally. He will certainly make up for it in the future.”</p>
+<p>Li Jiangqian added, “Perhaps have Peak Manager Chengpan lead a group there, with Lord Cui accompanying them, to show the importance our family places on this.”</p>
+<p>Li Xuanxuan nodded slightly and said, “Call that rascal Zhouming over as well, along with Chengdan.”</p>
+<p>Li Chengqi[1] was one of the few Qi Cultivation Realm elders of the first lineage, the biological uncle of the Li Zhoufang brothers. Back then, he had made things difficult for Li Zhouluo and had been sent out to manage affairs in Milin. Once tensions with Capital Immortal Dao arose, he was immediately transferred back.</p>
+<p>After all, the Li Family currently had only one Purple Mansion Realm cultivator in the Xi generation, Li Ximing. In the next Chengming generation, Li Chenghuai had intentions of going to the Southern Sea. Li Xuanxuan saw clearly that the child had the heart to seek immortality and could not be kept. That left only Li Chengqi and Li Minggong, which was why he deliberately called Chengdan over, in order to have Li Jiangqian make greater use of him.</p>
+<p>All three were on the island that day. After a single inquiry, they all arrived quickly. Li Chengqi wore a serious expression and was neatly dressed. Li Zhouming, clad in red, was the complete opposite, striding along carelessly behind him. Last came Li Chengpan, with his head lowered.</p>
+<p>Once Li Jiangqian explained the matter, Li Chengqi was immediately overjoyed and replied, “This is truly a great matter. Leave the affairs of the family to me.”</p>
+<p>Li Chengqi had repeatedly made things difficult for Li Zhouluo back then in order to save Li Chengpan. His heart was always tied to the family members, and he constantly felt that the island was too harsh. As a result, he was never heavily relied upon.</p>
+<p>However, he was also the one who valued the family’s reputation the most. He might complain internally, but if anyone outside spoke ill of the Li Family, Li Chengqi would truly fly into a rage and resort to force. His own abilities were not lacking, and entrusting this matter to him was appropriate.</p>
+<p>After all… there are not many left in the family who can hold up our reputation.</p>
+<p>Li Xuanxuan sighed inwardly, yet his tone was stern as he spoke, “Zhouming, take Shouyu and Chengdan with you on this trip. Listen more to the seniors.”</p>
+<p>Li Zhouming was a direct grandson of a Purple Mansion Realm cultivator, which was more than enough to show respect. The young man in red nodded repeatedly and grinned. “Old elder, listen to how you put it. In all these years, when have I ever not listened? It has always been whatever the elders say goes.”</p>
+<p>Li Zhouming had once put Li Chengqi and the others in an awkward position. Li Xuanxuan feared there might be lingering resentment between them and still hoped they would interact more and grow closer. Fortunately, the youth showed no embarrassment at all, smiling broadly as if nothing had happened before and calling one uncle and another elder with ease.</p>
+<p>Li Chengqi would naturally return the respect. Although Li Ximing, the Daoist Master who had raised the Li Family into an Immortal Family and ascended to the Purple Mansion Realm, rarely appeared, his prestige among the lakeside family members was unquestionable. Even if Li Ximing suddenly fancied building some palace or pavilion for amusement, Li Chengqi would be the first to lay the foundation.</p>
+<p>He bowed solemnly and said, “Greetings, young master. Young master, please.”</p>
+<p>After the three had departed, Li Jiangqian could not help nodding with a sigh as he said, “The old elder’s painstaking intentions truly make this junior admire you.”</p>
+<p>Li Xuanxuan stroked his beard and shook his head as he said, “It is only a difference in intent. You look at the interests of the lake. I only hope to mend the gaps between the lineages. If there is discord within, then no matter how much the family gains, it is all hollow.”</p>
+<p>Li Xuanxuan hesitated for a moment and was about to ask about matters in the north when he saw purple qi spreading over the lake, with clouds drifting on both sides. A female attendant in purple robes came forward and knocked on the hall door, saying only, “Reporting to the lords of the Moongaze Immortal Family, Daoist Master Tinglan of the Taixu Purple Essence Cave Marvelous Gate has come to visit.”</p>
+<p>Li Jiangqian paused slightly in surprise and understood that this time, Daoist Master Tinglan, a Purple Mansion Realm cultivator, had come in the capacity of a representative of Purple Smoke Gate.</p>
+<p>He immediately descended the side steps and performed a salute, saying, “Greetings to the immortal envoy of the Taixu Purple Essence Dao lineage. Our small family respectfully welcomes the Daoist Master.”</p>
+<p>Purple qi gathered before the hall as the female Daoist Master in autumn-yellow garments stepped through the great void, the faint yellow patterns at the corners of her eyes glowing softly. Li Jiangqian respectfully invited her inside.</p>
+<p>After all, she was a Purple Mansion Realm Daoist Master. Li Jiangqian led her directly to the main seat. The hall doors closed on their own. Tinglan first nodded toward Li Xuanxuan and exchanged a few pleasantries, asking about the old elder’s longevity and whether things were well within the family.</p>
+<p>Since Li Xuanxuan was Li Ximing’s grandfather, the proper respect had to be shown first. Only then did Tinglan speak, “I have already met Fellow Daoist Ximing in the east. This time, I have returned for two matters.”</p>
+<p>1. Previously known as Li Chengdan. Changed for correction. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1291.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1293.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

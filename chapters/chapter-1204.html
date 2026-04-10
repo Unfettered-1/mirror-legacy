@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1204: Grace Covenant (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1203.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1205.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1204: Grace Covenant (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Cui Jueyin strode swiftly in, dressed in a Daoist robe. Now one of the Li Family’s two greatest cultivators alongside Ding Weizeng, he was held in high esteem.</p>
+<p>Li Zhouluo stepped forward quickly as Cui Jueyin bowed and spoke concisely, “Family head, the reason for the Capital Immortal Dao’s withdrawal has been discovered. The overseas Dao lineage, Profound Covenant Great Dao of Lady Azure, emerged from the river, swept into Shanjì, and drove out the Baiye Capital Immortal Dao, seizing the Profound Peak Gate Mountain!</p>
+<p>“Daoist Master Zhugong of the Profound Covenant Great Dao of Lady Azure has founded a gate in the mountains, claiming to inherit the Tongxuan Dao lineage. She established a branch called Profound Grace Divine Covenant Dao of Lady Azure, abbreviated to Grace Covenant Gate. Declaring its purpose to aid the weak and unite all who belong to the Tongxuan Dao lineage, she has merged with Profound Peak Gate, renamed Profound Peak Mountain to Grace Covenant Mountain, and proclaimed sovereignty!”</p>
+<p>Li Zhouluo was deeply shaken as Cui Jueyin went on, “In three months, Daoist Master Zhugong will host a grand banquet for cultivators at Grace Covenant Mountain. It is said that even today, cultivators of the Purple Smoke Gate have already ascended the mountain. Daoist Master Tinglan of the Purple Smoke Blessed Land herself has gone in person.”</p>
+<p>Unlike Li Zhouluo’s shock, Cui Jueyin had somewhat expected it. After all, he had once accompanied Li Ximing to the Purple Smoke Gate and spent a long time conversing with their cultivators. He had picked up on several hints between the lines.</p>
+<p>Li Zhouluo asked, “How did the Kong Family respond?”</p>
+<p>The Grace Covenant Gate had inherited the legacy of Profound Peak Gate under the banner of aiding the weak and relieving the suffering. This immediately turned the already marginalized Kong Family’s position into a delicate one.</p>
+<p>Li Zhouluo had caught the key point, and Cui Jueyin, who had long observed the situation, replied, “Most of the Kong Family are bewildered and unsettled. Two of their younger members tried to inquire about the Grace Covenant Gate but were driven back by Kong Guxi. For now, the Profound Peak Gate side shows no sign of reaching out to the Grace Covenant Gate, and the Grace Covenant Gate has sent no one to contact the Kong Family either.”</p>
+<p>Li Zhouluo let out a breath of relief, grateful that their own position had not yet turned awkward. Just then, Chen Yang rushed in from outside the hall and bowed, “Family head! An envoy from the Grace Covenant Gate has arrived on the island! He claims to have come to deliver an invitation.”</p>
+<p>It was immediately clear that the Grace Covenant Gate’s attitude was amicable. Li Zhouluo said joyfully, “Bring him in at once!”</p>
+<p>Soon, a young man in gold and green robes entered the hall. His skin was pale, his attire splendid, and his face full of smiles. He was followed by another man in plain robes and a bamboo hat that hid his features.</p>
+<p>The youth spoke first, “Dai Jinquan of the Profound Grace Divine Covenant Dao of Lady Azure greets the family head. An auspicious event draws near; may the immortal family’s prosperity remain ever verdant and its generations unbroken…”</p>
+<p>He delivered a long string of festive congratulations. Li Zhouluo forced a smile and replied, “I have long heard of your sect’s great reputation. Now that you have moved inland and found such treasured lands, it is indeed a cause for celebration.”</p>
+<p>The Li Family had long protected the Kong Family, and the Grace Covenant Gate’s occupation of another family’s mountain gate was a somewhat delicate matter. Dai Jinquan’s smile only widened at Li Zhouluo’s words.</p>
+<p>He drew a golden-green invitation from his sleeve and said, “I believe your esteemed family has already heard; our revered Daoist Master will host a banquet for all cultivators at Grace Covenant Mountain in three months. We humbly invite your immortal family to grace the occasion and share in the wine.”</p>
+<p>Having achieved his purpose, Dai Jinquan stopped after a few pleasant words. The man behind him stepped forward, removing his hat to reveal a spirited, radiant face.</p>
+<p>It was When Wu of the Purple Smoke Gate!</p>
+<p>When Wu drew a purple-gold command token from his sleeve and said solemnly, “I am When Wu of the Purple Smoke Gate. We have met before, family head. I have come on this journey as the Grace Covenant Gate’s escort to deliver a message from my Daoist Master.”</p>
+<p>Cui Jueyin immediately employed a perception technique. When Wu raised the command token, and a wisp of purple smoke streamed forth, coalescing into a spiritual manifestation. Gasps filled the hall, and Li Zhouluo rose from his seat to bow deeply.</p>
+<p>The purple smoke condensed before them into the figure of Daoist Master Tinglan. Standing in the center of the hall, she swept her gaze around, recognized Cui Jueyin, and raised her brows slightly, “Jueyin, your clan’s Daoist Master Zhaojing has already made arrangements and discussed it with me at Purple Smoke Gate. The Dao lineage of Profound Peak Gate now belongs to the Grace Covenant Gate. Out of regard for Moongaze’s honor, Zhugong will refrain from intervening. Your house should make its preparations early, so both sides may save face.”</p>
+<p>Cui Jueyin bowed respectfully in acknowledgment and the Daoist Master’s image faded away. Dai Jinquan and When Wu, still kneeling, performed their farewell salutations before all present finally rose. When Wu silently set his hat on his head, and the two departed together.</p>
+<p>Li Zhouluo ordered Chen Yang to personally see them out, then exhaled softly and instructed, “Summon the people from Profound Peak Gate.”</p>
+<p>Inwardly, he wondered,Profound Peak Gate belongs to the Tongxuan Dao lineage? It’s not impossible…</p>
+<p>There was already one branch of the Tongxuan Dao lineage to the north of the river, which was the Xuanmiao Temple entrusted by Changxi. Sumian had always claimed to be a descendant of Tongxuan’s Xu Xiang.</p>
+<p>Li Zhouluo pondered silently,Xuanmiao Temple begins with the character Xuan[1], and so does Profound Peak Gate. The Grace Covenant Gate’s full name, Profound Grace Divine Covenant Dao of Lady Azure, also starts with Xuan. To call it simply Profound Grace Dao would not be wrong. In truth, they all begin with that same character…</p>
+<p>Kong Guxi hurried up the steps while he was still deep in thought. The gate master’s face was tense and streaked with tears. Entering the hall, he bowed respectfully and said in a trembling voice, “Family head… our mountain gate has been taken by the Grace Covenant Gate…”</p>
+<p>That single word ‘taken’ made his stance clear. Li Zhouluo, whose doubts had already been stirring, showed a look of both sorrow and indignation as he spoke, “Master Kong, I heard that the Grace Covenant Gate claims your gate belongs to the Tongxuan Dao Lineage. Why have you never mentioned this before?”</p>
+<p>Even Kong Guxi’s face betrayed a flash of bitterness and sorrow. The gate master bowed deeply and replied, “Family head, the Tongxuan Dao Lineage is of great renown and has distant ties to our ancestral art, the Fool’s Mountain Chase. When our Daoist Master established the gate, he claimed an affiliation under the Tongxuan lineage and named it the Profound Light Peak Moving Great Dao.</p>
+<p>“But since our inheritance was incomplete and we could not even identify our true progenitor, others never recognized our claim. In time, the name fell into disuse. When the Daoist Master was alive, he spent his days and nights traveling, hoping the world would acknowledge the name. In the end, nothing came of it. But now… now that they seek to annex us, they suddenly choose to recognize it!”</p>
+<p>Li Zhouluo nodded gravely and stepped forward to help Kong Guxi to his feet with solemn respect. He said, “Gate Master Kong, after careful discussion, we believe that although the Capital Immortal Dao has retreated, they may yet move southward. Our own Daoist Master is absent, and the Wilderness brims with danger; I fear we may not be able to protect your gate when the time comes…</p>
+<p>“Now that the Grace Covenant Gate has expelled the Capital Immortal Dao and Daoist Master Zhugong shelters the Profound Peak Gate, I’ve heard she is searching throughout Shanji Prefecture for its surviving disciples. It may be wise for you, Gate Master Kong, to lead your people there. Avoid the Capital Immortal Dao’s revenge and preserve your lineage.”</p>
+<p>Kong Guxi felt a chill seep into his heart as he listened. From the very moment the Grace Covenant Gate proclaimed itself the savior of Profound Peak Gate, all his hopes of reestablishing his gate had vanished. The Grace Covenant Gate had already aided and unified the Profound Peak Dao Lineage, so what would it mean for another Profound Peak Gate to appear in the west now?</p>
+<p>The gate master had hesitated to separate from the Li Family in the past few days not out of resignation, but because the timing had not yet ripened. He certainly bore hatred toward the Grace Covenant Gate, and his words earlier had already revealed that sentiment as clearly as he dared.</p>
+<p>But Li Zhouluo’s meaning was even clearer; the tide of current events was beyond the power of the Kong Family or even the Moongaze Li Family to oppose. Kong Guxi’s body went limp, his mind dull with despair.</p>
+<p>He dropped to his knees and murmured hoarsely, “Family… Family head…”</p>
+<p>1. The Xuan here is Profound. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1203.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1205.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

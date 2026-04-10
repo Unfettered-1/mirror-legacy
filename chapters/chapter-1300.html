@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1300: Baoqing (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1299.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1301.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1300: Baoqing (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The sky was filled with imposing Buddhist cultivators, their faces frozen like sculptures. Radiant light blazed within the clouds. The colossal golden figure bore a tranquil expression, showing neither compassion nor joy, merely pressing silently upon the air.</p>
+<p>The cultivators on all sides revealed wariness and fear. The entirety of Northern Dan Island was lit up in every direction. Li Wushao frowned and stepped back, clearly displeased by the radiance overhead. His expression looked sour, and he was most likely cursing inwardly.</p>
+<p>Everyone turned to look at Li Xizhi, who did not panic. He casually crushed a jade talisman as he briefly assessed the situation. He then rose on trailing dawn light, circulated his mana, and spoke loudly, “May I ask for what purpose the Great Konghai Temple suddenly visits Stone Pond of my Azure Pond Sect? I am Li Xizhi, master of the Jiutian Pavilion.”</p>
+<p>None of the Master Monks in the sky responded. The Merciful One remained completely still. Only a Buddhist nun stepped forward with the others, dressed in loose dark monastic robes, palms pressed together, and chanted, “My lord, the master of the Clear Vast Myriad Mile Konghai Temple, in response to a great and wondrous destined cause, attained the profound path of the five aggregates and disseminated the marvelous canons of the three vehicles. He specially dispatched the Arhat Dharma Protector, the venerable supreme great cultivator Zhuzhen, the Merciful One, to come and guard Northern Dan.”</p>
+<p>As soon as these words were spoken, the cultivators of the Azure Pond Sect erupted in an uproar. The history of Buddhist cultivators was far shorter than that of immortal cultivators, so their titles naturally came out long and unwieldy. Immortal cultivators had experienced an ancient golden age that continued to the present, with rigidly fixed ranks. A Purple Mansion Realm had only the title of Daoist Master, and some regions did not even grant Foundation Establishment Realm cultivators the title of Daoist.</p>
+<p>This Buddhist cultivator Zhuzhen carried both a venerable rank and the title of great cultivator. It sounded exalted beyond measure, but in truth he was merely a Merciful One. The great Master Monks in the Buddhist tradition were in reality only Foundation Establishment Realm cultivators.</p>
+<p>What shocked everyone was his final statement. He had come to guard Northern Dan!</p>
+<p>What did this mean? No matter what, the Azure Pond Sect was still a Supreme Yang Dao lineage. Although the Southern Sea had many high level Buddhist cultivators, and the Great Konghai Temple had a Maha behind it, there was no justification for marching onto another sect’s territory with such an overbearing, take as you please attitude. This was tantamount to declaring war on the Azure Pond Sect.</p>
+<p>Li Xizhi raised his head. His eyes were calm as he said in a deep voice, “I wonder what sort of promise the Great Konghai Temple has obtained, and from which Daoist Master it has received an immortal decree, to come directly and take Stone Pond?</p>
+<p>“Northern Dan has not received any immortal decree from a Daoist Master. If the Great Konghai Temple seeks to seize Stone Pond while my sect’s Grand Daoist Master has fallen, then forgive this junior for refusing to comply.”</p>
+<p>The nun in the sky responded coldly, “With Lord Zhuzhen present, how is it your place to speak? Even if your Rosy Glows of the Celestial Pavilion carries great renown, do you expect a great cultivator to explain himself to you?”</p>
+<p>Li Xizhi frowned slightly when she turned to unreasonable arguments, neither heeding his words nor doing anything but rambling nonsense. He knew they had come with hostile intent. The Azure Pond Sect was weak at present and could certainly not spare a Purple Mansion Realm cultivator to intervene.</p>
+<p>At that moment, his wife, Yang Xiao’er, descended on drifting clouds to his side and said softly, “Are all members of the Great Konghai Temple so utterly unreasonable? I am Yang Xiao’er of the Yang Family of Yue State…”</p>
+<p>The nun was about to speak again when the Merciful One, who had stood like a sculpture in the sky, finally opened his mouth. His voice was deep and thunderous, “So it is a descendant of the imperial line.”</p>
+<p>His eyes were filled with authority as he spoke coldly, “My Great Konghai Temple has previously crossed hands with Fellow Daoist Si, Fellow Daoist Tang, and Fellow Daoist Ning. Northern Dan was also a treasured land where I discussed profound principles with two of those Daoists. Stone Pond, moreover, was the place where my lord attained the Dao. A great battle was once fought here. The three Daoist Masters stated that as long as they remained, Stone Pond would belong to the Azure Pond Sect.”</p>
+<p>He paused slightly and finished softly, “My lord respects the Dao lineage of the Azure Pond Sect and thus promised to withdraw from Stone Pond. Now that the destined ties between your Dao and Stone Pond have ended, we have come to take it.”</p>
+<p>Li Xizhi’s expression darkened slightly. The meaning of the Merciful One was very clear. In his words, Stone Pond had been seized by the three Yuans of Azure Pond from the Great Konghai Temple. Now that the three Yuans were gone, they had come to reclaim it.</p>
+<p>The sect archives of Azure Pond Sect were not something Li Xizhi could consult, yet there had never been any claim within the sect that Stone Pond had been seized by force. If such a matter had truly drawn the intervention of three Purple Mansion Realm figures, there would inevitably be traces left behind. Even if the person before him was not fabricating things outright, he was at least concealing many facts.</p>
+<p>But how the facts truly stood was no longer important. They had already surrounded the island, making it clear there was no room for negotiation and that they intended to strike suddenly. Could Li Xizhi possibly argue this matter with the Merciful One?</p>
+<p>Since the other party had come with hostile intent, he did not stand on ceremony and said calmly, “What exactly does the Merciful One intend?”</p>
+<p>Addressing him directly as the Merciful One was a usage common in Jiangnan and was clearly uncommon in the Southern Sea. It carried the flavor of northern transmitted Buddhist traditions.</p>
+<p>The Merciful One frowned, and a sonorous chant emerged from his mouth. “My Great Konghai Temple does not wish to create excessive bloodshed. Out of regard for Daoist Master Zhaojing and the face of Yue State, take your families and disciples and leave, and cede Northern Dan.”</p>
+<p>Li Xizhi fell silent.</p>
+<p>Yield or not yield?</p>
+<p>The formations on Northern Dan Island were formidable, but resisting the Merciful One was clearly a fool’s dream. Li Xizhi had no desire to die in loyal service of the Azure Pond Sect. Moreover, Tantai Jin and the Ning Family both hoped he would preserve his life. He weighed the matter again and again, only judging whether the other side would move to kill him.</p>
+<p>Daoist Master Ning would not take long to come from Jiangbei. The trouble is that notifying her takes too much time. I have already crushed a jade talisman to report to Tantai Jin, but Tantai Jin may not have the resolve to immediately strike the bronze bell and summon the Daoist Master back.</p>
+<p>He quickly raised his head and said softly, “We must withdraw only upon receiving an immortal decree from a Daoist Master. I ask the Merciful One to wait briefly. Once the decree arrives, we will give our reply.”</p>
+<p>If Zhuzhen truly waited here, it would become a joke. These words were clearly a refusal. The golden light around the Merciful One slowly flickered, revealing rising anger. Moreover, Li Xizhi had been in the Southern Sea for so many years that it was impossible for him not to know its customs. He stubbornly refused to address him as a great cultivator, repeatedly calling him the Merciful One, which only added fuel to the fire.</p>
+<p>The high cultivator said coldly, “You refuse the offered courtesy and insist on punishment.”</p>
+<p>The surrounding Master Monks roared in unison. The sky thundered, and the sound shook the heavens and earth. Li Xizhi’s eyes swept across them all as he formed seals with his hands.</p>
+<p>Gentle radiance was already descending from the sky as the Master Monks pressed urgently toward the formation. Li Xizhi remained unmoving as numerous Heavenly Glow avatars leaped forth, and a blaze of brilliant colors rose.</p>
+<p>“Morning Rainbow Lure!”</p>
+<p>This spell art, which in the past could not even break Tuoba Chongyuan’s dharma body, was now completely different. The brilliant colors transformed into massive beams the size of houses, scattering and dancing through the air as they brushed past the faces of the Master Monks.</p>
+<p>As this art surged skyward, the nun attending the Merciful One was startled and rode the clouds downward, cursing, “What a vicious villain. You still dare to be arrogant.”</p>
+<p>Even Zhuzhen frowned slightly and thought to himself,He truly excels in spell arts. The title was not chosen wrongly. Fortunately, he cultivates Heavenly Glow. Unless he enters Luoxia, there is little Dao to speak of. Yet this really is a sharp blade for an Immortal Dao Daoist Master.</p>
+<p>He did not seem as domineering, unreasonable, or hot headed as he appeared on the surface. Instead, he was observing and assessing. Seeing this, Li Xizhi felt much steadier in his heart and ordered, “All cultivators on the island, follow me and resist together!”</p>
+<p>The cultivators immediately descended onto the platform. The formation on Northern Dan Island had been constructed by a formation master during Chi Wei’s era, at the height of the Azure Pond Sect’s prosperity, when five Purple Mansion Realm Daoist Masters presided over it. As a result, the materials were solid and refined. With more than ten Foundation Establishment Realm cultivators circulating their techniques together, the grand formation suddenly flared with light.</p>
+<p>However, there were even more Master Monks in the sky, and their strength surpassed that of Foundation Establishment Realm cultivators. The formation immediately began to waver. Li Xizhi stepped through the air, formed seals with both palms, and activated another spell art.</p>
+<p>The vermilion dawn canopy arises from radiance and compliance. The embrace of layered mountains unites with the Nine Netherworlds to reach the truth. The splendor of rosy mist thus issues forth.</p>
+<p>A band of six colored light flew out from his palms, darting like swallows beyond the formation. It transformed into a rainbow mist that reinforced the grand formation and spread through the surroundings.</p>
+<p>Li Xizhi’s Immortal Foundation, Universal Dawn Mist, excelled in escape techniques, rainbow gathering, and spellcasting. It could naturally condense rainbow mist to confuse enemies and empower a mountain or a region. He had rarely used it over the years, but once unleashed now, it immediately weakened the momentum of the Master Monks outside the formation.</p>
+<p>The confusing power of the rosy mist was extremely strong, and Li Xizhi’s spell arts were formidable. The cultivators outside the formation lost their footing at once. Zhuzhen above lifted his eyelids slightly, showing displeasure. The nun at his side immediately said respectfully, “Does the great cultivator wish to…”</p>
+<p>Before she could finish, Zhuzhen shot her a cold glance. Clearly, the Great Konghai Temple side was already losing face, yet the Merciful One seemed preoccupied with something else as his gaze wandered across the island.</p>
+<p>He carefully observed Yang Xiao’er, as if confirming something. Seeing her calm and confident, without the slightest fear, he frowned inwardly. Naturally, he would not allow Li Xizhi to hold out. The Merciful One ultimately made his move, unleashing a casual, gentle blow.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1299.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1301.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

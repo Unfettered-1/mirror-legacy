@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1203: Grace Covenant (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1202.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1204.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1203: Grace Covenant (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xuanxuan withdrew his hand. The fair-faced man on the ground could only remain kneeling, unable to rise. Only then did the old man’s anger show.</p>
+<p>The tea on the table went untouched, sitting there cold as his hoarse voice rasped out, “How deeply was Chengdan involved in this matter?”</p>
+<p>Li Xixuan stayed kneeling properly, his pale face pressed to the floor as he said in a low voice, “Grandfather… what do you mean by that?”</p>
+<p>Li Xuanxuan cast him a heavy glance and said quietly, “I know… Chenghuai’s mystical ability drew in quite a number of people. None of you have been content to live quietly, instead stirring fear among the outer families and minor sects. So I advised him to withdraw, and now that he’s gone into seclusion, you still insist on calling him out. What have you prepared, some shamanic spell or trickery to test upon him? Or have you thought of a new scheme to get around it? To even force Zhouluo’s reputation into ruin… is this how you conduct yourself as an elder?”</p>
+<p>Li Xixuan whispered, “It was only for Chengpan’s reputation.”</p>
+<p>Li Xuanxuan let out a bitter laugh. His eyes widened, and his aura suddenly turned fierce as he rasped, “I don’t care what tricks you’ve been using in all your scheming, when the truth was laid bare, only Li Hun will be found guilty of great crimes. Isn’t that what you’re dreaming of? Chenghuai may not dare to investigate you, but do you think I wouldn’t? There’s no one here now, so I’ll summon Chenghuai right this moment.”</p>
+<p>Li Xixuan could no longer stay composed on his knees. He shifted forward an inch, tears immediately spilling as he choked out, “Grandson only feels that the family has grown far too harsh! Zhouluo and Xinghan live comfortably in the island alongside you, but have any of you spared a thought for how the bloodline beneath you lives? In other immortal families, even the mortal descendants of the main lineage live like local lords. If not emperors, then at least they are wealthy beyond measure, with servants in droves. Yet my family, pure main-line blood, my own children, once they’re found without spiritual orifices, are cast down to toil in the fields. Qingdu grants them only enough food to stay alive, and in other places the supervision is ghostlike and merciless beyond measure. If even my children suffer such treatment, what of the rest of our kin? Our family has shone for a hundred years, do you know how many tears of the main line lie hidden in its corners?</p>
+<p>“The outer families live comfortably with no Qingdu oversight, while the number of cultivators in our bloodline grows daily within and beyond the island. Yet our unity fades by the day. Have you ever wondered why? Chengpan has already seen it clearly. Would you, old elder, care to see how those taken into the island truly feel about this family? Before they prospered, they were made to eat husks and bark; now that they’ve gained spiritual orifices, they’re told to serve the lake and think of the people. How could the world ever work so conveniently?</p>
+<p>“I’ve seen it with my own eyes and felt it aching in my heart. I’ve done what I could to secretly care for the younger generation. Then Chenghuai took over Qingdu, and acted truly spotless in conduct. He arrested several family elders, cutting off everything that had been done before. The lake became pure and bright, yes, but do you know, old elder, how many beneath that purity wept in silence? All are of Moongaze blood, yet the island is heartless!”</p>
+<p>He knocked his head against the floor three times, each one sharp and heavy, his voice trembling as he spoke, “This old man has few days left to live. Yes, this grandson has selfish desires: he wants his sons to live a little better. But I also cannot bear to see the family grow more divided with each passing day. Among my children, Zhoufang and Zhouyang see it most clearly. They’ve been fighting for the elder generation’s descendants to gain some protection, yet Qingdu rejects them again and again. If this continues… the family will face calamity!”</p>
+<p>Li Xuanxuan’s breathing quickened as he shouted sharply, “What is it you want then? For our family to divide into ranks of high and low? Those with the surname Li to live as first-class people, basking in wealth from birth till death? When the outer families fall, they may till the fields, but the Li Family must never soil their hands?”</p>
+<p>Li Xixuan bowed again, tears streaming down his face as he cried out, “Old elder… The Chi and Si Families are first class in the Azure Pond Sect, while Kan and When are first class in the Purple Smoke Gate. Even the Cheng Family is first class in Wanyu Sword Gate. The world itself is divided into high and low. The first class belongs to the powerful cultivators and their descendants. Every sect, for all their endless infighting and power struggles, still has a class that sits above the rest. Our family bears the name Li; why should we not be among the first class as well?”</p>
+<p>Li Xuanxuan’s face turned crimson with rage. He sprang up from his seat and kicked the man squarely in the head, sending him rolling several meters away. The old man roared, “You… all those Qingdu classics you read were for nothing!”</p>
+<p>Blood streamed down Li Xixuan’s pale face as he cried out, “It is precisely because I have read, old elder! This time, I only sought to prove that even divine insight can err, and to release those family elders and restore our family’s spirit! Chengdan knew nothing of the inner cause… I know he pities Chengpan for being dragged into this, yet still he understood the weight of the matter and came to aid me. Xingsai has just died, yet as a father, Chengdan uttered not a single word of complaint. Even he has come forth to stand with me; does that not show where the hearts of men lie? Meanwhile, Xi’e and Chengzhi cling to their reputation and withdrew halfway! Old elder, can you not tell loyalty from treachery?”</p>
+<p>Li Xuanxuan’s fury flared so violently that he began to cough, startling Li Xixuan into silence. The old man flung his sleeve hard and ground out through gritted teeth, “Out! Get out of my sight!”</p>
+<p>Li Xixuan knocked his head three times on the floor before retreating in despair. Li Xuanxuan coughed violently for a while before sinking back into his seat, and Li Shuya, eyes red with fear, hurried forward with a cup of tea.</p>
+<p>He remained seated until late into the night. He brought out a wooden chest from the courtyard, taking several jade slips from it. They bore the handwriting of Li Tongya, preserved carefully all these years. Now he turned them over and over in silence, lost for words.</p>
+<p>————</p>
+<p>Moongaze Lake.</p>
+<p>Li Zhouluo returned to the lake and conducted overnight interrogations of the western shore families. As expected, the root of the problem lay with Li Hun and Ren Ting. No one knew who had issued orders from above, but all the deeds had been carried out by Li Hun. His guilt was confirmed, and he now awaited execution in the main hall.</p>
+<p>From the results of the interrogation, all four were found to have committed wrongdoing. Ren Ting had not even realized that the offering had been an act of flattery; in his memory, the He woman was not even surnamed He. Li Hun, though somewhat aware, implied repeatedly that An Xuanxin was behind it all.</p>
+<p>If father were to use spell arts to investigate, he would find the four blameless and the western shore people at fault. But when examined in detail, even those from the western shore prove innocent… those in between are either dead… or have fled…</p>
+<p>A vague sense of realization stirred in him as he worked frantically. Just then, Li Zhoufang entered the hall and bowed respectfully. His elder brother’s beard had grown long, giving him the look of middle age.</p>
+<p>Li Zhouluo quickly set down the items in his hands and said with a nod, “Thank you, elder brother.”</p>
+<p>Li Zhoufang looked weary. He shook his head faintly and replied, “This matter has put Uncle Chengdan in a difficult spot. I couldn’t stay idle any longer, nor do I wish to bear the name of an unfilial son. There’s a reason I’ve come to the family head… our uncle’s daughter, Sister Xingsai, has fallen, and left behind a child…”</p>
+<p>Li Zhouluo gripped his pen tightly, nearly guessing what his brother would say next. Fortunately, footsteps sounded suddenly as the Jade Court Guards rushed in and saluted, “Family head, urgent news from the Wilderness! Lord Cui has arrived on the island with members of the Kong Family!”</p>
+<p>Li Zhoufang, ever the most disciplined of them, withdrew immediately; such matters of protection were never to be rushed. Though this granted Li Zhouluo a moment’s respite, his anxiety over the eastern front only deepened, and he promptly ordered them to bring the messenger in.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1202.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1204.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

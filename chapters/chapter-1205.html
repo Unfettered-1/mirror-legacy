@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1205: Final Oblivion (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1204.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1206.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1205: Final Oblivion (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouluo remained silent as he watched Gate Master Kong collapse to the ground. Dili Guang, seeing this, quickly shut the great hall doors tightly. The hall dimmed first, then the lights flared again as Kong Guxi murmured under his breath, “Family head… Family head… the Daoist Master… he… I—ah!”</p>
+<p>Given the gravity of the matter, Li Zhouluo did not rush him. He waited silently until Kong Guxi finally regained some clarity.</p>
+<p>The old man brushed away the white strands of hair that had turned so in just a few years and then bowed. “Our ancestor has perished, while the Profound Peak Gate lies in ruins. For years, some refused to lend a hand while others stood idly by. It was only through the aid of the immortal family that a few of our juniors managed to survive. This grace… I have carved it into my heart, and so has every member of the Kong Family.</p>
+<p>“Now that the clouds have parted and the moon shines clear, the Tongxuan Dao lineage has come to save us. We have escaped our sea of suffering and regained our mountain gate. Yet from this day forth, the Dao lineage is no more. From now on, there shall only be the Kong Family, and no more Profound Peak Gate.”</p>
+<p>Li Zhouluo offered a few words of comfort. “There is still Senior Kong Tingyun out there… please, elder, rest assured.”</p>
+<p>Kong Guxi listened respectfully before replying, “Since the Dao lineage of Profound Peak Gate ends here, there is no longer any talk of a Dao Collection. I have brought with me The Profound Light Mountain Chasing Scripture of Fool’s Mountain Chase. Please, Moongaze… accept it!”</p>
+<p>He drew a jade slip glowing with pale yellow light from his sleeve, then dropped to his knees with a thud, holding it up with both hands. Li Zhouluo hurried to help him up, but his cultivation was far inferior and he could not lift him.</p>
+<p>Kong Guxi’s voice was choked with emotion as he said, “Since it must be delivered to Grace Covenant Gate, the Profound Light Mountain Chasing Scripture must be returned to the Profound Grace Dao lineage. My descendants may lack fortune or longevity, and might never again continue cultivating the Profound Light Peak Moving Great Dao… please, Moongaze, keep a copy for us as well!”</p>
+<p>He suddenly raised his head, eyes wide open. His already gaunt cheeks seemed even more hollow under that light. He stared into Li Zhouluo’s eyes and clutched his sleeve tightly as he muttered hoarsely, “Keep it within your esteemed family… yes, within your family. It is a good technique, of ancient origin. After fifty years… a hundred years… it may be looked upon again, can it not…?”</p>
+<p>His words were incoherent, and the words “may be looked upon again” seemed to mean for the Li Family to examine it. Yet those bulging eyes, full of pleading, conveyed another meaning; one that struck Li Zhouluo like a bolt of lightning.</p>
+<p>The scripture must indeed be returned to the Profound Grace Dao lineage, and there will surely be methods to cut off its transmission. Whether the Kong Family can ever access it again is uncertain…</p>
+<p>He wishes to leave the scripture at Moongaze Lake, so that after fifty or a hundred years, once the Grace Covenant Gate lowers its guard, someone of the Kong bloodline might come to view it again, preserving a thread of hope and preventing their path from being forever severed.</p>
+<p>Li Zhouluo placed his hand over the old man’s, speaking with both comfort and subtle understanding, “The Daoist Master’s concern will endure far longer than a hundred years.”</p>
+<p>Those words were undeniably effective. Kong Guxi pushed the jade slip forward and murmured softly, “The Profound Light Mountain Chasing Scripture is here… It is only a mere Purple Mansion Realm Dao lineage, yet my gratitude is boundless. Please accept this as a token of my heart…”</p>
+<p>His face turned pale and ashen. He rose unsteadily, like a man who had narrowly escaped a great peril, then soon took his leave. The Profound Light Mountain Chasing Scripture lay heavy in his sleeve, prompting Li Zhouluo to quickly return to his main seat.</p>
+<p>He examined it with his spiritual sense and confirmed the jade slip indeed contained the Profound Light Mountain Chasing Scripture. Not only that, but it also included Refining Fire In The Viewing Pavilion and Transposing The Treasured Mountain Of Wondrous Soil, both explaining the arts of mountain-moving.</p>
+<p>Li Zhouluo quietly placed the jade slip upon the desk. The image of Kong Guxi’s eyes still lingered vividly in his mind. Compared to the Profound Peak Gate’s master, who had just stumbled through calamity, his own troubles seemed far lighter.</p>
+<p>He ordered, “Ask Dharma Protector Cui to personally make a trip to escort the Profound Peak Gate disciples safely back to their mountain gate. Handle all courtesies properly so others do not misunderstand our intent.”</p>
+<p>Dili Guang departed immediately. A few moments later, a white-robed woman with a sword on her back entered and waited below the steps.</p>
+<p>Li Zhouluo dismissed the Jade Court Guards before speaking softly, “Xinghan…”</p>
+<p>Li Xinghan had not managed to attend the hearing at Qingdu Hall, yet as the eldest sister of the current first lineage, she was well informed. Her expression was grim as she stepped forward and bowed.</p>
+<p>“Those elders always like to use public duty for private gain. It must have put you in a difficult position, brother.”</p>
+<p>Li Zhouluo smiled dryly and replied, “I’m thinking about Xingsai’s matter. Zhoufang and the others still think it’s not enough. They don’t just want compensation, they want patronage…”</p>
+<p>He explained at length how to give these people proper aid without breeding further trouble, a delicate balance requiring careful calculation. Li Xinghan sighed inwardly as she listened. In truth, given Li Zhouluo’s family and background, he lacked neither resources nor dharma artifacts. It was only because there was no one else fit for the role that he had been forced to take up the family head’s seat.</p>
+<p>Li Xinghan also understood well that Li Zhouluo, who represented the third lineage, was the only descendant of his branch. His maternal kin were frail, and once Li Chenghuai entered seclusion, it could be said that the entire third lineage consisted of him alone. Without the elder and core support that the first and second lineages naturally possessed, he was already at a disadvantage.</p>
+<p>She could only listen in silence as Li Zhouluo struggled as he did. When he finally finished his long explanation, he paused and asked, “How is fifth brother now?”</p>
+<p>At the mention of Li Zhouming, Li Xinghan’s lips curved slightly as she replied, “I just came from him. Remember the White Falcon Metal I gave him? He came back from Qingdu without even changing his clothes and rushed straight home to make hairpins, no doubt to please some songstress again.”</p>
+<p>The two clearly viewed Li Zhouming differently now. Words that once carried tones of helpless reproach now held a faint trace of amusement.</p>
+<p>Li Zhouluo shook his head. “Elder Chen is as meticulous as ever, so he’ll surely record it again. But I’ve realized Zhouming takes it lightly. When others have their names recorded in Qingdu, they act as though mourning a death. Yet even after being marked and punished, he repeats the same mistakes as if nothing happened.”</p>
+<p>Both of them couldn’t help but laugh. Li Xinghan replied, “I’ll be departing soon to enter the mountains for sword training. But before I leave, I’ll pay Uncle Chengdan a visit and try to talk some sense into him.”</p>
+<p>Li Zhouluo nodded repeatedly. Chengdan was Li Xinghan’s own uncle, and her words carried great weight with him. He said quickly, “Thank you, sister.”</p>
+<p>Li Xinghan held her sword in her arms and left briskly. Li Zhouluo then returned to his work within the hall. Barely fifteen minutes later, Chen Yang entered abruptly, bowed, and announced respectfully, “Family head, wonderful news! Wang Quwan has successfully broken through! He has cultivated the Floating Cloud Body!”</p>
+<p>Li Zhouluo’s eyes brightened. He strode swiftly out of the main hall, raised his head, and indeed saw clouds in the northern sky obscuring the sun.</p>
+<p>He asked at once, “Excellent! The Daoist Master did not waste that Essence Gathering Pill on him. He hasn’t let us down. Where is he now?”</p>
+<p>Chen Yang replied, “Judging by the heavenly signs just now, he’s already broken through. I’m almost certain that he’s on his way here to pay his respects! His seclusion site isn’t far, and the floating clouds have been lingering above for some time, so he should be arriving any moment.”</p>
+<p>“Good!”</p>
+<p>Wang Quwan was unlike the others. He represented the Jiangbei family, whose entire lineage had once aided the Li Family in defending Jiangbei. He had also been personally promoted by Li Ximing, which made his position especially significant.</p>
+<p>Moreover, Wang Quwan’s sword cultivation was formidable and widely reputed. The Floating Cloud Body was no ordinary Dao lineage; it was an Immortal Foundation that represented a Body Divine Ability, which was perfectly aligned with artifact craft. His future could only be described as boundless.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1204.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1206.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

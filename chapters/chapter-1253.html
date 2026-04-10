@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1253: Bei Sea (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1252.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1254.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1253: Bei Sea (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>This young master was, of course, Li Zhouwei.</p>
+<p>Years ago, Li Zhouwei had ambushed and slain Situ Mo, seizing his dharma artifact in the process. Pursued as far as the Wanyu territory, he killed Yunanzi[1] of Changxiao Gate in front of many cultivators and fled into the Sword Gate’s domain.</p>
+<p>The Sword Gate had sent one of its direct disciples, Cheng Xuhua, to receive him and invite him to rest in the prefecture. There was no decree from the Purple Mansion Realm cultivators; no important figure appeared, and he was not invited up the mountain. From that alone, Li Zhouwei understood that the Sword Gate wished to avoid involvement, showing courtesy only for formality’s sake.</p>
+<p>Though Cheng Xuhua was clearly shaken and treated him politely, the courtyard in the prefecture did not even offer him a cup of tea. So Li Zhouwei hastily tidied up, used a Golden Dao talisman, and slipped away into the Eastern Sea.</p>
+<p>It was common knowledge that Changxiao Gate and Hengzhu Dao Gate were at odds, so heading there was impossible. The Qingzhou and Suzhu Reefs lay close together, and Li Zhouwei feared ambush midway. Moreover, his own side had never declared allegiance to Hengzhu Dao Gate. Thus, he did the opposite, traveling all the way toward the Unison Sea.</p>
+<p>After journeying day and night, he reached Bei Sea, where he found a secluded place to offer distant homage to Li Chenghui. Then he entered seclusion to heal and refine his cultivation. He had only recently emerged after having made progress.</p>
+<p>Originally at the late stage of the Foundation Establishment Realm, he had just broken through when he fought his way out of the combined assault of Changxiao cultivators and spirit artifacts, which had greatly unsettled his foundation. After taking a pill to steady his cultivation, he estimated that his cultivation would stabilize completely within half a year to a year, allowing him to begin training secret techniques.</p>
+<p>Only now did he have time to sit quietly, and a faint sigh escaped him.</p>
+<p>I had thought that with Wang Fu dead and Changxiao’s hostility toward the Heaven-Mandated Son already deep, they would still act within bounds when playing the long game against my family. I never imagined that the old dog would strike with such ruthless decisiveness.</p>
+<p>Of all the Li Family, only he and Li Ximing truly understood the power struggle within the Purple Mansion Realm cultivators. What appeared to be Profound Peak Gate’s doing was in truth Changxiao’s long-planned scheme. No one had realized how resolute Changxiao’s intent was. The Purple Mansion Realm formation at the lake could not have been arranged overnight; Li Ximing was bound to expose his whereabouts in the Eastern Sea. Even without Profound Peak Gate’s hand, there would have been other means…</p>
+<p>Now, as his mind calmed, the threads came together,Changxiao’s plot did not begin at the moment the Daoist Master broke through. From the very start, Yehui and Changxiao were already simmering the frog in warm water; they were planning to kill me while keeping up appearances. But when the Daoist Master suddenly advanced, Yehui tried to withdraw, forcing Changxiao to alter their plans and strike first at him instead…</p>
+<p>With no news of Changxiao or Li Ximing, Li Zhouwei had no intention of leaving Bei Sea. Moreover, he had chosen this place with great care. The Dragon King of Bei Sea was none other than the son of Dongfang You. He was highly favored, formidable, and most importantly, the holder of the White Dragon Succession. He was also the father of the White Flood Dragon of Clear Sea and Still Pond, Dingjiao!</p>
+<p>In the past, Li Zhouwei had acted at Dingjiao’s request, helping to bring about the affair between the fox and the dragon. The White Dragon Succession’s moves had never been without purpose. Setting aside sentiment and reputation, there were still things upon him that the White Dragon Succession coveted. Thus, this place was the safest refuge he could find.</p>
+<p>If I were to go south, Hengzhu Dao Gate might exploit my enmity with Changxiao Gate for their own ends. It would be uncertain whose hands I’d end up in. Changxiao’s methods are insidious, while Hengzhu’s authority pales before the might of the Dragon Clans.</p>
+<p>Meanwhile, Hengzhu is at odds with both Golden Feather and Azure Pond Sects, each with their own factions. Daoist Master Yuanxiu once mentioned during his visit that it is not a place to approach lightly. On the other hand, the Dragon Clan likely became aware of my presence the moment I entered Bei Sea. Who knows, perhaps I might even gain an audience.</p>
+<p>So he captured a few demonic creatures to act as his attendants, and began silently calculating in his mind,I killed Situ Mo and seized his dharma artifact… that man had quite a fortune. It’s a pity that Yunanzi’s belongings are too risky to touch as someone might trace them. Otherwise, combined, it would have been a great windfall.</p>
+<p>But since Situ Mo had served the Purple Mansion Realm cultivators, there was no telling if his possessions were safe. It would be fine so long as they remained sealed in the storage pouch; taking them out, however, was another matter.</p>
+<p>Moreover, his Immortal Foundation was exceptionally potent in suppressing and seizing dharma artifacts. He had taken several from Changxiao Gate, but those were not safe for personal use. Upon inspection through the Immortal Mirror, he found that one Mansion Water gourd still bore remnants of a tracking formation carved into its inner wall; it was a true hot potato. He dared not take it out, but planned to sort everything and trade them away while in Bei Sea.</p>
+<p>He then summoned one of his demonic attendants. The demonic creatures of Bei Sea were more learned than those of the southern border, but also more cunning. Yet once they had eaten human flesh, their nature was all alike. They would yield to power, not to kindness, and fear might but not virtue.</p>
+<p>So he made the creature kneel before him and asked, “What sort of place is this Changliu Strait? Are there any markets there that trade in spirit items?”</p>
+<p>The demonic creature seemed to be of a fish species, slimy and dripping water as it quickly replied, “Great king, at Changliu Strait lies Changliu Mountain. There’s a market at its foot, and atop the mountain lives a Purple Mansion Realm Daoist Master called Daoist Master Xiangchun. She’s known for her good nature, treating both demons and immortals equally, and is a close friend of the Bei Sea Dragon King. We demons of Bei Sea rarely have a proper market to trade in…”</p>
+<p>Is that so…Understanding dawned in Li Zhouwei’s heart, and he nodded. “No wonder you creatures seem more cultured, and even half-trained in human form. So there’s a marketplace where you can learn by imitation.”</p>
+<p>These Qi Cultivation Realm demonic creatures could not truly take human form; they merely practiced certain techniques suited for demonic creature soldiers and minions, making themselves half-human and half-creature. Those of purer bloodlines prided themselves and refused such methods. Li Zhouwei merely said, “Then head for the market.”</p>
+<p>The few demonic creatures began to row the boat. Li Zhouwei had already formed an estimate in his heart,Daoist Master Xiangchun… Her mountain gate lies here in Bei Sea, bordering Yinzhou. She is familiar with the Dragon King; her allegiances need no guessing. The Daoist Master once mentioned her as a well-known kind soul. So this Changliu Mountain is right here, perhaps I can use this chance to gather information.</p>
+<p>He sat cross-legged on the boat, eyes closed in meditation. After some time, a commotion rose outside. His spiritual sense immediately extended outward; several blue-robed demons stood before the vessel, and the nervous voice of the toad demon at the bow could be heard, “My lords, please… please wait a moment! There’s also a great king aboard this vessel. I dare not offend either side. If this one grows angry, even you may not withstand it. I beg your caution.”</p>
+<p>The blue-robed demon had two long ribbons tied around its neck, a high nose, and bulging eyes. It had a face full of confidence, though its tone remained courteous as it bowed and said, “Fellow Daoist misunderstands… Please announce us. We come by our master’s order, requesting an audience with the great king.”</p>
+<p>The timid demon had already mustered all its courage just to say that much. Without thinking further, it trembled as it came to report, the blue-robed demon following behind. Li Zhouwei, fully aware of the situation, lifted the curtain of the cabin.</p>
+<p>His golden pupils fixed upon them, making the opposing demon flinch slightly. Li Zhouwei asked casually, “Who is your master?”</p>
+<p>The blue-robed demon bowed deeply and answered respectfully, “Great king, my master is the Vast Sea Dragon King of Serene Source and Dividing Waters, who holds dominion here in Bei Sea. He is currently resting at Changliu Mountain and wishes to invite the great king to meet with him.”</p>
+<p>1. The “子” (zǐ) is an honorific suffix or Daoist title, not part of the person’s given name. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1252.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1254.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

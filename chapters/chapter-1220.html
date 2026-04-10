@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1220: Peacock (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1219.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1221.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1220: Peacock (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The subterranean pool rippled gently, and a frail, timeworn voice rose from its depths, “Daoist Yuse, my thanks for your help this time… Have you brought the Blood-Jade Pearl?”</p>
+<p>Merciful One Yuse smiled and nodded, replying, “You are a grand cultivator who has already passed the Purple Mansion Threshold; there’s no need to be so courteous. Being able to assist you in this perilous place is merely destiny at work. I only hope you recover swiftly and once again capture that great demonic beast. I would only… like to see that flower first.”</p>
+<p>The jade-green pool rippled again, and Chi Buzi’s weary voice echoed, “Fair enough.”</p>
+<p>The surface of the water shimmered, and a bright white flower emerged from the pool. The Merciful One’s eyes lit up as she exclaimed with a smile, “What a rare treasure of the Supreme Yin indeed! Worthy of the Supreme Yang Dao lineage[1]… it truly opens the eyes of a humble cultivator from the backwaters like me.”</p>
+<p>She studied it closely, when a clear and mirthful voice suddenly spoke in her ear, “Beautiful, isn’t it? As long as you think it’s beautiful, that’s all that matters.”</p>
+<p>The Merciful One’s heart jolted in alarm. She spun to see a loose-haired cultivator in blue robes sitting atop a large boulder, smiling warmly at her. A chill ran through her chest as she asked, “Daoist Master… what is the meaning of this…”</p>
+<p>Before she could finish, a shower of crystalline light burst before her eyes. Every hair on her body stood on end as she hastily formed seals with her hands. Layers of multicolored light rose to block the radiance, but her vision blurred, and an icy chill pierced down through her bones.</p>
+<p>A frigid sensation crept up from beneath her feet as the cold touch of rippling water spread across her skin. She realized, to her horror, that she had already stepped into the jade-green pool.</p>
+<p>“Chougui Hidden Form!”</p>
+<p>The Merciful One Yuse had only recently ascended to her current rank, and was by no means a match for Chi Buzi in combat. She hastily formed seals with her hands and spoke urgently, “Great Daoist Master! My fate lies in the hands of Maha Shanxia. If you kill me, you will bind yourself to karmic cause and effect! I beg you to act with caution!”</p>
+<p>The Merciful One had never imagined that Chi Buzi would attack her. Maha Shanxia had already lived through nine incarnations, and Chi Buzi was no enemy of the Buddhist path. Killing her would bring him no benefit whatsoever!</p>
+<p>Both the Merciful Ones and the Mahas were Buddhist cultivators who had attained Non-Retrogression; a level equal to the Purple Mansion Realm. The difference lay in their form of attainment. A Maha’s Non-Retrogression was rooted in their own Maha Seat, embodying the Threefold Non-Retrogression of position, form, and thought. Unless their true spirit was sealed, they were effectively immortal.</p>
+<p>Meanwhile, each Merciful One’s Non-Retrogression was linked beneath the seat of a corresponding Maha. The highest of these sat beneath the Golden Lotus Throne, also called the Lotus Seat or the Great Purshadi Seat, where both form and thought were unwavering. Even if one’s Dharma Body were destroyed in the outer world, it would be restored anew upon returning to the Buddhist land.</p>
+<p>At this level, a Merciful One already possessed the potential to become a Maha, though the conditions were exceedingly harsh. The Buddhist cultivation system was profoundly mysterious; otherwise, how could it have emerged from the chaos of immortals and demons to dominate the entire northern lands? The seven Buddhist Daos and the mortals’ near-fanatical devotion to the Buddhist lands were not without reason; it was far more convenient and safer than the arduous pursuit of one’s own enlightenment.</p>
+<p>Although Yuse’s Non-Retrogression had not yet reached the highest Golden Lotus Seat, she had attained the next tier, the Enlightened Wisdom Seat. Her spiritual will could not regress and could return freely to the Buddhist land. More importantly, as a descendant of the Peacock lineage, her standing along the Dao of Compassion was exceptional. Her death would draw the personal attention of Maha Shanxia!</p>
+<p>If Chi Buzi killed her, he would only shatter her Dharma Body and offend the ninth reincarnation Maha Shanxia along with the entire Peacock race; he would gain nothing. Otherwise, why would Yuse have dared to approach him in the first place?</p>
+<p>Even as events unfolded far beyond her expectations, Yuse remained calm. Having laid out the stakes clearly, she formed hand seals while keeping her eyes on the blue-robed man seated casually on the stone before her.</p>
+<p>He smiled and said, “Little peacock, I won’t kill you. I’ll merely keep you trapped for a while.”</p>
+<p>The Pristine Water rippled gently beneath her feet. Most of Yuse’s confidence had already dissipated in front of the Supreme Yang Dao lineage’s Chi Buzi. Still, she tried to step out of the jade pool by channeling her mana and stepping into midair, only to find that the pool followed her like a shadow, clinging beneath her feet.</p>
+<p>Chi Buzi raised an eyebrow and remarked casually, “In the end, you’re just a peacock, a demonic creature inferior by nature. You practice the Merciful One’s path yet know no divine ability, nor have you learned any proper spell arts. If you had met anyone else, they’d have slapped you dead in two strikes!”</p>
+<p>Though he appeared nonchalant as he sat upon the rock, Chi Buzi was turning a small cauldron in his hand. It gleamed with a bluish radiance, exuding an overwhelming stillness that filled the carefully arranged cavern. A faint azure mist hung in the air; it was clear that power was gathering, ready to be unleashed.</p>
+<p>In truth, the descendants of the peacocks also carried Purple Mansion Realm blood. Though not on par with the dragon and luan lineages, they were by no means inferior to most. Unfortunately, she had met Chi Buzi, the Chi Family’s greatest prodigy in three centuries. The jade pool beneath her and the blue mist above worked in concert to restrain her, preventing escape into the great void.</p>
+<p>Maintaining a thin veneer of composure, Yuse said, “I do not know what request Daoist Master has. You need only speak plainly to this junior; there is no need to press me so harshly…”</p>
+<p>Yuse only possessed the Non-Retreat of Thought, not the Threefold Non-Retreat. Her Dharma body and Merciful One’s seat were exceedingly precious. Even knowing that the opponent could not, and had no reason to, kill her, she still could not bring herself to move.</p>
+<p>Chi Buzi raised an eyebrow, glanced at her, and smiled, “I’ve been cultivating a certain spell art these past few years that requires peacock blood, peacock feet, and peacock feathers. This time, I came to borrow your Dharma body for a bit.”</p>
+<p>Yuse immediately let out a breath of relief. After all, those parts were nothing compared to her entire Dharma body. Of course, had she not been trapped, she never would have agreed, but this request seemed reasonable enough.</p>
+<p>She spoke softly, “I—”</p>
+<p>Rumble…</p>
+<p>Before she could finish, the small cauldron in Chi Buzi’s hand appeared above her head. The intense power of Pristine Water poured down upon her. In the instant she hesitated, intricate formation patterns rippled across the jade pool beneath her feet.</p>
+<p>A sudden chill seized Yuse’s heart. The power within Chi Buzi’s cauldron had clearly been accumulating for an unknown length of time. When it descended upon her, it shattered her mana and left her completely immobile.</p>
+<p>Chi Buzi remained seated on the rock, motionless, his eyes glinting with mockery,Once fooled wasn’t enough, you had to fall for it again… Truly foolish. The Buddhist lands breed nothing but idiots like this…</p>
+<p>Even though Chi Buzi was a Grand Daoist Master who had crossed the Purple Mansion Threshold, Yuse was not someone he could kill with ease. At most, he could temporarily suppress her, force her back to her original form, and trap her above the jade pool.</p>
+<p>A wave of terror surged within Yuse. She was at her weakest, unable to move, and any spirit artifact he revealed now could easily wound her. Yet she still hesitated in her heart,At most, he covets my entire Dharma body… He couldn’t possibly have a Dharma relic capable of killing me, could he?</p>
+<p>In that fleeting moment of doubt, the formation beneath her feet blazed with white light. Yuse’s figure faded instantly, and the dignified Merciful One beneath the Enlightened Wisdom Seat vanished without a trace, leaving only swirling iridescence within the empty cave.</p>
+<p>Chi Buzi’s gaze darkened as a faint sensation of weightlessness crept over him. He understood immediately,So they could even take Yuse away like this… Clearly, it wasn’t Him who acted, there must be multiple True Monarchs above in the Heavens…</p>
+<p>Spirit artifacts are useless. Even when I’m outside the formation, I can still be pulled into that grotto heaven. It seems that there’s still no escaping them even at the very ends of the sea. The Heavens are far above the merciful Buddhist lands, beyond the great void itself, in the Outer Heavens…</p>
+<p>Peacocks, so stupid and dull. It wouldn’t surprise me if they circled back to catch another one here. Ah, it looks like I’ll be seeing that chatty fool of a donkey again soon…</p>
+<p>1. The author wrote Supreme Yang here, and I’m not sure if it’s a mistake. I’ll change it when it’s confirmed. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1219.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1221.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

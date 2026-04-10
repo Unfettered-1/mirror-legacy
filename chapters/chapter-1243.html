@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1243: Refining A Pill Through Fate (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1242.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1244.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1243: Refining A Pill Through Fate (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing sat quietly in place, his gaze deep and solemn as he thought,Wang Quwan… Wang Quwan… Is this the will of Heaven or the hand of destiny?</p>
+<p>Li Ximing slowly closed his eyes. His kinsman Li Jiangqian at home had also received the talisman’s response and would surely sense this event. Since he was overseeing matters there, Li Ximing did not need to rush back.</p>
+<p>He turned his eyes toward the jade box. Inside, a stalk of Moon Orchid remained vibrant, its eight small blossoms blooming with a faint white glow.</p>
+<p>What a fine portion of Purple Mansion Realm nourishment.</p>
+<p>Li Ximing’s sight was no longer what it once was. A trace of heavenly light resided between his brows, allowing him to discern the grades of many treasures. Though he could not identify exactly what Supreme Yin spirit item this was, he could tell it was of Purple Mansion Realm and was comparable to the Horn Wood Golden Tassel.</p>
+<p>Perfect timing to open the furnace and refine pills. I even carry one great ingredient within myself.</p>
+<p>After steadying his mind, he began to feel around his own body, pressing precisely down on his dantian. Then, he used a thumb and forefinger to gently pull it apart. A tearing sound rang out. The flesh of his lower abdomen parted open, revealing the qihai within his dantian. Brilliant golden light poured forth, illuminating the entire cavern.</p>
+<p>Li Ximing hastily rolled up his sleeves, reached into his own abdomen with his other hand, groped for a moment, and slowly pulled a lustrous white bead out. It was smooth, round, and crystal-like, no larger than a grain of rice at first. But the moment it left his body, it swelled to the size of a fist and exuded a heady fragrance.</p>
+<p>Li Ximing almost failed to hold it steady. His entire body’s divine ability surged into motion as he invoked the suppressive power of the Heaven-Venerating Gate, finally forcing the bead to stop expanding.</p>
+<p>“Huff!”</p>
+<p>This was the refined spiritual qi from the Hidden Refinement Pool, tempered by the Valley Wind Leading Fire. For a Foundation Establishment Realm cultivator, storing such a thing within the qihai would mean it could neither be exhausted nor moved. Even for a Purple Mansion Realm cultivator, it would take long cycles of circulation to draw it out normally.</p>
+<p>Fortunately, Li Ximing’s mind was quick and practical; digging it out by hand was faster. He loosened the fingers holding his wound, brushed lightly over the skin, and the flesh mended instantly, leaving not even a scar.</p>
+<p>But my ability to suppress divine ability has weakened greatly without the aid of the Valley Wind Leading Fire.</p>
+<p>Gazing at the bead in his hand, Li Ximing immediately began analyzing it with the eyes of an experienced alchemist.</p>
+<p>It’s pure essence imbued with the mana of the Lesser Yin Dao; it has also lingered within my qihai long enough to be tainted with traces of Bright Yang. If refined into a pill, it should yield a batch of spirit pills that expand divine ability and carry marvelous effects.</p>
+<p>After all, this qi pill requires constant suppression by my divine ability. If I release it even for a moment, it might erupt and form a mountain of spiritual qi. Keeping it in my hand forever is hardly a solution.</p>
+<p>His expression suddenly turned odd.</p>
+<p>Well, it’s not as if I couldn’t carry it… I could always open my belly again and let the Valley Wind Leading Fire keep watch over it…</p>
+<p>Of course, that was a joke. While the Valley Wind Leading Fire could suppress it effortlessly, the bead had grown to the size of a fist, and could hardly be stuffed back into the qihai now.</p>
+<p>Though he had not yet refined the Profound Fire of the Three Phases’ Guard, with the Valley Wind Leading Fire still available to him, Li Ximing figured one hand was enough to manage. He took out the vermilion ceramic bowl, flicked his finger lightly against it.</p>
+<p>Rumble!</p>
+<p>The Profound Fire of the Three Phases’ Guard burst forth once again, its brilliant red light illuminating the entire cave. Li Ximing inhaled lightly.</p>
+<p>A rushing sound followed as the entire flame surged eagerly from the bowl, flooding toward him with his breath. In the blink of an eye, the red brilliance vanished from the cavern, leaving only an empty vermilion-glazed bowl resting in his palm.</p>
+<p>As soon as the Profound Fire of the Three Phases’ Guard entered his body and tried to scatter, the Valley Wind Leading Fire flared with a dazzling brilliance. It unleashed a powerful pull, like a starving beast, that bound the Profound Fire in place. The flame shimmered faintly as it fell completely under Li Ximing’s control.</p>
+<p>He leisurely guided the fire downward and settled it within the Juque Court, where the Bright Yang purple flame not only refrained from conflicting with the True Fire but even yielded space, encircling it protectively.</p>
+<p>Only then did Li Ximing open his eyes. His pupils first turned a bright red, then briefly shimmered with pale gold before fading back to their normal hue.</p>
+<p>“Excellent!”</p>
+<p>With the Hidden Refinement Qi Pill and Moon Orchid in hand, Li Ximing felt at ease and began contemplating a method for refinement.</p>
+<p>I have no matching pill formula. If refined separately, I could only improvise, and the results wouldn’t be anything remarkable. But if refined together, Pure Essence, Lesser Yin, Supreme Yin, and Bright Yang all coexist without conflict. I could forge a great pill!</p>
+<p>Yet pill refinement follows the order of ruler, minister, assistant, and envoy. The Moon Orchid is a major ingredient, and so is the Hidden Refinement Qi Pill, neither inferior to the other. If one acts as the ruler and the other as a forceful minister, their differing natures will clash. Even if I force a success, the medicinal power would be wasted.</p>
+<p>The Xiao Family’s pill techniques were of the traditional Jiangnan pill techniques, but Li Ximing had long transcended Xiao Yuansi’s teachings. Of the methods he mastered, True Profound Heart-Cleansing Pill and Heavenly Quintessence-Expelling Pill differed only in formula but shared similar foundations. The Heaven’s Will Single-Intent Method, acquired from the end of the sea, however, was a complete and independent alchemical system of its own.</p>
+<p>The Heaven’s Will Single-Intent Method demands deep Dao attainment; that’s not the hard part. But it requires one’s own fate as the main catalyst for pill refinement… tch…</p>
+<p>Li Ximing was already a master in alchemy, with insight far beyond most Purple Mansion Realm cultivators in Jiangnan. The Heaven’s Will Single-Intent Method had elevated his comprehension of pill refinement and broadened his vision of the Dao of Alchemy to a higher realm.</p>
+<p>In Jiangnan alchemy, one refined by nature, matching the elemental properties of spirit items. Thus, the alchemist’s skill was tested in mana, cultivation, and divine ability. The Heaven’s Will Single-Intent Method, however, refines through destiny, matching the life rank of each spirit item. The refiner is tested in Dao attainment, fate, and inherent rank.</p>
+<p>Spirit items also possess both nature and life. The Moon Orchid’s inherent rank is astonishingly high, but the Hidden Refinement Qi Pill is essentially condensed mana, nature without life. Even after circulating through my body, it’s still far inferior to the orchid!</p>
+<p>If I use the Heaven’s Will Single-Intent Method, and use the Moon Orchid as the ruler herb and the Hidden Refinement Qi Pill as the steadfast minister, the pairing of Lesser Yin supporting Supreme Yin would be perfect! Moreover, the orchid was born from my mouth, the qi pill from my belly; they share one fate and origin. Such a natural harmony, who else but I could complete this pill?</p>
+<p>A sudden clarity dawned on Li Ximing. Through his own exploration, he had faintly glimpsed a higher plane of alchemical mastery!</p>
+<p>Excitement welled within him. He struck the furnace with a palm, and the brilliant red Profound Fire of the Three Phases’ Guard burst forth, spiraling around both sides of the pill furnace before pooling at the base as a sea of crimson profound flame.</p>
+<p>He had never been so focused. Drawing out a piece of White Jade Spiritwood gifted to him upon breaking through to the Purple Mansion Realm, a treasure long kept, he cast it into the true fire first.</p>
+<p>His storage pouch at his waist trembled slightly. Boxes long and short, jade bottles large and small, were all lifted out by his divine ability mana. Huiyuan Spirit Water, Wuxi Sand, and Yang Essence Spirit Herb along with various spirit items streamed forth, leaping one after another into the furnace.</p>
+<p>A layer of thick, bright purple pill liquid gradually condensed at the bottom of the furnace. The Hidden Refinement Qi Pill fell into it, instantly threatening to erupt into a storm of boundless spiritual qi. Li Ximing’s heavenly light flared between his brows, and a white divine ability surged forth, suppressing the violent spiritual qi and binding it firmly within the furnace.</p>
+<p>When the final stalk of Moon Orchid dropped in, Li Ximing immediately sealed the furnace lid, pressing both palms against its sides. Bright Yang divine ability spread over the surface. He closed his eyes tightly and poured his full strength into the refinement.</p>
+<p>This pill embodies everything I have ever learned. It will surely mark the pinnacle of my alchemical life thus far!</p>
+<p>————</p>
+<p>Southern Sea.</p>
+<p>The Stone Pond Sea was the region of the Southern Sea with the least land, often called the Ten Thousand Miles Stone Pond. It bordered the southern frontiers to the north, Songzhou to the east, and Lüfang to the south. Beside the Azure Pond Sect’s Northern Dan State, it was scattered with countless tiny islands adjoining several continents. It had seen peace and stability return in recent years, allowing trade to grow more prosperous than ever.</p>
+<p>The scenery in Northern Dan was serene and graceful. At its center rose Elephant Mountain, more than two thousand meters tall. A great pavilion rose at the summit, bustling with cultivators coming and going. Beyond it stood another smaller pavilion, nestled in the quiet rear courtyard.</p>
+<p>A man in white stood motionless within. He had an elegant, noble appearance, with a long face and brows set close to his sharp eyes, giving him a refined and commanding grace. He held a pure white sword, interwoven with seven-colored radiance, in his hand.</p>
+<p>A surge of sword qi brewed along the blade’s spine. His brows furrowed slightly, his eyes closed as his face paled. The sword light flickered uncertainly for several breaths, on the verge of bursting forth, until he suddenly opened his eyes.</p>
+<p>“Cough.”</p>
+<p>He coughed twice, and clusters of osmanthus blossoms slipped down his robe, scattering across the ground in a ring of golden light. Though he had only lost focus for an instant, the sword light had merely wavered instead of erupting. It was proof of this man’s extraordinary mastery of both spell arts and sword arts.</p>
+<p>This man was none other than Li Xizhi, Rosy Glows of the Celestial Pavilion, head of the Jiutian Pavilion, direct descendant of the Moongaze Immortal Family, and the current ruler of Northern Dan’s Stone Pond territory.</p>
+<p>Li Xizhi steadied his mind, and the sword’s radiance instantly calmed. All the fallen osmanthus blossoms swirled upward with a graceful flick of his sleeve. A jade box leapt from his waist, swallowing them whole before vanishing into his storage pouch. No trace was left behind.</p>
+<p>He lifted his brows slightly, eyes flickering with a glint of confusion and awe,The Immortal Mirror fragment… which disciple of my family has encountered such a fate?</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1242.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1244.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

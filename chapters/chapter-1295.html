@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1295: The Curtain Rises (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1294.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1296.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1295: The Curtain Rises (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After the two Daoist Masters settled matters, they departed together into the great void, leaving behind only a letter from Li Ximing stating that the family had entrusted affairs to Li Jiangqian and the other.</p>
+<p>Li Jiangqian escorted the two with proper courtesies until they vanished, then turned to look at Li Xuanxuan beside him. The old man stroked his beard and sighed, frowning.</p>
+<p>Li Xuanxuan could not possibly have missed the meaning of the two Daoist Masters, yet he still held Li Quantao in high regard. Rising to his feet, he said, “You should think carefully before acting. Quantao once saved Zhi’er. Although this matter is beyond his ability, it would have been better if Ximing were here and could say a word or two. Now that he is absent, there is no authority to intervene.”</p>
+<p>Li Jiangqian replied, “You are overthinking it, elder. The two Daoist Masters specifically explained this to our family, having already taken into account that Li Quantao carries some Wei’s Li bloodline. At the same time, he is also a cultivator of the Azure Pond Sect. With these two identities, the Ning Family will not stint him. It is also a blessing.”</p>
+<p>Li Xuanxuan did not know whether he spoke this way out of suspicion that Ning Wan had not yet left or because he truly thought so. He nodded and withdrew. Li Jiangqian, meanwhile, fell into thought. In his heart, he summoned the Immortal Mirror, saw that there was no one in the great void, and only then dared to think further.</p>
+<p>With talisman seeds on me, Ning Wan’s Clear Hearing should not be alerted even if malicious thoughts arise. However, if she were to listen intently, who knows what she might hear?</p>
+<p>He pondered for a long time, troubled in his heart, just as Li Minggong entered from outside the hall, her brows tightly furrowed. Clearly, she had already learned of the mess her father Li Xixuan had caused while she was in seclusion recovering from her injuries.</p>
+<p>Upon seeing Li Jiangqian, Li Minggong asked about the matter with the Daoist Masters earlier and said gently, “Someone just came to report that the Daoist from Jingyi Mountain has come out of seclusion. He has read the letter Jingyi Mountain sent and wishes to see me, so I told him to come here and we can ask him together.”</p>
+<p>Li Jiangqian had long harbored doubts. Since Shouding had finally emerged from seclusion, he quickly nodded and invited him to come up. Sure enough, a narrow eyed Daoist appeared before them. His face no longer bore the withered look from when he was injured, though it was still somewhat pale.</p>
+<p>Upon seeing the two, he bowed, “Many thanks for Moongaze’s kindness in taking me in. When I return to the mountain, I will surely repay this favor.”</p>
+<p>“There is no need for repayment.” Li Minggong remained courteous and answered with a single line before falling silent in the main seat.</p>
+<p>Li Jiangqian chuckled softly, helped him up, and asked softly, “Back then, Daoist Master Changxi entrusted Kong Gumo to Jingyi Mountain. How is he now? Daoist Master Changxi’s foresight was exquisite; he calculated everything to preserve the spark. My family had deep ties with the old Daoist Master. I wonder how he instructed your sect. He must have spoken with great earnestness.”</p>
+<p>His eyes were filled with sorrow. One hand rested behind Shouding’s back as he shook his head slightly, his voice tinged with emotion. Moved by his tone, Shouding listened and said with a sigh, “Is that not so! It turns out the old Daoist Master had also made things clear to your family. Preserving the spark was the top priority; everything within the mainland came second. Our side should do what it can, but once a great war arose, we had no choice but to stop.”</p>
+<p>As expected.Li Jiangqian sneered inwardly,This was exactly Daoist Master Changxi’s plan. He told my family that Jingyi Mountain would help, yet was deliberately vague about how much. Daoist Master Xuanyi truly only agreed to preserve Kong Gumo.</p>
+<p>As for this Sumian, with his hypocritical face, repeatedly insinuating blame toward Jingyi, could that old thing really be ignorant? He must have added fuel to the fire, harboring who knows what intentions. Fine then. Not a single one of them is any good.</p>
+<p>His expression remained unchanged. He did not fully believe Shouding’s one sided account and instead sighed probingly, “For your Dao lineage to provide such protection, your relations with Profound Peak Gate must be quite good. As for the east…”</p>
+<p>He had only gotten halfway through his planned speech when Shouding waved his hands as if he had seen a plague and shook his head, saying, “Family head, you misunderstand. Our Dao lineage does harbor some lingering sentiment toward the old Daoist Master, but the relationship truly was not deep. We were not familiar in the early days.”</p>
+<p>He paused slightly and explained, “As for having similar Dao lineages, that is not the case either. It was only that we had made a prior acquaintance, and Yuezhou Island lies close to our mountain gate. We also urgently needed such a marketplace to attract talent and replenish spiritual resources. That is how today’s matter came about.”</p>
+<p>He was clearly indicating not to let Profound Peak Gate get involved. Li Minggong sighed inwardly for Kong Gumo and said gently, “So that is how it is. What does the immortal mountain say, and how does our family need to cooperate?”</p>
+<p>This was asking about the next arrangement, and perhaps even about sending him away. Shouding immediately grew awkward and answered evasively, “The mountain hopes that I may stay temporarily within the mainland.”</p>
+<p>He immediately began to explain himself. “This would not trouble your esteemed family. We have already imposed for many years. Our Daoist Master has some acquaintance with the Chen Family, so I will head south at once to Tongmo Prefecture.”</p>
+<p>Li Jiangqian knew as soon as he heard this that the man was clumsy with words. He could have simply used the excuse of having matters to attend to with the Chen Family, yet he insisted on saying so much. Li Jiangqian sighed inwardly at his oblivious expression,If you dare head south, the Yuyang Chen Family would not dare take you in. You might even frighten their Daoist Master into personally coming out of seclusion, and that would only create awkwardness.</p>
+<p>This was a favor given for free. The Yuyang Chen Family already had a history of dealings with the Li Family. They fought together over the Radiant Sky Stone back then and eliminated Wang Fu. Li Jiangqian immediately sensed the advantage and smiled as he said, “I see that your injuries have yet to fully recover, and there is no need to rush. Let our guest cultivator first examine your condition while we send a letter to inquire with the Chen Family. Would that not satisfy both sides?”</p>
+<p>Shouding felt somewhat at a loss, but Li Jiangqian’s warm insistence was hard to refuse. He could only nod and go off to seek Sun Bai. Li Minggong looked over thoughtfully, while Li Jiangqian wrote two letters.</p>
+<p>One letter was sent to Jingyi Mountain, stating that Daoist Shouding wished to visit the Chen Family but had been temporarily held back by the Li Family. The other was sent to the Chen Family with similar wording, but with the addition that an inquiry was specifically being made to avoid any inconveniences.</p>
+<p>He had them dispatched at once. Turning to Li Minggong, he smiled and said, “A favor given for nothing. It is always good to maintain good relations with Purple Mansion Realm powers, so as to avoid awkwardness later. Otherwise, the Chen Family might feel resentful and think our family failed to step in, leaving both sides uncomfortable.”</p>
+<p>The two discussed matters of Jiangbei and waited well into the night. Suddenly, they noticed the northern sky growing faintly bright as a beam of intertwined black and white light shot into the heavens with tremendous momentum.</p>
+<p>Although the light was too distant to discern any specific aura, the way the black and white colors intertwined was exactly the same as within the command token earlier. There was no need for further thought. It was clearly the manifestation of a treasure in the world.</p>
+<p>Purple Mansion Realm Daoist Masters are indeed different. Their actions are truly decisive.</p>
+<p>Li Jiangqian stepped out of the hall, watched the sky for a while, listening intently. He tightened his black outer robe, laughed softly, and ordered, “Someone come. Prepare generous gifts. We are going to meet this so-called heir of Mifan.”</p>
+<p>Qu Buzhi quickly came over from the side, holding a jade tray with several spirit items upon it, and followed closely at his side. A trace of fear arose in the old man’s heart,This is bad. There truly is some heaven reaching command token. The outer-sea is full of bloodshed, with the Devil Dao running rampant. That place is indeed filthy. As for the mainland, though it looks bright on the surface, it still cannot avoid being tainted.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1294.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1296.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

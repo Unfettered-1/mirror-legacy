@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1282: Frost (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1281.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1283.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1282: Frost (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake.</p>
+<p>Moongaze Lake was no longer as tranquil as it usually was. It had become lively and festive, with every hall on the central island draped in red. Those coming and going were all prominent figures of the family, making it clear that a great joyous occasion was underway.</p>
+<p>Li Zhouming stood proudly in the hall, dressed in red. Beside him, seated upon a large jade stone chair, was an elderly man in a dark red robe, his hair completely white and his face full of smiles.</p>
+<p>Li Zhouming said with a smile, “Father… this time I have truly brought you honor.”</p>
+<p>Li Zhouming’s mother had passed away early, so only his father was present. Li Chengzhi, who had already lost most of his teeth, merely shot him a look and replied, “This marriage was arranged by your grandfather. What honor could it possibly bring?”</p>
+<p>Though he spoke that way, seeing his child marry a direct descendant of an Exalted Immortal lineage and a high level Foundation Establishment Realm cultivator still filled Li Chengzhi with pride. The smile on his face was unmistakable. He watched his son go down to receive the bride and drank a few extra cups of wine, his face and ears growing warm and flushed.</p>
+<p>Li Chengzhi was well connected within the family, and even the direct lineage of the Purple Mansion Realm treated him with respect. Li Zhouming was also a direct heir of the first lineage. The combination of those two statuses made the wedding even grander than that of the family head, and every notable figure around the lake had arrived.</p>
+<p>The old man raised his brows and glanced around, guessing that his father Li Ximing would not be coming. He invisibly settled back into the chair, feeling no extra emotion. He was long accustomed to it.</p>
+<p>From the moment it was determined at the age of six that he could not cultivate, his father had cast him aside. Even if his innate ability had been mediocre, having even a single spiritual orifice would have allowed him to learn some craft. Yet as a mortal, he could only remain bound below the mountain. The family rules back then were even harsher than they were now. In truth, Li Chengzhi believed he had endured real hardship. The suffering and bitterness he experienced were not necessarily less than those borne by his cultivating brothers.</p>
+<p>For this very reason, Li Chengzhi felt little attachment to the family’s order and inheritance. It was not until Li Zhouming was born that he truly developed different emotions. Whether other legitimate sons or concubine born sons lived well or poorly, he would at most lend some assistance. It was only for Li Zhouming that he set aside all his pride and went to plead with Li Ximing, wishing to arrange everything perfectly.</p>
+<p>As for the other children who had been sent out, he no longer had the energy to concern himself with them. From that point on, Li Chengzhi no longer harshly blamed his father in his heart. After all, he had become the same kind of person as Li Ximing. Everything was thus eased and released. Li Chengzhi had to admit that he himself had drawn a mark of acceptance in red ink over the pains he had suffered throughout his life.</p>
+<p>As drums and gongs thundered through the hall and congratulations filled the air, the newlyweds entered from outside amid great bustle. Seated at the place of honor, the old man drank the wine offered by his daughter in law. He could no longer care who was right or wrong, nor distinguish right from wrong.</p>
+<p>As he looked at Li Zhouming clad entirely in bright red robes, his whole body grew hot and his eyes reddened at once, leaving him with only a single sentence to say, “As long as the two of you live well together, that is best. It is only a pity that I will likely never see your child.”</p>
+<p>Though Li Zhouming was somewhat playful, his nature was never bad and his emotions were easily stirred. Tears glistened in his eyes at such words on such a joyous day, and he choked out a few muffled sounds.</p>
+<p>After the many rituals were completed, a crowd gathered around him, dispersing his sorrow, and cheerfully moved them to the next place. Once Li Zhouming left, the area immediately grew quiet. The liveliness of the crowd shifted elsewhere. The wind blew back into the hall, and the stone chair beneath him grew piercingly cold. As the effects of the wine faded, Li Chengzhi felt only a creeping chill within his body.</p>
+<p>This jade stone chair is, after all, meant for immortals. It is truly cold.</p>
+<p>————</p>
+<p>Figures hurried about within the grand hall at the center of the island. An elderly man dressed in black climbed several flights of steps and entered the great hall. He bowed in the spacious chamber and spoke respectfully, “Family head, both Hidden East and Brahma Cloud are now searching for the command token. Brahma Cloud Cave has sent a direct descendant of Chengyun Gate to personally take charge of the matter. The three streams region has been stirred up, and the momentum is considerable.”</p>
+<p>Above him, Li Jiangqian had his eyes closed and fingers pinched in calculation. Strands of Radiant Fire wisped from between his lips and teeth as if he were cultivating a spell.</p>
+<p>His brows rose as he replied, “Good.”</p>
+<p>Of the three streams of Jiangbei, White River Stream was divided among three factions. Aside from the Li Family’s Floating South and Capital Immortal Dao’s Hidden East, the remaining Brahma Cloud Cave was a vassal of Chengyun Gate. The dispatch of a direct descendant could not truly be for the sake of searching for a command token. It was clearly Chengyun Gate quietly expressing its support for this arrangement.</p>
+<p>This was undoubtedly excellent news. Without the recognition of a Purple Mansion Realm cultivator, Li Jiangqian had never truly felt at ease. The reason the old man only mentioned Hidden East and Brahma Cloud searching for the command token while omitting the Li Family’s Floating South was because Floating South was sparsely populated. Most cultivators stationed there were bound by term based evaluations and had no opportunity to leave their posts to search. As for whether the various forces under the Li Family’s rule were making any moves, that was a matter for Qingdu and the Jade Court.</p>
+<p>Li Jiangqian considered it briefly and felt like the timing was ripe. After all, only one year and five months remained until June of the twenty second year of Shenxuan. He then asked quietly, “You… Have you received any news from Hidden East?”</p>
+<p>Communication with the Capital Immortal Dao was being handled by Qu Buzhi. This elder was sharp yet flexible, and he had previously met Guan Gongxiao and knew some of the inside details.</p>
+<p>Qu Buzhi replied, “I received a brief message in the morning. It said the candidates have been selected, but the location of the command token is still unknown. Lord Gong said that he himself found it, but that is likely not true.</p>
+<p>“As for the candidates, the first one Lord Gong selected is a Daoist from the Southern Sea, cultivating on a mountain in the sea. He is adept at using poisonous insects and ferocious beasts. He cultivates the Locust Shade Ghost, and his Dao title is Daoist Bai.</p>
+<p>“There is also a cultivator from the Northern Sea who cultivates Stable Earth. His Dao foundation is not yet known. Only his surname, Huang, is known.”</p>
+<p>The reason Guan Gongxiao described both candidates so clearly was first to ask whether there were any issues, and second to give notice in advance, to prevent the Li Family from contacting the chosen candidates and inadvertently ruining the matter.</p>
+<p>As for Guan Gongxiao claiming that he himself went to search for it, that was merely Capital Immortal Dao hastily fabricating one. The Capital Immortal Dao was not a lineage skilled in artifact refining, so it was naturally not genuine and difficult to convince others.</p>
+<p>Li Jiangqian pondered for a moment, then replied, “Go and reply to Daoist Gong. If there are several candidates, then find ways to invite a few of them over. Once they are stationed locally, the command token will naturally reveal itself. If not, we will consider other options.</p>
+<p>“However, the three streams region must be thrown into disorder. It is currently too stable, which instead makes it unsuitable.”</p>
+<p>After receiving the order, Qu Buzhi withdrew at once. Li Jiangqian continued to contemplate the matter. However, when he heard a report from below that Chen Yang was waiting outside the door, he instructed, “Invite Dharma Protector Chen to come up.”</p>
+<p>Soon, Chen Yang, dressed in black, stepped into the hall. Though he ran about constantly day after day, his cultivation had risen quickly. His Immortal Foundation allowed his aura to remain robust and full.</p>
+<p>He said respectfully, “Greetings, family head. I have a matter to report. Grace Covenant Gate has sent someone to deliver gifts.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1281.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1283.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

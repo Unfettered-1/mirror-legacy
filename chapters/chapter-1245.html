@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1245: Jia-Yi Form Pair (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1244.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1246.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1245: Jia-Yi Form Pair (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Yang Xiao’er nodded silently. Chi Wei had annihilated several generations of prodigies, and Chi Buzi had vanished. With Yuanxiu’s death, the Azure Pond Sect would be left without a single divine ability, yet as part of the Supreme Yang Dao lineage, none would dare offend it. The outer-sea interests, however, would surely be lost.</p>
+<p>Though Li Xizhi had a younger brother in the Purple Mansion Realm and was an influential figure within the Azure Pond Sect, to the point where even Thunder Island wouldn’t dare act against him, the Stone Pond he had governed for so many years might very well turn to dust.</p>
+<p>What worried Yang Xiao’er the most, however, was Tantai Jin’s stance. She lowered her voice even more and said, “Tantai Jin now acts as the acting sect master. If something happens to Yuanxiu and he still refuses to recall you, that will be real trouble. The Nine Mounds Dao lineage behind him is far from simple, they fear no ordinary Purple Mansion Realm cultivator.”</p>
+<p>“It won’t come to that.” Li Xizhi shook his head and replied, “He won’t leave me stationed here; there are far more critical places than the Southern Sea. Even if he means to hand Stone Pond to the devil cultivators, sending the Lingu Family would make more sense. Right now, I’m a stabilizing presence; Tantai Jin still needs me. What worries me is if the Miao Family and Changxiao faction collude; that would be troublesome.”</p>
+<p>Yang Xiao’er bowed her head slightly. Just as the couple were speaking, the black radiance on the door suddenly flickered. She immediately fell silent. A few breaths later, a knocking sound came.</p>
+<p>Knock, knock…</p>
+<p>“My lord, Lord Quan has returned to Northern Dan and wishes to report to you!”</p>
+<p>Li Xizhi’s heart stirred. He gave his wife a slight nod to calm her unease, then opened the door and said warmly, “Let him bring his men up.”</p>
+<p>Quan Yuduan entered briskly before long, followed by a young man in black who looked around uneasily. Behind him came the sword-bearing Si Xunhui, while Li Wushao brought up the rear with a grave expression.</p>
+<p>“Greetings, Master / Grandfather / Lord!”</p>
+<p>Li Xizhi swept his gaze over them, but did not see Li Chenghuai. After a brief moment of contemplation, his expression remained unreadable. He turned to Li Zhouluo with a faint smile and said, “Be seated.”</p>
+<p>Once everyone had taken their seats, Li Xizhi raised his brows and asked, “How did Chenghuai reply?”</p>
+<p>Quan Yuduan offered a letter with both hands and said, “The young master did not respond verbally. He wrote a letter and asked me to deliver it to you.”</p>
+<p>Li Xizhi accepted it lightly, pressing the letter onto the desk before looking toward Li Zhouluo with a smile. He said, “Luo’er, you’ve traveled far and hard. I have a residence prepared for you. Go, rest and recover for now.”</p>
+<p>Li Zhouluo naturally had no objections and nodded quickly. Li Wushao led the others away. What Li Xizhi cared about most at the moment was the fragment of the Immortal Mirror. Logically speaking, he had only just glimpsed its vision, so there was no reason for Si Xunhui and the others to have emerged so quickly.</p>
+<p>Frowning, he asked, “Xunhui, how fared the Mifan Dao lineage exploration?”</p>
+<p>Si Xunhui gave a wry smile and shook his head, replying, “Master, when we entered the underground palace and reached its deepest chamber, there was an inverted altar where converging waters flowed backward. It was a place vast within the small. But inside was utter darkness, and we were besieged by water, fire, and lightning. The Foundation Establishment Realm cultivators who went deeper were barely able to endure. We lingered on the outskirts, gathered one or two useless spirit items, and had no choice but to retreat.”</p>
+<p>Li Xizhi understood immediately and nodded as he replied, “It seems the place requires at least Foundation Establishment Realm to enter properly. It seems we can’t reach it for now. You’ve done well to endure floods, flames, and thunder for years. That tempering has surely benefited you. Focus on your cultivation for now…”</p>
+<p>Si Xunhui bowed, presenting a jade slip respectfully as he said, “I took the time to record every obstacle we encountered. Everything is contained within this slip, so that the sect may study them and perhaps aid future disciples.”</p>
+<p>Li Xizhi chuckled and shook his head. Si Xunhui was already the fastest cultivator of the Mifan Dao lineage, and no one else could match the Si Family’s young master. Such notes held little meaning. He waved him off dismissively.</p>
+<p>Quan Yuduan withdrew as well. Only then did Li Xizhi pick up the letter, unfold it, read in silence for a while, and finally fold it again with a long sigh.</p>
+<p>“Sigh…”</p>
+<p>Yang Xiao’er came out from the hall once more. Li Xizhi ground the ink and said softly, “The boy also shows a desire to come out, but he still has knots in his heart. I’ll speak with him, let him stay by my side for a few years, and have Zhouluo married before sending him back. Once the Southern Sea stirs again, we may never have such calm days.”</p>
+<p>————</p>
+<p>Moongaze Lake.</p>
+<p>Morning light rose over the orderly islands of the Wan Family’s domain, gilding the great hall’s floor tiles in gold.</p>
+<p>Clad in crimson robes, Li Jiangqian paced the hall. The Dao Stipend reform had been in motion for several months, which had created countless rules and details to amend. To make matters worse, the season of sacrifice had arrived. With little time and his cautious nature, he ultimately chose not to risk capturing a Foundation Establishment Realm demonic creature.</p>
+<p>Upon reflection, it was no real loss. He had only just broken through to the Foundation Establishment Realm; receiving the talisman now would merely stabilize his realm. It would be better to wait five or ten years, refine himself to mid or late Foundation Establishment Realm, and undergo the rite then.</p>
+<p>If not for how distant the Purple Mansion Realm is and the uncertainty of reaching it, it would be best to wait until attaining divine ability before receiving the talisman! The Foundation Establishment Realm has shortcuts for advancing cultivation; the Purple Mansion Realm does not. Even if it does, the cost is immense for only minor gain. If the wondrous effects of talismanic qi could still apply by then, we would save countless years!</p>
+<p>Though there was no Foundation Establishment Realm demonic creature to offer in sacrifice, the sheer number of tedious affairs was staggering. With both duties overlapping, he had been running nonstop for months. As one blessed by a talisman, he too had felt the strange phenomenon days ago. After the initial joy faded, a faint unease lingered in his heart.</p>
+<p>I’ve heard that several sects’ cultivators have returned. Si Xunhui came back with rich gains and has already gone to the Southern Sea with Uncle Zhouluo, yet Wang Quwan still hasn’t sent word.</p>
+<p>Li Jiangqian bore no personal affection for the man, but Wang Quwan was their family’s sole Foundation Establishment Realm cultivator within the Mifan Dao lineage. If he perished in the underground palace, who knew when they could reclaim that treasure sword?</p>
+<p>After much thought, and since Miaoshui had recovered from her injuries and advanced in cultivation, the need for the family’s Foundation Establishment Realm manpower had finally loosened. He thus sent Miaoshui to Chengshui Marsh to make contact. Before her surrender, she had roamed Jiangbei and understood its power balances well, so she was less likely to cause trouble.</p>
+<p>As he pondered, Cui Jueyin entered the hall, bowed, and reported, “Family head…”</p>
+<p>Li Jiangqian had summoned him. He courteously invited him to rise and said with a smile, “I’ve learned that several cultivator households in the Western Residence have either invited guest cultivators, called in family members, or even taken to personally instructing their juniors in Dao discussion these past few days.”</p>
+<p>Cui Jueyin replied, “I have heard of it as well, my lord… It is hard to criticize.”</p>
+<p>“It’s fine.” Li Jiangqian said, “But we cannot let them monopolize it. Please gather a few guest cultivators and establish an academy in Milin as well. Have them teach the mortal family members free of charge. Once the first few batches pass their examinations, we can rotate the instructors out.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1244.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1246.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

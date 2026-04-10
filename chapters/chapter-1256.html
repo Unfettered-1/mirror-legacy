@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1256: White Blood Sap (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1255.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1257.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1256: White Blood Sap (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei faced the red-eyed Dragon King, a Purple Mansion Realm peak cultivator with all five divine abilities. Dongfang Lieyun’s murderous intent seemed ready to overflow. The entire crystal palace trembled slightly from his emotional transformation, emitting a low humming sound.</p>
+<p>Li Zhouwei’s mind flashed through everything in an instant. He spoke urgently and at length, one layer of deduction and calculation after another, “Since the great king believes that my Bright Yang Fruition Attainment was granted through Luoxia’s influence, and that the Great Ancestor has weakened to this extent, would there not be a second grant even if I were to die suddenly? If Luoxia were to place that second grant within Mount Luoxia, killing me would only be drinking poison to quench thirst.</p>
+<p>“Furthermore, had I remained ignorant, that would be one thing. But now that you have revealed these secrets to me, do you truly think I would dare scheme for Fruition Attainment? Failure means death, and if I succeed, would Luoxia really watch idly as the Bright Yang Fruition Attainment, the fruit of over a thousand years of plotting, falls into the hands of Li Qianyuan’s descendant? Bright Yang values lineage and hierarchy above all. If I were to become a True Monarch, how could that Fruition Attainment ever align with Luoxia’s wishes?”</p>
+<p>Before Dongfang Lieyun could reply, Li Zhouwei calmly continued, “This junior knows nothing of fate and destiny. Yet as a White Qilin, even if I were indeed born under Luoxia Mountain’s influence, working with the Dragon Clan to preserve the Great Ancestor’s seat is the proper course. No matter how powerful Mount Luoxia may be, it will never tolerate my existence. If the great king wishes to kill me, there is no need for so many words; simply make the reasoning clear.”</p>
+<p>For the Dragon Clan, the worst outcome would be his failure to attain Fruition Attainment, meaning all their efforts would amount to nothing. Conversely, Mount Luoxia most desired Li Zhouwei to make that attempt and fail.</p>
+<p>Dongfang Lieyun’s expression darkened, his deep voice resonating through the hall, “Can a White Qilin truly accept the severance of one’s path? Is the ending of lifespan not still death? If you possess ambition, why not clash with Luoxia over Bright Yang itself. Negotiate with them if you must? Should you ascend as a True Monarch, your divine abilities would be wondrous indeed. Would reconciliation then be impossible? Even if you fall, countless chances for rebirth exist; it is still better than dying within the Purple Mansion Realm.”</p>
+<p>Li Zhouwei did not avert his gaze as he replied, “If I attain True Monarch and fall, Luoxia will suppress me forever with no hope of release. Yet as a Purple Mansion Realm cultivator, I still have margin to bargain for reprieve. Failing that, as long as the Dragon Clan exchanges a portion of Metallic Essence for me, I could reincarnate and escape this cage, would that not be liberation?”</p>
+<p>Though Li Zhouwei spoke of so great a matter as exchanging a portion of Metallic Essence, Dongfang Lieyun showed no surprise. Standing before the hall, the demonic creature made no mention of reprieve as his voice softened. “Reincarnate and walk another path if you wish, but you may never again reach the realm of Five Divine Abilities.”</p>
+<p>Li Zhouwei fell silent for a moment. The demonic creature took a step forward; much of the ferocity had faded from his eyes as he spoke once more, “Whether or not you are the handiwork of Mount Luoxia, I have no reason to kill you. I only wished to make matters clear… Though once you break through to the Purple Mansion Realm, Mount Luoxia will surely come for you again. The true ownership of the Bright Yang Fruition Attainment is not something you alone can decide.</p>
+<p>“When you reach the late stage of the Purple Mansion Realm, the Great Ancestor’s condition will remain uncertain. Whether you seek reprieve or extension, or even, with no retreat left, choose reincarnation and start anew; everything must adapt to the situation as it unfolds.”</p>
+<p>Li Zhouwei silently let out a breath of relief, bowed, and said, “The Great Ancestor was harmed by Luoxia. The Dragon Clan and we have been friends for a thousand years. I can still tell the difference between right and wrong.”</p>
+<p>The Dragon King of Bei Sea did not answer him. Instead, he ascended to the highest jade platform step by step. His body was immense, casting layer upon layer of shadow. Standing at the edge, he raised his head and said softly, “I must also take this White Qilin blood. First, for my own use; second, as an excuse to deal with Xiangchun. But rest assured, you will not suffer for it. I will have someone bring you a spirit item in return…”</p>
+<p>Li Zhouwei lifted his head. He had long known he could not avoid this encounter, yet a lingering suspicion remained unconfirmed. Now, sensing an opening while the Dragon King was still approachable, he asked, “There is something I do not know if I may ask… Among the Dragon Clan, which one was it who shares close ties with our Wei’s Li lineage and intervened to save me?”</p>
+<p>Dongfang Lieyun glanced at him and replied, “This matter is a long one… It is closely related to Daoist Master Zipei of old. It would be improper for me to speak more here. If you truly wish to know, go eastward; beyond the Reef Sea lies an ocean to the north, called Lie Sea. You may inquire there.”</p>
+<p>The Dragon King’s expression darkened slightly as he continued, “That wretch Changxiao was sharp enough and he sensed quite a lot. Whether intentional or not, he knew well he’d become a pawn of Mount Luoxia. Now he hides away and refuses to emerge… who knows who he’s conspiring with in secret…”</p>
+<p>Li Zhouwei understood as much he could from those words and bowed as he said, “Many thanks to the Dragon Clan for lending their aid!”</p>
+<p>Dongfang Lieyun waved his hand slightly. Clouds and winds surged within the crystal palace as sheets of white mist poured in from outside like a tide, climbing swiftly up the emerald jade steps until they reached their calves.</p>
+<p>Dongfang Lieyun and Li Zhouwei stood together within the white clouds, as if at the very summit of the heavens. All the crystal and jade scenery was veiled, leaving only boundless whiteness and, not far away, a solitary jade platform.</p>
+<p>Soon, the clouds gathered, and a young man condensed beside them. He was dressed in spotless white, with neatly combed hair, a slightly round face, short fine brows, and pure black eyes. He bowed with graceful formality and said, “Dongfang Heyun greets your excellency.”</p>
+<p>The Dragon King shifted his crimson eyes slightly and said, “I have told you several times, there’s no need for such formality. You too have attained freedom in divine ability now. If you keep being so courteous, it will be I who feels uneasy.”</p>
+<p>Dongfang Heyun smiled faintly, yet did not straighten his bowed back, replying, “Proper courtesy must always be observed. This was something we learned from the human race in ancient times, and I have benefited from it to this day. I cannot, merely because I’ve gained power and learned a few divine abilities, cast it aside so lightly.”</p>
+<p>The demonic creature treated him courteously and said nothing further, only nodding. Dongfang Heyun then turned his gaze toward Li Zhouwei, nodded slightly, and said with a smile, “So it is the White Qilin here. It has been a long time indeed… I had thought several times to visit Daoist Friend Xizhi, but he has always been at the Ten-Thousand-Mile Stone Pond, and I have found it difficult to meet him.”</p>
+<p>In truth, the Dragon Clan had no reason to fear the Azure Pond Sect. There were few places in the Eastern or Southern Seas where dragons could not go. At most, one might encounter Si Boxiu at the Stone Pond, and to be blunt, Dongfang Heyun hardly needed to show Yuanxiu any courtesy. But when Dongfang Heyun said it was difficult to meet him, it was unclear whether he spoke politely or was hindered from entering the Stone Pond by something else.</p>
+<p>Li Zhouwei bowed and offered a courteous reply, “My elders have spoken highly of your grace and demeanor, while greatly admiring you. Should you ever wish to meet, simply give the word, and we will come to pay our respects wherever you desire.”</p>
+<p>Dongfang Heyun smiled faintly and nodded politely. The Bei Sea Dragon King sat high upon the platform and gestured subtly. At once, the white-robed youth drew a dark-golden box from his sleeve, upon which a qilin with bared fangs was etched in dim relief.</p>
+<p>Dongfang Heyun gently stroked the box, murmuring what seemed to be an incantation. The dark-golden box sprang open on its own. Inside, wrapped in folded black silk, lay a small circular porcelain dish, the size of a pastry, filled with white-gold liquid.</p>
+<p>The moment the white-gold colored spirit item manifested in this world, it was as if a golden-white sun rose amidst the clouds. Its brilliance shimmered, and rays like ten thousand dawns pierced through the mist, flooding the entire white realm with dazzling light.</p>
+<p>Dongfang Heyun extended his hand, and fierce winds gathered the clouds, drawing the sunlight back into the box. Only then did the surroundings return to normal. Smiling, he said, “This item, I imagine, is not unfamiliar to you. It is called White Blood Sap, known in ancient times as the Shuyang Shengming Qilin Light. The beast of Bright Yang is the Shuyang, whose eldest son is Shengming, the very first White Qilin. During a solar eclipse, the radiance that falls from a White Qilin becomes what we call White Blood Sap.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1255.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1257.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1210: Great Divine Ability (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1209.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1211.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1210: Great Divine Ability (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing frowned, suspicious, and lifted the fierce demon like a dead bird. Grabbing its tail, he dangled it upside down and slapped its beak, forcing it to open its mouth. With two casual shakes, he dumped out everything it had swallowed.</p>
+<p>One glance told him there was nothing of value among the remains. He frowned. “What kind of backwater demon is this? No sense, shallow cultivation, and yet it dares call itself by such a grand title. Anyone who didn’t know better would think a demon lord was here.”</p>
+<p>He loosened his belt, tied it around the bird’s neck, and fastened it to his robe, like a Daoist who had just bought a chicken from a farmer. Then he turned and left.</p>
+<p>The remaining cultivators and lesser demons stood frozen in place, exchanging bewildered glances. Distant cries of “The Great Demonic Beast King of the Yuanli Pagoda Burning Heaven has fallen!” echoed faintly over the waves.</p>
+<p>One cultivator raised his brows, his face a mix of disbelief and relief from surviving calamity, and murmured, “A cultivator of great divine ability, none could be greater than this.”</p>
+<p>A fellow cultivator in similar garb let out a long breath and replied, “Let’s go, Brother Lii[1]. It’s not safe here. Elder Shihai is on his way, let’s regroup quickly.”</p>
+<p>————</p>
+<p>Moongaze Lake.</p>
+<p>The season of heavy rain had passed. Mount Qingdu was no longer disturbed by downpours, and its stone steps looked cleaner than ever. Year after year, moonlight swept across the courtyard, unchanged as always.</p>
+<p>The small courtyard was tranquil. An old man paced with his hands clasped behind his back, while Li Shuya, dressed in brown, stood nearby holding a jade tray.</p>
+<p>As the midnight bell tolled, Li Shuya stepped forward and said softly, “Old elder, it is midnight.”</p>
+<p>The jade cup on the tray held a clear, luminous tea brewed from the treasured panacea Pure Cloud Floating Leaf. It had been personally prescribed by Li Ximing years ago to nourish Li Xuanxuan’s body, to be taken together with his medicine.</p>
+<p>Li Xuanxuan understood that this was Li Shuya’s duty and did not make things difficult for him. He quickly drank the tea and finally could not help asking, “Xixuan has been confined in the ancestral hall. How is he now?”</p>
+<p>Ever since his quarrel with Li Xuanxuan, Li Xixuan had been imprisoned within Qingdu and had yet to be released. Misunderstanding the question, Li Shuya bowed respectfully and replied, “The shores around the central island have taken heed, and the progress on the western shore has also been swift…”</p>
+<p>Li Xuanxuan remained silent for a moment before asking, “Minggong is in seclusion… Xixuan is confined in the courtyard. Yuanwan’s lineage must be in turmoil. No one has come to plead for him lately. Have there been any other movements?”</p>
+<p>Li Shuya shook his head, hesitating as he replied, “I do not know for certain… The Yuanwan line has never divided. Only a few descendants with opened spiritual orifices have branched off in the past. Later, when Lady Minggong developed her orifices, Lord Xixuan’s line separated as well. At present, five or six courtyards are deeply anxious. Some have even come to me, asking that you calm your anger, old elder.”</p>
+<p>Li Xuanxuan asked again, “What is being said about this matter across the island?”</p>
+<p>Li Shuya hesitated for a moment before answering with some uncertainty, “The clansmen are all rather emotional about it…”</p>
+<p>“Emotional?” Li Xuanxuan understood perfectly well what lay beneath those words. He sighed, his voice weary and aged, “They must all be beating their chests in regret. Xixuan acted out of righteousness, seeking to secure protection for them even at the cost of defying me. How could I, as his elder, fail to see through the hearts of these children? Let him remain confined for now. We shall see how many step forward afterward.”</p>
+<p>He paced once more around the courtyard, then lifted his brows and said, “It’s getting late. Go and rest. I will pay the family head a visit.”</p>
+<p>Li Shuya, being mortal, was utterly exhausted after accompanying the elder through so many anxious days and nights. Li Xuanxuan dismissed him to rest, then rose into the air alone, riding the wind until he descended upon the island.</p>
+<p>There, he saw lights blazing brightly and music echoing through the air. Several crimson-painted pleasure barges glided across the lake, lanterns burning and candles flickering. Waves of fragrance and song drifted outward, mingling and lingering over the water.</p>
+<p>These were not trading vessels but newly fashionable pleasure boats devoted to music and revelry. The custom had originated from Lijing Office, where barges had once plied the rivers. But as the Li Family’s cultivators grew in number, regulations on luxury and entertainment relaxed, and the barges drifted onto the lake, making it all the livelier.</p>
+<p>Most of the patrons aboard were nobles and officials. The direct bloodline of the Li Family rarely visited such places, and it was mainly frequented by outsiders and minor sects. Thus, Li Xuanxuan did not see the display as decadence; to him, it was a scene of worldly splendor that carried a certain ease.</p>
+<p>First, it distracts these cultivators from idle scheming; second, it keeps the lake from seeming lifeless. The more open festivities there are, the fewer hidden indulgences will fester in the dark…</p>
+<p>After Li Ximing attained the Purple Mansion Realm, the exchanges between the island and the shore grew far more frequent. Much of what appeared to develop naturally from order and custom was, in truth, permitted and fostered by Li Zhouwei and Li Jiangqian. As he scanned the lake, the old man shook his head and thought to himself,It is indeed prosperous… no wonder those on the island envy it.</p>
+<p>Just as he turned his gaze toward the island’s interior, he caught sight of a young man in a red robe descending stealthily from the sky, clearly returning from beyond the island.</p>
+<p>Clearing his throat, the elder rode the wind to catch up and called out, “Li Zhouming!”</p>
+<p>Li Zhouming jolted in fright. His first instinct was to flee, but after taking one backward step, he realized escape was impossible. Forcing a smile, he said ingratiatingly, “So it’s you, old elder… I haven’t had the time to pay my respects these past few days…”</p>
+<p>Li Xuanxuan gave the young man a long look and asked, “Where have you been?”</p>
+<p>Li Zhouming smiled awkwardly. “I met a fine young lady by the shore, just at the second level of the Embryonic Breathing Realm. Her family seemed poor and couldn’t afford any dharma artifacts, so I made her a hairpin… see? I just sent it to her tonight.”</p>
+<p>Though Li Zhouming was a notorious libertine, he had never lied to Li Xuanxuan. Thus, the old man knew the extent of his indulgence all too well. He merely frowned and said, “Which family’s daughter is it this time? You take a fancy every three days and change every six months. Do not bring shame upon yourself!”</p>
+<p>Li Zhouming clasped his hands respectfully and grinned. “Ancestor, I merely appreciate beauty, nothing improper. With how strict our family is, if I ever acted on such impulses, I’d be married off immediately. Then I’d never get to admire another beauty again…”</p>
+<p>Li Xuanxuan often found himself helpless before this boy. He shook his head and sighed, “Behaving like this only harms the girl’s reputation… best not to get too familiar.”</p>
+<p>Li Zhouming quickly replied, “Please don’t worry, old elder. I know how to handle things in Qingdu. I’d never go that far; how else could I have gotten this far alive? This little hobby is all I have left. If you cut off this path for me, it’ll be the death of me!”</p>
+<p>“Get out, get out, get out!” Li Xuanxuan could only wave him off and stride quickly toward the main hall.</p>
+<p>Once the old man had gone, Li Zhouming straightened up. His attendants, standing on either side, exchanged glances as they watched the incorrigible playboy muttered, “Those few families wail day and night as if being grounded were a death sentence! One says he wants to farm, another to ferry boats. I heard from Sister Xinghan long ago that they’ve been secretly siphoning plenty of wealth from Aunt Minggong. I’d wager they’ve just got too much money lying around to spend. Aunt’s too kind, she hides it to spare them punishment. But now they’ve made such a fuss they’ve even disturbed the old elder! Come on, let’s go…”</p>
+<p>The two attendants couldn’t help but glance up and ask, “Your Highness?”</p>
+<p>Li Zhouming put on a stern expression, flicked his sleeve, and snapped open his folding fan with a sharp swish, replying, “Weren’t those same families always watching me, ready to report every move I make to Qingdu? They’re sneaking off to indulge themselves in secret yet they still have time to envy me! Tonight we’re going to their courtyard. If I see one lazy fool bawling like they’re at a funeral, or hear another whiny shrill voice, I’ll hurl a few choice insults and leave.</p>
+<p>“At the very least, it’ll vent my anger and make them stew a little. Let’s see how sincere their tears are then!”</p>
+<p>He enthusiastically started to march off. The two attendants could only follow, drenched in cold sweat and stumbling after him, unable to dissuade their young master.</p>
+<p>“Young master! You can’t go around cursing, everyone on the island is watching… oh heavens…”</p>
+<p>1. The original here is 礼 (lǐ), I changed it to Lii as to not clash with the Li Family. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1209.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1211.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

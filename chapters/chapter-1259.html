@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1259: Taie (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1258.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1260.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1259: Taie (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei had no intention of making things difficult for him and merely asked, “Which direction is Tai’e Island in? And why is the seawater here purple red?”</p>
+<p>The cultivator hurriedly replied, “Daoist, Tai’e Island lies more than thirty-five kilometers to the southeast. This is the Slaughtered Purple Scattered Reefs, one of the few areas around Tai’e Island where resources can be gathered. It originally produced spirit sand, but over the years, it has been completely excavated by passing cultivators. Only cinnabar ore veins remain on the seabed, and the seawater also contains cinnabar. Seen from afar, it thus appears purple red.”</p>
+<p>He smiled ingratiatingly as he continued, “The name and the place both have their origins. Back then, Senior Li, who was known as the Golden Bowstring, guarded this area. An extremely imposing water ape once came to attack. It was said to be a great demonic beast not far from the Purple Mansion Realm, but it was shot dead here by that senior with three arrows, turning into a fifty kilometers of cinnabar. Thus this stretch of small reefs came into being. It is said this demonic creature had some kind of… some kind of whole something…”</p>
+<p>Li Zhouwei raised his brows slightly as he listened, a hint of a smile appearing at the corner of his lips. He now found this person much more agreeable to look at. The two of them rode their light together and flew toward the southeast he indicated, as Li Zhouwei said, “So it has such an origin. You mean the Whole Pill. Who named the Slaughtered Purple Scattered Reefs? And who governs Tai’e Island now?”</p>
+<p>This rogue cultivator was also skilled at currying favor. He immediately put on an enlightened expression and nodded repeatedly as he said, “Yes, yes, the Whole Pill. Your insight is truly broad. The Slaughtered Purple Scattered Reefs were not originally called that, but the Slaughtered Ape Scattered Reefs. It is just that the Island Master who guards this island has the surname Yuan[1], which did not sound very pleasant, so the color was changed to replace it.”</p>
+<p>Li Zhouwei traveled extremely quickly on his light. They had only exchanged a few words when a yellow brown island appeared in the distance. As they descended closer, the rogue cultivator said respectfully, “Please give your instructions, sir. This humble one is Xiahou Damo. I am somewhat familiar with this island. To be able to serve the Daoist is my good fortune.”</p>
+<p>In the Eastern Sea, a Foundation Establishment Realm cultivator who was alone, without attendants, and yet appeared to hold noble status could be considered an opportunity. Thus, this rogue cultivator was eager to seize it.</p>
+<p>Li Zhouwei merely nodded and replied, “Take me to the place where dharma artifacts are sold.”</p>
+<p>Upon hearing that the cultivator stationed on the island bore the surname Yuan and belonged to the Azure Pond Sect, it was certainly the Yuan Family of the Mushroom Forest. Had it been several decades earlier, there would have been no need for anyone to guide him, and Li Zhouwei would have even gone to pay a visit. Now that the two sides had gone their separate ways, Li Zhouwei could not be bothered and merely had this man lead the way.</p>
+<p>After no more than two streets, they reached a towering four storey pavilion in the most luxurious area on the island. The moment Xiahou Damo stepped inside, attendants on either side came forward with unfriendly expressions. When Li Zhouwei stepped in after him, however, bright smiles appeared all around, and they addressed him as sir again and again.</p>
+<p>Li Zhouwei did not waste time. He went straight up to the highest level, where a man came forward to greet him. The blue robed Foundation Establishment Realm cultivator, whose discernment far surpassed that of Xiahou Damo, spoke politely, “May I know from which lineage you come from…?”</p>
+<p>Li Zhouwei settled himself and replied, “Top grade Foundation Establishment Realm dharma artifacts, obtained by killing a direct descendant. Take them if you can. My elders also cultivate in the Azure Pond Sect. There is no need to be perfunctory with me.”</p>
+<p>He raised his brows and glanced over. His golden eyes swept across the other’s face twice. He suddenly felt it to be somewhat familiar and asked, “From where do you hail as a cultivator?”</p>
+<p>The man’s expression had already changed. While quietly calling for someone to go summon others, he spoke with utmost respect, “This junior comes from Jiangbei. My surname is Zhou, and my name is Baiyun.”</p>
+<p>When hearing the name Jiangbei and then Baiyun, Li Zhouwei immediately thought of a saber wielder. Comparing their features, he raised his brows and said, “Gongsun Baiyun. I have met your elder brother. His saber techniques were acceptable.”</p>
+<p>Zhou Baiyun immediately broke out in a cold sweat. Fortunately, Li Zhouwei had no interest in taking issue with him. He took several jade boxes from his sleeve, laid them out one by one, and said, “Two golden spike dharma artifacts from Golden Tang Gate, both fairly decent items. A green gourd of Mansion Water, a top tier piece among Foundation Establishment Realm artifacts, of a level that can be passed down through generations. Lastly, a wooden staff, ordinary in itself, but capable of nourishing the body and assisting with healing.”</p>
+<p>He then took out an ordinary cloth storage pouch and set it on the table. “The items inside are likewise of considerable value and are easier to handle.”</p>
+<p>Zhou Baiyun saluted and said, “I wonder what senior requires?”</p>
+<p>Ordinary people would naturally never trade such items for spirit stones. There was simply no need. Moreover, grade one dharma artifacts were not something spirit stones could buy. However, for Li Zhouwei and even for the current Li Family, most items that could not reach the Purple Mansion Realm held little meaning, which made the matter difficult.</p>
+<p>Li Zhouwei thought for a moment and replied, “I need an excellent dharma shield, a flying shuttle, or dharma artifacts of similar grade.”</p>
+<p>He paused, then finally asked the question he cared about most, “Are there resources or items here of the Purple Mansion Realm?”</p>
+<p>This question left Zhou Baiyun at a loss. He was merely a guest cultivator on the island and had no such authority. His face filled with embarrassment. Fortunately, he was saved from answering by a burst of noise from the staircase, followed by loud laughter.</p>
+<p>“Which fellow Daoist might this be, coming to my Tai’e Island as a guest?”</p>
+<p>Zhou Baiyun felt as though he had been granted sudden amnesty. He hurriedly stepped aside and said respectfully, “Island master.”</p>
+<p>Li Zhouwei realized that the one surnamed Yuan had arrived, and his expression barely changed. He was not of an overbearing temperament and ordinarily should have risen to show courtesy. Yet the relationship between the two sides was truly awkward now. It would not be an exaggeration to say there were lingering grievances. He could only lower his gaze and remain silent.</p>
+<p>An old man came up from below. He looked quite advanced in age, with a fairly kind face, a head full of white hair, and a cane in his hand. He felt somewhat displeased at the sight of the seated young man.</p>
+<p>If an ordinary cultivator dared to put on such airs, Yuan Huo’e would have already scolded them. However, the other party’s cultivation was profound and his age extremely young. Fearing that Li Zhouwei might be a Purple Mansion Realm direct descendant of a great background, he did not dare let his expression grow too stern.</p>
+<p>Tai’e Island itself was small. Although it bore the name of the Azure Pond Sect, it was still easy for others to look down upon it. Moreover, those of Purple Mansion Realm lineage all knew that the Azure Pond Sect’s Purple Mansion Realm was currently in a precarious state.</p>
+<p>When he saw the jade boxes laid out on the table, he formed a guess and spoke in a tone that was neither fully soft nor fully hard, “I am Yuan Huo’e of the Yuan Family of Mushroom Forest. I serve as the unworthy Island Master of Tai’e Island and the Peak Master of Lian Peak of the Azure Pond Sect, stationed here at Tai’e by order of the Azure Pond Sect.</p>
+<p>“May I ask which distinguished figure fellow Daoist might be? There is no need to worry that our Azure Pond Sect cannot afford the exchange. The Slaughtered Purple spiritual traces still remain, and the Rosy Glows of the Celestial Pavilion still command awe over the Southern Sea and the five thousand kilometers of Stone Pond. With luck, it will not take long.”</p>
+<p>Seeing that the other party did not recognize him, Li Zhouwei understood that this old man had likely been stationed here for many years. He had not personally experienced matters on the mainland, and rarely even went there.</p>
+<p>“I cannot compare to senior’s illustrious reputation.” He smiled and continued, “This junior comes from a small lake on the mainland. My surname is Li, and my given name is Zhouwei.”</p>
+<p>The pavilion fell silent. Zhou Baiyun looked utterly confused, seemingly still trying to place the location of the small mainland lake. Yuan Huo’e’s expression, however, froze in an instant. His pupils suddenly dilated, and his gaze belatedly fixed upon the young man’s golden eyes.</p>
+<p>His mind roared loudly, turning completely blank. His hands and feet went cold, followed by a surge of complex and fearful dread.</p>
+<p>Li Zhouwei… The peerless genius of the Li Family. The White Qilin of the Li Family.</p>
+<p>The White Qilin Li Zhouwei who ambushed and killed Situ Mo, the chief of Golden Tang Gate, at the river. The man who fought six alone and, under the pressure of the spirit artifact Yongjing Profound Ring, forcefully slew the Purple Mansion Realm direct descendant and peak Foundation Establishment Realm cultivator Yunanzi.</p>
+<p>How did this calamity star come here? Is he not afraid of Changxiao?!</p>
+<p>1. The pinyin for 猿 (ape) is yuán, which sounds similar to the surname 袁 (yuán). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1258.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1260.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

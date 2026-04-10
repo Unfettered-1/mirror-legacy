@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1283: Frost (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1282.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1284.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1283: Frost (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian frowned. His perception was keen, so he only asked, “What kind of gift requires a Dharma Protector to deliver it?”</p>
+<p>This single sentence laid the matter bare and was even somewhat intimidating. Yet Chen Yang was no simple figure. He lowered his head slightly and replied respectfully, “The family head had sent me to Grace Covenant Gate to offer condolences, where I was treated with considerable courtesy. Perhaps they felt they could speak through me, so they sent someone over, hoping to ask after the family’s intentions through me. Grace Covenant Gate hopes to form a marriage alliance with the lake.</p>
+<p>“That person waited by the lakeside for my patrol. He came over with the gifts in a secluded spot. I was caught off guard and dared not treat the matter lightly. I did not give any reply and came straight to the hall to report.”</p>
+<p>The intentions of Grace Covenant Gate were very clear. If it had been someone else, they might have discreetly inquired on behalf of the lineage, described the situation, and accepted the gifts along the way. Reporting such a matter to the main house would be awkward after all. Who could have known it would land in Chen Yang’s hands and be reported all the way to the hall?</p>
+<p>“No wonder.” Li Jiangqian nodded slightly.</p>
+<p>Some days ago, Chen Yang had gone to Grace Covenant Gate to attend the funeral of Kong Guli. The Kong family had avoided him, which was only natural. Yet the Profound Grace Dao lineage had not made things difficult for him. Instead, a direct descendant had come to receive him, praised Chen Yang a few times, and treated him with courtesy throughout his stay.</p>
+<p>Li Jiangqian had originally thought it was due to ties on Purple Smoke Gate’s side. Now they had come to propose a joyous union. He mused, “So this is what they were waiting for.”</p>
+<p>He smiled faintly as he asked curiously, “For whom is the proposal made, and which one are they seeking?”</p>
+<p>Chen Yang reported in a steady voice, “Grace Covenant’s intention is to propose on behalf of Dai Jinquan, currently the most outstanding among their direct lineage. However, he is slightly older, so they asked me to sound things out first. If the lake has reservations, they can make other arrangements. As for the marriage proposal, they tentatively mentioned Lady Xinghan.”</p>
+<p>Strictly speaking, the Wilderness was a vast region where many factions intersected. Grace Covenant Gate and the Li Family had no major territorial conflicts. Since the relationship between Purple Smoke Gate and Moongaze was currently on the rise, Daoist Master Zhugong seeking to forge ties was indeed a matter well within reason.</p>
+<p>Grace Covenant Gate had its own wishful thoughts, yet this female Daoist Master was a dignified Purple Mansion Realm cultivator, someone countless others were eager to curry favor with. In his heart, Li Jiangqian did not hold the Profound Grace Dao lineage in high regard, and he pondered silently,Whether Daoist Master Zhugong’s divine abilities are truly formidable remains unknown. It is unclear whether her mind lies elsewhere or if she has other designs, but everything beneath the Profound Grace Dao lineage is in disarray. Their base vices have not been eliminated. Their conduct is ugly enough, and it is said they even act arrogantly toward minor families, relying entirely on Zhugong herself to hold things together…</p>
+<p>Moreover, although the Dai Family cannot be called a lineage of devil cultivators, they emerged from the Eastern Sea, where their reputation was already poor. They cultivate Earth Virtue as well, yet no outstanding figures have ever been heard of. Dai Jinquan may be at the Foundation Establishment Realm, but he is likewise of little renown. If he had not previously come to inquire at the lake, I would not have even heard of him…</p>
+<p>Though both had relocated from the Eastern Sea, Grace Covenant Gate fell short of Chengyun Gate in both Dao lineage and personal ties. Moreover, proposing a marriage alliance so abruptly at this point in time left no telling what trouble might lie ahead.</p>
+<p>Still, Grace Covenant Gate was merely sounding things out. If Li Jiangqian showed any inclination and let even a hint slip, Zhuang Pingye would likely pack up and leave in disgrace. Otherwise, Zhuang Cheng would have to come personally to offer an apology.</p>
+<p>Fortunately, Li Jiangqian did not favor the Profound Grace Dao lineage. After careful consideration from many angles, he was not tempted in the slightest and thus said, “You are to reply that the Profound Grace Purple Mansion lineage is most esteemed, but the Daoist Master has not returned from abroad, and the elders are severely injured and in seclusion. There is no authority within the family to make such decisions.</p>
+<p>“You know how to phrase it. Say that it is merely your own assessment, and do not involve the family.”</p>
+<p>Chen Yang naturally understood and replied, “They have already delivered the gifts…”</p>
+<p>Li Jiangqian waved his hand and replied, “As for whatever gifts they brought, find a way to handle them yourself.”</p>
+<p>“This subordinate has already placed them in the side hall.”</p>
+<p>Chen Yang answered flawlessly and was about to withdraw when Li Jiangqian called him back and instructed, “After you reply to the eastern side, make a trip to Floating South. There is a matter of great importance on Jianglong’s end. He has not yet reached the Foundation Establishment Realm, so his authority is inevitably weaker. You are thorough in thought and cautious in action. Go and assist him.”</p>
+<p>He picked up the scroll that had long been prepared on the desk, handed it to Chen Yang, and said quietly, “At present, the family has an ample number of Foundation Establishment Realm cultivators. Take my order and have Miaoshui and An Siwei make a trip to the Wilderness as well. Have them station themselves along the riverbank and guard the north.”</p>
+<p>Li Jiangqian was not merely providing support for Li Jianglong. He was also preparing in advance for a future contest with the Capital Immortal Dao along the river and within Floating South. Sending people only when the date of the enemy’s surprise attack drew near would make it seem as though he had foreknowledge and would expose his hand.</p>
+<p>Chen Yang hesitated slightly and asked, “Is there something amiss with the situation in Floating South…”</p>
+<p>Chen Yang was thoughtful by nature. Li Jiangqian waved his worries away. “Do not overthink it. Once you arrive there, question Jianglong carefully and spare no effort in assisting the second young master to see the matter through. If there is any slip in this affair, it will endanger the lives of both you and the other two.”</p>
+<p>Chen Yang’s expression changed abruptly. He saluted and withdrew, while a thought stirred faintly in Li Jiangqian’s mind,The White Ape Dharma Protector has been in seclusion for many years. Both he and the family elder were severely injured back then. They should be close to recovery now. I should inquire through the formation, lest something happens without my knowing.</p>
+<p>After dispatching Chen Yang north, Li Jiangqian still had many matters to attend to. Although the marriage of his Purple Mansion Realm direct grandson’s uncle had come to an end, there were many arrangements before and after. He continued marking and amending numerous reports with his brush until a voice reported from below. A white haired elder in dark blue robes entered from outside the hall.</p>
+<p>Li Jiangqian quickly left the main seat and stepped down to support him. Li Xuanxuan waved his hand, his aged face solemn as he said, “The Azure Pond Sect has issued some unknown order. Li Quantao was urgently recalled from the north, not even halfway through the time he had mentioned. He passed by Moongaze Lake, but he did not even have time to stop and rest, leaving behind only a single letter. This letter was delivered by cultivators patrolling the lake. Take a look at it.”</p>
+<p>“Li Quantao?”</p>
+<p>The Azure Pond Sect usually operated on five year terms. Moreover, no one knew what critical task Li Quantao had gone to carry out. When he passed by the lake, he had even discussed the matter of Chi Zhiyun. Now, only a year and a half had passed, yet he had been urgently recalled. Li Jiangqian frowned slightly, his heart tightening.</p>
+<p>I had only just mentioned that his offspring served as the blade of harm, and now he is being urgently recalled. Let it not be the return of Chi Buzi…</p>
+<p>Although Chi Buzi’s actions were extremely cold blooded and ruthless, he was ultimately a Purple Mansion Realm Daoist Master who possessed four divine abilities. Such a direct heir Grand Daoist Master of the Green Pine Supreme Yang Dao lineage already ranked among the top five in Jiangnan. Moreover, this treasured scion of the Chi Family was still young. If Chi Buzi were to return, the Azure Pond Sect would undoubtedly be thrown into upheaval.</p>
+<p>He took the letter from his elder’s hand, his expression grave. Upon opening it, he found that there was not much content. The beginning consisted of polite words of concern. Turning the page, the handwriting became much more hurried, and the contents written were strange indeed,On the twenty second day of the tenth month, Yi Mountain City suddenly turned cold. Pines and cypresses sprouted from stone, frost formed upon level ground, and a violent snowstorm soon followed. On the plains, the snow reached a depth of over five meters. Hailstones as large as bowls fell, trees were broken, and countless birds and beasts were killed or injured.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1282.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1284.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

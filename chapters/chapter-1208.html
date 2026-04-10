@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1208: Three Profoundities (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1207.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1209.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1208: Three Profoundities (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The only one that gave Li Ximing any hope was the Unified Qi Heart-Lifting Pill. If he substituted Supreme Yin Moonlight for the main ingredient, it might just work with some careful adjustments.</p>
+<p>As he was reading the formulas, someone hurried up from below. The man didn’t dare approach directly, instead passing a jade slip through the kneeling cultivators until it reached Xia Shouyu’s hands.</p>
+<p>Xia Shouyu glanced down and immediately recognized it as the pill formula they had just been arguing over. Clearly, it had already been bought earlier; the men behind her had simply tried to force a trade with one of her own pills so that they could pocket the gain.</p>
+<p>Fury simmered in her heart, but outwardly she could only offer it with respect. Li Ximing’s eyes brightened. With a mere thought, the jade slip flew straight into his hand.</p>
+<p>At last, among all these ancient pill formulas, there was finally one preserved in a proper jade slip!</p>
+<p>He glanced over it. The inscriptions were not newly carved; it appeared to be an original relic. It recorded a pill method titled Heaven’s Will Single-Intent Method, belonging to the Mifann Sect’s Dao lineage.</p>
+<p>Although the name Mifann Sect sounded similar to Mount Xiaoshi’s Mifan Temple, this Dao lineage was no newcomer. It had long been known in Jiangnan, and ruins of the Mifann Sect still stood by the Eastern Sea. The Azure Pond Sect’s renowned Water Wall Pearl technique, as well as the attainments of Li Encheng and the Chi Family ancestor Chi Wei, had all drawn inspiration from it.</p>
+<p>But upon studying the jade slip in his hand, suspicion immediately arose in his mind. He raised an eyebrow and asked, “Since this was purchased from someone else, shouldn’t it have been copied? How did you end up bringing back the original?”</p>
+<p>A man standing behind Xia Shouyu nervously stepped forward, his voice trembling as he said, “L-Lord… that man had stolen it himself… his alchemical knowledge was shallow, and the secrets within this jade slip were too profound. For us minor cultivators, even glancing at it made our heads spin; we couldn’t possibly copy it…”</p>
+<p>Li Ximing’s eyes narrowed as he asked, “Oh?And he was willing to sell it?”</p>
+<p>The man trembled so hard that his calves cramped from tension, and he stammered, “Dao… Daoist Master! He followed the method and tried refining it himself, but the alchemical art has already lost its efficacy. That’s why he sold it!”</p>
+<p>Li Ximing slowly straightened as he solemnly extended his spiritual sense into the jade slip. As expected, he was met with an ocean of words vast as the sea.</p>
+<p>“At the dawn of heaven and earth, yin and yang first came into being. When the Human Sovereign established his dominion, the Five Virtues arose, giving rise to the Three Profundities. Thus was born the First Dao Collection. Four supporting Daos surrounded the Three Profundities; beneath the Three Profundities lay twelve mansions… The Mifann Sect inherited the profundity of the Upper Douxuan…”</p>
+<p>Li Ximing suddenly realized,The Mifann Sect is already an extremely ancient Dao lineage, but to think it was also of the Douxuan Dao lineage… That is unheard of. With such a grand Dao lineage, no wonder even a single opportunity could produce cultivators like Chang Xiaozi, Yehui, and Guo Shentong.</p>
+<p>He regarded the Heaven’s Will Single-Intent Pill Method with renewed respect and began reading it in earnest. The more he read, the stranger, and more lamentable it became. In the end, he rested the jade slip against his hand, momentarily at a loss for words.</p>
+<p>The Heaven’s Will Single-Intent Pill Method was extraordinarily peculiar. Unlike conventional Purple Mansion Golden Core Dao alchemy that sought the pill through temperament and essence, it pursued the pill through one’s very life itself. The complexity was staggering; after a rough read, Li Ximing could already tell it was exceedingly difficult.</p>
+<p>No wonder the cultivators at the end of the sea failed to refine it. Even I would find it extremely strenuous. The end of the sea is filled with Purple Mansion and Golden Core Dao cultivators, so how could they possibly succeed? Even if they mastered every step, they would likely refine their own lives away in the process…</p>
+<p>As he stared at the jade slip in his hand, his mind began to turn,If that’s the case… Guo Shentong and Changxiao’s vicious attempts to assassinate the Heaven-ordained one might not be without reason. Those two must have acquired some secret arts from the Douxuan Dao lineage; perhaps all of this was part of their scheme.</p>
+<p>Changxiao targeted my family’s heir this time as well. I never expected him to act so decisively or so ruthlessly. When a Purple Mansion Realm cultivator strikes so suddenly, it’s as though they’re seeking utter enmity.</p>
+<p>Unfortunately, he only possessed this single pill method, which was not enough to glimpse the full Mifann Sect’s Dao lineage, let alone the far older Douxuan Dao lineage. After putting the jade slip away, Li Ximing sank into deep thought,Douxuan is already one of the Three Profoundities. It is ambiguous as to whether Tongxuan can still be reached. There remains one more, whose origin is unclear… The Green Pine Dao lineage dominates all Jiangnan; perhaps it too traces back to one of the Three Profoundities.</p>
+<p>He remained silent, while Xia Shouyu and the others below knelt in growing discomfort, hearts pounding with anxiety. Li Ximing finally stirred from his contemplation and spoke, “You stay. The rest may leave.”</p>
+<p>The courtyard cleared like a gust of wind, leaving Xia Shouyu kneeling alone. Li Ximing examined her and asked, “What Dao lineage do you cultivate?”</p>
+<p>Xia Shouyu hastily answered reverently, “This humble one cultivates the Subduing Fire, Expelling Cold Art. Upon forming the Immortal Foundation, it is known as the White Thorn Heart. As for its Dao lineage, none of my ancestors have ever succeeded in reaching that realm, so I do not know what lineage it belongs to.”</p>
+<p>She promptly presented the manual. Li Ximing glanced over it; it was indeed an unranked ancient technique. Its content were crude and unrefined, likely no better than a third or fourth grade art. He raised an eyebrow and remarked, “Rare indeed… So it’s of Dry Fire. Truly a Dao lineage seldom seen in Jiangnan… Good, good! An unexpected fortune!”</p>
+<p>Li Ximing had already been considering bringing Xia Shouyu back to the lake. Each Dao lineage had its strengths and weaknesses, and the more different hers was from that of the Li Family, the better. Even if this woman failed her breakthrough, the Subduing Fire, Expelling Cold Art alone would still be a rare Dao lineage worth preserving.</p>
+<p>He smiled and nodded, his thoughts turning to alchemy,A pity I don’t know the generative and suppressive principles of the Dry Fire Dao lineage. All I can recall are fragments about dispelling dampness and turning cold into heat. It would be best to avoid Water Virtue and Cold Essence, and favor Fire Virtue instead; it’s the safest choice.</p>
+<p>He raised his brows again and said, “Are there any fire-breathing demonic creatures nearby? Your Foundation Establishment Realm path should be aided properly. I shall grant you that chance.”</p>
+<p>The words sent such elation through Xia Shouyu that her mind went blank. She struck her head against the ground repeatedly, exclaiming, “Your grace is beyond repaying even in nine lifetimes! Whatever orders you give in the future, I shall follow unto death…”</p>
+<p>She refrained from excessive flattery and respectfully continued, “I have only heard that the Peacock Sea lies to the east, with countless islands and peacocks, each as large as a courtyard and fierce beyond measure as they devour gold and spit fire. The waters also harbor horned ox demons, all demonic creatures that breathe fire.”</p>
+<p>Li Ximing recalled that the Peacock Sea was also home to a Purple Mansion Realm faction known as Nine Mounds Mountain. It would be proper to visit them as well. Yet as he observed the shrewd gleam in this woman’s eyes, a thought stirred within him,Zhouming’s temperament… he may not even succeed in the Foundation Establishment Realm. His reputation has always been poor and leaves him easily manipulated; he cannot be allowed to marry into a Purple Mansion Realm bloodline. But this Xia Shouyu is clever, talented, with a clean background and striking beauty. She’s perfectly suited.</p>
+<p>As for Li Zhouming’s own opinion, Li Ximing had no concern. The boy was exceedingly lustful, so there was no doubt he would be willing. He thus said, “Prepare yourself well. Once you achieve your Immortal Foundation, greater fortunes will await you.”</p>
+<p>His figure dissolved into flowing light, and though the evening sky was already dim, the courtyard seemed darker still. Yet Xia Shouyu’s eyes shone brightly as she rose, thinking to herself,If I can just seize a chance to leave this wretched place and escape this forsaken island, it would be a heaven-sent blessing beyond measure!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1207.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1209.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

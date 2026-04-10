@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1241: Nine Mounds’ Goodwill (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1240.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1242.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1241: Nine Mounds’ Goodwill (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing sat down beside the stream that flowed through the maple forest. The gentle murmur of running water was soothing. The white jade lamp base before him had already been replaced with another spiritual item, yet its grade was far too low to provide any noticeable benefit for his cultivation.</p>
+<p>He took the red-glazed bowl into his hands, rubbed it gently, and pondered,The materials used to make this are not of particularly high grade, yet the craftsmanship is remarkably intricate. It must have been forged using some special refining method…</p>
+<p>Li Ximing flicked his finger lightly, and several hazy red lights immediately shimmered along the rim of the bowl. A tiny golden-red glimmer appeared, and bright crimson flames surged from the bowl’s mouth in a single breath, bursting forth like a bloom of golden flowers. The petals unfolded layer by layer, suspending themselves midair in dazzling beauty.</p>
+<p>The flames seemed eager to escape, two streams of bright red fire splitting off and bracing against the bowl’s edge, struggling to pull themselves free. Li Ximing began to observe the tongues carefully.</p>
+<p>The flame was bright red, its outer layer blazing scarlet with faint streaks of paler red swirling within. However, golden sparks would flicker and leap from time to time at its white-hot core.</p>
+<p>Since he was in another’s territory, uncertain whether spies might be hidden in the forest or whether the Purple Mansion Realm’s grand formation possessed monitoring means, Li Ximing refrained from refining the Profound Fire of the Three Phases’ Guard immediately. Instead, he merely extended his perception briefly, then reached into the crimson outer flame.</p>
+<p>A stabbing pain instantly seared through his hand, and Li Ximing hastily withdrew it. His fingertips had turned slightly pale.</p>
+<p>Far more intricate than the Bright Yang purple flame… and its power is incomparably greater. True Fire carries the might to burn artifacts, while Bright Yang represents the path of generation. Even though this Profound Fire of the Three Phases’ Guard isn’t particularly fierce, its destructive force against dharma artifacts and the Dharma body is worlds apart from the Bright Yang purple flame born of divine ability…</p>
+<p>My Dharma body, though among the better within the Purple Mansion Realm cultivator without any Body Divine Ability, still cannot withstand this Profound Fire of the Three Phases’ Guard. Even I must retreat before it…</p>
+<p>Suppressing the impulse to refine the flame for pill-making, he closed his eyes and entered meditation. Before long, a young immortal attendant approached and said respectfully, “Please, Daoist Master, follow me.”</p>
+<p>Li Ximing followed along into the forest’s depths. Purple qi rose beneath his feet, and he walked along a narrow path shrouded in haze until a small pool came into view. Its edges were built from tightly fitted white stones, with nothing visible inside.</p>
+<p>The young attendant had already withdrawn, but standing beside the pool was none other than Tantai Muming, who bowed respectfully to Li Ximing. “Greetings, Daoist Master Zhaojing.</p>
+<p>“This is the Hidden Refinement Pool, a wondrous place of Pure Essence and Lesser Yin nature. The spiritual energy within is balanced, harmonious, and suitable for all paths. It contains a certain spiritual nourishment called Hidden Clarity Mystic Dew, which can heal the spiritual sense, refine mana, purge impurities, dispel foreign forces, preserve life, and shield against lightning tribulations.”</p>
+<p>Li Ximing nodded slightly and watched as Tantai Muming said, “Daoist Master, please sit beside the pool and circulate your divine ability in cultivation.”</p>
+<p>Li Ximing had originally thought he would be required to enter the pool to cultivate, something that could risk his Dharma body if mishandled. Since he was only asked to sit beside it, he gladly complied, closed his eyes, and soon Tantai Muming departed.</p>
+<p>After cultivating for about an hour, he suddenly felt a cool sensation between his brows, as if a drop of pure dew had fallen upon his forehead. His mind immediately cleared, and was filled with refreshing tranquility and lucid calm.</p>
+<p>A Purple Mansion Realm cultivator had already extended their Shenyang Mansion into the great void, and Li Ximing could see it all with perfect clarity. The clear dew that entered through the center of his brows flowed downward, dripping from the halls of the Shenyang Mansion and turning into a torrential rain, pattering continuously within the mansion’s domain.</p>
+<p>It felt as though Li Ximing himself stood amid the rainfall, and he began to ponder,If one were to break through the Purple Mansion Realm here, would the Hidden Clarity Mystic Dew continue to fall like this, constantly cleansing one’s spiritual sense? If it truly has such an effect, it would be a treasure among treasures.</p>
+<p>No sooner had this thought crossed his mind than the divine ability within him suddenly surged, sending immense mana flooding into his body. White mist had long since risen within, flowing gently to nourish every part of his physical form.</p>
+<p>Li Ximing hurriedly activated his divine ability and entered meditative breathing.</p>
+<p>However, the vast white qi was too abundant; his divine ability could not refine it quickly enough, and nine-tenths of the energy dissipated from his body. Li Ximing felt a pang of regret,What incredibly pure mana… It’s a pity that mastering one’s divine ability requires more than just abundant mana. Having sufficient energy is good, but how could one refine so quickly?</p>
+<p>As he sighed inwardly, a sudden light rose from within his qihai. The divine ability mana that filled his entire body rushed wildly toward it, forming a storm of white mist. A radiant brilliance burst from within the storm.</p>
+<p>Valley Wind Leading Fire!</p>
+<p>The Valley Wind Leading Fire could stir fire and guide qi, refining true origin and mana!</p>
+<p>The Valley Wind Leading Fire had never shown a remarkable effect throughout his cultivation life. It was helpful to his cultivation speed, yes, but nowhere near as formidable as Li Yuanjiao’s Flowing Qi Swallowing Spirit. Only now did he realize its hidden potential, as a vast torrent of mana erupted within him.</p>
+<p>Yet even so, Li Ximing could not refine the power as quickly as it came. He could only circulate his talisman qi first to maintain a balance. If he had the Flowing Qi Swallowing Spirit technique, it might have converted all this energy directly into cultivation. All Li Ximing could do was watch as the Valley Wind Leading Fire devoured every bit of the mana in one breath, refining it and gathering it all back into his qihai.</p>
+<p>Li Ximing glanced inwardly at his condition and thought to himself,Not bad at all.</p>
+<p>Then he opened his eyes. The bamboo grove before him remained the same, but the white-stone spiritual pool beneath his feet was now frozen under a thick layer of blue ice that reflected a crystalline gleam. The mist among the trees had also completely vanished.</p>
+<p>His physical body was perfectly intact, showing no trace of aftereffects; if anything, it had grown more refined. His cultivation had advanced notably, aided in part by the Valley Wind Leading Fire. With the Heaven-Venerating Gate and his prior efforts combined, he had now stepped across the threshold.</p>
+<p>That saved me at least three years of work.</p>
+<p>He shook out his sleeves, rose to his feet, and walked out along the small path. Only two cultivators stood guard in the grove. Upon seeing him, they hurriedly bowed. Li Ximing simply asked. “How many days have passed?”</p>
+<p>“Daoist Master, we have been standing guard since you began your seclusion; it has already been eight months.”</p>
+<p>Li Ximing asked, “Has Daoist Master Houfu left the mountain?”</p>
+<p>The man immediately replied. “Daoist Master, Daoist Master Houfu has spent these past months within the mountain, preaching and teaching once a month. He has not left and should still be here now.”</p>
+<p>How well they know how to handle relationships…</p>
+<p>In excellent spirits, Li Ximing made his way toward the mountain’s summit. Sure enough, he saw Houfu and Lingdu in the forest ahead, engaged in philosophical discussion. The same chessboard as before sat before them, though this time a new game had begun, with only a few pieces placed.</p>
+<p>Since the two were already playing, Li Ximing knew they wouldn’t drag him into the game. He walked over openly, and both men raised their brows to look his way.</p>
+<p>Lingdu smiled and said, “Congratulations, Zhaojing!”</p>
+<p>Li Ximing returned the greeting politely and asked, “Where is the Grand Daoist Master? I still need to offer him my thanks!”</p>
+<p>Lingdu shook his head and replied, “He has gone to visit friends. It will likely be three to five years before he returns.”</p>
+<p>Li Ximing expressed his regret and exchanged a few polite words, though inwardly he breathed a small sigh of relief. Sitting down beside them, he glanced at Houfu and said quietly, “Senior Houfu, when will you return to Jiangnan?”</p>
+<p>Houfu looked surprised and replied, “Perhaps in a few months’ time.”</p>
+<p>Li Ximing seized the moment and said with a smile, “I have a small favor to ask of you, Senior. I took in a Foundation Establishment Realm cultivator in the outer-sea and planned to bring her back to Jiangnan, but I still have many affairs to attend to in the outer-sea. I cannot split myself in two, so I would like to trouble you for some help.”</p>
+<p>A trip to Jiangnan would not take long at all for a Purple Mansion Realm cultivator. The two immediately understood why he would rather not go himself. Houfu merely nodded and said, “It must be Xia Shouyu! She has often come to hear my teachings these past months. I even thought she was a disciple of Nine Mounds seeking the Dao. Her cultivation is shallow, but her heart for the Dao is genuine.”</p>
+<p>Li Ximing nodded with a trace of regret and said, “She was carefully chosen by me, but her background is lacking… She doesn’t bear the Li name either. I fear that she’ll lack the status to command respect once she returns; it’s been a bit of a headache for me. I was thinking of finding her a better lineage.”</p>
+<p>As he spoke, he turned to Lingdu. The old man was shrewd as ever, and the latter said leisurely, “That’s easy enough. Just give her a respectable name to hang on to, so long as it’s far outer-sea, true or false hardly matters. If you don’t mind, you could let her claim kinship with a Nine Mounds cultivator. A borrowed lineage, nothing more.”</p>
+<p>Li Ximing had originally thought of securing her an outer-sect disciple identity, but it seemed Lingdu wanted no karmic ties at all and had no intention of entangling his Dao Lineage in the matter.</p>
+<p>He could only answer, “That’s indeed a fine solution…”</p>
+<p>Lingdu sighed deeply and replied, “There was a disciple here who perished while breaking through the Purple Mansion Realm, severing his lineage. Have her take him as her maternal grandfather, call him Grandfather, and offer incense before his spirit tablet. That will settle it.”</p>
+<p>Lingdu had casually chosen a deceased man to tie the name to, but Li Ximing didn’t mind as it was merely a matter of formalities. He laughed and said, “Excellent! I must trouble you for this favor, Senior Lingdu!”</p>
+<p>Before long, Tantai Muming came hurrying up with Xia Shouyu in tow. The young woman looked visibly uneasy as she had no standing to speak in this place.</p>
+<p>Lingdu cast a single glance her way and said, “Muming!”</p>
+<p>Tantai Muming hurried forward. The two exchanged a few whispered words, and whether or not Muming understood the full truth, his expression transformed completely when he stepped back, exclaiming with joy, “So she’s the long-lost granddaughter of Senior Brother Yu Dui! I’ll take her down at once to acknowledge her ancestry!”</p>
+<p>Xia Shouyu reacted even faster; her eyes reddened instantly, and she nodded heavily. Tantai Muming led her away, speaking gently to her along the path with every sign of earnest care.</p>
+<p>Li Ximing watched the two leave. Lingdu let out a sigh full of hidden meaning and said, “Zhaojing… Some cannot rise even when nourished by endless rain, while others soar to the heavens with but a faint breeze. Truly, it is difficult to speak of fate.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1240.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1242.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

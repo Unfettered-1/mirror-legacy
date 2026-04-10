@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1271: Immortal Decree (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1270.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1272.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1271: Immortal Decree (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Jiangqian said respectfully, “The immortal sect’s envoy’s arrival in this humble place allows the lake to shine all the brighter. May I ask what guidance you bring?”</p>
+<p>Zhang Duanyan nodded lightly and returned his courtesy with a smile. “There are indeed some arrangements. Has there been any news of the Daoist Master in recent years? For the matters at hand, it would be best if he were present.”</p>
+<p>Li Jiangqian replied, “The Daoist Master is traveling in the outer-sea. There is currently no news of his return. If the envoy has a message to pass on to him, I fear it cannot be done.”</p>
+<p>Zhang Duanyan sighed softly. “The family head has misunderstood. A few days ago, envoys from the north arrived at the Golden Feather Mountain Gate, bearing an immortal decree. They negotiated with our Golden Feather Sect and settled a major matter, then sent me south to transmit the order to the various sects.”</p>
+<p>Envoys from the north?</p>
+<p>The Zhang Family had never shown goodwill toward Buddhist cultivators. If Zhang Duanyan was calling them envoys from the north, and even placing herself slightly below them in status, their origin was obvious.</p>
+<p>Mount Luoxia!</p>
+<p>As understanding dawned in Li Jiangqian’s heart, Zhang Duanyan rose from her seat. The veil on her face flowed away, revealing her bright eyes, white teeth, and graceful features. She said quietly, “The decree should have been received in the Heavenly Platform Dharma Realm. Fortunately, it has already been received once at Golden Feather Sect. Now I am transmitting it, a tier lower in immortal rank, yet it is still not suitable to proclaim within the hall. If it does not reach the heavens above, this hall will surely collapse. If the feet do not touch the ground, the bricks and pillars will be shattered.”</p>
+<p>Li Jiangqian showed her to an open courtyard facing the sky behind the rear hall. Zhang Duanyan judged it spacious enough and then said, “Please, all of you, bow first.”</p>
+<p>The elderly man who had come with her was already on the ground, his reverence bordering on fear. Li Jiangqian and Cui Jueyin bowed as well. Zhang Duanyan’s expression turned solemn. She stepped back half a pace, bent in a bow, raised both hands above her head, and said with utmost reverence, “Through the Profound, the Purple Reflection responds. Majestic Light beholds the rosy clouds. By the Golden One Dao, I humbly petition.”</p>
+<p>There was no trembling of the great void, nor any flashing of dharma light. Her hands trembled slightly, and a scroll with brown edges and a white base appeared within them. It looked utterly ordinary, like a mortal book, lying flat in her hands.</p>
+<p>Li Jiangqian’s heart trembled, and he dared not ask more. The sounds of birds in the garden vanished. The wind stopped, and even the radiant light above dimmed.</p>
+<p>Zhang Duanyan looked grave. Only solemnity remained in her once calm eyes, and her voice grew deep, “On the twenty second day of the seventh month of the twenty second year of the Shenxuan[1], Majestic Light receives the ceremonial offering. The immortal carriage bestows its honored presence and will arrive at the three streams of Jiangbei, descending to observe the mortal world, spreading virtue and beneficence. It shall then proceed to the land of Qi and Lu and return after six years and six months. In all places it passes through, all families must burn incense and perform rites, close their doors and not disturb. Wherever the immortal carriage enters or treads, yield with utmost respect and do not give rise to karmic entanglements.”</p>
+<p>Zhang Duanyan merely spoke. The immortal decree was not unrolled. Perhaps the Li Family lacked the qualifications, or perhaps opening it would cause something dreadful to occur. The scroll remained lying flat in her hands throughout.</p>
+<p>Yet her voice continued to echo in the courtyard. The surroundings were utterly silent. Li Jiangqian slowly lowered his head, thunder roaring within his heart.</p>
+<p>The immortal carriage of Mount Luoxia will arrive in Jiangbei to observe the mortal world.</p>
+<p>Who else could the immortal carriage of Mount Luoxia belong to? Naturally, it was the True Monarch. To observe the mortal world sounded lofty and imposing, but it meant that the True Monarch was descending to be reborn.</p>
+<p>It will then proceed to the land of Qi and Lu, and return after six years and six months.</p>
+<p>This True Monarch would travel from Jiangbei all the way to the land of Qi and Lu, returning to Mount Luoxia after six years and six months, reenacting the events of Chu Yi in the past.</p>
+<p>As for yielding first and avoiding karmic entanglements, rather than a warning, it was more like a reminder tinged with pity. The True Monarch was to ascend once more to Fruition Attainment to witness the suffering of the world. All families and immortal sects that stood in his way would scatter like smoke and dust.</p>
+<p>Back then, Chu Yi rose abruptly and destroyed the clans of Yufu Prefecture. The family knew nothing at the time and only harbored vague suspicions. Now, having achieved the Purple Mansion Realm, we finally have the qualifications to hear the commands of Mount Luoxia.</p>
+<p>Li Jiangqian still had the presence of mind to think, but beside him, Cui Jueyin was frozen in place, stiff as a statue and his legs trembling slightly. As a direct descendant of the outer-sea’s Cui Family who had endured repeated ordeals, his fear of the True Monarch far exceeded that of Li Jiangqian and even Zhang Duanyan.</p>
+<p>Zhang Duanyan’s expression was solemn. Boundless reverence and awe was clear in her eyes. It was as if her mind had been seized, yet also as if this was simply her true self. Only the hands gripping the scroll had turned faintly pale. She was a Foundation Establishment Realm cultivator. She was strong enough to crush bricks and stone to powder. Naturally, the immortal decree bore not the slightest crease.</p>
+<p>Li Jiangqian kept his gaze firmly on the ground and said respectfully, “This junior obeys the decree.”</p>
+<p>The immortal decree in Zhang Duanyan’s hands vanished abruptly, as if it had never existed. She stepped forward naturally to help Li Jiangqian up, her voice unexpectedly hoarse as she said, “Family head, please rise quickly.”</p>
+<p>Li Jiangqian rose with the motion, a heavy breath still stifled in his chest. Cui Jueyin was drenched in sweat, his eyes lowered to thin slits, his gaze nailed to the ground and unable to lift.</p>
+<p>The four of them entered the hall in silence. Zhang Duanyan took her seat without saying a word. She had come here after leaving the Golden Feather Sect. The Li Family did not know which stop this was on her journey, but judging by the terrain, it was likely the first or second. Clearly, she rarely had experience proclaiming an immortal decree. Not only were the Li Family shaken, her own face had turned slightly pale, as if she were short of breath.</p>
+<p>Li Jiangqian quickly composed himself, poured her some tea, and said, “It truly troubled the immortal envoy to make this trip to remind our family. Jiangqian thanks you on behalf of the Li Family.”</p>
+<p>Zhang Duanyan lifted the teacup and took a sip as a trace of weariness appeared in her eyes. Still, she forced herself to maintain proper courtesy and replied, “Family head is too kind. This is within my duties.”</p>
+<p>Li Jiangqian considered briefly and asked, “As for the seventh month of the twenty second year of Shenxuan, my family does not know when that would be.”</p>
+<p>Zhang Duanyan said softly, “Shenxuan is a calendrical system of the northern Dao lineage based on spiritual aura. It corresponds to June two years from now.”</p>
+<p>Li Jiangqian gave a soft sigh and firmly fixed the date in his mind. Zhang Duanyan’s expression was solemn as she said, “Since the immortal carriage will be in Jiangbei, the grievances between your esteemed family and the Baiye Capital Immortal Dao must be set aside for now. If matters are still being contested at that time, I fear that…”</p>
+<p>She hesitated for a moment. Li Jiangqian quickly nodded and replied, “Please be at ease, envoy. My family knows its limits and would never do such a thing. Matters concerning the True Monarch are absolutely not something people like us can touch. We will not deliberately provoke the Capital Immortal Dao, though the other side may not necessarily do the same.”</p>
+<p>“Please rest assured.” Zhang Duanyan shook her head. “The Capital Immortal Dao will absolutely not touch this, nor will it take advantage of it to carry out any schemes. Not even the thought would arise. This is not something the Purple Mansion Realm can control. Once such intent appears, what is destroyed is often both sides, and it would further offend the north. It would be tantamount to tearing a hole in the heavens.”</p>
+<p>Only then did Li Jiangqian feel at ease. Zhang Duanyan continued, “The immortal decree of the Capital Immortal Dao will also be proclaimed in about two days. Please have your esteemed family discuss matters thoroughly with the Capital Immortal Dao. With a little over two years remaining, those who must be withdrawn should be withdrawn quickly, those families that should be elevated should be elevated at once, and the territories should be properly handed over; so when the time comes, you will not be forced to sever your own tail to survive.</p>
+<p>“As for burning incense and performing rites, it is best to carry them out fully. After all, no one knows what will truly happen. It would be best to build a high platform and complete all the formal rituals.”</p>
+<p>“This junior accepts the command,” replied Li Jiangqian.</p>
+<p>Zhang Duanyan let out a soft breath. After pondering for a long moment, she spoke as if having made up her mind, “Daoist Master Qiushui once met Senior Xuanfeng and shared a considerable affinity with him; he was held in high regard. My grandfather also had deep ties with your esteemed family. I will therefore offer this reminder. Your esteemed family should remain settled and not think of making contact. That path leads to irrevocable ruin.”</p>
+<p>A trace of doubt arose in Li Jiangqian’s heart,Where did this come from? It had already been said once before. My family has witnessed the matter of Chu Yi. How could we be mad enough to try to make contact with a True Monarch?</p>
+<p>He immediately replied aloud, “This is absolutely impossible. My family would certainly not seek suffering of its own accord.”</p>
+<p>Zhang Duanyan nodded lightly and glanced at Cui Jueyin. This time, her tone was no longer as courteous as she said, “And you as well.”</p>
+<p>Cui Jueyin was still drenched in sweat at this point. When addressed like this, he drew a deep breath and saluted as he said, “I swear in the name of the Cui Family of Chongzhou that I will never defy the immortal decree.”</p>
+<p>Zhang Duanyan took a sip of tea and finally let the topic pass. She said gently, “Once this matter has passed, Daoist Master Yuanxiu and our Daoist Master Qiushui will successively seek to attain the Golden Core Realm. It is rare for a Zhang Family Daoist Master to achieve Dao attainment in the outside world. At that time, invitations will also be sent to your esteemed family. If your Daoist Master returns from his travels and remains with the family, you may all go together to witness the ceremony.”</p>
+<p>The Zhang Family was unlike the Chi Family. They were proper descendants of Taiyuan True Monarch and also Golden Core immortal descendants. The grotto heaven of the Golden Feather Sect was different from Pristine Water, and it was likely that many direct line members cultivated within it.</p>
+<p>Even if a Zhang Family Daoist Master reached the end of their lifespan and fell, it would be within that grotto heaven, returning their posthumous spiritual energy to the grotto heaven rather than benefiting others. The long unseen Zhang Tianyuan was most likely such a case.</p>
+<p>Zhang Duanyan’s words sounded pleasant as she spoke of the rarity of Daoist Masters attaining the Dao in the outside world. In reality, aside from the Metal Virtue Dao, none of the Zhang Family’s Purple Mansion Realm cultivators in recent years had achieved mastery of the five divine abilities. Now they were placing their hopes on Qiushui.</p>
+<p>Since the other party was a Golden Core immortal descendant, saying this was already a great show of respect. Li Jiangqian hurriedly returned the courtesy and replied, “The Grand Daoist Master stands foremost among all Whole Pill Dao cultivators. Her cultivation and arts shake heaven and earth. She will surely attain Fruition. My family can only prepare congratulatory gifts and await the moment when heaven and earth rejoice together.”</p>
+<p>1. Shenxuan (申玄) follows the traditional Chinese practice of naming eras using Heavenly Stems and Earthly Branches, functioning as a chronological era title rather than a descriptive phrase. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1270.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1272.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

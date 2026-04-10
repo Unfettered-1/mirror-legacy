@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1214: Premonition of the Purple Mansion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1213.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1215.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1214: Premonition of the Purple Mansion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After reading for a while, Li Xuanxuan realized that two of the three requested resources were already in his storage pouch, and the remaining one would be easy to gather. He decided to provide them himself, added several bottles of pills, packed everything together, and wrote a reply to be sent back.</p>
+<p>He distributed the remaining letters to their recipients, tucked the two sisters’ letters into his sleeve, and walked alone along the side corridor back toward Qingdu, thinking to himself,The ways of the world truly twist right and wrong. Queyi worked hard and achieved Qi Cultivation Realm early, yet ended up in Purple Smoke Gate. Had she been a little lazier as a child and progressed a step slower, the Shepherd Peak would surely have chosen her instead… Meanwhile, the proud and self-contained Quexi, with talent not yet apparent, was born two years later and instead took the place in Shepherd Peak.</p>
+<p>When Wu knows how to teach and is willing to teach, and Quexi seems eager to learn as well… her temperament’s flaws are being filled. With her resources and background, she’ll soon soar beyond reach.</p>
+<p>Having grown old, Li Xuanxuan had seen much in life and faintly sensed what the future held. After reading the two sisters’ letters, his heart was filled with conflicting emotions.</p>
+<p>While Li Xuanxuan returned to Qingdu, Pingya Island was bustling with activity. Li Zhouluo swiftly arranged everything, escorting the Purple Smoke Gate cultivators to their quarters on the eastern side of the island and sending orders to summon Cui Jueyin. The island was soon bright with lanterns and lively with noise.</p>
+<p>The western courtyard, however, remained dim and quiet. Ding Weizeng descended on a gust of wind, his square-jawed, mustached face filled with urgency. Spotting a maid by the gate, he asked, “How is the lady?”</p>
+<p>The maid bowed her head in reply. “The lady’s appetite has been poor these past few days. She often complains of stomach pains…”</p>
+<p>Ding Weizeng’s wife, Madam Ma, was from Jiangbei. Ding Weizeng had been only a minor Qi Cultivation cultivator back then. After joining the Purple Mansion Realm immortal family, his status had risen sharply, and many prominent families offered him their daughters in marriage, but he refused them all, remaining steadfastly devoted to Madam Ma.</p>
+<p>Cultivators rarely bore children, and it was even harder with both parents being cultivators. Having finally conceived after much difficulty, and with three months already passed, the man cherished the boon immensely.</p>
+<p>After visiting his wife and adjusting her condition with spiritual energy, he prepared to return to Qingdu, only for his nephew to come forward with a report, “Wang Quwan requests an audience.”</p>
+<p>Ding Weizeng was taken aback. There were currently no family assignments, and his only duty was patrolling the lake and guarding Li Zhouming and his son; his movements were irregular, and it was unlikely anyone would meet him by chance.</p>
+<p>He immediately said suspiciously, “That’s quite the coincidence?”</p>
+<p>The nephew replied, “Lord Wang has been coming here every day, but since you ordered that you would see no one, I never passed on the message. He seems to have an urgent matter and has been waiting on the island for quite some time.”</p>
+<p>“I see.”</p>
+<p>Ding Weizeng had no desire to be involved in factional struggles and usually refused to meet anyone, but Wang Quwan was an exception. After all, he had been personally promoted by Li Ximing and was quite important.</p>
+<p>Ding Weizeng said, “Then let him in.”</p>
+<p>A middle-aged man entered the courtyard before long. His bearing was extraordinary, and a blue-gold sword hung at his waist, radiating heroic energy. Ding Weizeng smiled and said, “Daoist Wang, you’ve come! I haven’t yet had the chance to congratulate you. Your Tranquil Stream Clarity has made all the cultivators of Floating South in Jiangbei green with envy! You’re now hailed as the foremost sword cultivator of Jiangbei!”</p>
+<p>“Senior flatters me too much… I merely had the fortune of being favored by the Daoist Master and seized the opportunity first, that’s all.” Though Ding Weizeng now addressed him as a fellow Daoist, Wang Quwan still spoke respectfully, maintaining the manners of a junior, “Senior, I know you have important matters and I don’t wish to delay your family duties, but I’ve encountered a troubling matter, something perplexing and related to Jiangbei, so I’ve come to seek your counsel.”</p>
+<p>Ding Weizeng indeed did not want to waste time. He gestured for him to continue, and Wang Quwan said solemnly, “After breaking through to the Foundation Establishment Realm, I paid visits to several seniors around the lake, then received orders from the clan to take a post guarding Jiangbei. But once I crossed the Floating South border, I began hearing rumors and talk among the cultivators below that some great opportunity is about to manifest in Jiangbei…”</p>
+<p>“Haha, I was wondering what it might be.” Ding Weizeng shook his head with a laugh and explained, “No matter the place, so long as spiritual energy exists, rumors arise every few days. Did you perhaps hear something more concrete, Quwan?”</p>
+<p>Ding Weizeng himself was from Jiangbei, and was well acquainted with his homeland. The great conflict between north and south had cost Jiangbei countless cultivators. In his youth, he would hear of someone obtaining a human Dao lineage every few days. It would happen so often that it had become routine. Wang Quwan, however, was reliable and would not bring such matters up without proof.</p>
+<p>When asked, he indeed answered cautiously, “Our Wang Family moved to Jiangbei back during the Ning State era and has kin spread across the region. Though my own lineage has declined and I was born into humble means, I still have two relatives living farther north…”</p>
+<p>Ding Weizeng’s eyes sharpened as he interrupted, “The Golden Tang Gate, or the Capital Immortal Dao?”</p>
+<p>Wang Quwan lowered his voice, “The Chengyun Gate!”</p>
+<p>Seeing Ding Weizeng nod thoughtfully, Wang Quwan continued, “It is said that two cultivators from the outer-sea joined Chengyun Gate and brought a message with them. It is said that an underground palace once belonging to the Wanglin Upper Sect lies beneath the Chengshui Marsh in Jiangbei. The structure is vast and labyrinthine, with many entrances and exits… They possess three profound stone command tokens, which are the keys to activating its formation.”</p>
+<p>“Oh?” Ding Weizeng gazed at him intently, uttering only a single word.</p>
+<p>Wang Quwan drew something from his sleeve and said softly, “This was taken when I intercepted and slew a devil cultivator.”</p>
+<p>There was a small, exquisite command token in his hand, its surface patterned in black and white like flowing ink. On one side were engraved the two ancient seal charactersWanglin, and when turned over, the reverse bore three words,South Seventh.</p>
+<p>He presented the command token respectfully to Ding Weizeng, who took it and examined it. It felt icy cold to the touch. When he clenched his fingers with force, the token didn’t budge an inch.</p>
+<p>Though the command token didn’t appear to be a powerful dharma artifact, its grade was indiscernible. It faintly emanated a hidden spiritual radiance and remarkable resilience. Ding Weizeng gently set it down on the table and said quietly, “My position here doesn’t allow me to move freely, so I can’t leave easily. If you’ve come seeking a companion to explore with you, I’m afraid I’ll have to disappoint you… What exactly do you intend, Quwan?”</p>
+<p>Wang Quwan rose and bowed respectfully. “I ask that senior submit it to the main family and let our lord decide its handling!”</p>
+<p>Ding Weizeng was momentarily taken aback and frowned, “This is your opportunity…”</p>
+<p>Wang Quwan shook his head and replied, “One should act within one’s means. I’m merely a minor figure who has just entered the Foundation Establishment Realm. How could I involve myself in a struggle between such ancient Dao lineages? I only wish to offer this to the main family in hopes that our clan may gain some advantage in the power balance among the great families. That alone would make it worthwhile.”</p>
+<p>Ding Weizeng did not comment. Wang Quwan, though only a Foundation Establishment Realm cultivator, was a sword cultivator personally promoted by the Daoist Master. So long as he didn’t foolishly meddle with the interests of Purple Mansion Realm cultivators, earning great rewards wouldn’t be difficult. It was likely a move of cautious retreat for greater gain.</p>
+<p>Ding Weizeng then replied, “Moongaze is not a harsh main family. If this truly is your own opportunity, no one in the lake would try to seize it. I’ll simply bring it up and inquire about the matter. Perhaps I can uncover more details to aid your journey north.”</p>
+<p>These words took Wang Quwan by surprise. After all, he was only an affiliated Foundation Establishment Realm cultivator; such an opportunity, once offered up, would normally belong either to one of the young masters or to Ding Weizeng himself. He hadn’t expected any consideration for his own role.</p>
+<p>Stunned, he said, “This…”</p>
+<p>“What ‘this’?” Ding Weizeng examined the command token again and said with a smile, “The lake has always been fair to outsiders, guest cultivators, and Dharma Protectors alike. You haven’t spent much time here and might not know this, but even the direct descendants of the Purple Mansion Realm wouldn’t dare insult a Qi Cultivation Realm guest cultivator without cause. I have no desire to take your opportunity. Come with me to the hall; that’ll put your mind at ease!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1213.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1215.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

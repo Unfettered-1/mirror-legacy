@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1250: Evil Cicada (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1249.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1251.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1250: Evil Cicada (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouming immediately swept his sleeve aside, lifted his head, and said joyfully in a loud voice, “So it was grandfather’s message! I’ve long been worried for him. To think he still remembers me, has he left any instructions?”</p>
+<p>He turned to Xia Shouyu with a smile and said, “The Daoist Master granted this marriage, yet never mentioned it to me. May I know your honored name, lady?”</p>
+<p>His words were courteous and proper. Xia Shouyu responded with a faint smile, pausing to let the old elder speak first. Li Xuanxuan’s expression eased slightly as he replied, “So you still think of the Daoist Master. He is currently traveling in the Eastern Sea; everything is going well.”</p>
+<p>Only then did Xia Shouyu speak, “To reply to the young master, my name is Xia Shouyu, a cultivator of the Eastern Sea.”</p>
+<p>Li Zhouming quickly unfastened the fan at his waist and said, “Please, allow me to take you for a walk around the lake. We can speak of the Daoist Master as we go!”</p>
+<p>Since it was their first meeting, Xia Shouyu did not sense anything amiss. She smiled and stepped forward to join him. Li Xuanxuan found the situation strange and at a loss for words, so he simply nodded in acknowledgment as the two left together.</p>
+<p>The old man didn’t know whether to laugh or scold, muttering inwardly,This boy is usually foolish, mischievous, and never serious about anything. Nine out of ten things he says are incoherent… yet the moment he sees a woman, it’s as if he’s suddenly enlightened; clear-headed and sharp-tongued, with every word right on point. No wonder none of those girls by the lake ever caused a scene with him. Ah…</p>
+<p>Li Jiangqian waited quietly beside him, lost in thought. Now that they had Li Ximing’s two scrolls, the direct descendants would naturally need to convene for discussion. He entered the main hall with the elder and shut the doors behind them.</p>
+<p>Li Xuanxuan sighed. “It’s a relief that the Daoist Master is safe. It seems he chose this Lady Xia personally. She seems exceptionally clever, and her family must be distinguished.”</p>
+<p>Li Jiangqian guided him toward the main seat. Once the old man had sat down, he stood to the side and poured tea, speaking quietly, “She speaks skillfully; it’s impossible to draw anything from her, and wisely so, since we mustn’t risk exposing the Daoist Master’s whereabouts. But I noticed her attire. It was elegant, yes, yet not of the highest quality. If she truly came from a remarkable background, she would at least carry a Foundation Establishment Realm dharma artifact or spirit-bound boots… yet I saw none.</p>
+<p>“Perhaps my eyes are dull and I failed to recognize a concealed treasure, or perhaps her finer dharma artifacts remain unused…”</p>
+<p>Since Xia Shouyu was to become a senior member of the family, Li Jiangqian spoke with great subtlety. Yet Li Xuanxuan caught his meaning and said with some doubt, “That’s true… though she did mention several times that only her elders cultivate on an immortal mountain and that her own family is not wealthy. It sounds reasonable enough.”</p>
+<p>Li Jiangqian nodded. He was free to speak more candidly in front of Li Xuanxuan, and replied, “My guess is that even if she does have elders cultivating on an immortal mountain, Lady Xia likely belongs to a collateral or declining branch of a main bloodline. The Daoist Master’s journey to the outer-sea may not have been part of his original plan. Perhaps he made a compromise with some Dao lineage and asked them to look after him. This marriage agreement might have arisen from that. Since it was our side seeking favor, they wouldn’t have sent a prodigy or a crucial heir in return…</p>
+<p>“This is merely a private speculation, but all things considered, it’s for the best. None of the female cultivators by the lake compares to Lady Xia. The Daoist Master’s foresight surely surpasses ours.”</p>
+<p>Li Xuanxuan nodded. Just as Li Jiangqian lifted his head thoughtfully, a knock sounded from outside the hall. He waved his sleeve and the doors opened by themselves.</p>
+<p>Chen Yang was waiting outside; he hurried forward and whispered, “Family head… someone has arrived from the Azure Pond Sect.”</p>
+<p>Li Jiangqian frowned and asked, “Who from the Azure Pond Sect? And under what pretext?”</p>
+<p>Chen Yang lowered his voice even more and replied, “The visitor is Li Quantao, peak master of Fuchen Peak. He claims to be a close friend of the Jiutian Pavilion Master.”</p>
+<p>Li Jiangqian did not recall the name, but when Li Xuanxuan heard it, he immediately nodded and said, “Oh, it’s that young man! Quickly, invite him in at once!”</p>
+<p>Though Li Quantao and the Moongaze Li Family had seldom interacted in recent years, their ties ran deep, dating back to Li Quantao’s father, Li Encheng. Li Quantao himself had once saved Li Xizhi’s life, so Li Xuanxuan held him in high regard.</p>
+<p>He turned to Li Jiangqian and said, “He treated us well back then. Now that our family has become a Purple Mansion Realm immortal family, it is all the more reason not to keep him waiting. We mustn’t give the impression that we’ve grown arrogant and ungrateful, lest misunderstandings arise.”</p>
+<p>Li Quantao entered as he spoke, wearing a robe patterned with rippling waves of blue. The spirited youth of years past had become a courteous middle-aged man, bowing repeatedly in greeting.</p>
+<p>Li Xuanxuan, seated in the main seat, gestured for Li Quantao to enter. Li Jiangqian invited him to sit nearby. The man looked around with a sigh of amazement and said, “Your esteemed family has changed so greatly… it’s almost unrecognizable.”</p>
+<p>“You and Xizhi were like brothers in those days! You even called him Brother Xizhi; there’s no need for such formality,” Li Xuanxuan replied with a warm smile and pointed to a nearby seat. “Have you encountered any trouble? Or perhaps a junior from your sect needs a pill refined? Speak freely.”</p>
+<p>Li Quantao still seemed somewhat restrained. He had recently married the younger sister of Si Tongyi from the Si Family. With their support, he had no worries about his children’s cultivation. Yet his expression carried a faint melancholy as he nodded and said, “I’ve been ordered by my sect to investigate certain matters in the Shanji region. Since I was passing by the lake, I thought to pay a visit and speak for a while.”</p>
+<p>He said quietly, “I just came from the Mushroom Forest Plain. The place is in utter chaos. Yuan Hudu, head of the Yuan Family, died suddenly when his old injuries relapsed. Now Yuan Zibin has seized control of the family. He imprisoned the elder Yuan Huyuan and hung his uncles Yuan Fuyao and Yuan Fuyi from the mountaintop, whipping and tormenting them for sport, calling them his ‘herd of swine’. They’ve fainted and revived multiple times… it’s horrifying. He’s also conscripted over a thousand women into the mountains. The land is filled with their cries.”</p>
+<p>Li Xuanxuan frowned and asked, “Has Yuan Chengzhao made any statement?”</p>
+<p>At the mention of Li Xizhi’s junior brother, Yuan Chengzhao, Li Quantao shook his head and said, “He remains in seclusion… But such incidents are hardly rare. They’ve happened everywhere, though this one’s more sensational because it involves imprisoning and humiliating elders. Otherwise, it would barely be noteworthy. It is nothing compared to the fallen imperial line of Chu in the old days. My father used to say there were even cases of patricide within the cultivation world. That Changxiao Gate cultivator of Earth Virtue took his own elder sister as his Dao companion. It’s common among minor sects that have lost their divine ability’s suppression; when the one in power gains strength and status, their desires often run unchecked, turning to brutality.</p>
+<p>“In the old days, the sects could still maintain order. Now, each can barely care for itself, and such things only grow more frequent.”</p>
+<p>Li Xuanxuan saw that he was still holding something back. He waved his sleeve, dismissing everyone from the hall. Li Quantao still looked uneasy. Then, under the pretense of another errand, Li Xuanxuan sent Li Jiangqian away as well.</p>
+<p>The Azure Pond Sect Peak Master, distantly related through Wei’s Li bloodline, sighed deeply and spoke in a hushed tone after a moment, “There is some good news, Qin Xian, Peak Master Qin, has been promoted to the position of Yuanxing Peak’s peak master. He is preparing to marry Fellow Daoist Fei Qingyi.”</p>
+<p>The matter between Fei Qingyi and Qin Xian, confidant of the Si Family, had long been rumored. That it was finally becoming official was significant news, but it clearly wasn’t what Li Quantao truly came to say. Li Xuanxuan waited in silence, and sure enough, Li Quantao continued, “A few days ago, during Qin Xian’s first days in office, it happened to be my duty rotation. Flames suddenly erupted from Azure Pond Sect’s main peak, staining the sky crimson. I followed the sound and sensed a violent surge of spiritual energy… a cultivator had fallen.</p>
+<p>“When I arrived first at the cave dwelling, I saw clear traces of excavation at the gate, indentations from dharma artifacts striking stone. The formation had been dismantled by someone of remarkable skill.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1249.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1251.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
