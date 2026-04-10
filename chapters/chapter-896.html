@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 896: The Beginning Of Total Achievement (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-895.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-897.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 896: The Beginning Of Total Achievement (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xijun considered all this and remained cautious, but unfortunately, the jade box was completely empty inside. It had no grooves or fixed protrusions, and was simply a hollow container.</p>
+<p>Before the two could discuss further, a bolt of lightning flashed down onto the island. When the purple light dispersed, it revealed a female cultivator in a feathered robe, holding a spear.</p>
+<p>Her voice was gentle. “I’ve inspected the island. Including the surrounding islets and wetlands, it covers roughly fifty kilometers.</p>
+<p>“That’s not small at all.”</p>
+<p>Although Moongaze Lake was famed as a one thousand five hundred kilometer wide lake and the largest in Yue State, it was no longer comparable to its ancient size. In the west, its narrow stretch reached Mount Xiping, and in the east, its tributaries extended into the Wilderness. The lake islets were all flat reed marshes. Even at its peak, the lake only spanned about five hundred kilometers. The island at the heart of the lake was already considered massive.</p>
+<p>The lightning of this forbidden formation seemed harmless to Li Qinghong, instead gathering affectionately on her Duruo Spear as arcs of violet lightning danced. She said, “Have you managed to uncover anything from this forbidden formation?”</p>
+<p>“Aunt.”</p>
+<p>Though Li Ximing was an alchemist, the Li Family’s heritage covered formations, pills, talismans, and tools. After a few days of study, he had found some clues and bowed in reply. “This grand formation doesn’t seem to be a creation of later generations. The patterns are ancient, and the four pillars within symbolize Merging Fire, Converging Water, Molten Fire, and Valley Water. Since all four remain intact, it retains great power.”</p>
+<p>Li Xijun picked up the thread of conversation. “This appears to be an ancient formation, and not one set by Chen Taoping. The Fei Family’s Cloud Gathering Southern Heaven Formation on the lake is also ancient. They may share a common origin. I sent someone to the Fei Family to retrieve the formation core and personally went home to fetch this jade box.”</p>
+<p>Li Xijun explained its background in detail. Li Qinghong took the jade box and examined it. The white box shimmered in her slender hands, and a flash of purple lightning flickered over it. Before she could speak, a person and a white ape descended from the sky.</p>
+<p>“Greetings, esteemed elders!”</p>
+<p>The person and the ape were, of course, Fei Tongyu and the white ape. Fei Tongyu was not strong enough to enter the formation alone, so the white ape had waited for him outside.</p>
+<p>Fei Tongyu had taken medicine and looked much better. As soon as he landed, he knelt and raised both hands, presenting a small flag. The small flag was colored dark yellow and black, its edges embroidered with dark silver patterns, and it emitted a misty, shadowy aura. It was quite beautiful.</p>
+<p>He hid his two missing fingers behind the flag and bowed as he spoke respectfully, “The core of the Cloud Gathering Southern Heaven Formation, the Profound Boundless Flag, is here.”</p>
+<p>“You are too polite, senior.” Li Xijun spoke politely, sidestepping to avoid the bow, and immediately helped him up, his expression warm.</p>
+<p>Li Qinghong accepted the flag and responded gently, “Xijun is right. Brother Fei is one of our own; there’s no need for formality.”</p>
+<p>Fei Tongyu merely stood respectfully with his head lowered. Li Xijun took a closer look and remarked, “So the Cloud Gathering Southern Heaven Formation belongs to the category of Boundless Essence. That’s quite rare in the South.”</p>
+<p>The Boundless Essence qi appeared as a dark yellow hue. The one most knowledgeable about it among the Li Family was Li Xizhi. He had once crossed paths with Tuoba Chongyuan, a cultivator of Boundless Essence. Emperor Wu of Liang held the title of True Monarch Tiancheng of Boundless Essence, a true monarch of that very path.</p>
+<p>Li Qinghong began speculating,If I’m not mistaken, the Cloud Gathering Southern Heaven Formation must’ve been established during the Liang dynasty. That would explain the use of Boundless Essence. Back then, the formation must have been quite formidable. Now that Liang is gone, I suspect it has lost over sixty percent of its power…</p>
+<p>Even weakened, the Cloud Gathering Southern Heaven Formation had long been the strongest on the lake before the Li Family’s arrival. Ordinary Foundation Establishment Realm cultivators could not easily breach it, and the Fei Family had relied on this formation to endure for generations.</p>
+<p>Sure enough, Fei Tongyu nodded respectfully and replied, “Replying to the elders, this formation was where our ancestors once resided. It dates back to the Great Liang era. When Great Ning cultivators attacked this place, it was cultivators from Ning State who guarded the river and set it up. Our family history does record its weakening.”</p>
+<p>Fei Tongyu paused slightly and lowered his head, “Though ancient, this formation has never failed in all these years. The only exception was when our old ancestor was slain. That man walked through the formation as if it didn’t exist. Neither the formation plate nor the flags responded. It was as if they respectfully let him leave.”</p>
+<p>Li Qinghong tilted her head slightly and met Li Xijun’s gaze. The young man appeared deep in thought,Cultivators of Ning State who guarded the river?\n(o)v.e\l.com</p>
+<p>Li Xuanfeng’s relics had included a letter from the Great Ning Palace, written by a cultivator of Ning State to the Sima Family. It once mentioned,Your family has long stood guard along the riverbanks…</p>
+<p>Could it be that this formation once belonged to the Sima Family?fr eewe(b)nove.l.co\m</p>
+<p>Li Xijun suppressed his doubts, took the formation flag, and carefully compared it to the markings on the ground. After a while, he said, “It was likely crafted by the same hand.”</p>
+<p>Li Ximing exhaled slightly, shook his sleeves, and said, “That makes things much easier! If we have the core artifact as a reference and invite a Formation Master, a few Foundation Establishment Realm cultivators working together can break this formation. It’s just a forbidden formation now, so it’s not that difficult to deal with.”</p>
+<p>The three rose together. Li Xijun first looked at Fei Tongyu and said gently, “Senior, you may return for now. I still need to copy the patterns from the formation flag to break the formation. I’ll need to borrow it for another two or three days, and will return it afterward.”</p>
+<p>Fei Tongyu responded with a respectful bow and was escorted out by the white ape. Once he had left, the three of them exited the formation together. Li Ximing looked quite satisfied, thinking,That’s two birds with one stone. Now we also control the formation’s secrets. No matter what happens in the future, at least this grand formation won’t be able to cause much trouble.</p>
+<p>Li Xijun nodded slightly. The formation markings just now did seem to come from one hand. Regardless of whether it was true, it was the right story in front of Fei Tongyu. He said softly, “There must be both power and sacrifice when drawing others into allegiance. Gaining the formation flag this way is far gentler than other methods. At least it doesn’t damage the dignity of the rest of the Fei Family, and it spares Fei Tongyu from being caught in too awkward a position.”</p>
+<p>“This kind of thing really is your specialty, Eighth Brother!” Li Ximing shook his head in admiration. Li Qinghong was still examining the jade box in her hand.</p>
+<p>Li Xijun turned and said, “Make a copy of the patterns and send a portion to Brother Zhi as well. Let’s investigate in the sect for any connection. The Fei Family is a cautionary tale. These ancient formations, techniques, and dharma artifacts are indeed powerful, but if we don’t know who the original owner is, we may end up letting outsiders come and go as they please.”</p>
+<p>Now that they were speaking of ancient techniques and dharma artifacts, Li Ximing’s eyes lit up. He took something from his sleeve and tossed it into the air, where it spun and expanded, transforming into a man-sized incense burner.</p>
+<p>The burner was entirely crimson-red, its three legs carved with beast faces. Its sides had an image of a three-eyed creature, neither wolf nor tiger, its four feet stepping on cloud smoke. It was vivid and lifelike, a depiction of the famed ancient Three-Eyed Mount Tiao Beast.</p>
+<p>Only the base bore the word Sima, glowing faintly. After spending a long time refining it, Li Ximing had finally succeeded and was quite satisfied,This burner is called Cuoxiang. It is a Foundation Establishment Realm ancient dharma artifact, and different from most current dharma artifacts. It is not meant for combat.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-895.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-897.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 945: A Dragons Request (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-944.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-946.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 945: A Dragons Request (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“My father is the Dragon King of Bei Sea, a son of Dongfang You,” said Dingjiao.</p>
+<p>Dongfang You…</p>
+<p>Li Zhouwei had deliberately studied before coming to the Eastern Sea, so naturally he recognized the name. Dongfang You was a Dragon King who had reached the peak of the Purple Mansion Realm but had perished while attempting a Golden Core Realm breakthrough. His fall gave rise to the phenomenon known as Falling Water Rising Storm.</p>
+<p>Now that he had achieved the Foundation Establishment Realm and had a photographic memory, the details swiftly came back to him,Huiyao once mentioned that the original master of the Zhunan Serpent Dragon Palace was Dingyuan the Dragon Son. After Dongfang You failed to ascend, Dingyuan lost his backing and was stripped of his position. He was sent back to the Converging Water Sea…</p>
+<p>So he showed a trace of admiration and offered a compliment before asking, “May I ask, Dingyuan the Dragon Son is…”</p>
+<p>“Oh.” Dingjiao took a sip of spirit wine as a girl in pink robes tapped lightly on his back. He tilted his white horns and raised his brows with a smile, saying, “He’s my second brother. He was punished and sent back to Xia Mountain. I had no choice but to return from the Northern Sea to guard this place in his stead.”</p>
+<p>Hearing him say ‘had no choice,’ Li Zhouwei deduced that Dingjiao and Dingyuan were likely aligned, they were both grandsons of Dongfang You. Losing control of the palace may have been punishment for Dingyuan, but for a crown prince like Dingjiao, being stationed here likely wasn’t much better.</p>
+<p>He set down the pale green jade cup and said softly, “A pity.”</p>
+<p>Dingjiao let his gaze wander lazily over the dancing girls below and said softly, “Minghuang, I invited you here for two reasons. First, our elders once shared ties, so we may as well renew them. Second… there’s something I’d like to inquire about.”</p>
+<p>He turned the cup slowly in his hand and asked gently, “I’ve heard your esteemed family once had some connection with the demon den of Mount Dali. Is that true?”</p>
+<p>Li Zhouwei wasn’t clear on the relationship between the dragon clans and the fox tribe of Mount Dali. He paused briefly, then answered calmly, “Our ancestors did have a friendship with a direct descendant fox demon from Mount Dali, but as generations passed, the connection has gradually faded…”</p>
+<p>“Good.” Dingjiao’s gaze remained on the women in the hall, his pale blue eyes shifting slightly beneath his high brow as he replied, “I ask that you seek out a fox of Mount Dali on my behalf. If possible, I’d like to meet with one. If this matter succeeds, I will see to it that you are rewarded.”</p>
+<p>Li Zhouwei hesitated for a moment. His family’s only connection to Mount Dali’s demon den was through the White Banyan Fox, which was really just a bond through Li Tongya. Though the Li Family still sent spirit paddies into the mountains each year and the White Banyan Fox continued accepting them, they rarely met anymore.</p>
+<p>After all, friendship fades with distance, as they say…</p>
+<p>Sensing no hostility in Dingjiao’s tone toward Mount Dali, he didn’t agree right away but replied, “If it’s convenient, might you share the reason? I wouldn’t presume to ask the foxes on the Dragon Son’s behalf without cause.”</p>
+<p>“Just call me Dingjiao.” Dingjiao corrected him with precise formality, then added softly, “You’re one of our kind, Minghuang, so I don’t mind telling you. I need the hearing technique of the Mount Dali foxes to listen in on a certain trench in the sea. But we dragon kin cannot enter the mainland, and ordinary demons cannot even find the foxes.”</p>
+<p>“I see.” Although Dingjiao looked entirely forthright, Li Zhouwei couldn’t tell how much of it was true. It was best left to the foxes of Mount Dali to judge, so he nodded and said, “Very well, I’ll deliver the message on your behalf, Brother Dingjiao!”</p>
+<p>“Haha.” Dingjiao chuckled, and music began to play in the hall. The Dragon Son pulled the pink-robed girl into his arms and began fondling her as he spoke casually, “Brother Minghuang, since you’re a white qilin, surely your offspring must be abundant. Of all the dynasties under the heavens, only the Wei lineage prospered so greatly. Do you know any techniques you could teach me?”</p>
+<p>Li Zhouwei stiffened at once. Lustfulness was a trait often associated with dragons, and this white serpent dragon was no exception. The moment business was concluded, his first question was about bedroom arts.</p>
+<p>Li Zhouwei responded with a smile, “Most of my family’s heritage has been lost, and such techniques are even rarer. It’s hardly of any use nowadays.”</p>
+<p>He had deflected, but had already gleaned much from Dingjiao’s tone, thinking inwardly,This white serpent dragon has never truly regarded me as a human. Though he invited the heir of the Li Family, he sees me only as a white qilin in human form. Otherwise… with such noble blood, why would he be so courteous?</p>
+<p>Dingjiao didn’t press further. He laughed for a while, then used the topic to share a few amusing anecdotes about past Wei emperors before nodding. “If Brother Minghuang ever comes across a Bright Yang spirit item that promotes fertility, I hope you’ll think of me. We dragon kin may lack in many things, but spirit items and dharma artifacts? We have plenty, we’ll make sure you’re satisfied!”</p>
+<p>The red-feathered girl Wupian covered her mouth and giggled, casting a glance at Li Zhouwei as she spoke in a gentle tone, “I’m not as well-behaved as Brother Dingjiao. If I ever fly over Jiangnan and stop to rest at Moongaze Marsh, I hope Brother Minghuang won’t drive me away.”</p>
+<p>Li Zhouwei was, after all, a born spiritual variant. Most of the night passed as the three chatted and joked. They grew much more familiar with each other over time.</p>
+<p>Dingjiao gave Li Zhouwei a long, measuring look, then turned and called the giant-mouthed, long-whiskered man over with a sharp tone, “Go fetch my Dry Yang Bangles!”</p>
+<p>The whiskered man hurried off and soon returned carrying a jade box.</p>
+<p>Dingjiao slapped the box onto the table with a loud thud, and flipped open the lid, revealing two bright, gleaming golden bangles. He smiled and said, “Brother Zhouwei! These are Bright Yang treasures, they’ll be yours if you get this matter done!”</p>
+<p>Li Zhouwei raised an eyebrow slightly and glanced at the box. The two gold bangles were somewhat thick; it was not the sort of dharma artifact meant for binding others. Rather, they seemed meant to be worn on the wrists. What sort of mystique they held remained to be seen.</p>
+<p>Dingjiao exerted a bit of force, lifting the two golden bangles without a word and handing them to him. Li Zhouwei felt a warm sensation as he took them; the bangles were light as walnuts.</p>
+<p>He spun them twice between two fingers, examined them thoroughly, and praised, “These are indeed fine treasures.”</p>
+<p>Dingjiao looked away, glancing at the fire luan Wupian. The two exchanged a glance, and Dingjiao thought to himself,He can lift the Dry Yang Bangles, he truly is a genuine white qilin.</p>
+<p>Though Dingjiao and Wupian had already suspected he was a white qilin, they had to be certain to avoid any embarrassing mistakes. That was why he’d brought out the treasured bangles. Now confirmed, Dingjiao looked at him with even more warmth.</p>
+<p>Li Zhouwei glanced at the bangles again, then casually returned them to the jade box. Lifting his eyes, he said softly, “Brother Dingjiao, there’s no need for such courtesy. Whether this matter succeeds depends on Mount Dali. We’ve spoken freely as friends, no dharma artifact is needed just to pass along a message.”</p>
+<p>He pushed the jade box back, but Dingjiao pressed his hand on top of it and looked up. The smile faded from his lips as he said quietly, “This is something that must be made clear.”</p>
+<p>Li Zhouwei set down his cup and shook his head. He said, “If we’re keeping accounts, then having the Bicolor Scaled Beast carry me in a palace into the sea already settles the debt for delivering the message.”</p>
+<p>Li Zhouwei had always been wary. Dingjiao had caused quite a stir by bringing out his mount and escorting him across the sea in a palace. The spectacle alone had silenced any doubts. Earlier, Li Zhouwei had been worried about returning from the outer sea, but with such a display, no one would dare act until all the Purple Mansion Realm cultivators got to the bottom of it.</p>
+<p>This was merely delivering a message. Dingjiao hadn’t even asked him to persuade anyone. Though Li Zhouwei knew he was unique, so were people like Xu Xiao, Tu Longjian, and others of the Changxiao lineage.</p>
+<p>At first, Dingjiao’s reasoning had seemed plausible. But the moment Li Zhouwei held the Bright Yang Bangles, a sweep of his spiritual sense was all it took for him to recognize it,A Purple Mansion Realm spirit artifact. No, an ancient one at that!</p>
+<p>Even cultivators of the Purple Mansion Realm would fight to the death over this. No matter how wealthy the dragon kin were, how could they casually gift such a thing for a minor favor? His suspicions surged to the peak, so how could he dare accept it?</p>
+<p>His words were purely factual, but Dingjiao paused at that, looking pensive. He said softly, “Very well…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-944.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-946.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

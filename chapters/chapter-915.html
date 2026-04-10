@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 915: A Joyous Occasion (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-914.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-916.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 915: A Joyous Occasion (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Just as Li Xijun and the others were deep in discussion, the jade seal on the stone table shimmered faintly. It was a sign that someone had arrived outside the cave dwelling.</p>
+<p>Li Qinghong activated a spell, causing the Chongming Profound Insight Screen to return to its original form. She stored it within her sleeve, opened the stone door, and saw Bi Yuzhuang enter with a smile.</p>
+<p>Glancing at the Li brothers, she said, “Your esteemed family truly is brimming with talent!”</p>
+<p>Li Xijun thanked her respectfully. Bi Yuzhuang made a few casual inquiries but clearly hadn’t come just for small talk. Her expression turned serious as she lowered her voice and said, “The affairs of Hengzhu Dao Gate have been arranged. If you’re free, allow me to explain.”</p>
+<p>She pulled out a maritime map from her sleeve and spread it out. “As defenders of these sea islands, we’re meant to remain stationed at the main island and make our presence known. But although Wang Fu is powerful, he is outrageously indulgent and lustful. Rather than guarding the main hall on Qingzhou Island, he relocated and constructed a grand palace on Xifeng Island. Only a few close confidants come and go, making his whereabouts difficult to track.</p>
+<p>“Fortunately, he’s quite attentive to the reefs near Qingzhou Island. Despite his debauchery, he never skips his inspections of the reefs. He frequently sails with his favored concubines, often unclothed, seeking pleasure across the sea…”</p>
+<p>Clearly familiar with the man, Bi Yuzhuang said softly, “Our gate possesses a dharma artifact called Flow Water Conch, forged from the body of a demonic creature that failed to ascend to the Purple Mansion Realm. While it lacks offensive power, it can manipulate water currents.”</p>
+<p>What a treasure!</p>
+<p>Li Qinghong was quietly envious. Manipulating water currents was entirely different from mere water control. With this treasure, one could reach frightening speeds along the seafloor, as if they were riding the current itself.</p>
+<p>“This artifact leaves no trace of mana. We’ll first stir the water currents to draw him north. Then, we’ll stage a battle between a demon general and a rogue cultivator, feigning a chase over a Lesser Yang spirit item. He certainly won’t miss such an event and will pursue them.”</p>
+<p>After hearing this, Li Qinghong paused to think, then replied, “I’ve heard he possesses a bell, a sword, and a pearl. The bell is called Morning Wu, capable of seizing the spirit; the sword, Level Beam, is a Lesser Yang treasure; and the pearl, Gathered Clarity, can perceive things near and far. We’ll need to be cautious.”</p>
+<p>Since the Li Family was also determined to seize the item, they naturally wanted nothing to go wrong. Li Xijun reminded softly, “Senior, Wang Fu is indeed formidable. It’s said he’s adept at reading others. Typical chase-and-deception tactics may not fool him.”</p>
+<p>Li Qinghong had learned this through hearsay, but Li Xijun had observed Wang Fu’s behavior firsthand. His reminder was deliberate. Bi Yuzhuang nodded and thought to herself,So the Li Family has studied the man this thoroughly… It seems they’ve long had designs on what Wang Fu possesses.</p>
+<p>She smiled. “Naturally. To prevent him from seeing through the ruse, the rogue cultivator is being deliberately lured into the act. The demon general is a carefully selected fish demon, and that demonic creature knows nothing about the real plan.”</p>
+<p>A sly glint appeared in Bi Yuzhuang’s eyes as she quietly said, “Once he obtains the treasure and is pursued by a Foundation Establishment Realm cultivator, he’ll surely flee to his demon den. We only need to adjust the currents so that his concubines’ spirit boats head north. They’ll definitely run into each other along the way.</p>
+<p>“Wang Fu is infamous and ruthless. When the fish demon sees him, he’ll realize he won’t make it back to the den. He’ll flee in the opposite direction from Qingzhou, hoping Wang Fu will worry about the main island and let him go.”</p>
+<p>She said softly, “That way, everything appears genuine. The more he observes, the more convincing it becomes. All we need to do is lie in ambush opposite of Qingzhou Island. My gate also has a dharma artifact called Tidal Veil, which excels at concealing movement and evading detection.”</p>
+<p>Li Qinghong reviewed Bi Yuzhuang’s plan once again and replied, “It can’t have been easy selecting that fish demon. Sorry for the trouble, Senior.”</p>
+<p>Bi Yuzhuang let out a soft laugh and responded, “Don’t worry. This fish demon is clever enough and fast in water escape. Only one like that is worthy of being used as a chess piece. Ordinary weaklings wouldn’t be fit for the role.”</p>
+<p>After going over a few more details, she said, “Wait just a few days. On the day Wang Fu leaves the island, a few of my elders will bless your team with our sect’s blessing arts, it’ll give us greater assurance.”</p>
+<p>Li Ximing and Li Xijun stepped out of the cave dwelling. Outside, the pavilion towered high, and below it, the crowds bustled under warm, golden sunlight.</p>
+<p>Li Xijun was still lost in thought, though none of it showed on his face. Li Ximing, however, was growing increasingly burdened in spirit. He glanced at his younger brother and asked, “Do you have anything planned for now, Xijun?”</p>
+<p>“Nothing urgent,” Li Xijun answered casually, shifting the sword on his back into his arms. His gaze swept across the faces of passersby on the street, and he said quietly, “Hengzhu Dao Gate does have a solid reputation. Judging by the attire in this market, there are more rogue and family-affiliated cultivators here than in Qingzhou Island’s market. No matter where the Three Sects and Seven Gates land, Purple Mansion Realm immortal families won’t be treated badly. You can’t tell much on the surface, but rogue cultivators are shrewd. They always know where safety lies.”</p>
+<p>Li Ximing followed Li Xijun’s gaze. Li Xijun softly advised, “Brother, there’s no need to worry. We’ll do our best. I’ll go inspect the island for now.”</p>
+<p>Holding his sword, he slipped out through the side of the pavilion and made his way through the market streets, pulling out a map as he went.</p>
+<p>The waters surrounding Qingzhou and Hengzhu Reefs were vast. The closest islands were Golden Sack Island and Yuezhou Island, but further north, near the Shallow Sea, was Crimson Reef Island’s Yihuo Reef. Among the three gates, only Golden Tang Gate had good relations with Changxiao Gate, but Golden Tang Gate had shut its doors for years and lacked the strength to intervene at the moment.</p>
+<p>It’s just… Wang Fu’s palace surprisingly houses people from Crimson Reef Island. I only hope this won’t cause trouble when the time comes.</p>
+<p>Though Crimson Reef Island and Changxiao Gate were said to be sworn enemies, Li Xijun had used the Immortal Mirror to observe Wang Fu’s island and had clearly seen cultivators wearing Crimson Reef robes. It seemed the hostility between the two gates was only for show, and what dealings they had behind the scenes was anyone’s guess.</p>
+<p>Hengzhu Dao Gate’s plan for dealing with Wang Fu was quite comprehensive, but Li Xijun’s mind was still filled with thoughts,When Wang Fu leaves the island, I must first visit Xifeng Island to confirm whether he has the spirit item on him.</p>
+<p>————</p>
+<p>Bi Yuzhuang was extremely efficient. Several cultivators arrived quickly, and the group exited the island via a small alley in the marketplace. After flying over the sea for a while, they saw Bi Yuzhuang appear out of thin air, dressed in her crimson robe.</p>
+<p>She was clearly in high spirits, the bright smile at the corner of her eyes impossible to hide. It was obvious she had good news.</p>
+<p>She nodded and said, “Qinghong!”</p>
+<p>Bi Yuzhuang seemed to be holding a faint, mist-like veil in her hand, flickering in and out of sight. When she saw the group, she tossed the fabric into the air. One corner remained in her grasp, while the rest rapidly expanded, spreading out above everyone.</p>
+<p>A layer of white mist formed beneath Li Qinghong’s feet, condensed from the dharma artifact. She felt as if she were standing on solid ground. There were three others under the cover of the veil, two in crimson robes, and one dressed in pleated garments of blue with green patterns.</p>
+<p>Bi Yuzhuang introduced them, “These two brothers are juniors from our gate. The elder is Feng Chong, the younger Feng Yu. They’ve studied spell arts since childhood and are highly skilled in spell arts. They’ve been training out at sea for years, so Changxiao Gate likely doesn’t know of them.”</p>
+<p>As she finished speaking, both brothers, handsome and well-mannered, responded respectfully. Since neither side was familiar and had no ties, there wasn’t much else to say.</p>
+<p>Bi Yuzhuang then pointed to the man in blue and green and said delightedly, “This is Daoist Chen Xuanyu of the Yuyang Prefecture’s Chen Family. His sword cultivation is extraordinary. But his family keeps a low profile and has never sent him out before. I happened to run into him, what a pleasant surprise!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-914.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-916.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

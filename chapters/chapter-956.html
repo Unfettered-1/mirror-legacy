@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 956: Treasured Armor (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-955.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-957.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 956: Treasured Armor (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>In the past, when the Immortal Mirror still manifested in the world, one could probe it with spiritual sense and clearly determine the number of talisman seeds inside. But the mirror hadn’t appeared in decades. No one had seen it, and now one had to rely on incantations just to invoke it, let alone inspect talisman seeds directly…</p>
+<p>Li Xuanxuan seemed a little troubled by this and said quietly, “Using such treasures as vessels is all well and good… but there are already so few who bear the talismans. If something ever happens and the line is suddenly severed, with none of the younger generation having received a seed, wouldn’t that mean we’ve lost the connection entirely…”</p>
+<p>After mulling it over for a moment, he chose not to say more.</p>
+<p>Li Zhouwei then asked, “How is Jiangqian?”</p>
+<p>The moment this was brought up, Li Xuanxuan became visibly spirited and chuckled softly, “The child is bright and quick to learn. He’s already earned great favor from your father!”</p>
+<p>“Oh?” Li Zhouwei still remembered the exchange with Dingjiao in the Dragon Palace and pondered silently,If what Dingjiao implied is true… then both the eldest and second sons of Bright Yang are out of the ordinary. I’ve already seen what Jiang’ao is like, so Jiangqian must be remarkable as well.</p>
+<p>Dingjiao might not have been sincere with him, and his instructions might not reflect his true intentions, but the clues hidden in their conversation were still worth taking into account.</p>
+<p>So he asked, “Besides that, has there been anything unusual?”</p>
+<p>Li Xuanxuan paused briefly, then furrowed his brow, “He’s just a five-year-old child; it’s hard to say much. His eyes are starting to show a hint of red within the gold… but that’s nothing serious.”</p>
+<p>“Alright…” Li Zhouwei nodded slightly, seeming to understand. He passed over the basket of pearls.</p>
+<p>Li Qinghong took out several jade slips, unfurling them one by one and saying softly, “Minghuang, these are the Bright Yang techniques and spell arts collected by the family. Take a look.”</p>
+<p>Li Zhouwei relaxed his brow and picked up the jade slips from the table, reading through them one by one,Second-grade technique: Clarity of Sight and Heart Technique, Immortal Foundation: Bright and Clear Heart.</p>
+<p>Third-grade escape spell: Flowing Sun Refraction.</p>
+<p>Third-grade technique: Bright Origin Observation and Separation Technique, Immortal Foundation: Everbright Platform.</p>
+<p>Fourth-grade spell art: Heavenly Radiance, Hidden Light.</p>
+<p>Li Zhouwei gave a word of thanks, then put away Flowing Sun Refraction and Heavenly Radiance, Hidden Light. He skimmed through Bright Origin Observation and Separation Technique and handed it back to Li Qinghong, saying softly, “I’ve troubled the seniors.”</p>
+<p>“Don’t mention it.” Li Qinghong gave a gentle nod and exchanged a glance with Li Xuanxuan before saying softly, “Minghuang, there is one more matter.”</p>
+<p>She rose from her seat and walked across the hall, forming a hand seal to resonate with the formation. She then retrieved a brocade pouch from within. Standing before them, she gently shook it, and drew a large jade box from it.</p>
+<p>The jade box was as large as a tabletop and didn’t seem particularly extraordinary in material. Guided by mana, it floated lightly to the ground. Li Zhouwei made a rough guess in his heart, and sure enough, Li Qinghong said, “Years ago, my second uncle shot down Murong Wu and took a profound iron treasure armor from him . It’s a top-tier Foundation Establishment Realm armor. It was then brought back and reforged over nearly three months using True Flame atop Mount Bianyan.</p>
+<p>“Once it was completed, Ning Heyuan delivered it to my second uncle, who had it quietly returned and stored away here. It has remained unopened ever since.”</p>
+<p>Mana flowed along her slender fingers as she tapped the jade box nine times. The box opened on its own with a metallic clang, revealing the treasure within.</p>
+<p>Li Zhouwei focused and saw a gleaming field of gold-white fine scales. There were no intricate patterns, just layer upon layer of overlapping plates with a supple texture—it was a suit of soft armor!</p>
+<p>He lifted it gently, surprise written across his face. Li Qinghong praised it, “I’d heard Murong Wu used the Desert Profound Armor, which was thought to be a heavy armor steeped in demonic aura. I expected it to be a clunky plate armor. Who’d have thought, after eighty-one days of True Flame refinement, it would become this.”</p>
+<p>Li Xuanxuan looked at the soft armor with nostalgic eyes and said in his hoarse voice, “The Murong Family hails from the northern tribes. Their armor is naturally forged to be fierce and bulky, with three pounds of iron made to look like nine. The Azure Pond Sect, for all its differences, is still a Dao lineage of the Immortal Dao, so of course they refine things toward elegance and grace…”</p>
+<p>The old man had managed stores for many years and was no stranger to such things. After studying it for a moment, he said calmly, “Most likely the original Desert Profound Armor was far too unwieldy, so they had no choice but to reforge it into soft armor. Otherwise, by the Azure Pond Sect’s standards, they’d have tried turning it into a feathered robe!”</p>
+<p>Li Zhouwei admired it for a while and was clearly pleased. He called out and the white armor rose on its own to wrap itself properly around his body. Tall and broad-shouldered, he stood proud, clad in white-gold battle gear gleaming with radiant light. As his golden eyes swept the room, he truly looked like a direct heir of an immortal family.</p>
+<p>Only then did Li Qinghong speak gently, “This armor uses Desert Profound Sky Iron and Radiant Origin Stone for its core, with Wolfscale Bone and Crimson White Feather for the scales. Forged under True Flame by several high-level artifact smiths from the Azure Pond Sect, it is named Yuan’e.”</p>
+<p>Li Zhouwei nodded gently. Li Xuanxuan, slightly surprised, asked, “Have you already refined it?”</p>
+<p>Everyone knew that dharma artifacts required refining before use. They had to be saturated with mana. It wasn’t too difficult for Qi Cultivation Realm artifacts, and Foundation Establishment Realm dharma artifacts already took significant time. Masterless ones were easier and often required days. If it was already bound to a previous owner, they took much longer. Some ancient technique artifacts like the Chongming Profound Insight Screen could take months…</p>
+<p>Yet Li Zhouwei wielded the armor as if it were already his. Li Xuanxuan couldn’t help but ask in puzzlement. Li Zhouwei replied with a smile, “I haven’t refined it… but things of Bright Yang nature naturally favor me. I can use them as I please even without refining them!”</p>
+<p>As he spoke, the Da Sheng halberd manifested in his hand, radiating a bright, arcing glow. When its tip gently touched the floor, Li Qinghong smiled and said, “Go ahead and test your hand, have the white ape exchange a few moves with you.”</p>
+<p>Li Zhouwei smiled and nodded, but said, “I’m afraid that won’t be enough.”</p>
+<p>Li Xuanxuan let out a rare hearty laugh, while Li Qinghong withdrew the Chongming Profound Insight Screen, pushed open the palace doors, and stepped outside into the brisk morning wind. The creaking wooden clogs gave away the narrow-eyed monk’s stride.</p>
+<p>Li Qinghong asked softly, “How about Kongheng?”</p>
+<p>That drew Kongheng’s attention. He looked at the group, puzzled. Li Xuanxuan, whose memory of the monk still lingered in the distant past, smiled and nodded, “He seems quite good to me.”</p>
+<p>Li Qinghong, however, was more hesitant. Kongheng was no longer the man he used to be. A Master Monk’s lifespan was no short matter, and cultivation under ancient Buddhist methods progressed slowly. Though he was never flashy, years of tempered cultivation had made him someone not easily underestimated.</p>
+<p>“Even if his strength lies in defense rather than offense, he would still stand a strong chance against cultivators from the three sects and seven gates.”</p>
+<p>Not wanting to dampen Li Zhouwei’s spirit, she turned and asked Kongheng directly, “May I ask, Master Monk, how would you rate your current strength?”</p>
+<p>Kongheng paused in thought before giving a wry smile, “I doubt I could withstand your thunder arts… but I can still manage against other things.”</p>
+<p>Li Qinghong was confident in her own strength. Amplified by several dharma artifacts, her thunder arts were powerful enough to rival Tang Shedu of old. That meant Kongheng had reached the level of a peak master in the Azure Pond Sect.</p>
+<p>Before she could say anything further, the monk smiled and added, “If I’m on the defensive, even a late-stage Foundation Establishment Realm cultivator would have trouble killing me. But if I take the offensive… my strength would drop significantly. I’d say I’m around the mid-stage of the Foundation Establishment Realm.”</p>
+<p>He was, of course, comparing himself to direct descendants of the three sects and seven gates. Li Qinghong quickly made her assessment and thought,Slightly weaker than Xizhi… roughly on par with Ximing.</p>
+<p>She said gently, “Master Monk, why not test the heir’s strength? Just a light spar will do.”</p>
+<p>“Very well!” replied Kongheng.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-955.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-957.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

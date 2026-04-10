@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 934: Making Amends — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-933.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-935.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 934: Making Amends</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Oh.” A hint of embarrassment rose in Lu Jiangxian, who had been crouching by the door, as he thought,So that’s why… I’ve wandered all over Penglai for so long without seeing a single manual or jade slip. It was all sealed away with a Dharma relic.</p>
+<p>He shook his sleeve and muttered, “Sticking to outdated rules! Stubborn tradition… What age are we even in? Are cultivation methods still such inconvenient things?”</p>
+<p>After a moment’s thought, Lu Jiangxian began to suspect that the one who fought with Immortal Lord Chufu might have been an Immortal Lord from the Green Pine Temple. After all, this so-called Heaven-hearing technique resembled divine sense in many ways, so it might indeed be linked to Green Pine Temple.</p>
+<p>“A scholar’s borrowing… how could that be called stealing?”</p>
+<p>He mocked himself under his breath, just for amusement, then shifted his position so that the turtle shell disappeared from view. Wang Xun had already begun speaking in a soft voice again, “There are records in my family showing that Immortal Lord Chufu attained the Dao in ancient times and was a true Immortal Lord of great power. Later, the Immortal Lord borrowed a Fruition Attainment of Manifest Earth from among the Five Earths, first borrowing then seeking, and drew out the Sixth Earth, Azure Manifestation, from emptiness. His merit was boundless, and my family’s True Monarch has always offered incense to honor him.”</p>
+<p>The middle-aged Daoist sighed and nodded, “Our predecessor was immeasurably powerful and meritorious. We juniors are ashamed by comparison.”</p>
+<p>Wang Xun merely looked up at the jade rack and muttered, “Elder Dianxing, since you say that the Immortal Lord is immortal and can avoid all Three Disasters and Nine Tribulations, perhaps he still exists in the world. This Immortal Realm truly is daring… Even if he has already become one with the Dao, the great void surely remembers him.”</p>
+<p>His words made Dianxing even more embarrassed, and he could only sigh, “Who wouldn’t agree? Otherwise, how could our Penglai end up in such a state, without sun or moon?”</p>
+<p>It was true that Penglai had neither sun nor moon, but Wang Xun had seen many such grotto heavens before and hadn’t thought much of it at first. He nodded, and Dianxing continued, “This still depends on the turtle shell the Immortal Lord himself placed on the main peak. No one has ever dared move it. I reckon… if someone were to take it into the manifest world, it might cause the sun and moon to shine together and give birth to the light of duality in the great void… and that might just pierce the heavens again.”</p>
+<p>After their small talk ended, Wang Xun finally said, “I came this time with one more matter that I hope you can assist with, elder.”</p>
+<p>He spoke softly, “My father acquired a dose of Six Xin Unified Metal and promised to protect the Jiang Family.[1] The Wang Family has always honored its word. Our True Monarch hopes the Jiang descendants can sever their worldly ties and find a safe haven, so we won’t have to keep watching over them, nor fear unexpected events.</p>
+<p>“But now it seems the branch of the Jiang Family that led the Yu Family to ruin has itself been exterminated. Just as the Jiang Family once split the Yu Family, so too have they been split. The other involved families have become mortals, while the loyal An Family has returned to its former standing. Justice is served, Jiang Heqian may now be freed.”</p>
+<p>Naturally, Wang Xun could not bow, so he simply cupped his hands in salute, “I ask that the Immortal Realm prepare a secluded place for him to dwell in peace.”</p>
+<p>Dianxing fell into thought. Meanwhile, Lu Jiangxian had already risen and was descending the stone steps, thinking to himself,Dianxing mentioned a stone wall in the sea with immortal arts engraved on it. It’s likely similar to the immortal wall in Green Pine Temple. But I don’t know which of the Four Seas this is in, or if it even still exists. Once the Li Family attains Purple Mansion Realm, perhaps we can go searching.</p>
+<p>Lu Jiangxian could now traverse the great void and search the seas, but the Eastern Sea was vast beyond compare. Moreover, Lu Jiangxian had never revealed his true form in the manifest world, so the effort would be considerable. The Li Family was at a critical juncture, and he couldn’t afford to look away. If Li Ximing failed his breakthrough, Lu Jiangxian would have to search on his own.</p>
+<p>He walked across the sea and returned to Daoist Master Pu Yu’s temple. The young man was drawing dark gray water from a well and pouring it into a large cauldron, tapping the cauldron’s side with one hand while calculating with his fingers.</p>
+<p>The jade box lay at the bottom of the cauldron, radiating silver light beneath the rippling water. Its glow echoed the prismatic hues of Penglai’s secret techniques. Lu Jiangxian watched from the side, silently committing everything to memory.</p>
+<p>————</p>
+<p>Profound Peak Gate.</p>
+<p>The main peak of Profound Peak Gate, Yuexi Peak, was shrouded in mist. Though not tall at first, the mountain had grown taller year by year, and now towered above the surrounding ranges like a crane among chickens.</p>
+<p>Jade and stone littered the ground in the cave dwelling at the summit. Daoist Master Changxi sat cross-legged in the central seat, holding a small piece of jade in hand, eyes shut as though in cultivation.</p>
+<p>After half an hour, the Daoist opened his eyes with a trace of helplessness. With a wave of his hand, the cave doors rumbled open, and the woman in embroidered robes who had been waiting outside stepped in and bowed respectfully, “Tingyun greets ancestor!”</p>
+<p>Though she had waited outside for a long time before being admitted, she still knelt respectfully. It was Daoist Master Changxi who now showed a hint of helplessness and spoke softly, “Tingyun, what brings you here?”</p>
+<p>Kong Tingyun replied respectfully, “I received word from Bi Yuzhuang that Wang Fu possessed an ancient Purple Mansion Realm spirit item, which has now fallen into the hands of the Hengzhu Dao Gate. The Li Family returned empty-handed. This left me puzzled, so I came to seek your audience.”</p>
+<p>Daoist Master Changxi remained silent, understanding Kong Tingyun’s true intent, but he was unsure how to respond. The embroidered-robed woman gently continued, “Long ago, ancestor, you placed pieces within the Li Family and instructed me to become acquainted with Li Yuanjiao. Back then I was ignorant and immature, but fortunately did not spoil the greater plan…</p>
+<p>“As our ties grew deeper, I believed the two families could rely on each other. But the information we provided regarding the Radiant Sky Stone was flawed. Qinghong believed it to be the reward promised by our Profound Peak Gate after Azure Pond Sect’s flood… yet our gate turned around and exploited it again.</p>
+<p>“I felt it would be difficult to offer the Li Family a proper explanation, so I came to seek your instruction.”</p>
+<p>With utmost respect, she said quietly, “I mean no disrespect, I only fear disrupting your grand design.”</p>
+<p>Daoist Master Changxi gave a light cough and finally spoke, his voice aged and weary, “I know your words have always been pleasant. There were many players involved in Wang Fu’s case. No one expected Tu Longjian to act as he did, which pushed the situation this far…”</p>
+<p>Seeing Kong Tingyun still kneeling with head bowed, his tone shifted slightly, and he said hoarsely, “The Li Family must be given an explanation… I won’t sacrifice your rapport or dignity just to benefit Profound Peak Gate.”</p>
+<p>Kong Tingyun quickly responded in alarm, “Ancestor, you speak too heavily!”</p>
+<p>Daoist Master Changxi shook his head and waved a hand. “That island in the lake she dwells on seems to be missing a formation? Choose a day to visit, and invite those veteran formation masters from Splitreed Island to craft one for her. Would that do?”</p>
+<p>Kong Tingyun respectfully answered, “Formations are far too sensitive a matter, I fear it’s not the right gesture for mending relations.”</p>
+<p>Daoist Master Changxi frowned and said, “The Li Family is indeed cautious. Just go visit them and explain the matter. I have a Bright Yang spell here, once acquired by our Kong Family from Xu State. Giving it to them would suffice for now. As for what comes next, we’ll see then.”</p>
+<p>The woman in embroidered robes bowed low to the floor and softly said, “Tingyun obeys.”</p>
+<p>Daoist Master Changxi sighed lightly and instructed, “You’ve worked hard to gain this opportunity in the grotto heaven. Don’t exhaust yourself any further, wrap these matters up quickly. I’m getting old. If you enter closed-door cultivation soon, I can still watch over things for a while and offer some stability.”</p>
+<p>1. This is the (蒋家) Jiang Family of characters such as Jiang Bing, Jiang Heqian, etc. This is not the (江家) Jiang Family of characters such as Jiang Yan, Jiang Boqing. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-933.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-935.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

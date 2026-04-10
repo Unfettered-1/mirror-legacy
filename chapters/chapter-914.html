@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 914: Suzhu (IV) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-913.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-915.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 914: Suzhu (IV)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Delight danced across Bi Yuzhuang’s face. The two gates had schemed against each other for years and were well-acquainted. Moreover, the island masters on both sides were extremely strong and never strayed far from their islands, so it was hard to gain any advantage.</p>
+<p>Her own forces stationed in the trading markets were limited and not of high quality. Even if she mobilized them for an ambush, there was no guarantee they could deal with Yu Fuzi. That old thing wouldn’t show himself if he saw a crowd lying in wait.</p>
+<p>But Li Qinghong was a formidable combatant with violent and explosive lightning. She was also skilled in swift battles, and so an ideal candidate. So Bi Yuzhuang asked, “How many people can your esteemed family send?”</p>
+<p>Li Qinghong replied quietly, “Aside from myself, Ximing is adept at suppression, and Xijun has refined his Sword Essence. The two complement each other and are quite formidable… If things don’t go smoothly, we can dispatch more.”</p>
+<p>“That’s enough.” Bi Yuzhuang let out a heavy breath. Now, whether or not Daoist Master Chengyan of Changxiao Gate had returned to the sect, she felt she had enough control. She immediately replied, “Qinghong, go and make preparations. I will plan everything in detail!”</p>
+<p>Li Qinghong rose from the table and took her leave. Bi Yuzhuang immediately summoned someone to escort her. The red-robed woman sipped several mouthfuls of tea and gradually gained clarity in her thoughts.</p>
+<p>The Li Family has grown closer to Profound Peak Gate in recent years. Profound Peak Gate likely played a part in steering things, but this could be a good development… In that case, Kong Tingyun’s recent diplomatic easing with Changxiao Gate over Yuezhou Island wasn’t a true compromise, but a ploy to lull Wang Fu into complacency…</p>
+<p>Bi Yuzhuang had been troubled over the lack of powerful combatants, but now she had gained a direct descendant thunder cultivator of immortal sect pedigree, a late stage Foundation Establishment Realm cultivator with an Immortal Foundation focused on suppression, and a slightly lower-ranked sword sect descendant. And she herself was one of Hengzhu Dao Gate’s top Foundation Establishment Realm cultivators…</p>
+<p>Unless you, Wang Fu, are the second coming of Li Xuanfeng… you will surely suffer this death calamity!Thought Bi Yuzhuang.</p>
+<p>————</p>
+<p>After settling down in the market district, Li Qinghong was soon approached by Li Xijun and Li Ximing. When the two entered the cave dwelling, Li Qinghong immediately motioned for them to stop and said softly, “This is someone else’s cave dwelling. Best not to speak too much.”</p>
+<p>She flicked her sleeve and tossed out the Chongming Profound Insight Screen. The mystical screen unfurled, releasing several faint golden iridescent rays that enveloped a nine meter radius around them.</p>
+<p>Only after the Perception Severance activated did Li Xijun speak in a low, steady voice, “Aunt, I went to Qingzhou Island. Yu Fuzi wasn’t there. I asked around and found that he’s been residing on Xifeng Island nearby. He’s occupying an entire island for himself to cultivate in solitude.</p>
+<p>“Wang Fu places great importance on family background and loves to boast. Ordinary rogue cultivators can’t even get an audience with him. If we want to purchase the spirit item, we’d likely have to announce our name to gain a meeting.</p>
+<p>“He also has quite a foul temperament. From what I can gather, the families close to ours are all on bad terms with Changxiao Gate. He might name an outrageous price and humiliate us for nothing.”</p>
+<p>The longsword strapped to his back shifted as he said gravely, “We shouldn’t pin our hopes on that. Aligning with Hengzhu Dao Gate is the more reliable choice.”</p>
+<p>“I’ve heard the same.” Li Qinghong appeared somewhat troubled and replied softly, “So long as our family contributes, Hengzhu Dao Gate has promised to cover for us. But it’s hard to be certain. If the situation turns against us… If Yu Fuzi lives, we simply fail to get the spirit item. But if he dies, we fail to obtain the item, and Changxiao Gate discovers our involvement, that would be the most disgraceful outcome.”</p>
+<p>She shook her head and said, “Our family has good relationships with several immortal gates; Daoist Master Xiao has received us personally; we still hold a favor with Daoist Master Junjian; and we’re quite close with the Si Family. A major incident is unlikely, but we must always prepare for the worst.”</p>
+<p>Li Qinghong hesitated for a moment, then said softly, “If Changxiao Gate acts overbearingly and insists on settling scores, and the Hengzhu Dao Gate’s Daoist Masters cannot be relied upon; if Bi Yuzhuang proves to be two-faced and only seeking to deceive us; if Daoist Master Xiao refuses to intervene and Daoist Master Junjian is too newly advanced to Purple Mansion Realm to be respected by Changxiao… then, at that moment, if I must become the scapegoat, I’ll simply accept death. That would satisfy Changxiao Gate’s pride, and they’d have nothing more to say.”</p>
+<p>Though her words were softly spoken, they struck like thunder. Li Ximing abruptly raised his head, heart burning like fire.</p>
+<p>Beside him, Li Xijun cupped his hands and first reassured Li Ximing, “It will never come to that. Hengzhu Dao Gate has stood on the righteous path for many years. They wouldn’t abandon their stance over something so small. Chang Xiaozi and Hengzhu Dao Gate have long contended in the Eastern Sea. At most, he’ll hold a grudge for losing a move, he wouldn’t go so far as to shatter a piece on the board.”</p>
+<p>He then continued, “In my view, as long as Hengzhu Dao Gate takes the lead, killing Yu Fuzi won’t be an issue. No need to worry. In fact, I have some good news to report…”</p>
+<p>Seeing both Li Qinghong and Li Ximing turn to look at him, he explained, “I was previously worried the Radiant Sky Stone may no longer be on Yu Fuzi’s person! Even though Changxiao Gate is full of vitality and wouldn’t normally seize a junior’s possession, we’re talking about a Purple Mansion Realm spirit item! Couldn’t Chengyan and Changxiao have already taken or exchanged it long ago?</p>
+<p>“And even if they haven’t taken it, Yu Fuzi may not be carrying it around. Wouldn’t storing it within the gate be much safer?”</p>
+<p>His words struck both listeners like a jolt. Kong Tingyun had mentioned earlier that the item was on Yu Fuzi’s person. Though Yu Fuzi was known for his overbearing nature, what Foundation Establishment Realm cultivator wouldn’t bow their head before a Purple Mansion Realm?</p>
+<p>Li Ximing felt a headache coming on and said, “This complicates things…”</p>
+<p>Li Xijun exhaled softly and replied, “Fortunately, Purple Mansion Realm spirit items aren’t easy to store. Not everyone possesses jade boxes like ours that can contain them before placing them into a storage pouch. Most jade boxes used for such items are like essence-collecting vessels and must be worn close to the body or kept within a formation.”</p>
+<p>Li Qinghong immediately caught on and gave a subtle nod. As expected, Li Xijun cupped his hands respectfully and said, “Please forgive me, Aunt. I acted without prior notice and used a treasure from the great void to investigate Xifeng Island.”</p>
+<p>Li Qinghong merely shook her head and said, “What’s there to forgive? Don’t keep your brother in suspense. Is it there or not?”</p>
+<p>Li Xijun smiled gently and replied, “It is!”</p>
+<p>Li Ximing immediately let out a breath of relief. His interest was piqued, and he quickly pressed for details.</p>
+<p>The white-robed youth smiled and said, “I investigated the island. Wang Fu’s palace is filled with female companions, and is lively and bustling. The treasure is stored in a box made of black jade and placed right on the table in his hall.”</p>
+<p>“You’re sure you saw it clearly?” Li Ximing asked.</p>
+<p>Li Xijun chuckled lightly, “Of course I saw it clearly. I’ve seen the Golden Yang Radiant Origin before. It cannot be seen through gold or iron, and if exposed to copper, water, or wood, it turns to smoke. That’s why it must be sealed in jade or stone boxes.</p>
+<p>“There was a white stone the size of a pupil inside the black jade box. It was filled with celestial radiance, and interlaced with dazzlingly bright flames. Its aura belonged to the Bright Yang attribute, so it must be the Radiant Sky Stone!”</p>
+<p>Li Ximing finally relaxed at the description. He glanced at the smile on Li Qinghong’s face and shook his head. “Then all is in place. Let’s just hope everything goes smoothly, and that it doesn’t turn for the worse.”</p>
+<p>Li Xijun nodded with a smile, but suspicion stirred in his heart. Ever cautious and prone to overthinking, he couldn’t help but wonder,There’s just one thing… Rationally, that item would be safest within the gate… So why bring it to the Eastern Sea? And why place it so openly on a table? Could he be using it for some spell cultivation?</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-913.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-915.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

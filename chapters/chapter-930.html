@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 930: Mistake (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-929.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-931.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 930: Mistake (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Eastern Sea.</p>
+<p>Waves surged across the sea as hundreds upon thousands of sword shadows from Level Beam peppered the surface. The overcast clouds completely smothered the sun; towering waves crashed skyward; and the entire region was shrouded in mist.</p>
+<p>The grand formation that had cloaked everything had been fully revealed. It radiated pulses of golden light as it fended off the dharma artifacts launched by those outside. A red-robed woman had a complicated expression as she activated a petal-shaped ritual implement and knocked down several incoming dharma artifacts.</p>
+<p>At Bi Yuzhuang’s side, the Feng brothers each wielded spell arts, blocking most of the incoming dharma light. The few that slipped through merely caused faint ripples on the formation’s surface, doing little harm.</p>
+<p>Yet Bi Yuzhuang felt deeply uneasy. Wang Fu had already been in dire straits, but as a direct disciple of Changxiao Gate, it made no sense for him to die within a few moves.</p>
+<p>He had held out for fifty exchanges, and unleashed three talismans in a row. Bi Yuzhuang had even forced out the life-saving Purple Mansion Realm talisman that she had dispelled with a prearranged one of her own.</p>
+<p>But now there was a growing crowd outside the formation; the cultivators of Qingzhou Workshop had arrived. Alarmed, Bi Yuzhuang had wanted to end the battle swiftly, but the formation suddenly trembled violently, on the verge of collapse.</p>
+<p>“Not good…”</p>
+<p>The formation in Bi Yuzhuang’s hands was a treasured item called Yellow Cotton, a formation plate of the Auspicious Essence Dao. It was considered outstanding even among Foundation Establishment Realm cultivators. By rights, it should have easily lasted a while longer.</p>
+<p>Yet the moment those cultivators arrived, the formation had begun to shake uncontrollably. Bi Yuzhuang quickly realized something was wrong. When she connected to the formation plate through spiritual sense, she took a closer look and saw eight cultivators outside each holding a golden, slightly illusory spike, while another held a jade talisman linking the eight.</p>
+<p>“Engraved Golden Astral Profound Destroyer!”</p>
+<p>Bi Yuzhuang instantly recognized the dharma artifacts’ origin. It was a treasure from the Golden Feather Sect, famed alongside Azure Pond Sect’s Deadly Thunder Formation Destroyer. Eight of them would be more than enough to trouble a Foundation Establishment Realm formation like hers!</p>
+<p>This was disregarding the immense value of Yellow Cotton, which was a portable formation plate and nearly impossible to buy. If it were to be broken by these dharma artifacts, the loss would be devastating. It wouldn’t last nine hits against the Engraved Golden Astral Profound Destroyer, which was barely ten seconds of time.</p>
+<p>Once the formation broke, not only would the cultivators pour in, but Wang Fu, with his storage pouch full of escape techniques, would immediately flee. Since Li Qinghong and others were secretly aiding her, even if Wang Fu escaped, Bi Yuzhuang could not let them expose their tracks.</p>
+<p>She had no choice but to bring the Feng brothers out of the formation to confront the enemy and block the Engraved Golden Astral Profound Destroyer herself. She didn’t believe that this would let Wang Fu escape death, but the worry weighing on her heart remained—not for Wang Fu, but for her Daoist Master.</p>
+<p>Why is the Engraved Golden Astral Profound Destroyer of the Golden Feather Sect here? How did they track us down… Changxiao Gate must have acted… this may ruin the Daoist Master’s plans…</p>
+<p>She knew that once she left the formation, Daoist Master Hengxing would stay behind to guard it. Although she only understood part of her Daoist Master’s schemes, the circumstances clearly looked grim.</p>
+<p>While she thought furiously from outside the formation, the battle within was nearing a conclusion.</p>
+<p>Wang Fu’s robes fluttered wildly. His body was riddled with wounds, as lightning coursed over his skin. His bloodshot eyes reflected the crashing strikes outside the formation, yet there was not a trace of joy on his face.</p>
+<p>Before him, Li Qinghong rode thunder, commanding lightning at her feet, while Chen Xuanyu held a pitch-black sword in his arms, his expression calm and unreadable.</p>
+<p>“Fellow Daoist Li!” Wang Fu looked solemnly at Li Qinghong, his voice hoarse and expression even tinged with acceptance. A large bell trembled and flew forth from his side, blocking part of the surrounding sword qi. He gasped and asked, “I know full well I’ve become a discarded pawn. I presume my private ties with Minghui were exposed before the Daoist Master… He hates Jinlian, and so he wants me dead…”</p>
+<p>As he spoke, a deeper thought seemed to flicker in his eyes. He said quietly, “I simply don’t understand what I have done to offend your esteemed family… to warrant being hunted down like this?”</p>
+<p>Li Qinghong exhaled deeply and did not answer. One hand held her spear at an angle, while six silver-white command tokens circled the other.</p>
+<p>Chen Xuanyu’s sword essence grew sharper, his voice low, “Pay him no heed. Be on guard for deception.”</p>
+<p>Seeing her silence, Wang Fu growled bitterly, “Changxiao Gate refused to find me a Purple Mansion Realm technique, and I did not resent him for it. But why wouldn’t they let me seek it myself? Lesser Yang is a Dao lineage of Great Liang. If I didn’t travel north to inquire, how else was I supposed to find my Dao?”</p>
+<p>Li Qinghong found his words a little too deliberate. As she summoned silver lightning to crash thunderously down on Wang Fu’s great bell, she thought to herself,Though Purple Mansion Realm cultivators are powerful, they can’t observe what’s happening inside this formation unless they pierce the great void and enter. Even Changxiao Gate can neither hear nor see inside here.</p>
+<p>She observed quietly. She let her spiritual sense run along the lightning pulses and eventually spotted a jade inside Wang Fu’s storage pouch flickering with dharma light. She silently made note of it.</p>
+<p>Beside her, Chen Xuanyu gave him no more chances to speak. Sword light danced from his blade, falling like a rain of blades and pounding on the bell with thunderous booms. Lightning poured like rain, threatening to slice through Wang Fu’s body and forcing him to raise the bell once again for protection.</p>
+<p>Cornered and out of options, Wang Fu could do little. Chen Xuanyu had anticipated his movements and flung a golden ring from his sleeve, which transformed into a flash of gold that struck down like lightning. With a deep clang, the bell’s radiance dimmed and its dharma light dispersed completely.</p>
+<p>Wang Fu was just beginning to panic when he suddenly felt burning heat across his face, as though under the noonday sun. A brilliant white light seemed to emerge from nowhere into the sky and coalesced into a towering radiant gate.</p>
+<p>The gate shimmered with radiant light as it crashed down with blinding speed. Caught mid-movement, Wang Fu had no time to react. He sighed inwardly,There was one more after all!</p>
+<p>Li Ximing had been hiding within the clouds above Hengzhu Dao Gate as backup in case Wang Fu tried to flee. This strike had been long prepared, and was backed with immense power. The Radiant Origin Pass was of high grade and landed squarely upon Wang Fu.</p>
+<p>Wang Fu’s internal mana was nearly spent. That single blow shattered all his techniques. Several dharma artifacts fell apart, and the Radiant Origin Pass impacted the sea, unleashing a thunderous blast.</p>
+<p>Boom!</p>
+<p>Li Ximing didn’t dare be careless and channeled all his power to suppress Wang Fu. Li Qinghong dispelled her lightning and descended with Chen Xuanyu. Most of Wang Fu’s body was pinned beneath the glowing barrier, unable to move, and what little mana he gathered was steadily dissolved by the Radiant Origin Pass. His head, exposed outside, remained completely still.</p>
+<p>Naturally, the Li Family didn’t dare kill him themselves. The middle-aged man saw their hesitation and said softly, “I’ll do it.”</p>
+<p>Sword essence flowed along his blade as he ended Wang Fu’s life with one strike. Li Qinghong flicked her spear, hooking Wang Fu’s storage pouch. Li Ximing withdrew his mana and retrieved Wang Fu’s corpse. Removing his robe, he drew a small silver-white box from the sleeve.</p>
+<p>“Hm?”</p>
+<p>But it wasn’t the right time to investigate. Suppressing his unease, he followed the others and slipped into the clouds. Above them, celestial anomalies slowly emerged, gales howled and demonic murmurs buzzed through the sky.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-929.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-931.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

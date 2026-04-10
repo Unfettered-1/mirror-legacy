@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 911: Suzhu (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-910.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-912.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 911: Suzhu (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing pinched a thread of mana off and flicked his finger, lighting the mana lanterns on either side. Brilliant light spilled forth as he pushed open the vermillion doors. Spiritual qi surged toward him in a wave, whipping his robe into a flurry.</p>
+<p>The space was dim, lit only by the faint glow of the active formation. The hall itself was square, no more than thirty meters across in either direction. Lanterns flared on the walls, revealing a few stone tables and chairs casually set about. Formation markings crisscrossed the floor in interwoven threads of red and black.</p>
+<p>The Meng family’s fire vein, forged of bronze and inlaid with eight pieces of scarlet iron, was in the center, emanating a deep crimson glow. Li Ximing quickly spotted a spirit spring tucked into a corner. Its quality was quite poor, and it burbled forth with sluggish, bubbling water.</p>
+<p>Ding-dong…</p>
+<p>The clear spirit water resumed flowing along the carved channels in the ground, trickling into the quenching pool with a gentle tinkle. He estimated that it had likely been decades since anyone had set foot here. Yet the spirit spring had continued to emit spiritual qi, causing the energy to clog and the springhead to grow obstructed.</p>
+<p>Having spent many years in alchemy, Li Ximing was very familiar with fire veins. He placed a hand on the bronze pedestal of the fire vein and, just as he expected, it was scalding hot.</p>
+<p>This Meng family fire vein is indeed excellent; there’s even Li Fire mixed in. It’s truly a treasure for refining. Decades of accumulated Fiend Fire in the formation has nearly melted the pedestal.</p>
+<p>Meng Mansion had been abandoned for decades. Li Ximing figured that had he come any later, the bronze pedestal might have melted entirely, unleashing a surge of Li Fire that would have devastated the entire cave residence.</p>
+<p>When he saw that the Meng Mansion was utterly deserted, he thought to himself,Strange. She should have returned at least once… and yet, not even once?</p>
+<p>Somehow, now that he was certain the Meng Mansion was empty, he felt an immediate sense of relief. His mood lightened, and his steps grew brisk. Li Ximing had always been quick to regain his composure and was adept at casting aside emotions. He promptly began to consider how best to handle the place.</p>
+<p>“First, secure the fire vein.”</p>
+<p>One hand formed a seal while he reached for his waist with the other. A small vial, two fingers wide, leaped into the air. It was white-gold at the base and inscribed with intricate dark-silver patterns. It shimmered faintly in the light.</p>
+<p>“Profound Patterned Bottle!”</p>
+<p>This dharma artifact had long since been passed to Li Ximing, and he had refined it for some time. It converted his mana into Bright Yang mana, which gave off a bright and radiant glow. He formed a seal and activated the formation on the bronze pedestal. Almost immediately, a stream of black-red Fiend Fire burst forth.</p>
+<p>This fiendish fire was laced with Li Fire and blazingly intense. It was far more vicious than normal. Yet several wisps of radiant light emerged from Li Ximing’s Profound Patterned Bottle. They descended through the air in hazy veils, like gossamer, and settled upon the Fiend Fire, instantly subduing it.</p>
+<p>He had refined the Profound Patterned Bottle, and once infused with Bright Yang mana, the dharma artifact glowed brightly. It possessed two remarkable abilities. The first was Radiant Light, which could suppress evil, assist in flight, or dispel demons. It bore the typical characteristics of Bright Yang, decent in strength, though not especially powerful.</p>
+<p>“Better than nothing.”</p>
+<p>That had always been the bottle’s flaw. While its ability to adapt to various types of mana made it rather unique, its effects were somewhat akin to those of an Immortal Foundation and often lacked the raw strength to truly make up for any deficiencies.</p>
+<p>Fortunately, its second ability was more intriguing. Known as Unified Qi, it could gather Radiant Light and fuse it with flames, storing the mixture within the bottle for refining. It could then be unleashed in a burst during battle. The longer it was refined, the more formidable it would become.</p>
+<p>Its function resembled Li Qinghong’s method of storing Profound Lightning. The longer it was refined, the stronger it became. Unfortunately, once the Radiant Light and flame were fused together, they could never be separated again.</p>
+<p>He had grown quite fond of the artifact and wasted no time putting it to use. Forming a seal, he quickly activated the technique. Radiant Light spiraled down, and drew the surging Fiend Fire, tinged with scattered traces of Li Fire, into a pillar of black and red flame that was streaked with glowing crimson sparks.</p>
+<p>The Profound Patterned Bottle sought pure Li Fire, but the Fiend Fire was far too muddled. It was ordinarily difficult to refine. But it was effortless for Li Ximing. He gently curled his fingers of his free hand, activating the talisman qi Valley Wind Leading Fire within his body.</p>
+<p>The black pillar of fire instantly shrank to fit into his palm. The crimson Li Fire peeled off and streamed into the bottle. In less than fifteen minutes, he had drained the formation of all its accumulated power.</p>
+<p>The fire-controlling capability of Valley Wind Leading Fire had yet to show any limits. For most cultivators, this much Fiend Fire would have been overwhelming, but in his hands, it shrank to no more than the size of a fingertip. It would take a whole cart’s worth of ordinary qi bottles to contain it. Only the Cuoxiang artifact back home could manage it.</p>
+<p>Left with no better option, Li Ximing simply held it in his hand. He glanced around carefully. Several stone chambers were protected by Meng Family formations. Though they were meaningless to him, barging in still felt inappropriate.</p>
+<p>“This place isn’t bad. If time permits, I could return a few more times to extract Li Fire for artifact refinement,” muttered Li Ximing.</p>
+<p>He made a thorough circuit of the hall, which was pitch-black and empty. Snuffing out a few lanterns, he closed the doors behind him and sighed inwardly,I was born for the Purple Mansion Realm. If I fail, I die. The time is drawing near. I’ll return to make a final push in seclusion with a thirty percent chance of life and seventy of death. I had hoped to see her one last time, to make amends for the mistakes of my youth… but fate won’t allow it. There won’t be a chance.</p>
+<p>Li Ximing strode out, rose from the bright salt reef, and gazed over the vast sea. Then he took off northward on his Radiant Light, sudden clarity blooming in his heart, “Talisman qi is a marvel unlike any other. It’s far more than a means of advancing one’s cultivation. If I study it with care, I’m sure I’ll gain much. My family has been famous in Jiangnan for generations and talisman qi has played a part in that.</p>
+<p>“If I can cultivate divine abilities and avoid death, then it’s worth delving deeper here. But if I fail to reach the Purple Mansion Realm, then no research will matter.”</p>
+<p>He calmed himself and scouted southward for a while. Soon, Li Xijun came flying over from afar, riding the wind in haste. His white garments had frosted over, giving him a slightly travel-worn look. His longsword had only just returned to its scabbard, and a sharp sword intent still lingered around him.</p>
+<p>Li Ximing immediately tensed and asked a single question. “What happened?”</p>
+<p>“Nothing.” Li Xijun looked a little embarrassed and gave a vague reply.</p>
+<p>But Li Ximing wasn’t about to let it go. After repeated questioning, the young man finally hugged his sword to his chest and said helplessly, “I ran into a snake demon. She insisted I accompany her into the sea to be a guest in her palace. I refused several times. She couldn’t take the rejection and sent people after me. I had to fight my way out with my sword.”</p>
+<p>“Huh?” Li Ximing was genuinely stunned for a moment, then belatedly asked, “A female demon?”</p>
+<p>“Yes.” Li Xijun replied helplessly. It was rare for Li Ximing to see him like this, so he let out a couple of questioning hums.</p>
+<p>But Li Xijun misunderstood his intent and shook his head. “Don’t worry. I held back and I didn’t hurt anyone. She seemed like someone with connections and didn’t dare make a real move. It was more like a game to her.”</p>
+<p>“Hahaha.” Li Ximing laughed, amused to see him looking so awkward. He teased, “Brother Xijun, you really should stay away from the Eastern Sea. I fear one day, some dragon princess might snatch you away while you’re flying over the rippling Converging Water and take you to the Dragon Palace as her husband.”</p>
+<p>“Spare me your mockery, brother.” Li Xijun shook his head, redirecting the conversation. A flash of pale light passed through his pupils as he noticed something amiss and asked, “Where did you go, Brother? Why is your entire body filled with fire energy?”</p>
+<p>“Your perception technique grows sharper by the day.” Li Ximing shook his head as he replied, “These Suzhu Reefs are teeming with Li Fire. I happened to find a fire vein infused with it and drew out some mixed Li Fire to refine my artifact.”</p>
+<p>His harvest had been fruitful, so he felt rather cheerful and continued, “It’s often said that the Profound Patterned Bottle overlaps with the wielder’s Immortal Foundation. But perhaps its creator specialized in Bright Yang and crafted it with that in mind. This ability to merge Radiant Light and flame into Unified Qi—it’s quite ingenious! It fills a gap in my own cultivation.”</p>
+<p>He had mentioned it to Li Xijun before, so the white-robed youth already knew about his artifact’s function.</p>
+<p>He caressed his sword as he commented casually, “Consider it a lucky surprise, at least something that complements your path. Though I doubt it was crafted with such precision. Bright Yang cultivators have all sorts of offensive means, from seizing celestial light to capturing flames, that it just happens to match. In someone else’s hands, it might not have been of much use. Fortunately, it suits you.”</p>
+<p>Li Ximing rolled his eyes. The two exchanged a glance and couldn’t help but chuckle before setting off together to survey the surrounding area.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-910.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-912.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

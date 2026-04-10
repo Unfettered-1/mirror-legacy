@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 942: Huiyao Paying Respect (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-941.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-943.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 942: Huiyao Paying Respect (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Zongquan Island.</p>
+<p>In the Eastern Sea, where waters fall and thunder rises, the skies were perpetually overcast. Rarely did the thunderclouds part, but today, radiant light poured down, gleaming brightly across the towers and halls of the island.</p>
+<p>Whenever a heavenly breach occurred in the Northern Sea, the waters of the Eastern Sea would fall, expanding Zongquan Island by fifty kilometers. Its territory would suddenly grow, revealing numerous spirit ores. The island’s income would improve dramatically, and show signs of burgeoning wealth.</p>
+<p>However, on a barren mountain within the island stood a small courtyard, with no guards or servants. There was only a lone monk washing clothes in the courtyard. Halfway through, he looked up at the sky and muttered, “Two years… how quickly it passed!”</p>
+<p>Kongheng looked a little pale. He finished washing his robe, wrung out the water, gave it a good shake, and hung it to dry on the line. Outside the courtyard, seabirds chirped noisily, waiting for him to light a fire and cook.</p>
+<p>But after changing into clean clothes, his senses stirred. He rose into the air and rode the wind straight into the clouds. Sure enough, the waters were roaring thunderously outside the protective formation. The jade-red sea surged with deep rumblings.</p>
+<p>Woooo…</p>
+<p>A faint conch horn echoed from afar, growing nearer. Fish and shrimp leaped across the sea under the brightening sky. Bluish-green backs breached the surface, and countless enormous beasts seemed to be stirring beneath the waves.</p>
+<p>The sea looked as if it were boiling. One by one, demonic creatures rose from the depths and halted mid-air. Some held sabers, and the others held spears or halberds. The armored and robed creatures were lined up in symmetrical formations on either side of a path, glaring with bulging fish eyes.</p>
+<p>“Hm?” Kongheng began softly reciting scripture as he calmly watched the sea. The ocean gradually parted, and a massive blue-scaled beast with a horse’s face and an oxen’s body rose from the depths.</p>
+<p>Boom!</p>
+<p>Water crashed down on either side like a waterfall as the beast stopped near the shore. Its body was as large as a small mountain and its eyes were the size of huts. It stared silently at Kongheng with dark blue-black pupils. The monk was no larger than a single scale.</p>
+<p>Most of the island was cast into shadow by the sea beast’s form. The monk Kongheng fidgeted nervously with his prayer beads, raising his bronze monk staff, which clinked softly in his grip.</p>
+<p>“Fellow Daoist…”</p>
+<p>A dense swarm of shrimp and crabs prostrated themselves at the feet of the beast. Several water snakes stood upright like men, sounding conch shells with eerie rhythms. The cultivators on the shore were enveloped in the beast’s shadow, struck speechless by awe and dread.</p>
+<p>Ding-dang…</p>
+<p>At last, Kongheng lifted his brows and noticed bronze chains trailing from the beast’s body deep into the sea. A green-scaled fish leapt up from below.</p>
+<p>The green fish rode the waves forward. It had a pair of scaled wings beneath its ribs and bulging eyes. When it reached the shore, it transformed into human form. It was dressed in a black-green robe, laughing heartily as it spoke, “Master Monk Kongheng! It’s been a long time!”</p>
+<p>Kongheng’s calm expression finally cracked. He clutched his monk staff tightly, then exhaled deeply and shook his head as he replied, “You… you… Fellow Daoist Huiyao! Why all this pomp and spectacle!”</p>
+<p>Huiyao chuckled sheepishly and said in a low voice, “Please don’t take offense, Master Monk… I was ordered to patrol the sea, so the grand display was somewhat unavoidable. I ask your pardon…”</p>
+<p>Kongheng frowned slightly and asked, “May I ask what orders you are carrying out?”</p>
+<p>The green-scaled fish, now in robes and appearing rather dignified, waved his hand with a grin and said, “To offer congratulations!”</p>
+<p>Kongheng paused, lifted his head in thought, and saw the sky above clearing of clouds and fog. A great wind surged, heat rippled through the air, and heavenly light blazed with intensity.</p>
+<p>The heir has broken through…thought Kongheng.</p>
+<p>Huiyao’s fish-like face glistened with mucus as he laughed heartily and said, “This humble sea general offers congratulations to your esteemed family on behalf of the Dragon Son!”</p>
+<p>Kongheng finally let out a breath of relief and nodded. Only a monk like him, with a calm temper, could settle the matter with a few chants. Had it been another Foundation Establishment Realm cultivator, being startled like this would surely have earned Huiyao a few angry rebukes.</p>
+<p>When Zhunan Serpent Dragon Palace had changed hands, Huiyao had gathered his own cultivators to help slay a demonic creature. Word had it that he had since fared well under the new lord. Kongheng assumed that thanks to that assistance, Huiyao had risen in rank, and now his presence at sea carried considerable weight.</p>
+<p>The two waited for fifteen minutes. The plants on the ground began to wither slightly, and clouds of yellow mist swirled into the sky, each as large as a cartwheel. Kongheng narrowed his eyes and saw silhouettes moving in the clouds, with the faint cries of warhorses echoing within.</p>
+<p>Huiyao stared fixedly at the sky. After a few more moments, the celestial phenomena vanished completely, and only then did he descend before the hall.</p>
+<p>The monk stepped forward. Bright light burst from the windows and doors of the hall like a blade of white, illuminating both man and demon’s faces in dazzling radiance. He pushed the door open and stepped inside. Heavenly light flooded the hall, surging toward the upper seat. Huiyao followed closely and looked up.</p>
+<p>A deep-golden halberd was planted upside-down in the center of the hall. Its shaft curved like a crescent moon, with a bright white arc etched at its center. A brilliant light flowed like water from it.</p>
+<p>The demonic creature stared blankly as the scent of flowers brushed his nose. His gaze moved past the halberd and finally landed on a young man seated at the head of the hall.</p>
+<p>The youth wore golden-white soft armor adorned with black profound patterns. His sleeves were tightly fastened, and he was half leaned against the chair’s back. He slowly raised his head and revealed a sharp jawline. His slightly narrow eyes were calmly open.</p>
+<p>Huiyao had once seen Li Yuanjiao and felt this youth shared a resemblance, though he appeared more refined. But his eyebrows were longer, his eyes slightly wider, and he exuded an indescribable presence.</p>
+<p>He does not look like a man, but rather like a dragon transformed into human form… That sly and cunning glint between his brows, it’s just like Li Yuanjiao, or perhaps even more intense…thought Huiyao.</p>
+<p>Huiyao once knew nothing of the cunning and wickedness of humans until he met Li Yuanjiao. Only then did he understand that such traits were common in mankind. Yet, never since had he seen anyone like him—until now.</p>
+<p>As these thoughts flickered through his mind, Li Zhouwei slowly raised his long brows. His dark golden eyes focused, and Huiyao felt a chill sweep through his body. His heart trembled slightly as he thought,He must have cultivated some kind of eye technique meant to intimidate… This must be the Li Family heir… The one the Dragon Son said was the least human. Yes, it must be him. And besides, there are no other Bright Yang cultivators present.</p>
+<p>He felt the youth’s gaze shining like sunlight and stinging his face. He couldn’t help but lower his head. He copied human etiquette with a cupped-fist salute and said loudly, “Huiyao, patrol general of the Zhunan Serpent Dragon Palace, greets the heir!”</p>
+<p>The youth at the top seat rose to his feet. His black boots clicked against the floor with a few crisp echoes. His voice was clear and carried a hint of a smile as it echoed through the hall, “You are too courteous, Fellow Daoist!”</p>
+<p>But Huiyao remained bowed, swinging his robe and stepping forward with one leg. Using the grand salutation of the dragon kin, he knelt down with a thud, bowed toward the east, pressing his forehead to the floor.</p>
+<p>He then turned and bowed to the heir. His voice was respectful and slightly high-pitched as he said, “This humble demon, blessed by the dragon’s decree, bows again and again. I speak on behalf of the Resplendent Dragon King and the Crown Prince of the White Dragon Ancestry, the Dragon Son, Lord of the Scarlet Pristine Sea, commander of the Zhunan shrimp and crab regiments…”</p>
+<p>His tone was exceedingly respectful and drawn out, his green-black robe sweeping the floor as he chanted, ” To humbly invite the heir’s immortal presence to grace our Serpent Dragon Palace!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-941.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-943.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

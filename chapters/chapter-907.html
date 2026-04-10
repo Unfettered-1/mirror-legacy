@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 907: Moongaze Li Family (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-906.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-908.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 907: Moongaze Li Family (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xijun had remained on the peak for several months as the formation on the lake gradually neared completion. He sat within the hall, reading the Law of the Sexagenary Cycle Sword Manual while Li Qinghong sat with her eyes closed in silent concentration. She was holding the Sixfold Profound Thunder Punishment Tokens in meditation.</p>
+<p>She had long since refined these six silver command tokens. Their six streaks of silver radiance had merged into one, forming a misty silver halo in her palm. Thunder rumbled faintly within them, giving them an aura of profound mystery.</p>
+<p>The Sixfold Profound Thunder Punishment Tokens were excellent dharma artifacts, but they hailed from a bygone era, when spell arts still retained elements of formation techniques and shamanic arts. Li Qinghong had limited innate talent in either path, making her study of them quite arduous.</p>
+<p>But she was never one to shy from difficulty. She simply held the token and focused her spirit.</p>
+<p>On the other side, Li Ximing sipped from a teacup while flipping through a pill manual. Aside from one line of inheritance from the Xiao Family, he did not possess a truly distinguished pill dao legacy. His progress in the field had long since stagnated, and he was merely passing the time.</p>
+<p>He had been summoned by Li Xijun early that morning. The date of ascending the island was nearing, and coincided with an ancestral rite, so it was a significant occasion that he could not possibly miss.</p>
+<p>After a long moment of thought, Li Qinghong slowly opened her eyes and said softly, “Jun’er, have you invited their family to witness the ceremony?”</p>
+<p>Li Xijun promptly replied, “The unification of Moongaze is a joyous event, but it should not be overly publicized. Of the Three Sects and Seven Gates, we only invited Senior Kong Tingyun from Profound Peak Gate, and sent envoys to Mount Yu and Xianyou. As for the Xiao Family, they’ve sealed their mountain, so we’re not sure if we can reach them.”</p>
+<p>He added in a quiet voice, “Inviting Senior Kong Tingyun serves two purposes. First, we can discuss the matter of the northern shore, and second, we can inquire about affairs in the Eastern Sea.”</p>
+<p>All three in the hall knew full well what affairs in the Eastern Sea referred to. It concerned the cultivators from Changxiao Gate, which was a source of much consternation for the Li Family. After all, they were Daoists of the immortal sect, and it was impossible to simply kill or rob them. No matter what, some form of negotiation would be necessary.</p>
+<p>As he was speaking, a guard outside the hall reported that Li Chengliao had arrived to deliver his report.</p>
+<p>“Let him in.”</p>
+<p>Li Xijun set down the jade slip in his hand as the man entered. Li Chengliao had already removed his heavy cloak. His pleated robes were also black and red, but in a darker shade. A sash was tied at his waist, and he wore a white outer robe. All in all, he looked quite neat and sharp.</p>
+<p>Li Xijun had always been someone with a keen eye for detail. Just a few days ago, he had taken note of the indigo ceremonial robe worn by Li Chenghuai.</p>
+<p>Now, seeing that Li Chengliao wore the same formal design, he relaxed his grip on the jade slip and said pleasantly, “It seems our family’s new fashion is these pleated ceremonial robes. They certainly have a refined air about them.”</p>
+<p>Li Chengliao had just finished paying respects to the three Foundation Establishment Realm cultivators in the hall. He hadn’t expected Li Xijun to take notice of such a detail, and broke out in a cold sweat.</p>
+<p>He bowed and replied, “Uncle, the family has grown considerably in recent years, and with the many peaks and branches, the daily wearing of long robes, though elegant, lacks proper form. When we receive guests from the various esteemed families, especially from Jiangbei and beyond, they more often wear pleated garments, which are much more orderly than flowing robes…”</p>
+<p>He offered repeated explanations, clearly uneasy.</p>
+<p>It wasn’t that Li Xijun was overly strict; it was the Li Family’s own laws that were notoriously harsh. The family was known for oppressing its own branches and strictly disciplining the direct line. Even indulging in luxury could be considered a crime. The more closely related one was to the direct lineage, the more they were scrutinized. Over the years, many had fallen into the hands of the family chief’s court.</p>
+<p>His father, Li Xicheng, had led by example. When he died, his last words were ‘Our family has no excess wealth,’ which had been recorded in the family’s history. Li Chengliao could not bear for Li Xijun to misunderstand and tarnish his father’s legacy.</p>
+<p>“It’s fine.” Li Xijun nodded. “Being orderly isn’t a bad thing. Draft a proper regulation for attire. Once that’s settled, it’ll save us a lot of trouble in the future.”</p>
+<p>He furrowed his brows inwardly. The family rules were indeed too strict, if even the family head Li Chengliao was this afraid. He added a word of caution, “Set a clear line in the family chief’s court as to how far the privileges of each branch’s disciples may go. We may be strict, but our kin should not be wronged without cause.”</p>
+<p>Li Ximing nodded repeatedly in agreement beside them. Li Chengliao acknowledged the order and produced a jade slip, reporting, “The western shore has been fully reorganized. There are fifty-seven families in total, with fourteen Qi Cultivation Realm cultivators, thirty-one small peaks and valleys, thirty-two towns, and more than six hundred and ten thousand people.”</p>
+<p>He placed the jade slip with the records on the desk and asked doubtfully, “The minerals on the western shore had all been sent away for artifact forging, leaving the region poor as barren land. We found very few spirit items; seven families didn’t even have a single one among them. Yet, we uncovered three hundred and eighty-seven cultivation manuals, with only seven being for Qi Cultivation Realm. The number of Embryonic Breathing Realm techniques exceeds the combined total of the other three shores!”</p>
+<p>Li Xijun had already heard the inside story from Li Xizhi and wasn’t surprised. He nodded and said, “It was a remnant from the Golden Feather Sect. I’m aware of it.”</p>
+<p>Li Chengliao relaxed and continued, “Nine Gates Peak has average spiritual qi. Three other peaks are also usable. The western shore could support four prefectures to govern the various families.”</p>
+<p>Li Xijun examined the records closely. Aside from Nine Gates Peak, which specialized in artifact forging, only the six hundred thousand people and the three hundred cultivation manuals held any real value. The spirit fields there were scarce. Naturally, nothing of note was left.</p>
+<p>After checking the time, he had Li Chengliao wait to the side and read through the jade slip carefully. Then, rising to his feet, he addressed Li Qinghong, “Aunt, after a hundred years, the four shores of the lake are now in our family’s hands.”</p>
+<p>He declared loudly, “Our Li Family currently has nine hundred and seventeen Embryonic Breathing Realm cultivators, one hundred and eighty-five with various unrefined qi, thirty-one in the Qi Cultivation Realm, and six in Foundation Establishment Realm.</p>
+<p>“The western shore’s four prefectures hold six hundred and ten thousand people. The southern shore, including Mount Yue and West Pool, has one million and two hundred thirty thousand people. Wutu, Lijing, and Huaqian prefectures together hold eight hundred and ten thousand people. The eastern forest’s vital qi has yet to recover, but still contains five hundred and ninety thousand people. Lastly, the northern mountainous region holds three hundred and twenty thousand people.</p>
+<p>“A grand total of three million and five hundred sixty thousand people!”</p>
+<p>Li Xijun added an explanation in a soft voice, “The forest has fertile plains, and is the most bountiful region around the lake. Though years of war have left its population sparse, with a few decades of cultivation, exceeding two million inhabitants won’t be a problem.”</p>
+<p>Li Qinghong finally showed a hint of joy and responded with a soft sound. Li Xijun handed her a jade slip and continued, “The prefecture and peak system has now been reorganized. We have five prefectures and one mountain in the Eastern Milin Prefecture; four prefectures under Nine Gates in the west; and five prefectures in the southern former lands. The Fei Family governs five peaks through two prefectures in the north, while Qingdu and Yuting each form their own independent units. In total, sixteen prefectures, two peaks, and one mountain are all accounted for.”</p>
+<p>He drew out a map from his sleeve, with Moongaze Lake roughly oval in the center and a slight dip in the south. The sixteen prefectures were neatly divided and labeled in fine script.</p>
+<p>Li Qinghong studied the map for a while, her heart gradually settling. She glanced at the others present and asked softly, “Has the island at the heart of the lake been given a name?”</p>
+<p>“Not yet.” Li Xijun shook his head. He didn’t care much for naming and thought continuing to call it the island at the heart of the lake would be fine.</p>
+<p>But Li Qinghong smiled gently and said warmly, “A name like this is not without weight.”</p>
+<p>Though her voice was gentle, her feathered robe and silver spear gave it a subtle authority. She said softly, “Our family has spent a hundred years on this lake. All four bloodlines have advanced one after another, giving their all. But it was two individuals who laid the foundation of our dominion. First, Uncle Xiangping, and later, my father.</p>
+<p>“This island will eventually be reshaped by moving mountains, raising its geomantic lines to rise above the water. We might as well call it Pingya Island.”</p>
+<p>Li Xijun nodded lightly. At that moment, Li Chenghuai stepped forward to report, respectfully glancing at Li Chengliao before speaking, “The grand formation on the lake, the Pure Essence Harmonization Formation, has been established. I have sent the formation masters back, and the cost came to two hundred and twelve spirit stones.”</p>
+<p>An ordinary Qi Cultivation Realm formation typically cost a little over a hundred spirit stones, but the island was simply too vast, requiring over two hundred. Fortunately, the family had not paid tribute in recent years and had ample reserves. Even after funding this formation, they still had over two hundred spirit stones remaining.</p>
+<p>Li Xijun nodded and had him wait to the side. After another fifteen minutes, An Siwei entered the hall and bowed, reporting respectfully, “The great boats are ready. All the branches are boarding from Lijing, Huaqian, and Huazhong, heading to the island.”</p>
+<p>After An Siwei finished speaking, Li Qinghong rose from the main seat and descended the steps slowly. “Go and invite the elders and lords. Moongaze is now unified, it’s time to ascend the island.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-906.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-908.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

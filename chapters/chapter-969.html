@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 969: The Two (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-968.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-970.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 969: The Two (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After Li Zhouwei finished his prayer, pure light swirled around the hall. Wisps of white qi gathered within the Chongming Profound Insight Screen, and two points of white light emerged from the void, spun once, and blossomed into two white flowers that hung suspended in midair, each forming a line of golden script.</p>
+<p>One read, Li Jiangqian. The other read, Li Shuwan.</p>
+<p>Li Zhouwei and the others offered their thanks, then raised their brows and glanced at Li Qinghong. She appeared visibly stirred as the two white flowers drifted down gently, and she reached out to pluck them out of the air.</p>
+<p>“Two talisman seeds… how unexpected.”</p>
+<p>The appearance of Li Jiangqian’s name brought some relief, but the other name was completely unfamiliar. It left the three momentarily stunned, except for Li Xuanxuan, whose expression showed a flicker of recollection.</p>
+<p>Li Qinghong’s expression turned complicated, while Li Xuanxuan furrowed his brows, already retrieving a jade slip from his storage pouch. As an elder prone to nostalgia, he often pondered which family branches had died out and which ones needed continuation. For that reason, he kept every annual registry close at hand.</p>
+<p>After pausing for two full seconds, a hint of satisfaction appeared on Li Xuanxuan’s face as he replied, “So it’s one of my descendants… though the line is rather distant now… They’ve fallen to minor sect status.”</p>
+<p>He chuckled heartily, flipped the jade slip over, and handed it to the two of them. “All the better!”</p>
+<p>Li Qinghong let out a quiet breath and took the jade slip to read. She quickly found Li Shuwan’s name and traced it upward, frowning as she read aloud, “Li Yesheng… Li Xiewen… Li Pingyi… Hm? Isn’t this Uncle Xiewen’s line? Could you have mistaken it, Uncle?”</p>
+<p>At the mention of this, a flicker of pain passed through Li Xuanxuan’s eyes. He spoke softly, “This matter… traces back to your elder brother.”</p>
+<p>Li Qinghong raised her brows at once, murmuring, “Brother Yuanxiu?”</p>
+<p>Li Xuanxuan sat to the side, organizing his thoughts before speaking gently, “Uncle Yesheng didn’t have many descendants, mainly Xiewen. The others were rotten. They were running gambling dens and were steeped in debauchery. Your brother caught them in the act, killed one, and drove the rest out of town. They were also struck from the family registry, leaving only Xiewen behind… Xiewen had three daughters and one son. He only had Li Pingyi while still young, he…”</p>
+<p>Even after decades, Li Xuanxuan still choked up when speaking of it. He sighed. “He took his own life out of shame over the Yu Family’s Thunderfire incident… and so the line ended there with no son of his own, and his brothers all guilty of grave offenses and no longer part of the family. My seventh grandson’s second son was a mortal and had already fallen into minor sect status. I remembered our past ties and since both were minor sects anyway, I arranged for the child to be adopted into his line…”</p>
+<p>“I see…” Li Qinghong paused for a moment, then said softly, “Since a child with a spiritual orifice has now emerged, let her be restored to the major sect.”</p>
+<p>Li Zhouwei listened silently from the side as Li Xuanxuan simply replied, “I’ll bring her back at once.”</p>
+<p>Li Qinghong nodded with a smile and said, “I’ll go instead. This shouldn’t be delayed. By my count… she’s only six years old. Best not to draw unwanted attention. I’ll take advantage of the night to have a look and see what kind of child she is.”</p>
+<p>Li Zhouwei answered in response, “I’ll go fetch Jiangqian.”</p>
+<p>Li Qinghong vanished from the hall in an instant. Li Xuanxuan picked up the two white flowers. He did not dare touch them directly, but held them aloft with mana, gently probing them with his spiritual sense.</p>
+<p>The flowers had twelve pure white petals, and their centers shimmered faintly like illusions of light. A rich osmanthus fragrance wafted from them, calming the old man’s heart as he asked, “Minghuang, do you recognize this?”</p>
+<p>Li Zhouwei shook his head. When he felt the potent Supreme Yin aura within the flowers, he took out two jade boxes and carefully placed them inside, speaking softly, “It’s likely another extinct spirit item. When the chance arises, I’ll visit the Dragon Clan or the Fox Tribe and look through their ancient jade slips to try and identify it.”</p>
+<p>These weren’t the only Supreme Yin treasures in the Li Family’s possession. When Yu Muxian had visited the lake, a branch of osmanthus and a white flower had fallen during an Immortal Mirror outburst. Li Yuanjiao had carefully preserved them, but despite the Li Family’s best preservation methods, the items continued to fade every year.</p>
+<p>Some of the remnants had been used in life-matching rituals for Li Wushao, but the rest had vanished over the decades. After carefully sealing the flowers, Li Zhouwei murmured, “They seem difficult to preserve; perhaps they’re another kind of secret treasure. If we can’t identify it, or if it turns out to be too rare and precious, it’s best to use them. The white ape suffered too many injuries in his early years. Using these to match his life should help restore his foundation.”</p>
+<p>“Mm…” Li Xuanxuan wasn’t unfeeling toward his old brother-in-arms, but the more he heard, the more his teeth ached.</p>
+<p>This might be something far more valuable than a Radiant Sky Stone in a Supreme Yin Dao lineage like Chunyi Dao. He said, “We’re using it for life-matching… just like when we used Supreme Yin Moonlight to cultivate the Profound Scenery Wheel back then…”</p>
+<p>The old man could only smile wryly as he flipped the jade box over and over in his hand before tucking it carefully into his robes.</p>
+<p>————</p>
+<p>Lijing Prefecture, Lichuankou Village.</p>
+<p>The night wind was a bit chilly. The loquat trees in the estate drooped as rain fell steadily. Li Baotuo shivered from the cold and layered on two more garments. A group of children were laughing heartily in the courtyard.</p>
+<p>“What’s all this racket?!”</p>
+<p>Fastening his jacket, he pushed open the door and rubbed his hands. The weather was growing colder by the day, but Li Baotuo’s heart burned like hot coals.</p>
+<p>“Heavens be praised… after generations as mortals, we finally have a cultivator…”</p>
+<p>Just the day before, his daughter Li Shuwan had read the cultivation technique distributed by the family and condensed a wisp of spiritual power. It had sent Li Baotuo into sheer ecstasy.</p>
+<p>His branch of the family had never produced a cultivator, so their name was always buried deep in the inspection lists when cultivators came to survey people with spiritual orifices. There were far too many mortals like them, and far too many six-year-olds to inspect one by one. Normally, a basic Embryonic Breathing Realm technique was handed out for families to test on their own.</p>
+<p>Li Baotuo’s ancestors had known prosperity, so he didn’t lack for such things. When Li Shuwan turned six, he couldn’t be bothered to queue, so he just took the manual himself. The result nearly made him faint with joy.</p>
+<p>“Shuwan!” he shouted.</p>
+<p>When he saw his daughter approach, his face lit up. The children all gathered around the table. He sat down with a grave air and said solemnly, “This is a serious matter. I’ve already contacted Family Uncle Chengzhen. He’s helping find a cultivator to examine Shuwan! They should be arriving soon, so all of you keep an eye out.”</p>
+<p>Li Shuwan leaned against the table, her gaze circling around the meatballs in her bowl. This meal was a rare treat.</p>
+<p>Li Baotuo’s ancestors’ glory was just that—ancestral. Life was harsh now. They had only one large estate left, since everything else had been sold off by previous generations. Selling this would mean they had nothing left.</p>
+<p>The family survived by running a few boats on the lake, managed by Li Baotuo and his eldest son. It was still an honest trade. When the family chief came by for inspections, Li Baotuo could hold his head high.</p>
+<p>But how could that compare to cultivating immortality?thought Li Baotuo.</p>
+<p>To put it bluntly, if Li Shuwan’s innate ability was strong enough, the whole family could relocate to the lakeside, and the stipend granted would be more than enough for them to live out their lives in peace.</p>
+<p>As for Shuwan… after decades of cultivation, she likely won’t even recognize us by the time she returns to see us,pondered Li Baotuo.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-968.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-970.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

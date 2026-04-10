@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 903: Raging Thunder Quelled by Earth (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-902.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-904.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 903: Raging Thunder Quelled by Earth (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Fei Qingyi rode the wind all the way. The lake rippled beneath her as cultivators wearing jade pendants at their waists passed through the scattered islets that dotted the waters. Flags fluttered on both shores. She looked up at the land before her.</p>
+<p>There was Milin Prefecture, Jade Court, Glacial Clouds Peak, Huazhong, but all she saw was the word, Li. She hadn’t returned for decades. When she had left, the three families had agreed not to fight within the lake, an agreement personally established by Yuanwu Peak. And now, everything bore the Li surname.</p>
+<p>Fei Qingyi only felt a faint chill on the lake breeze. As she made her way to the northern shore, the people who came to greet her didn’t recognize her, addressing her as milady one after another. She simply waited in silence for Fei Tongyu.</p>
+<p>Soon, an old man approached. His face was weathered, eyes slightly bulging, fingers maimed, and one foot still bandaged and suspended. He was clearly not yet healed. From afar, he looked utterly wretched.</p>
+<p>She had left home at the age of six. And so, much like the current Fei Family, the old man before her felt like a complete stranger.</p>
+<p>Suppressing her tears, she followed her father into a small courtyard filled with plum blossoms and asked, “Why don’t I see any of the uncles?”</p>
+<p>“They died by the river.” Fei Tongyu replied dismissively, not the least bit sorrowful. A ferocious hatred blazed in his eyes, his mind entirely fixated on the sword-wielding enemy by the river. He asked urgently, “Have you confirmed it? That man is Si Yuanli! From the Si Family of the Azure Pond Sect!”</p>
+<p>Fei Qingyi felt everything around her was unfamiliar, and the old man before her even more frighteningly so. She silently nodded, while Fei Tongyu grew visibly excited.</p>
+<p>His hunched body straightened abruptly as he asked, “Yuan Xiu? How many members does the Si Family have? What’s their strength… their lineage?”</p>
+<p>His questions came like a barrage of arrows. Fei Qingyi answered them one by one, a growing terror gripping her heart. Her delicate hand, hidden in her white robe, was clenched so tightly that it turned pale.</p>
+<p>There were no questions about how she had walked on thin ice all these years within the sect. Her father Fei Tongyu was consumed entirely by hatred. Fei Qingyi had spent three years on Yuanwu Peak. She had seen Yuanwu grow increasingly deranged as his lifespan dwindled.</p>
+<p>She gradually sensed the signs of downfall, but what could she say? The Fei Family dared not associate with the Li Family when Yu Muxian was alive. After Yu Muxian’s death came Tang Shedu, and when Tang Shedu left, there was still Yu Su. For years, the Fei Family had no contact with the Li Family, partly thanks to her own persuasion. But it was all for self-preservation, nothing more.</p>
+<p>However, Fei Tongyu paid no mind to her daze. His questions grew increasingly reckless, forgetting the situation entirely, until he finally asked something that sent a chill down her spine. He asked urgently, “How much lifespan does Yuan Xiu have left?”</p>
+<p>Fei Qingyi finally lowered her head, closed her eyes to hold back her tears, and replied softly, “Father, that’s the Si Family… do you not realize whose formation lies beneath our feet… don’t you have even a shred of caution?</p>
+<p>“You’ve never been to the Azure Pond Sect, nor seen Purple Mansion Realm cultivators… you don’t understand the dread of the Chi and Si Families, nor what the Purple Mansion Realm truly means. Father, that is the Purple Mansion Realm!”</p>
+<p>Her words stunned Fei Tongyu. He frowned and said, “Of course I know the formation isn’t right. But who in the Fei Family hasn’t raged in hatred all these years? If it really had any eavesdropping ability, we’d have been destroyed long ago. Besides, this courtyard has its own warding formation!”</p>
+<p>Seeing that he completely ignored the second half of what she said, the woman wept as she said, “I’ve seen Tang Yuanwu; he was a Purple Mansion Realm cultivator. In their eyes, we’re not even ants; we’re tools, and objects. Father, what we think, he can perceive in a single thought. What he thinks, he can transform into what we believe. Father… that is the Purple Mansion Realm…</p>
+<p>“Yuanwu isn’t even as formidable as Yuan Xiu. Lord Si is a late stage Purple Mansion Realm cultivator. Fine, say you’ve stirred up hatred in the Fei Family, and in me—then what? The moment I re-enter the sect, maybe Si Yuanli won’t notice, but Lord Si will know instantly, and disaster will strike out of nowhere. It might even be the extermination of our family.”</p>
+<p>Fei Tongyu’s lips trembled. He snapped and said, “He, Si Boxiu, is so lofty, how could he ever probe the mind of a junior like you?”</p>
+<p>Fei Qingyi took a deep breath. Her slightly reddened eyes stared at her father as she said, “But he would. If he couldn’t, he wouldn’t be worthy of the Purple Mansion Realm. That’s what’s terrifying.”</p>
+<p>Her voice rang through Fei Tongyu’s mind, freezing him where he stood.</p>
+<p>Fei Qingyi had come here from the edge of death, with one foot still in the underworld. She no longer had the will to argue. Her eyes revealed her deep exhaustion, and her voice grew quieter, “Father, the deaths of our predecessors were already enough. It was the force of fate. The Jade True Immortal Foundation can be consumed by Shangyuan. He may not do it, but the other sects must still guard against it.</p>
+<p>“If not the Si Family, then others… The Li Family is fearsome, yes, but have you ever considered how different the Yu Family’s Yu Mugao and Yu Muyuan are? Why did the Xiao Family and so many other forces behind the scenes all choose to side with the Li Family?</p>
+<p>“It was because back then, all who cultivated Jade True were destined to die, whether it be the Lord, or Yu Yufeng. The tide of fate compelled them. You may be unhappy with our family’s decline, but from the moment True Monarch Shangyuan decided to break through to the Golden Core Realm…”</p>
+<p>She paused for several seconds, then said heavily, “Whether it’s the Fei Family or the Yu Family, we’ve long been kicked off the table of power on the lake. Our decline was inevitable.”</p>
+<p>Fei Tongyu looked at her in disbelief, but Fei Qingyi didn’t even wait for him to speak. She hurriedly said, “Now the Si and Li Families are on good terms; they may even join forces in the future. If this matter reaches the Li Family, what will become of us? Li Qinghong is more lenient, but Li Xijun is ruthless and capable. How will he see our family then?”</p>
+<p>Seeing her father sitting silently beside the jade table, saying nothing, she softened her voice, “Father… it’s enough… I truly think it’s enough… Please rest well, forget these matters, stop stirring trouble… Leave a breath of life for our family, will you?”</p>
+<p>Snowflakes drifted down on Glacial Cloud Peak. Fei Tongyu stood like a broken statue, frozen in place. Fei Qingyi waited in silence. Only after half a cup of tea’s time did she rise and say softly, “Father, I will return to report.”</p>
+<p>Fei Tongyu remained motionless and unresponsive. The woman paused for half a step, then turned, brushing the snow from his shoulders one flake at a time. Only then did she rise on the wind and vanish toward the south.</p>
+<p>***</p>
+<p>Mount Qingdu.</p>
+<p>Li Xizhi and Yang Ruizao were pressed for time. After a brief inspection of the lake’s grand formation, they prepared to depart. Fei Qingyi had made a quick return from the Fei Family and now followed respectfully behind them.</p>
+<p>She was strikingly beautiful, dressed in white robes. When a large boat revealed itself in the air and everyone gathered before it, Fei Qingyi bowed and said respectfully, “There is an item that originally belonged to your esteemed family, but long ago fell into the hands of Yuanwu Peak and has yet to be returned. It came into my possession by chance, and I have come today to return it to its rightful owner.”</p>
+<p>“Oh?” Li Xizhi nodded, while Yang Ruizao smiled and asked, “What item?”</p>
+<p>Fei Qingyi lifted both hands, and a stream of white light emerged and coalesced into a jade mountain. It was no larger than a fist, exquisitely carved with cranes and ancient pines, all shrouded in mist. Its translucent glow radiated a brilliant jade luster that was truly eye-catching.</p>
+<p>“Jade Smoke Mountain!”</p>
+<p>All eyes fell upon it. Li Xizhi took it and examined it closely. There was a faint sword mark halfway up the Jade Smoke Mountain.</p>
+<p>“As expected, that mark must have been left by the Celestial Moon Sword, Li Tongya?”</p>
+<p>Yang Ruizao sighed, and Fei Qingyi replied softly, “Indeed. This item is forged from Supreme Radiant Profound Jade, incomparably durable and impervious to all forms of mana. Only a figure of his caliber could leave a mark on such a dharma artifact.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-902.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-904.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 974: Defensive Wall (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-973.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-975.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 974: Defensive Wall (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>He flipped through the stacks carefully. The technique made no mention of its origins and was extremely concise.</p>
+<p>Li Zhouwei was sharp and quickly deduced the truth. The original spell arts appended to the Heavenly Scripture of the Dimming Li Day were likely famous spell arts. Once used, they would almost certainly be recognized. Thus, Lu Jiangxian had rushed to replace them, carefully sifting through tens of thousands of techniques to find ones without obvious sect affiliations, resulting in the current version of the scripture.</p>
+<p>As he continued to speculate, Li Shuwan hurriedly handed over the Houshu Golden Book. Li Zhouwei read it as well and praised, “What a difficult technique!”</p>
+<p>The Whole Pill Dao was already incredibly hard. If it weren’t, Changtian Peak of the Azure Pond Sect wouldn’t have faced the extinction of its Dao lineage. That the Houshu Golden Book was a sixth-grade technique only added to its difficulty. Even Li Zhouwei was inwardly alarmed upon reading it, while Li Xuanxuan felt like he was reading a heavenly script. Li Xuanxuan understood every word separately, yet was completely lost when they were strung together.</p>
+<p>The Houshu Golden Book didn’t have many appended techniques, There was only one fifth-grade escape spell called the Scattered White Falling Feathers, and a few ancient arts. Most of the text detailed various material transformations, shrouded in mystical language.</p>
+<p>“Ah!” As he was reading, a dull boom sounded. A burst of fire flared up from Li Shuwan’s desk, startling the girl. Before she could speak, Li Zhouwei had already whisked her away and said with a frown, “What happened?”</p>
+<p>White flames roared on the table, and several unknown caterpillars squirmed across the floor. Li Xuanxuan had already shielded Li Jiangqian, while Li Shuwan steadied herself and replied innocently, “Reporting to my lord… I was about to transcribe the spell… but after writing just the beginning… the paper caught fire on its own…”</p>
+<p>“Oh?” Li Zhouwei froze in surprise.</p>
+<p>Li Xuanxuan was even more astonished and murmured, “It seems the spell is of too high a grade… or perhaps connected to immortals in some way…”</p>
+<p>“Not bad.” A hint of anticipation surfaced in Li Zhouwei’s expression as he murmured, “Whole Pill… white fire… Shamanic Talisman Dao…”</p>
+<p>He calmed Li Shuwan. It was already late into the night. The two children had been transcribing for over a day and were clearly exhausted.</p>
+<p>He dismissed them first, then waved his hand and turned both stacks of paper to ash, speaking quietly, “My lord, these are two Purple Mansion Realm techniques.”</p>
+<p>Sensing that he had more to say, Li Xuanxuan turned toward Li Zhouwei, who then spoke softly, “I’ve read the family history. Our forebears toiled and faced hardship along the way, yet over time, the talisman seeds grew stricter. At the same time, the cultivation techniques improved. What could be the reason?</p>
+<p>“In my view, it might be tied to the protection of the common folk… The more people our family shields, the better the granted techniques become, and the stricter the talisman’s requirements. When we controlled half of Moongaze Lake, we received Purple Mansion Realm techniques. Now that the entire lake has returned under our governance, even the accompanying spell arts have arrived…”</p>
+<p>Li Xuanxuan nodded, and Li Zhouwei said softly, “It’s just a theory for now; the truth will reveal itself in time. From what I see, the Embryonic Breathing Realm sections of both techniques are quite refined. The two of them are progressing quickly. Let them begin cultivation first.”</p>
+<p>Neither Li Jiangqian nor Li Shuwan had been taught the Supreme Yin Breathing Meridian Nourishment Sutra. Their Purple Mansion Realm techniques began from the Embryonic Breathing Realm, so Li Zhouwei didn’t need to worry further.</p>
+<p>Li Xuanxuan said, “The Whole Pill Dao of spell arts can only be practiced by someone of the Whole Pill Dao. On the other hand, most of the Li Fire-based spells can be cultivated by anyone. The second- and third-grade ones can be circulated among the family.”</p>
+<p>“Let’s not rush.” Li Zhouwei looked a little troubled and said quietly, “These techniques have no known origin. We can’t tell if any cultivators might recognize them. I’ll review them first. Those that follow conventional patterns can be distributed for cultivation. The unusual ones should be held back for now.”</p>
+<p>Li Xuanxuan was clearly still preoccupied with thoughts of Li Qinghong, so his mind was clouded no matter how he tried. He nodded and stood up. Li Zhouwei helped the old man up and saw him stroke his beard, his voice slightly hoarse, “Minghuang, go about your tasks. I’ll take another walk around.”</p>
+<p>Li Zhouwei watched him leave, then picked up the documents on the table and hesitated briefly before lifting his brush. It took him fifteen minutes to finish reviewing them.</p>
+<p>Then, An Siwei came forward to report, “Your Highness, Lord Chengliao has entered seclusion for his breakthrough.”</p>
+<p>Li Zhouwei paused for a moment and then said quietly, “I know. He told me earlier… Go to the Great Desert… and bring back Aunt Minggong.”</p>
+<p>————</p>
+<p>Winter.</p>
+<p>Snow whirled heavily across the lake. Li Zhouwei had been busy for over a month, occasionally cultivating the spell Heavenly Radiance, Hidden Light, which was finally beginning to take shape. Meanwhile, Chen Yang, who had labored for years at the northern foothills of Mount Dali, had at last returned to the lake with his entourage.</p>
+<p>He strode into the main hall, beaming with excitement, and bowed deeply, “Your Highness! There’s news from the northern foothills’ demon den! The deer demon, Luken, has returned from visiting friends and has reentered the cave. He received word from our family and offered repeated apologies, saying his trip to the Helin Mountain Range delayed him.”</p>
+<p>Li Zhouwei had already steeled himself for the possibility of never finding the demon clan’s traces. He hadn’t expected such a turnaround, and a spark of delight stirred in his heart.</p>
+<p>He nodded. “Good. I shall pay them a visit at once.”</p>
+<p>Chen Yang cupped his fists and retreated quickly to make the necessary preparations. Li Zhouwei set down his cinnabar brush, pressed lightly on the table, and immediately made his deduction,So it wasn’t the matter of Dingjiao they feared… it was the swallowing of thunder…</p>
+<p>The Li Family had searched for years without finding a trace of the deer demon. But now, barely a month after Li Qinghong’s departure, Luken had suddenly returned from visiting friends and rejoined the northern den. The implications were clear enough.</p>
+<p>This deer demon, or rather, the faction behind him, is still worried our family might be ignorant and rash enough to pester him about the thunder grotto-heaven. If they had to refuse, it’d strain relations. But they do have strong interest in the Dingjiao matter, and were afraid we might send a reply too soon, so they hurried back after just a month.</p>
+<p>No matter how seasoned the demonic creatures of the den were, they still lacked the insight of experienced humans. Li Zhouwei saw through the situation clearly, and instead of resentment, he felt a faint sense of amusement.</p>
+<p>After all, how momentous was the matter of a Dragon Clan member swallowing thunder? Li Zhouwei would never be so blind as to seek aid from the foxes for it. He had never even considered involving them. But now that the fox tribe showed great interest in Dingjiao, his position in the middle became much easier.</p>
+<p>Stepping out of the hall, he was met with a sky blanketed in snow. Everything was white. Kongheng, the white ape, An Siwei, and others were waiting outside.</p>
+<p>Li Zhouwei glanced around and said, “The family can’t be left without Foundation Establishment Realm protection. Elder Ape, you stay and watch over the lake. Kongheng and I will go on this trip…”</p>
+<p>But then he hesitated, recalling the poor relationship between the fox tribe and Buddhist cultivators. The white ape, as a demonic creature, was in fact better suited to interact with the foxes. Without the slightest hesitation, he changed his decision and brought the white ape instead. They immediately set off for the northern foothills.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-973.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-975.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 977: Demonic Kin (III) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-976.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-978.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 977: Demonic Kin (III)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei fell silent for a moment, carefully weighing the fox demon’s words.</p>
+<p>The demon den at Mount Dali had always maintained friendly ties with his family. There were even rumors of their favor. At the very least, White Banyan clearly valued his friendship with Li Tongya.</p>
+<p>Li Zhouwei hesitated for a moment before speaking, “Many thanks for your guidance, Senior. Since you were a close friend of my ancestor, we naturally treat you with the respect due to an elder. Since you’ve spoken, you must mean no harm. I will obey.”</p>
+<p>The words clearly pleased White Banyan, whose expression softened with a hint of nostalgia. Li Zhouwei paused, then asked with a puzzled tone, “I may have some innate abilities, but I come from a declining line. It’s only natural for the Dragon Son Dingjiao to befriend you, Senior… but what’s the reason for befriending someone like me?”</p>
+<p>White Banyan’s tail swayed beneath his robe as he popped a fruit into his mouth. He pointed at Li Zhouwei and said softly, “You are a White Qilin.”</p>
+<p>Then he gestured to himself and said quietly, “I am a White Fox.”</p>
+<p>Seeing Li Zhouwei nod, he added firmly, “Dingjiao is still just a White Serpent Dragon, isn’t he?”</p>
+<p>Li Zhouwei seemed thoughtful, while White Banyan chuckled and said, “The Dragon Clan has always been this way. They’re arrogant and proud with the heart of a monarch. Even a thousand years ago, they were already befriending all sorts of demonic creatures and offering aid to downfallen demonic creatures…</p>
+<p>“You must understand, the Dragon Clan has long dreamed of becoming true dragons. But what is a true dragon? Their ambition is immense, and they fancy themselves Demon Emperors, seeing all of their kind as subjects. So of course there are benefits if one of them commands a White Qilin.”</p>
+<p>He paused, his expression growing contemplative as he muttered, “I recall a Daoist Master once saying… that Guo Shentong fellow… he too received plenty of aid from the Dragon Clan.”</p>
+<p>Li Zhouwei nodded on the surface but still felt uncertain within. For now, he could only go along. After a moment of silence, he finally exhaled and said quietly, “But I am human.”</p>
+<p>White Banyan let out a snort, his smile slowly fading. His tone grew solemn as he spoke softly, “A White Qilin… makes no difference.”</p>
+<p>His words echoed through the den. The old ape lifted its head to glance at him, as White Banyan continued in a slightly thinner voice, “Once you’ve reached the Purple Mansion Realm, this body of yours is merely flesh. Any ordinary Purple Mansion Realm cultivator can reshape their form at will. Male or female, it’s all the same. If you don’t wish to remain human, molding yourself into a bird or beast poses no difficulty. In the Dao of Transformation, beast or man, both are simply me. What difference is there?”</p>
+<p>He gave the youth before him a long, deliberate look and added softly, “You are even more unusual, as you carry the Wei’s Li bloodline. To be blunt, you are a descendant of a True Monarch. When your cultivation reaches its peak, you will become a White Qilin. Once a divine ability settles upon you, all it would take is a single thought and you can transform into a true White Qilin in an instant.</p>
+<p>“How could a White Qilin form possibly compare to that of a human? The Wei’s Li royal family of old were all the same. They roamed the world in their beastly forms, only transforming into human shape when necessary, just as demonic creatures do.</p>
+<p>His fox-like eyes blinked once as White Banyan sipped his fruit wine and said, “The difference between man and beast was never that great to begin with. And you, you are a descendant of a Golden Core Realm cultivator, of a True Monarch!</p>
+<p>“A True Monarch is a being of Heaven and Earth, beyond the distinctions of man or beast. The moment one becomes a True Monarch, they cease to be human! You bear their blood, so you naturally carry their nature.”</p>
+<p>The fox demon let out a laugh as he pointed upward, and said, “Take the Pristine Water True Monarch, for example… with a single thought, he becomes the very waters of Heaven and Earth. In the blink of an eye, he can sweep through every green pool north and south. Do you think he truly believes himself to be human? He is Pristine Water, and he is the green pool. He is the cave spring and the tribulation dew… even a feathered serpent or azure serpent dragon, even talismans and incantations. His centuries of cultivating in human form are but a single drop in the pool.”</p>
+<p>Li Zhouwei listened in silence. When White Banyan finished, he responded softly, “There’s no need to dwell on this. All cultivation ultimately returns to essence and destiny. If one day you attain Metallic Essence, you’ll grasp these mysteries more clearly.”</p>
+<p>“I am enlightened, Senior,” Li Zhouwei replied with a gentle nod, a thoughtful expression appeared on his face.</p>
+<p>White Banyan nodded in turn, his solemn demeanor vanishing in an instant as he chuckled and said, “That’s how my Lord explained it. I was listening nearby and made sure to take notes. I thought I’d share a bit with you.”</p>
+<p>“Then please convey my thanks to your Lord…” Li Zhouwei offered his thanks.</p>
+<p>White Banyan laughed and said, “Then let’s not waste time. Let’s head to the Serpent Dragon Palace together. The Bicolor Scaled Beast is fast, so you won’t even need to fly yourself.”</p>
+<p>Li Zhouwei replied, “Please allow me a moment to settle matters at home. I’ll join you shortly.”</p>
+<p>But White Banyan was already brimming with excitement. He rose swiftly, flicking his blue-green robe and said, “No matter, I’ll go with you. It’ll give me a chance to see that old man too.”</p>
+<p>————</p>
+<p>Waves surged across the Eastern Sea as a streak of silver and another of purple lightning tore across the sky.</p>
+<p>The silver-robed youth looked up as if admiring the unique beauty of the Eastern Sea and said with a smile, “Senior, I’ve heard there’s a Miao Family in the Southern Sea whose thunder arts are especially unique. Are you familiar with them?”</p>
+<p>Li Qinghong had quite a bit of history with the Miao Family and replied softly, “I’ve crossed hands with them twice. They’re no weaklings. Back then, I was still inexperienced and even suffered a few losses. Perhaps we’ll run into them again in the grotto heaven. Their family is quite unusual and cultivates devil techniques. They are truly one of a kind under the heavens.”</p>
+<p>Li Qinghong and Xi Zikang had flown for over half a year before reaching the territory of Dongliu Island. The land was stained in hues of red and black. The once smoke-filled skies had calmed significantly, and most of the surrounding islands had already fallen.</p>
+<p>The islands lay charred and blackened, with no trace of mortals to be seen. A few dilapidated grand formations were now in the hands of cultivators, and rubble littered the ground.</p>
+<p>The main island of Dongliu remained relatively stable. Though it had been under siege for five or six years and looked utterly bleak, it had not yet collapsed. The cultivators encircling it didn’t seem to be in a hurry, taking turns to slowly grind away at the grand formation protecting it.</p>
+<p>In the inland regions, where orthodox sects once held sway, campaigns like this were usually swift and decisive. Dragging things on for years was rare. But the Eastern Sea lacked any real code of conduct or honor; here, everything revolved around profit. A slow grind was more fitting for such people.</p>
+<p>Surprisingly, no one noticed as the two of them flew to the edge of the main island. The Foundation Establishment Realm cultivators stationed there were clearly unremarkable. They were typical reckless types who had clawed their way up through brute effort and bloodshed. They hadn’t trained in any perception arts, so it was only natural that they remained unaware of the duo’s arrival.</p>
+<p>Xi Zikang watched for a while and then smiled. “Senior, will you make a move? I have decent cultivation myself, so I can lend a hand if needed.”</p>
+<p>“Just a bunch of rogue cultivators… no need,” replied Li Qinghong.</p>
+<p>She wasn’t troubled by these people. The cultivators besieging the Han Family were clearly a loose alliance of nearby factions. They were united in name but divided in truth, and far from formidable. Otherwise, the Han Family wouldn’t have held out for this long.</p>
+<p>She was contemplating the best way to resolve things without bloodshed, but Xi Zikang had already noticed her hesitation and said with a smile, “That’s not hard at all. I’ll chase them all off, and you can just free the people afterward.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-976.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-978.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

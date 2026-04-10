@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 971: Crimson Palace Generation Receiving Talisman Seed (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-970.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-972.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 971: Crimson Palace Generation Receiving Talisman Seed (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Your child really only needed two hours? Hah! Who do you think she is, a noble heir or An Jingming himself?” Guest Cultivator Hu chuckled quietly, inwardly scoffing at Li Baotuo for not knowing his place or understanding cultivation matters. He simply asked, “Just answer this, how long did it take from the moment you gave her the technique to the moment she claimed to have produced her first wisp of spiritual qi?”</p>
+<p>Li Baotuo was momentarily stunned. After thinking for a second, he answered, “Senior, it took two days and one night.”</p>
+<p>“Two days and one night!” Upon hearing this, Li Chengzhen, who had been seated nearby, straightened with a hint of surprise and said softly, “Though Lijing Prefecture is built upon a prestigious bloodline, its spirit vein ranks in the lower nine prefectures. It’s already considered an exceptional talent to awaken spiritual qi in two days and one night!”</p>
+<p>He spoke half the sentence, then swallowed the rest, silently thinking,If she had sufficient resources, she could compete for a spot in the island’s entrance trials in five years. If Li Baotuo can get her admitted to a major sect, that would give me a solid connection within the island.</p>
+<p>Li Chengzhen’s thoughts were already spinning. Hu Jingye wasn’t far behind; he immediately began comparing the situation with his own favored son and muttered, “Oh? Her innate ability is quite decent.”</p>
+<p>Hu Jingye was a Qi Cultivation Realm cultivator himself, and his youngest child also had promising talent. If Li Shuwan really could be taken into a major sect, then Hu Jingye would have hit the jackpot.</p>
+<p>He maintained his posture, but moderated his tone as he said, “Your daughter entering the central island may be difficult, but for the surrounding prefectures, her talent is still rather promising…”</p>
+<p>His tone had softened considerably, though he still kept a stern expression, afraid Li Baotuo might see through his intentions. He said in a serious tone, “Since Chengzhen is here, we’re all on the same side. I won’t go on too long. Once Shuwan’s innate ability is reported, the family will naturally provide suitable resources and techniques… Though there’s still some distance to the central island, I can make up the difference for Baotuo, so long as she applies herself.”</p>
+<p>He kept up his formal posture and steered the conversation with decent grace, but Li Baotuo had been educated in the prefectural halls in his youth. He’d seen enough from his ferry work along the river to realize immediately,Damn it, this old dog switched faces real quick… My Shuwan’s innate ability really is top-notch. He sure knows how to pretend.</p>
+<p>He responded cheerfully, wearing the simple honesty of a farmer on his face. He kept nodding and smiling but gave no clear reply.</p>
+<p>Hu Jingye, seeing him feigning ignorance, was unbothered and said bluntly, “My youngest is eight this year and quite gifted. If you don’t mind, Baotuo, give me some face and let’s arrange a childhood engagement. I have some savings set aside and can support Shuwan’s cultivation. You can also leave your family’s path to the central island to me.”</p>
+<p>As a Qi Cultivating Realm cultivator, the two before him were no more than ants. Now that he had set aside pride and made such an offer, it placed both Li Chengzhen and Li Baotuo in a tight spot.</p>
+<p>Li Baotuo looked to Li Chengzhen for guidance. The Family Uncle clenched his jaw in embarrassment. The offer wasn’t overly oppressive, but neither could he openly endorse it. So, he hesitated and took a sip of tea instead.</p>
+<p>The family’s rules were strict. Nothing was feared more than the accusation of ‘bullying the weak through power’. Li Chengzhen was known for his politeness, and any connection with Hu Jingye was entirely based on the latter’s goodwill. That goodwill was fragile as paper, so he couldn’t afford to speak carelessly at the moment.</p>
+<p>Seeing no help coming, Li Baotuo resorted to a stalling tactic and said softly, “I know nothing of this return to the island… I fear wasting your resources, my lord. How could I dare agree so hastily? My child is still playful and immature, I’m afraid…”</p>
+<p>“Come now, Baotuo!” Hu Jingye frowned and responded gently, “My Hu Family may not match the old four surnames, but we have our reputation in Wutu Prefecture. If I say I’ll provide resources, then I will. There’s no need to worry.”</p>
+<p>Seeing Li Baotuo lower his head, he softened his tone further, “I’m not trying to force you. Let’s just set the engagement for now. If anything changes in the future, if Shuwan has a change of heart, it’s just a betrothal, it can always be dissolved. At the very least, the goodwill remains. If she becomes a disciple of a major sect, surely a little engagement won’t tie her down, right?”</p>
+<p>This is bad!Li Chengzhen noticed a flicker of hesitation in Li Baotuo’s expression and sighed inwardly,It’s not that simple!</p>
+<p>Being a major sect disciple himself, Li Chengzhen knew how strict the family elders were. If Li Shuwan entered a major sect and the engagement had to be broken, she would be at fault. It would damage the Hu Family’s pride and her reputation, and news of it might even reach Qingdu. Just a single careless comment could stir great unrest among the elders!</p>
+<p>Li Baotuo fell silent. Unable to sit still any longer, Li Chengzhen averted his gaze and frowned, silently signaling his disapproval.</p>
+<p>However, whether Li Baotuo had picked up on the hint or never intended to agree in the first place, he sighed as he finally shook his head. “My lord… my family truly dares not reach so high.”</p>
+<p>Li Chengzhen was both surprised and relieved, while Guest Cultivator Hu’s smile faded into silence.</p>
+<p>It was a hard slap to his pride. No matter how composed he was, Hu Jingye could no longer maintain his expression. His face darkened as he suddenly stood up. “You invited me here just to show off your daughter. Now that I’ve seen her, you turn around and scorn me? Is this how you conduct yourself? It’s outrageous!</p>
+<p>“I’ve cultivated for years between Wutu and Lijing, who doesn’t give me respect? You, Li Baotuo, are downright insolent!”</p>
+<p>Li Baotuo hadn’t expected such a sharp tongue. Panic overtook him and he stood up quickly, responding, “I invited you, my lord, merely to look upon my daughter. I never imagined marriage would be brought up so abruptly. Though I am a commoner, I still cherish my daughter… I know nothing of your esteemed son, so how could I agree so hastily? What parent would risk tossing their child into a pit of fire?”</p>
+<p>In his urgency, he let his words slip. Hu Jingye flew into a rage and bellowed, “Boy, are you mocking the Hu Family’s upbringing?!”</p>
+<p>As a Qi Cultivation Realm cultivator, his fury erupted like thunder. His shout shook the house’s beams, sending dust and sand cascading down on everyone. The sound of falling grit filled the air. Li Baotuo’s sons stood silently outside. They, too, were furious but too afraid to speak.</p>
+<p>“How bold!”</p>
+<p>Both Li Chengzhen and Li Baotuo were paralyzed by his overwhelming presence. Hu Jingye flung his sleeve with force and stormed out. Li Baotuo’s knees buckled in fright, while his wife crouched hopelessly by the door, too afraid to move.</p>
+<p>Seeing everyone frozen in fear, Hu Jingye’s bottled-up anger and humiliation found its outlet. He strode toward the door, leaving only his retreating back.</p>
+<p>Li Chengzhen leapt from his seat and cried out in alarm, “Are you insane?! What nonsense were you spouting?!”</p>
+<p>He grabbed Li Baotuo and saw his nephew scrambling out the door. He noticed that Hu Jingye hadn’t yet flown off and realized the man was still gauging their reaction. Hu Jingye was subtly exerting pressure on them.</p>
+<p>Gathering his robe, Li Chengzhen hurried after him and shouted, “Guest Cultivator Hu! It was unintentional talk, truly!”</p>
+<p>Li Baotuo had never experienced such a display of strength. Panic overtook him, and he stumbled outside, gasping for breath and vision swimming.</p>
+<p>But at that moment, a crisp voice rang out, “Lord Hu is truly imposing!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-970.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-972.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

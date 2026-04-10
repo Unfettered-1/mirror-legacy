@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 990: Fuxia (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-989.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-991.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 990: Fuxia (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>As expected, he’s from the Wrathful Dao lineage…Kongheng’s heart sank. Things were turning dangerous. He forced himself to cup his hands and return the greeting, speaking gently, “May I ask why the senior has come here…”</p>
+<p>Fuxia remained cold, almost amused, as he replied, “Master Monk Kongheng… do you truly not understand, or are you pretending not to? You and I both walk the Buddhist Dao, how dare you speak such nonsense?! Are you even truly a cultivator of the Northern Revered One’s Dao?”</p>
+<p>The courtesy on his face had faded, and he now clearly doubted Kongheng’s identity. Kongheng paused briefly, then dropped all pleasantries and said sternly, “Senior, do you call turning a man into a deer with such a beast-forming curse righteous? I’ve only heard of North Demon-Subduing Temple exorcising evil, never of such heretical arts!”</p>
+<p>Fuxia’s eyes flared with a bronze gleam, as painted golden lacquer shimmered on his face. His voice dropped, seething with rage, “Beast-forming heresy? This is the law of karmic retribution! A deer is a creature of Heaven and Earth, neither noble nor base. All life is equal. He killed a deer for selfish gain, which is no different from killing a man. Turning him into a deer was already lenient, as he was ignorant and uneducated!”</p>
+<p>Kongheng’s sleeves stirred without a wind, golden light emerging faintly behind him. His voice now carried the deep resonance of a Buddhist chant as he said, “He killed the deer to save his ailing wife. Yet you turned him into a deer, and his wife, already destitute and bedridden, died as a result… He killed a deer, but you killed a person!”</p>
+<p>When he heard that word ‘but,’ Fuxia realized Kongheng valued human life above that of beasts, betraying a disregard for the doctrine of all beings being equal. He flew into a rage.</p>
+<p>Golden lacquer spread across his face, with bright markings emerging as he shouted, “Madman! Let me ask you! He was poor and his wife bedridden, but whose fault is that? Who is to blame? How dare you spout such nonsense here!”</p>
+<p>His voice rolled like thunder, sending the surrounding cultivators fleeing in panic. Those who reacted too slowly were already bleeding from their ears, staggering unsteadily. Kongheng formed hand seals, the golden light behind him surging upward.</p>
+<p>Clang!</p>
+<p>A six-armed Vajra emerged from the golden light behind him. Its massive golden face was etched with horizontal patterns, glinting with red light. Its round eyes bulged, and its six arms held golden chains that stretched like a spiderweb across the sky, casting a shimmering golden canopy to shield the surrounding cultivators.</p>
+<p>Kongheng gritted his teeth and said, “How can it be anyone’s fault? His poverty came from a gambling father who squandered everything. His wife fell ill due to cruel fate and misfortune. How can blame be assigned so simply?”</p>
+<p>Fuxia froze for a moment, then burst into a deep, mocking laugh as if hearing the most ridiculous thing. His staff radiated brilliant light as he sneered, “What a fine tale of misfortune and fate. Let me tell you the truth!”</p>
+<p>His staff shot upward like a white rainbow, striking the golden chains above with a crisp, resounding clang. Fuxia shouted furiously, “He lived on the lands governed by your Li Family, yet lived in poverty and despair. That is your Li Family’s sin! Every tragedy stems from your Li Family, and now you dare push the blame onto me?</p>
+<p>“His wife was ruined by your Li Family. Then he turned to harm other lives. I turned him into a deer out of mercy, recognizing that he too was a victim. I haven’t even begun to settle scores with your Li Family!”</p>
+<p>This outburst stunned Kongheng. Even the golden chains in the sky trembled and halted for a moment. A wave of searing white light descended upon him, forcing a muffled groan from his throat. It felt as if Mount Tai[1] was crashing down on him, leaving him breathless.</p>
+<p>His entire body surged with chaotic mana. He forced out through gritted teeth, “Twisted heresy!”</p>
+<p>But the monk before him paid no heed to the duel itself. His eyes blazed with fury, and kept Kongheng suppressed with one hand holding the staff as he said coldly, “You build no temples, appoint no tenant lands, teach no Dharma, and offer no guidance, yet you divide land by household and name. So people drift with their fate, rootless and lost. Tragedy is inevitable. You watch them rise and fall, indulge in worldly rights and wrongs, and still claim you bear no blame?</p>
+<p>“If you had taught Dharma and gathered the lands into the fold of the temples, making the people tenants of the monastics, then they would only farm and cultivate. With bliss in their hearts, the more they suffered, the closer they’d be to the Revered One. How could poverty still exist? How would hunting even be necessary? With monks overseeing them, how would his wife ever fall ill?”</p>
+<p>The fury in Fuxia’s eyes seemed almost tangible. Then, he suddenly raised his other hand and summoned a blinding beam of golden light.</p>
+<p>“My Dao’s Dharma was sabotaged by those petty immortals, and my efforts failed at the final step. I’ve lost most of my power and can no longer borrow divine might… But against the likes of you… it’s more than enough!”</p>
+<p>The beam of golden Dao light in his hand leaped like a venomous serpent as it lashed through the air at Kongheng. Alarms exploded in Kongheng’s heart. His eyes turned completely golden, releasing waves of radiant multicolored light that drifted down like rain across the lake.</p>
+<p>The multicolored light was quite unusual. Wherever it passed, lotus blossoms rose on the lake, and the sound of chanting scriptures thundered through the air. Five-colored radiance surged upward like a fountain. The white staff in Fuxia’s hand instantly dimmed, and the golden chains seized the opportunity to retract, coiling protectively around Kongheng.</p>
+<p>“The Great Radiant Light Art…” The colored light rained down upon him in countless threads. Fuxia’s face twisted in fury as he growled, “To wield such a high and noble spell art, yet submit to those of the Immortal Dao!”</p>
+<p>His words echoed over the lake. Kongheng felt a burning pain in his chest and gritted his teeth, forming seals and casting spells. The golden chains thickened and grew more solid, yet he dared not act rashly, fearing suppression from that white light.</p>
+<p>Seeing no response from Kongheng, Fuxia paused briefly, then spoke in a deep voice. “These cultivators of the Immortal Dao pursue only self-cultivation. How could they possibly care for the people? Once they enter the world, they build layer upon layer of immortal peaks that are full of schemes and treachery. Interests entangle and hearts grow clouded; there are only a few who ever remain truly good…</p>
+<p>“Only through the Buddhist Dharma is there equality among all beings. All become temple tenants, united in one heart. Even suffering is joy. We think only of truth, kindness, and beauty. There’s no officials, no hierarchy, and no struggle against cruel fate! Yet you serve as a guest under the Immortal Dao, watching all this with indifference! Kongheng! You are a disgrace to the Northern Revered One’s Dao…”</p>
+<p>Before he could finish, thunder cracked in the sky. Blazing Radiant Light gathered above them, forming a massive, ancient, and exquisitely carved wall of divine light. It loomed like Mount Tai, casting an enormous golden reflection upon the lake’s surface.</p>
+<p>Fuxia’s rage reignited. His eyes gleamed like bronze as the blinding Radiant Light bathed him, making him resemble a golden statue.</p>
+<p>He said coldly, “I am debating with a fellow of my generation. Who are you to interrupt?”</p>
+<p>The radiant pass before him expanded in his eyes, then a voice rang out like thunder, cold and fierce, “To hell with you, you bald donkey! Go preach your plague-ridden dogma elsewhere!”</p>
+<p>1. Mount Tai is one of the Five Great Mountains (五岳) of China and holds immense cultural, spiritual, and historical significance. Located in Shandong Province, it has been a site of imperial worship, Daoist and Buddhist pilgrimage, and poetic inspiration for over 3,000 years. In literature and idioms, “泰山压顶” (Mount Tai pressing down) metaphorically describes an overwhelming force or unbearable pressure bearing down. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-989.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-991.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

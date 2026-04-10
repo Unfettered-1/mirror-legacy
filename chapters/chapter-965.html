@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 965: Fanning the Waves (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-964.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-966.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 965: Fanning the Waves (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>After a few exchanged words, a muffled boom rang out, and a woman stepped into the hall. Everyone rose to their feet as Shen Yanqing hurried forward.</p>
+<p>“It has been many years, Senior.”</p>
+<p>Now that Shen Yanqing was aware of the grotto heaven matter, she didn’t smile too warmly. Li Qinghong, however, nodded with a pleasant smile, “Yes, it has been some time.”</p>
+<p>They guided her to a seat, and Shen Yanqing softly said, “I should have come to visit long ago, but so many matters delayed me. Our family could not remain untouched amid the chaos in Jiangbei. Only now, with things finally settling down, could I come to pay my respects.”</p>
+<p>She drew a jade box from her sleeve and placed it gently on the table. “I’ve brought the Celestial Thunder sacrificial method I mentioned to you back then. Our thunder arts originate from the Northern Palace Profound Thunder Art, one of the twelve Daos from the Zhou era.”</p>
+<p>Li Qinghong listened carefully and asked, “The Dao of Thunder Steering and Cloud Dwelling is likely not among them, is it?”</p>
+<p>Their own Dao of Thunder Steering and Cloud Dwelling was no secret, and since that lineage was passed down from Yanyang Temple, it likely did not date back to the Zhou era.</p>
+<p>As expected, when Li Qinghong asked, Shen Yanqing nodded and said, “It’s not among them. The Dao of Thunder Steering and Cloud Dwelling was established in later generations. The Twelve Thunder Palaces were originally lineages tasked with overseeing justice and morality across the realm. Now, everything has been lost… Even their Dao lineages are untraceable. Only a few techniques remain.”</p>
+<p>Wei Danying, sitting nearby, let out a soft sigh and interjected, “If the Twelve Thunder Palaces still existed, how could the world have fallen to this state?”</p>
+<p>Li Qinghong made no comment, but Shen Yanqing’s expression grew somewhat strange. She hesitated for a moment, then said, “Our sect’s lineage holds the Thunder Palaces in the highest regard… but in truth… based on what we’ve uncovered over the years, that might not be entirely justified.”</p>
+<p>Seeing the confusion on their faces, Shen Yanqing spoke softly, “According to the ancient records left behind, the Thunder Palaces were rather tyrannical. Their thunder chariots patrolled the lands, and wherever their envoys passed, thunder would rumble, killing thousands…”</p>
+<p>She paused, then continued, “What’s more, the Thunder Palaces held dominion over mortal tribulations, casting thunder down upon people without warning. Cultivators who were progressing smoothly would be suddenly struck by profound lightning just before a breakthrough. Agony was the best outcome, and those with great karmic sins often lost their lives… The world has suffered under them for far too long…</p>
+<p>“Then, after the Northern Palace’s elder departed for the Outer Heavens, the world erupted in revolt. From Purple Mansion Realm cultivators down to common folk, none were willing to endure the Thunder Palaces’ oppression any longer. Nine out of the Twelve Palaces were destroyed… Cultivators stormed the palaces, pulled out the thunder arts, and burned them all. The Dao lineages vanished shortly after.”</p>
+<p>Li Qinghong remained silent as she listened. Wei Danying, having grown up with a vastly different perspective, looked visibly shaken.</p>
+<p>Shen Yanqing sighed, “This technique I brought was secretly preserved by a rogue cultivator of that era. In his writings, he recorded that the entire world rejoiced when the Thunder Palaces fell. The Twelve Thunder Palaces were called the Twelve Epochs of the Thunder Shackles that bound cultivators and commoners alike. From that moment on, people could think as they wished, imagine freely, write and speak at will.”</p>
+<p>After her words, the hall fell silent. The members of the Li Family, having little prior knowledge of the Thunder Palaces, were relatively unaffected. But for Wei Danying, whose understanding had been deeply ingrained, it was hard to articulate her feelings.</p>
+<p>She murmured, “How could this be… I’d only ever heard that the Thunder Palaces patrolled the world, and no one dared practice demonic Dao… How did it come to be that they had shackled all under heaven?”</p>
+<p>Shen Yanqing hadn’t come to debate the good or evil of the Thunder Palaces. She had no intention of explaining in detail, and merely hoped Li Qinghong would gain some perspective.</p>
+<p>She gently reassured Wei Danying, “Just take it as a rumor, nothing more.”</p>
+<p>Then turning to Li Qinghong, she smiled, “Please have a look, Senior.”</p>
+<p>Li Qinghong received the jade box, retrieved the jade slip within, and found a Celestial Thunder sacrificial method that was quite distinct from her own recorded within. In return, she slid over a copy of the Purple Thunder Secret Origin Technique.</p>
+<p>The thunder arts from the Green Pine Temple’s grotto heaven did not originate from any established Dao lineage. The Cloud-Thunder Inquiry Technique was merely a cultivation technique. It was the only viable exchange Li Qinghong had to offer.</p>
+<p>Shen Yanqing accepted it and said softly, “I hope we’ll have the chance to discuss the secrets of these techniques in detail.”</p>
+<p>Li Zhouwei understood immediately and invited a few others to join him in the side chamber. The main hall fell momentarily empty. Shen Yanqing lowered her voice, “Senior, I’ve heard that several thunder cultivator families from the Northern Sea, the Miao Family of the Southern Sea, and those two Daoists from the Eastern Sea… are all preparing to head to the Eastern Sea. Do you have any arrangements in place?”</p>
+<p>“I’m already aware. I’ll be heading there in a few days.” Li Qinghong replied solemnly, “The Dragon Clan has scattered these techniques, and one of their scions has waited a hundred years. It’s natural that they place great importance on this and I won’t neglect it.”</p>
+<p>Shen Yanqing sighed inwardly and said, “Senior… the Dragon Clan has cast a wide net. Many who cultivated the Dao of Thunder Steering and Cloud Dwelling have died. They made no obvious moves for a long time, so no one could guess their intent… Only when the grotto heaven began to surface did speculations arise.</p>
+<p>“But now that things have come to this, you’re already a leading figure in this Dao. You have no choice but to go.”</p>
+<p>Seeing how composed Li Qinghong remained, she continued, “My family’s Daoist Master says… there will be another fierce struggle within the grotto heaven. Senior, don’t hold back when the time comes…”</p>
+<p>Li Qinghong was surprised and responded, “Of course I know that. In a life-and-death struggle, why would I hold back?”</p>
+<p>Shen Yanqing added, “That includes Xi Zikang from the Northern Sea.”</p>
+<p>Li Qinghong raised her eyebrows. It seemed nothing about her was hidden from these Purple Mansion Realm cultivators.</p>
+<p>Shen Yanqing spoke softly, “His mastery of thunder arts is extremely high. He’s one of the strongest among those entering the grotto heaven. If he could be eliminated, it would remove a major problem.”</p>
+<p>Li Qinghong did have some friendship with Xi Zikang. Though she was a straightforward person, how could she not understand what the Shen Family or rather, the Purple Smoke Gate, was hinting at?</p>
+<p>After a moment’s silence, she said, “In the end, we’re all entering the dragon’s belly, so why? I’m not some naive idealist. I’ve killed for treasure before… but those were enemies. At the very least, Xi Zikang has shown upright conduct and treated me with warmth. I can’t bring myself to do it.”</p>
+<p>Shen Yanqing also fell silent, then said through gritted teeth, “What if, once inside the dragon’s belly, life and death become uncertain?”</p>
+<p>Li Qinghong slowly turned her head, tucking her hair behind her ear. Her silence deepened, and she quietly said, “So this is about making me choose.”</p>
+<p>Shen Yanqing hastily replied that she would never dare, but a soft smile surfaced on Li Qinghong’s face as she shook her head and said, “Then if I can’t bring myself to act, it means I deserve the death tribulation that awaits.”</p>
+<p>Shen Yanqing pressed her lips together and replied, “I understand…”</p>
+<p>She hesitated briefly, then quickly changed the subject, “Our sect’s master has already reincarnated. If any news arises around the lake or within your esteemed family’s territory, I ask that you inform us. We will surely reward you handsomely!”</p>
+<p>Li Qinghong had expected this request and nodded in acknowledgment. Shen Yanqing took her leave and went off to find her companions in the side hall. Only then did Li Qinghong lean back in her chair, momentarily lost in thought.</p>
+<p>At first, upon hearing Shen Yanqing’s words, she had thought the Purple Smoke Gate meant for her to ambush Xi Zikang before entering the grotto heaven. But on closer reflection, that was likely not the case.</p>
+<p>After all, many people now possess the Dao of Thunder Steering and Cloud Dwelling. If everyone fears being killed inside the grotto heaven and takes the initiative to strike first, how could the Dragon Clan possibly tolerate that? If it were so easy, the Miao Family and other Purple Mansion Realm immortal families would have already made their move.</p>
+<p>“They were warning me. If I end up working with Xi Zikang, even if I don’t ambush him, I still need to be cautious. In the end, we may have to fight regardless…”</p>
+<p>She sat quietly for a while. Li Zhouwei entered from outside the hall, and without immediately asking about Shen Yanqing’s words, he said gravely, “The Crimson Palace generation will soon receive their first talisman seeds. Since you’ve emerged from seclusion, why not come take a look with us?”</p>
+<p>“Alright,” Li Qinghong had been speaking little of late, and responded with just a succinct word.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-964.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-966.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

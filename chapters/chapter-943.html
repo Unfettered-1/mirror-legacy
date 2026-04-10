@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 943: Dingjiao (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-942.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-944.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 943: Dingjiao (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Dragon Son extends his invitation…Kongheng immediately looked up. Li Zhouwei was staring thoughtfully at Huiyao, who was still kneeling on the ground. The monk suddenly felt a pang of regret,Huiyao’s really picked up some tricks over the years. He’s grown cunning.</p>
+<p>Kongheng wasn’t ignorant of worldly scheming, but as a monk of Buddhist teachings, he could not allow himself to judge others with suspicion. It was only now that realization struck; this whole grand display had been the Serpent Dragon Palace’s invitation banquet. Huiyao had intentionally used a congratulatory excuse to brush him off, fearing the monk might refuse the invitation on the heir’s behalf.</p>
+<p>The old demon’s a fast learner. After decades of practice, he’s mastered the act!thought Kongheng.</p>
+<p>Now that the meeting had happened in person and Huiyao had bowed to invite the heir, turning down the invitation would be a direct insult to the Dragon Son. And with the dragon’s power in full bloom, there were likely few in the Eastern Sea who would dare to do such a thing.</p>
+<p>As the monk pondered, Li Zhouwei descended from the platform. With a crisp clang, the crescent-bladed halberd vanished into a storage pouch. He stepped in front of Huiyao and spoke softly, “Please rise, Fellow Daoist.”</p>
+<p>Huiyao’s heart gave a sudden jolt as he heard Li Zhouwei pass by and step toward the edge of the main hall.</p>
+<p>The heir smiled faintly as he said, “How could I possibly disobey the invitation of the Dragon Son?”</p>
+<p>Relieved, Huiyao got up and turned to Kongheng, speaking in a low voice, “Fellow Daoist, I ask you to open the formation.”</p>
+<p>As Kongheng began casting spells and forming seals, the invisible barrier in the sky faded away. Huiyao removed a large orange-red conch from his waist, pressed it to his lips, puffed up his cheeks, and blew. A thunderous sound echoed at once.</p>
+<p>Woooooo…</p>
+<p>The shoreline waters surged skyward as two massive walls of seawater rose on the ocean surface, joining together and rolling over the many pavilions of the island until it reached the entrance of the main hall.</p>
+<p>Whoooosh!</p>
+<p>A salty mist swept in with the tide. Kongheng watched from afar, thinking bitterly that his freshly washed clothes had gone to waste. Jade-red water steps formed beneath Li Zhouwei’s feet. Huiyao made a gesture of invitation, and Li Zhouwei stepped forward. The water beneath him receded and flowed directly onto the sea beast.</p>
+<p>Chains rattled furiously as the sea beast strained mightily to pull. Each of its scales vibrated with a hum, and whirlpools erupted across the sea. Slowly, a palace was dragged forth from the depths. Its walls were built from coral, adorned with pearls and jade, and water cascaded from its ledges like waterfalls. It was vibrant, dazzling, and magnificently ornate.</p>
+<p>What a splendid palace…thought Li Zhouwei.</p>
+<p>This was merely the Dragon Son’s vehicle, yet its palace halls far outnumbered the buildings of Zongquan Island.</p>
+<p>Huiyao led him in as night-illuminating pearls lit up on either side. He pointed to the great hall on the right and said respectfully, “The main hall is reserved for the Dragon Son’s personal use. Please proceed to the hall on the right.”</p>
+<p>Li Zhouwei glanced around. There was another palace to the left that was only slightly less grand than the main hall. It was likely meant to host Purple Mansion Realm guests.</p>
+<p>He followed Huiyao into the right hall, who explained, “Please wait a while, my lord. I’ll be steering the Bicolor Scaled Beast. Our journey leads to the Zhunan Serpent Dragon Palace beneath the Eastern Sea, just above the netherworld. Though this beast is skilled in traversing water, it will still take three to five days.”</p>
+<p>Li Zhouwei nodded silently, and Huiyao withdrew in a hurry. Two pure and charming clam maidens entered from a side chamber. Night-illuminating pearls lit up one by one, illuminating the various coral ornaments in the hall, and they brewed tea for him.</p>
+<p>Li Zhouwei reached out to accept a cup and saw that it was clear jade-colored spirit tea.</p>
+<p>Huiyao really does know our family well. At least he didn’t serve any kind of blood food,thought Li Zhouwei.</p>
+<p>He set the cup casually on the table and looked up at the coral throne in the center. The armrests on either side were made of Hooked Serpent heads, their eyes tightly shut, with delicate white scales. These were likely esteemed ones among the Hooked Serpent clan.</p>
+<p>They are nothing more than decorations before dragon kin…</p>
+<p>Li Zhouwei took a seat nearby and quietly observed. This sea beast, after all, was the Dragon Son’s steed, and it moved with such smoothness that there was no sense of traveling through the seabed. After some contemplation, he raised his estimation of the Dragon Son’s status once again.</p>
+<p>After all, dragon kin rarely produce offspring. Once they reach adulthood, they are already at the Purple Mansion Realm, and the most noble of all demonic creatures in the world…</p>
+<p>Li Zhouwei knew of two Dragon Monarchs. One was Beijia Dragon Monarch, and the other was Xiyang Dragon Monarch. The former ruled over Converging Waters and was a true scion of the ancient True Hornless Dragon. He was likely among the oldest beings alive.</p>
+<p>Of the nine sons of the True Hornless Dragon and the six converging three pristine, only two still roam the world. Xiyang Dragon Monarch is the rising star. So apart from the Lord of Converging Waters, there is yet another Dragon Monarch. This makes three True Monarch-level beings in total.</p>
+<p>This Dragon Son… is also titled Crown Prince of the White Dragon Ancestry…</p>
+<p>Among everyone the Li Family knew, perhaps only the young Sword Immortal Wang Xun could compare to the Dragon Son. That young master from the Tuoba family was far behind.</p>
+<p>Li Zhouwei had taken three years to break through to Foundation Establishment Realm, moving at a steady pace. His Radiant Origin Pass had coalesced within him, and his mana had shone like radiant light. Using the fifth-grade technique Radiant Essence Scripture, his Immortal Foundation was the most magnificent one ever forged in the history of the Li Family.</p>
+<p>Though Li Ximing also cultivated the Radiant Essence Scripture, he had already reached the Foundation Establishment Realm when he acquired it, so he could never match Zhouwei’s pure and proper attainment.</p>
+<p>“In addition to seizing celestial light, capturing flames, and warding off evil and disaster, the Radiant Origin Pass can manifest physically to subdue enemies. This Immortal Foundation also holds strong affinity with separating fire, and can condense radiant flame into armor and troops as servants.”</p>
+<p>Even the same Immortal Foundation could produce slight variations depending on who cultivated it. Li Zhouwei wasn’t sure whether the marvels he manifested came from the Radiant Essence Scripture or from his own unique nature.</p>
+<p>He muttered, “These two minor marvels… the first has its uses. The second, not so much.”</p>
+<p>Though he had yet to use them, he estimated that these armored troops would, at best, reach the level of the Qi Cultivation Realm. They would be of little practical use most of the time in battles between Foundation Establishment Realm cultivators.</p>
+<p>“As for spells and techniques…”</p>
+<p>Li Zhouwei had spent over twenty years cultivating, with most of that time dedicated to studying spell arts that were mostly of second or third grade. He’d heard that those arts would undergo some transformations after reaching the Foundation Establishment Realm. But at present, they merely felt easier to cast.</p>
+<p>“The grades are simply too low to be useful in real combat, except for two.”</p>
+<p>When facing enemies, the only techniques he truly relied on were The Grand Veined Golden Eyes and the Armor Cycle Soul-Refining Halberd Art. The former was a perception art, and the latter was a halberd combat art. Both kinds of spell arts had unexpectedly evolved after he reached Foundation Establishment Realm.</p>
+<p>The Grand Veined Golden Eyes had become even more wondrous. It had gone beyond its original ability to see through illusions and falsehoods, and now emitted an aura of intimidation. When activated, anyone without a corresponding spell art or Immortal Foundation would instinctively feel overwhelmed and panicked, as though they couldn’t possibly win.</p>
+<p>As for the Armor Cycle Soul-Refining Halberd Art, it was a demonic Dao halberd method, forged through enemy slaughter. Now, even the radiant armored troops he summoned could use it to empower him further.</p>
+<p>“It seems the cultivation method must be compatible, only then will the breakthrough to Foundation Establishment Realm bring meaningful transformations. Otherwise, it’s just smoother casting at best.”</p>
+<p>Since this palace was, after all, another’s vessel, it was far from safe for cultivation, especially since it was filled with the aura of Converging Water. Li Zhouwei simply sat at the main seat. The clam maidens nearby, seeing he hadn’t touched the tea, stood silently with the jade teapot, not daring to look at him.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-942.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-944.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

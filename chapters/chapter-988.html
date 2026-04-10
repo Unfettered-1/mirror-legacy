@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 988: Turning Into A Deer (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-987.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-989.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 988: Turning Into A Deer (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake.</p>
+<p>The grand hall atop Pingya Island was empty and spacious. A few cultivators hurried by as Li Jiangqian descended the broad steps at a brisk pace. His features had matured over the past two years, and he moved swiftly down the staircase while several attendants stumbled after him.</p>
+<p>“Your Highness!”</p>
+<p>The two men were elderly, with completely white hair. Judging by their robes, they were scholarly tutors. But Li Jiangqian moved with the energy of youth, slipping beneath the arms of the palace guards in a flash and leaving the older men far behind.</p>
+<p>They had no choice but to stop, sighing in resignation.</p>
+<p>Now that Li Jiangqian was older, he had grown tired of basic lectures. Skipping lessons had become a habit. When they saw the direction he was taking, it was obvious he was going to find Li Quewan. Since they weren’t permitted into the inner hall, the tutors had no choice but to stop there.</p>
+<p>“In the past, we praised His Highness for his intelligence… How did he lose interest in learning now? It’s Quewan who studies well, full of virtue and diligence…”</p>
+<p>“Indeed…”</p>
+<p>The two sighed again and retreated. Meanwhile, Li Jiangqian had dashed all the way into the hall and pushed the heavy doors open with a loud creak.</p>
+<p>The desks inside were neatly arranged, and the books on the shelves lined up perfectly. As the door opened, golden sunlight poured in, bathing the girl before him in warm light.</p>
+<p>Open</p>
+<p>“Quewan!”</p>
+<p>Li Shuwan had now returned to the lake and taken up her name, Li Quewan. Her attire had grown more vibrant, and her complexion healthier. Her eyes were bright, and a small peach blossom hairpin adorned her hair.</p>
+<p>She covered her mouth and giggled, “Brother Qian’s escaped again… You’ll definitely get scolded tomorrow!”</p>
+<p>“That’s nothing. At most, they’ll nag a bit. As long as they don’t report me to the elders, they can’t do anything,” replied Li Jiangqian as he pulled out a bamboo box from his sleeve and set it on the desk with a soft thud. When he lifted the lid, several snow-white pastries sat neatly inside.</p>
+<p>Li Quewan thanked him, but her brow furrowed slightly as she asked, “Brother Qian, the tutors are teaching you about virtue, the divide between mortals and immortals, unity among prestigious families, and how to manage the lineages. You’re going to be the head one day, how can you not listen?”</p>
+<p>Li Jiangqian gave a low chuckle and smiled at her, pulling out a few cultivation scrolls while shaking his head and saying, “That’s the lacquerer’s talk, once is enough.”</p>
+<p>The Heavenly Scripture of the Dimming Li Day and the Houshu Golden Book were Purple Mansion Realm techniques. Naturally, they couldn’t be left lying around in the hall. They had long since been stored away, and both of them had already memorized their contents. What could be read now were merely cultivation notes and essentials.</p>
+<p>Li Quewan looked at him in confusion. As Li Jiangqian flipped open the scroll to find the notes he had written, he replied casually, “All immortal families and sects are like palaces. What these people speak of are merely the gold lacquer on the surface, they’re meant for decoration. Every family has its own kind of lacquer, whether bright or dark, but lacquer all the same.”</p>
+<p>He glanced up at the girl across from him, hesitated for a moment, then amended his words, “Maybe it’s important. I’ve just grown tired of hearing it.”</p>
+<p>Li Quewan didn’t let the matter slide. After a moment of thought, she shook her head and said, “Brother Qian may be brilliant, but I don’t believe it’s just lacquer… Those words aren’t mere decoration. Once spoken, our people rely on them. Maybe it doesn’t matter to Brother Qian what kind of lacquer is used, but when the people look up, they can only see the color of that lacquer. And that means everything to them.”</p>
+<p>Her words made Li Jiangqian pause. He looked seriously at the girl across from him, frowning as he replied, “But public opinion can be easily manipulated. A single spell or divine ability is enough… What they think doesn’t matter, it’s meaningless. Look at the Buddhist cultivators in the north. How miserable are the commoners there? How lost are they from birth to death? If their lives were compared to those in Jiangnan, they’d be considered utterly wretched. Yet they devote themselves to the next life and revere the monks. What ill reputation is there to speak of?”</p>
+<p>Li Quewan fell silent for a moment. She glanced quietly at Li Jiangqian across from her and said softly, “But how they live… that matters.”</p>
+<p>Li Jiangqian pondered for a moment, then replied with sudden clarity, “True… After all, this is the very foundation of my family.”</p>
+<p>The girl pursed her lips, realizing that Li Jiangqian had linked it to the matter of talisman seeds. She hesitated to speak, then thought it over and smiled inwardly,There’s not much difference anyway. In the end, people judge actions, not thoughts. Brother Qian is clever and far beyond me. So long as he has the will, no one will ever be able to take advantage of him.</p>
+<p>Li Quewan let out a chuckle. Just the thought of working side by side with someone like Li Jiangqian made the road ahead feel much smoother. She turned back to her book, but Li Jiangqian quietly stole a glance at her and thought,Her talent is extraordinary. I’d better stay on good terms with her. No matter what lies ahead, having a genius on my side is the best outcome.</p>
+<p>Though the two had argued for a while, they somehow ended up holding a deeper respect and fondness for each other. Li Jiangqian reflected inwardly,We’re both smart and naturally gifted. Two intelligent people with shared principles rarely come into true conflict.</p>
+<p>The two continued reading in silence for a while, until someone arrived outside the hall and announced twice, “The Fourth Young Master has arrived.”</p>
+<p>That referred, of course, to Li Chenghuai’s son, Li Zhouluo. He was their fourth uncle. Li Jiangqian quickly gathered his things and went out to greet him. Just as he stepped from the inner hall, he saw Li Zhouluo pacing anxiously.</p>
+<p>“Fourth Uncle!” Li Jiangqian greeted him confidently, while Li Quewan, still not very familiar, quietly followed him.</p>
+<p>Li Zhouluo returned the greeting politely, clearly troubled. He let out a soft sigh and shook his head as he said, “Something’s happened on the lake. My father was up all night dealing with it, and the elders have all gone to Qingdu to discuss. He sent me here first thing in the morning… We’re to wait here. The others will come shortly. Senior White Ape is coming to escort us to Qingdu.”</p>
+<p>“Oh?” Though he was young, Li Jiangqian had his own opinions and simply asked, “What happened?”</p>
+<p>Li Zhouluo, having spent time at his father’s side, was familiar with many matters. He sighed and said, “A common deer was found on the eastern shore. Though it couldn’t speak, it moved like a human, bowing and weeping as it dragged several people down the mountain. Its hooves were stained with ink… it could even write.”</p>
+<p>Li Quewan’s eyes widened in astonishment at the strange tale. Li Zhouluo continued in a hushed voice, “My father studied the matter all night. None of the Foundation Establishment Realm cultivators in our family could understand beast speech. Fortunately, Senior White Ape is a demonic creature and knows a few methods. After a night of questioning, the truth came out.</p>
+<p>“This deer was once a mortal who was struggling to make a living on the eastern shore. His father was a gambler who had just passed away, leaving the family in dire straits. With his wife bedridden, he ventured into the mountains, hoping to hunt some deer to save her. The hunter entered the mountains, had some luck, and brought down two deer. He hurried home in high spirits, hoping to save his wife, but on the way, he ran into a monk…”</p>
+<p>A trace of anger appeared on Li Zhouluo’s face as he shook his head. He said, “The monk was enraged by the killing. The hunter begged for mercy, but the monk said he had traded two lives for one, and so cast a spell turning him into a deer in order to taste what it felt like to be hunted.”</p>
+<p>“This…” Li Quewan looked puzzled.</p>
+<p>But Li Jiangqian’s expression darkened instantly as he growled, “What bald donkey dares do such a thing… Might as well turn everyone who’s ever killed into a beast. Where is Master Kongheng? Any word from him?”</p>
+<p>Li Zhouluo’s face showed unease as he shook his head and said, “That’s the troublesome part. Master Kongheng examined the deer… He said the one who cast the spell possessed extremely high cultivation. Not even a trace of mana could be detected on the deer. Their cultivation is without question superior to Master Kongheng’s.”</p>
+<p>Li Jiangqian frowned. Only after the two finished speaking did Li Quewan quietly ask, “If he was turned into a deer… what happened to his bedridden wife?”</p>
+<p>“She…” Li Zhouluo paused and said, “She was already gravely ill and hadn’t eaten in a long time. By the time they found her… she was gone.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-987.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-989.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

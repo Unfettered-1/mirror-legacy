@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 938: Shifting Political Climate (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-937.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-939.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 938: Shifting Political Climate (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Each time he nourished his Immortal Foundation with talisman qi, the power of his spells would increase. Whether it was his escape spell, footwork technique, perception technique, or spell arts, they all advanced together.</p>
+<p>He was far more effective than other cultivators, who painstakingly honed each skill individually or took targeted spirit herbs. His already strong escape spell and footwork techniques became more refined, while even his weaker offensive and defensive arts were now becoming presentable.</p>
+<p>“Moreover, this talisman is said to be the icing on the cake. The more balanced and complete one’s aura, the higher their position and the firmer their command, the more powerful the talisman qi becomes!”</p>
+<p>At first, he thought the talisman qi’s boost was minimal. He thought that there would only be small progress after much nurturing. But now that he was overseeing the Eastern Sea, the golden light of the talisman qi in his body had grown dozens of times brighter. Gradually, he grasped its wonders, and his strength rose steadily.</p>
+<p>Si Tongyi, seated beside him, became even more respectful and said softly, “This time I came to see you, Peak Master, regarding sect matters.”</p>
+<p>“Go on.” Li Xizhi gave a slight nod. Though he was newly promoted to a high position, his conduct and demeanor were unlike someone who had been cloistered within the sect for years.</p>
+<p>Si Tongyi, familiar with him, spoke frankly, “Three days ago, Daoist Master Buzi appeared in the Eastern Sea and fought with the Daoist Master of Crimson Reef Island. Rumor has it that even the reclusive… that is, Daoist Master Tanyun revealed himself. We can now confirm, the great demonic beast has indeed broken through. Crimson Reef Island now has at least two Daoist Masters.”</p>
+<p>Though he spoke in the name of the Azure Pond Sect, the worry in his eyes was clearly directed toward Chi Buzi, as he said softly, “According to many, for Daoist Master Buzi to cause even Daoist Master Tianwan to suffer losses, it would mean that he must have reached the late stage of the Purple Mansion Realm!”</p>
+<p>After saying this, he silently observed Li Xizhi. The man did pause for a moment, then relaxed his brows and sighed, “He truly lives up to being the Chi Family’s prized prodigy of the past, to have such cultivation speed…”</p>
+<p>“Yes,” Si Tongyi replied softly and lowered his head.</p>
+<p>Li Xizhi asked in concern, “Has the elder given any instructions… or is there a plan?”</p>
+<p>Si Tongyi hesitated. “Our Daoist Master has not appeared in a long time, and the family elder has been quite tolerant of the Chi Family. Some have grown increasingly emboldened. When they heard of Daoist Master Buzi’s appearance, the main hall atop Azure Pond Peak was filled with cheers.”</p>
+<p>Li Xizhi smiled and said, “Celebrating who?”</p>
+<p>“Of course, celebrating the sect master!” Si Tongyi gave a knowing nod and answered, “Elder Ning Hejing was also overjoyed… As for Daoist Fubo, there’s been no news.”</p>
+<p>The current sect master Chi Xuxiao was from the Chi Family’s proper first lineage main branch. Leaving aside the secluded Chi Zhiyun, Chi Buzi’s emergence now added immense authority to his standing. Meanwhile, Ning Hejing was overjoyed beyond measure.</p>
+<p>Chi Fubo had better start worrying…thought Li Xizhi.</p>
+<p>Li Xizhi poured himself some tea and asked, “How does the elder intend to respond?”</p>
+<p>Si Tongyi replied softly, “The family elder released Xia Yun and brushed aside the matter of Ning Hede. He turned away all the complaining disciples and no longer received any visitors.”</p>
+<p>Xia Yun and Ning Hede were under Ning Hejing. Though both were capable, they lacked moral integrity. One diluted quality while managing Xieqi Peak, and the other embezzled from the Immortal Tribute Office. How could they outmaneuver Si Yuanli? So, one had been imprisoned and the other interrogated. The offensive had originally been aimed at Ning Hejing’s Yuanxing Peak, implying he was unfit for his post.</p>
+<p>Now, all their efforts had gone to waste, and Si Yuanli had shut himself away in silence. With the Chi Family backed by a Purple Mansion Realm cultivator, it seemed they had stabilized the situation.</p>
+<p>Li Xizhi, however, was not surprised and nodded. “The elder has played a fine move, but the act must be carried through completely. Next, we must give up either the Eastern Sea or Southern Sea.”</p>
+<p>“Yes.” Si Tongyi nodded but still looked concerned as he answered, “But the elder still worries about Daoist Master Buzi. There’s widespread panic within the sect. Most of them remained neutral, and even many Daoists close to our family have defected to the main peak…”</p>
+<p>“No matter.” Li Xizhi said softly, “This will only make Ning Hejing more confident. With a Daoist Master above him, he wouldn’t dare move against the elder no matter how emboldened he feels. But he’s headstrong and stubborn. He won’t be able to tolerate Chi Fubo and others still holding most of the power.</p>
+<p>“Chi Fubo has likely abandoned his scheming and will back off. But the Chi Family behind him are no better than Ning Hejing. They won’t easily give up what’s already in their grasp. No matter what, they’re still Chi blood, and if pushed, they’ll bare their fangs all the same.”</p>
+<p>Si Tongyi gave a slight nod and said, “The elder thinks the same. He’s already planted agents within. I’m afraid you may need to endure some grievances later, Daoist.”</p>
+<p>Li Xizhi understood all too well that the Lingu Family of the Southern Sea had deep roots. No matter how stubborn Ning Hejing was, he wouldn’t be foolish enough to provoke the Lingu Family. Most likely, the burden would fall on him instead. He smiled and nodded. After a few more polite exchanges, Si Tongyi rode the wind and departed.</p>
+<p>Li Xizhi sat quietly on the peak for a while, his expression gradually calming. As his mana circulated, he flew down the mountain with the help of the grand formation, landing beside the guards and saying, “Let her come up.”</p>
+<p>A few moments later, a graceful and airy woman arrived, her face bearing a hint of amusement. She wore a pale jade Daoist robe and was striking in appearance. She was none other than Lingu Lanying of the Lingu Family.</p>
+<p>She took her seat again and said softly, “You arrived just in time. Lord Si certainly holds you in high regard, Xizhi.”</p>
+<p>Li Xizhi, stationed in the Eastern Sea, had actually known about Chi Buzi’s matter even before the rest of the sect, let alone Lingu Lanying sitting before him.</p>
+<p>She let out a soft laugh and said, “So Daoist Master Yuan Xiu truly won’t show himself.”</p>
+<p>Daoist Master Yuan Xiu had yet to make an appearance. The two had previously suspected he might have been injured in a grotto heaven. But seeing how composed and decisive Si Yuanli was at the moment, it was clear Yuan Xiu was simply refusing to show himself.</p>
+<p>“Daoist Master Buzi is truly still alive. It seems he has no lingering attachment to the Azure Pond Sect,” said Li Xizhi.</p>
+<p>Lingu Lanying nodded, and both of them understood the matter clearly in their hearts.</p>
+<p>Though Yuan Xiu was confident Chi Buzi wouldn’t meddle in the Azure Pond Sect’s affairs, he still couldn’t predict the old man’s true thoughts. So he secluded himself and feigned death, leaving all matters to Si Yuanli.</p>
+<p>If Buzi did return or had a change of heart, the old master only had to step in and say it was all done without his knowledge, and everything would blow over. As long as Yuan Xiu didn’t personally act to replace the sect master, it would never escalate to the point of disgracing both Purple Mansion Realm cultivators.</p>
+<p>Si Yuanli was a direct descendant of a Purple Mansion Realm cultivator. Even if something went wrong, Yuan Xiu could protect him. But as for the rest of them…</p>
+<p>We are mere political tools. If things really take a turn, we’ll be sacrificed to pacify the elder’s fury and preserve the Purple Mansion Realm cultivators’ face.</p>
+<p>Lingu Lanying didn’t say it aloud, but she was clearly calculating. She merely said softly, “Now that Buzi has acted in the Eastern Sea, on the surface it seems like he’s offering the Chi Family a remedy. But looking from another angle… doesn’t it also prove he’s been wandering the Eastern Sea all along, without the slightest interest in what happened to the Azure Pond Sect?”</p>
+<p>Li Xizhi nodded and replied gently, “Purple Mansion Realm cultivators never act without calculation. All we need to do is observe the power struggle within the sect.”</p>
+<p>Lingu Lanying chuckled and shook her head in reply. “Do we even need to think about it? Chi Zhiyun can see clearly that Ning Hejing is domineering by nature. He’s suited for enforcing law, but if he is made sect leader, he’ll drive out everyone who doesn’t align with him! How could he possibly outmaneuver Chi Fubo?”</p>
+<p>She swallowed the name Li Yuanqin without letting it pass her lips.</p>
+<p>But then she noticed the young man in front of her sip his tea and speak softly, “Let’s offer help at the right time. After all, easing the sect master’s burden is our duty.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-937.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-939.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

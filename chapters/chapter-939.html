@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 939: Owing Nothing (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-938.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-940.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 939: Owing Nothing (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Qinghong waited in the hall for a while before Li Chenghuai arrived with a youth. The young man wore a silver-feather thunder robe whose collar was embroidered with purple patterns. A sword hung at his waist, and his eyes shone with piercing light.</p>
+<p>He spotted Li Qinghong the moment he entered and clasped his hands in a formal salute. His voice was clear and his speech was crisp and decisive as he said aloud, “Xi Zikang, a thunder cultivator from the Northern Sea, greets you, fellow Daoist!”</p>
+<p>Li Qinghong nodded slightly and replied softly, “I am Li Qinghong. Well met, fellow Daoist.”</p>
+<p>“I have long heard of your great name.” Xi Zikang had his black hair tied back, with a faint purple mark on his fair forehead. He appeared youthful and gave off a bright aura. His age was unclear, but his gaze was pure as he spoke gently, “I reside in the Northern Sea and have heard of the Zhao-Yue conflict. As I journeyed south, I wished to first pay a visit to your esteemed family.”</p>
+<p>Li Qinghong didn’t know his background, but the youth was courteous, and as a thunder cultivator, he naturally didn’t give off any ill feelings. She nodded and said, “Our household has encountered some upheaval. I apologize if the reception is lacking…”</p>
+<p>After a brief exchange of pleasantries, Xi Zikang considered his words before speaking in a steady voice, “My family has long resided in the Northern Sea, and have been cultivating the Profound Thunder Dao for over eight hundred years. We have some foundation but lack in Celestial Thunder arts. One of my purposes for this visit is to exchange for such arts with your esteemed family.”</p>
+<p>He had chosen a mild topic to open the discussion. Li Qinghong took a small sip of tea, feeling her thoughts settle. The Li Family had two Celestial Thunder arts, both derived from the Profound Thunderpool. One was the third-grade Purple Thunder Secret Origin Technique; the other was an ancient method, the Cloud-Thunder Inquiry Technique. Both started from third-grade, neither reaching fifth-grade. Li Qinghong had also cultivated them.</p>
+<p>There’s nothing that can’t be offered in exchange,thought Li Qinghong.</p>
+<p>Simply put, the Purple Thunder Secret Origin Technique wasn’t considered powerful by the current standards of the Li Family. While it was strong for a third-grade technique, it shortened one’s lifespan and cut off descendants. What truly held value were the three Profound Thunders, the Purple Talisman Origin Light Secret Technique.</p>
+<p>Moreover… could someone travel thousands of kilometers just for one technique? My arts stem from the Dao of Thunder Steering and Cloud Dwelling, so it’s not hard to guess. He’s probably here for the grotto heaven and is merely sounding things out.</p>
+<p>Li Qinghong had always felt a faint gloom surrounding the Thundercloud Grotto Heaven. So she nodded courteously and replied, “Very well. Our family is also facing hard times, and your family’s thunder arts belong to the righteous Dao. As long as we agree on the price, there’s no issue in proceeding.”</p>
+<p>Xi Zikang smiled faintly and said softly, “I’d like to take a look at the opening scroll first.”</p>
+<p>Li Qinghong summoned someone to bring out the jade slip. The Li Family had long prepared recorded excerpts for the younger generation to choose from, so there was no need to transcribe anything anew. Xi Zikang waited a while, and when a crisp chime echoed at the front of the hall, Radiant Light shimmered as a young cultivator stepped inside.</p>
+<p>The cultivator wore a white Daoist robe with a gray-golden inner layer. His features were upright and handsome. His eyes were slightly open, and celestial light flowed gently around him. He raised his brow and gave Li Qinghong a formal bow. Someone behind him brought in the jade slip.</p>
+<p>“Li Ximing of the Moongaze Li Family.”</p>
+<p>Xi Zikang noticed his slightly hoarse voice, but his tone was calm, so he paid it no mind. He turned over the jade slip in his hand and read it. Surprise flickered across his brows as he said, “Profound Thunderpool? Is this your technique, fellow Daoist?”</p>
+<p>Li Qinghong’s Immortal Foundation wasn’t a secret, so she simply acknowledged it. Xi Zikang hesitated and said, “To be honest, I’ve also heard of this Immortal Foundation… it belongs to the Dao of Thunder Steering and Cloud Dwelling.”</p>
+<p>He raised his brows and looked at Li Qinghong, speaking gently, “This method is a substitute for Celestial Thunder’s Winter Thunderclap, but it’s called Profound Thunderpool. It seeks to reconcile with Profound Heaven, which was typical of the Thunder Steering and Cloud Dwelling Dao.”</p>
+<p>Li Qinghong listened attentively and replied thoughtfully, “Your esteemed family has a long heritage. Do you know why this Dao developed in such a way?”</p>
+<p>“Ah!” Xi Zikang’s tone carried a hint of bitterness as he replied, “It’s not exactly a secret. Everyone from south to north knows the world has five virtues, and that there are Profound, Celestial and Origin thunders. Yet for generations, we thunder cultivators have never understood why there are five for water and fire, but only three for thunder?</p>
+<p>“Even if that’s the way of heaven and earth, Profound and Celestial governs thunder, and Origin Thunder is also called Prime Magnetism. Logically, there should be a fourth thunder governing magnetism to complement the dualities of nature…”</p>
+<p>Seeing Li Qinghong nod thoughtfully, Xi Zikang continued with a sigh, “So many predecessors have tried to prove it, suspecting that a Dao Fruit was lost at the beginning of creation. The Profound Thunderpool is one such attempt…”</p>
+<p>“I see.” Li Qinghong gradually understood,So it’s no coincidence that the two Profound Thunder items, Duruo and the Sixfold Profound Thunder Punishment Tokens, suit me so well. My Immortal Foundation itself is the result of many rounds of refinement…</p>
+<p>She went over it once more in her head, then asked, “If this Dao truly exists, then there must be corresponding spirit items and demonic creatures birthed with the same Immortal Foundation. How could they not appear?”</p>
+<p>Xi Zikang was momentarily speechless. Clearly, he did not have a solid grasp of such secrets and could only say, “I’ve only heard some rumors. In ancient times, Immortal Lords were everywhere. Those with supreme cultivation could transcend Fruition Attainment, borrowing from and hiding things within heaven and earth, thereby altering the world. Maybe one thunder was hidden away by an Immortal Lord long ago.”</p>
+<p>His tone was hesitant, clearly uncertain of the truth.</p>
+<p>Li Qinghong nodded, and Xi Zikang added, “My family has an abundance of thunder-related items. If you have any needs, Qinghong, I can try requesting something from home.”</p>
+<p>Li Qinghong paused. At the moment, she couldn’t think of any spirit items her family lacked, so she said, “It’s better to exchange technique for technique. Your family has a deep foundation, do you have any Bright Yang Dao techniques?”</p>
+<p>Xi Zikang was slightly surprised. After a moment of thought, he replied, “My family doesn’t have one, but we are under the Northern Sea’s Beihuan Sect. I can request a Foundation Establishment Realm technique from the upper sect. If I send a formal letter, there should be options to choose from.”</p>
+<p>“Oh?”</p>
+<p>Li Ximing, who had been listening silently at the side, finally nodded. Li Qinghong’s eyes lit up as she thought to herself,So technique control in the Northern Sea is this relaxed? They can even request techniques from the Immortal Sect and resell them?!</p>
+<p>She had also heard of the Beihuan Sect’s reputation and said gently, “Very well! In that case, since our family has some additional items, I hope we can exchange for a few more volumes.”</p>
+<p>“Well…” Xi Zikang hesitated and said softly, “These things aren’t really presentable… the techniques won’t be top-tier either… please don’t expect too much, Qinghong…”</p>
+<p>When he saw that Li Qinghong and her nephew seemed confused, he shook his head awkwardly. It was clearly a private matter, so Li Qinghong refrained from pressing further. Xi Zikang then smiled and said, “Then let’s consider that matter settled! There’s one more thing, I’d like to ask if I may take a look at the dharma artifact in your possession.”</p>
+<p>Xi Zikang seemed aware that his request was excessive, and a deep look of apology showed on his face. Li Qinghong, however, didn’t seem angry. She immediately understood what he meant and asked, “The Sixfold Profound Thunder Punishment Tokens?”</p>
+<p>“Exactly!” Xi Zikang quickly said, “That item… holds great importance to my family. When it was first recovered from the ruins of Thundercloud Temple beneath the sea, one of my ancestors dueled the Azure Pond Sect’s Master Buzi. Both were in Foundation Establishment Realm then… he lost by a narrow margin and still regrets it to this day… I hope you might allow me to examine it briefly!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-938.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-940.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

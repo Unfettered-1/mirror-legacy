@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 983: Begging To Loosen It (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-982.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-984.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 983: Begging To Loosen It (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Dingjiao gazed at the scene, his voice low and distant as he said, “Before the ancient cataclysm, this used to be a vast continent. It was as broad as Jiangnan but only sparsely populated. Jiangnan had tens of millions of people back then, while this place had only a few million.</p>
+<p>“During the cataclysm, two Immortal Lords fought here and shattered the entire continent. Not only did all spiritual energy vanish, but it still does not contain life. We of the Dragon Clan call it the Grave Abyss… it stands opposite to Shiqi Island in the Eastern Sea.”</p>
+<p>White Banyan nodded, seemingly also visiting this place for the first time. He looked around with great interest and spoke softly, “I heard there’s no spiritual energy here, which means no great void. Even Purple Mansion Realm cultivators must descend and physically fly here…”</p>
+<p>“Exactly.” Dingjiao replied quietly, “This abyss extends all the way to the Underworld. It is said that the spirits of the Underworld pass in and out through this very place.”</p>
+<p>He continued descending as he spoke. The three quickly vanished into the boundless darkness. Li Zhouwei watched the surging seawater pouring down on both sides. His brows furrowed as he murmured, “This Grave Abyss is terrifyingly vast. Why haven’t the waters of the Southern Sea drained dry? It’s hundreds of times larger than the sky pit in the Northern Sea. Even if it rained over the entire Southern Sea, it wouldn’t be enough to refill it…</p>
+<p>“Could it be like the ocean’s edge, where the seawater falls into the depths and instantly transforms into water veins that rejoin the sea?”</p>
+<p>Dingjiao shook his head and explained, “The seawater doesn’t pour into the abyss everywhere. This is merely a drainage outlet. If you fly a bit farther south, the land actually rises above sea level, and no water flows in.”</p>
+<p>Li Zhouwei nodded and reminded, “There’s no spiritual energy here. If we run out of mana, we’ll be in trouble…”</p>
+<p>“Don’t worry.” Dingjiao took out a few white pearls from his sleeve, thought for a moment, then put them away and instead pulled out a black circular spirit artifact. In a blink, it expanded beneath them. He apologized and said, “My cloud-riding mount isn’t practical inside the abyss.”</p>
+<p>White Banyan nodded, then asked with some doubt, “I’ve never heard the claim that this leads to the Underworld… but then again, we’re unfamiliar with affairs beneath the sea. Could the Crown Prince elaborate?”</p>
+<p>He offered a courteous apology, but Dingjiao waved his hand and replied solemnly, “This matter dates back to the Qi State[1] era, when Northern Qi replaced Wei. Prince Li Xunquan of former Wei raised troops and briefly controlled the Longdi region, which people called Long-Wei at the time. A senior member of my clan lived in Wei and made a close friend there. They got along extremely well.</p>
+<p>“Later, there was a great drought in the south. That elder personally went to bring rain. But upon returning, he discovered that his friend had been murdered. So he came all the way here, delved deep into the abyss, and flew straight into the Underworld. There, he met a judge of the Underworld and brought his friend back.”</p>
+<p>Li Zhouwei was stunned at first, but his heart began to burn with hope as he asked solemnly, “Is the legend really true… When someone dies, they’re taken to the Underworld? Can they truly be brought back?!”</p>
+<p>Dingjiao hesitated, then replied slowly, “When mortals die, their souls truly disperse. It’s said that everyone in the world has their name recorded in the Underworld’s registry. If someone cultivates to the Purple Mansion or Golden Core Realms, the Underworld can even discern their spells and cultivation level. As for capturing souls, such things no longer happen nowadays.”</p>
+<p>“But…” The strong hope in Li Zhouwei’s heart was abruptly extinguished. He lowered his head.</p>
+<p>Dingjiao answered, “I’ve inquired about them too. That person was born before the ancient cataclysm and had cultivated the Purple Mansion and Golden Core Realms… so the Underworld detained him according to old laws. For those born after the cataclysm, unless they fail while attempting Golden Core Realm, the Underworld no longer intervenes.”</p>
+<p>White Banyan felt uneasy and changed the subject, silently recalling something as he spoke softly, “What if there’s an immortal cultivator who isn’t listed in the registry?”</p>
+<p>“Not listed?” Dingjiao glanced at him and shook his head with a smile, “Then they must be cultivating in the Shamanic Talisman Dao or practicing the Spiritual Cultivation Dao!”</p>
+<p>The white fox lowered his head in thought, while Li Zhouwei only felt a moment of disappointment before adjusting his state of mind and saying softly, “I’ve heard of Li Xunquan. There were constant uprisings in the north back then, and several gained momentum. The Wei’s Li Family even restored their state twice. Later, there was also a man named Li Xuan… but I don’t know what became of him.”</p>
+<p>The Li Family had collected a fair amount of information over the years and paid particular attention to such matters, though news was hard to come by in Jiangnan. It was rare to hear anything while in the Eastern Sea.</p>
+<p>White Banyan glanced at Dingjiao and spoke softly, “He was slain by the Emperor of Qi. His head was hung at Dianyang City and left there for nine years.”</p>
+<p>Dingjiao remained silent as the spirit artifact beneath their feet slowly rose and fell. Li Zhouwei’s breath caught slightly, his expression darkening as he gazed into the boundless darkness.</p>
+<p>Just what is Dingjiao trying to do…thought Li Zhouwei.</p>
+<p>Li Zhouwei had gradually begun to sense the weight of Dingjiao’s identity along the way. This Crown Prince of the White Dragon lineage was likely one of the most exalted among them all. Li Zhouwei wondered,The Eastern Sea is vast, and there’s no shortage of Purple Mansion Realm demonic creatures under the Dragon Clan. If he truly wanted something, could the clan not dispatch one of them to help him? Even without considering the rest, Dongfang Heyun alone is strange enough…</p>
+<p>White Banyan was merely a Foundation Establishment Realm fox demon, and his cultivation wasn’t even one known for superior hearing. Perhaps it was due to his bloodline, or maybe he had a few unique techniques for listening, but could he truly compare with a Purple Mansion Realm being who possessed divine abilities?</p>
+<p>Judging by the attitude of both demons… this must be something orchestrated jointly by the fox tribe and the Dragon Clan… but what kind of matter is it that they would bring me along… White Banyan said Dingjiao wanted to form ties with me… is there some kind of benefit involved…</p>
+<p>These thoughts churned briefly in his mind, then he sat in silence for several days. Dingjiao and White Banyan had both stopped speaking entirely. Dingjiao said not a word, while White Banyan looked extremely focused, his ears twitching faintly.</p>
+<p>He slowly stood, listened for a moment, then white fur began to emerge across his body. With a small twist, he transformed into a pure white fox that didn’t have a single blemish.</p>
+<p>The fox’s two ears stood erect, and there was even a third ear between his brows. It formed a triangle, pointed upward. From the side, it resembled a fluffy and exquisite white horn.</p>
+<p>White Banyan revealed his true form and crouched on the platform as they continued descending. Dingjiao remained still, watching the two silently. The spirit artifact beneath them flew slower and slower until it finally stopped.</p>
+<p>Dingjiao said softly, “There should be sound at this point. White Banyan, listen carefully. My spirit artifact is running low on mana. If nothing can be heard here, we’ll go deeper.”</p>
+<p>Li Zhouwei couldn’t hear anything at all. The silence around him was terrifying. White Banyan paused for a moment, then shook his head, “Please fly a little farther.”</p>
+<p>Dingjiao wordlessly urged the dharma artifact forward and they flew for nearly an hour before they stopped. They were surrounded by endless darkness, without the slightest glimmer.</p>
+<p>White Banyan twitched his ears and frowned, “It’s a man’s voice…”</p>
+<p>The fox listened for another fifteen minutes before whispering, “He said…”</p>
+<p>White Banyan seemed uncertain, his expression tense. He lay flat again and listened carefully, then looked a little stunned and murmured, “Binding… burning hot… begging… something…”</p>
+<p>Li Zhouwei’s heart clenched. Dingjiao furrowed his brows and asked in a deep voice, “Did he say anything else?”</p>
+<p>White Banyan listened a while longer. He activated his mana, and purplish light mixed with mist swirled around him. The white fur by his ears gradually turned deep violet. After another fifteen minutes, he said in a soft tone, “No other words. Just that one sentence.”</p>
+<p>His expression was somewhat shaken. White Banyan paused, then added, “His voice was at times as loud as a tiger’s roar, heart-wrenching and filled with the sound of coughing blood. At other times, it was sharp as a rat’s squeak, piercing the clouds and splitting stone. It was utterly terrifying. He said… The binding is burning hot, bound too tightly… I beg you, loosen it a little…”</p>
+<p>Dingjiao raised his brows, his expression a mixture of cold fury and shock. After a moment of silence, he pulled out a jade vial from his sleeve, placed it on his palm, and said in a low voice, “Fox of the Serene Heart, keep listening.”</p>
+<p>1. The Qi here used is ‘齐’ (Qi) not the ‘气’ (Qi) that means ‘life force’, ‘vital energy’ etc. The ‘齐’ (Qi) translates to ‘even,’ ‘uniform,’ ‘level,’ or ‘joint’ in English. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-982.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-984.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 894: Returning To The Heart Of The Lake (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-893.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-895.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 894: Returning To The Heart Of The Lake (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The remark hadn’t caused any visible reaction from Li Yuanqin yet, but Chi Fubo’s expression had already changed. Shocked and suspicious, he urgently interrupted Ning Hejing, “Uncle Hejing, what are you saying?! Yuanqin is my close friend, how could you speak of him like that?!”</p>
+<p>Several elders of the Chi Family’s second lineage standing nearby also looked displeased. Li Yuanqin’s ideas had consistently considered the interests of the second lineage, which had greatly satisfied them. But Ning Hejing had disrupted the harmonious atmosphere in the hall with just a few words.</p>
+<p>Chi Zhihu’s dissatisfaction was written all over his face. He held back from acting out and simply glared at Ning Hejing,This bastard’s heart is entirely with the first lineage. All I did was mention appointing someone from our second lineage, and he acts like his own mother was murdered, spewing wild accusations…</p>
+<p>A heavy silence filled the hall as Chi Fubo’s words faded, but Li Yuanqin quietly said, “I merely cultivated alongside Brother Fubo. The dispute between the two lineages has gone on for ages. Brother Fubo and I reside in Yi Mountain City, five thousand kilometers away; how could I possibly have the skill to sow discord? My lord flatters me too much.”</p>
+<p>“Yuanqin, there’s no need to say more.” Chi Fubo stepped in to shield him. He was well aware that Li Yuanqin’s current identity and status were a crucial piece in this shifting situation. He had to be drawn in, so he said softly, “You step back. I’ll speak with him.”</p>
+<p>Ning Hejing’s expression was grim and his eyes darkened slightly as he stared coldly at Li Yuanqin.</p>
+<p>Once Li Yuanqin had withdrawn, Chi Fubo let out a long sigh. “Uncle Hejing! Couldn’t this be discussed privately? Why go so far as to lay everything bare?!</p>
+<p>“Yuanqin offers help out of both resentment and his ambition to control the Li Family. I’m hardly blind to his efforts at sowing discord. I use him while the tide allows it. Once he’s entangled too deeply, how can he back out easily? Sooner or later, he’ll be entirely ours. What’s wrong with that?”</p>
+<p>He shook his head repeatedly, trying to persuade, “Uncle Hejing, you command Yuanxing and are used to acting decisively, but this is a crisis! How can you push allies away right now?”</p>
+<p>Chi Fubo paused, seeing the other remain unmoved, and lowered his voice, “This is not the time for such arguments. Uncle Hejing, please quickly produce the sect master’s order to appoint the elders to the peaks, so the main family can be protected.”</p>
+<p>Ning Hejing’s eyes narrowed, making his pupils hard to see. He spoke in a deep voice, “The sect master ordered me to seal off the peaks. There were no residual instructions.”</p>
+<p>How could Chi Zhiyun have left behind any orders? He hadn’t even brought the sect master’s seal into the cave. He wasn’t a Purple Mansion Realm cultivator, how far ahead could he predict? How could there possibly be any orders appointing members of the second lineage?</p>
+<p>But how could Chi Fubo not know this? Whether or not Chi Zhiyun left a final order didn’t matter. Li Yuanqin’s so-called leftover decrees had always just been self-authored statements passed off as official…</p>
+<p>But Ning Hejing had laid things out plainly. The refusal immediately soured Chi Fubo’s expression.</p>
+<p>Ning Hejing’s tone remained somewhat gentle as he said, “The implications are too great. I dare not act rashly. There are several peak masters within the sect, trusted aides of the sect master, with both strength and integrity. Their merits over the years are sufficient, and promoting them now is not improper. I command Yuanxing Peak. You esteemed elders may assist from the side. If the situation shifts unfavorably, then we can reassess.”</p>
+<p>Chi Fubo’s gaze swept across the man’s face again and again. At last, he realized that the reason this person had summoned his group was to identify those loyal to the first lineage within the Chi Family. His heart filled with fury and cold derision.</p>
+<p>“Yes,” Chi Fubo answered, smoothing out his expression as he stepped back a few paces. Several of the uncles looked displeased, but what more could they say with Yuanxing Peak’s formation eyeing them like a tiger watching prey? They all dispersed, leaving only Ning Hejing behind.</p>
+<p>Ning Hejing rubbed the center of his eyebrows, the shadow on his face lingering stubbornly. He summoned a trusted aide and said in a low voice, “I thought the second lineage could see the bigger picture and support the first lineage, but they’re all the same kind of people. Now they want me to only appoint members of the second lineage. If I do that, I will betray the sect master’s trust. I can no longer rely on them.</p>
+<p>“Go invite the other peak masters.”</p>
+<p>While Ning Hejing made his arrangements, Chi Fubo exited the great hall. The Chi Family members all looked grim. Chi Zhihu said angrily, “I say he’s even more overbearing than Si Yuanli!”</p>
+<p>Chi Fubo’s expression was dark as he griped, “Ning Hejing is a loyal hound of the first lineage. His mother was a legitimate daughter of the first lineage, so of course he won’t side with us. He’s extreme, ungrateful, and self-important. He won’t last long, but I only fear he’ll ruin everything first.”</p>
+<p>Chi Buxin looked aged, but his tone was the most decisive as he said softly, “Since when did the Ning Family get to meddle in Chi Family affairs? If not for his current control over Yuanxing Peak, we’d have killed him outright, no matter the chaos. Why should we care what he thinks?”</p>
+<p>Li Yuanqin was waiting outside the hall and had caught most of the conversation in just a few lines. He said quietly, “If only there were an order from the sect master.”</p>
+<p>The others were waiting for him to speak. When they heard him, they awaited the next sentence. Chi Fubo asked softly, “Brother Yuanqin, are you saying…”</p>
+<p>Li Yuanqin lifted his head slightly, looking at the spiritual smoke drifting through the immortal sects. He said calmly, “The sect master is in closed-door cultivation, seeking to break through to the Purple Mansion Realm. By protocol, someone should inherit the sect master’s position.”</p>
+<p>Chi Fubo’s heart pounded with excitement, but reason still held him. He sighed. “But we are weak in numbers and have neither legitimacy nor public support. Without a formal decree, assuming the sect master’s seat on our own would be suicide with Ning Hejing standing in opposition. We’d just be handing a gift to Si Yuanli.”</p>
+<p>Li Yuanqin replied, “The sect master has no children, but Chi Zhiyan has many wives and concubines. He still has a legitimate son within the sect. Though he’s young, he can be jointly supported.”</p>
+<p>His expression didn’t change, and he quietly transmitted his next words to the others through a secret technique, “Lord Ning claims to act for the good of the main line. If a legitimate heir from the main line issues the order personally, how could he disobey? With the first lineage nearly gone, who else could that child possibly trust but you elders of the Chi Family?</p>
+<p>“Even if the sect master emerges from seclusion, he’ll have no cause to complain. He may even reward you all…”</p>
+<p>Chi Fubo and the others exchanged glances, entered a hall together, activated formations, and sealed the area. Chi Fubo spoke slowly, “But in the future…”</p>
+<p>Li Yuanqin already knew what was on his mind. The first lineage of the Chi Family had finally stumbled, so of course they harbored thoughts of taking over. Wouldn’t doing this just hand it all back to the first lineage?</p>
+<p>“First, preserve ourselves. Later, when power is in hand and our own people control Yuanxing Peak, we can watch the situation unfold slowly. If all major matters proceed smoothly…”</p>
+<p>The youth’s voice was frighteningly calm, yet it made Chi Fubo’s eyes light up. The mana-lamp’s glow cast shadows over Li Yuanqin’s face as he said, “My lord, this child is in the Qi Cultivation Realm. He must break through to the Foundation Establishment Realm, but… Foundation Establishment Realm is a life-or-death pass.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-893.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-895.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

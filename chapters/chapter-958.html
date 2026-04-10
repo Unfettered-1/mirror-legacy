@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 958: Planning for What Comes After (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-957.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-959.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 958: Planning for What Comes After (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>With a shout, Kongheng flung away Li Zhouwei’s dharma artifact. He clapped his palms together before his chest and let out a low cry, forcibly halting the halberd’s momentum.</p>
+<p>He caught a Foundation Establishment Realm dharma artifact with his bare body?</p>
+<p>A flicker of astonishment appeared in Li Zhouwei’s eyes. He knew the monk’s physical strength was formidable, but he hadn’t expected him to be this strong. With a thought, Radiant Light burst forth from Da Sheng.</p>
+<p>Cough cough!</p>
+<p>Kongheng had barely received the blow, but his palms were now scorched and seared from the heat. He quickly let go of the artifact, allowing the blazing Radiant Light to slam into him. He scrambled away in a rather disheveled state.</p>
+<p>He ducked forward, lowered his gaze, and flung out a sleeve of golden runes in the same motion. Before the runes could fully form in midair, the long-watchful Radiant Origin Pass came crashing down from the sky. Yet Kongheng remained unfazed.</p>
+<p>The heir has only just broken through. His control over his Immortal Foundation must still be unrefined. The Radiant Origin Pass is no ordinary spell, but a projection of the Immortal Foundation itself. Each rise and fall stirs tremendous fluctuations in internal mana!thought Kongheng.</p>
+<p>As Li Zhouwei activated his Immortal Foundation, Kongheng’s eyes abruptly flared with golden light. He pressed his palms together and exhaled sharply, “Ha!”</p>
+<p>The cry tore through the air like bamboo splitting or silk tearing, shaking the lake’s surface into waves. Kongheng had been a Master Monk for many years, and this shout struck precisely just as Li Zhouwei’s mana flow turned. The Immortal Foundation trembled, and Li Zhouwei’s face flushed red as he nearly spat out blood.</p>
+<p>Kongheng immediately made his move. When the Radiant Origin Pass trembled, not only did a stream of golden runes shoot forth, but the golden figure it had nearly worn down rose again. It reached out with six arms and released a cascade of golden chains into the sky.</p>
+<p>Li Zhouwei immediately quelled his internal turbulence, but his opponent had already taken the initiative. Gold light flickered in his eyes, while Kongheng’s expression remained firm and unwavering.</p>
+<p>It had to be said, aside from his lack of offensive techniques, Kongheng had nearly no weaknesses. Even under the terrifying pressure of Li Zhouwei’s Great Fissure Golden Eye, which enhanced his perception technique to a fearsome level, Kongheng was unaffected. The Radiant Light’s power to dispel and suppress misfortune had little impact on his Buddhist radiance.</p>
+<p>I’ve yet to complete Heavenly Radiance, Hidden Light… otherwise, I wouldn’t be this helpless…Li Zhouwei exhaled deeply as he was forced to retreat.</p>
+<p>But given that his strength was already far inferior, this retreat placed him squarely in the monk’s tempo. Kongheng’s golden chains swayed in the air, while the cluster of golden runes transformed into a small golden wooden fish to resist the Radiant Origin Pass.</p>
+<p>The Radiant Origin Pass couldn’t be dealt with by a mere spell, but if the Li Family knew Kongheng well, could Kongheng not know the Li Family just as well? No matter how many wooden fish were crushed beneath its weight, each rise of the Pass triggered another wave of Buddhist resonance, reinforced by golden chains that forced him back into confinement.</p>
+<p>Kongheng conducted himself with the utmost seriousness. Even with the clear advantage, he showed no openings. He cautiously tightened the golden chains little by little. After nearly a hundred exchanges, Kongheng finally ceased chanting, and Li Zhouwei planted his halberd to the ground and stopped.</p>
+<p>The reason was simple. If the fight continued, it would become a duel to the death. Though the golden chains couldn’t kill Li Zhouwei, escaping them would still cost him vital qi. This was just a sparring match, so there was no need to go that far.</p>
+<p>Li Zhouwei handed the halberd to one of his armored soldiers. He had advanced smoothly throughout the battle. After a long moment of reflection, he nodded and said, “I’ve gained much from this exchange.”</p>
+<p>Kongheng gave a bitter smile and shook his head, only now realizing he had been a bit too harsh. He said softly, “A monk bullying the young with strength… it’s hardly justifiable.”</p>
+<p>“Ah.” Little did anyone know, but Li Xuanxuan had been watching with great delight. After all, Li Zhouwei had managed to break through Kongheng’s defenses once. If it had been any other Foundation Establishment Realm cultivator, they would have had quite the headache. Fortunately, it was Kongheng he had faced. The old man chuckled and said, “Good… very good!”</p>
+<p>Li Qinghong had been smiling gently the whole time and said little. The group rode the wind back to the shore, and only then did she speak softly, “Zhouwei, though your cultivation is still shallow, your strength is beginning to show its edge… From now on, I’ll entrust the lake to you and I can rest a little easier.”</p>
+<p>Li Zhouwei appeared to realize something and nodded heavily. He waved his hand, dismissing Kongheng, the white ape, and the others. Li Qinghong patted him lightly and said with a smile, “Don’t forget, Yuan’e hasn’t been refined yet. You’re only wearing it. Once it’s fully refined, your strength will grow even more.”</p>
+<p>Li Zhouwei nodded naturally. Li Qinghong continued in a gentle voice, “Our family has given what it can to aid you—armor, halberd, techniques, spell arts, spirit pills… We’ve done our best. Just by being born into this family, we can’t offer you anything better…”</p>
+<p>Li Zhouwei was sharp. He sensed something strange in her tone and said gravely, “Please be at ease. I’ve only ever felt overwhelmed by the abundance, never its lack. Minghuang holds the house oath and all its strictures close, and would never dare violate them!”</p>
+<p>Li Qinghong let out a soft sigh. It was as if she relaxed, though there was a trace of lament in her breath. She said quietly, “I know… but there’s one matter I must speak with you about.”</p>
+<p>She paused, then spoke warmly, “Our family’s minor sect, when dealing with those of different surnames, has always supported anyone with sufficient innate ability with spirit resources. Chen Yang, who had the highest innate ability, was even granted the Qingdu treatment… I once discussed with my brother that if someone shows the potential for the Foundation Establishment Realm, our family will ensure they receive the necessary cultivation methods.</p>
+<p>“But those early families who followed us, like the families of Lijing, though now grand households, were originally farmers. Ultimately, they rarely had the potential for Foundation Establishment Realm, so those cultivation methods have simply sat unused.”</p>
+<p>She glanced at the lakeshore and said softly, “Now that the lakefront has been unified and the various families serve under our banner, people like An Siwei and Chen Yang show promise of reaching the Foundation Establishment Realm. They must be given the chance; don’t let family prejudice cloud your judgment.</p>
+<p>“If they succeed in reaching the Foundation Establishment Realm and are willing to take on a post under our house, let them stay. If not, and they seek better prospects elsewhere, then let them go with this bond of goodwill and let them take their families along.”</p>
+<p>These words left Li Zhouwei silent. Compared to the Azure Pond Sect, their family had little allure for Foundation Establishment Realm cultivators. Without true emotional ties, wouldn’t these people be happier choosing their own place to cultivate and establish their own house, rather than living under someone else’s roof?</p>
+<p>Only the old man at the side furrowed his brow upon hearing this and said softly, “Qinghong, what are you…”</p>
+<p>Li Qinghong spoke softly, “Our household has little need for extra hands right now. It’s best to advise any cultivator who breaks through to the Foundation Establishment Realm to go their own way. If they remain here by the lake, I fear they’ll fall prey to schemes from the Purple Mansion Realm cultivators.</p>
+<p>“Our family has done right by them. As for techniques, so long as one has enough innate ability and access to spiritual qi, everything except our core secret techniques has been open for study. Spirit resources and items have been distributed annually by every peak and branch; those with higher innate ability receive additional support, and even the opportunity to cultivate on the island. Whenever there’s danger, our own kin were the first to step forward. The other houses respect us for this and this is the bond we share.</p>
+<p>“But those are things we can afford to give. Once they reach the Foundation Establishment Realm, however, they will need certain resources that our ancestors risked their lives to obtain, or I did myself. I can only give them to my family. We can no longer afford to give to others… and if we withhold those things, resentment will grow. That would only ruin the goodwill we’ve built.”</p>
+<p>The woman said gently, “What I mean is… our family must prioritize the Purple Mansion Realm above all. We must avoid creating side troubles. Once provoked, a Purple Mansion Realm cultivator’s divine ability can stir countless consequences. It’s better to advise them to leave first, and preserve our bond. Why risk everything for just one or two Foundation Establishment Realm cultivators?”</p>
+<p>Li Zhouwei finally nodded and said softly, “I understand. So long as our family has no Purple Mansion Realm cultivator of its own, if those of other surnames or minor sects reach the Foundation Establishment Realm, we should first urge them to take their families elsewhere.”</p>
+<p>Li Qinghong smiled at him, then turned to gaze over the lake. At her side, Li Xuanxuan said nothing. After a long silence, she turned and said, “Uncle, take care of your health.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-957.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-959.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

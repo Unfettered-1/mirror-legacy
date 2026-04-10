@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 948: Scattering of Purple Qi (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-947.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-949.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 948: Scattering of Purple Qi (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei could tell the demon didn’t know much. They then continued onward to the Tail Subkingdom, which now looked completely different from before. Lanterns flickered everywhere, and the sand was covered in pristine white clams of various sizes. Several clam spirits in pink-white robes, having taken human form, were opening the shells to search for pearls.</p>
+<p>A pink-robed woman approached, holding a basket filled with large, round, luminous pearls. The long-whiskered demon received it and spoke in a low voice, “This is a token of the Tail Subkingdom’s sincerity. Please, my lord, take it back with you…”</p>
+<p>Only then did he dare bring it forward, watching Li Zhouwei nervously. The clam spirit fell to her knees with a thud, prostrating herself and crying out, “This lowly one swears on her life, it truly was because I was bearing a pearl that I couldn’t move… I beg you, my lord, to see the truth…”</p>
+<p>The surrounding demon generals seemed familiar with her and hurried to speak on her behalf. Li Zhouwei had no interest in determining whether the sea clans had deliberately avoided him earlier.</p>
+<p>He simply waved a hand and said, “It’s fine.”</p>
+<p>He stepped forward, and the two demons escorted him into the palace atop the beast mount. Huiyao had been waiting at the entrance in a daze. When he saw them approaching, a mere glance at the demons’ attitude told him most of what he needed to know.</p>
+<p>He bowed respectfully and said, “My lord has returned!”</p>
+<p>After Li Zhouwei entered the hall, Huiyao quietly tugged at the demons’ sleeves and whispered, “About those sixty thousand teeth…”</p>
+<p>“Forget it!” The two demons casually brushed him off and walked away. Huiyao, relieved, entered the hall, only to meet Li Zhouwei’s piercing gaze.</p>
+<p>The young man stood in the center of the chamber and asked, “What matter is this?”</p>
+<p>Huiyao bowed lower and respectfully replied, “One of the Dragon Son’s eight consorts required a Dharma robe… it must be made using Sea Hui[1] Fangs. The estimate was sixty thousand pieces, originally to be provided by our tribe. Thanks to the heir, the lives of thirty thousand of our children were spared…”</p>
+<p>Li Zhouwei, familiar with Eastern Sea customs, had seen much along the way. Only now did he truly understand how lowly Foundation Establishment Realm demonic creatures such as Huiyao and even the queen of the Tail Subkingdom had to be.</p>
+<p>He quietly said, “You’ve always been like this.”</p>
+<p>“Always have been.” Huiyao remained standing and asked in confusion, “It’s been this way for millions of years. Why would it be different? Even before we took human form, we lived like this. Every year, my Hui Clan must absorb the essence qi of thousands upon thousands of spirit crabs… It’s the natural order.”</p>
+<p>Li Zhouwei gave no reply. He watched Huiyao retreat and continued staring into the wine in his cup.</p>
+<p>“Dingjiao doesn’t see me as human… then what about Pristine Water? Is a True Monarch human? A True Monarch is like a dragon; a Foundation Establishment Realm like a Hui; and mortals are just crabs. The world above the sea is no different from the seabed.”</p>
+<p>He stared into his wine in silence. Though Dingjiao’s palace was extravagantly luxurious, filled with laughter and music, none of it had eased Li Zhouwei’s heart. Instead, the demeanor of the Tail Subkingdom and Huiyao kept swirling in his thoughts.</p>
+<p>Li Zhouwei had been mature-minded since childhood. He had seen many kinds of people, and now that he had encountered demonic creatures, he realized there wasn’t much difference. They all loved to devour humans.</p>
+<p>He couldn’t help but begin to question,They say the Heavenly Dao is broken, and the world turned out like this. But who can say whether the world became this way… or if it was always this way? If the Heavenly Dao is broken… is it better that all beings be free, or that something above still governs them?</p>
+<p>Blood food… blood food… Those who refrain from eating humans lose a third of their power. Can they really contend with those who do?</p>
+<p>He had never been ordinary since birth. As thoughts swirled in his mind, he mused, “Right or wrong, it doesn’t matter. Since so many elders are wholeheartedly supporting me, how can I let them down?”</p>
+<p>Li Zhouwei lifted the hem of the mat to think for a moment, then put it back casually. The sea outside the palace shifted and came to rest. They had likely arrived at the Hui Clan’s territory.</p>
+<p>A cluster of shadows approached, and Huiyao lowered his voice as he drove off the younger ones crowding near, “Go on, go on… all of you, get back…”</p>
+<p>————</p>
+<p>Purple Smoke Blessed Land.</p>
+<p>Purple mist gathered ceaselessly in the sky, drifting across the mountain peaks in wisps and tendrils, spiraling upward. Pavilions and towers dotted the land, all stunningly beautiful.</p>
+<p>A small pavilion stood upon the endless sea of purple mist. A woman in green robes stood to the side, while a female cultivator in purple leaned against the stone steps. Her flowing skirts fell from the high cliff like the mist itself, and halfway down, they dissolved into purple mist.</p>
+<p>Her brows were slightly flat, and her face habitually calm. A rare hint of confusion flickered in her eyes as she gazed far into the distance. The purple mist across the blessed land stirred with her every breath, but Kan Xuyu said nothing.</p>
+<p>Beside her, Shen Yanqing stood with a trace of sorrow. Purple energy surged from Kan Xuyu’s body as she raised her fingers to divine and thought silently,The items have already been delivered to the dragon kin. Dongfang Lieyun is still honorable enough not to break his word. That bastard Yuan Su has already promoted Li Xuanfeng, and I can no longer touch him. I’ve at least done my part by going through the dragon kin…</p>
+<p>She said softly, “Yanqing, once I fall, you should return home. Your father is in seclusion, and the Shen Family needs someone to take charge.”</p>
+<p>Shen Yanqing responded with a nod. The small pavilion was shielded by formations, so there was no fear of being overheard by those in the Purple Mansion Realm above. She murmured, “If Master is reborn and has any requests, just send a letter to my Shen Family… I will always be waiting…”</p>
+<p>“There’s no need,” Kan Xuyu let out a faint chuckle and shook her head gently, her voice barely audible.</p>
+<p>She mentally compared the faces of the Li Family with the one buried deep in her heart, but found no resemblance. Her thoughts drifted, and she spat inwardly,He must be a descendant of one of his family brothers… hmph… surely he wouldn’t have had some illegitimate child behind my back…</p>
+<p>Her eyes lit up for a brief moment, and her cold expression melted into a shy smile. But the light vanished just as quickly, and Kan Xuyu looked out toward the sky.</p>
+<p>Quite a few had come to witness the ceremony. Though most had believed she would rely on that trace of Metallic Essence to reincarnate and wouldn’t achieve much, she was, after all, one of those indebted to Li Jiangqun. So, the Purple Mansion Realm cultivators held no small amount of hope.</p>
+<p>Purple qi surged skyward from Kan Xuyu’s body, drawing all the purple and crimson hues in the sky toward her. The clouds turned into a pure purple cluster, falling upon her in waves. A purple glow emerged at the center of her brow. She joined two fingers, placed them to her lips, and exhaled a breath of purple qi.</p>
+<p>This purple qi was entirely different from the vast purple around her. It was more ethereal, and was tinged with traces of pale white. It was just a single wisp, but it hovered before her and slowly condensed into a pill-like shape.</p>
+<p>In that instant, the world echoed with the chanting of Daoist scriptures. The scent of incense filled the air as the mountain ranges of Purple Smoke Blessed Land stirred with a low rumble. Deer raised their heads, and birds fell silent.</p>
+<p>Heavenly Cultivation Purple Qi Immortal Origin Metallic Essence!</p>
+<p>Purple energy burst across the mountain range. A dense script appeared on every falling leaf. The incense sticks in every burner across the mountain went out on their own, quivering like living beings. Ashes crawled back up the wicks, slowly returning to their unlit form.</p>
+<p>The woman in the sky looked like a goddess riding mist, yet sparkling tears rolled down her cheeks. Kan Xuyu was filled with overwhelming joy.</p>
+<p>Brother Jiangqun, I’ve finally made it through these four hundred years!</p>
+<p>The brilliant radiance of the condensed Purple Essence surged into the sky. All the wisps of purple mist she had once scattered across the heavens with her divine abilities were now rushing back, carrying the chanting from every corner of Yue State, all converging into the cluster of qi before her.</p>
+<p>But Kan Xuyu suddenly stopped, letting out a quiet sigh.</p>
+<p>While all the cultivators marveled at Zipei’s profound cultivation, two shadows high in the sky exchanged glances, both showing surprise.</p>
+<p>One of them spoke in a sharp voice, “She… Thankfully we brought the Nine-Layer Attribute Net for her!”</p>
+<p>1. 虺 (huǐ) is a classical Chinese character referring to a mythical or venomous serpent. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-947.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-949.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

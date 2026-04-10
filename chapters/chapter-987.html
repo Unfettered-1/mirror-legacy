@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 987: Turning Into A Deer (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-986.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-988.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 987: Turning Into A Deer (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Senior White Banyan bears me no ill will… but once Mount Dali is involved, and considering the past tensions between the Dragon Clan and the fox tribe, I was tasked with delivering this message… perhaps this is an attempt to shift their relationship.</p>
+<p>Li Zhouwei carefully recalled White Banyan’s words, and his thoughts gradually became clear,The death of Dongfang You was certainly the key turning point in easing tensions… but age-old grudges aren’t resolved by one death alone. The fox tribe is taking the initiative, and the Dragon Clan are being gracious in return. This is likely due to external pressure.</p>
+<p>If they now share a common enemy, and this diplomatic attempt is centered around probing Mount Luoxia’s secrets… using someone like me with deep hatred toward Mount Luoxia as the link… then the answer seems obvious.</p>
+<p>Li Zhouwei maintained a polite smile, golden eyes calm and unthreatening, but inwardly, clarity was dawning,It’s Mount Luoxia that’s forcing them to turn from enemies into allies… but why only now? Did Mount Luoxia do something… or are they about to?</p>
+<p>The Bicolor Scaled Beast glided smoothly through the ocean. Music echoed in the hall, the scent of spirit fruits wafted through the air, and wine shimmered in goblets, but Li Zhouwei felt as if he were at the center of a storm. He could feel currents stirring above him, with Mount Luoxia, the dragons, the foxes, and countless hidden factions intertwined beneath the Heavenly Glow.</p>
+<p>My Li Family is barely stronger than the weakest of the fox tribe… nothing more than ants in comparison. More importantly… does Mount Luoxia know? And what does that person think of all this?</p>
+<p>Though Dingjiao had repeatedly promised that today’s events wouldn’t be traced back to them, Li Zhouwei never took his words to heart. He treated it all as empty pleasantries and remained completely on edge.</p>
+<p>Could the Purple Mansion Realm cultivators of Jiangnan truly have been unaware when I was invited into the Serpent Dragon Palace? My family searched for foxes several times right near their territory, so how could they not have known? Even my departure from the lake and boarding the Bicolor Scaled Beast in the Southern Sea was no secret, not with so many eyes watching!</p>
+<p>There’s no need for divination here. Just a bit of reasoning, and most of the puzzle becomes clear! What is Dingjiao really trying to keep secret… is it just entering the Abyss?</p>
+<p>Li Zhouwei remained utterly composed as he faced the crown prince of the dragons, who wore a kind smile at the head of the hall. He was as calm as a still lake.</p>
+<p>Open</p>
+<p>This prince’s status is even higher than a typical Purple Mansion Realm cultivator… he may be trying to befriend me… but surely there’s more to it than that.</p>
+<p>There were no real clues amidst the fog of uncertainty. Just then, the black-armored demon general presented a stone box and lifted the lid. A faint glow shimmered across the surface of the contents.</p>
+<p>Li Zhouwei’s expression didn’t change. He looked over and saw that the box held a case of crystal-clear spirit water, so faint in color it was nearly invisible. There was a single spot of bright yellow floating on the surface.</p>
+<p>He scanned it with his spiritual sense. The water exuded an overwhelming spiritual qi, yet the yellow reflection had no discernible origin, as if it had appeared from nowhere.</p>
+<p>Dongfang Dingjiao chuckled, waved his hand to halt the music and dance in the grand hall, and spoke softly, “Minghuang, this item is called Hidden Plunder Gold. It is formed from the essence of the Supreme Yang that fell into the deep sea. It cannot be seen by sight, nor detected by spiritual sense. Even if placed clearly before you, you wouldn’t notice a trace of it without a divine ability.</p>
+<p>“The box contains Huiyuan Spirit Water, which we dragon kin use to cleanse our forehead horns. Humans often use it to cultivate ocular arts. This Hidden Plunder Gold can only cast a reflection within this specific spirit water, making it easier to locate.”</p>
+<p>Li Zhouwei had heard of Huiyuan[1] Spirit Water before. There was something similar in the mainland known as Pure Essence Spirit Water, which his own family had used to cultivate perception techniques. It was considered precious—but here, they had an entire box of it.</p>
+<p>It’s merely water used to reveal Hidden Plunder Gold, and a thin layer at the bottom would have sufficed, yet they filled a whole box. This truly shows how wealthy the Dragon Clan is…thought Li Zhouwei.</p>
+<p>Dingjiao went on to say that the Dragon Clan used this to wash their horns, which implied it wasn’t even a rare treasure to them. Dingjiao shifted his focus to the invisible Hidden Plunder Gold and spoke softly, “This item is a rather unique Supreme Yang Dao spirit item. It can be placed within the Shenyang, Juque acupoints, or the qi sea to aid in cultivating dharma light. It benefits nearly all types of dharma light.”</p>
+<p>Li Zhouwei silently circulated the Heavenly Radiance, Hidden Light technique within his body. Although his spiritual sense couldn’t perceive the item before him, he could feel his dharma light stirring restlessly.</p>
+<p>This spirit item is indeed excellent. It’s likely a rare and unique treasure of the Supreme Yang Dao. Otherwise, with Dingjiao’s temperament, he would never have taken it out,thought Li Zhouwei.</p>
+<p>This dragon prince had already presented an ancient spirit artifact upon their first meeting. Ordinary items clearly wouldn’t appeal to him. Even the Huiyuan Spirit Water was merely used to illuminate this treasure.</p>
+<p>Li Zhouwei thus nodded solemnly and said, “I only made a short trip and barely put in any effort. I truly feel unworthy of this gift. Still, I will remember this kindness. Thank you, Your Highness!”</p>
+<p>Dingjiao’s furrowed brow relaxed when he didn’t refuse. He smiled and nodded, then turned to White Banyan and said gently, “This Restrained Profound Purple Flame was a serendipitous find by a senior luan[2] during a journey to the Western Sea. A few years ago, a fire luan visited my place and gifted it to me.</p>
+<p>“But after thinking it over, we dragons are rulers of the aquatic races. We have no use for the Restrained Profound Purple Flame. Its value would be far greater in your fox tribe’s hands than with us. Our elders have long discussed this matter. I won’t say more. White Banyan, just accept it.”</p>
+<p>White Banyan visibly paused, apparently surprised by the flame’s value, but happily accepted it. Dingjiao was delighted and clapped his hands, and a group of purple-robed women promptly entered the hall.</p>
+<p>“Come.” Dongfang Dingjiao raised his cup as the purple-robed women began dancing. Violet-blue shrimp tails flicked back and forth beneath their robes. It was clear they were shrimp demonic creatures in human form, and their dance was uniquely captivating.</p>
+<p>Well, they are dragons after all. Not a single feast or performance has been repeated throughout this journey. There were shrimp, clams, crabs, snakes and everything imaginable. The Dragon Clan truly puts thought into these things,thought Li Zhouwei.</p>
+<p>Li Zhouwei raised his cup. They continued their conversation amidst the dancing and music. Dingjiao genuinely wished to build ties, while White Banyan and Li Zhouwei were willing to respond in kind. Host and guests alike were all smiles as a joyous atmosphere filled the hall.</p>
+<p>Outside the hall, water flowed rapidly, casting emerald-red reflections. The Bicolor Scaled Beast sped toward the Eastern Sea. Above, dark clouds loomed, and thunder rolled through the shifting sky.</p>
+<p>1. In mythology and Daoist texts, 虺 (hui) is often used to symbolize something sinister, ancient, or serpentine in nature, sometimes linked to primordial chaos or evil beasts. 元 (yuan) means origin, source, or primordial essence. ☜</p>
+<p>2. 鸾 (luán) refers to a mythical bird in Chinese mythology. It is sometimes considered a type of phoenix, or a companion to the phoenix, especially in contexts of harmony, beauty, and nobility. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-986.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-988.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

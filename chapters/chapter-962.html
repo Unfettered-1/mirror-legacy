@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 962: Meeting Heyun In The Abyss (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-961.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-963.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 962: Meeting Heyun In The Abyss (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Eastern Sea.</p>
+<p>Faint streaks of rainbow light weaved through the murky and gray-black Abyss. Li Xizhi traveled by rainbow light, darting through the surging Radiant Essence and baleful energy, and finally stopping before a stone wall.</p>
+<p>He turned into pure rainbow light and slipped into a crevice, gliding through deep darkness until he emerged in a slightly chilly cavern.</p>
+<p>Drip.</p>
+<p>The sound of dripping water echoed through the gloom. A massive black serpent lay coiled atop the cave ceiling. Its pitch-black pupils opened as it hissed hoarsely, “Young Master.”</p>
+<p>Li Xizhi nodded slightly, and the jade vial in his hand shimmered with light. He chuckled softly and said warmly, “Pretty lucky. I searched the earth veins for a while and found a trace of Deepsea Earth Radiant Essence. It’s been extinct for years and its uses mostly forgotten but it’s rare nonetheless.”</p>
+<p>“Congratulations, Young Master.” The black-and-red vapors within the jade vial rippled like water. Li Xizhi was clearly pleased and flipped his hand to store it away. Li Wushao rasped, “News from the Si Family has arrived, please take a look, Young Master.”</p>
+<p>Li Xizhi had encountered fluctuations in the earth vein once he had arrived in the deep sea. Radiant Essence and Lesser Yang light drifted and clashed within him, entangling with his mana and the Immortal Foundation in his qi sea. It was a highly perilous environment.</p>
+<p>Fortunately, his talisman was Rainbow Pierce Skyway. The fierce Radiant Essence and Lesser Yang light were easily neutralized once they entered his body. Thus, he could manage well enough in this earth vein.</p>
+<p>But while he endured it, Li Wushao suffered terribly, his whole body was sizzling with smoke. Li Xizhi had no choice but to protect the old demon, guiding him along the earth vein to a relatively safer cavern and settling him there.</p>
+<p>Yet upon arriving, he consulted the Golden Feather Sect’s map and discovered a water vein nearby. This particular water vein connected all the way to the Eastern Sea. It took a moment, but Li Xizhi quickly understood quite a bit.</p>
+<p>So he left the old demon here to watch over the water vein while he ventured out to collect spirit items. Now that he had returned, news from the Si Family had indeed arrived.</p>
+<p>Li Wushao spoke quietly, but his voice was tinged with admiration, “While you were away, My Lord, a spirit talisman floated down along the water vein and rushed straight toward the cave dwelling. I intercepted it.”</p>
+<p>Li Xizhi took the talisman from his hand and sighed. “Daoist Master Yuan Xiu truly hasn’t gone into seclusion. That’s wonderful!”</p>
+<p>Li Wushao, despite being a centuries-old demon, could still clearly hear the shift in his tone. It sent chills down his spine, and he shuddered inwardly,Of course… If they could calculate our precise location, it must be Si Boxiu’s doing. The origin of this talisman is unclear, I must be extremely careful with what I say!</p>
+<p>He caught on immediately and fell silent. Li Xizhi examined the spirit talisman and, sure enough, found a host of written messages inside, seemingly from Si Tongyi. He skimmed through it and began to ponder.</p>
+<p>The Si Family is retreating step by step… They look to be falling apart. I’ve gone missing, Southern Sea is plagued by devil cultivators, and the Lingu Family is barely holding themselves together… This is an excellent opportunity for them…</p>
+<p>Chi Fubo is still cautious, unwilling to act rashly, and slowly swapping out trusted followers… But Ning Hejing can’t hold back anymore…</p>
+<p>The letter mentioned that Ning Hejing had been frequently leaving the Eastern Sea in the past few months. He was secretly traveling within and outside the sect while holding long private talks with Chi Xuxiao’s inner circle.</p>
+<p>Who knows if Chi Fubo is aware, but this is practically holding a sword to his throat…</p>
+<p>There was also word of Li Quantao visiting the Li Family. Li Xizhi didn’t think much of it,Quantao’s not the scheming type, so he wouldn’t harm our family. At worst, he’s being used. Our heir has already reached the Foundation Establishment Realm. The only threat from the Azure Pond Sect comes from those Purple Mansion Realm cultivators. Chi Fubo may be clever, but he can’t pull off anything grand by himself.</p>
+<p>But one piece of news did make Li Xizhi furrow his brow,Uncle Yuanqin… has left the sect for a while. There’s still no word on who he met.</p>
+<p>If Si Yuanli could still obtain this kind of intelligence so promptly, then his control over the Azure Pond Sect hadn’t truly weakened. Li Xizhi wasn’t concerned about that. The only thing he did worry about was his uncle, Li Yuanqin.</p>
+<p>I just hope no harm comes to him by mistake…thought Li Xizhi.</p>
+<p>After thoroughly checking the spirit talisman, he confirmed it had no further function. He crushed it in his hand as an implicit response to Si Tongyi, and asked softly, “How are your injuries, Wushao?”</p>
+<p>“They’re manageable…” replied Li Wushao.</p>
+<p>Li Wushao often spoke crudely and cursed under his breath, but as a snake demon, he was extremely adept at endurance. However, the clashing of two types of Baleful Qi within his body with Lesser Yang light wasn’t something easily endured.</p>
+<p>He grunted, “It hurts, yes. But compared to wounds from Merging Fire and Converging Water, this is much lighter. Our kind is often toyed with by dragons. Converging Water injuries are everyday fare for my race.”</p>
+<p>Li Xizhi’s talisman qi was only effective for himself and did nothing for the injuries within Li Wushao’s body. He handed over a pill and said gently, “Ning Hejing is overbearing, I don’t dare keep you by my side. Fortunately, there’s no Radiant Essence here. Stay and recover well.”</p>
+<p>“Young Master, go on without worrying for me. When the earth veins surge with two qi and one light, it’s the prime time for treasures. Since you’re unafraid, best not waste the opportunity.”</p>
+<p>The old serpent lowered his head and said nothing further. Li Xizhi had no choice but to turn into rainbow light and shoot out of the cave, sealing the entrance behind him as he plunged back into the intense Radiant Essence as he headed eastward.</p>
+<p>After traveling over fifty kilometers, Li Xizhi suddenly frowned. The space between his eyes shimmered with rainbow light, piercing through the blinding Lesser Yang light until he caught sight of something unusual.</p>
+<p>A winged beast lay within the earth vein amid the billowing Baleful Qi under the Lesser Yang light. It was the size of a table and it was shaped like a beautifully crafted, brilliantly colored fish. Two wings stretched from under its ribs, while its head was round with a flat fish snout. Its orange feathers fluttered restlessly, as if it were struggling.</p>
+<p>Li Xizhi halted cautiously, furrowing his brow as he thought,A Dawn Rayfish? That’s one enormous Dawn Rayfish!</p>
+<p>He was no stranger to Dawn Rayfish as he’d seen one before, but they had only ever been palm-sized. Never had he heard of one as large as a table. When he saw it motionless on the ground, he grew wary and observed in silence.</p>
+<p>As time passed and noon approached, the Lesser Yang light began to weaken. Portions of it even converted into sunlight amid the dense spiritual energy. Suddenly, Li Xizhi felt a chill at his ear, accompanied by a faint, calm, and refined voice, “Fellow Daoist Xizhi, what are you waiting for?”</p>
+<p>Such a voice emerging in the utter silence of the earth vein would terrify any ordinary cultivator, especially in a place where two qis and one light collided violently, where even Foundation Establishment Realm cultivators dared not linger.</p>
+<p>Purple Mansion Realm cultivator?!</p>
+<p>Startled, Li Xizhi’s Heavenly Glow rippled outward. Multiple mirages burst from his body and fled in different directions, while a streak of orange-red light leaped from one of them.</p>
+<p>Gold In Cloud!</p>
+<p>The orange-red light dot darted through the air before condensing into his true form. He spun around, unleashing a sweep of rainbow light from his sleeve and drawing his sword, only to find someone already standing behind him!</p>
+<p>“Oh?”</p>
+<p>The man seemed surprised by the speed of his spell, yet remained motionless with hands behind his back. Upon seeing who it was, Li Xizhi let out a sigh of relief, sheathed his sword with a bitter smile, cupped his hands politely, and said, “Greetings, Senior Heyun!”</p>
+<p>The man before him had eyes bright with spirit. He was graceful in manner, and his hair was tied neatly, with sleeves and hems crisply aligned symmetrically on both sides. He was none other than Dongfang Heyun!</p>
+<p>Dongfang Heyun nodded courteously, returning a bow so precise that even Jiangnan’s cultivators would be ashamed by comparison. He smiled and said, “It has been many years. Your strength has truly grown, Fellow Daoist.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-961.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-963.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

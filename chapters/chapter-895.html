@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 895: Returning To The Heart Of The Lake (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-894.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-896.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 895: Returning To The Heart Of The Lake (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake.</p>
+<p>Cultivators moved across the lake. A white-robed man rode frost down onto a peak, a sword at his waist. Li Xijun ascended the steps, where two young men waited beside the hall.</p>
+<p>One wore a heavy cloak, tall and broad-shouldered, with a spear strapped to his back and a commanding presence. His sharp, powerful gaze revealed him to be the former family head, Li Chengliao.</p>
+<p>The other was slightly younger, sword at his waist. He was leaner in comparison, and clad in long robes. He stood beside Li Chengliao and was Li Chenghuai, son of Li Xizhi.</p>
+<p>Li Zhouwei was still overseas, and the two brothers of the Radiant Lure generation had returned from the north to take charge of the family. Li Chengliao had once been the family head, so handling these matters came naturally to him.</p>
+<p>Li Chenghuai was now at the seventh stage of the Qi Cultivation Realm and was managing affairs in Mount Yue. Though he lacked his father’s charisma, he was a competent leader.</p>
+<p>The two had come to pay respects to Li Xijun, both already grown men. Compared to Li Xijun, they seemed more like brothers than uncle and nephew.</p>
+<p>After all, pills and spirit items nourish the body.</p>
+<p>Li Xijun understood this well. In the generation of Li Tongya and Li Xuanfeng, they had hardly relied on pills or spirit items, relying solely on their own cultivation. Thus, they aged quickly. Li Tongya had reached Foundation Establishment Realm late and, by the age of seventy or eighty, looked like he was already in his fifties or sixties.</p>
+<p>f|re(e)web.n\ovel. (c)o.m</p>
+<p>Things had clearly improved with Li Yuanjiao’s generation. By the time of Li Xijun’s generation, they already had the air of legitimate heirs of an esteemed family. All three of the Xi brothers looked no different in age from the younger juniors.</p>
+<p>“Eighth uncle.” Li Chengliao stepped forward, offered a bow, and handed over a letter, speaking softly, “News from Zongquan Island, it’s good news.”</p>
+<p>Though a senior family member had just passed, Li Chengliao called it good news. Yet there was no joy in his expression, only seriousness. Li Xijun gently took the letter and unfolded it,Zhouwei has broken through to the Foundation Establishment Realm during his seclusion.</p>
+<p>Li Zhouwei had taken a Three Aspects Breaking Realm Pill and a Talisman Pill with him before setting out, so his breakthrough came as no surprise. Li Xijun nodded slightly and continued reading.</p>
+<p>However, before his Foundation Establishment Realm breakthrough, Li Zhouwei had written of several matters in his letter. All of them were good news.</p>
+<p>The first was that Li Chenghui, who cultivated thunder arts, had already reached the eighth stage of the Qi Cultivation Realm. If the family sent him a pill, he could begin cultivating the Cloud-Thunder Inquiry Technique and attempt to break through to the Foundation Establishment Realm.</p>
+<p>Li Qinghong’s Purple Thunder Secret Origin Technique, though from the grotto heaven of the Dao of Thunder Steering and Cloud Dwelling, was essentially a technique for modifying spiritual qi. It wasn’t high-grade on its own; only the appended Purple Talisman Origin Light Secret Technique was truly powerful.</p>
+<p>Li Chenghui’s current cultivation technique, the Cloud-Thunder Inquiry Technique, was an ancient method brought back from the Three Drums Wall of Green Pine Temple. It not only shortened his lifespan less than other methods, but it was also more profound than the Purple Thunder Secret Origin Technique. Its brilliance lay in forging a Dao foundation known as the Profound Thunderpool. He had already mastered the Purple Talisman Origin Light Secret Technique!</p>
+<p>Li Xijun silently praised in his heart,Chenghui is still young, but his cultivation is progressing quickly, and his technique is solid. If he successfully forms his foundation and crosses the life-or-death barrier, he will surely be a prime candidate to serve as our family’s protector…</p>
+<p>The news put him in an excellent mood. Reading further, he saw that the second piece of news was the birth of Li Zhouwei’s second son.</p>
+<p>The second son is handsome, quiet, and cries little, though he has a large appetite. He shows no signs of anything extraordinary. He was no different from a mortal child.</p>
+<p>Li Xijun felt a sense of relief reading that. Li Jiang’ao’s appearance was still vivid in his mind. The fact that there were no abnormalities was already the best news. He kept reading,Though the second son shows no signs of the extraordinary, Zhouwei bears a fated destiny. There’s fear that all his sons may be a Bright Yang heir, which is no trivial matter. I ask Great Uncle to consider carefully and, for now, not to include him in the family register.</p>
+<p>Li Xijun immediately understood that Li Zhouwei was clearly still wary after Li Jiang’ao. Li Zhouwei was afraid that his second son, though human in appearance, might be a demonic being within. He was being extremely cautious.</p>
+<p>He shall not be entered into the four lineages. He will be named Li Jiangqian. If Uncle has any reservations or considerations, please reply to me.</p>
+<p>Li Xijun exhaled softly, put away the letter, and congratulated Li Chengliao, “Congratulations!”</p>
+<p>Li Chengliao gave a solemn nod and said quietly, “A pity about Lady Xu…”</p>
+<p>The incident with Li Jiang’ao had long been sealed away and known to only a handful. Li Chengliao only knew the woman had died suddenly; he didn’t know his eldest grandson had been confined on the mountain. So he finally breathed a sigh of relief upon hearing of Li Jiangqian’s birth.</p>
+<p>fre\e(w)ebn ov.e l\. co.m</p>
+<p>“I had feared Lady An would die as well, and all the families would begin to gossip. Thankfully, Little Qian is well, I can now set my mind at ease.”</p>
+<p>Li Xijun nodded, dismissed the two, and turned into the great hall. His gaze swept across the table. He activated a spell to link with the grand formation, and immediately, radiant light shone forth as a jade box materialized before him.</p>
+<p>This jade box had been acquired by Li Tongya. It was incredibly sturdy, marked with mysterious patterns, and capable of storing Purple Mansion Realm spirit items, though it had not been used in the household for quite some time.</p>
+<p>He put away the jade box, rode the wind northward, and flew across most of Moongaze Lake. He stopped in the center of the lake when a large island came into view, shimmering with brilliance and echoing with sounds of thunder and fire. He could make out ruins, broken walls and shattered tiles amid the glow, the remnants of the former marketplace at the heart of Moongaze Lake.</p>
+<p>A white ape stood upon the lake. Upon seeing him, it bowed. Towering in size and casting a large shadow, it said quietly, “My lord, you’ve arrived.”</p>
+<p>“Senior.”</p>
+<p>Though the Li Family didn’t fully understand Daoist He’s background and remained cautious for the moment, they certainly wouldn’t waste such a rare opportunity. Li Qinghong and Li Ximing had already entered the island at the heart of the lake.</p>
+<p>Chen Taoping of Lingyu Gate perished when the marketplace had been destroyed, and the ancient formation had been shattered by the Deadly Thunder Formation Destroyer. This gave rise to a forbidden formation that had flickered over the lake for seventy years.</p>
+<p>The forbidden formation was extremely difficult to break, but Foundation Establishment Realm cultivators could come and go freely. Thus cultivators of that realm took turns looting the treasures left in the marketplace. Now, the formation’s power had waned to the point where even some Qi Cultivation Realm cultivators could last briefly within. But the place had already been ransacked repeatedly, to the point where no one was willing to enter anymore.</p>
+<p>Li Xijun landed on the island. As expected, the spiritual qi was rich. After a careful estimation, he thought,Just this spot alone already rivals our Mount Qingdu! If it’s a place where spiritual energy gathers, it might even compare to Mount Wu.</p>
+<p>If not for the great trouble of entering the forbidden formation, and the fact that no additional formations could be set up within, making it highly unsafe, they would have long seized this place. However, it was too tasteless for Foundation Establishment Realm cultivators and too dangerous for Qi Cultivation Realm cultivators to stay long.</p>
+<p>He was surrounded by ruined walls and overgrown grass. Sunken white bones had weathered into fragments beneath his feet. Li Xijun rode the wind to the center, where the ground was covered in formation patterns. Four pale stone pillars stood around a deep well.</p>
+<p>A youth in golden robes stood between them, divining with his fingers while reading the runes on the stone pillars. When he saw Li Xijun, his eyes lit up, and he called out, “Brother Xijun, you’ve returned. Did you bring the item?”</p>
+<p>Li Xijun nodded, stepped forward, and landed on the broken formation base. The deep well that served as the formation’s core was etched with arcane patterns. The water within had seemingly been drained, leaving only a gaping, black void.</p>
+<p>Li Xijun had specifically returned to Mount Qingdu to retrieve this jade box.</p>
+<p>“According to the family records, this jade box was retrieved from this very well by our great-grandfather…”</p>
+<p>A box symbolized both defense and containment, and this deep well was the core of the formation. At first, Li Ximing believed it to be a symbolic object suppressing the formation’s center, much like the five kinds of spirit water within their own Mount Qingdu formation.</p>
+<p>He asked, “If this is indeed the object that suppresses the formation’s core, it might help us break the formation.”</p>
+<p>But the white-robed youth examined it carefully, compared the ground patterns with those on the jade box, and shook his head, “No… this jade box doesn’t match the grand formation. It’s not an accessory of the formation’s core.”</p>
+<p>Li Xijun pondered for a moment, a trace of insight dawning in his heart, and replied, “It seems this mysterious well was dug precisely to guard and conceal this jade box…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-894.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-896.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

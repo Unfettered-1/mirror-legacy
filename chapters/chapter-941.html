@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 941: Huiyao Paying Respect (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-940.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-942.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 941: Huiyao Paying Respect (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>As Li Chenghuai let his mind wander, Li Zhouluo stepped forward, cupped his fist in salute and began introducing the siblings. The eldest among them, Li Zhoufang and Li Zhouyang of the first lineage, were timid and hesitant to speak, so the fourth young master took it upon himself to speak on their behalf.</p>
+<p>Next was Li Zhouken of the second lineage. The current generation of the second lineage lacked innate ability. Though born of the first lineage, he had been adopted into the second, and was in fact the blood brother of Li Zhoufang and the others. He bowed respectfully when he was called upon.</p>
+<p>The remaining children were all quite young, barely out of infancy, so it was hard to judge anything. After greeting each in turn, Li Chengliao turned to inspect the outstanding disciples of the sixteen prefectures. There were more than thirty in total. Naturally, the standards for selection were a notch below those for his own kin. As he surveyed them, none seemed foolish, but most were lacking in cultivation.</p>
+<p>Seven from the An Family, two from the Chen Family, three from Western Pool, ten from the prominent families, and ten from the commoner clans…</p>
+<p>Li Chengliao had a clear sense of things. The prominent families of Lijing, such as Chen, Tian, Dou, and Xu, were facing circumstances not unlike those of the Li Family’s main lineage. All suffered from dwindling legitimate descendants, so their numbers were understandably low.</p>
+<p>In contrast, the newly risen surnames and humble households from the western and eastern banks of the prefectural mountains were rapidly amassing strength and securing their footing. Li Chengliao studied this night after night sitting atop the island with his red brush in hand. There were few who could claim deeper insight than him.</p>
+<p>The era of intermarriage among the Chen, Dou, Tian, and Xu families of Lijing is coming to an end. Government appointments flow like water in the sixteen prefectures. The mortal and immortal realms grow ever more distant. There are prominent families with names but no land. Their rise and fall is a matter of a single generation,thought Li Chengliao.</p>
+<p>He nodded as the youth below reported the customs of Wutu Prefecture, smiling in response, though his thoughts were elsewhere. The current peace and stability across the sixteen prefectures was not truly his achievement. He knew full well he had simply inherited a stable, finely-tuned Li Family ripe for manipulation.</p>
+<p>The system of rotating appointments and prefectural authority, the Jade Court, the Qingdu enforcers; these had all been carefully devised by Li Yuanping and Li Xijun. Even when the Li Family had only held a sliver of the eastern shore, they already had a vision in place. Over time, Li Xicheng and Li Xijun had systematically eliminated the local powers in the newly claimed territories, and now that framework spanned the entire expanse of the lake’s sixteen prefectures.</p>
+<p>However…</p>
+<p>He still remembered the sacrifices made by the four surnames alongside the Li Family in the north. The current decline of the prominent families was not unrelated to the deaths of their political leaders. In the past, rewards like spirit items and dharma artifacts had been part of the bond, but affection and familiarity mattered just as much.</p>
+<p>Thus, Li Chengliao gave special attention to the descendants of the four surnames, distributed spirit items to the outstanding youths of the sixteen prefectures, and allocated cave dwellings on the island for them to settle and cultivate. The cultivators then took their leave.</p>
+<p>By the time he had completed all the arrangements, more than half an hour had passed. When he turned to check on his own family’s children, he found them all still standing silently to the side. They had been waiting all this time without a word.</p>
+<p>Li Chengliao set down his brush and smiled. “Zhouluo, bring your brothers up here.”</p>
+<p>Li Zhouluo responded respectfully. As he and the others approached the front of the hall, they noticed a sudden warmth in Li Chengliao’s expression.</p>
+<p>He quickly rose to his feet, vacating the seat of honor, and greeted solemnly, “Greetings, my lady!”</p>
+<p>Li Zhouluo turned to look and saw a woman already standing in the hall. She wore a long feathered robe and silver boots. Her black hair was coiled up and pinned back with a white flower. She held a silver-white spear as she stood quietly.</p>
+<p>A violet haze shimmered in her almond-shaped eyes. Though lightning did not manifest over her body, just her presence alone made Li Zhouluo afraid to look directly at her. He of course knew exactly who she was.</p>
+<p>“Ancestor Qinghong!”</p>
+<p>Li Qinghong gave him a slight nod and asked, “How long has it been?”</p>
+<p>“My lady, it’s been one year and six months,” Li Chengliao responded on his behalf.</p>
+<p>Li Qinghong hadn’t spent all her time in seclusion over the past year or so; she often went out to the sea to collect lightning. Now, her control over the Sixfold Profound Thunder Punishment Tokens had grown increasingly refined. She could store lightning within them at will and even enhance their power.</p>
+<p>The white flower hairpin she wore was also found in the Eastern Sea. Though it was only of Qi Cultivation Realm, it was a rare Celestial Thunder dharma artifact capable of storing a small amount of lightning. It was better than nothing.</p>
+<p>“The appointed time with Xi Zikang is drawing near. I came back to take a look,” said Li Qinghong.</p>
+<p>Since she was standing, no one dared to sit. They followed Li Qinghong down the steps of the hall. She glanced at the scenery across the island and quietly praised Li Chengliao.</p>
+<p>Li Chengliao respectfully said, “Senior Kong Tingyun from Profound Peak Gate paid a visit a year ago. Upon hearing that you were in seclusion, she did not disturb you but left a message with me. She hopes you would write to her upon emerging, so that she may come to visit.”</p>
+<p>“I’ll go to Profound Peak and see her instead,” Li Qinghong responded softly, without any noticeable change in expression.</p>
+<p>Li Chengliao had managed household affairs well. At the very least, the island already bore the marks of an immortal family. As she took in the scenery, evening descended, and sure enough, silver-white lightning bolts began to strike the island.</p>
+<p>Xi Zikang held a jade slip in his hand, his silver robe gleaming. He cupped his fists and greeted her with a smile, “Fellow Daoist Qinghong, long time no see!”</p>
+<p>Li Qinghong nodded gently and exchanged a few polite words with him. Xi Zikang didn’t waste time and handed over the cultivation technique in his hand, speaking aloud, “Have a look, Fellow Daoist. This is the Bright and Clear Heart!”</p>
+<p>Li Qinghong swept her spiritual sense through it. As Xi Zikang had claimed, the technique wasn’t particularly valuable. It was merely a second-grade technique called the Clarity of Sight and Heart Technique.</p>
+<p>She only inspected it briefly before raising her head with a look of doubt. Xi Zikang, of course, understood the value was insufficient and immediately said, “I know this isn’t quite enough, but I have something else to make up the difference. Perhaps it will balance the value.”</p>
+<p>He pulled out a jade box from within his sleeve and said softly, “This is an escape spell of Bright Yang Dao, a third-grade technique called Flowing Sun Refraction. Together with the previous one, the value should match that of the Dao of Thunder Steering and Cloud Dwelling.”</p>
+<p>Li Qinghong hesitated slightly. Escape spells were rare in Jiangnan. As for the Dao of Thunder Steering and Cloud Dwelling, she didn’t fully understand its value. From the Li Family’s perspective, the Purple Thunder Secret Origin Technique was just an ordinary third-grade technique. It was certainly not worth a third-grade escape spell.</p>
+<p>If she were to think maliciously, he might be trying to obtain the technique to counter her. But Li Qinghong had long switched to cultivating the Cloud-Thunder Inquiry Technique. While her Immortal Foundation remained the same, many of her internal pathways were now entirely different.</p>
+<p>After much thought, she decided caution was still best and spoke gently, “The Purple Thunder Secret Origin Technique is, after all, my own method and contains many secrets. If you’re willing, let’s exchange the jade slips first. After we return from the Eastern Sea, we can trade the unlocking incantations.”</p>
+<p>She looked carefully at the young man’s expression and saw clarity in his eyes. He answered without hesitation, “Deal!”</p>
+<p>He readily agreed, showing the decisiveness typical of thunder cultivators from the Northern Sea. After a few more words, he took his leave without a hint of reluctance, riding the wind as he departed.</p>
+<p>Li Qinghong watched him go and said softly, “While we’re away, be extra cautious in your actions.”</p>
+<p>Li Chengliao bowed his head in acknowledgment, while Li Qinghong thought to herself,Minghuang should be nearing a breakthrough. I’ll make a trip to Profound Peak Gate and then swing by the Eastern Sea. I’ll borrow some spirit gauze from Hengzhu Dao Gate and bring him back first.</p>
+<p>No matter how much trouble it caused, Li Qinghong didn’t mind. If possible, she was even considering asking Kong Tingyun to come along, just in case something went wrong along the way.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-940.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-942.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

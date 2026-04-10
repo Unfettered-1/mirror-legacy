@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 981: Southern Sea (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-980.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-982.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 981: Southern Sea (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Zhouwei followed suit. The grand formation protecting the market was separated by a thin layer of seawater. No one came to greet them, but the place bustled with people coming and going.</p>
+<p>“Let’s stroll a bit. The Dragon Clan will definitely arrive within six hours!” exclaimed White Banyan.</p>
+<p>White Banyan wandered around eagerly, buying shells and corals here and there. His cloak concealed both his cultivation level and his demonic identity, allowing him to move freely and comfortably.</p>
+<p>Li Zhouwei browsed casually and bought a map. When the vendor recognized his Foundation Establishment Realm cultivation, he offered the item with trembling hands and fled in a hurry, not daring to even accept payment in spirit shells.</p>
+<p>Li Zhouwei studied the map for a moment and muttered, “What a coincidence, this is Miao Family territory in the Southern Sea!”</p>
+<p>It was clear that the Miao Family’s domain was vast, and they ranked among the top powers in the Southern Sea. Even the market, Zhu Lei[1] Market and the Zhu Lei Cave below it, belonged to them.</p>
+<p>Thunder arts really are incredible… The Southern Sea cultivators mostly practice devil techniques, which are easily suppressed by thunder arts. Though the Miao Family has few direct descendants, their domain is extensive. Thunder techniques are just too effective against devil cultivation,thought Li Zhouwei.</p>
+<p>He casually glanced around and saw the place teeming with devil cultivators. Blood qi items were everywhere, and on closer inspection, most of them had been refined from demonic creatures. Human pills were so rare and expensive that few dared approach them.</p>
+<p>The Southern Sea has few mortals but many cultivators. With Buddhist, devil, immortal, and shamanic Daos all mixed together, mortals are rare. Most major devil techniques have been modified again and again to rely on consuming demonic beasts,thought Li Zhouwei.</p>
+<p>As he walked a lap through the market, he saw many mortals moving about as well, smiling and respectfully calling cultivators ‘sir.’ Two children in the corner were noisily debating Purple Mansion Realm divine abilities.</p>
+<p>Li Zhouwei took it all in and suddenly understood,Mortals in the Southern Sea live inside underwater formations, and most are related to cultivators. On one hand, the population is too small to casually kill. On the other hand, once they’re tied to cultivators by blood, they’re less likely to be harvested.</p>
+<p>The Southern Sea couldn’t compare to the mainland. In Jiangnan, a single mu[2] of land could feed a family. Even a lazy household could scatter seeds and soon not worry about food. This was the reason why the mainland could support the annual casualties of the three sects and seven gates.</p>
+<p>The Eastern Sea likewise had few mortals but many cultivators. However, it had a steady supply of spirit paddies and blood qi from the northern and southern mainland cultivators, so resources weren’t scarce. On the other hand, the Southern Sea had it harder. Aside from a few large islands, mortals could only live within underwater formations, constantly interacting with cultivators.</p>
+<p>All things considered… the Southern Sea, famed for its devil cultivators, actually has a very stable system. Mortals rarely face death, live closely with cultivators, and have clear understanding of cultivation. All they need to do is serve.He couldn’t help but smile wryly as he thought,Commoners in Buddhist lands are sallow and starving. They’re born yearning for death. The disciples of the immortal sects are ignorant and await their harvest without question. Yet here in the southern devil sea, people know why they live and why they die. The great Dao lies right at their feet.</p>
+<p>As the lord of a lake himself, Li Zhouwei had seen many facets of human nature. He had always heard the Southern Sea was overrun with devil cultivators, but seeing it firsthand revealed a different picture, prompting this new reflection,But perhaps they refrain from killing simply because people are too few to bother with. Since they have no choice, they resort to refining pills from demonic creatures, and that eventually became a habit. If given the chance to reach the mainland or the Eastern Sea, they’d probably slaughter more fiercely than anyone else.</p>
+<p>As he silently studied the Southern Sea’s extreme coexistence model of cultivator and mortal, hoping to borrow some ideas, White Banyan returned with a pile of shells and coral. He stuffed a sparkling blue conch into Li Zhouwei’s arms and said with a smile, “My cave has plenty of little foxes. Since I rarely come out, I had to bring them something nice, and of course I couldn’t leave you out!”</p>
+<p>Li Zhouwei accepted it with a slight smile. The conch was merely an Embryonic Breathing Realm dharma artifact, good only for adjusting seawater flow. He thanked White Banyan and tucked it away, not wanting to reject the fox’s goodwill.</p>
+<p>White Banyan immediately beamed, humming contentedly as he mumbled in a low voice, “My great-grandmother once said that there were hardly any devil techniques or blood qi around when she first came to the Southern Sea. This place was still quite barren during her time. But ever since the Miao Family rose, the entire region’s devil techniques surged, and they’re all surprisingly high-quality.”</p>
+<p>“Oh?” Li Zhouwei immediately sensed something unusual and frowned as he said, “I had heard that the Southern Sea has long been infamous for devil cultivators running rampant…”</p>
+<p>White Banyan scoffed and replied, “In the early days, sure, there were devil techniques, but they were just run-of-the-mill. There were also many Wood, Earth, and Water Virtue-based techniques… There were even several immortal sects! Now they’re all gone, thanks to the good work of the Miao Family!”</p>
+<p>After thinking it over, Li Zhouwei finally understood how the Miao Family rose to such power in the Southern Sea.What a ruthless strategy. The Miao Family first secured a monopoly on thunder arts and qi gathering techniques. Then, they spread all kinds of convenient, low-barrier, high-speed devil techniques across the vast region, immediately squeezing out all other cultivation methods.</p>
+<p>Once these high-grade devil techniques spread in desperate regions like the Eastern and Southern Seas… it’s not something that could be easily reversed… Nearly half of these devil techniques don’t even require qi gathering. All they needed was enough blood qi.</p>
+<p>So when their direct descendants use abundant resources to cultivate thunder arts, who among them doesn’t dominate in every fight?</p>
+<p>He shook his head and thought to himself,No wonder the Miao Family is called a thunder arts family, yet also part of the devil Dao. Whether they themselves consume blood qi or not remains unclear… But this move alone shows their cunning.</p>
+<p>As Li Zhouwei fell into deep thought, White Banyan started mumbling again, “Kid, most of the devil plague in Jiangnan came from the Blood Dharma Manual, which also originated from the Miao Family… The Golden Feather Sect borrowed techniques from the Miao Family too… That Golden Feather Sect are all schemers. Just look at how they’ve risen. They shine alone now among the three major sects, and the seven gates fear them like tigers. That says it all!”</p>
+<p>Li Zhouwei immediately caught on and thought to himself,A roundabout warning…</p>
+<p>In truth, the Golden Feather Sect had no major conflict with his own family. In fact, their relationship was fairly cordial. The Li Family had been gathering qi in the desert for years, and no one had dared interfere. Li Zhouwei didn’t believe that was possible without Golden Feather’s consent.</p>
+<p>What’s more, rumor had it that Li Tongya and Zhang Yun were close friends, and the Golden Feather Sect’s disciples had always treated the Li Family with courtesy…</p>
+<p>Still, since White Banyan had reminded him, Li Zhouwei could only keep it in mind and replied modestly, “I’ll remember your advice.”</p>
+<p>White Banyan glanced at him, as if worried he might have said too much and provoked offense. He asked a few cheerful questions, but just then, howling winds rose from the sea, jade waves surged to the sky, and the clinking of iron chains echoed through the waters.</p>
+<p>Boom!</p>
+<p>A massive Bicolor Scaled Beast slowly surfaced from the seabed. A splendid and lavish palace floated on its back. A vast black shadow quickly cast itself over the entire market, dimming even the once-luminous night-illuminating pearls.</p>
+<p>The passing cultivators all looked up, stunned, gazing into the sea. The blare of conch horns erupted, followed by a familiar proclamation echoing from the waters, “The dharma chariot of the Dragon Son of Clear Sea and Still Pond, is present—”</p>
+<p>1. ‘Zhu Lei’ (诸雷) literally means Myriad Thunders or All Thunders. ☜</p>
+<p>2. “亩” (mǔ) is a traditional Chinese unit of area, equal to approximately 666.7 square meters or 0.165 acres, commonly used for measuring farmland. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-980.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-982.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

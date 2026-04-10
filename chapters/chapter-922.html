@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 922: Seizing The Prize (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-921.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-923.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 922: Seizing The Prize (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Guo Hongyao had only been gone for fifteen minutes, yet Guo Hongkang was already growing anxious where he stood. His once-settled mood turned uneasy. He flew northward for a kilometer or two but, fearing schemes or ambushes, dared not go farther.</p>
+<p>“Perhaps Li Xijun has someone backing him. Guo Hongyao might act fierce against Li Xijun alone, but if she runs into that thunder cultivator Li Qinghong, she’s no match at all…” muttered Guo Hongkang.</p>
+<p>He figured Guo Hongyao’s life shouldn’t be in danger. Although Guo Shentong had vanished for years and the east and west sides of Crimson Reef were now allies in name only, Guo Hongyao’s branch was still one of direct descendance. She should still carry plenty of life-saving treasures.</p>
+<p>“I’ll wait a little longer… If there’s no word from her after an hour, she’s probably used some talisman to escape. I’m carrying something too important to just stand here.”</p>
+<p>Guo Hongkang waited quietly, one hand on his magic sword. He closed his eyes while his other hand lit up with red light, two fingers pressed on the Shenyang Mansion point between his brows. Using a spell, he extended his spiritual sense to its limit, yet he still couldn’t sense anything.</p>
+<p>He had no choice but to give up and open his eyes. In the hazy distance, he saw a reddish-gray glow. It was clearly the hue of Merging Fire. Alarmed, he quickly clutched the talisman Guo Hongjian had given him, thinking,She already used a talisman after just fifteen minutes? Li Xijun is only at the early stage of the Foundation Establishment Realm. His sword aura barely counts as strong, not overwhelming. Either he’s hiding his strength, or he has help.</p>
+<p>Guo Hongkang immediately made a decision and began retreating silently. His original plan to wait an hour was instantly abandoned as he muttered, “I’ll give her fifteen more minutes!”</p>
+<p>Guo Hongkang was one of the top talents among the collateral branches. He secretly cultivated many techniques and had a bright future. But even so, he didn’t dare offend Guo Hongyao, afraid this woman might go mad.</p>
+<p>“If not for that, I wouldn’t care whether she lived or died!”</p>
+<p>He waited anxiously for a few seconds until he finally spotted a streak of light flying toward him from the distance, swaying unsteadily. Its mana aura was so dim it was hard to discern, but it was faintly tinged with white mist.</p>
+<p>“Hm?”</p>
+<p>Guo Hongkang’s eyes narrowed as he looked closely. The figure collapsed headfirst onto the shore. Her protective mana completely dissipated, revealing a pale and delicate face. Who else could it be but Guo Hongyao?</p>
+<p>Her flame token lay dim and stuck in the ground beside her. She was covered in blood, and her dharma robe was dulled, stained in a blend of gray-red and crimson. It was rather garish against the island backdrop.</p>
+<p>Serves her right!Guo Hongkang felt a surge of satisfaction. He immediately connected her condition to the distant gray-red glow and chuckled inwardly,The fool must’ve suffered terribly. She used up all her hidden talismans just to stop the guy… If I hadn’t been here when she fled, she wouldn’t even have her life left!</p>
+<p>He drifted on the wind toward her, still curious,I wonder what that white light was… maybe some top-grade escape treasure’s light trail.</p>
+<p>Guo Hongkang slowly descended. On the island shore, Guo Hongyao had already swallowed several pills, her complexion visibly recovering. Guo Hongkang approached a few steps closer and saw a coldly gleaming sword lying under her robes, still stained with blood.</p>
+<p>Realizing she had slain Li Xijun, he sighed and offered his congratulations, “Congratulations, my lady, on slaying your foe.”</p>
+<p>The Guo Hongyao before him appeared gravely injured, struggling to breathe, and gasped, “Come here!”</p>
+<p>Startled by her shout, Guo Hongkang shivered and quickly stepped forward. He saw her clutching her waist, struggling to rise. Her delicate hand lifted the sword that gleamed like snow, and her face twisted in pain as she barked, “Take it already!”</p>
+<p>Though inwardly scornful, Guo Hongkang maintained a respectful expression and quickly reached out to grab the sword’s sheath. But it sank heavily into his hand, and he looked up, puzzled.</p>
+<p>It turned out Guo Hongyao hadn’t let go of the hilt. Her graceful hand held the sword as if she had drawn it countless times before. Her pale fingers were defined and elegant, even beautiful.</p>
+<p>At that moment, Guo Hongkang’s gaze moved past her hand to land on Guo Hongyao’s face. Her expression was icy as frost, and her eyes brimmed with killing intent.</p>
+<p>Guo Hongyao had always been beautiful, but the usual look of petulance and impulsive discontent was now gone. In its place was an untouchable solemnity, like standing amidst a snowstorm.</p>
+<p>The chilling and imperious stillness made her look less like Guo Hongyao and more like that snow-clad Daoist Master Tianwan.</p>
+<p>Clang!</p>
+<p>Guo Hongkang was less than a meter away from Li Xijun, who had transformed into Guo Hongyao. He was holding Han Lin’s scabbard in his hand when all he saw was a flash of snowy white. A chilling light rose from his throat.</p>
+<p>The moment Li Xijun drew his sword, Han Lin slashed clean through Guo Hongkang’s throat, severing his head in one swift strike. Snowflakes scattered like a storm.</p>
+<p>Li Xijun didn’t know what relationship the two had, but he knew Guo Hongyao was irrational. A show of agony covered everything better than polite behavior; any inconsistencies in attitude would be excused under the pain she’d endured.</p>
+<p>As expected, Guo Hongkang suspected nothing and followed Guo Hongyao to the grave. He was also decapitated by Li Xijun in one strike.</p>
+<p>“You—!”</p>
+<p>But Guo Hongkang was not Guo Hongyao. Shock barely flickered through his pupils before he acted, not to save himself, block the blow, nor retreat, but to activate the talisman in his hand.</p>
+<p>Boom!</p>
+<p>A blinding gray-red light burst out. The potent Merging Fire in his palm turned pure black. It was like a massive stone dropped into a lake as it splashed fire in all directions. The seawater around the island was instantly drawn away, and Merging Fire swirled wildly, creating a vast, hollow crater over the sea.</p>
+<p>The Merging Fire talisman exploded right next to the two of them, engulfing both in an instant. Li Xijun’s body was flung backward, trailing a long streak of gray flame. Guo Hongkang’s head, already severed by Li Xijun, was blasted away by the Merging Fire.</p>
+<p>Body and head flew in different directions. His eyes glowed red as his head spun midair, still muttering faintly. However, his body halted midair amidst the firelight. It calmly formed seals with his fingers to control the wind and deflect Merging Fire. Its robes billowed as it turned to chase after the head.</p>
+<p>Guo Hongkang’s decision was unquestionably wise. The instant use of the talisman showed his composure and caution in crisis. Had he not kept it ready in hand, how would he have disrupted Li Xijun now?</p>
+<p>Though his head was already gone, only few could take action in that moment of overwhelming fear. Yet he had triggered the talisman without hesitation. Had he hesitated by even a second, he would’ve followed Guo Hongyao and become another soul slain under Li Xijun’s sword.</p>
+<p>Li Xijun swallowed blood and skidded to a halt in midair. Frosty mana burst from his Qihai acupoints to resist the Merging Fire clinging to him, but the flames still danced across his body. His vision was shrouded in gray haze; he could barely see.</p>
+<p>“My eyes… they’re injured…”</p>
+<p>The only way he could have taken such a powerful talisman blast at close range and only suffer injuries to his eyes and face was due to Guo Hongyao’s dharma robe. Though he hadn’t refined it, it was of the Merging Fire and could resist flames to some degree, allowing his body to rise with the fire rather than be incinerated.</p>
+<p>His spiritual sense was still usable. Li Xijun spat out a mouthful of blood, letting the blood mist ignite and vanish into flame. Frost flared beneath his feet as he reversed his longsword and flicked out three streaks of sword light.</p>
+<p>Guo Hongkang was the one who cast the spell and also cultivated Merging Fire, so by any measure, his injuries were lighter than Li Xijun’s. He had already retrieved his head, but the sword essence coating his neck was like a heavy frost, making it nearly impossible to reattach.</p>
+<p>“Sword Essence! Li Xijun!”</p>
+<p>Frightened, he fumbled for his pills, only to see three pale sword lights already drifting his way. Li Xijun had reverted to his original appearance, his eyes burned to ashen gray and red-gray Merging Fire still flickering over his body.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-921.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-923.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

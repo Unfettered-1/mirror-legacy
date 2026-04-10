@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 897: The Beginning Of Total Achievement (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-896.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-898.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 897: The Beginning Of Total Achievement (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Seeing the other two look over, Li Ximing began to explain, “This burner excels at nurturing fire and burning incense. It can not only preserve multiple spiritual flames but also suppress fire veins, transforming the malignant aura they emit into spiritual smoke. Such an effect is unheard of.”</p>
+<p>He formed a seal with his fingers, and a flame leaped from the burner, taking the shape of a bird. The Li Family’s sole spiritual flame, the Long Marching Fire Essence, had been stored within.</p>
+<p>View the correct content at NovelFire</p>
+<p>The Li Family’s Wutu Mountain had a fire vein of average strength. It was suitable for alchemy but somewhat lacking for refining artifacts. Fortunately, the Yu Family was well-established. Their Milin Mountain had two fire veins, one for alchemy and one for refining, both with long histories. This dharma artifact would certainly be of use.</p>
+<p>Li Ximing’s talisman qi, the Valley Wind Leading Fire, was already capable of refining flames. After demonstrating the burner’s fire-nurturing ability, he continued, “Even better, this burner has a Qi Nourishing function. It can store all kinds of spiritual qi without them interfering with one another. Most spiritual qi can be gently sustained inside, preventing it from dissipating over time.”</p>
+<p>This effect was truly impressive and made Li Xijun’s eyes light up.</p>
+<p>The Li Family now had dozens of qi gathering methods, and each type of spiritual qi had different containment requirements. What’s more, each spiritual qi required a special jade vial, which added up over time. These vials had spatial properties but still couldn’t be stored in a storage pouch.</p>
+<p>“Send it to the Jade Court…” Li Xijun murmured, then said softly, “No, better to send it to Milin. We can set up a new department there that’s solely responsible for qi gathering.”</p>
+<p>The Li Family was growing ever larger, and allowing the Jade Court Guards to centralize too much power was not ideal. Responsibilities needed to be distributed. Li Xijun had already begun laying the groundwork for a new system, intending to use the move to the lake islands as an opportunity to reform.</p>
+<p>Li Qinghong understood his intentions. The woman reflected inwardly,Cuoxiang is a family treasure, and the painted screen isn’t far off in value. Pity the refinement process is so difficult. The mana I’ve poured into it has vanished without a trace… who knows when I’ll finish refining it.</p>
+<p>Cuoxiang was in Li Ximing’s hands, while the painted screen was naturally in Li Qinghong’s. Neither had been fully refined yet. The Li Family still didn’t know anything about the golden talisman and mercury droplets, but Si Yuanli, who had accompanied Li Xuanfeng, most likely knew about it. Li Xizhi had already begun inquiring.</p>
+<p>As the three descended onto the peak, they were met by Li Xuanxuan, who held a letter in his hand, his brow tightly furrowed. Li Xijun stepped forward and greeted respectfully, “My lord, this is…”</p>
+<p>Li Xuanxuan simply handed over the letter, which Li Xijun began reading,Ning Hejing, Chi Fubo, and others, in accordance with the late sect master’s final immortal command, appointed Chi Zhiyan’s son, Chi Xuxiao, as sect master overnight… Promoted Chi Zhihu, Xia Yun, Ning Hede, and others to roles in the General Affairs Hall, Xieqi Peak, Immortal Tribute Office, and Cloudliner Office…</p>
+<p>At midnight, Si Yuanli returned to Azure Pond Sect, admitting he failed to aid in time. Chi Xuxiao did not fault him and instead rewarded him generously…</p>
+<p>Li Xijun read in silence. Li Ximing took the letter next, frowning as he spoke, “How did a Qi Cultivation Realm sect master suddenly appear?!”</p>
+<p>The letter stated that Chi Xuxiao was only twelve years old and at the second stage of the Qi Cultivation Realm. It had been over three hundred years since the Azure Pond Sect had a sect master of the Qi Cultivation Realm.</p>
+<p>Li Xuanxuan could only shake his head as he said, “All I can see is that Si Yuanli is in for a rough time. None of them seem to have good intentions toward him.”</p>
+<p>The group sat down in the main hall and the letter was passed around. Once it returned to Li Xijun, he read it twice again, then said quietly, “The Azure Pond Sect’s response was shockingly fast… but this move was unexpected…”</p>
+<p>The white-robed young man rested a hand on his sword hilt, speaking in a low, calm voice, “They’ve gone and appointed another sect master. What are Ning Hejing and the Chi Family thinking…”</p>
+<p>Most of the names in the letter were unfamiliar, save for a few recognizable ones and Chi Zhihu of the Chi Family’s second lineage. The rest were likely either remaining Chi loyalists or members of the Ning Family.</p>
+<p>Li Xijun said, “In truth, since Chi Zhiyun hasn’t emerged from seclusion, there was no need to rush. They could have just promoted a few Chi Family and loyal members into key positions, drawn in the noble clans, and observed the situation calmly…</p>
+<p>“Though many families are dissatisfied with the Chi Family, Chi Zhiyun is adept at winning people over. Most of the sect’s daoists still recognize the Chi Family. Doing this now only makes them look weak.”</p>
+<p>Of course, all of these moves by the Chi Family, the families, and the daoists assumed that the Daoist Master Yuan Xiu, Si Boxiu, was either missing or unwilling to interfere. If Si Boxiu chose to act, replacing Chi with Si at the Azure Pond Sect would be a matter of a single command.</p>
+<p>Li Qinghong nodded and said softly, “Judging from Si Yuanli’s actions, at the very least, Yuan Xiu has no ulterior plans… otherwise, why would he enter the hall and admit guilt?”</p>
+<p>Li Xijun took a moment to gather his thoughts, then said decisively, “Chi Zhiyun couldn’t possibly have left any true command behind. If he foresaw today, he wouldn’t have appointed a child. This so-called command is definitely forged.</p>
+<p>“My humble guess is that there was some compromise between Ning Hejing and the Chi Family… maybe the Chi Family doesn’t trust Ning Hejing, and Ning Hejing fears being discarded once used. Many scenarios are possible. In any case, this appointment list or Chi Xuxiao himself is the result of that compromise…”</p>
+<p>Everyone fell into thought. Li Xuanxuan studied the situation, quietly taking it as a lesson as he pondered the inter-lineage systems, then said, “No matter which family it happens to, the collapse of a main bloodline like this will take decades to recover from, especially since the Chi Family’s Purple Mansion Realm cultivators has gone missing…”</p>
+<p>Li Qinghong raised her teacup and took a sip at the mention of the Chi Family’s missing Purple Mansion Realm cultivators, lowering her eyes to conceal her expression.</p>
+<p>Li Xijun slightly raised an eyebrow and continued, “That’s true. The sect master has been appointed, and it does come with its advantages. It’s better than doing nothing. Now it’s up to Si Yuanli to worry about resolving the situation.</p>
+<p>“In any case, the chaos at the Azure Pond Sect has already begun. Yuan Xiu’s faction is deeply entrenched and ambitious. The Chi and Ning faction may have the name, but their strength is inconsistent…”</p>
+<p>Although the Li Family had long anticipated turmoil in the Azure Pond Sect, events don’t always unfold as expected. Who could say whether Si Boxiu would personally intervene? Who could predict whether Ning Hejing and the others would passively await their fate?</p>
+<p>If the Si Family advanced with unstoppable momentum and seized control of the Azure Pond Sect under the leadership of a Purple Mansion Realm Daoist Master, then how well would those uncontrollable esteemed families fare afterward under the eyes of the Si Family?</p>
+<p>Whoever held that position, be they named Si or Chi, their stance would be the same. The only difference was that the Li Family rendered prior service, so the Si Family might show some leniency. But would they truly allow an entire lake region to fall wholly into the Li Family’s hands?</p>
+<p>To most, the current situation seemed perfectly normal. Yet only Li Xijun quietly let out a breath of relief. Even his brows relaxed, his eyes grew bright, and he changed the topic, saying, “As for our Li Family.”</p>
+<p>The white-robed youth exhaled, his tone now far more relaxed as he spoke softly, “With the upper sect in chaos, factions at odds, offerings neglected, and the esteemed families left unchecked, we should seize this moment to fulfill our family’s century-old ambition!</p>
+<p>“Devour the Great Lake, enter the island at the heart of the lake, become the head of a prefecture, seize spirit items, and pursue the Purple Mansion Realm…”</p>
+<p>He paused. Clad in white as pure as snow, his voice turned sharp and resolute, each word ringing with force, “Complete the work of six generations!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-896.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-898.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
