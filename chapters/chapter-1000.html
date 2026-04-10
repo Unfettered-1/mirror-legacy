@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1000: Two Qi (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-999.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1001.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1000: Two Qi (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Bright Yang.”</p>
+<p>With the Wei’s Li Family in decline at the time and Buddhist cultivators in the lead, the Northern Buddhists naturally sought to contend for the Fruition Attainment.</p>
+<p>Li Zhouwei continued, “So, judging from how things stand now, with the Undefeated King of Brightness dead, it seems the Buddhist cultivators lost in their struggle for Bright Yang.”</p>
+<p>White Banyan spoke after a long pause. “Correct.”</p>
+<p>Knowing better than to pry, Li Zhouwei sat quietly on the dharma artifact.</p>
+<p>Dingjiao…thought Li Zhouwei.</p>
+<p>The Dragon Crown Prince had indeed treated him well, yet Li Zhouwei still harbored deep doubts in his heart. However, he never showed them because of the Dragon Clan’s strength.</p>
+<p>The Azure Pond Sect and Luoxia Upper Sect weren’t saints, but was the Dragon Clan any better? Even if the matter of swallowing thunder had yet to be settled, it had been thousands of years and the Dragon Clan’s role has rarely been an honorable one.</p>
+<p>The Dragon Clan had begun arranging the swallowing of thunder years ago. How could Dongfang Dingjiao not know that Li Qinghong’s life or death was still uncertain in the sea? Yet the Dragon Crown Prince acted as though nothing was happening as he chatted and laughed warmly.</p>
+<p>Li Zhouwei had remained composed during his time in the grand hall, offering an occasional smile. This was already giving Dingjiao enough respect. First, the Dragon Son was of noble status, and second, forming good ties with the Dragon Crown Prince might give Li Qinghong the slightest chance of survival in the matter of swallowing thunder.</p>
+<p>Even if all else fails and there is no room for tact in dealing with the Dragon Clan, and even if the elder in my family is certain to die, I cannot allow them to believe the Li Family harbors resentment. The best course is to say nothing and appear completely indifferent,thought Li Zhouwei.</p>
+<p>If he were to raise the matter of Li Qinghong to Dingjiao, it would lay his concern bare, and the Li Family could not bear the consequences of Dingjiao’s refusal. Thus, Li Zhouwei acted as if nothing were wrong.</p>
+<p>It was only after leaving the Dragon Palace that he mused to himself, Dingjiao’s calm demeanor means either that the thunder cultivators would at most lose their cultivation but not their lives in the swallowing thunder affair, or that he sees me entirely as a White Qilin, and thus the Li Family members are naturally not to be considered my kind.</p>
+<p>Despite Dingjiao’s many courteous conversations, Li Zhouwei found it difficult to open his heart to him, much less reveal his true thoughts. All their exchanges remained purely polite.</p>
+<p>Li Zhouwei pondered,As for my family’s relationship with the Dragon Clan, and the reason behind Dingjiao’s closeness to me… I fear there will be no clues until after the swallowing thunder affair. It’s a pity Senior White Banyan and Dingjiao delayed me for too long. Now I can’t go to the Southern Sea and can only wait for the next opportunity…</p>
+<p>After cultivating cross-legged on the dharma artifact, Li Zhouwei finally arrived at Moongaze Lake. White Banyan immediately perked up and sighed. “I’m absolutely not going if something like this happens again … It’s both dull and exhausting…”</p>
+<p>The fox was naturally the type to laze around on the mountain. His heart was already set on returning, and he flatly rejected Li Zhouwei’s invitation, piloting his dharma artifact away as if fleeing.</p>
+<p>Li Zhouwei rode the wind down onto the island and made his way to the grand hall, where he found a young man waiting outside.</p>
+<p>The young man was dressed in pleated robes, and his golden mana was as sharp as a blade. Upon seeing him, the youth quickly stepped back two paces and bowed. “Third Brother!”</p>
+<p>“Zhouluo, you’re here.”</p>
+<p>Li Zhouwei had only met this younger fourth brother a few times, yet Li Zhouluo saluted him with great respect and said earnestly, “It has been a long time since I last saw you, Third Brother. You toil tirelessly outside, while we brothers merely help with minor matters at home. The thought fills me with guilt.”</p>
+<p>Li Zhouwei glanced at him in surprise, then said with a nod, “You are too polite, Fourth Brother. Each of us has our role to play. Since you are at the Qi Cultivation Realm, you are also a pillar of the family. Do not belittle yourself.”</p>
+<p>“I am enlightened, Brother,” replied Li Zhouluo with a small laugh. His innate ability was second only to Li Zhouwei among the Celestial Whirl generation and, being from Li Xizhi’s branch, his innate ability was naturally not low. Though he lacked talisman seeds, reaching Qi Cultivation Realm at eighteen put him only slightly behind Li Xijun in his youth.</p>
+<p>Golden radiance shimmered over his body like ripened wheat in six distinct streams, each trailing a long tail of light. They flowed ceaselessly around him, lively as sparrows, highlighting his bright eyes and the sharp-edged vigor of youth.</p>
+<p>He cultivated the Gold Aura Profound Inquiry Technique, a rather fine ancient technique. The Li Family had obtained Feathered Gold Liquid when they had broken through a forbidden formation, which allowed for the practice of this technique. Li Zhouluo was the first to do so, and it naturally filled him with pride.</p>
+<p>Li Zhouwei had a favorable impression of him. He nodded with a smile and said, “I have read the Gold Aura Profound Inquiry Technique. It has the bearing of a fourth-grade technique and is no worse than the other techniques. Just cultivate it well.”</p>
+<p>Li Zhouluo’s expression brightened at this unexpected praise. He followed Li Zhouwei into the hall as the latter casually asked, “Where are Eldest Brother and Second Brother?”</p>
+<p>He was naturally referring to the brothers Li Zhoufang and Li Zhouyang, both older than himself. He had met them more often in years past and was fairly familiar.</p>
+<p>Li Zhouluo smiled and replied, “Both brothers are in seclusion beneath Qingdu, and it looks like they have a good chance of achieving Qi Cultivation Realm within the next two years.”</p>
+<p>“Good!” Li Zhouwei gave a word of praise, partly in commendation of his two brothers, and partly in approval of Li Zhouluo’s frank and open manner. His voice softened noticeably as he said, “My father has been in seclusion for a long time, and Aunt Minggong and Uncle Chenghuai are also at the time to attempt the Foundation Establishment Realm. You should all reach the Qi Cultivation Realm as early as possible[1], so you can take on the family’s responsibilities.”</p>
+<p>Li Zhouwei knew his own family well; there were only a few uncles or elders who could speak easily before him, let alone brothers. Thus, he patted Li Zhouluo on the shoulder and said softly, “Kongheng and I have both left the Eastern Sea, and Zongquan Island has no one watching over it. Once our two brothers emerge from seclusion, you should discuss among yourselves who will take people to the Eastern Sea to hold the post there.”</p>
+<p>“Everything will be at the family head’s command.”</p>
+<p>Li Zhouwei smiled and dismissed him. His once tense mood had improved considerably as he followed the steps up to the rear hall, where Li Xuanxuan, having received word, strode up with a face full of hopeful anticipation.</p>
+<p>He asked, “Minghuang, what did the Dragon Crown Prince say?”</p>
+<p>Li Zhouwei first invited him to sit in the hall, hesitated for a moment, and then said softly, “I do not yet know if there is any chance for a turnaround, but… His Highness Dingjiao did at least gift me a treasure in thanks.”</p>
+<p>He produced the Hidden Plunder Gold, recounted his journey with certain details omitted, and said what could be said. The old man shook his head repeatedly, and he also spoke of the matter concerning Fuxia before returning to the conversation.</p>
+<p>Li Xuanxuan finally let the matter drop. He took two jade slips from his robes, handed them to Li Zhouwei, and said in a deep voice, “Minghuang, the spiritual qi for the two children must be prepared first.”</p>
+<p>Li Zhouwei took the jade slips and swept them with his spiritual sense.</p>
+<p>Bright Li Blazing Essence requires finding an earth vein where Li Fire gathers. If one uses the four Li Fires such as the Profound Yang, Observing Li, Heavenly Yang, and Lofty Li, one must refine the baleful fire in succession, obtaining the essence of each. Then, using the baleful fire to illuminate the heavenly light, in six months one can obtain a wisp, and ten wisps make a portion.</p>
+<p>Grand Unity Pure Mercury requires seeking a place where the properties of matter undergo profound change. Using a Whole Pill treasure as the pivot, alternately applying yin and yang spiritual items, and blending treasures of the five elements, one can obtain a wisp in one hundred and eighty-one days, and ten wisps make a portion…</p>
+<p>That was outlined in the two jade slips; the rest consisted of procedural techniques and secret tips. They were far more extensive than ordinary qi gathering methods. Li Zhouwei had already read them before, so Li Xuanxuan spoke softly, “Both of these are somewhat troublesome. The complexity of the methods is secondary. First, the spiritual flames are hard to find; second, a place where matter changes in nature… Minghuang, do you have a plan?”</p>
+<p>1. In the previous paragraph, it was stated that Li Zhouluo is in the Qi Cultivation Realm but I’m not sure why the author wrote this. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-999.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1001.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

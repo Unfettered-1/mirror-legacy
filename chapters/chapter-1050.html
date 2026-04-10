@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1050: Yuan Xiu’s Intent (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1049.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1051.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1050: Yuan Xiu’s Intent (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>No matter how fine Si Boxiu’s words sounded, Li Ximing treated them as nothing but wind past his ears. The old man saw he was unmoved but did not mind.</p>
+<p>Instead, he looked at Ding Weizeng behind him and asked with a smile, “And this one, Zhaojing…”</p>
+<p>Li Ximing had been waiting for the question, so he answered with a smile, “This is a newly recruited guest cultivator of my family. Unfortunately, he was injured by the Mifan three sects and suffered damage to his qihai. Although my Bright Yang divine ability can give rise to all things, it does not belong to a Dao lineage skilled in healing. So I thought I might as well ask you while I am here.”</p>
+<p>Si Boxiu was a great cultivator of the Wood Virtue, and already at the late stage of the Purple Mansion Realm. He was likely the only one of his kind in the entirety of Yue State. Li Ximing was not one to hold up a facade. If there was a benefit, he would not let it go to waste. Since he was here, he might as well ask Si Boxiu. It was a small matter anyway.</p>
+<p>Damage to the qihai was almost a death sentence for members of esteemed families, but it was nothing serious for Purple Mansion Realm cultivators.</p>
+<p>Si Boxiu nodded and smiled at the words, “In the way of healing, the foremost is Valley Water, followed by Pristine Water and Horn Wood. The Dao lineage I practice is the most unusual among the Wood Virtue, called Orthodox Wood. It is the wood formed by the union of Jia and Yi[1], as firm as stone, nearly akin to metal, and does not bring forth growth.”</p>
+<p>Li Ximing nodded slightly. Si Boxiu’s meaning was that his Orthodox Wood was an anomaly within Wood Virtue. Its healing ability was no better than his own. No wonder Si Yuanli’s sword art was ethereal and showed no trace of Wood Virtue. It turned out that their Dao lineage, Orthodox Wood, was as firm as stone and akin to metal. His sword is a weapon of metal, meant to kill.</p>
+<p>As his thoughts stirred, Si Boxiu smiled and said, “If you wish, you can take a trip to the Eastern Sea. Long Flow Mountain rises near Bei Sea. It is where Daoist Nun Xiangchun practices Valley Water. She is kind-hearted and may be willing to help.”</p>
+<p>This matter did not warrant asking a Purple Mansion cultivator to intervene directly. Li Ximing frowned inwardly, but Si Boxiu read his expression and simply smiled, “I almost forgot the bond between the Xiao and Li Families. You could ask Xiao Chuting as well. He practices Pit Water and may be able to help.”</p>
+<p>Li Ximing felt a weight lift from his heart. After exchanging a few more words with Si Boxiu, he finally heard him speak softly, “Zhaojing, since you came to see me first, I will speak plainly. Hengzhu Dao Gate has grievances with the Changxiao Gate, so they favor you. But the Golden Feather Sect is watching Hengzhu Dao Gate closely… In the past, I also quarreled a lot with Hengzhu Dao Gate. Now that I am older, I see it more lightly. But still…”</p>
+<p>Yuan Xiu paused, then said casually, “No matter who the Li Family allies with, you must not draw too close to Hengzhu Dao Gate. It would be dangerous.”</p>
+<p>Clearly, Li Ximing’s visits to these three were meant to establish factional ties. Every Purple Mansion Realm cultivator was shrewd. Having chosen to approach Si Boxiu, he absolutely could not then go to Hengzhu Dao Gate, or else he would end up an enemy to all.</p>
+<p>But the Azure Pond Sect cannot be avoided. Si Boxiu, nearing the end of his lifespan, was already sensitive. Jiangbei teemed with crises, and without a stable ally at his back, it would be impossible…</p>
+<p>Li Ximing felt helpless in his heart, Hengzhu Dao Gate was at odds with the Golden Feather Sect and could not get along with the Azure Pond Sect either. Who would dare approach them? Moongaze Lake sits right between that poisonous flood dragon Golden Feather Sect and the sick tiger Azure Pond Sect…</p>
+<p>“I understand, senior,” Li Ximing replied solemnly and took his leave. Yuan Xiu rose to see him off. Once he stepped out of the Pristine Gui Pool, he felt his entire body lighten as the heavens and earth grew clear. He departed from the Azure Pond Sect and took his leave, vanishing into the great void.</p>
+<p>Yuan Xiu escorted him all the way out before returning to Mount Azure Pond. Stroking his beard slowly, he pondered,The next is Xiao Chuting. I wonder if that fellow will agree to meet him. Li Ximing speaks well enough, has good fortune, and is not foolish, but he is simply too young.</p>
+<p>————</p>
+<p>Great void.</p>
+<p>Li Ximing had just left Mount Azure Pond. Instead of heading straight toward the Xiao Family’s grand formation, he moved through the great void, following the flow of spiritual energy until he stopped before Mount Xianyou.</p>
+<p>This kind of visit was different from a private one. He could not simply step out of the great void and enter. When he had visited the Azure Pond Sect, he had entered through the mountain gate, which already carried the implication of alliance between the two families. If that was the case with the Azure Pond Sect, then he needed to do the same with the Xiao Family.</p>
+<p>What kind of figure is Hengzhu? How did things reach this stage? I have never heard of him being close to any family, yet he somehow managed to offend so many.The thought made Li Ximing recall something,When Murong Xia came south all those years ago and devoured Hengzhu Dao Gate’s Purple Mansion Realm direct disciple, I only thought that monk was arrogant. But perhaps the signs of Hengzhu’s predicament were already there back then…</p>
+<p>The three sects and seven gates had always stood aloof, yet only after reaching the Purple Mansion Realm did he realize that there was just as much exclusion within. As he pondered this, a figure approached before the mountain, dressed in a long robe.</p>
+<p>He held his hands together in a clasped-fist salute and said, “I, Xiao Ruyu of the Xiao Family, greet Daoist Master!”</p>
+<p>The man appeared middle-aged, his face wreathed in polite smiles. His demeanor was smooth and worldly. Li Ximing had heard his name before and knew he had ties with his own father’s generation.</p>
+<p>He waved his hand and said, “So it’s Master Ruyu.”</p>
+<p>Back in the day, Xiao Ruyu had also been one of the leading figures of the Xiao Family. Later, he seemed to have made some mistake and had been sidelined for decades, relegated to guarding the market without further involvement. His ties with the Li Family had gradually faded.</p>
+<p>The traces of youthful vigor he had once displayed when he pursued the Golden Tang Gate alongside Li Xuanfeng were long gone from his face. Only the deep wear of time remained. The life of this once chivalrous young man had not gone smoothly. He had endured hardships different from those of Li Xuanfeng, and his fiery temper had been worn down into cautious smoothness.</p>
+<p>He lowered his head and said respectfully, “It should have been my Family Uncle Xiao Yongling who came to welcome you, but he entered seclusion years ago to attempt a breakthrough to the Purple Mansion Realm, so I could only come in his stead. I beg your forgiveness.”</p>
+<p>So Xiao Yongling went into seclusion to attempt the Purple Mansion Realm breakthrough…Li Ximing was taken aback and pondered for a moment before asking, “If I recall correctly, he cultivates the Eastern Feather Mountain Dao, does he not? Which Dao lineage does that belong to?”</p>
+<p>If anyone else had asked, it would have seemed like prying into another’s Dao lineage. But for a Purple Mansion Realm cultivator, such a question was merely an expression of concern.</p>
+<p>Xiao Ruyu replied respectfully, “Reporting to Daoist Master, my clan uncle cultivates a Dao lineage known as the Capital Guard among the Ancient Merging Daos. It vanished from the lands of Yue State long ago, and it was by chance that our family’s Daoist Master obtained it.”</p>
+<p>This was the first time Li Ximing had ever heard of such a Dao lineage. He silently kept it in mind. It was not convenient to probe further in public. Following Xiao Ruyu up the mountain, they finally arrived at the formation before the main peak.</p>
+<p>At that point, Xiao Ruyu spoke respectfully, “I must ask this Daoist friend to wait outside.”</p>
+<p>He was naturally referring to Ding Weizeng. The man hesitated slightly and glanced at Li Ximing. Li Ximing’s heart stirred, and he immediately sensed that something was wrong,If it were not for Xiao Chuting’s explicit orders, Xiao Ruyu would never dare stop him. What could this mean…</p>
+<p>1. 甲 (Jiǎ) is the first Heavenly Stem, associated with Wood (Yang) and 乙 (Yǐ) is the second Heavenly Stem, associated with Wood (Yin). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1049.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1051.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

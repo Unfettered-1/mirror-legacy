@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1060: North Brocade River King (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1059.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1061.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1060: North Brocade River King (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The serpent demon bowed at the formation’s edge. Li Zhouwei guessed that there were still cultivators from Hidden Cloud Cave inside its lair.</p>
+<p>He stepped forward, heavenly light spilling down from his halberd, and asked, “I scented humans lingering in your territory. How many cultivators are there? Have they been boiled or stewed, or are they emissaries of some power?”</p>
+<p>The serpent demon realized why Li Zhouwei had not entered the formation but instead forced him to come out. Bowing respectfully, he said, “This little one has no background and did not know the great elder would come. I would not dare to harm the great king. Those within the formation belong to a minor nearby faction… they are from Hidden Cloud Cave, here to deliver blood food to me…</p>
+<p>“To the south, a Bright Yang Purple Mansion Realm immortal family has risen with intentions of claiming this region. But they are stubborn and old-fashioned. Though I do not fear them, I cannot be bothered to entangle myself with them. I simply accepted Hidden Cloud Cave’s blood food and let them seek an audience with my king.”</p>
+<p>“Oh?” Li Zhouwei did not step into the formation. Instead, he sat right where he was and asked, “Does your king intend to meddle in the affairs of humans?”</p>
+<p>“Of course not…” The serpent demon hesitated for a moment. Since he did not consider it a real secret, he focused only on currying favor with the golden-eyed beast before him and said reverently, “It was merely to speak with my king about some matters. The White River Stream is the water vein of this land, and my lord cultivates the Converging Water Dao. Converging Water is the master of water veins, so controlling the spirit waters and spirit springs to influence the growth of spirit paddies is not difficult at all…</p>
+<p>“The cultivators of Baiye Capital Immortal Dao seemed to have more to discuss with my king… but I am not aware of the details.”</p>
+<p>It kept its head down, its gaudy robe dragging on the ground. Its true form resembled a patterned python. Li Zhouwei had already made his judgment, but just then, two cultivators flew out from the mountain cave. They were led by a heavily painted woman, who descended with guarded vigilance.</p>
+<p>The serpent demon had not recognized Li Zhouwei, but there was not a single member of the Mifan three sects who could forget him. He had barely landed before the underlings of Hidden Cloud Cave recognized him. In moments, they summoned their Foundation Establishment Realm cultivator out.</p>
+<p>Li Zhouwei secretly tightened his grip on the halberd. The Hidden Plunder Gold[1] flickered in his Juque acupoint, while Heavenly Radiance, Hidden Light circulated in secret as his mana surged to its peak.</p>
+<p>The patterned python serpent demon only heard shouts from within the formation.</p>
+<p>“Mang Huazi! Do not let him deceive you… that is a man of the Li Family!”</p>
+<p>The patterned python demon dumbly raised his head, only to see Li Zhouwei’s expression unchanged—save for a sudden point of golden light flaring between his broad brows.</p>
+<p>Boom!</p>
+<p>A thunderous blast echoed above as golden Heavenly Radiance, Hidden Light flashed across the mountains for but an instant. Tears welled at the corners of Mang Huazi’s eyes as he sprang up, summoning demon winds to retreat.</p>
+<p>Pitifully, the heavily painted woman had barely stepped out of the formation when the Heavenly Radiance, Hidden Light struck her head-on. Her body burst with a deafening crack; sparks flew like rain; and white smoke rose.</p>
+<p>She cried out in agony, “Ahhh… the pain is unbearable!”</p>
+<p>How could Li Zhouwei let the patterned python serpent demon right in front of him escape? Using Heavenly Radiance, Hidden Light to kill it would have been excessive.</p>
+<p>First, he struck down the strongest cultivator of Hidden Cloud Cave with a beam of dharma light, then drew the Da Sheng Halberd and said, “Where do you think you’re running?”</p>
+<p>Mang Huazi, caught between shock and fury, seethed with humiliation. He assumed some strange Immortal Foundation or sinister spell had tricked him.</p>
+<p>He raised a bone-like dharma artifact in his hand and cursed, “You…”</p>
+<p>Before he could finish the word, Li Zhouwei’s Da Sheng Halberd was already at his chest. The black-and-red glow of the Armor Cycle Soul-Refining Halberd Art flared, mingling with radiant light and casting dark shadows. Mang Huazi was forced to raise his dharma artifact in a desperate block.</p>
+<p>Clang!</p>
+<p>The halberd slammed into the bone dharma artifact with a muffled crash. Mang Huazi’s face turned ashen as he nearly revealed his true form.</p>
+<p>Li Zhouwei had been in Foundation Establishment Realm for over a decade, spending more time honing techniques than his cultivation. He had fought endlessly against the Mifan three sects and developed a formidable combat prowess. Though only at mid-Foundation Establishment Realm, he was a veteran of a hundred battles and his realm was exceedingly stable.</p>
+<p>Mang Huazi, though also at mid-Foundation Establishment Realm, was far less impressive. He immediately realized he was outmatched. It was only thanks to his dharma artifact that he avoided instant disgrace.</p>
+<p>But Li Zhouwei redirected the Da Sheng Halberd with a twist of his wrist. Its specially curved blade instantly hooked the bone artifact, trapping it. A surge of radiant light erupted, preventing Mang Huazi from pulling it back.</p>
+<p>Mang Huazi tugged helplessly at his entangled artifact, but then saw radiant light flare once again between Li Zhouwei’s brows. Terror flooded him, and his heart sank with bitter grievance,Who is this man? He must be of a Purple Mansion lineage! He’s someone on par with the North Brocade River King. Why use a butcher’s blade to kill a chicken?!</p>
+<p>Mana gathered in his mouth as he activated the Immortal Foundation art Veiling Dust Mist, spewing out a black radiance that cloaked his body. Hidden in darkness, he sought to shake off the brow-light that tracked him.</p>
+<p>Petty trickery!thought Li Zhouwei.</p>
+<p>He suddenly opened his eyes, golden brilliance pouring forth and piercing through the darkness. The Bright Yang Dao lineage did not lack for perception techniques, and he already possessed innate uncommon eyes.</p>
+<p>He thundered aloud, “By decree!”</p>
+<p>A spark flared, white smoke scattered, and Mang Huazi wailed. Blood poured forth as a gaping hole was torn into his chest.</p>
+<p>Panic-stricken, he cried, “Spare me, my lord! At least report to my king first, then kill me if you must…”</p>
+<p>The Da Sheng Halberd descended from the heavens before he could finish. Mang Huazi could no longer maintain his human guise and revealed his true form, a brilliantly patterned python, as he crashed into the forest. The Da Sheng Halberd pierced through his vital point, pinning him to the ground.</p>
+<p>Li Zhouwei had not even used his full strength. The Yang Li Red Sparrow Banner in his sleeve remained untouched, and the Supreme Yang Resonance Radiant Art[1] uncast. Yet he had already subdued the demon.</p>
+<p>Striding up to the python’s head, he commanded, “Summon the North Brocade River King.”</p>
+<p>Mang Huazi had been suppressed in the blink of an eye, and the cultivators of Hidden Cloud Cave had fared no better. With Li Chenghui’s reputation preceding him and the head of the place already wounded and pinned by Li Zhouwei, none dared to face him. They scattered and fled one by one.</p>
+<p>Li Minggong held the Six-Cornered Scarlet Flame Lamp. The wounded woman forced herself to gather strength and braced the formation.</p>
+<p>She halted in front of it and shouted, “Are you people from Moongaze Lake? My Hidden Cloud Cave has never offended the immortal families, so why do you strike at me?”</p>
+<p>“Hidden Cloud Cave?” Li Minggong shook her head and said loudly, “We came under orders to slay demonic creatures. All we saw were a few devil cultivators colluding with foul demons. We saw no cultivators of Hidden Cloud Cave.”</p>
+<p>The woman was struck speechless. She could not admit to her dealings with this demon, yet with the Li Family blocking the formation, she could only stew in anger no matter what Li Minggong said.</p>
+<p>Rage welled within her, and she snapped coldly, “Why must you bully us so far?”</p>
+<p>“Bully you?” Li Minggong almost laughed. She recognized Miaoshui of Hidden Cloud Cave, someone she had once fought. Back then, she had shown no mercy. Lifting the Six-Cornered Scarlet Flame Lamp, she puffed her cheeks and blew softly.</p>
+<p>At her breath, the lamp spewed Purefeather Radiant Fire. It burst into countless red-and-white feathers cascading down that fluttered toward Miaoshui.</p>
+<p>1. I think the author had a typo here, instead of 伏掠金 which appeared previously, the author wrote 浮掠金 which means Floating Plunder Gold. ☜</p>
+<p>1. Previously known as Supreme Yang Resonance Li Art. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1059.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1061.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1035: Grand Assembly of the Purple Mansion (III) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1034.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1036.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1035: Grand Assembly of the Purple Mansion (III)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Xiao Yuansi hesitated for a moment. The old man was not one to flaunt himself, yet he lifted his brows and looked up at Li Ximing, who, though not greatly changed in form, seemed entirely different in essence.</p>
+<p>“Ming’er…”</p>
+<p>The face before him was upright and proper. His brows were slightly long, and the pale golden eyes softened as his lips curved into a restrained smile.</p>
+<p>Daoist Master Zhaojing, Li Ximing.</p>
+<p>The constant gloom between his brows, that clenched-teeth bitterness, had vanished completely. In its place shone a trace of heavenly light, glimmering at the center of his brow.</p>
+<p>The flicker of unease in his eyes was gone as well. Now Li Ximing’s gaze carried a gentle smile, with no trace of gloom or the grim resolve of one about to die in vain. With those shadows erased, his entire face came alive. He was no longer the Li Family’s desperate, last gamble, but truly Daoist Master Zhaojing, Li Ximing.</p>
+<p>Tears welled faintly in Xiao Yuansi’s eyes. But before the gaze of all, he could only sigh and say, “Daoist Master Zhaojing’s fortune is profound indeed. This old man merely basks in its glow.”</p>
+<p>Li Ximing helped him up with a smile. Changxi, standing nearby, spoke in a warm and amiable tone, envy stirring in his heart, while Li Ximing respectfully said, “Master, please.”</p>
+<p>Everyone in the three sects and seven gates knew of Xiao Yuansi’s pill. After being chastised by Xiao Chuting, he had returned, dejected and broken, from the Northern Sea. For over a decade of Li Ximing’s seclusion, Xiao Yuansi had been nothing more than a laughingstock or idle gossip among the orthodox immortal families.</p>
+<p>Li Ximing had heard fragments of that mockery. His personal arrival to welcome him was to let all the families see, and to vent his master’s long-suffered indignation!</p>
+<p>That was the first reason. The second was that Xiao Chuting had also come to Moongaze Lake in person. Daoist Master Chuting rarely acted in person and had instead sent Xiao Yuansi from the mountains. Li Ximing naturally seized this chance to show all the families that the bond between the Xiao and Li remained as steadfast as ever.</p>
+<p>Though the matter seemed small, it was of great benefit to the Li Family. Li Ximing simply escorted Xiao Yuansi into the mountains, settled him in the courtyard, and then returned toward the island, only to hear An Siwei report that Xiao Chuting had already left a congratulatory gift and departed alone.</p>
+<p>Li Ximing nodded in acknowledgement, while Changxi quietly lowered his gaze at the side and thought,So Xiao Chuting refuses to see me…</p>
+<p>Though only newly advanced to the Purple Mansion Realm and not yet as calculating as the seasoned Purple Mansion Realm cultivators, Li Ximing could still perceive the meaning. A chill of apprehension stirred in his heart,Changxi… this truly is a mess!</p>
+<p>But since his family was on good terms with Profound Peak Gate, and Changxi had come to offer congratulations, so while Xiao Chuting could afford not to appear, Li Ximing could not retreat. He sat with him among the mountain paths filled with blooming gardenias.</p>
+<p>Changxi smiled and said, “What a splendid place of Bright Yang. I wonder what name Daoist Master Zhaojing intends to bestow upon it?”</p>
+<p>Li Ximing poured tea for him and said courteously, “I have named this place Zhijing[1] Mountain. From now on, it shall be my place of quiet cultivation.”</p>
+<p>“Excellent!” Changxi praised him, then drew something from his sleeve and placed it on the table. A round, lustrous pearl lay within a jade box, radiating colorful rays like fine threads. The image of a tiger turning its head, exuding overwhelming dominance, was faintly engraved on its surface.</p>
+<p>Daoist Master Changxi’s face alternated between youthful and aged with each passing hour. At this moment, he appeared middle-aged, jade pendant lying on his chest as he beamed with joy.</p>
+<p>“Fellow Daoist Zhaojing, our two families have supported each other for centuries. My Tingyun and Yuanjiao are close friends. Now that your divine ability has been accomplished, my heart is overjoyed, so I have specially prepared this small gift.”</p>
+<p>His tone was unusually pleasant. He no longer called Li Ximing ‘little friend.’ For someone several centuries old to lower himself and call one not yet a hundred years old ‘fellow daoist,’ while gently recalling past ties, was an extreme show of courtesy.</p>
+<p>His lifespan… truly is running short…thought Li Ximing.</p>
+<p>Li Ximing examined it briefly and realized it was most likely a Purple Mansion Realm spirit artifact. Though its refinement was probably less than a hundred years, and far inferior to the Xinyou Pristine Marsh Seal or Qi Wang’s Profound Heaven Hearing, it was still leagues beyond any dharma artifacts of the Li Family.</p>
+<p>It’s far too precious!</p>
+<p>Li Ximing was not ignorant of the weight carried by Purple Mansion Realm gatherings. But Purple Mansion Realm cultivators were all misers. Spirit items for Foundation Establishment Realm were casually given, yet Purple Mansion Realm treasures were never even considered. Such gatherings were more about showing face and goodwill than true generosity.</p>
+<p>As for congratulatory gifts, one should never expect Purple Mansion Realm spirit artifacts or spirit items. At best, one might receive a fourth-grade spell art. More often, it would be some ancient rarity or an obscure but respectable manual.</p>
+<p>For Changxi to present a Purple Mansion Realm spirit artifact so openly meant only one thing, he was laying down a clear debt of favor and seeking to secure future backing for Profound Peak Gate.</p>
+<p>After Li Ximing’s brief glance, Changxi indeed smiled and said, “This dharma artifact is called the Mountain-Charging Sea-Pacing Tiger. It is a mid-grade Gen[2] Earth spirit artifact, not one refined by my own divine ability, but obtained from outside. It cannot compare to spirit treasures, but it is still a useful weapon.”</p>
+<p>Li Ximing pondered for a moment and asked, “Refined by a divine ability?”</p>
+<p>Changxi chuckled, explaining in an aged voice, “Spirit artifacts generally fall into three categories. The first is to take an excellent dharma artifact spirit embryo, infuse it into one’s divine ability, and refine it with that divine ability. After a hundred years of refinement, it becomes a spirit artifact that’s perfectly suited to its wielder.”</p>
+<p>Li Ximing’s eyes lit up with delight as he asked, “So it’s that simple! Then why are there so few spirit artifacts in Jiangnan?”</p>
+<p>Changxi stroked his beard and said, “First, spirit embryos are hard to refine. Those artifacts, born of one’s divine ability, can only match their master’s own strength. They must also be constantly nurtured, which consumes much of one’s spirit. If separated from their wielder for long, they revert to their original form. It sounds simple, but it is very hard to pass down.”</p>
+<p>Li Ximing immediately thought of Daoist Master Tianque at Moongaze Lake’s western shore, where Daoist He had been refining the Nine Gates Temple spirit embryo. That spirit embryo alone had taken over a hundred years. Truly, it was not an easy matter.</p>
+<p>He nodded, and Changxi continued, “The second type is more common. Artifacts like this Mountain-Charging Sea-Pacing Tiger are forged by Purple Mansion Realm artifact smiths. Their quality varies, and some are even inferior to spirit embryos, while the finest can rival spirit treasures.</p>
+<p>“They are further divided into upper, middle, and lower grades. Mid-grade ones are comparable to those refined through a divine ability and can serve as heirlooms, without being bound to a Metallic Essence. As for spirit treasures…”</p>
+<p>As Changxi spoke of this matter, a trace of self-mockery appeared on his face. He shook his head and said, “In truth, they are simply ancient spirit artifacts from before the ancient cataclysm, like the Xinyou Pristine Marsh Seal. In the past, they were merely spirit artifacts, but now they are exalted as spirit treasures… ranked above all spirit artifacts. Quite the irony!”</p>
+<p>Hearing this, Li Ximing understood much and held the Xinyou Pristine Marsh Seal in even higher regard. Secretly, he pondered,No wonder Yuan Su could suppress everyone with a single divine ability. It was partly due to his own strength… and partly because the Xinyou Pristine Marsh Seal is no simple thing.</p>
+<p>Changxi glanced at him, hesitated for a long while, and as if to win more favor, he spoke with a smile, “I once heard of something. Long ago, there was another method of artifact refinement. Though it no longer works today, it counts as a curiosity worth sharing.”</p>
+<p>“Please, elder, do tell!” exclaimed Li Ximing as he was eager to hear more about it.</p>
+<p>1. 栀 (zhī) refers to 栀子 (zhīzi), the cape jasmine (Gardenia jasminoides), a fragrant flowering shrub native to China, long used in traditional Chinese gardens, literature, and medicine. In symbolism, zhīzi flowers often represent purity, elegance, and steadfastness, and are associated with summer bloom and enduring fragrance. 景 (jǐng) commonly means scenery, view, brightness, radiance, or prosperous state. In place names or poetic contexts, it often conveys splendor, illumination, or a picturesque landscape. ☜</p>
+<p>2. 艮 (gěn) is one of the Eight Trigrams, symbolizing mountain, stillness, and stability in the Yijing. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1034.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1036.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

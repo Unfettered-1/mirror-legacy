@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1068: Wenhu (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1067.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1069.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1068: Wenhu (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>As for his own direct lineage, Li Zhouwei still hoped they could spend more time on their cultivation. Li Minggong and Li Chenghui had already been delayed for years. Matters concerning Qingdu were unavoidable, but the rest had been nothing but a waste of time.</p>
+<p>When it comes to the Fei and Yu Families of Moongaze Lake in years past… The Yu family, though once of esteemed descent, has long since been exterminated and left no direct heirs. Fortunately, they were absorbed by the An Family, which has now become a strong pillar. As for the Fei Family… their lineage has never been remarkable, and only rarely produced Foundation Establishment Realm cultivators. Moreover, being an attached branch, there was always a difference.</p>
+<p>The An Family’s father, sons, and even grandsons all held respectable positions within the Li Family. An Siwei had even become the first Foundation Establishment Realm cultivator from an outside surname. Though his loyalty was unquestionable, this was ultimately not a good sign.</p>
+<p>This matter had always weighed on Li Zhouwei’s mind. As he kept watch while galloping along, he memorized the sizes of each city and the number of cultivators within. Then, calculating the time, he said, “The Baiye Capital Immortal Dao most likely already knows. They can reach us in less than fifteen minutes by spirit boat!”</p>
+<p>Li Zhouwei had previously spoken with Li Ximing. As a Purple Mansion Realm cultivator, Li Ximing had shown remarkable tolerance for Wenhu, repeatedly making it clear he did not wish to stir up trouble and preferred a conciliatory stance.</p>
+<p>The sudden uprising of the Li Family was something the Capital Immortal Dao had likely not foreseen. The Capital Immortal Dao undoubtedly possessed many strange arts and could not be treated like any ordinary Dao lineage. It was safest to assume they had known of the Li Family’s assault from the very moment it began.</p>
+<p>Li Chenghui nodded and replied, “Fifteen minutes… we will only have time to seize two more mountains. Once the people of the Baiye Capital Immortal Dao arrive, no matter how they choose to act, we will likely fall into a deadlock. A redrawing of boundaries will follow, and any further moves will become difficult.”</p>
+<p>After all, the Capital Immortal Dao was a Purple Mansion Realm sect transplanted from the Eastern Sea, not something the likes of Hidden Cloud Cave could compare to. Even the strongest in the Hidden Cloud Cave, Wenhu, would only rank as a ‘mere peak’ master within the Immortal Dao, while Miaoshui would be nothing more than a guest cultivator.</p>
+<p>Seizing two more mountains…</p>
+<p>Even if they seized two more mountains, it would still amount to forty percent of the territory. It was not enough to split the Hidden Cloud domain evenly with the Capital Immortal Dao. Li Zhouwei was far from satisfied. And that was only one concern.</p>
+<p>More importantly… the Ding Family is still at the foot of Hongfu Mountain, the main peak of Hidden Cloud Cave…</p>
+<p>When Floating Cloud Cave had been breached, the Ding Family, a powerful local family with more than ten thousand members, had naturally been taken away and brought beneath Hongfu Mountain. Ding Weizeng was certain to become a trusted general under their banner in the future. Having his family members fall into enemy hands was no small problem.</p>
+<p>Seeing Li Zhouwei frown, Li Chenghui, who clearly already understood, said quietly, “If we can seize Hongfu Peak, seventy percent of the territory will fall into our hands.”</p>
+<p>“It would be ideal to take it. If family uncle goes with me and Aunt while An Siwei and the others can capture the two rear mountains, that will work. If not, a lone deep strike will create trouble,” replied Li Zhouwei.</p>
+<p>He had a Purple Mansion Realm talisman called the Restrained Profound Precious Pardon, which could summon a divine ability to protect its bearer, allowing him to travel freely across Jiangbei.</p>
+<p>This item had originally been bestowed by Daoist Master Yuanwu to Yu Muxian. After Yu Muxian was slain by his own immortal sword, the Purple Mansion Realm talisman had fallen into their hands.</p>
+<p>At that time, only two people in the Azure Pond Sect had reached the Purple Mansion Realm and were capable of producing such a talisman. One was Chi Wei, who cultivated Pristine Water, since that art aided talisman work. The other was, naturally, Daoist Master Yuan Xiu, who came from a deep familial tradition.</p>
+<p>Li Xuanfeng had inquired about the talisman from Yuan Su and learned that it had been drawn by Yuan Xiu. The two men shared the same master, so they had recognized it. Now that Li Zhouwei possessed a Purple Mansion Realm talisman, he could escape even if besieged, but Li Chenghui might not be so fortunate.</p>
+<p>As Li Zhouwei spoke, the great void rippled and a burly hero with a swallow chin and a curled beard flew out. Tall without bulk, broad shouldered and powerful, he wore crimson soft armor and carried an imposing presence.</p>
+<p>“Hail, family head!”</p>
+<p>Li Ximing’s act of sending Ding Weizeng had indeed resolved their urgent need. Li Zhouwei laughed heartily and said, “Congratulations, Weizeng!”</p>
+<p>“You flatter me, I dare not accept such praise.”</p>
+<p>Ding Weizeng’s build was tigerlike and he stood a head taller than those beside him. Li Zhouwei knew Li Ximing had healed his wounds and felt pleased, but this was not the time for idle talk.</p>
+<p>He said, “I am confident with Weizeng fighting. Family uncle and Aunt Minggong will level the rear for us. Weizeng and I will rush to Hongfu Mountain at once and rescue the Ding Family.”</p>
+<p>He sheathed his halberd. Ding Weizeng was stunned. Only then did he realize the entire Ding Family had been taken to Hongfu Mountain.</p>
+<p>He was deeply moved, yet he still cautioned, “Family head, Hongfu Mountain has four Foundation Establishment Realm cultivators, including Wenhu. Wenhu and Wang He are not to be underestimated, and there is a large Foundation Establishment Realm formation protecting them. If only the two of us attack, it would be far too risky.”</p>
+<p>Li Zhouwei merely summoned Miaoshui and smiled, “She is coming too.”</p>
+<p>Ding Weizeng frowned, but he still mounted the wind as they headed east together. As they sped along, Li Zhouwei said with a smile, “Besides, given the current situation, can Hongfu Mountain still be defended by four Foundation Establishment Realm cultivators? Am I expected to assault Hongfu Mountain head on? Moreover, Wenhu’s Immortal Foundation is Hurricane Ghost Yin. Our Bright Yang, Thunder, and True Fire[1] techniques would be clashing directly with him.”</p>
+<p>————</p>
+<p>Li Zhouwei has breached Tanshui Hill?</p>
+<p>Wenhu’s gaze was dark and cold as he stood on the mountainside, unease churning in his heart. Ever since he had learned that Chidu had never gone to the Li Family, Wenhu knew that things had gone awry.</p>
+<p>However, he had kept a calm facade. The relationship between the Li Family and the Capital Immortal Dao behind him was bound to deteriorate, and being caught in the middle, his own fate would hardly be favorable.</p>
+<p>What madness is this…</p>
+<p>Now, he was pacing in agitation. He knew the Baiye Capital Immortal Dao could not have learned the news much later than he had, yet he still sent men to inform them.</p>
+<p>“In this situation, aside from blocking the Li Family as best I can for the Capital Immortal Dao, there is no other path left for me!” muttered Wenhu.</p>
+<p>The fears he had carried upon leaving the Li Family had now become prophecy. What made it more tragic was that Ping Wangzi’s words too had come true.</p>
+<p>A bird seeks the forest, and a man seeks a master. There is no chance for both sides to collapse.</p>
+<p>“The people of the Baiye Capital Immortal Dao will arrive at any moment, so I need not fear for my life. For now, no one can block Li Zhouwei, and only I can personally take the field,” Wenhu murmured to himself.</p>
+<p>Though he had been only a guest cultivator in the Eastern Sea, with little experience, he still knew how to face an enemy. He left one man to guard the mountain and led the other two to join him as reinforcements.</p>
+<p>Wenhu understood all too well that anyone in Hidden Cloud Cave could surrender to the Li Family except for him. He had been personally recruited by Daoist Chidu, while the others served him; only Wenhu served the Purple Mansion Realm cultivators.</p>
+<p>“The Purple Mansion Realm cultivators stand above all. There is nothing between them that cannot be reconciled. These territories are only bargaining chips. Once the Li Family are subdued and the two sides speak peace, I will certainly be the one put forward.</p>
+<p>“The only way to survive is to fully support the Capital Immortal Dao against the Li Family. The harsher I fight, the better my chances to live. In any case, it won’t last more than thirty minutes. Li Zhouwei cannot kill me!”</p>
+<p>Wenhu, after all, was Chidu’s man and had seen the grand stage. Where Miaoshui needed Li Zhouwei’s reminders, he already understood the stakes. Rushing out of the mountain, he had flown scarcely fifty kilometers when a sudden flash lit his vision and a sharp pain stabbed his chest.</p>
+<p>“Ah!”</p>
+<p>Wenhu vaguely saw a string of sparks laced with thick white mist rising from his chest. Another wave of pain struck, and a Radiant Light sped toward him from afar.</p>
+<p>He hastily sealed the wound at his chest, swallowed down the blood, and shouted, “Li Zhouwei!”</p>
+<p>1. Previously known as True Flame. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1067.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1069.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

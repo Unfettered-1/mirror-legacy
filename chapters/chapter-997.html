@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 997: Three Treasures (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-996.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-998.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 997: Three Treasures (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The lake grew even more silent. The fingertip-sized relic hovered in midair. It was translucent and pure white. Rings of rainbow light swirled around it, forming shifting illusions, while the lotuses on either side released wafts of fragrance.</p>
+<p>Kongheng gazed quietly at the relic before him, then gently took it into his palm and put it away. The black-and-red glow of sunset draped over him, and the lake’s light dimmed to an uncanny darkness.</p>
+<p>Fuxia’s death was like that of the twelve Master Monks shot dead by Li Xuanfeng on the great river. Aside from the relic, it left only a brief rain of glass petals and the blooming of a few lotuses.</p>
+<p>The Pure Land willing to appear for Kongheng gave no sign at Fuxia’s passing. There was not a flash of golden light and not a toll of a bell. Only the hazy red sunset lingered on the horizon.</p>
+<p>It was only when Li Ximing arrived in a beam of light that a sliver of daylight touched Kongheng’s body. The narrow-eyed monk seemed to awaken from a dream as the five-colored radiance on his face faded away.</p>
+<p>He returned to his earlier gentle, courteous demeanor, his expression tinged with shadow as he said softly, “I’ve troubled you, Ximing.”</p>
+<p>“Think nothing of it!” replied Li Ximing.</p>
+<p>The Radiant Origin Pass gathered heavenly light, obscuring the view of the surrounding cultivators. Only Li Ximing, standing nearby, could see clearly. His expression was complicated and his heart full of feeling, as he asked quietly, “Master Monk, are you well now?”</p>
+<p>“It is nothing serious.” Kongheng answered earnestly, cradling the kasaya and staff in his hands, “Only, the bond between myself and your esteemed family has now come to an end.”</p>
+<p>Li Ximing had long expected this. He closed his eyes and bit down hard, while Kongheng bowed to him and said guiltily, “When Xijun met with misfortune, I should have left, but I felt guilt in my heart and wished to guard you a little longer. I never thought I would nearly bring disaster to your esteemed family. This is truly my fault! Now I must roam the world and verify my Dao.”</p>
+<p>“Senior Kongheng…” Li Ximing had yet to speak further when all his words were stifled by Kongheng’s smile. He said softly, “Master Monk, please see my grandfather before you go. It won’t be too late to leave after that. You’ve been in my household for so many years, and the elders respect you greatly… Zhouwei is still outside… it would be a shame if you couldn’t see him once more…”</p>
+<p>Kongheng gave a small nod. Li Ximing’s rambling tone was faintly reminiscent of Li Xuanxuan’s, and it made the monk’s vision blur. As he descended toward Mount Qingdu, he turned back to glance northward, toward where Fuxia had bowed before his death. The relic in his hand grew hotter still.</p>
+<p>The splendid golden clouds had long since vanished, and the flying peacocks were gone without a trace. All the things the old monk had valued more than life, such as the golden pools, faithful devotees, had all vanished like a passing wind.</p>
+<p>The lake lay in gloom, shards of glass scattered across its waters, leaving only the dim sky and a half-dead sun sinking into the clouds.</p>
+<p>————</p>
+<p>Eastern Sea.</p>
+<p>The night was deep, and a palace of pitch-black profound stone stood atop the sea reefs. The palace itself was small, its dark walls indistinguishable from the rocks, as it faced true north.</p>
+<p>Waves splashed, washing over the steps before the palace and dancing around a pair of fine, azure-blue boots. Their wearer had unbound crimson hair, a suit of golden clothes gleaming like scales, and green eyes that stared into the distance.</p>
+<p>Behind the man stood a youth, his attire neat and proper, standing slightly to the side. The man in gold spoke in a low voice, “Heyun, that is the Wrathful Subduer of the Four Demon Emperors…”</p>
+<p>Dongfang Heyun raised his brows, his eyes likewise turning toward the distant north, where peacocks danced at the horizon, golden pools surged, and a Pure Land emerged in the skies. Bowing slightly, he replied, “My lord, Buddhist cultivators gather followers to attain the Dao. The seat of Maha is an evolution of the Dharma Master’s Fruition Attainment, and no immortal could be deceived about it.</p>
+<p>“Now that the Maha seat has responded, ready to manifest the Wrathful Manifestation Emperor Scion into the world, no matter how many abilities Wrathful might possess, even feigning death could not accomplish this. He must surely be dead.”</p>
+<p>If Li Xizhi were here, he would instantly recognize the man in gold as the Mu Sea Dragon King from years past. He was Dongfang Changmu, son of the Dragon Monarch, a being of immeasurable status.</p>
+<p>The Purple Mansion Realm demon dragon listened and nodded.</p>
+<p>Dongfang Heyun then said, “Back then, Jingzhan was caught by the Golden Bridge Lock and slain by True Monarch Shangyuan. His chance of survival was already slim. Whether the Wrathful Subduer of the Four Demon Emperors lived or died was incidental… The Six Manifestations merely wanted to test how the Dharma Master behind the Wrathful Dao lineage was faring.</p>
+<p>“From the way things stood, with meat served right to his mouth yet left untouched, and even allowing that ancient Buddhist to slip away, it was clear the Dharma Master’s condition was far from ideal.”</p>
+<p>“Not necessarily.” Dongfang Changmu said softly, “Neither Luo Xia nor the Underworld made a move, and Jiangnan showed little interest. They likely already knew the Dharma Master would not respond. The truth is, the higher that ancient cultivator’s cultivation rose, the more certain people wanted him gone from Jiangnan.</p>
+<p>“The one of the Wrathful Manifestation saw an opportunity, buzzing in like a fly scenting blood and made yet another futile attempt to rouse the Dharma Master and persuade him to take the Maha seat.”</p>
+<p>Dongfang Heyun bent slightly, adopting an admiring posture, and said softly, “My lord speaks truly.”</p>
+<p>Dongfang Changmu said softly, “After all… the times have changed. Buddhist cultivators hold their own place in today’s world, and the rest of the cultivation world is already wary of them. How could they casually allow an ancient Buddhist to cultivate in Jiangnan? If he were to suddenly attain enlightenment overnight, manifesting a Buddha-land to blanket all of Jiangbei, wouldn’t that mean another war?”</p>
+<p>Dongfang Changmu chuckled and said quietly, “Years ago, the Immortal Dao grew complacent, allowing Buddhist cultivators to seek the Dao in every sect. In the end, the Hua[1] Essence fruition was secretly attained by Suxikong, leaving the Twelve Essences short by one, and causing several immortals’ faces to change… It was a lesson learned the hard way!”</p>
+<p>“Indeed…” Dongfang Heyun replied respectfully.</p>
+<p>Dongfang Changmu asked slowly, “How did the fox tribe respond?”</p>
+<p>Dongfang Heyun cupped his hands and answered, “Mount Dali has sent a Fox of the Serene Heart, who has already made contact with His Highness Dingjiao. There is no problem.”</p>
+<p>“Oh, the White Dragon Succession!” A faintly amused smile crossed Dongfang Changmu’s face. He took a step toward the pitch-black great hall, as faint thunder rumbled in the clouds. The Purple Mansion Realm great demonic beast shook his head lightly as he said, “As expected, after all, Zipei gave the item to the Dragon King of Bei Sea…”</p>
+<p>Dongfang Changmu waited a moment before a streak of flowing light broke through the sky, taking shape in midair as a narrow-eyed woman. She swept her gaze over them and said in a deep voice, “Changmu, it’s time to move.”</p>
+<p>Dongfang Changmu laughed heartily and gave a casual wave. The great void split open before them with a thunderous sound, revealing a vast expanse of purple stretching from heaven to earth, shrouding the endless void.</p>
+<p>The great void pulsed with countless bolts of lightning, as though about to merge into a sea. As he summoned his divine abilities to ward off the thunderbolts, Dongfang Changmu looked down at a distant pale-purple grotto heaven.</p>
+<p>Dongfang Changmu asked, “Is everyone gathered?”</p>
+<p>“Naturally.” The dragon woman nodded and said, “We don’t go about things with the roundabout schemes of the human race. There’s no need for divine abilities to lure them in and no elaborate grand designs. No matter what lightning arts those cultivators practice, we’ll just send a few Purple Mansion Realm demon kings to catch them.”</p>
+<p>She added casually, “In less than fifteen minutes, we had them all rounded up and tossed straight into the grotto heaven.”</p>
+<p>1. 华 (huá) can mean ‘splendid,’ ‘magnificent,’ or refer to ‘China/Chinese,’ depending on context. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-996.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-998.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

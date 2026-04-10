@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1040: Baiye Capital Immortal Dao (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1039.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1041.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1040: Baiye Capital Immortal Dao (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>There had been over ninety affiliated households on the eastern shore in the Jiang Family’s era. When the Jiang Family split, the Xiao Family took advantage of the chaos and claimed many as their vassals. By the time the Yu Family controlled the east, there were only thirty-nine families outside of Milin Prefecture, while anything farther east was nearly all absorbed into Lixia Prefecture.</p>
+<p>Since then, neither the Yu Family nor the Li Family had ever regained authority over those seventy-nine families. The Xiao Family had even forbidden the establishment of markets around Moongaze Lake, causing the Li Family to lose more than eighty percent of potential commercial revenue.</p>
+<p>Now, with seventy-nine more households returned, the total came to one hundred and eighteen, even surpassing what the Jiang Family once controlled. The map of Moongaze Lake was finally whole again. Not only had thirteen spiritual mines been restored, but this also signified that the Li Family’s influence could extend much farther, giving them the ability to intervene in the wilds along the riverbank.</p>
+<p>The Xiao Family is giving far too much. There must be something behind this,thought Li Zhouwei.</p>
+<p>As he studied the parchment and tallied the figures, he quickly analyzed,This is laying the groundwork for the Profound Peak Gate affair.</p>
+<p>The wild hills and scattered shrines along the riverbanks, commonly called the Wilderness, lay between the Li Family and the Profound Peak Gate. Small temples dotted the land, most of them vassals of the Kong Family. The Xiao Family had long stood between them, but by stepping back now, they left the Li Family directly bordering the Profound Peak Gate’s rear.</p>
+<p>Li Zhouwei lifted his gaze toward the upper seats, but Li Ximing was already gone. The golden-eyed youth sipped his tea. Li Zhouwei had managed the family like a man constantly putting out fires for more than a decade. Yet now, with just this one map, he had to calculate anew, thinking to himself,It seems Granduncle has already agreed to the Profound Peak Gate’s request. Since the Xiao Family does not intend to intervene, our family must commit itself fully.</p>
+<p>He rolled up the parchment and smiled as he said, “Such a generous gift… my family can only accept in shame.”</p>
+<p>Xiao Muyun smiled, exchanged a few polite words, and withdrew. The banquet hall still rang with music, but Li Zhouwei’s thoughts were elsewhere. He rose and left his seat, beckoning Li Jiangqian over, and used secret voice transmission to say, “Go and find out whether the Xiao Family and the Profound Peak Gate have recently made territorial compromises.”</p>
+<p>Li Jiangqian’s eyes mirrored his father’s sharpness. The youth immediately sensed the family’s decision. Music still played in the courtyard as his brows lowered in thought,The Daoist Master has resolved to take on the Profound Peak Gate burden… It seems Changxi both offered a backup plan and promised great profit. Refusal is no longer possible.</p>
+<p>He respectful assented and departed as if nothing were amiss. Once the decision to assume control of the Profound Peak Gate was made, he no longer dwelled on how troublesome it was, but instead began to ponder quietly,Kong Yu is loose-tongued and weak-willed, easy to handle. I will start with him.</p>
+<p>————</p>
+<p>The night was serene. The gardenias on Zhijing Mountain released a faint fragrance into the night wind, their blossoms drifting down like scattered sparks. At the mountain’s base, the fire vein surged endlessly, exhaling wisps of violet smoke.</p>
+<p>Heavenly light flickered on the mountain peak, and Li Ximing reappeared on Zhijing Mountain, his expression carrying a faint shadow.</p>
+<p>By this time, all the families that were meant to arrive had already come, and all the gifts that needed presenting had been given. The Purple Mansion Realm ceremony could be declared concluded. Yet many rogue cultivators in the courtyard lingered, unwilling to leave. They were likely waiting until dawn.</p>
+<p>Li Ximing sat at the stone table, silently sipping his tea. After a short while, he saw An Siwei descend onto the mountain looking faintly uneasy.</p>
+<p>He bowed respectfully, and reported, “Daoist Master… someone from the Baiye Capital Immortal Dao has arrived…”</p>
+<p>“Let him come up,” replied Li Ximing.</p>
+<p>The envoy from the Baiye Capital Immortal Dao had not dared to enter the banquet and had instead been waiting at Zhijing Mountain all along. Thus he had not been seen among the seats. Li Ximing, having only just attained the Purple Mansion Realm, had no wish to form needless enmities, so his voice carried no anger.</p>
+<p>An Siwei hurriedly withdrew. Soon, a red-robed cultivator approached with a lowered head. His legs were trembling as he stepped forward. With a heavy thud, he fell to his knees before Li Ximing, knocking his head repeatedly against the ground.</p>
+<p>His voice was frantic and urgent, “From the Baiye Capital Immortal Dao… this humble cultivator, Du Che, greets the Daoist Master.”</p>
+<p>Li Ximing’s expression grew steadily colder. He immediately understood why the envoy of the Baiye Capital Immortal Dao had not dared to join the banquet, nor even to face him directly. No sooner had he come forward than he dropped to his knees like a worm groveling in the dirt. Three months ago, Daoist Wenhu had come to apologize, claiming that the Chidu Daoist of the Baiye Capital Immortal Dao would personally deliver his atonement.</p>
+<p>After all, the Mifan three sects of Mount Xiaoshi had once brazenly drawn blades to stand as enemies of the Li Family. Even today, when Bhrama Cloud Cave had done nothing truly out of line, Zhong Qian still came personally, with all the dignity of a sect master. As for the other sects, aside from the Profound Peak Gate who sought favors, which family would ever send its leader in person?</p>
+<p>Now, seeing no sign of Chidu, Li Ximing spoke coldly, “Where is Chidu?”</p>
+<p>Du Che hesitated for a moment, terror welling up in his expression. In a trembling voice, he said, “Upon hearing that Daoist Master had attained divine ability, Lord Chidu grew so fearful and uneasy that he hastened here from the Eastern Sea. Yet he was ambushed midway by a devil cultivator and nearly perished. Gravely wounded, he can no longer travel, and so… so he sent me in his place.”</p>
+<p>After finishing, he dared not meet the Daoist Master’s gaze. He kowtowed again and again, pleading for forgiveness, clutching the jade box meant as a gift with trembling hands, his face filled with fear and confusion.</p>
+<p>No matter how desperately Du Che begged and apologized, it did not mean the Baiye Capital Immortal Dao’s sincerity was real. Most of his submission came only from the terror that Li Ximing might strike him dead with a single palm. He was drenched in sweat and shivering uncontrollably.</p>
+<p>Whether his story is true or false depends entirely on his tongue…thought Li Ximing.</p>
+<p>Yet he did not grow angry. He only said, “Oh? Then put the gift down.”</p>
+<p>Du Che could only present the jade box with both hands. Li Ximing did not even bother to inspect it closely. He could already tell from the man’s trembling lips, and how he was too fearful to even recite the gift’s name aloud. How could anything valuable possibly be inside?</p>
+<p>Creaaak.</p>
+<p>The jade box opened with a sudden creak, revealing a jade slip lying in the center. Its glow was dim and lifeless. One glance was enough for Li Ximing to see that it contained a nameless technique, the Sweeping Light Art, a method from the Bright Yang Dao Lineage. Its grade was unmarked, and its contents were meager at best.</p>
+<p>Du Che’s lips trembled as he said, “My Dao does not align with Bright Yang. Lord Chidu searched through his troves and found this technique. Though it is not profound, it carries a trace of ancient flavor, so… he bid me present it as a gift to the Daoist Master…”</p>
+<p>Chidu’s plight might have been a trap set by others, but this gift was undeniably the true stance of the Baiye Capital Immortal Dao. It was no different from the Changxiao Gate’s offering; both had sent crude Bright Yang techniques with no proper grade.</p>
+<p>For a Purple Mansion Realm congratulatory visit, even if one’s ties were shallow, the gesture of coming in person was still customary unless the relationship had already broken down completely. Yet these two sects had deliberately chosen crude Bright Yang techniques, ones without any grade, with nothing more than the phrase ‘possesses some ancient flavor’ attached to them.</p>
+<p>This is nothing less than open mockery and covert insult. They care nothing for my opinion, and only put on a show, leaving me no grounds to lash out. A technique without a grade, and without even a name… what can I say? The Daoist Master of the Baiye Capital Immortal Dao is at mid-stage Purple Mansion Realm… I still do not know what kind of background he truly has!</p>
+<p>Taken together with this so-called gift, the malice of the Baiye Capital Immortal Dao was plain to see. The story about Chidu being gravely wounded was likely nothing but a lie. It might even be something this very man had fabricated in a desperate bid to save his own life.</p>
+<p>Thud.</p>
+<p>Li Ximing casually tossed the jade box onto the table, producing a muffled thud. Du Che nearly lost his soul in terror.</p>
+<p>Yet instead of anger, Li Ximing only smiled and said, “You can step down!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1039.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1041.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

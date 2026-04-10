@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1076: The Backstory Of Mifan (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1075.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1077.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1076: The Backstory Of Mifan (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The waters of White River Stream were the clearest. Its riverbed was paved with dense layers of bluish stones. But the palace that lay beneath the surface was by no means small. Fish and shrimp swam about, transforming into men and women who either played celestial music or carried spirit items, bustling back and forth in lively splendor.</p>
+<p>Though Ying Hebai amounted to nothing in front of Dingjiao, this Jade-Necked Flood Dragon was still a local overlord. His palace was no less luxurious than his due, and was adorned with shining pearls and golden steps. It was filled with dazzling treasures that embodied extravagance at its peak.</p>
+<p>After all, he is a first-rank demonic creature beneath the Purple Mansion Realm, and he reigns as master of the three streams with borrowed dragon might. Naturally, he would not be lacking.</p>
+<p>Li Chenghui understood this well. Ying Hebai might appear meek and deferential, yet without Li Zhouwei’s name, he might not have been admitted into this palace at all. Still, the dragon did not put on airs. They rode the tortoise down into the riverbed.</p>
+<p>Once they reached the palace gates, Shui Zhao reappeared in his true form, bowing deeply as he said, “Please enter!”</p>
+<p>Li Chenghui stepped forward, where a tall man was already waiting inside the hall. He wore an inner robe of stone-blue brocade embroidered with fine patterns, over which draped a white fur cloak painted with green seas. Scales grew upon his neck, and his sharp eyes and upright features gave him an imposing presence.</p>
+<p>Upon seeing Li Chenghui, he smiled and said, “So it is Fellow Daoist Chenghui. How is it that the honored lord himself did not come?”</p>
+<p>“Our family head has no leisure at present.”</p>
+<p>Ying Hebai immediately understood. Since it was Li Chenghui he faced, there was no need to overly abase himself. He stepped back, revealing boots of turquoise with white soles, and said in a resonant voice, “Please, be seated.”</p>
+<p>Li Chenghui took his seat, and Ying Hebai immediately cupped his hands, saying, “First, let me congratulate Fellow Daoist on seizing White River Stream territory. The spiritual energy here is abundant, and it lies within my domain. The water veins flow freely, yielding harvests year after year. Should there be any need to divert remote water veins, simply give the word!”</p>
+<p>“You are too courteous, great king.” Li Chenghui naturally had no concerns regarding water veins, so he said instead, “The White River Stream territory has no lofty mountains, nor any noteworthy land-dwelling demonic creatures. Its only feature is the open water veins, which make it all too convenient for the water clans to go ashore and prey upon humans…”</p>
+<p>Mindful that Ying Hebai was a demonic creature, Li Chenghui spoke with particular clarity.</p>
+<p>“I will remember this.” The North Brocade River King immediately nodded, agreeing readily. He bowed as he said, “I restrain all the waterfolk of the three streams from feeding on humans. As for the lesser generals in remote waters, I will send word of warning. Should any demon go ashore to prey on mortals, if Fellow Daoist sends word, I will personally see it investigated.”</p>
+<p>It had to be said, having a background made things simple. The matter that had left the Mifan three sects helpless, even forcing them to deliver yearly blood food to Mang Huazi, had been resolved by Li Chenghui in just a single sentence.</p>
+<p>Such a thorny problem solved so easily left Li Chenghui in fine spirits. Taking advantage of the moment, he asked, “Great king, do you know of any special places or hidden matters in White River and Baiye? It seems unusual for the Mifan three sects to choose this land to establish themselves, does it not?”</p>
+<p>The founding of the Mifan three sects had always carried an unusual air, so Li Chenghui naturally took the chance to ask. Ying Hebai grew solemn and said, “The White River Stream territory holds its own hidden mysteries. Let me explain them clearly to you.</p>
+<p>“First let me make clear that my aunt is the favored consort of the Xu Water Demon King, and my elder brother serves under him. By that connection, and by making myself known before Lord Ran Wu of the Jade Sea and Still Pond Hidden Court, I secured the post as master of the three streams.”</p>
+<p>Having explained his background, he went on, “When the three caves established their sects here, I became suspicious. I made a trip to Xu Water to ask the Demon King, and only then did I learn the root lies with the Dao lineage of Mount Xiaoshi.”</p>
+<p>“Mount Xiaoshi Dao lineage?”</p>
+<p>The name sounded familiar to Li Chenghui. He vaguely recalled that his family had once captured someone from that lineage, so he asked again.</p>
+<p>The North Brocade River King immediately replied, “Indeed. Mount Xiaoshi lies near Chengshui Marsh, where there once stood a declining Dao lineage known as Mifan Temple. Back in the flourishing days of Xu State, Mifan Temple was an immortal temple under a Purple Mansion Realm cultivator’s authority. After Wanglin Sect’s downfall, it rose as one of the leading temples among those under their control.”</p>
+<p>Only now did Li Chenghui understand the origins of the Mifan three sects of Mount Xiaoshi. He continued to listen as Ying Hebai solemnly went on, “It was said this immortal temple had powerful connections. Later, when its Purple Mansion Realm cultivators declined and their heirs proved inept, no sect or family dared touch it. Instead, they incited its own factions against each other, splintering into feuding rivals that merely clung to that single mountain to survive.</p>
+<p>“This dragged on until the conflict between North and South. When monks from the north pressed south, the turmoil finally reached this place. How could the Mifan caves withstand them? They were instantly shattered, fleeing for their lives and are now scattered across the world.”</p>
+<p>Stroking his beard, he added, “I once overheard the great ones say that Mifan Temple possesses a treasure, an ancient spirit artifact hidden within the great void. If any descendant of Mifan Temple can gain its recognition, it will descend from the great void itself. Several of the Purple Mansion Realm cultivators covet it greatly.”</p>
+<p>Li Chenghui now understood the true origin of the Mifan three sects. They had been seeded by surrounding Purple Mansion Realm cultivators, serving as breeding grounds to select outstanding talents for cultivation, all for the sake of that spirit artifact.</p>
+<p>The schemes of the Purple Mansion Realm cultivators were always difficult to fathom. Though the demon king’s words could not be trusted entirely, the origins of Mifan Temple were almost certainly true.</p>
+<p>Li Chenghui firmly committed this to memory and replied, “So that is how it is…”</p>
+<p>But thinking further, Li Chenghui realized his family had gravely offended Ye Hui. He brooded inwardly,I do not know which Daoist Masters are involved… but with the Brahma Cloud Cave on the other side, it shows that the Chengyun Gate cultivator has already intervened. This is a matter of great consequence and must be reported to the Daoist Masters.</p>
+<p>Li Chenghui was no longer in the mood for idle chatter. After asking a few details, he went straight to the point, “The people of Hidden Cloud Cave may have retreated, but who knows when they will return. Great King, since you guard the three streams, if any news arises, please inform us. My family will be generous in its rewards!”</p>
+<p>Anyone would know that Hidden Cloud Cave was really Baiye Capital Immortal Dao. Yet because the Capital Immortal Dao was an official Purple Mansion Realm faction, speaking its name openly would make things awkward. By calling it Hidden Cloud Cave instead, Li Chenghui made things easier.</p>
+<p>Ying Hebai smiled and said, “Of course; they are only a few remnant Foundation Establishment Realm cultivators. I will keep watch, and if any news arises, I will immediately send Shui Zhao to warn you.”</p>
+<p>Ying Hebai was no fool, how could he not understand Li Chenghui’s meaning?</p>
+<p>He, too, had strict orders from above not to meddle in human affairs, especially those involving the Purple Mansion Realm. Ying Hebai could not openly declare support for either side, but rules were rules. Some things were best left tacitly understood. Li Chenghui’s choice of words, calling them Hidden Cloud Cave, made things even easier.</p>
+<p>The water flood dragon warmly escorted him all the way out as he said, “In the coming months, I will send Shui Zhao several times to maintain contact. That way, if something happens, we can reach Fellow Daoist swiftly without delay or mishap.”</p>
+<p>Li Chenghui knew that this meant gifts would likely be exchanged. He would weigh their worth before accepting or declining. Riding thunder, he left White River Stream in haste to send word back to his family.</p>
+<p>Once Ying Hebai returned to his hall, the smile faded from his face and his brow furrowed as he said, “Shui Zhao… Did not a Thunder Pearl fall into the riverbed during the war between North and South? A pity that treasure is too valuable; he will likely refuse it. Go search the vault for any thunder-attributed treasures instead.”</p>
+<p>Shui Zhao acknowledged and departed. Ying Hebai’s heart gradually settled,This man is easy enough to deal with. When the Falling Water Rising Storm of the Eastern Sea ends, I must seize the chance to gather a few thunder-imbued gifts to prepare.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1075.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1077.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

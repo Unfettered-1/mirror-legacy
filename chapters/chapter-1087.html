@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1087: Four Borders (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1086.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1088.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1087: Four Borders (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The mountain had surged straight into the sky. Li Ximing rose on heavenly light and saw Kong Guxi clinging to a tree as he peered into the distance. His panicked expression was devoid of any trace of a Profound Peak’s gate master’s dignity.</p>
+<p>There was no successor to begin with. Changxi had no choice but to pick someone, and obedience mattered more than boldness. Besides, with Kong Guxi’s own family’s Purple Mansion Realm perished, anyone would be left stunned,thought Li Ximing.</p>
+<p>Though Changxi had never truly confided in him, he was still an elder who had offered much guidance during the early days of his Purple Mansion Realm. Li Ximing bowed his head in respect.</p>
+<p>The disciples of Xuanmiao Temple below were still marveling and praising the phenomenon. Even Kong Guxi could hear them, let alone cultivators like Li Ximing and Sumian who had attained divine abilities. No matter how far Changxi had fallen, he had still been a Purple Mansion Realm cultivator. Li Ximing merely raised his head, hands clasped behind his back, and remained silent.</p>
+<p>Sumian was no ordinary man. He only needed a glance to notice Li Ximing’s displeasure. The Xuanmiao Temple was loosely structured and retained much of the old ways, with few strict rules, so order often unraveled. He waved his hand, signaling Qi Qiuxin to go down and disperse the crowd.</p>
+<p>Kong Guxi had already taken flight on the wind, clutching a set of Daoist robes in his arms. He clearly intended to return and bury them. He stopped before Li Ximing and spoke respectfully, “Greetings, Daoist Master. All of Profound Peak Gate looks to you for direction.”</p>
+<p>Li Ximing nodded and waited until Kong Guxi had steadied himself in the heavenly light. Then he turned to Sumian and finally voiced the doubt that had been weighing on his mind, “Senior Qi, where is Daoist Master Xuan Yi?”</p>
+<p>Li Ximing remembered it clearly. Changxi’s support had not been limited to Xuanmiao Temple. There was also Jingyi Mountain across the outer-sea. Daoist Master Xuan Yi had taken Yuezhou Island and received many benefits from Changxi. Changxi’s death had even been partly due to aiding Jingyi Mountain. And though Changxi was now dead, Xuan Yi had not even shown his face!</p>
+<p>Sumian shook his head. He no longer concealed his feelings, and a clear look of disgust appeared on his face as he answered, “Xuan Yi is not a good person. Changxi was obviously a burden once he was on the verge of death. What outer-sea Purple Mansion Realm cultivator would be eager to come near that?”</p>
+<p>He paused briefly before continuing, “Xuan Yi is at odds with the Chunyi Dao. Ever since Daoist Master Guanghou[1] of Chunyi Dao attained the Purple Mansion Realm, he has been unable to act freely and finds himself in a difficult position. Otherwise, why would he have bothered with Changxi at all… Naturally, he could not come.”</p>
+<p>The Chunyi Dao was also a Dao lineage steeped in ancient traditions. Qi Qiuxin had even once joined forces with them to ambush a Jiangnan devil cultivator and seize the Purple Flame Cauldron for the Li Family. The bond between Xuanmiao Temple and the Chunyi Dao was clearly unusual, so it was no wonder Sumian disliked Xuan Yi.</p>
+<p>Now that he knew this key detail, Li Ximing now understood the source of Sumian’s disdain. But this was not the time to concern himself with Xuan Yi. He still needed to clarify Xuanmiao Temple’s intentions.</p>
+<p>Li Ximing glanced at Kong Guxi, who had yet to react, so he spoke up himself, “Now that Senior Kong has fallen, the celestial phenomena are clear, and the earth veins are plain for all to see. Every household knows that the Baiye Capital Immortal Dao has long coveted Shanji Prefecture. Senior, you promised to protect Profound Peak Gate. What are your plans?”</p>
+<p>Daoist Master Sumian stroked his beard and answered softly, “Brother Changxi and my Xuanmiao Temple have been close for many years, so we cannot simply stand by. But Profound Peak Gate’s territory is vast, and there are those who covet it on all four borders. I fear that the strength of our two families alone cannot secure it entirely. What can be ceded should be ceded; the lives of the younger generation matter most.”</p>
+<p>Profound Peak Gate’s domain, with Shanji Prefecture and the Profound Peak Gate as its core, extended its influence from Lake Xian to the Wilderness.</p>
+<p>When he heard Sumian speak of ceding territory so readily, Li Ximing had no choice but to ask, “Senior, are you saying…”</p>
+<p>Sumian shook his head and replied, “Rest easy, Zhaojing. My Xuanmiao Temple’s cultivators have already gone to garrison the Lake Xian region. That area is the heartland of our influence and cannot be allowed to fall into chaos. As for the lands west of the Wilderness, I fear our reach cannot extend so far.”</p>
+<p>The Li Family and Xuanmiao Temple flanked the Profound Peak Gate from opposite sides, bordering the Wilderness and Lake Xian respectively. Li Ximing immediately understood,So… Xuanmiao Temple intends to seize Profound Peak Gate’s sphere of influence over Lake Xian, leaving the Wilderness to my family.</p>
+<p>It might have seemed like an even division with each taking one side, but the two were nothing alike. Setting aside the Li Family’s long and vulnerable border with Baiye, even a fool like Ye Hui would understand that Xuanmiao Temple’s long-standing neutrality meant they would only need to focus on the Li Family…</p>
+<p>Xuanmiao Temple seemed to be defending the region, but in truth, they were merely claiming the Lake Xian territory for themselves!</p>
+<p>They were all Purple Mansion Realm cultivators; how could Li Ximing fail to see through it? He immediately furrowed his brow, but Sumian did not relent and continued, “Rest assured, Zhaojing. I intend to seek out Ye Hui and attempt to dissuade him. Brother Changxi’s bones are not yet cold; things do not need to become too violent. If something truly happens, I will not stand idly by.”</p>
+<p>Sumian’s meaning was clear: the Li Family would be the one to face Baiye Immortal Dao directly. Xuanmiao Temple had no desire to offend Ye Hui, but if a conflict between Purple Mansion Realm cultivators arose, Sumian was at least willing to intervene and mediate.</p>
+<p>Li Ximing remained silent, so Sumian turned to Kong Guxi. “Your gate is right next to Lake Xian. If your gate faces any difficulties or your disciples are injured, send them here immediately. Xuanmiao Temple will not sit idly by. The same applies to Moongaze.”</p>
+<p>A headache started to form in Li Ximing’s temples, but Kong Guxi responded respectfully, “Daoist Master, when our ancestor passed, he instructed us juniors to follow Daoist Master Zhaojing’s orders in all things. We await your immortal decree.”</p>
+<p>Sumian nodded. Li Ximing had long known the attitudes of these Purple Mansion Daoist Masters. They might act benevolent in ordinary times, but they would never exhaust their own strength for another’s losses. Promises flowed freely while Changxi lived, but once he died, the division of spoils depended entirely on conscience. Still, Sumian was far better than Xuan Yi.</p>
+<p>Li Ximing could not afford to linger here. After a brief farewell, he tore open the great void with a casual gesture and sped away with Kong Guxi, asking as they traveled, “How are Profound Peak Gate’s defenses arranged? There’s no need to station forces at Lake Xian. Send everyone to guard the Wilderness.”</p>
+<p>Kong Guxi remained composed as he answered, “Daoist Master, our ancestor left deployment instructions before his passing. At present, we have three Foundation Establishment cultivators in the early stage, one in the mid stage, and one in the late stage among our direct descendants, along with nine guest cultivators. All are stationed along the riverbank in the Wilderness. Lake Xian is completely unguarded.”</p>
+<p>Changxi had calculated everything precisely, otherwise, he would not have said those things to Li Ximing. With a total of fourteen Foundation Establishment Realm cultivators, though none were particularly outstanding, they still formed the backbone of an immortal family and would not be wiped out easily.</p>
+<p>Li Ximing then asked about the only battle-hardened cultivator Profound Peak Gate had, “Where is Fu Yuezi?”</p>
+<p>Kong Guxi replied, “He is stationed in the Wilderness.”</p>
+<p>The main force of the Li Family was positioned on the eastern shore. From there, they could rush northeast to support the Wilderness or northwest to reinforce Floating South[2]. A few days earlier, Li Xizhi had secretly recalled Li Wushao and Li Qiyun[3], and both were now stationed on the eastern shore.</p>
+<p>They only had time to exchange a few words before Li Ximing and Kong Guxi arrived at the borders of the Wilderness.</p>
+<p>Li Ximing prepared to set Kong Guxi down and instructed him, “Jingyi Mountain’s Purple Mansion Realm cultivator himself is unavailable, but Xuan Yi’s disciples and grand-disciples must have some numbers. Doesn’t your family have someone under his tutelage? Tell them to invite a few senior and junior brothers to help!”</p>
+<p>Kong Guxi quickly nodded and answered, “I will prepare generous gifts at once and send someone to Jingyi Mountain to ask our family members to seek their aid.”</p>
+<p>1. 广 (guang) means “vast” or “expansive,” and 篌 (hou) refers to an ancient plucked string instrument, symbolizing elegance and harmony. ☜</p>
+<p>2. This is the new name of Floating Cloud Cave. ☜</p>
+<p>3. This is Dawn Rayfish given to Li Xizhi by Dongfang Heyun. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1086.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1088.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

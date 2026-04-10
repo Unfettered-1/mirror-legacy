@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1073: Entering Hidden Cloud (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1072.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1074.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1073: Entering Hidden Cloud (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The territory of White River Stream.</p>
+<p>Brocaded light shimmered on Hongfu Mountain, forming a great arc-shaped halo that hovered above the peak. Wisps of cloudlike glow drifted softly within it. From afar, it looked less like an immortal gate and more like the residence of an immortal family.</p>
+<p>Li Zhouwei and the others arrived in streaks of light. Miaoshui hurried out from within the formation. When cultivators of the Baiye Capital Immortal Dao had arrived earlier, she had been so frightened that she hid inside, clutching the formation plate in panic and pretending ignorance. Fortunately, no one had paid her the slightest attention.</p>
+<p>Miaoshui held up the multicolored formation plate with both hands as Li Zhouwei descended and said respectfully, “Greetings, family head. This is the formation plate of the Cloud Veiling Sky Ascent Formation of Hongfu Peak, a lower-grade Foundation Establishment formation. It can even render early Foundation Establishment Realm cultivators helpless.”</p>
+<p>Li Zhouwei accepted it with clear delight. The Li Family had only just risen to the rank of immortal family, and their Foundation Establishment Realm formations consisted merely of those on Glacial Cloud Peak and Mount Qingdu. Though the Cloud Veiling Sky Ascent Formation was not on the level of the Cloud-Gathering Southern Heaven Formation or the Heaven-Guarding Formation of Five Waters, it was still the most valuable formation on the entire mountain. If not for the Capital Immortal Dao, Wenhu would never have had the means to set it up.</p>
+<p>He examined it briefly before Li Chenghui stepped forward to take it.</p>
+<p>Li Chenghui said, “It carries the Dao of Auspicious Essence. This formation may offer some assistance in alchemy and artifact forging.”</p>
+<p>“Indeed!”</p>
+<p>The Li Family had only exchanged a hundred moves or so with the Capital Immortal Dao cultivators. With numbers on their side, they had suffered no severe injuries. Only Qu Buzhi had hurt his hand, and An Siwei had taken a palm strike; both would recover after a few months’ rest.</p>
+<p>Li Zhouwei immediately sent the two to choose cave dwellings on the mountain to recuperate, then stepped into the main hall. Turning to Li Chenghui and the others, he asked, “Two elders, how was the Hidden Cloud territory on your march here? Did the local families cooperate?”</p>
+<p>Li Minggong answered, “We have taken the peaks and all Foundation Establishment Realm cultivators of Hidden Cloud Cave have retreated. Many at the Qi Cultivation Realm were captured. In White River Stream, mortals and cultivators live together, so the locals likely do not look kindly on us. As for the esteemed families, we must ask Weizeng.”</p>
+<p>Ding Weizeng immediately stepped forward and saluted, “Reporting to the family head, the White River Stream territory is home to four surnames: Wang, Zhou, Huang, and Ding. They were once esteemed families of Xu State centuries ago, but after rising and declining, only the Wang and Ding lines still hold Foundation Establishment Realm cultivators. I have already folded the Ding into our forces. The Huang reside in the Brahma Cloud Cave territory.”</p>
+<p>“Oh?” Li Zhouwei reacted swiftly and asked, “The Wang family’s Foundation Establishment Realm cultivator… is that Wang He, Wenhu’s subordinate?”</p>
+<p>“Exactly!”</p>
+<p>Ding Weizeng confirmed; Li Zhouwei now understood why Wang He had been able to become the second-in-command of Hidden Cloud Cave. Clearly, Wenhu had sought to win the support of the local families.</p>
+<p>“Now that Wang He has joined the Capital Immortal Dao and left, has the Wang Family of White River taken any action?”</p>
+<p>Li Zhouwei asked, and Li Chenghui replied, “The common folk remain unchanged, but most of the direct lineage has already relocated to Baiye.”</p>
+<p>This required no proof; it was inevitable. As Li Zhouwei flipped through the register handed to him, he found that quite a few Foundation Establishment Realm cultivators had indeed emerged from this land. Though most had become devil cultivators, it still showed the region’s potential.</p>
+<p>The Hidden Cloud Cave territory was unlike any other. It held over a million mortals, and there had never been strict separation between immortal and mortal. The esteemed families’ bloodlines were deeply entangled; each one was a local power with tens of thousands under its sway.</p>
+<p>These people were involved in many shady dealings, pulling strings here and there while linking themselves with several powers. After all, Jiangbei’s spiritual energy was currently flourishing. Floating Cloud Cave, being on the outskirts, was still manageable, but Hidden Cloud Cave truly abounded with spirit items, and these local powers exported them outward.</p>
+<p>Thus, even the ruthless Hidden Cloud Cave had found it troublesome to take over this place, let alone the Li Family, whose governance was stricter. After a single glance through the records, Li Zhouwei said gravely, “The White River Stream territory is not suited for establishing peak offices. The conditions here are inadequate. If we forcefully impose them, it will bring at least a century of unrest. The revenues would not even cover stipends, and resentment among the people would erupt. It is better to let them govern themselves for now.”</p>
+<p>It had taken the Li Family over a hundred years to consolidate control over Moongaze Lake. Even now, their true foundation lay only in the ancestral lands of the southern shore and the forests of the eastern shore. Beyond that, more than a hundred families were only loosely bound. On the western shore, numerous families still clung stubbornly to the peak offices, while the powerful Fei Family lay on the northern shore.</p>
+<p>What was more, the lands of Jiangbei gained today could be lost again within a few years. Li Zhouwei would never waste his efforts in vain.</p>
+<p>Li Chenghui strongly agreed and added a reminder, “However, the Ding Family are cultivators of the Floating Cloud Cave territory. Now that nine out of ten households there lie empty, Weizeng’s family must be properly resettled.”</p>
+<p>Though the Ding Family was an esteemed family, and Li Zhouwei valued Ding Weizeng highly, he had no intention of putting a local power back in place. Since the Floating Cloud Cave territory was vacated, it was better left empty.</p>
+<p>Smiling, Li Zhouwei said, “You’ve endured much hardship along the way, Weizeng. Yet the Floating Cloud Cave territory may not remain secure with the changing times. The Ding Family’s common folk should be resettled at the eastern shore peak offices, while your immediate kin will be safest on my family’s island.”</p>
+<p>This meant relocating the Ding Family to the lakeside. Since his own life had been saved by the Li Family, and they had released his family from Hongfu Peak, Ding Weizeng could hardly protest. He could only offer his respectful thanks.</p>
+<p>After all, Li Zhouwei valued him and was mindful of appearances. He did not split the Ding Family apart among various peak offices, which would have left Ding Weizeng as the sole remnant.</p>
+<p>After Ding Weizeng finished giving thanks, Li Zhouwei picked up a brush and said, “Though we will not set up peak offices or appoint officials here, that does not mean we will let them run wild. First, we’ll use each peak as a boundary and station the Jade Court Guards. Let them stew for a few days, then grant a few quotas to allow their direct descendants to cultivate in the forests.”</p>
+<p>Li Chenghui acknowledged, and Li Zhouwei continued casually, “Raise a few of the local powers’ direct descendants first. Even if circumstances shift in three to five years and our family withdraws, as long as these direct descendants mature, re-entering Jiangbei and consolidating the territory will take no more than a single thought.”</p>
+<p>The two others nodded in agreement.</p>
+<p>“They will likely not send their true direct descendants but instead dispatch some illegitimate branches to Moongaze Lake. Such tricks are ones every family has long since grown tired of.”</p>
+<p>Li Minggong voiced her concern, but Li Zhouwei only laughed and replied, “It matters not. Our family will insist on their true direct descendants. We will parade them through the streets, beating drums and offering congratulations thrice over, then spread rumors of their esteemed bloodline. Everyone loves such tales. They will not dare deny it, and in truth they cannot. If our family declares them direct descendants, then they are direct descendants.”</p>
+<p>He did not avoid speaking these words before Ding Weizeng, who broke into a cold sweat upon hearing them. Hastily, he excused himself and waited outside the hall while the rest discussed details within, his heart filled with indescribable feelings,So it is true. The devil cultivators act without scruples, but the righteous way is rife with scheming.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1072.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1074.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

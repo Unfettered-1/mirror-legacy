@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1069: Wenhu (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1068.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1070.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1069: Wenhu (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The halberd swelled before Wenhu’s eyes like a falling star, and cold sweat drenched him. Though he believed Li Zhouwei could not kill him, that did not mean he could withstand two preemptive strikes from this White Qilin. He quickly slapped his hands together, summoning a surge of pure qi.</p>
+<p>When the pure qi faded, Wenhu’s figure reappeared more than thirty meters away. His wound was sealed, though his mana continued to ebb and falter. Inwardly, he gave thanks,Fortunately, Bright Yang is a majestic Dao, and its power diminishes somewhat when used to launch a sneak attack with heavenly light… Otherwise that strike would have finished me…</p>
+<p>The halberd thrust once more toward his chest. Wenhu dared not curse, but hastily activated his white jade dharma artifact, unleashing talismans to shield himself. A youth appeared before him, eyes glowing a dusky gold and smiling as he said, “You are clever indeed!”</p>
+<p>Clang!</p>
+<p>The halberd lashed against the dharma artifact, shattering the glow of the talismans. The white jade dharma artifact groaned under the impact. The dharma artifact was something Wenhu had purchased after True Monarch Shangyuan’s ascension, and now it proved its worth. He used the moment to exhale a stream of black qi.</p>
+<p>Whoosh!</p>
+<p>Suddenly, a violent gale swept through the forest, thick with black qi. Rain was already falling, but now it reflected his Immortal Foundation, the Hurricane Ghost Yin, making its power all the more dreadful. Frost quietly spread in every direction. Yet Wenhu felt no certainty in his heart.</p>
+<p>There was no other reason. The Li Family possessed a Bright Yang cultivator who had attained the Purple Mansion Realm.</p>
+<p>As expected, Li Zhouwei merely drew a small banner from his sleeve and tossed it lightly into the air. The wind stilled and the rain ceased. Flames of five shades—brown, pale yellow, goose-yellow, bright red, and vermilion—leaped skyward, filling the area with blazing light as the Yin qi dissolved.</p>
+<p>Wenhu felt helpless, though at least he had earned a moment to breathe. His two subordinates quickly regrouped. One of them, Wang He, carried a feather fan. A trusted aide of Wenhu’s, Wang He still wore a look of dread.</p>
+<p>Before Wenhu could even take comfort in his reinforcements, a coppery-red radiance flared, and a broad man with a swallow chin and curling beard appeared in midair. He had a cold smile on his face as his eyes locked onto Wenhu with unyielding focus.</p>
+<p>“Ding… Wei… Zeng!”</p>
+<p>For the first time, Wenhu’s mind went utterly blank. Realization struck him as his black qi surged uncontrollably, but all he saw was Ding Weizeng’s icy expression. He pressed Wang He down with a single palm and stood in the air like a great tiger ready to pounce.</p>
+<p>In that instant, Wenhu’s mind went blank again. Envy, jealousy, and fear all surged at once.</p>
+<p>To be fair, Wenhu had never wished to offend the Li Family, nor the Capital Immortal Dao that was backing him. He knew he was not even worthy of being considered a chess piece. Should either side bear him a grudge, his end would be unimaginably miserable.</p>
+<p>That was why he had refused to guard Hongfu Mountain.</p>
+<p>He knew full well that defending Hongfu Mountain was the way to minimize losses. With four Foundation Establishment Realm cultivators anchoring the great formation, no matter how Li Zhouwei attacked, the total loss of territory would not exceed half. If Hongfu Mountain remained intact until the Capital Immortal Dao’s arrival, the Li Family would gain no advantage from Hidden Cloud Cave.</p>
+<p>But Chidu of Capital Immortal Dao had many enemies. If Wenhu merely sat in the mountain like a dead man, those stubborn Daoists of Capital Immortal Dao would surely voice an objection. He would have to be grievously wounded, and the loss of territory would be inevitable, for their opponent was none other than a Purple Mansion Realm immortal family, and the man who came was Li Zhouwei himself.</p>
+<p>However, if he held fast, causing the Li Family’s gains to be heavily diminished, they would come to hate him bitterly. Wenhu had no wish to offend the Purple Mansion Realm Zhaojing or Li Zhouwei, who was all but certain to reach the Purple Mansion Realm in the future. Only by yielding Hongfu Mountain could he satisfy the Li Family.</p>
+<p>Thus, caught between the guilt of mediocrity and the guilt of cowardice, he had chosen the former. In his plan, Miaoshui would almost certainly surrender, allowing Li Zhouwei to seize the mountain. Then Li Zhouwei would turn on him and wound him gravely. But when the Capital Immortal Dao came to his rescue, the division of territory would no longer concern him, thus offending neither side.</p>
+<p>But Li Zhouwei had unexpectedly cornered him here… and the Ding Weizeng he had always scorned had become the Li Family’s trusted general!</p>
+<p>Wenhu nearly lost control of his mind, unable to stop himself from bitterly cursing inwardly,A hundred schemes cannot compare to a handsome face and a fine Dao lineage… A thousand careful calculations cannot compare to a blessed fate that turns calamity into fortune!</p>
+<p>Yet as a rogue cultivator who could rival disciples of major sects in the Foundation Establishment Realm, his will was far from ordinary. He instantly regained clarity. Though his body smoked under the blazing heavenly light, he still gritted his teeth and fought desperately to block Li Zhouwei’s halberd technique.</p>
+<p>In truth, Wenhu’s cultivation was far above Li Zhouwei’s, having already surpassed the late stage of the Foundation Establishment Realm. If he had a different Dao foundation, he could likely have traded blows evenly with this White Qilin before him.</p>
+<p>But his dharma artifacts and spell arts were inferior; his Immortal Foundation was suppressed; his chest had been pierced in the opening exchange; and his mana ran sluggishly. He could only rely on experience and his reserves to resist with difficulty.</p>
+<p>On the other hand, Li Zhouwei had no intention of wasting time. Forming a seal with one hand, he extended his forefinger. Sunlight seeped faintly through the clouds, and brilliance flared at his fingertip.</p>
+<p>“Supreme Yang Resonance Radiant Art!”</p>
+<p>The Supreme Yang Resonance Radiant Art was a technique of myriad transformations. Now it drew upon the sun’s light, seizing Wenhu’s jade shield. The shadow of the halberd grew heavy and plunged straight toward Wenhu’s wound.</p>
+<p>But Wenhu was no ordinary man. He bit his tongue fiercely and spat out a mouthful of blood essence. It roared in his mouth and burst forth as a jet of dark radiance, surging toward Li Zhouwei and shattering the heavenly light around him.</p>
+<p>For the first time, surprise flickered across Li Zhouwei’s face.</p>
+<p>“The Heavy Abyssal Gale?”</p>
+<p>Of course, this was not the true Heavy Abyssal Gale, famed for blowing away dharma artifacts. Wenhu had merely imitated a fraction of its profundity using his Dao foundation, Hurricane Ghost Yin. But even so, it was enough to catch an ordinary Foundation Establishment Realm cultivator off guard, causing Li Zhouwei to falter slightly.</p>
+<p>But Li Zhouwei knew this wind well. The true Heavy Abyssal Gale within his own Chongming Profound Insight Screen was the genuine article, though that extraordinary dharma artifact was currently in Li Ximing’s possession.</p>
+<p>He struggled slightly, and the gale lost its effect. Wenhu had not expected him to break free so swiftly, but his next spell art was already formed.</p>
+<p>Black light condensed around him as he growled, “Command!”</p>
+<p>A beam of black dharma light surged forth, raising violent gusts and filling the air with ghostly qi. The center of Li Zhouwei’s brow flared with light, releasing the Heavenly Radiance, Hidden Light, which collided with the black dharma light in a thunderous crash.</p>
+<p>Boom!</p>
+<p>The Heavenly Radiance, Hidden Light effortlessly shattered the black dharma light and struck Wenhu in the distance, who was wielding his jade shield. Smoke billowed from the shield as cracks spread across its surface. Li Zhouwei narrowed his golden eyes slightly, scanning coldly.</p>
+<p>“A fine spell art indeed!”</p>
+<p>He stepped northward, leaving Wenhu where he stood. His halberd gleamed with heavenly brilliance as he thrust into the air. A muffled cry sounded, and a blood-soaked figure was forced out of the sky. Who else could it be but Wenhu?</p>
+<p>“To have trained the meager Hurricane Ghost Yin to this level… you are at least a talent!” exclaimed Li Zhouwei.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1068.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1070.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

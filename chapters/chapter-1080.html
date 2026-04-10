@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1080: Sovereign In Peril — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1079.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1081.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1080: Sovereign In Peril</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>If the Li Family’s cultivation methods and secret techniques were inferior to the Cui Family’s, then why would the Cui Family wish to exchange for this spell? Li Ximing’s hesitation clearly stemmed from this doubt. Cui Xianye immediately realized this and could not allow Li Ximing to feel awkward.</p>
+<p>He respectfully said, “Daoist Master, my family’s Sovereign In Peril technique is only of the fourth grade and accompanied by a single secret technique. How could it be worthy of comparison with your esteemed family’s immortal art? Moreover, the Upper Mansion Bright Venerating Scripture is our family’s foundational treasure. I would not dare recklessly bring it out without the elders’ permission.”</p>
+<p>He made a decisive choice, dropping to his knees and bowing as he said, “This junior is willing to offer up a cultivation method to the Daoist Master, only asking for a single favor in return. May your divine ability, brilliant as the sun, shield Chongzhou beneath their radiance and protect the Cui Family in times of peril.”</p>
+<p>Li Ximing paused slightly, thinking to himself,A single favor in exchange for a Purple Mansion Realm Body Divine Ability? Even if it is merely a fourth grade technique with only one secret art… it is still a Purple Mansion Realm technique!</p>
+<p>Cultivation in the Purple Mansion Realm was quite different from the Foundation Establishment Realm. Upon breaking through with an Immortal Foundation, one could not immediately practice the next divine ability. Instead, the current divine ability had to be cultivated to perfection.</p>
+<p>This process could be painstakingly slow, since one could refine the ability little by little over decades, or it could be hastened by using spirit items, pills, and continuation-type spells to bring the ability to completion.</p>
+<p>Once that divine ability reached perfection, the cultivator had to begin cultivating the next divine ability. With a Purple Mansion Realm technique, one could condense the Immortal Foundation within the qihai acupoint, then transport it into the Shenyang acupoint with the aid of one’s divine ability. This was not as arduous as the Foundation Establishment Realm, since it was merely a matter of time.</p>
+<p>Some cultivators could refine pills and swallow another’s Immortal Foundation, then use spells to directly integrate it into the Shenyang acupoint, nurturing their divine ability that way. However, those like Li Ximing, without such shortcuts, could only rely on Purple Mansion Realm techniques and painstakingly train ability after ability step by step. Without these methods, they would remain stuck with a single ability until death. Thus, the importance of such a technique was self-evident.</p>
+<p>For cultivators like Ning Tiaoxiao, who had been trapped in early Purple Mansion Realm for years without a suitable method, such a technique could be exchanged for far too much. It might even compel a Purple Mansion Realm cultivator to act not once, but multiple times.</p>
+<p>Though Li Ximing trusted the Cui Family, he did not immediately agree. He sipped his tea in silence, while Cui Xianye continued to press his forehead to the floor and said, “The Cui Family has dwelled in isolation overseas for a thousand years, yet our loyalty has not wavered. In the past, the Li and Cui Families have often supported one another. Today, as we seek the Daoist Master’s aid, it is also a matter of longstanding friendship.</p>
+<p>“Our family is protected by the Dragon Clan, so ordinarily nothing threatens our foundations. But should the day come when news of a Bright Yang spirit item reaches us, we would beg the Daoist Master to lend a hand and assist our family.”</p>
+<p>Li Ximing believed much of this. Outwardly, he nodded thoughtfully and smiled as he said, “It is nothing more than an exchange of favors. So long as it lies within my ability, I will certainly do my utmost to help.</p>
+<p>“The key lies in frequent exchanges between our two families. The rest is merely the duty of kinship. Now that our ties have been renewed, if the Cui Family has younger members, they may be sent to train at the lake, while the Li Family will also send people to your island.”</p>
+<p>Only then did Cui Xianye rise, step back, and reply, “As the Daoist Master commands. The Cui Family’s juniors of the Juezi generation are at the age of achievement. I shall summon one now for you to see.”</p>
+<p>He turned toward Cui Wanqing, and instructed, “Go and fetch the Scripture of the Body Guarding Tiger Pass.”</p>
+<p>Cui Wanqing bowed solemnly and withdrew. Then she called another servant forward and ordered, “Bring Jueyin here.”</p>
+<p>This series of actions gave ample respect to the proceedings. Even Li Ximing could not help but praise the Cui Family’s discipline. Soon, a man entered from outside the hall.</p>
+<p>The man had refined brows that shaded his eyes and his features were only moderately handsome, but his bearing was elegant and his demeanor scholarly. Upon entering the hall, he first saluted Cui Xianye, then upon seeing Li Ximing, he quickly stepped back and bowed low, “Greetings to the Daoist Master!”</p>
+<p>Cui Xianye turned and introduced, “This is the second of the Juezi generation, Cui Jueyin. He has been courteous and magnanimous since he was a child, and is highly valued within the family.”</p>
+<p>Li Ximing was in need of capable people at this time. When he saw that Cui Jueyin was at mid-stage of the Foundation Establishment Realm, a true direct descendant of a Purple Mansion Realm immortal family, he felt pleased. Despite the Cui Family’s current decline, their heritage was by no means lacking.</p>
+<p>He asked delightedly, “Jueyin, are you willing to follow me back to the lake?”</p>
+<p>Although summoned suddenly, Cui Jueyin had already inferred much from Cui Xianye’s expression and Li Ximing’s tone. The words ‘the lake’ alone spoke volumes.</p>
+<p>He bowed and said, “To meet the Daoist Master and be allowed to cultivate at the Immortal Lake is the greatest fortune of my life. In awe and gratitude, I accept with joy beyond measure.”</p>
+<p>Li Ximing laughed heartily, as Cui Wanqing stepped forward with a jade slip and said softly, “Daoist Master, the Scripture of the Body Guarding Tiger Pass, along with its secret techniques and spiritual qi, are all here.”</p>
+<p>She presented a jade tray. Three jade slips lay beside a jade box. A touch of Li Ximing’s spiritual sense revealed one containing the Scripture of the Body Guarding Tiger Pass, another with a secret technique, and the last with an incantation.</p>
+<p>As expected of a Purple Mansion Realm technique, just the incantation to unlock the scripture required its own jade slip for recording,thought Li Ximing.</p>
+<p>Since it was a precious item, it was best to verify it on the spot. He did not delay, using the incantation to unlock the scripture and skimming through it, “The Heavenly Radiance Profound Body Divine Ability, deriving strength from the Bright Yang nature and treading in peril, undergoes the descent of the six nines[1] to reach the state of comprehension and repentance. The Broken Clustered Heart and the Clear Manifest Will arise thereafter. Once the divine ability is complete, one realizes that treasures are only made whole by flaws, and thus are born the black robe and golden armor, the treasured carriage of the white luan[2]…”</p>
+<p>At the end, his eyes caught a line that seemed strikingly familiar, “Shining upon the eight directions, all kings pay homage, ten thousand spirits bow in reverence, and the Heavenly Radiance is proclaimed as a heavenly god!”</p>
+<p>These two lines were from the casting incantation of his own Heavenly Radiance, Hidden Light!</p>
+<p>So Heavenly Radiance, Hidden Light is closely related to Sovereign In Peril!</p>
+<p>In high spirits, he turned to examine the secret technique, titled Reversal Hundred-Formations Battleground Body. After reading carefully, Li Ximing muttered, “Isn’t this just my family’s Reversal? Why give it such a long name?”</p>
+<p>Li Ximing had read through all nine of his family’s secret techniques before. This Reversal Hundred-Formations Battleground Body also was pathetically short compared to their Reversal. But after reading it once, he froze in astonishment.</p>
+<p>Unable to resist, he read it again, his mind dazed as he thought,Huh??</p>
+<p>In the past, when practicing his family’s secret techniques, Li Ximing had often sighed with regret, lamenting that their versions were original texts. It was so obscurely written that training was extremely difficult. He had even envied sects like the Azure Pond and the Golden Feather, whose sect secret techniques surely came with long, detailed annotations to make cultivation vastly easier for later generations.</p>
+<p>But now he realized that this was the true original text! His family’s version was already a simplified commentary! Reading Reversal Hundred-Formations Battleground Body made Li Ximing’s scalp prickle. If his family’s secret techniques were like ready-cooked pastries, then this one was like raw grains with husks still attached!</p>
+<p>No wonder my cultivation felt so smooth… and here I thought it was my extraordinary talent…</p>
+<p>Li Ximing let out a hearty laugh, though he felt no discouragement. After all, his family lacked a deep heritage. It was only natural that his attainments could not match those of the main sect descendants, and their secret techniques were bound to be superior.</p>
+<p>He put away the jade slips, looked at Cui Xianye, and said, “I will accept this spell. If you ever have a request, simply send someone to the mainland.”</p>
+<p>1. In Daoist cultivation, 六九 (six nine) refers to the union of yin and yang, water and fire, representing the harmonious fusion that drives inner alchemical transformation. ☜</p>
+<p>2. In Daoist and classical Chinese culture, 鸾 (luán) is a mythical bird akin to the phoenix, symbolizing auspicious omens, harmony, and the union of yin and yang. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1079.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1081.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

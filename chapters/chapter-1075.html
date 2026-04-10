@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1075: Establishing White River Dispatch Office (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1074.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1076.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1075: Establishing White River Dispatch Office (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>This matter was tied to Daoist Master Changxi, who had repeatedly urged his descendants to break through to the Purple Mansion Realm. The Upper Evil Spirit Storage had appeared, and in his joy, several of his direct heirs had gone into seclusion. That was how today’s situation had come about.</p>
+<p>It was also for this reason that Kong Tingyun had later assumed the position of Profound Peak Gate’s master and gradually won Changxi’s favor, bringing Profound Peak Gate closer to the Li Family. One had to admit, there was a sense of destiny in these twists of fortune.</p>
+<p>Li Chenghui reassured, “Profound Peak Gate still has Fu Yuezi on Yuezhou Island. He has considerable strength, and he will be able to contribute when the time comes.”</p>
+<p>Li Zhouwei remained silent for a moment. Chen Yang then came forward to report that the families of the Hidden Cloud Cave territory had already sent representatives, and the initial resettlements had been arranged. At the very least, Hidden Cloud Cave was now under control.</p>
+<p>“With Hidden Cloud Cave secured, we should return to the mountain. I must also meet with the Daoist Master.”</p>
+<p>Li Zhouwei put away his brush, and Li Chenghui reminded him, “Do not forget that the North Brocade River King is still waiting in White River Stream.”</p>
+<p>“Ah, yes…” Li Zhouwei was still considering candidates for guarding Hidden Cloud Cave. For the moment, he nodded and said, “I intend to establish an office in White River Stream to oversee Floating Cloud Cave and guard Hidden Cloud Cave. Floating Cloud Cave is already being managed by An Siwei, and his abilities are sufficient for that task. But his strength is not enough to hold the post of guardian. Uncle, I fear I must ask you to take this office and watch over this land.”</p>
+<p>Li Chenghui had fought side by side with Li Zhouwei through more than ten years of peril. The two were well acquainted, so there was no need for courtesy.</p>
+<p>He nodded. “I will do my utmost to protect this place and keep it secure.”</p>
+<p>After a moment of consideration, Li Zhouwei said, “Since Mifan has been breached and Hongfu Mountain taken, Floating Cloud Cave and Hidden Cloud Cave should be reorganized. Using Mang Huazi Mountain as the boundary, rename the southern part of Floating Cloud to Floating South and rename Hidden Cloud to Hidden East. Establish a White River Dispatch Office at Hongfu Mountain. The family will soon send the officers, orders, and directives.”</p>
+<p>He chuckled and added, “If these two regions can be held and Floating South begins producing, then future stipends for the office can be drawn from their rear supplies. That will be much more convenient!”</p>
+<p>Though it was also a means to back a puppet, Li Zhouwei wanted to secure the title. It would not be called a gate or a cave, just the Dispatch Office, so it could be dissolved at any time. After all, their ties with Baiye Capital Immortal Dao were already severed, and no one expected Hidden East to favor the Li Family. It would be a day-to-day duty without concern for long-term recognition.</p>
+<p>“As for the North Brocade River King…” Li Zhouwei had already considered this and decided, “The North Brocade River King knows many things. He regards me as someone of Dingjiao’s princely rank, and I could never go to his mansion to pay respects. If I went, he would become suspicious and overthink it, yet we cannot pass up his assistance. You should go; he will not dare treat you lightly.”</p>
+<p>Li Chenghui nodded, and Li Zhouwei continued, “He is not, as rumors suggest, some Dragon Son-level guest; he is only a minor figure in the Dragon Palace. We must be careful not to let the Dragon intervene directly. He can gather intelligence and assist with the water veins, which is already very useful.</p>
+<p>“Keep Qu Buzhi, Ding Weizeng, Miaoshui, and the others under your charge; you cannot manage everything alone. If you need help, ask the clan. Aunt Minggong is on the north shore; once you cross the river you are in Floating South and she can respond quickly. As for Wenhu…”</p>
+<p>Li Zhouwei laughed and said, “I will have him taken to Zhijing Mountain so the families know that Daoist Masters are not so easily fooled!”</p>
+<p>Though Wenhu was scheming, he had been unlucky. Li Zhouwei not only intended to seize him but also reclaim Mang Huazi Mountain. Since he had been in mid-stage Foundation Establishment Realm for years and was about to enter seclusion for talisman work, his eventual breakthrough to late-stage Foundation Establishment Realm would not be abrupt.</p>
+<p>The Li Family had now risen into a Purple Mansion Realm immortal family and was no longer a minor family under the Azure Pond Sect. Any disturbance would likely draw the attention of Purple Mansion Realm cultivators, making sacrificial rites far from simple.</p>
+<p>After all, affairs at the foot of the mountain could be hidden as Moongaze Lake’s customs, but matters on the mountain involved the secrets of the Sacrificial Ritual Method. If the Purple Mansion Realm cultivators detected anything amiss, it would spell trouble.</p>
+<p>They should have consulted the Immortal Mirror, but their summons had failed to reveal the Mirror itself since it vanished into the great void. What phenomena might result if they did summon it was unknown. Since the Li Family was now the center of attention, Li Ximing and Li Zhouwei dared not be careless and postponed the matter.</p>
+<p>“We should wait until a Purple Mansion Realm formation capable of isolating the great void can be established before performing the rites. If sacrifices cannot be made for now, at least bring this python[1] back with us…”</p>
+<p>Li Zhouwei continued to ponder as Li Chenghui escorted him all the way to the riverbank. Coming to himself, Li Zhouwei said with a sigh, “Thank you for your efforts, uncle. All these matters are external; your own well-being is most important. This land can be abandoned if need be. If you were harmed, that would be tearing at the roots of our family!”</p>
+<p>The White River Dispatch Office looked like it carried the authority of a local emperor, but in truth, it was not a good position. Changxi might fall at any moment, and if anything changed within a few years, the White River Stream territory would be the first to bear the brunt. Should the Baiye cultivators strike, even a moment’s delay in retreat could mean encirclement.</p>
+<p>Li Chenghui naturally understood this. Steadying his mind, he answered, “I command thunder, and none within the family surpass me in escape spells. With Profound Thunder in the Thunder Pool and a grand formation shielding me, if danger comes and I steel my heart to flee, no Foundation Establishment Realm cultivator could force me to stay.”</p>
+<p>After escorting the group and riding the thunder back, Li Chenghui fell into thought. The young man had always been decisive, and he pondered inwardly,I should make some preparations. Since we can borrow the Dragon Son’s prestige to use him, and this Ying Hebai is master of the Three Rivers, with countless riverfolk under him, is that not like laying a net of eyes across the waterways? Once an agreement is set, the moment a glow rises above Baiye Capital Immortal Dao, some demonic creature will already be rushing to report it here!</p>
+<p>Though demonic creatures could never match the flight speed of Foundation Establishment Realm cultivators, such matters only required the crushing of a jade talisman for word to spread instantly!</p>
+<p>With a plan now in mind, Li Chenghui felt more assured. He summoned Ding Weizeng and the others to ride the winds to him. After looking them over, he said, “Weizeng, come with me into the river.”</p>
+<p>Ding Weizeng agreed at once. Soon, they came upon a dark expanse thick with vegetation. That was Mang Huazi Mountain!</p>
+<p>The grand formation guarding the mountain had long been broken, and the demonic creatures had scattered, leaving the place desolate. When the two landed by the river, they saw an old man in black robes manifesting on the riverbank in the distance. He had clearly waited there for some time. He hurried forward and bowed.</p>
+<p>“Shui Zhao pays respects to the honored lord.”</p>
+<p>Li Chenghui nodded and said in a clear voice, “Has the North Brocade River King invited us?”</p>
+<p>“Indeed!” The old demon Shui Zhao smiled broadly, then crouched down to transform into a massive, ink-black tortoise the size of a house. Brown-yellow markings ran along his limbs, marking him as some unusual variant. His long neck stretched forward, and his voice rumbled like a great bronze bell, “I have long awaited the arrival of your honored selves!”</p>
+<p>1. Referring to Mang Huazi. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1074.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1076.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

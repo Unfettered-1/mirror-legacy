@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1034: Grand Assembly of the Purple Mansion (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1033.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1035.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1034: Grand Assembly of the Purple Mansion (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Milin Mountain.</p>
+<p>Milin Mountain was not tall, but it was vast in size, brimming everywhere with spiritual energy. After the downfall of the Yu Family, chaos had consumed the land. The once-grand palaces and terraces lay shattered and in disarray.</p>
+<p>These palaces and terraces were no ordinary constructions. Built by cultivators, they could not be raised merely by manipulating earth and stone. They required engraved formation patterns and the infusion of spiritual materials and items. That was no simple task.</p>
+<p>When the Li Family took over, they were beset by major events, followed by the great strife between North and South. They did not have the strength to restore the many pavilions and halls, and only repaired the spirit fields and herbal courtyards, using them for gathering resources and cultivation.</p>
+<p>After the northern and southern conflict passed, the Li Family enjoyed ten years of rest and recovery. With resources to spare, they gradually rebuilt Milin Mountain. In the last three months, it had become a grand family-wide project, transforming the mountain range into something entirely new.</p>
+<p>Terraces and towers were now constructed layer upon layer across Milin Mountain, standing amidst the clouds. Azure steps were everywhere, and spiritual qi drifted in the air. Five spirit springs gushed from the heights, their waters following patterned channels down the steps, winding through courtyards before reaching the foot of the mountain.</p>
+<p>The paths were lined with lanterns, painted with Bright Yang and Li[1] Fire patterns. The steps were carved with sea and dragon motifs. Cultivators came and went, rising and descending among the courtyards.</p>
+<p>Milin Mountain was not the location to be renovated. Around the lake, sixteen prefectures, two peaks, and one mountain were all entirely reconstructed. Six grand gate towers had been erected along the lakeshore, modeled after the Radiant Origin Pass.</p>
+<p>These gate towers were built of white bricks, their corner towers adorned with intricate carvings. Each stood thirty-eight meters tall, with seventy-two clearly defined ridges. Though similar in structure, their placement followed the terrain and direction, and they bore the names, Sixiang[2], Xuanye[3], Tingyuan[4], Changxi[5], Chengqing[6], and Zhouwu[7].</p>
+<p>The Sixiang Gate, located at Lijing Office on the southern shore, was the grandest, taller than the other five. The Changxi Gate stood at the foot of Milin Mountain, and was connected to the formations. All cultivators ascending or descending the mountain passed through it. Li Zhouluo descended with Kong Yu from this gate, while Li Zhoufang was stationed at its front.</p>
+<p>The two brothers were older than Li Zhouwei, and their sons were already grown. Since they had low innate talent, they had begun cultivating late, appearing far more aged and ordinary, with nothing remarkable about them.</p>
+<p>After a brief glance, Kong Guxi praised, “What a fine Changxi Gate…”</p>
+<p>All six gate towers around the lake had been personally designed by Li Ximing and reinforced with his divine ability. The patterns bore the essence of Bright Yang, layered with profound mysteries that made it difficult for one’s gaze to part from them.</p>
+<p>Though neither of them cultivated the Bright Yang Dao, they could still perceive its profundity. As they stepped through the Changxi Gate, they saw a broad-shouldered man with fierce golden eyes and white-gold armor standing before them.</p>
+<p>Kong Yu hesitated slightly, but Kong Guxi was already filled with awe as he thought,The White Qilin of the Li Family… Li Zhouwei!</p>
+<p>When Li Ximing was in seclusion, the Li Family had only Li Zhouwei and Li Chenghui to hold the line, with every family watching them closely. Kong Guxi had just inherited the leadership of the Profound Peak Gate from Kong Tingyun at that time, so he knew the matter most clearly…</p>
+<p>A demonic cultivator had run rampant on the northern shore of Moongaze Lake. The Mifan three sects had suddenly established themselves overnight in Jiangbei, and the Fei Family had cried out for aid. Li Zhouwei, with the white ape, had guarded the northern bank together with Li Chenghui, cutting off the river. They had then slain the demonic cultivator using the ancient formation Cloud Gathering Southern Heaven Formation.</p>
+<p>In less than half a night, before the forces of the Mifan three sects were even halfway across, Li Zhouwei had already slain the cultivator and sent its head to the Azure Pond Sect. Everyone knew that cultivator was certainly a man of the Mifan three sects, but since its head had been delivered to the Azure Pond Sect, the three sects could do nothing but swallow their loss.</p>
+<p>Thus began the struggle over the northern shore. Over the next ten years, Li Zhouwei had held the line from covert harassment to open disputes over spirit fields. He had Li Xizhi’s full backing, who even returned in person several times. Even though the Mifan three sects had several times the number of Foundation Establishment Realm cultivators, they could only retreat and concede lake interests. They never could manage to shake the Li Family’s foundation.</p>
+<p>As Li Zhouwei’s cultivation and spell arts grew, and Li Chenghui became proficient in the Sixfold Profound Thunder Punishment Tokens, Floating Cloud Cave gradually grew powerless against the Li Family unless its cave master acted personally. In the end, Cave Master Fu Dou himself struck, yet he still failed to capture Li Zhouwei.</p>
+<p>Thus the Li Family set up the Cloud Gathering Southern Heaven Formation to guard the north shore. Though it meant no harvests there, they had consolidated their strength, and Li Zhouwei no longer needed to guard the region constantly.</p>
+<p>Although Li Ximing had since broken through and Floating Cloud Cave had perished on its own, Kong Guxi felt that Li Zhouwei’s repeated efforts at stymieing them ensured that the cave had long ceased to be a true threat to the Li Family.</p>
+<p>Now, upon meeting Li Zhouwei, he only felt that those golden eyes carried a strange light. His bearing was imposing, and he would not be easy to contend with, but there was nothing more unusual than that.</p>
+<p>He clasped his fists respectfully and said, “I greet the family head!”</p>
+<p>The golden-eyed youth nodded and said, “So it is the Sect Master of Profound Peak Gate! Zhouwei pays his respects.”</p>
+<p>Kong Guxi’s cultivation was not high, and the few Earth Virtue techniques of his sect were not meant for combat. He likely was no match for Li Zhouwei at all, so he quickly replied courteously.</p>
+<p>Another man stood beside Li Zhouwei. His hair and beard were half-white, while his face was ruddy with kind features. At his waist hung two strings of swaying medicine pouches. His profound cultivation showed plainly on his countenance, suggesting he practiced the Wood Virtue.</p>
+<p>Kong Guxi had never met this man before, but seeing he was dressed in the garb of the Xiao Family, he realized this must be Xiao Yuansi!</p>
+<p>Kong Guxi suddenly understood in his heart,In today’s Li Family, only Xiao Yuansi is worthy of Li Zhouwei personally coming to welcome him! That pill of his… once, everyone mocked him as foolish, but now all must praise him for his foresight!</p>
+<p>Xiao Yuansi had known of this matter for over three months already, yet at the time it had left him so stunned he could not react. Even now, his heart was full of joy. The old man looked like he had swallowed a treasured panacea. His complexion was rosy with health while his eyes shone bright.</p>
+<p>Kong Yu watched with extreme envy, his heart sighing with emotion, “To have a disciple who reached the Purple Mansion Realm, and to have played such a great role in his disciple’s breakthrough. This senior… for the rest of his life, he need not worry anymore…”</p>
+<p>The number of people gathered beneath the Changxi Gate grew, with cultivators of every family stepping forward to greet the White Qilin of the Li Family. Though Li Zhouwei was incomparably strong, his tone remained polite as he responded to each in turn, rarely showing aloofness.</p>
+<p>Just as Kong Guxi was about to ascend the mountain, a brilliant heavenly light descended from the skies, landing upon the steps and transforming into a man in golden-white Daoist robes.</p>
+<p>His features were upright and ordinary, save for his pale-golden eyes, and the blazing point of heavenly light shining at the center of his brows. There was no doubt, this man was Li Ximing.</p>
+<p>Kong Guxi did not dare to look long; his gaze quickly leapt away. A middle-aged figure with plain features stood behind the man. There was a jade pendant at his chest, and he was clad in a brown robe patterned with mountains.</p>
+<p>Kong Guxi’s pupils shrank and he dropped to his knees with a heavy thud as he cried out, “I greet the Ancestor! I greet the Daoist Master!”</p>
+<p>The cultivators of Profound Peak Gate froze for a heartbeat, then hastily followed his example. They all dropped to their knees, kowtowing in unison.</p>
+<p>Kong Yu and the others were now high-ranking figures of Profound Peak Gate, so how could they not recognize that the man beside Li Ximing was their own ancestor, Daoist Master Changxi? Even those who had never seen him before had long studied his portrait hanging in their gate, and quickly realized the truth.</p>
+<p>When Profound Peak Gate knelt in unison, the other cultivators were momentarily stunned, but soon most bowed as well. Even the direct disciples of the Purple Mansion Realm cultivators folded their hands and lowered their heads, all greeting in unison, “We greet Daoist Master Zhaojing!”</p>
+<p>Xiao Yuansi suddenly lifted his head, meeting Li Ximing’s face. A smile spread across the old man’s features. Surrounded by the chorus of respectful greetings, Li Ximing inclined his body in a slight bow and softly said, “I greet my master.”</p>
+<p>1. Not the surname Li. ☜</p>
+<p>2. 四象 (Sìxiàng – Four Symbols) refers to the Four Celestial Emblems in Chinese cosmology: Azure Dragon (East, Wood, Spring), Vermilion Bird (South, Fire, Summer), White Tiger (West, Metal, Autumn), Black Tortoise (North, Water, Winter). They represent balance of directions, elements, and seasons in Daoist cosmology. ☜</p>
+<p>3. 玄 (Xuán) means mysterious, profound, or linked to Daoist mystery. 业 (Yè) can mean enterprise, karmic undertaking, or great work. Together, it suggests ‘the profound enterprise of cultivation’ or the great Daoist work. ☜</p>
+<p>4. 庭 (Tíng) means courtyard, hall, or tribunal. 渊 (Yuān) means deep pool, abyss, or profound depth. Together it likely symbolizes a sacred court of depth and wisdom, or a place where profound truths gather. ☜</p>
+<p>5. 常 (Cháng) means constant, eternal. 曦 (Xī) refers to the first light of the sun at dawn. Together, it means ‘eternal dawn’ or ‘unceasing radiance’, symbolizing renewal, light, and auspicious beginnings. ☜</p>
+<p>6. 承(Chéng) means to bear, inherit, or uphold. 清(Qīng) means pure, clear, untainted. Thus, it means ‘upholding purity’ or ‘carrying on clarity’, echoing Daoist ideals of spiritual refinement and clarity of qi. ☜</p>
+<p>7. Likely refers to King Wu of Zhou (周武王, Zhōu Wǔ Wáng), the founder of the Zhou dynasty, symbol of righteous conquest and dynastic legitimacy. In a Daoist/cultivation context, it suggests martial virtue, righteous strength, and founding authority. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1033.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1035.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

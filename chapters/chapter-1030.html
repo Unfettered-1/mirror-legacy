@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1030: The Congratulations Of The White Qilin (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1029.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1031.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1030: The Congratulations Of The White Qilin (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Supreme Yang Li Fire art[1] was by no means weak. Its versatility and adaptability was a rare, prized quality. As a fifth grade spell art, it was already a core heirloom technique of the Azure Pond Sect’s direct lineage! Li Zhouwei had cultivated it for over ten years, and had relied upon it to escape peril time and again.</p>
+<p>In an instant, dazzling white Supreme Yang Li radiance surged around him, rippling like water and shifting into apricot-yellow light. The tortoise shell spun once, then was cast aside as it struggled in vain amid raging flames.</p>
+<p>Bang!</p>
+<p>Li Zhouwei’s palm struck the talisman barrier before him, and the entire shield burst into blazing Li Fire. The scorching flames surged forward. Situ Ku broke into a cold sweat, the spell art in his hand only just completed.</p>
+<p>Boom!</p>
+<p>Situ Ku knew the man standing before him. When Li Zhouwei had only just broken through to the Foundation Establishment Realm, even with Daoist Fu Dou personally striking, and with armor protection, he had merely been injured and had successfully fled. Situ Ku’s cultivation was similar to this White Qilin of the Li Family, but when it came to spell arts, cultivation methods, and dharma artifacts, he was inferior in every way. What chance did he have in battle?</p>
+<p>He made a split-second decision. The black-mist veil exploded into pieces, and a torrent of heavy gray light poured out. With the mana of the Xiukui Dao, it condensed into a massive shadowy mountain that came crashing down.</p>
+<p>Situ Ku knew he had only one chance to escape. He unleashed all his mana along with his blood, and fierce flames ignited beneath his feet, propelling him upward like a bird soaring into the sky as he sped away.</p>
+<p>Li Zhouwei remained silent. He swung his inverted halberd, and radiant arcs of Bright Yang light burst from its curve, slowing the mountain’s descent. At the same time, a small banner flew out from his sleeve. It was the Yang Li Red Sparrow Banner</p>
+<p>“Heaven’s form in full, Yang Li Punishing Flames!” said Li Zhouwei.</p>
+<p>Five colors of Li Fire, brown-yellow, pale yellow, goose yellow, bright red, and vermilion, flared up to press against the pitch-black mountain. The halberd thrust forward once again, holding the mountain aloft like a pillar propping up the heavens.</p>
+<p>But this strength came uniquely from the self-detonation of a dharma artifact. Li Zhouwei had already allowed him to escape more than a kilometer. Just as the chase seemed inevitable, the tables turned.</p>
+<p>Narrowing his eyes to gauge the distance, Li Zhouwei said coldly, “Shine upon the eight directions, all kings must bow before me… Heavenly Radiance, Hidden Light… by decree!”</p>
+<p>A speck of Radiant Light rose from the center of his brows. The entire forest briefly blazed with brilliance before night claimed it once more. In the distance, Situ Ku, caught in the heavenly light, fell into the mountains like a bird with broken wings.</p>
+<p>The heavenly light had already pierced through the old man’s lower body. He had no will to resist as the blazing heavenly light danced upon his wounds, rippling outward and transforming into two armored soldiers clad in silver scale armor. Faceless, they each seized one of his arms and carried him back in a stream of light.</p>
+<p>It had taken no more than ten exchanges. Situ Ku was dragged back before him, and he was barely clinging to life. The black radiance the size of a hill had been burned down to no more than the size of a desk.</p>
+<p>Granted, part of it was that the old man had focused solely on fleeing with no intent to resist, and part was the support of arts and artifacts. But even so, it was enough to show Li Zhouwei’s strength. He already possessed the might of Tuoba Chongyuan in his prime.</p>
+<p>After first staunching Situ Ku’s bleeding, Li Zhouwei examined him, and suddenly narrowed his eyes, thinking,Purple Mansion Realm cultivators?</p>
+<p>The great void before him rippled, revealing a man in a white-golden Daoist robe. His face was bright with a smile, and his voice brimmed with delight, “My family’s Auspicious Child is truly formidable!”</p>
+<p>When he saw Li Ximing, Li Zhouwei let out a genuine sigh of relief, cupped his fists, and said with a hearty laugh, “Greetings to the Daoist Master! Since you’ve broken through, I could hardly return empty-handed. So… I caught a Golden Tang Gate man as a gift to congratulate you.”</p>
+<p>“Oh?” Li Ximing gave him an approving look. It was only then that he realized the man on the ground belonged to the Situ Family.</p>
+<p>Li Zhouwei’s gaze flickered slightly as he whispered, “This is Situ Ku, a guest cultivator of Floating Cloud Cave. Wenhu and Ping Wangzi let him slip away, so I trailed him for half a day, waiting for this very moment!”</p>
+<p>Li Ximing understood at once and his gaze toward the man grew heated. This was no mere guest cultivator of Floating Cloud Cave; this was clearly a fine handle to seize upon. He smiled and said, “Excellent… an excellent gift!”</p>
+<p>He lightly flicked a finger and a strand of Radiant Light descended upon Situ Ku, binding him. He pulled Li Zhouwei closer, looked him over from side to side, and said with a sigh, “I have achieved the Purple Mansion Realm, and you are safe and sound. There is nothing in this world more important than that.”</p>
+<p>Though Li Minggong and the others did not elaborate, Li Ximing knew full well how many hardships Li Zhouwei had faced in maneuvering across the four regions in the last decade and a bit. No doubt he had borrowed much strength along the way. For him to feign departure to the Eastern Sea while secretly slipping back here said it all.</p>
+<p>Li Zhouwei merely replied with a smile. Li Ximing glanced toward the sky, then drew him into the great void. Both vanished without a trace. After only a dozen seconds, the sky brightened swiftly.</p>
+<p>————</p>
+<p>An Siwei escorted the two into the hall. Before long, he rode the wind back, just in time to find a youth wandering inside. Li Minggong stood to the side. The spirit item that had originally rested upon the desk was already gone, and it was unclear who had taken it.</p>
+<p>An Siwei bowed his head, clasped his hands, and said respectfully, “Second Young Master!”</p>
+<p>“Lord An…” replied the youth.</p>
+<p>The youth had a clean appearance and neat attire. There was nothing particularly remarkable about him except for his golden eyes, which fixed on him as he answered with a smile. He was none other than Li Zhouwei’s third son[2], Li Jianglong.</p>
+<p>The four younger brothers after Li Jianglong had not been named according to the Li Family’s second lineage conventions. No one dared ask, and none mentioned it. Now eighteen or nineteen years old, Li Jianglong’s cultivation had lagged behind his elder brothers. He was still only at the Qi Cultivation Realm.</p>
+<p>He blinked slightly and smiled. “I overheard that a great joyous event has taken place. I wonder, when will Father return?”</p>
+<p>“He should be back around soon.” Li Minggong replied.</p>
+<p>Li Jianglong shook his head. “That Daoist Wenhu truly doesn’t know how to give gifts. Perhaps he has never been so humiliated before. The item is a treasured panacea, though it looks to have sat for quite some time. Toss it in with the seized spirit items and send it all to the family.”</p>
+<p>An Siwei nodded in response and said, “I understand.”</p>
+<p>Li Minggong glanced at Li Jianglong with a faint smile. The youth had greeted them both warmly, then said he was going out to the islands to welcome his father. Looking quite delighted, he departed in quick steps.</p>
+<p>Li Minggong chuckled softly, “He meant well. Uncle refused Wenhu’s gift, but I ended up keeping it. Now that the item has gone missing, he fears the lord might think I accepted a bribe in secret, so he went out of his way to clarify.”</p>
+<p>Of course An Siwei understood, and with a look of approval, said solemnly, “The Second Young Master is generous and considerate, weighing matters carefully. It is a blessing for the family.”</p>
+<p>Not only Jianglong.Li Minggong answered in her heart, but aloud she said, “Jianglong and Jiangxia are older, and both already show promise. Jiangliang is a few years younger, but I have met him as well. Each of them has their own qualities…</p>
+<p>“All of Minghuang’s sons are fine talents. If they had been born in my Radiant Lure generation, the struggle between north and south would surely have fared much better. That would have been a true blessing.”</p>
+<p>She revealed a trace of sorrow, lowering her eyes gracefully so as not to appear discourteous before her elder. An Siwei, being older himself, dared not engage further in such topics. He merely clasped his hands and said, “I will go and prepare for receiving the Purple Mansion Realm guests upon the island. I consulted the family elders; holding it on the island would not be suitable. It has now been decided to take place at the Milin Mountain range, the most spacious place with the most balanced spiritual energy.”</p>
+<p>Familiar with household affairs, Li Minggong understood at once and said with a nod, “This is a fine opportunity to refurbish Milin Mountain, which has grown old and worn over the years. Since the matter of Mount Xiaoshi has been settled, I need not return there. It is just right for me to stay and lend some presence to the occasion.”</p>
+<p>An Siwei nodded, and they departed together. By the lakeside, the Milin Mountain range was already adorned with countless golden decorations. Cultivators moved up and down, and the air was filled with festivity.</p>
+<p>1. This is referring to Supreme Yang Resonance Li Art art. ☜</p>
+<p>2. Li Jianglong is referred to as the Second Young Master because to the public, Li Jiangqian(Li Zhouwei’s second son) is the first born instead of Li Jiang’ao(the first born). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1029.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1031.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

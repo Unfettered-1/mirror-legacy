@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1067: Matters Of Immortal Capital (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1066.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1068.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1067: Matters Of Immortal Capital (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Sumian smiled and said, “In truth, they are found all over Jiangnan. No one has attained Fruition in the Capital Guard Dao for many years, so it seems somewhat feeble. It shows little distinction until the Purple Mansion Realm, being mostly based on the spirits and souls of mountains and rivers. Jiangnan is full of them, but they are difficult to recognize. Most mistake them for Earth Virtue, Water Virtue, or substitutes of the Supreme Shaman and Hengzhu Dao, without recognizing their true nature.</p>
+<p>“The Xiao Family’s well-known Eastern Feather Mountain, the Descending Souls favored by Mount Yue, and the South Chou Waters[1] of the Lingu Family are all of this lineage. More famous examples lie beyond Jiangnan, such as Western Sky Plateau among the Baiqiang[2] and Northern Desert Court among the nomadic Di tribes.”</p>
+<p>These words rang true. The Li Family had long believed Eastern Feather Mountain to be an Earth Virtue Dao foundation, and had only learned of its Dao lineage in recent times.</p>
+<p>Clearly touched, Changxi said, “There are many fallen Dao lineages among the Immortal Foundations mistaken as substitutes. If Jiangnan had not produced the famed Duanmu Kui, cultivators would still regard the Locust Shade Ghost as nothing more than a Wood Virtue substitute, believing it bound to Lesser Yin and incapable of great achievement.”</p>
+<p>“Exactly so!” Sumian laughed heartily, “As long as the technique is powerful, how could the Immortal Foundation be inferior?”</p>
+<p>All three laughed, for they all understood that techniques and spell arts were the hardest to obtain. Unless there were extraordinary circumstances, no family would ever let a jade slip leave their hands. A family’s jade slips would be destroyed in advance before their destruction. If not for the Immortal Mirror passing down their law, the Li Family would still be practicing the River One Qi Technique.</p>
+<p>“No wonder it is called the Dao of the Capital. So it stems from the Capital Guard. I wonder what mysteries its divine abilities hold?”</p>
+<p>Sumian lowered his head to sip his tea, while Changxi spoke, “At Foundation Establishment Realm, it deals only with the miasma of mountains and rivers. By Purple Mansion Realm, it can command spirits and ward off evils. One can wield spirit arts to face enemies. Yet the Capital Guard is not considered aberrant at all within the Ancient Merging Techniques. Neither thunder nor heavenly light count as its natural enemies.”</p>
+<p>Li Ximing took note of this, but he still wished to inquire about Ye Hui’s divine abilities. He had asked Changxi earlier, but he did not know. He had hinted around the edges twice, yet Sumian refused to speak further.</p>
+<p>Does he truly not know, or does he simply refuse to speak, unwilling to entangle himself in matters between our two families? Indeed, he is a cautious old Daoist Master.</p>
+<p>The three chatted idly for a while. The cold rain in the courtyard grew heavier, dripping down from the eaves with a lonely sound. The fragrance of tea drifted in the air. Outside the courtyard, someone approached and spoke respectfully through the door, “Reporting to the honored Daoist Masters! Daoist Minghuang has already shattered the riverfront peaks of the Hidden Cloud Sect and slain Ping Yangzi of Tanshui Hill. He has now driven into the heartland, shaking the territory of Mifan. Cultivators from White Ye Stream have already mobilized!”</p>
+<p>“Good.” Changxi calculated the time with his fingers and measured the distance to determine the amount of time Li Zhouwei had taken to break the formation. He laughed and said, “Truly worthy of the Li Family’s White Qilin! Now Ye Hui will be forced to move!”</p>
+<p>Li Ximing stroked his beard with a smile, sighing inwardly,Here in the courtyard, we speak of idle matters with laughter amidst cold rain and brewing tea. Yet beneath the shadows of our Daoist robes, soldiers march, enemies are slain, and formations are broken. Tens of thousands are maneuvered, and the lord of a Foundation Establishment Realm domain becomes nothing more than a bargaining chip for merit. Cultivators depend on the river’s hegemon, who himself is but a bulwark and beacon tower…</p>
+<p>This is Purple Mansion… this is what it truly means to be a Purple Mansion Realm cultivator!</p>
+<p>Li Ximing had not forgotten how generation after generation of his family had drifted with the currents under the shadows of Purple Mansion Realm cultivators, serving as pawns in others’ struggles. From the moment Li Tongya first raised his head within Mount Huaqian, to the time Li Qinghong ventured alone into the Eastern Sea, the Li Family had been pushing him step by step into this very position.</p>
+<p>Exchanging divine abilities and the way of freedom for the peace and prosperity of ten thousand households.</p>
+<p>Li Ximing finished his tea and rose with Changxi to take his leave. Sumian knew they were heading toward the White River Stream territory and did not press them to stay. Instead, he asked Qiuxin to escort them out. This youth was likely a marital relative of the Kong Family and was quite close to Changxi.</p>
+<p>As soon as Li Ximing stepped out of the courtyard, Qiuxin spoke up, bowing respectfully to him, “There is one thing I must return to you, Daoist Master.”</p>
+<p>He produced an object from his sleeve, bowing low as he held it up in both hands. It was a small purple cauldron with two ears and three legs, its intricate patterns faintly wreathed in flame.</p>
+<p>On the cauldron were four characters, written in a vigorous, flowing script,Shengle Tuoba.</p>
+<p>Not daring to let Li Ximing ask first, he explained respectfully, “Years ago, when our temple was still in the Eastern Sea, I accepted an invitation from Xi Chang of the Chunyi Dao Gate to subdue demons near the Lake Xian estuary. Unexpectedly, I encountered a cultivator of your esteemed family, one skilled in thunder arts. We did not make things difficult and let her go, but an elder was left behind.”</p>
+<p>“He was slain by the Chunyu Dao Gate, yet this item remained with me. Today I will return it to you, so the matter may be settled.”</p>
+<p>Li Ximing did recall this matter. The elder had been Yú Yuwei of the Yú Family, whom Li Xizhi once mentioned as the maternal uncle of Li Quantao of the Azure Pond Sect. Qiuxin, or rather Sumian acting through him, had been uncertain of the connection and therefore returned the item.</p>
+<p>Li Ximing accepted it casually and replied, “This belonged to a Yú Family cultivator. If the chance arises, I will return it to his kin.”</p>
+<p>Changxi looked on cheerfully, his sharp eyes immediately noticing that Qiuxin bore injuries. He asked, “How did you come by that wound?”</p>
+<p>Qiuxin answered respectfully, “Replying to Daoist Master, the spirit mines at Quanyuan Ferry were taken over by a shoal of Xu Water Perch[3] from the sea. I was injured while rescuing people…”</p>
+<p>“Oh.” Changxi responded, “Those Xu Water Demon Perch have some backing. They harass the area often. It must have been hard on you.”</p>
+<p>Li Ximing now understood, though his face did not change. He only sneered inwardly,So this is an insinuation. But my family truly has no connection with the Dragon Clan! As for these Xu Water Demon Perch… what could I possibly do about them?</p>
+<p>————</p>
+<p>The territory of Hidden Cloud Cave.</p>
+<p>Hidden Cloud Cave lay slightly northeast and downstream of Floating Cloud Cave. The terrain there was far more varied; it was no longer a stretch of rolling hills. Flatlands lay level and calm, while several lofty peaks rose here and there. It was a fine region indeed.</p>
+<p>After passing the border at Tanshui Hill, several bustling cities came into view, full of crowds and lively activity. High above, Li Zhouwei rode a streak of light across the heavens, cloak fluttering behind his gleaming armor. A massive halberd was strapped across his body, while he carried a grisly severed head in his hand.</p>
+<p>The head belonged to Ping Yangzi, a devil cultivator from the Eastern Sea. His strength was decent, at the mid-stage of the Foundation Establishment Realm. He had been stronger than Wen Yi, but the mountain he occupied had only a Qi Cultivation Realm formation. Surrounded by Li Chenghui, Li Minggong, and the others, there was nowhere left to flee. Li Zhouwei had slain him with a single strike of his halberd.</p>
+<p>Having now crossed Tanshui Hill, the group had already pushed deep into enemy territory. Chaos raged in the cities below. Li Chenghui looked down with regret and said wistfully, “These cities are managed quite well. It is a pity we cannot take control of them. We must first strike the main peak.”</p>
+<p>Li Zhouwei nodded, making his own calculations, and said in a deep voice, “Hidden Cloud plundered the population of Floating Cloud and has not had time to manage it. Together with their original numbers, they must have a million people now. That is a weighty figure.”</p>
+<p>Population remained of great importance to the Li Family. For large families with Foundation Establishment Realm cultivators, there was no shortage of Embryonic Breathing Realm disciples or those cultivating various unrefined qi. What they lacked were people at the Foundation Establishment Realm. Even managing their own was difficult, which was why they had risked employing outsiders like Qu Buzhi.</p>
+<p>Large families with Foundation Establishment Realm cultivators not only had the chance to attract guest cultivators of the same realm but could also steadily produce mid- and late-stage Qi Cultivation Realm cultivators of proper orthodoxy. These formed the backbone of a family capable of overseeing a territory. The Li Family’s present state was nowhere close to that, since those at late-stage Qi Cultivation Realm numbered fewer than ten fingers, and those few were either aged and decrepit or direct descendants of the family.</p>
+<p>1. 南惆水 (South Chou Waters) reflects the classical naming system of 山水之陰陽 (“the yin-yang of mountains and waters”). In this tradition, 水南为阴 (“the south side of a river is Yin”). The character 惆 here is a proper noun element (Chou), not its literal meaning. ☜</p>
+<p>2. A tribe. ☜</p>
+<p>3. Xu Water ‘绪水 (Xùshuǐ)’ literally means “thread” or “origin water.” In place names or Daoist terminology it often conveys the idea of a water’s source or hidden origin, suggesting currents with mysterious beginnings. Thus 绪水妖鲈 (Xùshuǐ Yāolú) refers to demon perch that inhabit these “source waters.” ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1066.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1068.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

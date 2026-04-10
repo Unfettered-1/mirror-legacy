@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1046: Two Blessings At Once (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1045.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1047.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1046: Two Blessings At Once (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Ding Weizeng finally came back to his senses and bowed deeply. His throat had been restored by Li Ximing’s divine ability, allowing him to speak again, though his voice was still a little hoarse, “Weizeng thanks the Daoist Master. I will never forget this life-saving grace.”</p>
+<p>Li Ximing smiled and shook his head. “Your injury is too severe and has not yet fully healed. My Bright Yang is not a healing method, only an energy that fosters life. The qihai is one of the three mansions[1], and it is not something I can restore with mere words. I only sealed it temporarily.”</p>
+<p>Li Ximing’s own body was condensed from Bright Yang, and now could be destroyed and remade at will. But Ding Weizeng’s qihai was damaged, and it was impossible to treat without treasures such as an Earth-View Bloodstone or Heavenly Pure Origin. Heavenly Pure Origin was Purple Mansion origin water, which the Li Family naturally did not possess, though half a piece of Earth-View Bloodstone still remained.</p>
+<p>Yet Li Ximing had no intention of using such a treasure. He thought,It is only damage to the qihai, not the complete shattering of the mansion. Using an Earth-View Bloodstone would be wasting great material on a small matter. We just need to find a Purple Mansion Realm cultivator that’s good at healing to use their divine ability. It must not be wasted.</p>
+<p>Since the Li Family did not rely on blood qi, the Earth-View Bloodstone was even more precious to them. This was true even if it did not have so many uses.</p>
+<p>Li Ximing cherished it greatly and said, “I have my own methods for your qihai. As for your newly regrown eyes, without the nourishment of an Immortal Foundation, they will still need some time to temper.”</p>
+<p>“My thanks, Master,” said Ding Weizeng in a deep voice, bowing. He was much larger than ordinary men, and now that his restraints were undone, his broad frame, square jaw, and bristling beard made him look like a crouching tiger.</p>
+<p>Li Zhouwei was overjoyed at the sight. Feeling the White Shadow Gold Clasps hidden in his sleeve, he helped him up and said loudly, “In the battle at White River Stream, Fu Dou sought to kill me. You fought my clan uncle fiercely and even gained the upper hand for a moment. I remembered you from that day on. It seems we met through combat, but that too is a kind of fate. Your Palace Sun Tiger body is formidable. When Uncle Chenghui hears of this, he will surely be pleased.”</p>
+<p>Ding Weizeng was a handsome man. He had once thought himself a cripple, never expecting the Li Family to save him. Now that he understood, he naturally knew how to speak properly and bowed, “I greet the family head. In the past I served another master and did not recognize your esteemed presence. I have offended much.”</p>
+<p>The old man Qu Buzhi, who was also his friend, felt anxious as he listened, thinking to himself,This child… Floating Cloud Cave has already been destroyed, and still he clings to talk of the old master. He cannot bring himself to speak ill, since he grew up in Jiangbei…</p>
+<p>But Li Zhouwei said nothing more and only helped him up. Li Ximing watched and said with a nod, “Weizeng, go and wait at Zhijing Mountain.”</p>
+<p>He clasped his hands behind his back, flicked his sleeve, and vanished. Li Zhouwei, however, was more delighted than anyone else. Pulling the man’s hand, he led him to the front of the hall and whispered, “Weizeng, do not worry. Once you are healed, the White River Stream territory in Jiangbei will still need you to guard it.”</p>
+<p>The White River Stream territory was home to more than just Floating Cloud Cave! Ding Weizeng froze for a moment, the shock flickering only in his eyes without showing outwardly. Li Zhouwei understood at once that this man was not shallow in character, and his smile grew even broader.</p>
+<p>Ding Weizeng only spoke in a deep voice, “Many thanks, family head… I only fear that I may have offended the Daoist Master in the mountains. I wonder if there are any taboos I should be aware of…”</p>
+<p>“Our Daoist Master has an easygoing temperament. You may act easily, Weizeng.” Li Zhouwei motioned for someone to escort him away.</p>
+<p>Qu Buzhi stood watching eagerly from the side. The old man was not skilled in combat, but he had a real talent for surveying geomantic lines and nurturing spirit fields.</p>
+<p>Since Li Zhouwei did not know his temperament, he did not want him lingering on the island and simply ordered, “The territory of Floating Cloud Cave is in ruins. My family uncle has already gone back to where he came from. Elder Qu, since you are familiar with its spirit fields, go there first and lend your aid.”</p>
+<p>Qu Buzhi was shrewd. As soon as he heard this, he dropped to his knees with a thud and wept as he declared, “I, Qu Buzhi, have lived a wretched life. Even in Floating Cloud Cave, I was no more than a soft persimmon for others to squeeze. Yet now, I’m entrusted with such a task from an immortal family who values me. From this day on, I shall look only to the Daoist Master and the family head, never harboring divided loyalty!”</p>
+<p>Li Zhouwei dismissed him and felt greatly relieved. The old woman, Jiang Huzi, was still watching nearby. She had an aura of pure qi and was advanced in years, so Li Zhouwei spoke to her with more respect, “Where will you go, elder?”</p>
+<p>Jiang Huzi coughed once and replied, “I do not have many years left. I only wish to find a small mountain among the eastern families to settle down, make some talismans for a living, and finish out my remaining days.”</p>
+<p>Li Zhouwei nodded, but he did not want to let her go so easily. Smiling, he said, “Elder, your talismanic arts are too valuable to be lost. Do you intend to leave behind a Dao lineage?”</p>
+<p>Jiang Huzi hesitated at those words. After several seconds, she nodded, and Li Zhouwei continued, “In that case, I shall search among the families around the lake for cultivators with an innate ability in the talisman Dao. Elder, you may examine them, accept ten or so as disciples, and pass down the Dao to the most outstanding.”</p>
+<p>Jiang Huzi agreed gently, and Li Zhouwei allowed her to leave. The brothers Wen Yi and Wen Shan also gave their thanks and withdrew. Only a group of Qi Cultivation Realm disciples remained in the hall, who naturally had nothing important to say. Li Zhouwei selected a few who seemed clean enough and handed them over to Qu Buzhi for work, while the rest were all taken away.</p>
+<p>The hall grew empty. Li Zhouwei exhaled and turned to Li Minggong. “Aunt… Jiang Huzi’s origins are unknown. We must keep a closer watch on her.”</p>
+<p>“I understand,” nodded Li Minggong. She had gained the most from this Dharma Assembly. The Golden Feather Sect’s Six-Cornered Scarlet Flame Lamp was no simple treasure, and her strength had increased by more than a single level.</p>
+<p>After a moment of thought, Li Zhouwei added, “Though the brothers Wen Yi and Wen Shan are weak in cultivation, their backgrounds are unclear. We must observe them more closely in the western mountains…”</p>
+<p>Now that Li Ximing had broken through to the Purple Mansion Realm in a single night[2], the Li Family had ascended to the ranks of the immortal families. They could now confidently recruit Foundation Establishment Realm cultivators as guest cultivators. As for people like Qu Buzhi and Ding Weizeng, they had little chance of wavering. The family’s manpower suddenly became much more abundant.</p>
+<p>“Aunt…”</p>
+<p>Before he could finish, both of them looked up in surprise, their gazes turning toward the horizon beyond the hall.</p>
+<p>In the very next instant, Li Zhouwei’s figure, wreathed in dazzling and radiant heavenly light, appeared in midair. All the Foundation Establishment cultivators around the lake, and even those in the late stages of Qi Cultivation Realm, lifted their heads to look west.</p>
+<p>At the boundary between light and shadow in the western sky, floating clouds gathered into a vortex. From the center of the cloud eye, a milky-white pillar of light shot straight into the heavens, illuminating the entire west.</p>
+<p>Li Minggong was a step slower as she stepped through the air. After observing for a second, she spoke with slight surprise, “A Purple Mansion Realm cultivator has failed in attempting the Golden Core Realm.”</p>
+<p>“That’s right.” Li Zhouwei gazed into the distance and replied, “It is in the direction of Mount Changhuai.”</p>
+<p>The morning sun was slowly rising in the east, clearing heaven and earth. It was as if a heavy pressure had lifted from the heart, and distant things appeared sharper. Morning mist spread across the land, and the spiritual energy tasted fresh and sweet.</p>
+<p>Li Minggong lifted her head to look, only to find her mana surging within. Li Zhouwei’s golden eyes flickered as he exclaimed in surprise, “The spiritual aura of Jiangnan… has changed…”</p>
+<p>More than thirty years ago, the spiritual energy of Jiangnan had already turned into Upper Evil Spirit Storage. It aided Earth Virtue cultivators, devil cultivators, Mansion Water[3] cultivators, and blood qi cultivation, while suppressing ancient immortal Dao cultivators. Yet this had little to do with the Li Family, for the Purple Mansion and Golden Core Daos were not considered the ancient immortal Dao. In fact, cultivation with blood qi had even quickened in recent years.</p>
+<p>As he felt the pure spiritual qi rising through heaven and earth, Li Zhouwei looked at Li Minggong and said, “The spiritual energy has only been altered for just over thirty years. It should be at its peak right now, and yet it has already changed again…”</p>
+<p>Li Zhouwei nodded and added, “The fall of a cultivator at Mount Changhuai is no trivial matter. We must consult the Daoist Master about this.”</p>
+<p>He sent someone to Zhijing Mountain, then descended into the courtyard together with Li Minggong. Just as he was about to speak, he suddenly frowned. His golden pupils dilated sharply, fierce light flashing within, while the Heavenly Radiance, Hidden Light at the center of his brows began to glow faintly as he stared at the hall doors.</p>
+<p>1. Referring to the three acupoints. ☜</p>
+<p>2. Just a description, not literally. ☜</p>
+<p>3. One of the water virtues. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1045.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1047.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

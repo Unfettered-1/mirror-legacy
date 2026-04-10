@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1052: The Beginning Of The Immortal Family (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1051.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1053.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1052: The Beginning Of The Immortal Family (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>At Moongaze Lake, within Vermilion Bud Pavilion.</p>
+<p>The bluish stone lanterns shone with a hazy glow, as they were reflected upon the ink-black waters of the lake. The night was heavy and deep.</p>
+<p>Li Quewan withdrew her technique and stood in the pavilion for a moment. With her own Daoist Master breaking through, the Bright Yang energy over the lake was too intense and its transformations uneven. Cultivating the Whole Pill Dao was better in the dead of night, so she had altered her practice hours. Now that her training was finished, the night lay pitch-black around her.</p>
+<p>“Big Sister Quewan!”</p>
+<p>Just as she rested, a flying shuttle skimmed across the lake, carrying someone who then landed before her. It was her younger distant cousin from the same bloodline, who had been cultivating on the island. Li Queyi was dressed in a pink dress, with a round face and dainty ears, looking delicate and endearing.</p>
+<p>She smiled and said, “Congratulations, Sister. The elder brothers have all been released!”</p>
+<p>“What?!” Li Quewan had been filled with worry, and had half-convinced herself that she was going to be summoned to Mount Qingdu. She had not expected such good news. Yet her joy flashed by in haste, replaced at once with unease.</p>
+<p>She asked, “How were they interrogated?”</p>
+<p>She understood why Li Zhouluo had delayed dealing with this matter, and feared all the more that he might recklessly suppress it, which would truly harm her… but Li Queyi only smiled and said, “Sister, do not worry! Great Uncle Chenghuai has successfully broken through and now presides over Qingdu. He exposed Li Dongdi’s lies with the Untraceable Presence truth-seeking talisman, and the rumors crumbled on their own!”</p>
+<p>Li Quewan’s eyes curved with sudden delight as she exclaimed, “Great uncle has broken through! That is truly wonderful!”</p>
+<p>Li Queyi paused slightly before continuing, “Along with that, several dozen people were seized, including outsiders, collateral branches, and even direct descendants. They have now all been confined within Qingdu’s Water Mansion.”</p>
+<p>Li Quewan’s joy quickly faded. She said gently, “I entered the island and rose to Qingdu as one from the collateral branch, standing alongside the eldest son[1]. Such a matter was bound to stir criticism and jealousy. We must not be too severe, or else the family will fall into chaos, and the fault will become mine instead.”</p>
+<p>Li Queyi froze for a moment. She too was of the first lineage of the major branch, and she shared a close bond with her cousin. She had long felt resentment in her heart.</p>
+<p>Her delicate brows furrowed as she said, “Sister, you overestimate them. They are nothing but insignificant figures.”</p>
+<p>Li Quewan only shook her head. She rose from the pavilion, intending to go pay respects to Li Chenghuai at Qingdu, when suddenly a man in black rode the wind over and landed before her. It was Chen Yang.</p>
+<p>“Greetings, Miss.” Chen Yang cupped his hands in salute and, without waiting for Li Quewan to speak, said in a deep voice, “The family head summons you. Please come with me into the island.”</p>
+<p>Li Quewan dared not delay as she rose on the wind. When they arrived at the hall within the island, she saw two youths waiting outside. One was neatly dressed, with ordinary features. The other, however, was bold and valiant in appearance, with thick brows and clad in armor. Both of them bore golden eyes.</p>
+<p>“Greetings, cousin!”</p>
+<p>Both of them spoke at once, and Li Quewan hurriedly nodded in response. The two before her were the second young master Li Jianglong and the third young master Li Jiangxia. They were both younger than her at only eighteen or nineteen years old, and both practiced the Bright Yang method.</p>
+<p>The fourth young master, Li Jiangliang, was still too young, but the two present were both formidable figures. Li Jianglong enjoyed a reputation in the family for being virtuous and magnanimous, while Li Jiangxia had already gained authority. He had been managing the families along the eastern shore only a few days ago, and had only returned because of the Purple Mansion Dharma Assembly.</p>
+<p>Upon seeing Li Quewan, Li Jiangxia laughed heartily, “It has been so many years since I last saw you, cousin! It’s a pity that I will likely have to bid farewell to my father and go take charge of the lands east of the riverbank now that the Xiao Family has returned them. I will have few chances to speak with you again.”</p>
+<p>Compared to his elder brother, Li Jiangxia was clearly more cheerful, more striking in demeanor, and harsher in conduct. For that, he was more favored by Li Zhouwei, had risen early, and was entrusted with important duties.</p>
+<p>Li Jianglong, on the other hand, was more reserved. He inquired after Li Quewan’s elder brothers, and she answered him quickly. They were soon summoned and the three of them proceeded into the hall together.</p>
+<p>The hall was brightly lit. Li Zhouwei was still holding a vermilion brush, marking things on a scroll. The Purple Mansion Dharma Assembly had ended and left behind chaos. He had to record who had sent gifts in return, who had offered congratulations, whether the gifts had been weighty or light, who had failed to attend, and who had left midway. Clearly, it was not something easily managed.</p>
+<p>When he saw the three approach, Li Zhouwei finally set down his brush. Looking first at Li Quewan, he said quietly, “Quewan, I heard from Uncle Chenghuai that the family’s affairs have been settled. In the coming days, your brothers will be sent to Mount Qingdu, to do some work under the Elder on Talisman Peak. It will help ease his boredom.”</p>
+<p>The Elder naturally referred to Li Xuanxuan. After this ordeal, her brothers’ businesses were ruined even if they had been released from Qingdu, so such an arrangement was already quite suitable.</p>
+<p>Li Quewan respectfully replied, “Many thanks, family head!”</p>
+<p>Li Zhouwei nodded. “There has always been gossip in the family. The struggles for power in the sixteen prefectures are always talked about one way or another. You need only cultivate well at Vermilion Bud Pavilion.”</p>
+<p>Li Quewan quickly agreed. Li Zhouwei then turned to his two sons, handed over a jade pendant, and instructed, “Jiangxia, the Xiao Family has relinquished seventy-nine households east of the riverbank. Take this order to Qingdu, obtain the Immortal Registry, appoint a few Peak Guardians, estate stewards, and guest cultivators, then make a trip and put everything in order.”</p>
+<p>“Yes!” Li Jiangxia’s eyes lit up at once, eager to act, while his elder brother Li Jianglong only lowered his head in silence.</p>
+<p>Li Zhouwei picked up his brush again without lifting his head and asked, “Do you have any thoughts?”</p>
+<p>Without even thinking, Li Jiangxia respectfully replied, “I have long thought of it. Apart from the offerings, first station the guards in the eastern shore, forbid consuming blood qi and rice meat, and consolidate the households. Then open a marketplace for trade, and establish a palace in Milin Prefecture to govern the one hundred and eighteen households on the eastern shore.</p>
+<p>“Every five years, let the one hundred and eighteen households each send twenty-four people to cultivate at Milin Mountain. Their treatment will be tied to the family. Those who succeed in cultivation will serve as stewards of our estate or as guest cultivators. Those who fail will return to their families to manage affairs.”</p>
+<p>Li Zhouwei paused his brush and asked casually, “And if they do not wish to stay?”</p>
+<p>Li Jiangxia frowned and answered, “Then let them return to manage their own families.”</p>
+<p>Li Zhouwei glanced at Li Jianglong, who stood quietly to the side, and said, “Jianglong, let us hear your thoughts.”</p>
+<p>Li Jianglong saluted respectfully and said, “Family head, in my opinion, third brother is right. Milin Prefecture lies empty and is suited to shelter the talents of each household. It is only that the wording should be more agreeable. Once they attain the Qi Cultivation Realm at Milin Prefecture, they should be considered free. They may choose to remain in the family, stay in the mountain, return to their own homes, or venture out into the wider world.”</p>
+<p>Li Jiangxia understood at once and laughed, “I was lacking in consideration. Brother’s way of putting it does sound much better.”</p>
+<p>How could the meager and narrow land of those one hundred and eighteen households possibly support cultivators in Qi Cultivation Realm? At most, a family head was the limit of their strength. Even if they wished to return home, there would be no means to sustain themselves. They would have no choice but to remain by the lake to protect their own kin.</p>
+<p>Besides, the Li Family never restricted lake cultivators from venturing out. They would realize the bitter hardships of rogue life after only a year or two on their own. There was no spiritual energy to cultivate nor any Spirit Paddies to nourish them. They would be forever hiding and wandering in distress. Naturally, they would return when the Li Family provided techniques for cultivation.</p>
+<p>1. Referring to Li Jiangqian. Even though he was the second son, he was known as the first son of Li Zhouwei in public. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1051.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1053.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

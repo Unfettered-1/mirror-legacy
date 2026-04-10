@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1015: The Sky Grew Bright (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1014.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1016.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1015: The Sky Grew Bright (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>One day, while she was weaving at home, Lu Sheng burst in with his face flushed red and his body reeking of wine. He pushed open the door, seized their young son from the bed, and glared coldly, shouting, “You have not eaten for three years! What demon are you? This child wears human skin, but who is to say he is truly human? The Exalted Immortal on the road has told me long ago that you feed upon my official fortune by sharing my bed!”</p>
+<p>The man was tall and brawny, his fury unrestrained. He seized the child and lifted him overhead in one motion. Li Ximing could not stop him, and Lu Sheng shouted, “Speak!”</p>
+<p>When she still would not speak, Lu Sheng hurled the boy with all his strength. The child struck the stone with a sickening crack, his skull shattering and brains spilling out.</p>
+<p>Li Ximing felt a surge of blood rush to his head. The chill in his mouth surged violently and his throat made faint sounds. It was as if she had been struck by lightning, and after a long struggle she finally uttered, “Puh…”</p>
+<p>His[1] face alternated between ash and green, until he spat out a mouthful of blood, half his tongue with it, all mingling into a dark crimson pool that flickered in and out before his eyes.</p>
+<p>He lifted his head. Lu Sheng’s furious visage was reflected in his eyes, yet it grew farther and farther away as he rose weightlessly, swiftly leaving behind these endless illusions.</p>
+<p>The icy current rushed straight into his mind, and everything before his eyes faded into boundless darkness. All of his memories returned to him, and Li Ximing felt his entire body grow lighter.</p>
+<p>The ice and snow within the Juque Court[2] melted rapidly. Fierce flames burst into existence, filling the aperture. Li Ximing felt as though he was rising from endless darkness toward infinite light. The gardenias were blooming, the camel bells were ringing, and his vision was dazzlingly bright.</p>
+<p>Boom!</p>
+<p>He felt himself enter the realm where boundless truths dwell. Darkness stretched around him, the stars above drawing near and far, and he could make out countless figures seated in meditation within the great void.</p>
+<p>He soared until he reached the pinnacle of the great void, where clouds and mist shrouded innumerable remnants. Spiritual energy grew ever thinner, as the great void itself narrowed and fractured into ashen gray. His eyes burned with pain, and he plummeted back down.</p>
+<p>Below lay an endless desert, with towering passes upon it. A celestial gate stood majestic with seventy-two ridges clear upon its towers. Its white base was carved with countless patterns, and it was shining with radiant light.</p>
+<p>His consciousness fell endlessly, plunging through the celestial gate and into its deepest recesses, until at last he dropped out of the boundless great void and back into his body manifested in the world.</p>
+<p>Li Ximing abruptly opened his eyes. Before him lay dim darkness. Sparse grasses and trees swayed as droplets of snowmelt dripped with soft sounds.</p>
+<p>The jet-black jade box upon the golden desk before him had been shattered by mana, leaving pieces scattered across the ground. The jade bottle that had held the Radiant Violet Pill had long since flown into some unknown corner.</p>
+<p>The mountaintop was in ruins, as if ravaged hundreds of times by demonic creatures. Jade pillars were lying collapsed everywhere, with the tallest lying broken beside him. The inscriptions he had left were dim and obscured by creeping vines.</p>
+<p>The formation lines that gathered spiritual qi on the ground lay broken and in disarray. Bathed in radiant light, plants had grown wildly and nearly covered the entire peak. Tiny golden sparks littered the earth, and wisps of golden-white mist drifted back and forth.</p>
+<p>It was the darkest hour of the night. The stars were few and dim, yet pure moonlight streamed down. The golden-white mists on the ground glowed faintly, exuding a strange and haunting beauty.</p>
+<p>Rustle…</p>
+<p>Li Ximing rose from the ground as withered leaves fell from his body with a dry rustle. The youth’s pupils no longer reflected heavenly light. No radiance encircled his movements, and his golden-white Daoist robe even seemed somewhat plain. He seemed younger than before, his skin paler and fairer.</p>
+<p>Li Ximing seemed little changed from before, save for a small white-golden mark at the center of his brows. Neither painted nor dotted, it shone dazzlingly like heavenly light, illuminating all directions.</p>
+<p>Li Ximing remained motionless for a long time. Rings of multicolored radiance slowly spread outward behind his head. The brilliance of the Bright Yang divine ability emerged beside him, cloaking his form as he soared skyward, rising more than nine feet high.</p>
+<p>At last, he moved his lips and teeth to release the heavenly light.</p>
+<p>Before the heavenly light even touched the ground, purple flames ignited out of thin air, slithering and soaring through the air like serpent dragons. The flames were purple on the outside and golden within as they blazed. Specks of golden heavenly dust drifted around the dazzling flames, shimmering as they spread in all directions, carried by the fiery wind.</p>
+<p>The purple flames spread along the ground, setting the entirety of Mount Wu ablaze in just a breath. As the purple fire surged outward, clusters of gardenia trees sprouted from the earth, rising tall with broad canopies. White blossoms fell among the dancing flames, scattering across the ground like snow.</p>
+<p>Billowing purple and golden flames surged into the sky, their radiance brightening the heavens before dawn could. Brilliant dawn was already rising quickly in the distance. Purple flames surged skyward across the mountains, and Li Ximing, shrouded in the radiance of Bright Yang, stood beneath the gardenia trees as white petals rolled endlessly across the ground.</p>
+<p>The first wisp of morning sunlight pierced through the formation and fell into his pupils.</p>
+<p>That first ray of sunlight was trapped within his eyes. His gaze turned pale-golden, brilliance flowing within. His Great Fissure golden pupils instantly reached ultimate perfection.</p>
+<p>His golden eyes slowly lifted beneath the firelight and gazed toward the distant south. Above his head, the clouds dispersed and released a flood of radiant white light.</p>
+<p>“The day has dawned,” murmured Li Ximing.</p>
+<p>————</p>
+<p>Moongaze Lake.</p>
+<p>Snow had fallen over Moongaze Lake. The moonlight was bright, and the moon was mirrored on the cold surface of the lake. The evening wind swept through, causing the water to ripple with shimmering light. Streams of light flew back and forth across the sky, lending the scene a touch of celestial majesty.</p>
+<p>It was the hour of the rat[3]. Most of the lights around Moongaze Lake were extinguished, yet the many cultivators patrolling and guarding the waters had not rested. They flew back and forth above the lake, like ribbons of color weaving through the night.</p>
+<p>Mount Qingdu’s greenery had grown luxurious over the years. A side peak contained the intricate and rustic Talisman Pavilion, crafted from redwood. Before it, an old man washed his inkstone, carried the ink inside, spread talisman paper upon the desk, and paused with brush in hand.</p>
+<p>The old man was always busy. Though the night was late and the hour of the rat had arrived, his brush had not stopped. Stroke by stroke he drew talismans, watching as crimson lines slowly appeared on yellow paper. Exhaling softly, he finished yet another talisman.</p>
+<p>Li Xuanxuan put it away, then suddenly noticed a brightness before him. He casually snuffed out a few spirit lamps, only to sense something amiss. He muttered to himself, “Where is this light coming from…”</p>
+<p>He lifted his brows and looked out. Already more than a dozen cultivators stood scattered across the lake, near and far, all staring dazedly toward the east. Golden radiance cloaked their bodies, their shadows stretched long upon the water.</p>
+<p>The old man’s gaze shifted, and at last he beheld the brilliant golden dawn rising. The golden radiance was reflected in his clouded eyes. With a snap, the talisman brush in his hand fell onto the desk, rolled twice, and stained the talisman paper with ink, ruining the sheet.</p>
+<p>Yet Li Xuanxuan seemed not to notice. He had one hand braced against the window as his aged face was bathed entirely in golden dawn. Tears welled in his eyes as he forced them shut, his breathing ragged.</p>
+<p>On the twenty-second day of the winter month, at the hour of the rat, the moonlight over Moongaze Lake receded, and the sky grew bright.</p>
+<p>1. Going back to the male male pronoun. ☜</p>
+<p>2. This is the Juque Acupoint. ☜</p>
+<p>3. In Chinese astrology, the ‘hour of the rat’ refers to the time period between 11:00 PM and 1:00 AM. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1014.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1016.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1010: Seclusion (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1009.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1011.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1010: Seclusion (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Mount Wu.</p>
+<p>Mist-like spiritual energy drifted in all directions, flowing along the patterns carved into the jade stone. At the highest point, all the gathered auras converged atop a jade pillar beneath the radiant morning light.</p>
+<p>Li Ximing sat upright upon it, his pale-white Daoist robe embroidered with golden patterns fluttering gently. His cultivation had reached its peak. Though the Jewel Steps technique was difficult, he had discovered that as his cultivation deepened, it could be constantly cross-referenced with the Huai River Map, an ancient spirit artifact of the Purple Mansion Realm from years past, making his progress much easier.</p>
+<p>Now, after years of cultivation, and having encountered several moments of profound enlightenment thanks to his past fortunes, his progress had not been slow. That very morning, with brilliant sunlight and pure energy in the air, he happened to complete this secret technique.</p>
+<p>The Jewel Steps is a secret technique for cultivating mental fortitude and enhancing spiritual sense. With the Radiant Origin Pass as its wondrous method, its radiance can illuminate the entire mountain, allowing a cultivator’s mana to remain clear wherever it reaches, free from the scourge of inner demons,thought Li Ximing.</p>
+<p>The Jewel Steps manifested upon his Immortal Foundation. If he were to unleash the Radiant Origin Pass now, both side towers and the central radiant gate would have faint, illusory Jewel Steps. Knowing this well, Li Ximing chose not to activate his Immortal Foundation.</p>
+<p>This could be troublesome… I wonder how much the sects know about Minghuang’s Immortal Foundation. The Jewel Steps are clearly different in some aspects. If they have the records left by Wei’s Li from those years, they might see through the fact that I’ve cultivated it.Li Ximing murmured inwardly, thinking to himself,I fear it would be unwise to engage in any more duels…</p>
+<p>He let out a long breath, raising his head to glance at the dripping water clock beside the jade pillar, where fifty-four round jade pearls lay piled together in the tray below.</p>
+<p>I originally estimated it would take ten years to master, yet it took barely half that time,thought Li Ximing.</p>
+<p>That was a good thing. Li Ximing withdrew his gaze, took out a pale-purple jade slip, and flipped it over to read. The next secret technique was the Great Fissure.</p>
+<p>This secret technique was related to perception technique arts. Its text was much lengthier, and nothing was familiar to him. Li Ximing skimmed it briefly, then froze and thought,Its difficulty is several times greater than the Jewel Steps… and if I account for the mutual repulsion between certain secret techniques, the time it will take becomes even harder to estimate!</p>
+<p>Moreover, Li Ximing reckoned that the Huai River Map from back then was a Purple Mansion Realm spirit artifact connected to both the Radiant Origin Pass and the Everbright Platform, which had greatly benefited his cultivation of the Jewel Steps. The Great Fissure clearly had no such link, and he could no longer rely on that fortune.</p>
+<p>To cultivate this set of secret techniques in earnest would take at least twenty or thirty years! And if I encounter any part I cannot comprehend, who knows how much longer it might be delayed!thought Li Ximing.</p>
+<p>Having made his estimate, Li Ximing put away the jade slip, rose from the jade pillar in a flash of light, and passed through the formation. The morning light was at its brightest as he flew into the island, where all the cultivators before the great hall lowered their heads in greeting.</p>
+<p>Li Ximing strode into the hall and did not see Li Zhouwei around. Instead, a young man in black robes and silver armor was standing in the hall, six long and elegant silver-white ancient tokens hanging at his waist.</p>
+<p>The man was not especially tall, but his armor set off his shoulders to appear broad. His features were refined and his dark and striking eyes were especially captivating. There was a faint purple mark between his brows as he stood bathed in the brilliant morning light.</p>
+<p>So familiar!thought Li Ximing.</p>
+<p>Li Ximing halted mid-step. Although this youth was only at the early stage of the Foundation Establishment Realm, his bearing was far from ordinary. The young man looked up at him with joy in his eyes, clearly recognizing him at a glance, and said with a bow, “Chenghui greets Uncle!”</p>
+<p>“Chenghui! Good…” Li Ximing had noticed the six command tokens at the youth’s waist and guessed his identity. Now that it was confirmed, he was overjoyed as he nodded repeatedly. He stepped forward, took the young man’s hand, and sat down with him, praising, “Good, good, good! You’ve broken through to the Foundation Establishment Realm. Now, our Radiant Lure generation finally has someone to carry the torch! And you’re just past fifty! Opportunities are hard to measure. Back then, I thought few among you could break through, yet with the Falling Water Rising Storm, you didn’t even need to use the Essence Gathering Pill!”</p>
+<p>It was the first time Li Chenghui had spoken with this elder in such a manner. He sat down at the edge of the chair and replied respectfully, “Uncle, Brother Chenghuai has already entered seclusion in the island, and Brother Chengliao will likely emerge soon. I acted rashly and merely seized the opportunity ahead of them.”</p>
+<p>Li Ximing shook his head in reply.</p>
+<p>Although Li Chenghui was ranked among the top in innate ability within the Radiant Lure generation, he had not obtained an abundance of resources along his cultivation path. He had gone to an island to cultivate during the Falling Water Rising Storm in the Eastern Sea, but encountered great upheavals before and after. Sometimes, he had even lost all contact, let alone receiving much support from the family.</p>
+<p>When it finally came time for his breakthrough, even the family’s Essence Gathering Pill had not been given to him. Though a direct descendant, his resources were not even on par with those of An Siwei and a few others. His situation was almost like an exile. While Li Ximing did not manage the household, he had heard Li Xuanxuan complain about it dozens of times and was well aware of the truth.</p>
+<p>“You’ve been wronged all these years!” said Li Ximing.</p>
+<p>“Uncle, you overstate it.” The words made Li Chenghui uneasy. The light in his eyes dimmed as he said solemnly, “Our brothers went to the front lines to kill the enemy, and eight out of ten did not return. I, however, sat quietly by the sect’s spring and only focused on cultivation. How could I dare harbor resentment in my heart? To receive the Sixfold Profound Thunder Punishment Tokens right after reaching the Foundation Establishment Realm feels far too heavy for me.”</p>
+<p>Relieved, Li Ximing chatted with him for a while. Looking into his eyes, he found them almost unnaturally black, carrying a faintly captivating quality, and asked, “Have you cultivated any perception techniques?”</p>
+<p>Li Chenghui nodded quickly and replied, “Uncle, during my decades overseas, I gained some opportunities and cultivated the Yinming[1] Profound Eyes. The cultivation method has already been sent home.”</p>
+<p>Li Ximing nodded in satisfaction, while Li Chenghui spoke with slight embarrassment, “This perception technique requires the Linmu[2] Profound Liquid to refine. This spirit water is usually only found in the Mu Sea. When I had the opportunity, the portion I obtained was used by me first and not left for the family…”</p>
+<p>Li Ximing gave him a surprised glance and simply said, “It’s nothing. Your opportunity is yours to use.”</p>
+<p>Aside from Li Zhouwei, those in the Radiant Lure and Celestial Whirl generations who had not received talisman seeds generally performed in an unremarkable manner. Li Ximing had not expected Chenghui to have changed so greatly, and was quite pleased. He offered some encouragement by saying, “Back then, Lord Tongya only began to show his true brilliance in his thirties. Keep working hard.”</p>
+<p>Ignoring Chenghui’s modest words, he asked, “Where is Zhouwei?”</p>
+<p>Li Chenghui replied softly, “Uncle, the family has found a spirit jade vein in the Helin Mountain Range. The patriarch sent people to investigate, and its reserves are sufficient to craft the White Jade Grand Court required for the Dust of the Court[3] of the Aged Courtly Path Scripture.</p>
+<p>“However, with jade in abundance inland, that vein is currently occupied by a demonic creature of the Jade True Dao lineage. It has taken over the mountaintop and drives a group of lesser demons, so the family head must make a trip himself.”</p>
+<p>Li Ximing frowned and said softly, “Just be cautious, and don’t fall into a trap.”</p>
+<p>1. 殷 (yīn) can mean ‘abundant,’ ‘prosperous,’ ‘deep/dark red,’ or be used as a surname (also the name of the Shang dynasty in its later period). It can also carry a sense of ‘earnest’ or ‘sincere’ in some contexts. 明 (míng) usually means ‘bright,’ ‘clear,’ ‘understanding,’ or ‘illuminated.’ ☜</p>
+<p>2. 鳞 (lín) means ‘scales,’ especially fish or reptile scales. Often used in compounds referring to aquatic or dragon-related beings. 穆 (mù) means ‘solemn,’ ‘reverent,’ ‘harmonious,’ ‘majestic,’ or as part of a proper noun (sometimes in place names, dynasties, or family names). ☜</p>
+<p>3. This term appeared in Chapter 792: Molten Fire Dao (II). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1009.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1011.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

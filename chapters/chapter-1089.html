@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1089: The Battle Of Golden Tang (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1088.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1090.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1089: The Battle Of Golden Tang (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Golden Tang Gate!”</p>
+<p>An Siwei’s expression changed sharply. Li Minggong hesitated briefly, then retrieved another jade pendant and crushed it, signaling the Qi Cultivation Realm cultivators in the territory to retreat to Floating South’s main peak for safety.</p>
+<p>She ordered, “Just withdraw the people and defend from within the formation. The harvest in Floating South’s territory has already been collected; losing a few years’ worth is no big deal. Situ Mo has backing; he knows better than to touch the spirit vein.”</p>
+<p>Li Zhouwei had in fact already discussed matters regarding the Golden Tang Gate with Li Minggong and Li Chenghui, so this development was not entirely unexpected.</p>
+<p>The Golden Tang Gate had declined from its former glory as the foremost gate of Xu State since the death of Situ Tang. It had once boasted three Purple Mansion Realm cultivators. When the Li Family achieved the Dao, they had heard of the Golden Tang Gate’s young master’s reputation, but by then the gate was a mere shell of its former self, rotting away day by day.</p>
+<p>After the Lixia disaster passed and Chi Wei died, the gate’s only remaining Purple Mansion Realm cultivator, Situ Huo, offended Xiao Chuting, who had achieved the Dao through the Life Divine Ability. As a result, he dared not even return to Jiangnan or Jiangbei. The Golden Tang Gate became nothing more than a stage for the struggle between the Azure Pond Sect and the Golden Feather Sect. Later, it had been battered by the conflict between the northern and southern factions. To put it bluntly, the current Golden Tang Gate could not even compare to Profound Peak Gate.</p>
+<p>There were only a handful of guest cultivators, who were hardly worth mentioning. The gate had merely two newly advanced Foundation Establishment Realm disciples. Only Situ Ku and Situ Biao were worth noting, and the former had already been captured by Li Zhouwei, leaving even the gate’s seats in council half empty. The only one truly worth fearing was the gate master, Situ Mo.</p>
+<p>As Li Minggong led her people back, she said quietly, “Situ Mo is a cultivator from the same generation as my grandaunt. He is exceedingly suspicious and treacherous. Years ago, when a senior of ours visited Golden Sack Island of the Golden Tang Gate with a bow and slew Ewu, he was so terrified that he didn’t dare leave the island for over twenty years. It was only after confirming that the senior was no longer in the Eastern Sea that he fled back to Golden Tang Gate in panic.</p>
+<p>“He did not dare take a single step beyond the gate until that senior fell. Only then did news of him surface again. If he has crossed the mountains now, it seems he does possess some measure of courage.”</p>
+<p>At the mention of that name, An Zheyan, who stood nearby, showed a look of reminiscence. After swallowing a pill, he said, “I once discussed this man with Elder Xuanxuan. His uncle is Ji Dengqi, a remarkable figure in his own right.”</p>
+<p>An Zheyan spoke on the matter with authority. In his days as head of the An Family, he had not only conversed with the Ji Family Head but had even participated in a siege against Ji Dengqi himself.</p>
+<p>On the other hand, Li Minggong was unfamiliar with the man and simply said, “Situ Mo has lingered at the peak of the Foundation Establishment Realm for decades and may even have cultivated secret techniques. The Golden Tang Gate’s Heavenly Lustrous Gold Sutra is a renowned Geng Metal technique. It will be difficult to hold our ground here with just the few of us. I have already sent for reinforcements.”</p>
+<p>No sooner had she finished speaking than a flash of light burst over the main peak of Floating South. A tall man streaked into the formation in a blaze of dark red radiance. His bold brows lifted as he clasped his hands together and spoke in a deep voice, “Weizeng greets you, my lady!”</p>
+<p>“You came at just the right time!” Delight appeared on Li Minggong’s face as she beckoned him over. But even before he could step forward, golden radiance streaked toward them from the horizon.</p>
+<p>An Siwei frowned and said, “So fast…”</p>
+<p>Ding Weizeng scanned the skies and immediately recognized the incoming force. He reached into his storage pouch and drew out a bright red staff, planting it firmly on the ground. Fine, intricate runes emerged beneath his crimson armor, crawling up his arm and gathering densely in his pupils.</p>
+<p>Ding Weizeng said, “It’s the Situ Family!”</p>
+<p>It was no surprise that Ding Weizeng recognized Situ Mo. The Ding Family had once been a powerful family in the Floating South territory and had frequent dealings with the Golden Tang Gate. As a trusted pillar of the family, Ding Weizeng had even shared a friendship with Situ Ku.</p>
+<p>He raised his staff as a middle-aged man appeared in the sky, holding a golden ring in his hand. His face was slightly elongated and his brows thin. Gleaming gold hooks and rings hung from his body, and the feathered robe he wore was patterned with diamond-like motifs. He stood before the formation with his hands clasped behind his back.</p>
+<p>There was no doubt that this was Situ Mo. Several Foundation Establishment Realm guest cultivators stood behind him, and at his side stood an elder, Situ Biao, whose features bore a resemblance to Situ Ku, the one once held in the underground prison.</p>
+<p>Situ Mo did not utter a single extra word and simply commanded, “Attack!”</p>
+<p>Instantly, torrents of dazzling light rained down on the grand formation with a thunderous roar. The Qi Cultivation Realm cultivators on the formation platform all turned pale. An Siwei staggered back a step, his face grim as he held the formation plate.</p>
+<p>The formation atop Floating South’s main peak was among the finest in the Qi Cultivation Realm, yet it could not withstand the combined assault of several Foundation Establishment Realm cultivators. If not for nearly every Qi Cultivation Realm cultivator in the Floating South territory being present to share the burden, that strike alone would have shattered the formation.</p>
+<p>However, sheer numbers alone could not guarantee they would hold. Otherwise, there would be no need for a Foundation Establishment Realm formation at all. Even with ample mana, the formation would shatter in a few more blows.</p>
+<p>Ding Weizeng hastily rode the wind forward to buy time, shouting, “Master Situ, why do you trespass into Floating South territory?”</p>
+<p>Situ Mo raised his brows and drew the golden blade at his waist. Fierce golden qi surged, coiling around him as white waves. He spoke in a smooth tone, “So it is you, Weizeng. You too are a cultivator of Floating South. Since this territory is about to fall, why not surrender to my Golden Tang Gate? I can recommend you to train in the Capital Immortal Dao. Your merits will be acknowledged and your future secured. There is no need to throw your life away here.”</p>
+<p>Of course, the Golden Tang Gate dared not truly recruit Ding Weizeng directly, so the offer was made in the name of the Capital Immortal Dao. But Ding Weizeng knew better. His family was still on the lake, and he could distinguish clearly between loyalty and betrayal. Not to mention the debt he owed Li Ximing, who had sought out four Daoist Masters to heal his injury.</p>
+<p>He refused without hesitation, but at that very moment, he caught sight of Situ Mo’s hand.</p>
+<p>Situ Mo pressed one hand against his blade while forming a hand seal with the other inside his robe. His ring finger crossed over his middle finger, hooking his index while the remaining fingers aligned.</p>
+<p>He smiled. “Go!”</p>
+<p>A blade-sharp beam of golden light shot out from his sleeve, accompanied by a piercing shriek as golden qi plummeted downward.</p>
+<p>Ding Weizeng reacted swiftly, gritting his teeth and shouting, “Ha!”</p>
+<p>His shout transformed midair into a tiger’s roar, shaking the forest and slightly halting the golden blade. Ding Weizeng locked his gaze on Situ Mo, who suddenly found his eyes drawn uncontrollably into the stare. A powerful force struck Situ Mo, forcing him back a step as golden stars danced before his eyes.</p>
+<p>That single step back slowed the golden blade, allowing Ding Weizeng to evade it. Yet the elder behind Situ Mo, Situ Biao, who knew his gate master’s temperament well, was already swinging a golden hammer straight at Ding Weizeng.</p>
+<p>Waves of golden qi poured down upon Ding Weizeng. Fortunately, True Fire[1] surged up beneath his feet as Li Minggong’s Six-Cornered Scarlet Flame Lamp rushed to his side. The Purefeather Radiant Fire[2] transformed into countless red-and-white plumes that blazed skyward, shielding him from harm.</p>
+<p>Li Minggong shouted, “Golden Tang Gate, you attack our territory without cause; do you mean to challenge the authority of the Purple Mansion Realm?”</p>
+<p>Situ Mo and the Li Family had long been at odds, and he knew that the Li Family would never spare his family whether they fought or not. He was eager for a conflict between the Li Family and the Capital Immortal Dao. The latter would give him a powerful backing.</p>
+<p>Though pleased with the turn of events, his tone remained cautious as he said, “You foolish girl! My Golden Tang Gate acts under the orders of a Daoist Master of the Capital Immortal Dao to take control of the Floating Cloud[3] territory. What talk is there of attacking?”</p>
+<p>Even as he spoke, True Fire and golden qi collided.</p>
+<p>True Fire was the Fire Virtue most effective at refining metal. That was precisely why Li Zhouwei had chosen Li Minggong to defend this place. Since it was empowered by the Six-Cornered Scarlet Flame Lamp, the fire might not match the golden qi in raw mana, but it could repeatedly erode it. The remaining golden qi struck Ding Weizeng’s dharma body, ringing against it with a crispding-dang.</p>
+<p>1. Previously known as Li Fire. ☜</p>
+<p>2. Previously known as Purefeather Li Fire. ☜</p>
+<p>3. I think the author used Floating Cloud instead of Floating South here because it’s Situ Mo speaking, and only Li Family faction will refer Floating Cloud as Floating South because it was renamed by them. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1088.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1090.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

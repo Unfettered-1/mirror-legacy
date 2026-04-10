@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1025: Various Factions (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1024.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1026.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1025: Various Factions (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>An Siwei bowed low and answered respectfully, “Floating Cloud Cave fell into utter chaos. Beasts and disciples scattered. Elders and guest cultivators stormed the pavilions and divided the treasures. The cave master, overcome with guilt, committed suicide. His corpse was seized and torn apart by cultivators until it transformed into a strange phenomenon and vanished, leaving only his head behind.</p>
+<p>“Midway through the chaos, the other two sects of Mount Xiaoshi stormed Floating Cloud Cave as well, under the banner of cleansing the Dao lineage of traitors. They rounded up the cultivators, severed their heads, and sealed them. Zai Xingzi’s faction has already been ground into dust, their bones untraceable. Only the spirit items of that group were collected and sent over.</p>
+<p>“Now, the cultivators of the two Mifan sects have already escorted the people of Floating Cloud Cave to the northern bank, along with the sealed heads and spirit items.”</p>
+<p>Li Xuanxuan was dumbfounded and speechless. Li Ximing sipped his tea in silence, while Li Jiangqian, fingering the jade pendant in his hand, let out a cold laugh and said, “They responded quickly, but in the end, only a few cultivators of Zai Xingzi’s faction and a late-stage Foundation Establishment Realm cave master died. Their stance is low indeed… Taking advantage of our Daoist Master’s breakthrough today, they dared not wait until nightfall and hurried to present their faces for a slap.”</p>
+<p>He paused slightly, calculated the timing, and said quietly, “Judging by the timing, the turmoil at Mount Xiaoshi must have already begun the moment our Daoist Master appeared. Otherwise, the news alone would have taken half a day to reach them, let alone arriving here before nightfall. There is likely someone guiding them from the shadows.”</p>
+<p>Li Ximing naturally understood that the Golden Tang Gate stood behind the Mifan three sects. Even the Golden Tang Gate itself had repeatedly targeted his family because there was profit to be gained. He paused slightly and said, “Bring the items forward.”</p>
+<p>An Siwei immediately withdrew, and returned with a row of jade boxes. He opened the largest and most ornate one, revealing the head of an old man, hair and beard bristling in fury, his features twisted as if in regret.</p>
+<p>The heavenly light at the center of Li Ximing’s brows shifted, dispelling the technique that shrouded the face. The head returned to its appearance at the moment of death. His features had not changed, but where was the regret? His face was only filled with shock and fury.</p>
+<p>Li Ximing lowered his head and sipped his tea, while An Siwei replied, “It is undoubtedly this man.”</p>
+<p>Li Ximing lightly waved his sleeve. The sealed head immediately began to seep blood. He spoke softly, “Quewan, investigate the blood kin.”</p>
+<p>Li Quewan immediately understood. She placed one hand over her wrist, placed two fingers together, and drew the blood up with mana. When she started to chant incantations, she caused silver-white mercury light to float within the blood.</p>
+<p>She said quietly, “A red-tailed fish, its household ruined, its son a beast, a distant kin.”</p>
+<p>She then drew out a talisman and pressed it to her wrist, dispersing the silver glow. She continued respectfully, “This man had few descendants. His parents died early, all were rogue cultivators. His eldest son despised him; he just slew his father and mother, only to be killed himself afterward.”</p>
+<p>Li Quewan had employed the Shamanic Talisman Dao arts, which were fairly precise. Li Ximing nodded and said softly, “It seems the chaos is genuine. There truly is a Purple Mansion Realm cultivator eyeing Mount Xiaoshi.”</p>
+<p>Whether or not Li Quewan’s reading was accurate, the fact that a Purple Mansion Realm cultivator was behind Mount Xiaoshi was beyond doubt. Li Ximing dismissed the two juniors, then turned to An Siwei and instructed, “Have them leave their reparations. The guest cultivators may all withdraw… Let the two cave masters come forward to meet me. I will have a thorough talk with them.”</p>
+<p>————</p>
+<p>The Azure Pond Sect, main hall.</p>
+<p>Tantai Jin, dressed in splendid robes, waited before the hall for a moment before a guard invited him inside. He strode up the mist-shrouded steps and entered the grand hall.</p>
+<p>Si Yuanli was in the midst of writing with a brush, his mood seemingly good. Tantai Jin took a few steps forward, cupped his hands in salute, and smiled, “Sect Master!”</p>
+<p>“Brother Tantai, you have come!” Si Yuanli laughed heartily, pulled a small letter from his sleeve, and handed it over with a look of great satisfaction.</p>
+<p>Tantai Jin received it, read it carefully, and joy immediately spread across his face.</p>
+<p>There were only a few short lines on the letter.On the twenty-second day, Daoist Master Buzi appeared at Lüfang Island in the Southern Sea. He used a divine ability to hasten his journey, and his manner was hurried… it seemed he was chasing a demonic creature. He appeared for only a few seconds, cast a searching spell, and immediately vanished.</p>
+<p>“Chi Buzi has appeared!” exclaimed Tantai Jin.</p>
+<p>How could Tantai Jin not understand Si Yuanli’s meaning?!</p>
+<p>The turmoil in the Azure Pond Sect had concluded more than ten years ago, yet Chi Buzi had given no response and continued to busy himself with his own affairs. The meaning was all too clear… Chi Buzi did not care in the least!</p>
+<p>If he had cared even a little, he would not have needed to return to the Azure Pond Sect. Even leaving a single message would have prevented the tragedy of that year…</p>
+<p>Tantai Jin laughed quietly, lowered his brows, and in a voice as low as could be whispered, “Could it be that the Daoist Master holds resentment against someone?”</p>
+<p>What kind of person was Si Yuanli? He immediately reacted to those words. A trace of fear rose in his heart, and his expression wavered. He knew exactly of whom Tantai Jin spoke.</p>
+<p>Pristine Water!thought Si Yuanli.</p>
+<p>“Who can say…” Si Yuanli’s expression remained clouded and uncertain as he replied quietly, “Perhaps he bore resentment toward Chi Wei… That man’s will to pursue the Dao was unyielding, yet he was skilled at feigned humility and false appearances. There was no sign of it back when Chi Wei was alive. But once Chi Wei died, it was as if he became a different person.”</p>
+<p>He kept the rest of his thoughts buried in his heart.</p>
+<p>Even if he bore resentment toward Pristine Water, what of it? Ning Tiaoxiao was more than dissatisfied. He hated his life, to the point of refusing to cultivate divine abilities. And what came of it? He destroyed himself with hatred for nothing.</p>
+<p>Chi Buzi was a clever man. Si Yuanli did not believe he would act so rashly. At most, he only wished to step out from under the Azure Pond Sect’s shadow.</p>
+<p>I only worry about Ancestor’s affairs after his passing…thought Si Yuanli.</p>
+<p>Si Boxiu was skilled in talisman arts and possessed several fine inheritances, but time could not be delayed any longer. Si Yuanli was waiting for that one Moonlight Glazed Fruit to close.[1]</p>
+<p>He stared at the painting before him for a while, then lifted his brush to inscribe words upon it.</p>
+<p>Suddenly, Tantai Jin tilted his head as if listening. Si Yuanli froze, his ears twitching. A vast, majestic voice spilled from the great void, echoing through the grand hall, “Zhaojing, Li Ximing of the Moongaze Li Family, on this day has attained the Bright Yang divine ability! He proclaims dominion as a Purple Mansion Realm immortal family, with ceremonial rites and sacrifices to be held three months hence…”</p>
+<p>“Zhaojing, Li Ximing of the Wangyue Li Clan…” Si Yuanli’s hand froze mid-stroke, the name he had been writing cut short. A large blot of ink splattered onto the painting, bleeding outward and ruining the masterful work.</p>
+<p>Crack.</p>
+<p>The priceless white jade brush in his hand suddenly shattered. Fine jade dust slipped through his fingers, sprinkling upon the painting below. It covered the face of the old flood dragon at the center, dimming its eyes into obscurity.</p>
+<p>“How is this possible…” muttered Si Yuanli.</p>
+<p>His face changed drastically. Years of Qi Nourishing discipline shattered in an instant. His brows knitted tightly, his eyes glazed in disbelief, as they met Tantai Jin’s equally stunned gaze.</p>
+<p>Reaching the Purple Mansion Realm in just over ten years?! Li Ximing?!Tantai Jin raised his head. His expression shifted from shock to a shadowed regret. In a low voice, he said, “I fear we have fallen into a scheme… Not only you and I, Sect Master, even nine out of ten Purple Mansion Realm cultivators in Jiangnan have underestimated him…”</p>
+<p>Si Yuanli’s composure far surpassed that of ordinary men. He exhaled slowly, then decisively waved his hand. “Say nothing more! We must immediately pay a visit to Li Xizhi!”</p>
+<p>1. Not really sure if this Moonlight Glazed Fruit is referring to a person or not, the raw is a bit weird. I will correct this later on if this is wrong. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1024.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1026.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

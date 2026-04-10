@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1057: White River Stream Region (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1056.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1058.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1057: White River Stream Region (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Ximing immediately understood Yuan Fuyao.</p>
+<p>The Wilderness is the territory of the Xiao and Kong Families, and since my family is about to settle there, everyone must be trying to use him to curry favor with us… The Si Family destroyed the Song Family, and his bloodline is already in their hands. Whether they seek him out is just a matter of time. Yet coming to us of his own accord is indeed a clever way to preserve his life and fortune!</p>
+<p>Although Yuan Fuyao was timid by nature, his father, Yuan Chengdun, had been a man of towering integrity. He had slain demons and exorcised fiends; earned a fearsome reputation; saved countless commoners during the devil plague; and even shared ties with Li Yuanjiao.</p>
+<p>The Li Family had long stated that even if matters between the two families fell through, they would still look after Yuan Fuyao. Though Yuan Fuyao had embarrassed himself, the Li Family would not truly harm him for Yuan Chengdun’s sake. To treat him with courtesy would only highlight the magnanimity befitting an immortal family.</p>
+<p>Yuan Fuyao had most likely realized this, which was why he had dared to make the journey in the first place. He displayed his own cunning in seeking out the family head, Li Zhouwei, before anyone else, so as not to be taken advantage of by lesser figures.</p>
+<p>Now Li Ximing sat to the side, while Li Zhouwei naturally did not stand at the center. He remained silent, yet his cold gaze showed he understood the matter clearly.</p>
+<p>Li Ximing sipped his tea and spoke softly, “You overstate things. My family has no mind to quarrel with you. Chenghuai, escort the young master back to Mushroom Forest Plain.”</p>
+<p>Li Chenghuai answered respectfully and acted without further words. Being at the Foundation Establishment Realm, he simply lifted Yuan Fuyao, rendering the middle-aged man instantly immobile. Having met Yuan Fuyao in his youth, Li Chenghuai sighed inwardly as he dragged him away.</p>
+<p>Li Ximing sat upright, tea bowl in hand, and spoke after a long moment, “Yuan Chengdun was once a man of great talent, yet his son turned out like a rat in a granary. It would be one thing if his innate ability were merely low, but to live by leaning on his father’s shadow while thinking only of himself… Truly, the matter of offspring is impossible to predict.”</p>
+<p>His words carried an obscure meaning, and Li Zhouwei could only respond softly, “Yuan Fuyao is indeed quick-witted, but the Yuan Family spoiled him. Though clever, he grew up muddled and petty. Even a fool, given daily guidance, can accomplish something in time.”</p>
+<p>Li Ximing waved his hand, drew a jade box from his sleeve, and said, “Let us not dwell on this. I obtained a stalk of Horn Wood Golden Tassel from the Sword Gate. Take it, and extend some benefits to Wanglin Blossom.”</p>
+<p>Li Zhouwei only replied, “The matter of transplanting the Wanglin Blossom has yet to be settled, but…”</p>
+<p>Only then did Li Ximing understand. The Wanglin Blossom had been planted in Mount Huaqian for many years. In the early days of the Li Family, the mountain was adequate, but now it had become barren, and being near the lake was unsafe. Naturally, the blossom needed to be relocated onto the island.</p>
+<p>“Then let us wait for now. The Wanglin Blossom is far too precious to move rashly. I was just thinking of visiting Changxi, so I will discuss this matter with him as well.”</p>
+<p>Once they were done with family matters, Li Ximing vanished into the great void. Li Zhouwei stood in the hall for a few breaths before taking the main seat.</p>
+<p>Lifting a vermilion brush, he ordered, “Summon the peak manager at once.”</p>
+<p>The peak manager was naturally the cultivator who had allowed Yuan Fuyao into the island. He was also Li Hun’s father, named Li Anshuo. His given name should have been Li Jiangshuo, but because his innate ability had been lacking in his youth, he had never entered the island and grew up outside. Thus, his original name was still more commonly used. He now served as peak manager at one of the peak offices on the western shore.</p>
+<p>The attendant responded immediately and withdrew. After several minutes, a man entered the hall and bowed in the courtyard.</p>
+<p>Without lifting his head, Li Zhouwei asked, “What benefits did you receive?”</p>
+<p>Li Anshuo knelt and replied respectfully, “Reporting to the family head, Yuan Fuyao offered a portion of a staff technique to the family. He handed it over upon entering the island.”</p>
+<p>“How cautious of him. It seems this is Yuan Chengdun’s staff technique. No wonder you were willing to take such a risk to introduce him personally.” Li Zhouwei marked the register with his brush, showing no anger, and continued, “Yuan Fuyao is not without wit. I presume this technique had no grade written on it… that would ease your concerns.”</p>
+<p>Li Anshuo broke into a cold sweat. He quickly replied, “Your insight is correct, family head. It was transcribed by the Yuan Family themselves, so it bears no grade.”</p>
+<p>“Sit.” Li Zhouwei motioned for him to sit to the side before finally raising his head. Li Anshuo averted his eyes under that gaze, and then heard Li Zhouwei say casually, “Do not scheme within the island. Since you have such inclinations, accompany me to the eastern bank tomorrow. There are plenty of places there for you to pursue such endeavors. If you do well, you will reap benefits. If you fail, today’s matter will end along with you.”</p>
+<p>Li Anshuo was both startled and overjoyed, quickly expressing his gratitude. The man clearly had much confidence, since his face lit up with joy upon hearing the words. It seemed serving as a mere Peak Manager by the lake all these years had indeed wasted his abilities.</p>
+<p>Li Zhouwei waved his hand to dismiss him. “Go now. Second brother is waiting for you in the side hall.”</p>
+<p>The words made Li Anshuo pause again before he hastily withdrew. Li Zhouwei then ordered someone to fetch Yuan Chengdun’s staff technique, rubbing the center of his brows.</p>
+<p>This Li Anshuo… perhaps he can indeed be put to use…</p>
+<p>The Li Family was truly short on capable people at the moment. The few Foundation Establishment Realm guest cultivators had somewhat made up for their lack of numbers, but there was a glaring gap in talent at the Qi Cultivation Realm.</p>
+<p>Most of the Chengming generation[1] had likely died in battle by the river. The Zhouxing[2] generation was in decline. The four supporting families of Lijing were heavily damaged, and both the eastern and western shores had yet to recover their vital qi. Yet the Li Family’s enterprises only continued to expand.</p>
+<p>“Family head.” Li Zhouwei lifted his head to see Li Chenghuai slip into the hall like a ghost, carrying a jade slip in his hands. He offered it up and spoke in a low voice, “Reporting to the family head, someone from the Fei Family has arrived with two pieces of news.”</p>
+<p>Li Zhouwei accepted the jade slip that recorded the staff technique, reading it carefully while listening to Li Chenghuai’s report.</p>
+<p>“First, the Fei Family’s old family head, Fei Tongyu, passed away a few days ago. He died while attempting to break through to Foundation Establishment Realm, having secluded himself for only a few months before perishing. There were no great phenomena.”</p>
+<p>“An old man… obstinacy was inevitable,” muttered Li Zhouwei.</p>
+<p>With Fei Tongyu’s broken body and shallow cultivation, attempting to reach the Foundation Establishment Realm could only end in death. There was never any need to dwell on it. Fei Qingyi had written several letters trying to dissuade him, but had ultimately failed to stop the old man.</p>
+<p>His death was like a grain of sand, stirring only a small ripple within the Fei Family. It had already become no more than a passing piece of news by the time it reached the lake.</p>
+<p>Li Chenghuai did not linger and continued, “Fei Chingyi[3] of the Fei Family has broken through to the late stage of the Qi Cultivation Realm. He has emerged from Glacial Cloud Peak and is waiting on the island, hoping to contribute to affairs on the lake.”</p>
+<p>Li Zhouwei was currently lacking manpower, so he nodded and said, “He will accompany us to Jiangbei.”</p>
+<p>After Li Chenghuai withdrew, Li Zhouwei finished skimming through the jade slip in his hand. Yuan Chengdun was indeed a genius. This set of staff techniques, Subduing Demons In Green Mountains, was likely of the fourth grade. It could already serve as a treasured inheritance for any ordinary family.</p>
+<p>1. The generation of Li Chenghui, Li Minggong etc. ☜</p>
+<p>2. The generation of Li Zhouwei. ☜</p>
+<p>3. The original name of this male character is Fei Qingyi(费清翊) which is the same as the female character also named Fei Qingyi(费清伊). This character’s name is changed to Fei Chingyi so that the two names won’t clash. “Ching” was chosen as a replacement as it is an older Wade-Giles romanization for the Chinese sound now spelled as “qīng” or “Qing”. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1056.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1058.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1023: The Congratulations of the Families (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1022.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1024.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1023: The Congratulations of the Families (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Three days. Either the Floating Cloud Cave or the Mifan three sects themselves must give me, Zhaojing, an explanation within three days,” said Li Ximing.</p>
+<p>An Siwei released them. These Qi Cultivation Realm cultivators had never expected to escape with their lives. Crying and kowtowing frantically, they were silenced by a single glare from Chen Yang before staggering off on spirit wind back toward their sect.</p>
+<p>“Daoist Master is merciful. Truly, they got off lightly!” said Li Chenghui as he gazed coldly at the departing three.</p>
+<p>Li Chenghui was not wrong. Li Ximing’s action was already exceedingly magnanimous. After all, he was a Purple Mansion Realm Daoist Master. To suffer such offense from a mere Foundation Establishment Realm cultivator, even if Zai Xingzi had belonged to Yue State’s Three Immortal Sects, without being of true direct lineage, his life could not have been spared unless a Daoist Master personally apologized.</p>
+<p>Even if Li Ximing were to tear open the great void, descend over the Mifan three sects, and rain down blazing heavenly light and endless violet flames until Floating Cloud Cave collapsed into rubble and was burned into a wasteland, it would still have been well within reason. At most, people would murmur that he cared little for mortal lives.</p>
+<p>But Li Ximing was not well acquainted with the Mifan three sects and thus refrained from rash actions. Having only just broken through to the Purple Mansion Realm, his divine abilities were not yet fully mastered. Fearing a hidden scheme, he judged it unwise to act with excessive severity. Therefore, he let them go, leaving Floating Cloud Cave to make their own apology.</p>
+<p>As they descended, Li Chenghui quickly lowered his voice and spoke, “Daoist Master, the Golden Tang Gate stands behind the Mifan three sects… dealing with them may be somewhat tricky.”</p>
+<p>Li Ximing understood his nephew’s meaning. The Golden Tang Gate was like a clay Bodhisattva crossing a river, hard-pressed to protect even itself. Their sect had been mired in endless infighting for a hundred years , while the surrounding sects were anything but simple opponents.</p>
+<p>Ever since the fall of the mid-stage Purple Mansion Realm cultivators of the Situ Family, their sole remaining Purple Mansion Realm cultivator, Situ Huo, had been forced to wander the Southern Sea, not daring to return inland. Rumor had it that he had been gravely injured by Yuan Su some years ago, and whether he had since recovered was unknown.</p>
+<p>“It was only because Situ Huo dared not return inland that the Golden Tang Gate was able to linger on in Jiangbei. It was only after Situ Mo rose to power in recent years, coupled with Jiangbei’s flourishing spiritual energy, that the sect slowly began to recover… The spiritual energy of Jiangbei was bought with the lives of cultivators from both north and south in those years…”</p>
+<p>As Li Chenghui was still speaking, a flash of escape light surged from the north, rushing swiftly toward them. A pale-red light streaked across the sky, flames billowing like waves, until a bright and graceful woman appeared above the lake.</p>
+<p>“Minggong!”</p>
+<p>It was Li Minggong herself. She wore a crimson dress and held a sword in her hand, her face alight with joy yet mixed with disbelief and shock. Halting before the two, she hastily descended from the wind and bowed deeply. She said with a respectful voice, “This junior… pays respects to Daoist Master!”</p>
+<p>As she spoke, her eyes welled with tears. Choking slightly, she continued, “Congratulations to Seventh Uncle on refining a divine ability. This junior pays homage… this junior… has already crossed the life-and-death barrier and forged the Immortal Foundation, the Pheasant Li March!”</p>
+<p>“The Pheasant Li March commands the True Flame of the pheasant, refining the five viscera within and tempering metals without. Holding the flame in the mouth, it spews miasma and fire, transforming the body into a bird to soar upon blazing fire…”</p>
+<p>The family’s fourth grade manual, Pheasant Flame’s Long March Technique, had always been a respectable True Flame Dao lineage. That Li Minggong was the first to forge a Dao foundation in True Flame was somewhat unexpected, yet it pleased Li Ximing greatly.</p>
+<p>He said warmly, “Good!”</p>
+<p>Among all the Foundation Establishment Realm juniors, Li Minggong was the closest to Li Ximing, being the great-granddaughter of Li Xuanxuan. He helped her up with a smile and said with a nod, “True Flame excels at artifact forging. You should spend more time studying such matters. He Jiumen’s lifespan is nearly exhausted, and there is still no one to guard Nine Gates Mountain, the family’s peak of artifact forging.”</p>
+<p>He raised his brows and asked, “Where are Chengliao and Chenghuai?”</p>
+<p>Li Minggong bowed with clasped fists and answered softly, “Daoist Master, my elder brother… failed his breakthrough some years ago…”</p>
+<p>“Oh…” Li Ximing paused, his face tinged with regret. Li Minggong and Li Chengliao had similar innate ability, yet Chengliao’s temperament had been the best. He had expected the boy to succeed in breaking through, but though he had entered seclusion the earliest, his life had ended there.</p>
+<p>Now that I think of it, managing the family consumed too much of his time. He always had to look after his brothers and sisters, leaving too little effort for his own cultivation. Though his cultivation was decent, how could it compare to siblings who honed themselves ceaselessly day after day?thought Li Ximing.</p>
+<p>Li Ximing fell silent for a moment. This matter had happened five or six years ago, and the family had already recovered somewhat. He only sighed inwardly, unwilling to reopen old wounds, and asked instead, “How is Chenghuai?”</p>
+<p>Li Chenghuai was the most gifted of the Radiant Lure generation. In theory, the Foundation Establishment Realm should have posed no problem for him. Yet cultivation often depended on fate, and at times even luck itself, making outcomes impossible to predict.</p>
+<p>Standing beside him, Li Minggong answered respectfully, “He is still in the midst of his breakthrough.”</p>
+<p>Li Ximing and the others had already descended onto the island. Over a hundred thousand people raised their heads to gaze at the dazzling radiance. Li Ximing pinched his fingers in calculation, then frowned, “Too late.”</p>
+<p>At the side, Li Chenghui spoke respectfully, “At Twenty-Ninth Brother’s cultivation pace, he should have entered seclusion long ago. But Uncle Xizhi spent a great price within the sect to obtain a fourth-grade technique of the same element, the Hidden Esoteric Profound Method, for him. It is said to be wondrous indeed. He had him go into seclusion to transform his entire cultivation and break through to the Foundation Establishment Realm with this technique, which delayed matters for five or six years.”</p>
+<p>Li Ximing then laughed heartily and said while nodding, “Good! A fourth-grade technique truly makes a difference.”</p>
+<p>He descended toward the island as he listened to Li Chenghui’s account. The sun shone bright, and the sky was filled with colorful clouds.</p>
+<p>Li Xuanxuan came forward, face streaked with tears yet carrying a smile. His lips trembled and his hands quivered as he reached out. After staring at him for a long time, he finally uttered two words, “Ming’er!”</p>
+<p>Li Ximing had felt utterly light and refreshed within, but upon hearing those two words, an indescribable ache surged through his chest. His eyes shut tightly, and only after several breaths did he choke out, “Grandfather! Ming’er has not failed your trust!”</p>
+<p>Through endless visions of beasts devouring him, mountains of blades, seas of fire, bodies pierced and gutted, he had not made a sound, yet that single phrase nearly drove him to tears.</p>
+<p>He turned his head slightly and spoke softly, “Chenghui, in three months, the Three Sects and Seven Gates will all send representatives. Make haste and prepare.”</p>
+<p>Li Chenghui and the others immediately understood, retreating two steps and closing the hall doors behind them. The great hall was instantly empty, leaving only the grandfather and the grandson within.</p>
+<p>Li Xuanxuan’s clouded old eyes brimmed with tears. He stood motionless, staring again and again at the radiant heavenly light shining from the center of Li Ximing’s brow. Only after fifteen minutes did he close his eyes, forcing out two streaks of tears.</p>
+<p>The old man smiled and said, “Even if I were to die this very moment, it would be enough to show your uncles… Ximing, you have made us proud! If Yuanping and Yuanjiao knew of this in the underworld, they would rejoice without end…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1022.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1024.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

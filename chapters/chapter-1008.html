@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1008: Liaokong (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1007.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1009.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1008: Liaokong (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Drops of Pristine Water fell in a steady rhythm within the grand formation, clear light flowing as waves of Heavenly Glow rippled through the air.</p>
+<p>As Chi Buhua stepped into the formation, he found it empty of people, with only a golden pagoda standing unmoving amidst the Heavenly Glow.</p>
+<p>That must be Liaokong!</p>
+<p>Chi Buhua needed no further inspection to know that Chi Zhihu, Wu Weibai, and the others were dead beyond doubt. Suppressing the grief in his heart, he immediately activated the formation, the light in his pupils swirling as he covered his eyes to enhance his vision.</p>
+<p>His perception technique was profound indeed, and it allowed him to faintly glimpse figures moving within the Heavenly Glow.</p>
+<p>The silhouette of a monk appeared within the pagoda and his resounding voice rang out, “Senior! This man is cunning! I can’t hold him, strike quickly!”</p>
+<p>Forming a spell seal, Chi Buhua summoned the glow of Pristine Water into both hands. Looking up, he saw Li Xizhi speeding toward him. It was only after blocking the hazy Heavenly Glow that he caught a tri-colored Heavenly Glow streaking toward him at astonishing speed out of the corner of his eye. It was aimed directly at Li Yuanqin in his grasp!</p>
+<p>“You…” This was outside Chi Buhua’s expectations. He faintly heard the youth’s voice, refined yet ice-cold, “I’ll rid Lord Xuanfeng of you, unfilial wretch, first!”</p>
+<p>“Damn you.” Chi Buhua heard the curse, and in the space of a breath hesitated between saving or not saving him. But the tri-colored radiance was unbelievably fast. In the blink of an eye, it was before Li Yuanqin’s face, piercing straight toward him.</p>
+<p>Boom!</p>
+<p>The white light flaring from Li Yuanqin’s body held for only an instant before shattering like an eggshell. The golden pagoda hurried to catch up with the Heavenly Glow, finally pinning it down for the moment and producing an ear-piercing screech.</p>
+<p>“That Azure Pond Sect man! Damn it, why bring a mere Qi Cultivation Realm brat in here?!” muttered Liaokong.</p>
+<p>Clearly, Liaokong had no idea why Chi Buhua had brought Li Yuanqin inside. But when he saw Li Xizhi aim to kill the very moment he saw him, he could tell this man’s identity was anything but simple.</p>
+<p>In keeping with his principle of thwarting the enemy, Liaokong intercepted the Heavenly Glow, set the pagoda before the two, and descended alongside it.</p>
+<p>Chi Buhua’s eyelids twitched, and Li Yuanqin had already broken out in a cold sweat. Since the youth’s appearance did not seem feigned, the old man finally let out a breath and said coldly, “Monk, help me capture him, and I will let you go!”</p>
+<p>The Azure Pond Sect’s main bloodline and direct descendants had been almost entirely annihilated by Buddhist cultivators at Mount Bianyan, so how could Chi Buhua harbor any goodwill toward them? Yet, being an old man, he still felt a faint sadness for the main lineage.</p>
+<p>What’s more, having brought so many cultivators here, victory was almost certain. If not for Liaokong being the Li Family’s mortal enemy and capable of causing them trouble, the monk’s unpredictable nature would have made Chi Buhua consider killing him as well.</p>
+<p>Liaokong immediately detected the hostility in his tone. The plump monk’s expression shifted slightly, but he swallowed his anger and said quietly, “Who is this Qi Cultivation Realm brat anyway? He’s getting in the way!”</p>
+<p>“He’s his blood relative!” Chi Buhua replied, and Liaokong’s eyes lit up instantly as he said delightedly, “Good, good! Well played, Senior. I have a way to deal with him!”</p>
+<p>Chi Buhua originally had no need for the monk, but fearing that Li Xizhi might seek death, it was not a bad idea to have Buddhist methods on hand. He said coldly, “Make it quick!”</p>
+<p>Liaokong immediately activated the golden pagoda, raising a shield of golden light, then took a golden bead from his sleeve and swallowed it. His mana surged and poured into the pagoda, which instantly blazed in brilliance, like a golden sun with shimmering ripples of radiance.</p>
+<p>Not bad, he has some skill!thought Chi Buhua.</p>
+<p>Chi Buhua felt heat feather his face. While Liaokong was focused on casting his spell, the tri-colored rainbow light slipped out from beneath the pagoda. The old man pulled a green goblet from his sleeve, infused it with Pristine Water mana, and tossed it lightly.</p>
+<p>The goblet immediately flipped upside down, the bright flood dragon patterns upon it releasing a burst of azure light that swept away the Heavenly Glow around them. Drawing in mana, it captured the tri-colored rainbow light, the Morning Rainbow Lure.</p>
+<p>Li Xizhi’s second spell wove through the Heavenly Glow, and while Chi Buhua locked onto it with his spiritual sense, he caught a glimpse, out of the corner of his eye, of a faint smile crossing the black-robed youth’s face.</p>
+<p>“Hmm?” The old man moved like a striking snake, the wrinkles on his face bunching up all at once as his head turned at an unnatural angle. His aged eyes bored into Li Yuanqin as he asked, “Yuanqin? What are you doing?”</p>
+<p>Li Yuanqin had drawn out a jade talisman from beneath the cover of his robe, already filled with mana, and said softly, “My lord gave me the formation talisman so I can seal the formation’s entrances and exits.”</p>
+<p>“Oh?” Chi Buhua’s aged face twitched, and in a flash of insight, the truth struck him,Fubo feared I might save Zhihu, feared I might feel that when the lips are gone the teeth grow cold, and one day be abandoned myself… so he gave the talisman to him…</p>
+<p>I would never have known this… he had the talisman yet did not use it, and deliberately revealed it to me in order to draw the six men away…</p>
+<p>The grand formation in the sky locked in place, eight formation patterns arrayed in its corners, each glowing and dimming in turn. He was clearly sealing it from both inside and out, preventing any entry or exit.</p>
+<p>The old man’s face darkened at once,So what? How long can this formation hold off six men? Once Liaokong, Li Xizhi, and I exchange blows… you’ll have no life left to speak of!</p>
+<p>His mind swirled with suspicion as he looked on coldly without a word. Lifting his hand, he sent a fierce gust sweeping toward Li Yuanqin, ready to kill him with a single casual strike and snatch back the formation talisman.</p>
+<p>Suddenly, waves of golden light surged forth, and the golden pagoda that had hovered in the sky for so long burst into multicolored brilliance, crashing down from above. Caught off guard, Chi Buhua’s face finally showed an expression of utter disbelief and shock.</p>
+<p>How is this possible?!</p>
+<p>But the golden pagoda had already struck the green goblet squarely and knocked it askew with a teeth-grating creak. The mist-like azure light instantly dispersed, and the Heavenly Glow beneath darted into the haze like a cunning fish.</p>
+<p>At that moment, a sword light that had lain in wait within the haze suddenly flared. A chill crept up Chi Buhua’s neck and a cold shiver spread across his back. That must be the second tri-colored rainbow light from earlier, now upon him.</p>
+<p>How could this be…</p>
+<p>Of all the people who might betray him, Liaokong was the last he would have suspected. He would sooner believe one of the six men outside to be a Si Family spy than ever suspect the monk…</p>
+<p>“The Dao of Emptiness lost eighteen disciples to Li Xuanfeng, and they’ve been mortal enemies with the Wei’s Li alliance for generations. Even harming one or two Li Family member would bring you great benefits… How could you possibly help Li Xizhi?! Have you gone mad?!”</p>
+<p>Chi Buhua roared half a sentence, the rest still lodged in his throat, for not only had the golden pagoda slid sideways toward him, the monk had also thrown a punch. The truly deadly threats were the sword qi and Heavenly Glow rushing at him head-on!</p>
+<p>The jade talisman on his body shattered, and the three-tailed feathered beast appeared before him, spewing out yellow qi to block the sword light. Gathering all his mana into his two fingers, Chi Buhua thrust them toward the Heavenly Glow approaching from behind.</p>
+<p>Puff.</p>
+<p>The fierce Heavenly Glow made only a muffled sound before vanishing, turning into a Dawn Rayfish that dove into the sea. Chi Buhua had never imagined such a creature was involved, and before he could withdraw his spell, the two tri-colored Heavenly Glows had already reached his back. Swallowing blood in secret, he drew back his magic to block them.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1007.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1009.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

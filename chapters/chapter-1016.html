@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1016: Entered into the Underworld Register (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1015.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1017.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1016: Entered into the Underworld Register (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The Azure Pond Sect.</p>
+<p>Verdant peaks rose high, wreathed in drifting cloud smoke. Dharma light shone brightly in the great hall nearby. Crimson gates rose into the sky, corridors twisted back upon themselves, and triple eaves and layered rooftops stretched out, while curling incense wafted upward. It was a scene full of immortal grandeur.</p>
+<p>A streak of clear light sped toward the hall, halting before the steps and transforming into a man in a splendid crown. He strode across the immortal threshold and hurried into the hall, where a middle-aged man sat at the head, brush in hand as he painted.</p>
+<p>The crowned man looked somewhat anxious, but before he could speak, the middle-aged man cut him off with a gesture, pulling him over to look. The painting was of a lofty-crowned peach tree, upon which three serpent dragons coiled, each baring its claws and fangs.</p>
+<p>The serpent dragon on the right was fat and bloated, its form ungainly, yet its tail hook gleamed with venomous luster. The left one was thin and frail, but its eyes were marked in gold and it was adorned by crimson clouds. In the center, the last serpent dragon was mighty and imposing, though showing clear signs of age.</p>
+<p>The middle-aged man smiled and said, “Fellow Daoist Tantai[1], what do you think of this painting?”</p>
+<p>The crowned man could only pause to glance at the painting. After a brief examination, he replied gently, “Sect Master, your brushwork is exquisite… marvelous indeed… though the space beneath the tree feels too empty. Adding a deep pond there would bring it more life.”</p>
+<p>“Hahaha!” Si Yuanli burst into hearty laughter, patted him on the shoulder and said, “Brother, what fine insight you have.”</p>
+<p>The crowned man returned the gesture of courtesy, then lowered his voice and said, “My spirit falcon has returned from the north. At midnight, dawn shone upon Mount Wu and over Moongaze Lake. Purple flames surged to the heavens and colorful clouds rolled across the sky, filled with the aura of Bright Yang. I fear it will spread further still. At the very least, it will shroud the entirety of Moongaze Lake.”</p>
+<p>“Ho!” Si Yuanli suddenly lifted his head, eyes blazing. After a glance, he shook his head and said with a sigh, “Alas! Li Ximing has perished!”</p>
+<p>The crowned man furrowed his brows, pausing before speaking softly, “According to my earlier deductions, his seclusion should have begun twelve to fourteen years ago. If he has reached the Purple Mansion Realm, the time frame is indeed far too short.”</p>
+<p>“Far too short!” Si Yuanli shook his head and said, “It takes about ten years to push one’s Immortal Foundation into the Shenyang acupoint. Even if he consumed the pills provided by the Xiao Family, and even if he prepared a stockpile of treasured panaceas himself, it would still take five years at the very least! The Li Family is not some deeply-rooted family, and Li Ximing himself is no Tu Longjian.</p>
+<p>“Manifesting divine abilities is even more perilous, requiring six years. I have never debated the Dao with him, so I do not know how much he has comprehended the Bright Yang Dao. Let us assume he swallowed a Radiant Sky Stone and had great fortune, barely making it through that stage. But after that comes the Ignorance Stage, which easily lasts more than ten years!”</p>
+<p>He let out a leisurely sigh, grinding open the blue spirit ink, and replied, “For such a phenomenon to occur at this time, his death is certain!”</p>
+<p>Seeing him add more ink to the paper and sketch out a pond, the crowned man softly said, “But this phenomenon was so vast and far from ordinary.”</p>
+<p>“He consumed the Radiant Sky Stone!” Si Yuanli shook his head and replied, “That is a Purple Mansion Realm treasure. After swallowing such a thing, how could the phenomenon not be overwhelming? The Sky Stone directly faces the Radiant Pass. Even you, Tantai Jin, might not qualify to use such a resource. He was of the Wei’s Li lineage, he cultivated Bright Yang, and consumed a Purple Mansion Realm treasure, so such an omen is only natural.”</p>
+<p>The crowned man frowned and asked, “Could it not be that he truly broke through to the Purple Mansion Realm?”</p>
+<p>Si Yuanli thought for a moment, then answered, “It is possible, yes. After all, he was of the Wei’s Li lineage. Perhaps their Xu Family possessed some inherited technique that gave Bright Yang unique advantages. That may have been why he dared to use the Radiant Sky Stone… but do you think the great lords would not have already considered that?</p>
+<p>“So long as he took it, there was no need to concern ourselves further. He would have remained in the Ignorance stage for decades. Even if he succeeded, what then? By that time, Li Zhouwei would have long since been dealt with… If he had been capable, becoming a Bright Yang Purple Mansion Realm cultivator would have been fine, especially in the north where he could block the Buddhist cultivators. But unfortunately… he has perished.</p>
+<p>“Besides… I heard he was weak-willed. Even had he survived the divine ability stage, how could he have crossed the endless illusions? In the end, all would have been for nothing.”</p>
+<p>Tantai Jin, the crowned man, was left speechless. He simply stood quietly by as Si Yuanli tidied up the painting, handed it over, and strode out.</p>
+<p>Unfolding it, Tantai Jin saw a small pond had now appeared beneath the peach tree. The serpent dragon on the left had most of its body hidden beneath the pond’s edge, making it appear even more withered and frail.</p>
+<p>Si Yuanli, meanwhile, left the main peak, riding the clouds as he flew toward another peak. Upon its summit stood a solitary pavilion that seemed to float amidst the mists. Numerous jade talismans dangled from its eaves, swaying gently and clinking together with a crisp sound.</p>
+<p>“Fellow Daoist Xizhi!”</p>
+<p>Si Yuanli stepped into the pavilion and found Li Xizhi holding a jade slip, engrossed in reading. He now bore the appearance of middle age, yet his refined elegance and noble bearing remained undiminished. Years as Pavilion Master had only added an air of scholarly grace to him.</p>
+<p>“Greetings, Sect Master!” Li Xizhi quickly rose to greet him. Si Yuanli did not dare to be careless and hurried to steady him, though deep in his heart he felt a fear he could not speak aloud.</p>
+<p>All these years… who knows what extent his spell arts have reached by now!thought Si Yuanli.</p>
+<p>The only person within the Azure Pond Sect who could inspire such dread in Si Yuanli was this man…</p>
+<p>To Si Yuanli, Li Xizhi’s scheming was unfathomable. Clearly a prodigy in the Dao of spell arts, yet he had never once revealed his brilliance of spell arts since the age of ten when he entered the sect. Not even Yuan Tuan had seen through him!</p>
+<p>Even back when Tuoba Chongyuan hunted him to the brink of death, he never once exposed his true ability!pondered Si Yuanli.</p>
+<p>It was not until the battle at Reef Sea made his name resound that Si Yuanli finally realized that this man was the true genius of the Li Family’s Xiyue generation. His innate ability in spell arts even surpassed that of Yu Muxian, once hailed as the greatest spell prodigy of their era!</p>
+<p>If not for the fact that his wife came from the Yang Family… I would certainly have sought to bind him with ties of kinship and drawn him to my side. But never mind… things as they are are not bad either!His heart grew heavy, yet his face showed only worry as he said softly, “Xizhi, something has happened at Moongaze Lake!”</p>
+<p>As expected, Li Xizhi’s expression shifted and his brows furrowed. Si Yuanli recounted the matter from beginning to end, though his words now differed greatly from before, speaking of Li Ximing with tact and subtle hints.</p>
+<p>Li Xizhi himself had studied much concerning the Purple Mansion Realm. When he heard Si Yuanli’s account, his heart sank into emptiness. Slowly closing his eyes, he exhaled and murmured, “Sect Master… you mean my younger brother… he likely failed his breakthrough and perished!”</p>
+<p>Si Yuanli hesitated before nodding and replying, “Not necessarily… perhaps he did succeed…”</p>
+<p>Li Xizhi knew those were but words of courtesy. He stood quietly for several seconds before bowing and saying respectfully, “Sect Master, thank you for informing me. I shall not detain you further.”</p>
+<p>Si Yuanli responded at once and departed on the wind. Li Xizhi escorted him out, then barely holding himself together, returned to the pavilion. There, at last, he closed his eyes and wept, crystalline tears glistening on his face as he whispered five words, “Ming’er didn’t have it easy…”</p>
+<p>Li Xizhi narrowed his eyes, searing his tears away with a touch of mana. He pulled a letter from the desk, dipped his brush in ink, and began to write, his heart growing ever colder as he thought,Since Ming’er has failed and perished, Grandfather will surely be heartbroken beyond measure… I am the only remaining one of the Xiyue generation. Everyone now schemes over my family’s heir. Even if I must gamble away my cultivation and life itself, I must see Zhouwei preserved…</p>
+<p>1. This is the surname of the character not the given name. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1015.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1017.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

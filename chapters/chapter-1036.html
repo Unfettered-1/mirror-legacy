@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1036: Grand Assembly of the Purple Mansion (IV) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1035.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1037.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1036: Grand Assembly of the Purple Mansion (IV)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Changxi stroked his beard and began narrating slowly, “It is said that a thousand years ago, in the era of the Immortal Foundation, there was a method of refining artifacts through the collective thoughts of the people. Ancient cultivators, living in peace, used their divine abilities to link with the common folk and draw upon the will of all beings. They then used this to temper dharma artifacts and grant them spirit. This was called the Refining of Radiance Method.</p>
+<p>“Many ancient spirit artifacts we have today still show traces of this. Even some extremely high-grade Dharma relics also once bore this quality.”</p>
+<p>Li Ximing’s heart thundered violently, and an uncontrollable thought surged up in the very next instant,Talisman qi! Is this not exactly like my clan’s Immortal Mirror! A Dharma relic of the highest grade!</p>
+<p>For a moment his mind was utterly blank, then a torrent of tangled thoughts flashed by,No wonder I cannot see through the talisman seeds even with my divine ability… no wonder mortals can cultivate through it, and no wonder it produces talisman qi of wondrous properties. It truly is an Immortal Artifact!</p>
+<p>Moreover, how majestic is the Supreme Yin Profound Light?! Now that I have broken through to the Purple Mansion Realm, its power is even harder to fathom. Perhaps even a child holding it could wound a Purple Mansion Realm cultivator… Where else under heaven would such a thing exist?! Only a Dharma relic could wield such might!</p>
+<p>In the next moment, he forcibly cast all such thoughts from his mind, striving to maintain clarity, while his lips did not pause as he asked, “Then why is it no longer possible today? Was the method lost?”</p>
+<p>Changxi, shrewd as he was, immediately sensed Li Ximing’s emotional fluctuation. Yet no matter how he speculated, he would never imagine that the Li Family truly possessed such a thing.</p>
+<p>He merely thought Li Ximing was struck with awe, and so the old man sighed. “It is no longer possible today, but it was not lost. In my younger years, I was deeply intrigued and searched everywhere, combing through many ancient texts. Only then did I gather some fragments of knowledge…”</p>
+<p>A trace of confusion appeared on the old man’s face as he furrowed his brows and said, “It is said… that this method was taken away. Some say it was stolen, some say it was seized, and others say it was rightfully claimed. But all accounts point to a single name.”</p>
+<p>“Name…” Li Ximing almost did not dare to listen, fearing that the old man might utter some earth-shaking name in the next instant.</p>
+<p>But Changxi had already spoken, “Suxikong.”</p>
+<p>Suxikong…thought Li Ximing. The name was all too familiar. Li Ximing recalled at once that years ago, when Yu Mujian returned from the north and fought two opponents alone, he had mentioned this revered name. Many of the Master Monks slain by Li Xuanfeng had also spoken of it.</p>
+<p>Li Ximing murmured, “My Ācārya[1] taught me the Suxikong spell art, the Shijiali spell art… Suxikong is the Revered One!”</p>
+<p>Changxi nodded in agreement and praised, “Indeed… The loss of this method is most likely related to him[2]. After his enlightenment, artifacts of this kind lost eighty percent of their power. In the following centuries, their might dwindled year by year until their abilities all but vanished.</p>
+<p>“After more than four hundred years, most spirit artifacts created through the Refining of Radiance had lost all power. Only a few, close to the level of Dharma relics and tied strongly to Fruition Attainments could barely endure, but were still far weaker than before. Later generations could no longer use this method at all.”</p>
+<p>The two fell into silence. Li Ximing immediately recalled scenes from the north, and many guesses stirred in his heart. Judging by Changxi’s expression, he too had formed his own conclusions, though he would not speak them aloud.</p>
+<p>When the topic came to a end, the old Daoist Master smiled and pushed the jade box toward him. Li Ximing lowered his gaze to the glittering dharma artifact within and hesitated,Should Iaccept or should I not?</p>
+<p>————</p>
+<p>Mist drifted through the mountain courtyard. Jade stools and long tables had already been set out before Li Ximing could take his seat at the head, and more figures were gathering.</p>
+<p>Li Jiangqian sat at the upper left, lightly raising a jade cup. At his side was a cultivator in fluttering blue robes, bearing an otherworldly demeanor and calm expression. He was at the Foundation Establishment Realm, and the very master of Azure Pond Peak, Si Tongyi.</p>
+<p>Si Tongyi was about the same age as Li Zhouwei. However, now that Li Ximing had attained the Purple Mansion Realm overnight, he did not dare address Li Xizhi as fellow daoist. Yet he was not one to mind lowering himself, so he quickly drew close to Li Jiangqian and seated himself at his side.</p>
+<p>Now he pointed at the cultivators seated below and amiably introduced them, “That is Cheng Jinzhu of the Sword Gate, a friend of your Changtian Peak master… also a famed sword cultivator of the Sword Gate.”</p>
+<p>Li Jiangqian followed his gaze and indeed saw a man seated calmly with a sword on his back. The space around him was empty, clearly showing that few wished to sit beside him.</p>
+<p>“Thank you for the reminder, Uncle[3],” Li Jiangqian replied warmly with a smile. Si Tongyi did not dwell further on Cheng Jinzhu but went on to introduce others one by one. Jiangqian let his gaze wander about the hall, but his thoughts lingered on the few Daoist Masters seated above among the clouds.</p>
+<p>On the western cloud-seat sat a broad-shouldered, thick-browed man, clad in a Daoist robe embroidered with flame patterns. His breath exhaled like invisible fire, warping the surrounding spiritual energy. This was Daoist Master Tianque of the Golden Feather Sect.</p>
+<p>Daoist Master Tianyuan of the Golden Feather Sect had little lifespan remaining; Daoist Master Tianhuo was in seclusion; and Daoist Master Qiushui had already appeared in the world. But with the fall of Zipei, Daoist Master Qiushui had become one of the foremost Purple Mansion Realm cultivators in Yue State, so her rank was far too high to attend. Thus, it was Daoist Master Tianque, stationed in Wu State, who came instead.</p>
+<p>The Azure Pond Sect, of course, had sent Daoist Master Yuan Xiu. The old man had his customary stern expression, and Li Jiangqian did not glance at him, merely tallying inwardly,Of the Three Sects… the Golden Feather Sect and the Azure Pond Sect are here, but the Yue Cultivating Sect has not come.</p>
+<p>The two sects had their own considerations, but their presence was giving proper face. The Yue Cultivating Sect had long kept its gates closed, so their absence was not surprising. What concerned Li Jiangqian more were the seven gates.</p>
+<p>No word from the Snow Ji Gate… But that gate has not entered the world for centuries. The Sword Gate, the Chen Family, and Xiukui did not send their Purple Mansion Realm cultivators, only their direct disciples. That can only be called proper but unremarkable,thought Li Jiangqian.</p>
+<p>The Wanyu Sword Gate and the Great Xiukui Temple held no firm stance, so their gestures were acceptable. Moreover, Cheng Jinzhu’s status was not low. As for the remaining gates, each had made their own show. Li Jiangqian continued pondering,Profound Peak Gate’s display was the grandest, followed by the Xiao Family, with Xiao Chuting himself coming in person. Yet it was said that this Daoist Master only revealed himself briefly before leaving, and was only seen by a handful of people.</p>
+<p>The Purple Smoke Gate and the Slaughter Jun Gate had no Purple Mansion Realm cultivators present within their gates, so they sent direct disciples. Their seats still sit empty, for without Purple Mansion Realm cultivators, they are still on their way.</p>
+<p>Lifting his gaze, he saw a Daoist Master with a hearty face in the southern upper seats. Beside him, a red-robed woman, Bi Yuzhuang, smiled as she traced a golden bracelet on her wrist.</p>
+<p>The Hengzhu Dao Gate sent Daoist Master Hengli and Bi Yuzhuang. That too shows much respect.</p>
+<p>After surveying the gathering, Li Jiangqian continued chatting amiably with Si Tongyi, his mind becoming clearer.</p>
+<p>Of the seven gates, only the Changxiao Gate had not come!</p>
+<p>Not only had neither Chang Xiaozi nor Chengyan arrived, even the direct disciples of Changxiao had merely offered brief congratulations before leaving, without taking a single seat.</p>
+<p>Beyond the three sects and seven gates, only a few cultivators from Jiangbei had come. Only the Shen Family was present, while not a single major immortal sect of Wu State had sent anyone.</p>
+<p>Hengzhu and Changxiao are at odds… and our family has had no small number of disputes with Changxiao as well…Li Jiangqian lowered his gaze, realizing the situation was far from straightforward,Only the Xiao Family and Profound Peak Gate stand behind us… but Xiao Chuting of the Xiao Family never settles in one place and will not act lightly… If Changxi were to fall, the entire Profound Peak Gate territory would become a burden!</p>
+<p>If things go awry, will we not be forced to lean toward Hengzhu Dao Gate? Hengzhu Dao Gate is indeed orthodox, but Hengxing and his fellows are not lacking in schemes…</p>
+<p>Unable to grasp the relations among the Purple Mansion Realm cultivators, he could only glance toward the upper seats. His own father, Li Zhouwei, sat at the foremost place of honor, beside Kong Guxi of the Profound Peak Gate Kong Family. The two were deep in cheerful conversation, leaving Li Jiangqian uncertain whether to raise his cup.</p>
+<p>Profound Peak Gate is truly a burning hot potato… one we must never accept,thought Li Jiangqian.</p>
+<p>1. In Indian religions and society, an Ācārya is a religious teacher in Hinduism and Buddhism and a spiritual guide to Hindus and Buddhists. The designation has different meanings in Hinduism, Buddhism and secular contexts. ☜</p>
+<p>2. In the raws, the third-person pronoun use for Suxikong is 祂 (tā), which is a special third-person pronoun in Chinese used to refer to a deity, god, or divine being. ☜</p>
+<p>3. The raw here used is 世伯 (shìbó), it is a respectful form of address for an elder male of one’s father’s generation, often translated as uncle. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1035.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1037.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

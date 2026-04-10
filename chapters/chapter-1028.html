@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1028: The Background Of Mifan Three Sects — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1027.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1029.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1028: The Background Of Mifan Three Sects</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Moongaze Lake gleamed with golden light. Two Daoists stood uneasily in the grand hall on the island, while a row of jade boxes on the desk went unnoticed. A young woman in a red dress sat to the side, sipping tea, her brows curved around a gentle smile.</p>
+<p>“Miss Minggong…” A Daoist with black markings painted across his face and dressed in a tiger-patterned Daoist robe stood respectfully beside her. His frame was twice the size of an ordinary man and his cultivation was at the late Foundation Establishment Realm, yet his voice was deferential. He said, “Miss… is there any word from the Daoist Master…?”</p>
+<p>This man in the tiger-patterned Daoist robe was none other than Daoist Wenhu, master of Hidden Cloud Cave, one of the Mifan three sects. He had achieved Immortal Foundation in the Southern Sea. Just a day ago, Hidden Cloud Cave was still harassing the shores where Li Minggong was stationed, and it had been impossible to even secure a meeting with him. Now, the situation was entirely reversed.</p>
+<p>Seeing his humble demeanor, Li Minggong did not put on airs and replied softly, “Please wait until my family’s cultivators report back.”</p>
+<p>The other Daoist was weaker, only at the mid-stage of the Foundation Establishment Realm. His appearance was plain, and his build like that of an ordinary man, but he suppressed his aura tightly, not daring to release it. This was Ping Wangzi, master of Brahma Cloud Cave, the only immortal cultivator among the three cave masters. Perhaps because Brahma Cloud Cave was the weakest, it had always been the quietest of the three sects.</p>
+<p>Though he was an immortal cultivator, the way Ping Wangzi sealed his aura so tightly showed he was no stranger to relying on blood qi and similar means. He did not even dare to speak at the moment.</p>
+<p>The two exchanged a glance before pulling out jade boxes and tried to press them into Li Minggong’s hands. Despite his massive, burly frame, Wenhu’s words were smooth as he forced a smile and said, “Miss Minggong, we only hoped Fellow Daoist Siwei might put in a good word for us, but who knew he would be so upright and disdainful of our humble offering… please, take a look…”</p>
+<p>Li Minggong had only fought with the people of Hidden Cloud Cave a few days ago, so how could she accept their things? She answered politely instead, “Take it back. I have no voice before my ancestor. You better give it to Siwei.”</p>
+<p>The Mifan three sects had once been on equal footing with the Li Family, but they were utterly powerless before the Purple Mansion Realm. Floating Cloud Cave had already been annihilated. The two cave masters fidgeted uneasily in the hall until they saw An Siwei descend from the clouds at last.</p>
+<p>They hurried to greet him, pouring out flattery, but An Siwei paid them no mind. Left with no choice, they turned pleadingly to Li Minggong. The young woman in the red dress merely glanced at the desk, and the two men immediately understood, quickly mixing their offering into the pile of confiscated spirit items.</p>
+<p>Before Li Ximing emerged from seclusion, An Siwei had personally witnessed how arrogant the Mifan three sects had been. Though the anger in his chest had eased somewhat, he was still far from courteous toward the two men, and said in a deep voice, “Gentlemen, that will do.”</p>
+<p>The two had no choice but to follow him into the air. The sky had already dimmed. Wenhu lowered his gaze submissively as he walked through the corridors of the grand hall, but his heart grew heavy,I just don’t know what kind of divine ability this Daoist Master has cultivated. Could it be a Life Divine Ability? If it is, then he’ll be impossible to deal with…</p>
+<p>Whatever disdain he had once felt for Li Ximing was now gone. Faced with a Daoist Master, he dared not harbor a single ill thought. The best way was not to think at all, and he quickly suppressed every stray notion.</p>
+<p>After walking for some time, he entered the grand hall. There, at the head, stood a cultivator in a white-gold Daoist robe, standing with his profile toward them. A piercing heavenly light radiated from the center of his brows, though his side profile itself seemed unremarkable.</p>
+<p>“This humble one, Wenhu/Ping Wang[1], pays respects to the Daoist Master. Congratulations on the perfection of your divine ability!”</p>
+<p>The two quickly lowered their heads and bowed in unison. They instantly felt heat upon their foreheads, as though the Daoist Master’s gaze had fallen on them.</p>
+<p>Li Ximing glanced at the two, allowing the heavenly light at his brow to pierce through them. Daoist Wenhu’s Immortal Foundation was of the Xiukui lineage, known as Hurricane Ghost Yin. As for Ping Wangzi, his Immortal Foundation was unusual, perhaps of some ancient branch, but Li Ximing had never seen its like.</p>
+<p>Wenhu has some strength, but I directly counter his Hurricane Ghost Yin. I can suppress him even without reaching the Purple Mansion Realm. As for Ping Wangzi, his Immortal Foundation is not suited for combat. He’s not worth mentioning.</p>
+<p>The two could not even contend with his elder brother Li Xizhi together. No wonder they had dragged their feet for more than ten years, resorting only to slow attrition.</p>
+<p>Neither dared to meet his eyes. Li Ximing sipped his tea lightly and said, “State your origins.”</p>
+<p>Though it was the Mifan three sects who had colluded with the Golden Tang Gate, Li Ximing knew there must be another Purple Mansion Realm cultivator behind it. The Golden Tang Gate was merely a pawn on the surface.</p>
+<p>Now was the time to reveal one’s backing to preserve one’s life. Wenhu did not dare hesitate. The burly man stepped forward, clasped his hands, and said respectfully, “My true name is Shi Wenya, a cultivator of Mount Xiaoshi. Later, under the guidance of Daoist Chidu of the Baiye[2] Capital Immortal Dao, I journeyed to the treasured lands of the Southern Sea, where I cultivated and achieved my Immortal Foundation, slowly making a name for myself. When I heard from Daoist Chidu that Jiangbei was stable and blessed with fertile spiritual lands, I came here to settle.”</p>
+<p>He lowered his brow and bowed, speaking clearly. The Baiye Capital Immortal Dao he mentioned was one of the two Purple Mansion Realm sects that had been established in Jiangbei ten years ago.</p>
+<p>Li Ximing rested one hand on the table and said with a nod. “So, you are of the Baiye Immortal Dao. My family has never had grievances with your sect. Now that things have come to this, did Daoist Chidu leave any message?”</p>
+<p>Wenhu hastily nodded and replied respectfully, “The elder has said that he will personally come to apologize to the Daoist Master in three months’ time.”</p>
+<p>Li Ximing made no comment. This Daoist Chidu of the Baiye Capital Immortal Dao clearly showed little sincerity. But the Purple Mansion Realm Daoist Master behind him was said to have once been a rogue cultivator from the Eastern Sea, who had cultivated three divine abilities. Such a man naturally had the capital to speak boldly.</p>
+<p>He turned his gaze on Ping Wangzi. The latter quickly put on a smile and said ingratiatingly, “Daoist Master, may you discern clearly. The Brahma Cloud Cave has rarely involved itself in matters concerning the immortal family. At most, the other two sects coerced us in the name of shared kinship, and only then did we reluctantly send people…”</p>
+<p>Li Ximing had long heard from An Siwei that Brahma Cloud Cave was indeed not very active, but the reason was ninety percent due to insufficient strength and lack of manpower. He only said softly, “State your origins.”</p>
+<p>At those words, cold sweat immediately seeped from Ping Wangzi’s nose bridge. He dared not even blink and answered hoarsely, “My birth name is Wang Jun, a cultivator of Brahma Cloud Cave on Mount Xiaoshi. In my early years, I received the guidance of Lord Zhong Qian and achieved the Foundation Establishment Realm, then followed him into Jiangbei.</p>
+<p>“Later, with his further instruction, I returned to Mount Xiaoshi to revive the lineage of Brahma Cloud Cave, and under the covenant of the three sects, we began managing affairs in Jiangbei…”</p>
+<p>Li Ximing’s expression eased slightly as he spoke softly, “So you are of Chengyun Immortal Gate[3]. Sect Master Zhong Qian has had quite a few dealings with my family.”</p>
+<p>He set down the teacup in his hand and asked, “What of Floating Cloud Cave?”</p>
+<p>Ping Wangzi hurriedly echoed, lowering his voice, “Floating Cloud Cave occupied the southernmost territory and was always the one to stir up trouble. There is no doubt that the Golden Tang Gate was indeed behind them. Daoist Master may rest assured.”</p>
+<p>Li Ximing sank into quiet thought.</p>
+<p>The backgrounds of the three caves were now clear. Chengyun Gate had been founded by Daoist Master Chang Yun together with a band of devil cultivators. It was the weakest among the sects, and since it had ties to his own family, a weak Brahma Cloud Cave naturally avoided stirring up trouble.</p>
+<p>The Golden Tang Gate still had some foundation and had repeatedly colluded with Floating Cloud Cave, which bordered the Li Family, to stir up incidents. As for the Baiye Capital Immortal Dao that stood behind Hidden Cloud Cave, it was clearly no righteous power either, and perhaps posed an even greater threat!</p>
+<p>Seeing that Li Ximing remained silent, Wenhu spoke with eager deference, “Reporting to Daoist Master, most of the cultivators of Floating Cloud Cave have already been captured by you! They wept bitterly and have declared their willingness to serve you with utter loyalty and even die for you… I beg Daoist Master to investigate clearly!”</p>
+<p>1. Both of them are greeting at the same time. ☜</p>
+<p>2. Bái (白) means the color white and yè (邺) is just a name for a location in ancient china or a surname. ☜</p>
+<p>3. This is Chengyun Gate that first appeared in Chapter Chapter 913: Suzhu (III). ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1027.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1029.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

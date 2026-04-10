@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1088: Four Borders (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1087.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1089.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1088: Four Borders (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>White River Stream.</p>
+<p>The Hidden East[1] territory had only been stabilized for the past year and a half. The esteemed families here were well-informed and knew a bit about the Kong Family’s situation. As a result, morale was unsettled, and few cared much for the Li Family’s stipends as they lived day to day without ambition.</p>
+<p>Lights blazed on Hongfu Peak as cultivators came and went. The young man seated at the main seat had eyes dark as ink and six command tokens floating at his waist. Old Qu bustled in from below and reported, “My lord, a messenger from the North Brocade River King has arrived. He says there are changes in the Baiye territory.”</p>
+<p>Li Chenghui was the most cautious among the Li Family’s Foundation Establishment Realm cultivators. He had arranged for the North Brocade River King’s envoys to reside on a nearby peak, exchanging jade pendants every month to ensure timely intelligence. After all, it would take them only fifteen minutes to fly here, and the territory was still under strict control. A delay in reports could easily mean disaster.</p>
+<p>Li Chenghui stood up as soon as the news arrived. He had just received word of geomantic upheavals in Profound Peak Gate’s mountains when Ying Hebai’s message followed immediately.</p>
+<p>In a grave tone, he said, “Daoist Master Changxi has fallen. Summon Ding Weizeng, and have all Foundation Establishment Realm cultivators withdraw immediately. There’s no need to leave from Hongfu Peak.”</p>
+<p>Since Li Zhouwei had sent no word and no reinforcements were coming from the rear, Hongfu Peak could not possibly be held. The Hidden East had never truly been part of the Li Family’s long-term plans. Aside from the land itself, there was little of real value, and everything that could be moved over the past year or two had already been relocated to the Floating South territory.</p>
+<p>Aside from the immovable land and esteemed families, what was the most precious thing in the Hidden East?</p>
+<p>Naturally, it was the Cloud Veiling Sky Ascent Formation atop Hongfu Peak!</p>
+<p>Li Chenghui had only focused on three things over the past few years. First, he had relocated the common folk of Hidden East to strengthen Floating South, taking pains to migrate only ordinary people unrelated to the esteemed families and never relocating cultivators. Second, he extensively appointed esteemed cultivators to positions of authority, distributing all the spirit fields that Wenhu had painstakingly converted from private to public hands.</p>
+<p>Thus, in less than two years, not only had the population of Hidden East partially declined, but the consolidation of spirit fields had reached an unprecedented scale. The Li Family had also reaped substantial profits by reselling them.</p>
+<p>The third thing he did was to meticulously record the distribution of spirit veins, earth veins, and water veins, working tirelessly to copy down the formation platforms of the Cloud Veiling Sky Ascent Formation. Now, by taking the most precious formation plate with them and destroying the formation, Hongfu Mountain would become undefended, and immediately turn into a battleground for rogue cultivators and esteemed families to seize.</p>
+<p>He continued speaking as he strode outside, “We won’t have time to deal with it. These esteemed families and rogue cultivators will righteously denounce and drive out our Li Family. Let them all fight over it among themselves… Once the Capital Immortal Dao’s forces arrive, they’ll certainly station a few here to keep the area under control.”</p>
+<p>Qu Buzhi followed him out and spoke quietly, “The spiritual energy in Jiangbei is flourishing. We could dig up the earth veins to sever the flow of spiritual energy… or even fill up the water veins…”</p>
+<p>Li Chenghui retrieved the formation plate from inside the main hall. The one set upon the stone platform was immensely intricate, with silk-like patterns etched across its circular surface.</p>
+<p>Li Chenghui immediately quashed Qu Buzhi’s thoughts. “Are you trying to get yourself killed? This is Jiangbei, not the Eastern Sea. No one is allowed to tamper with Jiangbei’s land, not even a Purple Mansion Realm cultivator could get away with it!”</p>
+<p>Qu Buzhi was startled, realizing he had spoken out of turn, and quickly fell silent, stepping back. The two made their way down the mountain. Li Chenghui, worried that Ding Weizeng and the others might not receive the orders in time, crushed a jade pendant to send a reminder. As soon as they exited the Hidden East territory, flames roared skyward from Hongfu Mountain. The grand formation shattered, brocade-like clouds sank, and fragments scattered like rain.</p>
+<p>Dozens of beams of dharma light shot into the sky soon after, all hesitantly rushing toward Hongfu Mountain. Clearly, the esteemed families had noticed the change. But Li Chenghui was already more than five kilometers out of the Hidden East and glanced northward with a hint of regret.</p>
+<p>“Hidden East truly is a land of great wealth. Someday… if there’s a chance to set foot here again, we’ll bring order to the realm and rally the esteemed families properly,” muttered Li Chenghui.</p>
+<p>He sped away on thunder, reaching the Floating South territory in fifteen minutes. There, the villages were sparse, the formations shone bright and orderly, and the land stood in stark contrast to Hidden East. A woman flew toward him from the distance.</p>
+<p>Li Minggong wore a crimson dress and wielded the Six-Cornered Scarlet Flame Lamp as she rode the flames toward him. Behind her, An Siwei followed in jade armor with a spear on his back.</p>
+<p>Worry lined Li Minggong’s brow as she said, “You’ve arrived just in time, Brother Chenghui. I’ve just received word that the Capital Immortal Dao’s chief disciple, Guan Gongxiao, has led a force into the Wilderness. The family head has already gone ahead, and they’ve likely clashed by now.</p>
+<p>“Fortunately, you weren’t tied down defending Hongfu Mountain, so your hands are free. I must stay here to hold the line, so please hurry and reinforce them.”</p>
+<p>Li Chenghui had not expected the enemy’s assault to come so swiftly. He spoke in a deep voice, “How many cultivators are there?”</p>
+<p>Li Minggong looked anxious and shook her head. “It’s hard to know the full number… Guan Lingdie and Gongsun Baifan have both appeared, along with several well-known Foundation Establishment Realm cultivators who’ve been recalled from the outer-sea.”</p>
+<p>Li Chenghui immediately pieced it together. “It seems that Guan Gongxiao has sent local powers like Song Yunbai and Wang He to attack Jiangbei, while the main force is heading for the eastern shore. I’ll ride thunder there at once. Ding Weizeng will arrive here shortly, speak with him when he does.”</p>
+<p>Without stopping for even a moment, Li Chenghui led his forces eastward at full speed, vanishing over the horizon.</p>
+<p>Li Minggong was under orders to guard the Floating South territory, which served as a barrier of Moongaze Lake and was in truth even more crucial than the Wilderness. Thus, she could do nothing but watch him depart.</p>
+<p>Some time later, the earth veins to the east shifted. Before Li Minggong could even spot Ding Weizeng’s figure, a surge of golden light rose from the northwest. A wave of dread seized her chest as she rode the flames high to peer into the distance. Light streaked swiftly across the border, formations shattered, and golden qi surged into the heavens.</p>
+<p>Li Minggong immediately sensed that something was wrong. She summoned the Jade Court Guards and ordered, “Go to the family estate at once and request reinforcements. Ask several Foundation Establishment Realm cultivators to rush to Floating South. This is of utmost importance. We must not be negligent.”</p>
+<p>The guard hurried off immediately. Li Minggong then took out a jade pendant and crushed it. Two spirit beasts belonging to her senior were stationed on the eastern shore and would arrive in just fifteen minutes. With these measures in place, she felt a surge of confidence and immediately took to the skies with An Siwei.</p>
+<p>An Siwei peered into the distance and tension instantly clouded his expression. His father, An Zheyan, was in that general area. Though there was still some distance between them and the old man was clever enough to stay safe, An Siwei couldn’t help but fly a little farther forward.</p>
+<p>I should never have assigned him to that area!thought An Siwei.</p>
+<p>An Zheyan was an old man now and had been given the safest and most leisurely duties. An Siwei had not expected a sudden attack from the northwest, and it had put An Zheyan in unexpected danger.</p>
+<p>Fortunately, the old man had amassed quite a few treasures over the years, and since he was not stationed directly on the border but somewhat deeper inland, he had managed to escape with his life. The two Foundation Establishment Realm cultivators sped toward his location, straining their eyes into the distance, and soon saw the old man flying toward them in a streak of blood-colored escape light.</p>
+<p>An Zheyan had always been completely bald, but now even his beard and eyebrows had turned white. When Li Ximing had attained the Purple Mansion Realm, he had personally restored the severed limbs of An Zheyan and Li Qiuyang. The old man now had all four limbs and looked much healthier, though the wrinkles on his face spoke of deepening age.</p>
+<p>He hurriedly stopped before Li Minggong. The golden aura on the horizon was growing stronger. The old man spat out a mouthful of blood and spoke in a panicked voice, “My lady, Situ Mo, sect master of Golden Tang Gate… has led the Golden Tang cultivators… over the mountains!”</p>
+<p>1. The new name of Hidden Cloud Cave. ☜</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1087.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1089.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

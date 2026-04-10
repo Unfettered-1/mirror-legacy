@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1021: Attaining the Purple Mansion Realm(II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1020.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1022.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1021: Attaining the Purple Mansion Realm(II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>As he spoke, Zai Xingzi’s eyes swept over the crowd and locked onto Chen Yang standing behind Li Chenghui. The man’s gaze was vicious and sharp as a flaying knife as it met his head-on.</p>
+<p>Zai Xingzi hadn’t expected a mere Qi Cultivation Realm cultivator to look at him so brazenly. He paused mid-motion in mild alarm. He took note of him and thought to himself,What a poisonous gaze… I wonder which junior of the Li Family this is. I’ll have to find a chance to kill him early.</p>
+<p>Meanwhile, Li Chenghui clearly heard the sarcasm hidden between his words, and his heart grew faintly cold as he thought,It seems the various sects and gates are quite certain… that Uncle Ximing has failed his breakthrough. They came prepared. Even if we can block them this time… there may be no stopping them the next.</p>
+<p>In truth, the Li Family knew that such a short period of seclusion made a Purple Mansion Realm breakthrough nearly impossible, and their hopes were slim. Yet as long as the jade talisman in the ancestral hall still glowed, a sliver of hope clung to their hearts.</p>
+<p>But more than ten years had passed, and the talisman had never been nourished since. Its omen was no longer reliable.</p>
+<p>Even if the family head had planned in secret, who could have foreseen colliding with a phenomenon…As the thought flashed through Li Chenghui’s mind, Zai Xingzi offered up a jade box, holding it politely with both hands joined together. Yet his eyes were cold as ice.</p>
+<p>All eyes were fixed upon the jade box. Suppressing his anger, Li Chenghui glanced at it. Its exterior was refined, though he had no idea what lay within.</p>
+<p>Should I take it? Or should I not?pondered Li Chenghui.</p>
+<p>Li Chenghui hesitated for only a moment, then his face smoothed back into calm as he prepared to reach out and accept it.</p>
+<p>I can only deal with it for now!</p>
+<p>Just as he extended his hand, another warm and faintly glowing hand reached out first. The hands pinched the jade box, taking it effortlessly into its palm, and raising it against the sunlight to inspect it.</p>
+<p>Huh?</p>
+<p>It wasn’t just Li Chenghui who was stunned, Zai Xingzi was stunned by the scene too. The entire expanse of the great lake fell silent as everyone dumbly lifted their heads toward the sky.</p>
+<p>A man clad in white and gold Daoist robes had appeared at some unknown moment between the two of them. His features were not striking, yet they were dignified. Pale-golden eyes examined the jade box, and the center of his brows contained a dazzling ray of heavenly light.</p>
+<p>This was Zai Xingzi’s first visit to the Li Family, so he had never seen this man before. The brilliance at the man’s brow was so piercing he could hardly keep his eyes open. In that instant, he realized and sneered inwardly,Li Zhouwei? So he never left after all… and what of it?</p>
+<p>Before he could react and speak, a slightly trembling, excited voice rang out beside him, “Uncle!”</p>
+<p>Uncle? That’s a whole generation off! thought Zai Xingzi.</p>
+<p>Zai Xingzi faltered as he stared blankly at the man’s face, only to see those pale-gold pupils gaze past the jade box and settle calmly upon him.</p>
+<p>“I, a Daoist Master, have mastered a divine ability, and your sect dares present me this? A mere Qi Cultivation Realm spirit item?”</p>
+<p>Zai Xingzi’s gaze went vacant. Vaguely, he heard the old man behind Li Chenghui burst into sobs, yet before even half a wail was out, it turned into laughter. Li Chenghui’s face shone with unrestrained joy.</p>
+<p>What? Li… Ximing?! A Daoist Master?!</p>
+<p>Moongaze Lake fell utterly silent save for the elder’s resounding laughter. Zai Xingzi felt his mind whirl into chaos as a blazing shaft of heavenly light pierced into his eyes and shot straight into his skull.</p>
+<p>The skin on Zai Xingzi’s face was swept away as if torn by a gale, revealing a wrinkled, aged visage beneath. The terror in his eyes vanished as his pupils convulsed violently. Then, his eyes burst from their sockets, transforming into two great brown cicadas that fluttered in the air as they flew away.</p>
+<p>The eyeless old man’s appearance was terrifying to the extreme. His arms shattered like broken porcelain, raining down in fragments, while the sun above seemed like some dreadful dharma artifact that forced his entire body to suddenly go limp. His flesh sagged and sloughed away like overcooked noodles.</p>
+<p>His heart leaped from his abdomen like an untamed steed, dragging with it a stomach like a giant scorpion, with a long string of intestines trailing behind like a tail.</p>
+<p>And yet, in the next instant, it all seemed but an illusion. Zai Xingzi’s body restored itself and returned to its original form. His lips trembled twice before he suddenly exploded in place and scattered into a storm of flying stones.</p>
+<p>Li Ximing then slowly turned around.</p>
+<p>Since Zai Xingzi cultivated the Earth Virtue, the fragments of his body turned into radiant stones, raining down like hail. Li Ximing stood calmly amidst the white downpour as splashes rippled across the lake’s surface.</p>
+<p>A moment later, all of Zai Xingzi’s followers collapsed as their legs gave out. Some fainted outright and splashed into the lake. Li Family cultivators rushed to fish them out, reviving them with mana, then forcing their heads upward to continue looking at the sky.</p>
+<p>The purple flames atop Mount Wu suddenly flared thick, and a radiant shaft of heavenly light pierced the skies, swiftly merging with the rainbow-hued clouds. Those clouds suddenly turned into dazzling white brilliance, flooding all of Moongaze Lake. The mirrored waters reflected the brilliance, blanketing heaven and earth in blinding light.</p>
+<p>Without opening his mouth, Li Ximing released a vast wave of sound that spread across the heavens, reverberating into the great void and reaching every corner of Yue State, “I, Zhaojing, Li Ximing of the Moongaze Li Family, have today attained the Bright Yang Divine Ability! From this day forth, we proclaim our Li Family as a Purple Mansion Immortal Family. In three months, we shall hold a grand ritual ceremony. All Daoist friends are welcome to attend and witness!”</p>
+<p>The voice rang out clear and resonant, spreading in all directions under the blessing of his divine ability. Li Ximing floated above the lake, borne upon his divine ability, as specks of golden radiance emerged from the clouds.</p>
+<p>Wong…</p>
+<p>A towering bright white heavenly gate engraved with intricate patterns rose from within the clouds. Majestic dragon banners and luan carriages, resplendent in dazzling hues, moved through it. Precious banners and canopies swayed in the wind, while figures clad in golden armor and robes, each wielding weapons, filled the skies.</p>
+<p>Celestial music and mystical chants reverberated as the heavenly gate slowly descended from the horizon. Nearly all cultivators lost control of their spirit wind, dropping to the ground and staring up in awe.</p>
+<p>“The Bright Yang Divine Ability, Heaven-Venerating Gate!”</p>
+<p>Only now did Li Ximing truly understand what an art a divine ability was! His true form was nothing more than purple flame and heavenly light, yet his entire array of divine abilities manifested in the overwhelming spectacle of the Heaven-Venerating Gate. As one of the Wei’s Li lineage, the sheer grandeur of this divine ability was enough to inspire awe and dread alike…</p>
+<p>He stood quietly amidst heavenly light and celestial music. Countless figures had long been standing within the great void, and now chose to reveal themselves one by one. Li Ximing smiled faintly and nodded as their voices rang out.</p>
+<p>The first to appear was an immortal mountain shrouded in dark mist, from which came a resounding voice, “Congratulations, young friend, on your breakthrough to the Purple Mansion Realm. I, Changxi, offer my felicitations on behalf of the Profound Peak Gate. May your divine ability flourish and may you, within a hundred years, forge your Golden Core!”</p>
+<p>Li Ximing looked up and indeed saw a middle-aged man with jade on his chest standing atop the immortal mountain. With just a blink, the man’s appearance shifted into that of an elderly figure with hair as white as snow, a sight most wondrous.</p>
+<p>“Senior flatters me!” He returned the salute toward the elder.</p>
+<p>To the south, a simple bank of clouds materialized. Within it stood a stern-faced elder whose gaze, cast toward him, brimmed with surprise and even a touch of complexity, “I am Si Boxiu of the Azure Pond Sect. Congratulations, young friend, on your breakthrough to the Purple Mansion Realm. On behalf of the Azure Pond Sect, I present this great lake as my gift. May you achieve mastery of the Five Laws and ascend to Fruition Attainment!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1020.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1022.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

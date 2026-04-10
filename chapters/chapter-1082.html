@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1082: Return In Fulfillment (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1081.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1083.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1082: Return In Fulfillment (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Within the mirror’s world.</p>
+<p>Supreme Yin surged within the profound hall of the Palace of Radiant Purity Supreme Yin. Patterns of golden-stamen laurel adorned the place, while moonlit lamps shone on mounds of snow piled high. Images of jade rabbits and toads could be seen everywhere. A few snowflakes drifted through the air as a man with folded sleeves walked out from within the palace.</p>
+<p>The youth had a broad forehead, as well as thick hair and whiskers that flowed down his cheeks. His face was pale, and his eyes were a light jade-green. Waves were painted on his sleeves.</p>
+<p>He turned into the courtyard and sat down next to someone there, and spoke, “Lord Liu, do you have any connection with the lower realm? When will Lord Li return?”</p>
+<p>The other was an Immortal Official in white. The Immortal Official only shook his head repeatedly and replied, “Time passes and years are unknown in the lower realm. If he has gone to cultivate the Dao, it could be hundreds or thousands of years. There is no reason for it to be so soon.”</p>
+<p>“Alas! Hundreds or thousands of years? That will wear me to death!”</p>
+<p>Sorrow welled up in the youth’s heart, and he sat there in a daze.</p>
+<p>This youth was none other than Dangjiang. He had been compiling spell arts here for who knew how long, studying day and night without rest and writing until his mouth went dry. Jade slips continued to pour out endlessly from the cabinets.</p>
+<p>Dangjiang had never been diligent by nature, and compiling spell arts was exhausting work. Yet, he had no reprieve day or night. At last, when he managed to rest and asked Immortal Official Li for news, it felt like a crushing blow.</p>
+<p>He sat dazed for a time, with no mind to admire the drifting snow in the palace. Suddenly, Immortal Official Liu shot to his feet and saluted respectfully, “Greetings, my lord!”</p>
+<p>Dangjiang quickly raised his head and saw a cold-faced Immortal General clad in silver armor at the edge of the courtyard. His cheeks were as sharp as if they were cut by a blade.</p>
+<p>The youth immediately stood and sighed deeply, “Greetings, Immortal General!”</p>
+<p>This was none other than Zhen’gao, the Supreme Yin Bright Immortal General. Zhen’gao had left him in this desolate place, forced to toil ever since Dangjiang had arrived. Worse still, there were few people here, each elusive and silent, hardly speaking at all. There was no way to even find Zhen’gao. Dangjiang had long been stifled with frustration.</p>
+<p>Now that he finally found his superior, he could not contain his excitement and exclaimed with emotion, “It has been so long since I last saw you, my lord!”</p>
+<p>Zhen’gao replied coolly, “A single trip to the lower realm cannot be considered long.”</p>
+<p>Other than Dangjiang, everything in this mirror’s world was an illusion. Zhen’gao, of course, was under Lu Jiangxian’s casual control. Even Immortal Official Liu beside him was no different. The reason he spoke so little was simply because Lu Jiangxian found it tiresome to deal with such a chatterbox.</p>
+<p>Li Ximing had visited several places in succession on this breakthrough journey, including the Azure Pond Sect, Xianyou Peak, Sword Gate, then Xuanmiao Temple, Profound Peak Gate, and finally the Cui Family’s Chongzhou Island.</p>
+<p>Lu Jiangxian had not paid constant attention, yet the Immortal Mirror’s illumination had followed his journey from within the great void. Every spell art and secret technique that could be taken had been gathered. However, each sect had sealed them with restrictive methods that were difficult to unravel. The harvest could only be considered moderate.</p>
+<p>Every spell at Chongzhou Island, Sword Gate, and the Azure Pond Sect had a unique restrictive method. The unlocking methods for higher-grade spell arts appeared to be transmitted orally within each lineage and were not recorded in jade slips, so the harvest there was meager.</p>
+<p>As for Xiao Chuting, the old fox of Xianyou Peak, every single cultivation technique was bound by restrictions. Nothing whatsoever could be gained from that vast peak.</p>
+<p>Only Xuanmiao Temple and Profound Peak Gate had shallow foundations and no illustrious background. The restrictive methods for their cultivation arts were recorded directly in jade slips. Profound Peak Gate was better protected, with most Purple Mansion Realm secret techniques kept inside Changxi’s storage pouch, though the rest lay open. Xuanmiao Temple, which had only been established in Jiangbei for barely over a decade, lacked proper structure. The unlocking methods for its Purple Mansion Realm techniques were placed right behind the statue of their ancestor True Monarch Xu Xiang, and thus were seized all at once.</p>
+<p>Most of what he had gained were Foundation Establishment Realm spell arts. The Sword Gate had quite a number of third- and fourth-grade sword techniques. Xuanmiao Temple actually yielded the least, yet they had a fifth-grade Purple Mansion technique, the Scripture of Precious White Earth… a rare path of Treasure Earth.</p>
+<p>These were all gains within expectation. Yet as Li Ximing passed through the Eastern Sea, Lu Jiangxian inadvertently came across a cave dwelling that seemed to belong to an ancient cultivator.</p>
+<p>The cave’s formation was flawless. It was imperceptible even if it had been placed directly before Li Ximing. Lu Jiangxian had no intention of wasting effort. His divine sense passed through the formation and surveyed the space inside. Though spacious, it held nothing particularly notable. He merely read the formation plate and casually memorized it.</p>
+<p>All the other arts were poured into the mountain’s Sutra Repository and left unused. Their sect-specific traits were too distinct. Without alteration by Dangjiang or himself, they could not be applied directly, only studied for reference.</p>
+<p>He now entertained a new thought. The repository was already overflowing with spell arts that Dangjiang had tediously revised day by day, and bestowing them one by one to the Li Family seemed too inefficient. Perhaps he could rely on the connections among talisman seeds and let the Li Family members choose for themselves.</p>
+<p>If so, someone needed to oversee and guide the repository. That way, if more things were revealed to the Li Family in the future, it would be all the more convenient. If there was a means of contact, he can fabricate a reason to bestow something like the cave residence, rather than let it waste away in the sea.</p>
+<p>After all, work was work for Dangjiang, no matter where it was done. If he were not confined to this palace, Lu Jiangxian would not have to constantly shape incarnations to deal with him. He had no intention of meeting the Li Family directly, so he planned ahead.</p>
+<p>Thus, inhabiting the body of Zhen’gao, he walked over to Dangjiang and said with a nod, “Though I made a trip to the lower realm, I heard from Immortal Official Liu that you have been diligent and tireless. I also reviewed the techniques you revised. Most were useful, and though some were rejected, it is clear you put in earnest effort.”</p>
+<p>“This… I thank you for your understanding, my lord!” replied an overjoyed Dangjiang.</p>
+<p>He cast a grateful glance at Immortal Official Liu. Zhen’gao continued, “Since you are so diligent and capable, I shall arrange a position for you in Heaven. What do you think?”</p>
+<p>Had not Dangjiang been toiling so earnestly precisely for this moment? He bowed delightedly, “My lord’s grace… engraves gratitude into my very being… I…”</p>
+<p>Before he could finish, Zhen’gao raised his hand and said, “I asked the Registrar and found a pavilion at Heaven’s edge for you. Manpower in Heaven is scarce, and that pavilion has long been abandoned. It was originally the official post of Immortal Official Li. When he returns from the lower realm, he will certainly receive a good position, leaving this one vacant. Since you are adept in Daoist arts, you shall first be dispatched there to manage spells and techniques. For now, you will stand guard in his stead.”</p>
+<p>What?</p>
+<p>When he heard it was still the same exhausting task, Dangjiang nearly blurted out in protest. Inwardly he lamented,What do you mean by adept in Daoist arts? Do I have any other choice? Even if they sent me to meet people, patrol a pavilion, stand watch in Heaven, or go to the lower realm to slay demons, it would all be fine… why is it always about being adept in Daoist arts again!</p>
+<p>Lu Jiangxian knew he was a talkative type, and never one to quietly sit and revise techniques. Yet now, where in Heaven was there to patrol, and what demons were left to slay?</p>
+<p>So he only asked suspiciously, “Do you dislike the post for being too lowly?”</p>
+<p>With those words, the matter was sealed. Dangjiang dared not argue, shaking his head repeatedly and voicing words of gratitude. Lu Jiangxian found it amusing and, through Zhen’gao, turned to say, “Gather your things, I’ll take you to the edge of Heaven.”</p>
+<p>When Zhen’gao stepped out of the courtyard, Immortal Official Liu finally dropped his stiff, reverent demeanor, coming to life as he cupped his hands in congratulations, “Congratulations, congratulations!”</p>
+<p>Dangjiang was torn between joy and worry. He was glad to finally have a position in Heaven, yet troubled that it meant continuing the same exhausting work, perhaps with an even greater workload.</p>
+<p>Lu Jiangxian borrowed the rhetoric of his previous life and consoled him through Immortal Official Liu, “Having this post is already a good thing. You’re now a fellow colleague! Which of the Immortal Officials did not start this way? Do the work steadily! Endure until the clouds part and the bright moon appears.”</p>
+<p>Dangjiang ground his teeth and replied, “When I finally rise and gain the chance to descend to the lower realm, I must have a proper talk with Fellow Daoist Li… this is work that lasts for centuries!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1081.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1083.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

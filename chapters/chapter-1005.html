@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1005: A Sneak Attack (IV) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1004.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1006.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1005: A Sneak Attack (IV)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>What a stroke of fortune…thought Chi Zhihu.</p>
+<p>By pure accident, he had dealt Li Xizhi a heavy blow, but before the joy could bubble up on his face, it was replaced by astonishment instead.</p>
+<p>The Li Xizhi before him dissolved completely, like sunlight melting the last snowfall.</p>
+<p>A clone?Wu Weibai’s pupils dilated sharply, and only one thought remained in his mind, “The Clear Serenity Mirror…!”</p>
+<p>Sure enough, the reflection in the old man’s eyes revealed the golden gleam of Gold In Cloud. A fair and strong hand gradually emerged from nothing, flinging a stream of Heavenly Glow that pressed down upon the white, crystal-clear mirror Chi Zhihu had left suspended in the air.</p>
+<p>“Floating Light Gathering!”</p>
+<p>Chi Zhihu’s focus had been entirely on the three-tailed feathered beast. He was in no position to withstand this sudden strike, and suddenly felt his chest hollow and heavy. His blood surged upward as his spiritual sense took a heavy blow. His link to the treasure instantly weakened.</p>
+<p>A spell art… can actually be used like this?!thought Chi Zhihu.</p>
+<p>Li Xizhi had seized the Clear Serenity Mirror, and the rippling light in the air vanished at once. It was as though he held a struggling sparrow in his grasp, the weight shifting unpredictably in his palm. His other hand, already brimming with Heavenly Glow, came crashing down on the mirror’s surface.</p>
+<p>Clang…</p>
+<p>The arc of Heavenly Glow dispersed like mist as Li Xizhi stepped back, vanishing into the air. Before Chi Zhihu could react, a miserable scream rang by his ear, “Ahhh!!”</p>
+<p>It turned out that when Chi Zhihu recalled the Gold Feathered Beast, the tri-colored Heavenly Glow had veered toward Xia Yun instead.</p>
+<p>Xia Yun had been promoted largely due to his good relationship with Ning Hejing. He had also curried favor with Chi Zhihu when the winds shifted. Though he had some skill, he never expected that Chi Zhihu would recall the feathered beast, causing the tri-colored Heavenly Glow beside him to turn and strike at him.</p>
+<p>This fellow had amassed quite a bit of wealth over the past two years. The white light from his body flickered a few times, slightly resisting the attack. Combined with the Foundation Establishment Realm talisman he had activated earlier, it reduced more than half the damage inflicted. Unfortunately, the strike came too swiftly for him to prepare further…</p>
+<p>Chi Zhihu looked up to see Xia Yun’s head pierced clean through by the tri-colored Heavenly Glow, leaving a fist-sized hole. One could faintly see the seascape beyond through the gap. The youth retreated in panic, hastily pulling out rice meat to patch the wound in his head.</p>
+<p>The Zhao fellow is still tangled with that Dawn Rayfish underwater…Chi Zhihu didn’t need to look; the mana fluctuations beneath his feet had been constant from the beginning of the battle.</p>
+<p>After fighting for so long, he was already exhausted and had no desire to continue battling. He thought,This man’s spell arts are so profound… What in the world is Liaokong doing… still not making a move! How much longer is he going to wait? If this goes on, Xia Yun will be dead!</p>
+<p>Now that the Clear Serenity Mirror had been seized, Li Xizhi vanished into the Heavenly Glow in the air again. Chi Zhihu had raised a Tortoise Shield before him when he heard Wu Weibai exclaim in delight, “Eh?”</p>
+<p>Chi Zhihu looked up sharply and saw that the figure that had turned into golden light had reappeared, falling from midair. Realization dawned, and he was overjoyed. He thought to himself,The Clear Serenity Mirror is an ancient dharma artifact. It’s not something you can just take!</p>
+<p>The Gold In Cloud has been disrupted…thought Li Xizhi. He had been holding the Clear Serenity Mirror, and the three would have been powerless against him if he had been able to transform into Heavenly Glow. Unfortunately, the Clear Serenity Mirror was a high-grade ancient dharma artifact from the Azure Pond Sect. Its constant struggle disrupted his footwork technique.</p>
+<p>As he fell, Wu Weibai seized the chance to drive his sword forward. The dharma sword twisted like an ominous golden-and-silver-ringed serpent, patterned and restless. The old man shouted, “Activate the dharma artifact!”</p>
+<p>Prompted by his words, Chi Zhihu dispersed the spell art in his hands, shut his eyes, and poured all his strength into activating the Clear Serenity Mirror. The struggles of the dharma artifact in Li Xizhi’s grip suddenly doubled, forcing him to split his focus to suppress it.</p>
+<p>Li Xizhi’s gaze swept over the scene, and understanding dawned in his heart,Chi Zhihu may have many treasures, but he rarely engages in real combat. Xia Yun is barely competent. Only Wu Weibai is truly seasoned. His spell arts may not be exquisite but his cultivation is solid.</p>
+<p>As Wu Weibai charged toward him, Li Xizhi formed seals and chanted with one hand while urging his spiritual sense with the other, following the link through their spiritual resonance.</p>
+<p>“Qiyun!”</p>
+<p>Clang!</p>
+<p>Just as Li Xizhi finished, the serpent-like sword leapt toward him.</p>
+<p>The Clear Serenity Mirror still clung stubbornly to Li Xizhi’s hand. Wu Weibai did not fear him withdrawing the dharma sword. His aged eyes fixed on the composed and dignified youth before him, one hand gripping the mirror, the other pressing on the sword.</p>
+<p>Clang!</p>
+<p>An arcing sword qi shot straight toward the heavens. Wu Weibai’s serpent sword was jolted halfway out of position, its tail flicking high as moon-white sword qi flowed gracefully, splitting into three agile arcs that flew out from the same spot.</p>
+<p>The two Moon Gate sword forms Li Xizhi executed were not as sharp and ethereal as those of Li Xijun, but they were perfectly fluid. Wu Weibai did not understand sword techniques, and his weapon leaned more toward a dharma artifact than a true sword, causing him to flounder under the assault.</p>
+<p>Boom!</p>
+<p>The seawater shook as snow-white water surged into the sky. A stream of Heavenly Glow burst through it. The Dawn Rayfish, Li Qiyun, and Li Xizhi crossed paths in midair, and the Clear Serenity Mirror changed hands, falling into the Dawn Rayfish’s grasp.</p>
+<p>Freed from his restraint, Li Xizhi instantly activated Gold In Cloud, his figure splitting into dozens of Heavenly Glow streams that soared and circled within the formation.</p>
+<p>“He got away…”</p>
+<p>Li Qiyun gripped the Clear Serenity Mirror just as the guest cultivator Zhao burst out of the water. His face that was twisting in fury was met with another brilliant stream of Heavenly Glow that blasted him straight back into the water with a resounding splash.</p>
+<p>Having lost the Clear Serenity Mirror, Wu Weibai and Chi Zhihu grew increasingly cautious within the Heavenly Glow. Chi Zhihu’s face was dark, while Wu Weibai sighed and said, “Your Highness… this spirit beast appears to be a Foundation Establishment Realm Dawn Rayfish. It has little ability in spell combat, but it’s extremely troublesome to entangle with. Zhao Fu has been pinned down and can’t break free.”</p>
+<p>The situation was now clear. Chi Zhihu and his three companions had no way to deal with this master and servant. If Liaokong still refused to act, even retreating would become a troublesome matter for them.</p>
+<p>“How can his mastery of spell arts be so profound?!” muttered Chi Zhihu. He could hear the meaning in the old guest cultivator’s words, but for some reason Liaokong seemed to have gone mad. He was still hiding somewhere, and had yet to make an appearance!</p>
+<p>The two were in a bind as two streams of Heavenly Glow rushed toward them. They each struck to defend, dispersing them with a wave. Clearly, they were nothing more than illusions.</p>
+<p>Thud!</p>
+<p>A muffled sound came from the side. Xia Yun’s aura weakened, and a surge of hazy flame spread out, dispersing much of the Heavenly Glow.</p>
+<p>Wu Weibai’s heart clenched with fear as he said in a deep voice, “Your Highness!”</p>
+<p>Chi Zhihu was seething with frustration. He clearly had fine dharma artifacts and many powerful arts at his disposal. Yet, every strike felt like hitting cotton. They couldn’t even touch the enemy’s shadow. His anger and fear had reached their peak.</p>
+<p>“Could it be we have no choice but to let him leave… wouldn’t that mean all this was for nothing?!” Lowering his gaze to the sword qi surging from within the Heavenly Glow, he shouted in a deep voice, “Liaokong!”</p>
+<p>The thunderous call made Li Xizhi instantly more alert, and the Heavenly Glow drew back noticeably. Yet even after several seconds, there was no response.</p>
+<p>Chi Zhihu ground his teeth and shouted again, “Liaokong!”</p>
+<p>Only a muffled echo returned within the grand formation. Wu Weibai’s expression changed drastically, turning grim as he shouted, “Your Highness, withdraw the formation at once!”</p>
+<p>Chi Zhihu also sensed that something was wrong. Fear flashed across his face as he quickly formed seals, guiding his spiritual sense to channel mana into the formation plate hidden in his sleeve.</p>
+<p>The bright yellow formation in midair remained motionless, firmly covering the sky.</p>
+<p>Wu Weibai nearly spat blood and almost fainted. Chi Zhihu formed several spell seals, but the grand formation above remained as steady as Mount Tai, not budging in the slightest. The color drained from his face as well.</p>
+<p>Wu Weibai felt a rush of hot blood surge to his head, terror flooding his heart. Trembling, he forgot all formality and cried out in alarm, “You couldn’t borrow the Glimmering Inquiry Mirror or the Taiyu Sword… isn’t that right?!”</p>
+<p>Chi Zhihu looked at him in a daze, as if waking from a dream.</p>
+<p>Wu Weibai lifted his head in despair. The three gleams of emerald green, earthy brown, and profound gold were gathering within the Heavenly Glow. Dozens of shimmering clones flickered faintly in the haze, like starving wolves baring their fangs, ready to pounce on their prey at any moment.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1004.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1006.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

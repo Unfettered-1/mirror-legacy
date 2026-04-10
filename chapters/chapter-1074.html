@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1074: Establishing White River Dispatch Office (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-1073.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1075.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 1074: Establishing White River Dispatch Office (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Ding Weizeng waited outside the hall until Qu Buzhi arrived. Though the old man bore some minor injuries, he was in high spirits, his wrinkled face blooming with cheer as he hummed a tune along the way.</p>
+<p>He first offered congratulations, then clasped Ding Weizeng’s hand and whispered softly, “I have already finished sorting the land records of the Floating Cloud Cave territory. Once they are presented to the main family, has the Ding family settled their arrangements? Will you be returning to your former lands, or will you choose a new place to settle?”</p>
+<p>Ding Weizeng understood what the old man meant. Qu Buzhi had just finished organizing the spirit fields, so he surely knew which plots in the Floating Cloud Cave territory were good and which were poor. This was a hint being dropped to him.</p>
+<p>He only answered steadily, “Senior Qu, my family will be heading to the lake and joining the island for cultivation.”</p>
+<p>“Oh!Congratulations!”</p>
+<p>Qu Buzhi offered his congratulations. Since a favored battle general of the main family was being treated like this, he understood that the Floating Cloud Cave’s territory would surely be under strict control, leaving no room for private maneuvering. The thought of resettling family members could be set aside. He lifted his robe and walked inside, muttering inwardly,Since when did Ding Weizeng become so humble? Back in the Floating Cloud Cave, he even dared to show a thunderous face to Fu Dou’s legitimate son, the cave master’s heir. Yet now he is as meek as that An Siwei…</p>
+<p>In truth, Qu Buzhi had a decent impression of An Siwei. The man was a typical inland cultivator who had relied on fortune, pills, and spiritual aura to pass through the barrier of Foundation Establishment Realm. Out on the outer-sea, his standing would probably be even lower than Qu Buzhi’s own.</p>
+<p>Fortunately, he came from a good family. His father, though inept, pledged loyalty to the flood dragon and earned generations of trust. Even Ding Weizeng has to treat him with courtesy.</p>
+<p>As Qu Buzhi pondered, he raised his eyes. A youth in golden-white armor sat at the head seat, head lowered as he wrote. To his left stood another youth in silver armor and a black robe. He was about the same age, his eyes dark and sharp as ink dots as he stood with arms folded. On the right, a palace-robed woman, dazzling and dignified, contemplated while concealing a splendid treasure lamp.</p>
+<p>These were three of the four currently most powerful members of the Li Family. It was said another managed affairs on the lake, but Qu Buzhi had not yet seen that one. He clasped his hands together and announced respectfully, “I have finished compiling the Floating Cloud Cave territory’s records and have come to report to the main family!”</p>
+<p>“Read it.” Li Zhouwei replied.</p>
+<p>Qu Buzhi respectfully recited, “There are two thousand and fifty-one spirit fields in the Floating Cloud Cave territory: two hundred and eleven of superior grade, five hundred and sixty-one of medium grade, and one thousand two hundred and seventy-nine of inferior grade.”</p>
+<p>The Li Family’s Moongaze Lake was reputed to hold ten thousand spirit fields. Yet most were confined to the peaks, and the vast majority were barren plots that yielded just enough to offset their upkeep or lay idle for long stretches. Since each field varied greatly in spiritual energy, speaking of area alone was meaningless.</p>
+<p>Li Zhouwei merely asked, “Elder Qu, you are well-versed in the matters of fields with your Earth Virtue Immortal Foundation, the Concealed Containment Palace. What is your estimate of the potential yield?”</p>
+<p>Qu Buzhi replied respectfully, “I have calculated everything. The yield should be around five thousand kilograms, but if the formation plates are fully established and the water veins adjusted properly, it could surpass ten thousand.”</p>
+<p>Li Zhouwei mused, “As expected, it is a fertile land.”</p>
+<p>The Li Family’s rule was strongest on the southeastern shores of Moongaze Lake. Towns lay directly beneath the peak offices, and aside from manpower, all output belonged to the family. The total yield there was around twenty-five thousand. Leaving aside Pingya Island, which served mainly as a cultivation ground, the families left by Daoist He on the western shore and the Fei Family on the northern shore each contributed over five thousand. Various others, including the hundred families on the eastern shore, also paid more than five thousand. Altogether, the total approached fifty thousand.</p>
+<p>Yet this figure of fifty thousand was only for accounting. Now that the Li Family no longer needed to pay tribute to the Azure Pond Sect, not every piece of land was planted with Spirit Paddies. Vast tracts were instead devoted to cultivating rarer spirit items used by Qi Cultivation Realm cultivators, such as Pine Yue Fruit and Lacquer Ridge Grass. In truth, the yield from actual Spirit Paddies was only about fifteen thousand.</p>
+<p>This meant that just half of the White River Stream’s Floating Cloud Cave produced one-fifth of Moongaze Lake’s entire output, which was an astonishing figure indeed.</p>
+<p>Li Minggong sighed with emotion, “No wonder so many sects and families have settled in Jiangbei. With such density, only lands like these could sustain them.”</p>
+<p>Li Zhouwei calculated inwardly,Our family controls ten thousand spirit fields and produces fifty thousand in yield. That translates to nearly a thousand Spirit Stones per year. Yet with our vast household, the number of cultivators we must support is staggering. On top of that, the treatment of our Foundation Establishment Realm cultivators is extremely generous, and… the market town has yet to be built.</p>
+<p>Though life within the family is comfortable, after deducting costs and stipends, the actual surplus each year is not much. It will only come up to ten to twenty percent, or less than a hundred Spirit Stones.</p>
+<p>Though an annual surplus of one hundred Spirit Stones might not seem much, in truth it was remarkable. It meant that every month the family could amass the full lifetime savings of a Qi Cultivation Realm cultivator. They could fund the construction of a top-grade Qi Cultivation Realm formation each year, or raise an entire Foundation Establishment Realm grand formation in three to five years.</p>
+<p>The only awkward problem was that the Li Family had yet to establish a market town. Most of their surplus remained stored within the family as Spirit Paddies and spirit items, which often suffered losses from poor preservation. Spirit Stones in Jiangnan were limited, and if they constantly exchanged their goods for stones, they would only drive the price of Spirit Stones sky high.</p>
+<p>Still, few would use Spirit Stones to trade for treasured panaceas. A Foundation Establishment Realm grand formation is difficult to fund solely through Spirit Stones as well.</p>
+<p>Li Zhouwei hesitated for a moment. A yield of five thousand kilograms worth a hundred Spirit Stones was indeed good, but spirit items typically took years to mature. If they lost these lands before then, it would be a great pity.</p>
+<p>“Let Siwei arrange for Spirit Paddies to be planted first. There is no need to refine the formations too much, lest we waste resources if we leave later,” said Li Zhouwei.</p>
+<p>Qu Buzhi nodded and withdrew. Li Zhouwei began to worry about storing the massive harvest of Spirit Paddies and sighed inwardly.</p>
+<p>Sensing his concern, Li Minggong said, “Now I understand why the Xiao and Yuan Families invested heavily to claim vast stretches of spirit lands and poured great expense into cultivating one or two spirit items. Yet the time they’ve held these places has been short, making it unsuitable.”</p>
+<p>“Indeed.” Li Zhouwei said gravely, “Have several of the family’s major spirit fields converted to growing White Essence Fruit. We can make use of the reserves for now…”</p>
+<p>Fortunately, the only troublesome matter was the ruined lands of the Floating Cloud Cave territory. As for the Hidden Cloud Cave territory, only taxes from established families were required, making things simpler. After carefully discussing the details with Li Minggong and asking her to return to oversee matters, Li Zhouwei finally brought the affairs of White River Stream to a clean conclusion.</p>
+<p>At last, he found a moment of leisure. He invited Li Chenghui to sit by his side and asked, “Uncle, what are your thoughts on the cultivators of Baiye?”</p>
+<p>Li Chenghui paused for a moment, then frowned and said, “They will not be easy to handle. I just inquired earlier. The one in the rainbow gown is a direct descendant of Baiye, named Guan Lingdie. Her Immortal Foundation is the same as that of the Lingu Family, the South Chou Waters.</p>
+<p>“As for Gongsun Baifan, the one wielding the blade, he was originally a rogue cultivator from Jiangbei who practices Pit Water’s Jing Dragon King. He has now joined the Baiye Capital Immortal Dao. His blade techniques have some merit. The remaining one, the young lady of the Song Family, is from a Jiangbei family.”</p>
+<p>This information did not differ much from what Li Zhouwei had guessed. After pondering, he said, “Although Guan Lingdie speaks fiercely, her combat arts show a certain level of experience. She does not seem simple at all. Gongsun Baifan’s Dao lineage is also profound, unlike that of a mere rogue cultivator. As for Song Yunbai, judging by her appearance, it seems Baiye Capital Immortal Dao does not strictly control its territories.”</p>
+<p>After all, Guan Lingdie was a direct descendant of a Purple Mansion cultivator. She had held off both Li Chenghui and An Siwei with her own strength, and even managed to wound An Siwei. Such strength could not be underestimated.</p>
+<p>Li Zhouwei simply committed the names to memory and then said, “As for Profound Peak Gate… there is truly no one. It is indeed a sign of decline!”</p>
+<p>There was truth in Li Zhouwei’s words. Kong Guxi, the head of Profound Peak Gate, had been evenly matched against a mere local power of the Jiangbei Song Family. If not for Profound Peak Gate’s superior numbers, Baiye Capital Immortal Dao would have withdrawn much earlier, and the casualties of this expedition would have been far worse.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-1073.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-1075.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

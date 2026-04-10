@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 996: Three Treasures (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-995.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-997.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 996: Three Treasures (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Golden clouds blazed brilliantly in the sky as Fuxia spoke. Peacock-like clouds swirled, golden pools surged, and colorful rain fell in torrents. A Pure Land appeared in the northern sky.</p>
+<p>This Pure Land was shrouded in clouds and mist. A massive golden gate, beside which lay a colossal sleeping one-horned tiger, black as ink and patterned head to tail, was faintly visible within. Countless golden Dharma Protectors stood upon the clouds, stretching to infinity. Tens of millions of human figures lifted their heads, with some bowing and some kowtowing. They gazed upward in eager anticipation.</p>
+<p>The six-armed Vajra, Liubai, who had always pressed down on the Radiant Origin Pass without the slightest response, paused for the first time. When the peacock’s cry echoed from the northern sky, that forever serene and forever wrathful-eyed head slowly lifted. Its golden lips parted, and a melodious chanting of scripture rang out.</p>
+<p>Boom!</p>
+<p>Every cultivator on the lake lowered their brows and covered their eyes, not daring to look. The sight was like a shot of pure stimulant driven into Fuxia’s heart. He jerked his head up, caring nothing for his lack of mana or the searing flames burning him. The entire Radiant Origin Pass shook violently with his movement, as though it might collapse at any moment.</p>
+<p>“They are saved… good… good…” The old monk was wild with joy, tears of excitement streaming down his face. He gazed at Kongheng in desperate pleading and said in a mournful voice, “My lord, the Buddha-land has manifested. Please proclaim me the Wrathful Manifestation Emperor Scion, return to the Northern Demon-Subduing Temple, sit in majesty amidst the heavenly rain of mandara blossoms, endure immeasurable and boundless eons, and achieve the mighty station of the Emperor Scion Maha.”</p>
+<p>As if in answer to his voice, the moment Fuxia’s request left his lips, a rich, resonant tolling of bells came from the northern golden clouds, ringing nine times in succession.</p>
+<p>Doong… doong…</p>
+<p>Kongheng gazed far into the distance, the image of a Pure Land reflected in his pupils. He knew that if he so much as nodded, if he had the slightest thought of purifying the world, the position of Emperor Scion Maha in the heavens would immediately respond to him. He would become a cultivator like Murong Xia, attaining the state of Non-Retrogression.</p>
+<p>Once Non-Retrogression was attained, unless someone could break into the Pure Land itself and obliterate even the last trace of his true spirit, he could reincarnate for a hundred lifetimes without losing his consciousness, forever enjoying the seat of the Maha.</p>
+<p>He would no longer need to cultivate in this life. He had already brought his Master Monk’s cultivation to perfection. As an ancient cultivator, Kongheng’s next step was not to become the Merciful One, but to become Maha. All he had to do was head north, reclaim the Maha seat, and stand among the supreme of this realm, with even the Dharma Master’s Fruition Attainment faintly within reach.</p>
+<p>Yet he still gazed on in calm silence.</p>
+<p>Kongheng’s own Dao lineage had reached its end, and all that remained was the word ‘enlightenment’. It had been so many years since an ancient cultivator had produced a Maha. If he missed this opportunity, there would never again be a Dao lineage with even a single Maha, and the Pure Land would personally welcome outsiders instead.</p>
+<p>“Senior, the Wrathful Manifestation is not my Dao.”</p>
+<p>Fuxia, in the Dharma body of the Merciful One, had his tears turn to glass within the blazing flames, then shattered by heavenly light, casting shifting glimmers across his face as he stared at Kongheng in a daze.</p>
+<p>Kongheng quietly looked at Fuxia. The narrow-eyed monk already had white teeth and red lips, but now his face shone with boundless radiance as he spoke, “My image is not the image of all beings. I will not establish boundless Pure Lands, nor set up fearsome visages, nor build incense-filled temples, nor ordain monks to be worshiped. All such things are karmic burdens. No cultivator shall be made to believe in me, and no commoner to bow to me. My Dao is to seek liberation, not to bring people into the Pure Land.”</p>
+<p>Fuxia looked as if he had been struck by lightning, his spirit deflating like a punctured bellows. As his will slackened, the radiance of the Merciful One’s Dharma body dimmed further. His back bent in an instant, as he was pressed down even more firmly.</p>
+<p>The old monk remained still as he craned his neck to look up at the sky. Blazing flames swirled around his body as he muttered scriptures under his breath, watching the golden Heavenly Glow fade bit by bit. The giant tiger sank into the clouds, along with his hopes.</p>
+<p>The glare in Fuxia’s wide eyes vanished, replaced by a look of dejected sorrow. In a low voice, he said, “I used sharp words and aggressive pressure all along, constantly suppressing and rebuking you, condemning you with extreme and rigid doctrines. Yet, I could not make you feel even the slightest anger. Had there been the smallest resentment in your heart, the title of Wrathful Manifestation Emperor Scion would have fallen upon you.</p>
+<p>“So I pressed you with my authority, threatening you and intimidating you with the radiance of the Merciful One’s Dharma body. If you had felt even a trace of fear, without needing to nod, without needing to follow me, the Emperor Scion’s title would have fallen upon you.</p>
+<p>“Since you neither grew angry nor afraid, I then wept in grief, hoping to move you with sorrow, to beg you to spread your teachings across the world and sit beneath heavenly rain and mandara blossoms to enlighten all Buddhists. If you had harbored even the smallest thought toward it, the Emperor Scion’s title would have fallen upon you.”</p>
+<p>The radiance on Kongheng’s face remained unchanged as the flames around them gradually faded. Shards of glass flew from Fuxia’s Dharma body. The old monk braced the radiant pass with one hand, mana circulating, his eyes full of crystalline light as he walked straight out of the flames.</p>
+<p>The Merciful One’s Dharma body was now fully in motion. At this moment, Fuxia could topple the Radiant Origin Pass without lifting a single finger. The endless flames had served as his nourishment, making his body shine all the more brilliantly the more they burned.</p>
+<p>Fuxia said solemnly, “But you did not waver.”</p>
+<p>The lake was silent, all eyes filled with fear fixed upon the Merciful One. Only Kongheng spoke gently, “The Mahas have long since tried.”</p>
+<p>Kongheng smiled at him, while the old monk removed the dark yellow kasaya from his body, folded it neatly, and placed it in his palm, setting a pure white staff atop it with his other hand.</p>
+<p>He carefully placed them in midair as if on an unseen stand, pressed his palms together, and said respectfully, “Since this old monk has come to this demonic land, I never intended to return. I will gift three treasures to you.</p>
+<p>“The first is the Profound Coffer Tiger-Patterned Kasaya, formed from a horned tiger. It is mysterious beyond measure, and able to transform into a ferocious tiger to charge forth, devouring all things. Ordinary cultivators cannot stand against it.</p>
+<p>“The second is the Exquisite White True Jade Demon-Subduing Staff, a treasured artifact that has subdued countless demons and devils. Its dark baleful aura soars to the heavens. A single strike can split mountains and sever rivers. The evildoers it has slain dare not seek redress.</p>
+<p>Kongheng frowned, the five-colored radiance on his face flowing endlessly as he said softly, “These belong to the Northern Demon-Subduing Dao lineage. I cannot take them.”</p>
+<p>The old monk was stubborn beyond reason, ignoring Kongheng’s words entirely. Pressing his palms together against his chest, his bare upper body shimmering with radiance, he first bowed deeply toward the north. Eyes closed, he spoke firmly, “The third is the North Demon-Subduing Temple’s Dharma Protector Sarira.”</p>
+<p>These words finally stirred a reaction in Kongheng. He stepped forward, opening his mouth to dissuade him, but no matter how fast he moved, he could not outpace the Merciful One.</p>
+<p>The moment Fuxia’s voice rang out, a glassy radiance spanning heaven and earth burst forth, shooting straight into the sky. The lake’s surface blossomed with countless lotuses, while pink petals, mixed with shards of many-colored glass, rained down in a flood. In a flash, all that remained was brilliance and a boundless glow.</p>
+<p>Kongheng was instantly submerged in the countless rays of light. Fuxia, having embodied the Merciful One for many years, self-immolated, and the sound of sutras filled the air. The burning house and prison shattered, the ground awash in gold and crimson.</p>
+<p>Om… om… om…</p>
+<p>But the Pure Land that should have appeared to receive him was long gone. All the brilliance and color gathered and condensed into a single glassy relic.</p>
+<p>No matter how dazzling the iridescence, no matter how sky-piercing the light, it lasted only an instant. Before it could fully bloom, it was drawn in like a great whale drinking water, disappearing into the relic without leaving the slightest trace. The colors of heaven and earth withdrew, leaving only a single relic floating before Kongheng.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-995.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-997.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
