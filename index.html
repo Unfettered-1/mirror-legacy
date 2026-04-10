@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mirror Legacy — Fan Translation</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <span class="navbar-brand">The Mirror Legacy</span>
+    <span class="navbar-home" style="color:#c8b89a;font-style:italic;font-size:0.88rem;">Fan Translation</span>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="novel-hero">
+    <div class="novel-info">
+      <h1 class="novel-title-main">The Mirror Legacy</h1>
+      <p class="novel-author">Fan Translation &mdash; Chapters 801&ndash;1400</p>
+      <div class="genre-tags">
+        <span class="tag">Xianxia</span>
+        <span class="tag">Cultivation</span>
+        <span class="tag">Fantasy</span>
+        <span class="tag">Fan Translation</span>
+      </div>
+      <p class="novel-desc">
+        A sweeping cultivation epic set in a world of immortal sects, devil cultivators, and ancient dharma artifacts.
+        Follow the Li Family and their sworn allies as they navigate war, betrayal, and the perilous path to immortality.
+        This is an unofficial fan translation hosted for personal reading only.
+      </p>
+    </div>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <section class="toc-section">
+    <h2 class="toc-heading">Table of Contents</h2>
+    <input
+      class="toc-search"
+      id="tocSearch"
+      type="search"
+      placeholder="Search chapters by number or title..."
+      oninput="tocSearch()"
+    >
+    <ul class="toc-list" id="tocList">
+      <li class="toc-item"><a href="chapters/chapter-801.html"><span class="ch-num">Ch.801</span>Captured Alive I</a></li>
+<li class="toc-item"><a href="chapters/chapter-802.html"><span class="ch-num">Ch.802</span>Captured Alive II</a></li>
+<li class="toc-item"><a href="chapters/chapter-803.html"><span class="ch-num">Ch.803</span>Qi Wangs Profound Heaven Hearing I</a></li>
+<li class="toc-item"><a href="chapters/chapter-804.html"><span class="ch-num">Ch.804</span>Qi Wangs Profound Heaven Hearing II</a></li>
+<li class="toc-item"><a href="chapters/chapter-805.html"><span class="ch-num">Ch.805</span>Turning Point I</a></li>
+<li class="toc-item"><a href="chapters/chapter-806.html"><span class="ch-num">Ch.806</span>Turning Point II</a></li>
+<li class="toc-item"><a href="chapters/chapter-807.html"><span class="ch-num">Ch.807</span>Severing Fate I</a></li>
+<li class="toc-item"><a href="chapters/chapter-808.html"><span class="ch-num">Ch.808</span>Severing Fate II</a></li>
+<li class="toc-item"><a href="chapters/chapter-809.html"><span class="ch-num">Ch.809</span>Great Defeat I</a></li>
+<li class="toc-item"><a href="chapters/chapter-810.html"><span class="ch-num">Ch.810</span>Great Defeat II</a></li>
+<li class="toc-item"><a href="chapters/chapter-811.html"><span class="ch-num">Ch.811</span>Chimen Difu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-812.html"><span class="ch-num">Ch.812</span>Chimen Difu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-813.html"><span class="ch-num">Ch.813</span>Xi Chang I</a></li>
+<li class="toc-item"><a href="chapters/chapter-814.html"><span class="ch-num">Ch.814</span>Xi Chang II</a></li>
+<li class="toc-item"><a href="chapters/chapter-815.html"><span class="ch-num">Ch.815</span>Shameful Matter</a></li>
+<li class="toc-item"><a href="chapters/chapter-816.html"><span class="ch-num">Ch.816</span>The Fall of Mount Yan Pass I</a></li>
+<li class="toc-item"><a href="chapters/chapter-817.html"><span class="ch-num">Ch.817</span>The Fall of Mount Yan Pass II</a></li>
+<li class="toc-item"><a href="chapters/chapter-818.html"><span class="ch-num">Ch.818</span>Crimson Voyager I</a></li>
+<li class="toc-item"><a href="chapters/chapter-819.html"><span class="ch-num">Ch.819</span>Crimson Voyager II</a></li>
+<li class="toc-item"><a href="chapters/chapter-820.html"><span class="ch-num">Ch.820</span>The Northern Line I</a></li>
+<li class="toc-item"><a href="chapters/chapter-821.html"><span class="ch-num">Ch.821</span>The Northern Line II</a></li>
+<li class="toc-item"><a href="chapters/chapter-822.html"><span class="ch-num">Ch.822</span>Sixfold Profound Thunder Punishment Tokens</a></li>
+<li class="toc-item"><a href="chapters/chapter-823.html"><span class="ch-num">Ch.823</span>Searching I</a></li>
+<li class="toc-item"><a href="chapters/chapter-824.html"><span class="ch-num">Ch.824</span>Searching II</a></li>
+<li class="toc-item"><a href="chapters/chapter-825.html"><span class="ch-num">Ch.825</span>Sensing The Opportunity I</a></li>
+<li class="toc-item"><a href="chapters/chapter-826.html"><span class="ch-num">Ch.826</span>Sensing The Opportunity II</a></li>
+<li class="toc-item"><a href="chapters/chapter-827.html"><span class="ch-num">Ch.827</span>Chang Yun</a></li>
+<li class="toc-item"><a href="chapters/chapter-828.html"><span class="ch-num">Ch.828</span>Ready And Set To Depart I</a></li>
+<li class="toc-item"><a href="chapters/chapter-829.html"><span class="ch-num">Ch.829</span>Ready And Set To Depart II</a></li>
+<li class="toc-item"><a href="chapters/chapter-830.html"><span class="ch-num">Ch.830</span>In The Demonic Smoke I</a></li>
+<li class="toc-item"><a href="chapters/chapter-831.html"><span class="ch-num">Ch.831</span>In The Demonic Smoke II</a></li>
+<li class="toc-item"><a href="chapters/chapter-832.html"><span class="ch-num">Ch.832</span>Great Ning Palace I</a></li>
+<li class="toc-item"><a href="chapters/chapter-833.html"><span class="ch-num">Ch.833</span>Great Ning Palace II</a></li>
+<li class="toc-item"><a href="chapters/chapter-834.html"><span class="ch-num">Ch.834</span>Painted Panels I</a></li>
+<li class="toc-item"><a href="chapters/chapter-835.html"><span class="ch-num">Ch.835</span>Painted Panels II</a></li>
+<li class="toc-item"><a href="chapters/chapter-836.html"><span class="ch-num">Ch.836</span>Yuanli I</a></li>
+<li class="toc-item"><a href="chapters/chapter-837.html"><span class="ch-num">Ch.837</span>Yuanli II</a></li>
+<li class="toc-item"><a href="chapters/chapter-838.html"><span class="ch-num">Ch.838</span>Taking Action I</a></li>
+<li class="toc-item"><a href="chapters/chapter-839.html"><span class="ch-num">Ch.839</span>Taking Action II</a></li>
+<li class="toc-item"><a href="chapters/chapter-840.html"><span class="ch-num">Ch.840</span>I Should Not Enter I</a></li>
+<li class="toc-item"><a href="chapters/chapter-841.html"><span class="ch-num">Ch.841</span>I Should Not Enter II</a></li>
+<li class="toc-item"><a href="chapters/chapter-842.html"><span class="ch-num">Ch.842</span>Anhuai Heaven</a></li>
+<li class="toc-item"><a href="chapters/chapter-843.html"><span class="ch-num">Ch.843</span>The Scheme Of Golden Feather Sect I</a></li>
+<li class="toc-item"><a href="chapters/chapter-844.html"><span class="ch-num">Ch.844</span>The Scheme Of Golden Feather Sect II</a></li>
+<li class="toc-item"><a href="chapters/chapter-845.html"><span class="ch-num">Ch.845</span>Palace of Enlightened Dao I</a></li>
+<li class="toc-item"><a href="chapters/chapter-846.html"><span class="ch-num">Ch.846</span>Palace of Enlightened Dao II</a></li>
+<li class="toc-item"><a href="chapters/chapter-847.html"><span class="ch-num">Ch.847</span>Immortal Threshold I</a></li>
+<li class="toc-item"><a href="chapters/chapter-848.html"><span class="ch-num">Ch.848</span>Immortal Threshold II</a></li>
+<li class="toc-item"><a href="chapters/chapter-849.html"><span class="ch-num">Ch.849</span>Shaken With Fear</a></li>
+<li class="toc-item"><a href="chapters/chapter-850.html"><span class="ch-num">Ch.850</span>Bestowal Of The Method I</a></li>
+<li class="toc-item"><a href="chapters/chapter-851.html"><span class="ch-num">Ch.851</span>Bestowal Of The Method II</a></li>
+<li class="toc-item"><a href="chapters/chapter-852.html"><span class="ch-num">Ch.852</span>Crimson Reef I</a></li>
+<li class="toc-item"><a href="chapters/chapter-853.html"><span class="ch-num">Ch.853</span>Crimson Reef II</a></li>
+<li class="toc-item"><a href="chapters/chapter-854.html"><span class="ch-num">Ch.854</span>Yu Jiang I</a></li>
+<li class="toc-item"><a href="chapters/chapter-855.html"><span class="ch-num">Ch.855</span>Yu Jiang II</a></li>
+<li class="toc-item"><a href="chapters/chapter-856.html"><span class="ch-num">Ch.856</span>Calamity I</a></li>
+<li class="toc-item"><a href="chapters/chapter-857.html"><span class="ch-num">Ch.857</span>Calamity II</a></li>
+<li class="toc-item"><a href="chapters/chapter-858.html"><span class="ch-num">Ch.858</span>Calamity III</a></li>
+<li class="toc-item"><a href="chapters/chapter-859.html"><span class="ch-num">Ch.859</span>Calamity IV</a></li>
+<li class="toc-item"><a href="chapters/chapter-860.html"><span class="ch-num">Ch.860</span>Profound Punishment I</a></li>
+<li class="toc-item"><a href="chapters/chapter-861.html"><span class="ch-num">Ch.861</span>Profound Punishment II</a></li>
+<li class="toc-item"><a href="chapters/chapter-862.html"><span class="ch-num">Ch.862</span>The Fall Of Great Ning Palace I</a></li>
+<li class="toc-item"><a href="chapters/chapter-863.html"><span class="ch-num">Ch.863</span>The Fall Of Great Ning Palace II</a></li>
+<li class="toc-item"><a href="chapters/chapter-864.html"><span class="ch-num">Ch.864</span>The Fall Of Great Ning Palace III</a></li>
+<li class="toc-item"><a href="chapters/chapter-865.html"><span class="ch-num">Ch.865</span>Li Qinghong Side Story I</a></li>
+<li class="toc-item"><a href="chapters/chapter-866.html"><span class="ch-num">Ch.866</span>Li Qinghong Side Story II</a></li>
+<li class="toc-item"><a href="chapters/chapter-867.html"><span class="ch-num">Ch.867</span>Urgent Persuasion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-868.html"><span class="ch-num">Ch.868</span>Urgent Persuasion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-869.html"><span class="ch-num">Ch.869</span>Lingering Sunlight Over The Huai River I</a></li>
+<li class="toc-item"><a href="chapters/chapter-870.html"><span class="ch-num">Ch.870</span>Lingering Sunlight Over The Huai River II</a></li>
+<li class="toc-item"><a href="chapters/chapter-871.html"><span class="ch-num">Ch.871</span>Breaking The Formation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-872.html"><span class="ch-num">Ch.872</span>Breaking The Formation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-873.html"><span class="ch-num">Ch.873</span>Kongsijiang Demon Bowl I</a></li>
+<li class="toc-item"><a href="chapters/chapter-874.html"><span class="ch-num">Ch.874</span>Kongsijiang Demon Bowl II</a></li>
+<li class="toc-item"><a href="chapters/chapter-875.html"><span class="ch-num">Ch.875</span>Monarch Calling Command Golden Talisman</a></li>
+<li class="toc-item"><a href="chapters/chapter-876.html"><span class="ch-num">Ch.876</span>Clash Between Evils I</a></li>
+<li class="toc-item"><a href="chapters/chapter-877.html"><span class="ch-num">Ch.877</span>Clash Between Evils II</a></li>
+<li class="toc-item"><a href="chapters/chapter-878.html"><span class="ch-num">Ch.878</span>All Tinted Rose I</a></li>
+<li class="toc-item"><a href="chapters/chapter-879.html"><span class="ch-num">Ch.879</span>All Tinted Rose II</a></li>
+<li class="toc-item"><a href="chapters/chapter-880.html"><span class="ch-num">Ch.880</span>Annihilation</a></li>
+<li class="toc-item"><a href="chapters/chapter-881.html"><span class="ch-num">Ch.881</span>Better To Act Decisively I</a></li>
+<li class="toc-item"><a href="chapters/chapter-882.html"><span class="ch-num">Ch.882</span>Better To Act Decisively II</a></li>
+<li class="toc-item"><a href="chapters/chapter-883.html"><span class="ch-num">Ch.883</span>Scattered Geng Drifting White I</a></li>
+<li class="toc-item"><a href="chapters/chapter-884.html"><span class="ch-num">Ch.884</span>Scattered Geng Drifting White II</a></li>
+<li class="toc-item"><a href="chapters/chapter-885.html"><span class="ch-num">Ch.885</span>Returning I</a></li>
+<li class="toc-item"><a href="chapters/chapter-886.html"><span class="ch-num">Ch.886</span>Returning II</a></li>
+<li class="toc-item"><a href="chapters/chapter-887.html"><span class="ch-num">Ch.887</span>Condolences I</a></li>
+<li class="toc-item"><a href="chapters/chapter-888.html"><span class="ch-num">Ch.888</span>Condolences II</a></li>
+<li class="toc-item"><a href="chapters/chapter-889.html"><span class="ch-num">Ch.889</span>Submission I</a></li>
+<li class="toc-item"><a href="chapters/chapter-890.html"><span class="ch-num">Ch.890</span>Submission II</a></li>
+<li class="toc-item"><a href="chapters/chapter-891.html"><span class="ch-num">Ch.891</span>Scheme I</a></li>
+<li class="toc-item"><a href="chapters/chapter-892.html"><span class="ch-num">Ch.892</span>Scheme II</a></li>
+<li class="toc-item"><a href="chapters/chapter-893.html"><span class="ch-num">Ch.893</span>Uncle And Nephew</a></li>
+<li class="toc-item"><a href="chapters/chapter-894.html"><span class="ch-num">Ch.894</span>Returning To The Heart Of The Lake I</a></li>
+<li class="toc-item"><a href="chapters/chapter-895.html"><span class="ch-num">Ch.895</span>Returning To The Heart Of The Lake II</a></li>
+<li class="toc-item"><a href="chapters/chapter-896.html"><span class="ch-num">Ch.896</span>The Beginning Of Total Achievement I</a></li>
+<li class="toc-item"><a href="chapters/chapter-897.html"><span class="ch-num">Ch.897</span>The Beginning Of Total Achievement II</a></li>
+<li class="toc-item"><a href="chapters/chapter-898.html"><span class="ch-num">Ch.898</span>Chongming Profound Insight Screen I</a></li>
+<li class="toc-item"><a href="chapters/chapter-899.html"><span class="ch-num">Ch.899</span>Chongming Profound Insight Screen II</a></li>
+<li class="toc-item"><a href="chapters/chapter-900.html"><span class="ch-num">Ch.900</span>Fei Qingyi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-901.html"><span class="ch-num">Ch.901</span>Fei Qingyi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-902.html"><span class="ch-num">Ch.902</span>Western Shore</a></li>
+<li class="toc-item"><a href="chapters/chapter-903.html"><span class="ch-num">Ch.903</span>Raging Thunder Quelled by Earth I</a></li>
+<li class="toc-item"><a href="chapters/chapter-904.html"><span class="ch-num">Ch.904</span>Raging Thunder Quelled by Earth II</a></li>
+<li class="toc-item"><a href="chapters/chapter-905.html"><span class="ch-num">Ch.905</span>Realization In Hindsight I</a></li>
+<li class="toc-item"><a href="chapters/chapter-906.html"><span class="ch-num">Ch.906</span>Realization In Hindsight II</a></li>
+<li class="toc-item"><a href="chapters/chapter-907.html"><span class="ch-num">Ch.907</span>Moongaze Li Family I</a></li>
+<li class="toc-item"><a href="chapters/chapter-908.html"><span class="ch-num">Ch.908</span>Moongaze Li Family II</a></li>
+<li class="toc-item"><a href="chapters/chapter-909.html"><span class="ch-num">Ch.909</span>Suzhu Reefs I</a></li>
+<li class="toc-item"><a href="chapters/chapter-910.html"><span class="ch-num">Ch.910</span>Suzhu Reefs II</a></li>
+<li class="toc-item"><a href="chapters/chapter-911.html"><span class="ch-num">Ch.911</span>Suzhu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-912.html"><span class="ch-num">Ch.912</span>Suzhu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-913.html"><span class="ch-num">Ch.913</span>Suzhu III</a></li>
+<li class="toc-item"><a href="chapters/chapter-914.html"><span class="ch-num">Ch.914</span>Suzhu IV</a></li>
+<li class="toc-item"><a href="chapters/chapter-915.html"><span class="ch-num">Ch.915</span>A Joyous Occasion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-916.html"><span class="ch-num">Ch.916</span>A Joyous Occasion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-917.html"><span class="ch-num">Ch.917</span>By Coincidence I</a></li>
+<li class="toc-item"><a href="chapters/chapter-918.html"><span class="ch-num">Ch.918</span>By Coincidence II</a></li>
+<li class="toc-item"><a href="chapters/chapter-919.html"><span class="ch-num">Ch.919</span>Chess Piece</a></li>
+<li class="toc-item"><a href="chapters/chapter-920.html"><span class="ch-num">Ch.920</span>Autumn Moons Harmonious Echo I</a></li>
+<li class="toc-item"><a href="chapters/chapter-921.html"><span class="ch-num">Ch.921</span>Autumn Moons Harmonious Echo II</a></li>
+<li class="toc-item"><a href="chapters/chapter-922.html"><span class="ch-num">Ch.922</span>Seizing The Prize I</a></li>
+<li class="toc-item"><a href="chapters/chapter-923.html"><span class="ch-num">Ch.923</span>Seizing The Prize II</a></li>
+<li class="toc-item"><a href="chapters/chapter-924.html"><span class="ch-num">Ch.924</span>Blazing Merging Fire I</a></li>
+<li class="toc-item"><a href="chapters/chapter-925.html"><span class="ch-num">Ch.925</span>Blazing Merging Fire II</a></li>
+<li class="toc-item"><a href="chapters/chapter-926.html"><span class="ch-num">Ch.926</span>Chivalry I</a></li>
+<li class="toc-item"><a href="chapters/chapter-927.html"><span class="ch-num">Ch.927</span>Chivalry II</a></li>
+<li class="toc-item"><a href="chapters/chapter-928.html"><span class="ch-num">Ch.928</span>Chivalry III</a></li>
+<li class="toc-item"><a href="chapters/chapter-929.html"><span class="ch-num">Ch.929</span>Mistake I</a></li>
+<li class="toc-item"><a href="chapters/chapter-930.html"><span class="ch-num">Ch.930</span>Mistake II</a></li>
+<li class="toc-item"><a href="chapters/chapter-931.html"><span class="ch-num">Ch.931</span>Exchange</a></li>
+<li class="toc-item"><a href="chapters/chapter-932.html"><span class="ch-num">Ch.932</span>Penglai I</a></li>
+<li class="toc-item"><a href="chapters/chapter-933.html"><span class="ch-num">Ch.933</span>Penglai II</a></li>
+<li class="toc-item"><a href="chapters/chapter-934.html"><span class="ch-num">Ch.934</span>Making Amends</a></li>
+<li class="toc-item"><a href="chapters/chapter-935.html"><span class="ch-num">Ch.935</span>Orchid I</a></li>
+<li class="toc-item"><a href="chapters/chapter-936.html"><span class="ch-num">Ch.936</span>Orchid II</a></li>
+<li class="toc-item"><a href="chapters/chapter-937.html"><span class="ch-num">Ch.937</span>Shifting Political Climate I</a></li>
+<li class="toc-item"><a href="chapters/chapter-938.html"><span class="ch-num">Ch.938</span>Shifting Political Climate II</a></li>
+<li class="toc-item"><a href="chapters/chapter-939.html"><span class="ch-num">Ch.939</span>Owing Nothing I</a></li>
+<li class="toc-item"><a href="chapters/chapter-940.html"><span class="ch-num">Ch.940</span>Owing Nothing II</a></li>
+<li class="toc-item"><a href="chapters/chapter-941.html"><span class="ch-num">Ch.941</span>Huiyao Paying Respect I</a></li>
+<li class="toc-item"><a href="chapters/chapter-942.html"><span class="ch-num">Ch.942</span>Huiyao Paying Respect II</a></li>
+<li class="toc-item"><a href="chapters/chapter-943.html"><span class="ch-num">Ch.943</span>Dingjiao I</a></li>
+<li class="toc-item"><a href="chapters/chapter-944.html"><span class="ch-num">Ch.944</span>Dingjiao II</a></li>
+<li class="toc-item"><a href="chapters/chapter-945.html"><span class="ch-num">Ch.945</span>A Dragons Request I</a></li>
+<li class="toc-item"><a href="chapters/chapter-946.html"><span class="ch-num">Ch.946</span>A Dragons Request II</a></li>
+<li class="toc-item"><a href="chapters/chapter-947.html"><span class="ch-num">Ch.947</span>Scattering of Purple Qi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-948.html"><span class="ch-num">Ch.948</span>Scattering of Purple Qi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-949.html"><span class="ch-num">Ch.949</span>Entering The Abyss I</a></li>
+<li class="toc-item"><a href="chapters/chapter-950.html"><span class="ch-num">Ch.950</span>Entering The Abyss II</a></li>
+<li class="toc-item"><a href="chapters/chapter-951.html"><span class="ch-num">Ch.951</span>Tanyun I</a></li>
+<li class="toc-item"><a href="chapters/chapter-952.html"><span class="ch-num">Ch.952</span>Tanyun II</a></li>
+<li class="toc-item"><a href="chapters/chapter-953.html"><span class="ch-num">Ch.953</span>Junior I</a></li>
+<li class="toc-item"><a href="chapters/chapter-954.html"><span class="ch-num">Ch.954</span>Junior II</a></li>
+<li class="toc-item"><a href="chapters/chapter-955.html"><span class="ch-num">Ch.955</span>Treasured Armor I</a></li>
+<li class="toc-item"><a href="chapters/chapter-956.html"><span class="ch-num">Ch.956</span>Treasured Armor II</a></li>
+<li class="toc-item"><a href="chapters/chapter-957.html"><span class="ch-num">Ch.957</span>Planning for What Comes After I</a></li>
+<li class="toc-item"><a href="chapters/chapter-958.html"><span class="ch-num">Ch.958</span>Planning for What Comes After II</a></li>
+<li class="toc-item"><a href="chapters/chapter-959.html"><span class="ch-num">Ch.959</span>Secrets I</a></li>
+<li class="toc-item"><a href="chapters/chapter-960.html"><span class="ch-num">Ch.960</span>Secrets II</a></li>
+<li class="toc-item"><a href="chapters/chapter-961.html"><span class="ch-num">Ch.961</span>Meeting Heyun In The Abyss I</a></li>
+<li class="toc-item"><a href="chapters/chapter-962.html"><span class="ch-num">Ch.962</span>Meeting Heyun In The Abyss II</a></li>
+<li class="toc-item"><a href="chapters/chapter-963.html"><span class="ch-num">Ch.963</span>Qiyun I</a></li>
+<li class="toc-item"><a href="chapters/chapter-964.html"><span class="ch-num">Ch.964</span>Qiyun II</a></li>
+<li class="toc-item"><a href="chapters/chapter-965.html"><span class="ch-num">Ch.965</span>Fanning the Waves I</a></li>
+<li class="toc-item"><a href="chapters/chapter-966.html"><span class="ch-num">Ch.966</span>Fanning the Waves II</a></li>
+<li class="toc-item"><a href="chapters/chapter-967.html"><span class="ch-num">Ch.967</span>Whole Pill I</a></li>
+<li class="toc-item"><a href="chapters/chapter-968.html"><span class="ch-num">Ch.968</span>Whole Pill II</a></li>
+<li class="toc-item"><a href="chapters/chapter-969.html"><span class="ch-num">Ch.969</span>The Two I</a></li>
+<li class="toc-item"><a href="chapters/chapter-970.html"><span class="ch-num">Ch.970</span>The Two II</a></li>
+<li class="toc-item"><a href="chapters/chapter-971.html"><span class="ch-num">Ch.971</span>Crimson Palace Generation Receiving Talisman Seed I</a></li>
+<li class="toc-item"><a href="chapters/chapter-972.html"><span class="ch-num">Ch.972</span>Crimson Palace Generation Receiving Talisman Seed II</a></li>
+<li class="toc-item"><a href="chapters/chapter-973.html"><span class="ch-num">Ch.973</span>Defensive Wall I</a></li>
+<li class="toc-item"><a href="chapters/chapter-974.html"><span class="ch-num">Ch.974</span>Defensive Wall II</a></li>
+<li class="toc-item"><a href="chapters/chapter-975.html"><span class="ch-num">Ch.975</span>Demonic Kin I</a></li>
+<li class="toc-item"><a href="chapters/chapter-976.html"><span class="ch-num">Ch.976</span>Demonic Kin II</a></li>
+<li class="toc-item"><a href="chapters/chapter-977.html"><span class="ch-num">Ch.977</span>Demonic Kin III</a></li>
+<li class="toc-item"><a href="chapters/chapter-978.html"><span class="ch-num">Ch.978</span>The Heart of All Under Heaven I</a></li>
+<li class="toc-item"><a href="chapters/chapter-979.html"><span class="ch-num">Ch.979</span>The Heart of All Under Heaven II</a></li>
+<li class="toc-item"><a href="chapters/chapter-980.html"><span class="ch-num">Ch.980</span>Southern Sea I</a></li>
+<li class="toc-item"><a href="chapters/chapter-981.html"><span class="ch-num">Ch.981</span>Southern Sea II</a></li>
+<li class="toc-item"><a href="chapters/chapter-982.html"><span class="ch-num">Ch.982</span>Begging To Loosen It I</a></li>
+<li class="toc-item"><a href="chapters/chapter-983.html"><span class="ch-num">Ch.983</span>Begging To Loosen It II</a></li>
+<li class="toc-item"><a href="chapters/chapter-984.html"><span class="ch-num">Ch.984</span>Listening In I</a></li>
+<li class="toc-item"><a href="chapters/chapter-985.html"><span class="ch-num">Ch.985</span>Listening In II</a></li>
+<li class="toc-item"><a href="chapters/chapter-986.html"><span class="ch-num">Ch.986</span>Dragon And Fox</a></li>
+<li class="toc-item"><a href="chapters/chapter-987.html"><span class="ch-num">Ch.987</span>Turning Into A Deer I</a></li>
+<li class="toc-item"><a href="chapters/chapter-988.html"><span class="ch-num">Ch.988</span>Turning Into A Deer II</a></li>
+<li class="toc-item"><a href="chapters/chapter-989.html"><span class="ch-num">Ch.989</span>Fuxia I</a></li>
+<li class="toc-item"><a href="chapters/chapter-990.html"><span class="ch-num">Ch.990</span>Fuxia II</a></li>
+<li class="toc-item"><a href="chapters/chapter-991.html"><span class="ch-num">Ch.991</span>The Plot Of The Demon-Subduing Temple I</a></li>
+<li class="toc-item"><a href="chapters/chapter-992.html"><span class="ch-num">Ch.992</span>The Plot Of The Demon-Subduing Temple II</a></li>
+<li class="toc-item"><a href="chapters/chapter-993.html"><span class="ch-num">Ch.993</span>The Story Of Kongheng I</a></li>
+<li class="toc-item"><a href="chapters/chapter-994.html"><span class="ch-num">Ch.994</span>The Story Of Kongheng II</a></li>
+<li class="toc-item"><a href="chapters/chapter-995.html"><span class="ch-num">Ch.995</span>Solemn And Treasured Form</a></li>
+<li class="toc-item"><a href="chapters/chapter-996.html"><span class="ch-num">Ch.996</span>Three Treasures I</a></li>
+<li class="toc-item"><a href="chapters/chapter-997.html"><span class="ch-num">Ch.997</span>Three Treasures II</a></li>
+<li class="toc-item"><a href="chapters/chapter-998.html"><span class="ch-num">Ch.998</span>Departure I</a></li>
+<li class="toc-item"><a href="chapters/chapter-999.html"><span class="ch-num">Ch.999</span>Departure II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1000.html"><span class="ch-num">Ch.1000</span>Two Qi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1001.html"><span class="ch-num">Ch.1001</span>Two Qi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1002.html"><span class="ch-num">Ch.1002</span>A Sneak Attack I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1003.html"><span class="ch-num">Ch.1003</span>A Sneak Attack II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1004.html"><span class="ch-num">Ch.1004</span>A Sneak Attack III</a></li>
+<li class="toc-item"><a href="chapters/chapter-1005.html"><span class="ch-num">Ch.1005</span>A Sneak Attack IV</a></li>
+<li class="toc-item"><a href="chapters/chapter-1006.html"><span class="ch-num">Ch.1006</span>Abandoned Pawn In The Formation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1007.html"><span class="ch-num">Ch.1007</span>Abandoned Pawn In The Formation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1008.html"><span class="ch-num">Ch.1008</span>Liaokong I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1009.html"><span class="ch-num">Ch.1009</span>Liaokong II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1010.html"><span class="ch-num">Ch.1010</span>Seclusion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1011.html"><span class="ch-num">Ch.1011</span>Seclusion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1012.html"><span class="ch-num">Ch.1012</span>Divine Ability I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1013.html"><span class="ch-num">Ch.1013</span>Divine Ability II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1014.html"><span class="ch-num">Ch.1014</span>The Sky Grew Bright I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1015.html"><span class="ch-num">Ch.1015</span>The Sky Grew Bright II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1016.html"><span class="ch-num">Ch.1016</span>Entered into the Underworld Register I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1017.html"><span class="ch-num">Ch.1017</span>Entered into the Underworld Register II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1018.html"><span class="ch-num">Ch.1018</span>The Old Mans Words I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1019.html"><span class="ch-num">Ch.1019</span>The Old Mans Words II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1020.html"><span class="ch-num">Ch.1020</span>Attaining the Purple Mansion RealmI</a></li>
+<li class="toc-item"><a href="chapters/chapter-1021.html"><span class="ch-num">Ch.1021</span>Attaining the Purple Mansion RealmII</a></li>
+<li class="toc-item"><a href="chapters/chapter-1022.html"><span class="ch-num">Ch.1022</span>The Congratulations of the Families I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1023.html"><span class="ch-num">Ch.1023</span>The Congratulations of the Families II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1024.html"><span class="ch-num">Ch.1024</span>Various Factions I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1025.html"><span class="ch-num">Ch.1025</span>Various Factions II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1026.html"><span class="ch-num">Ch.1026</span>Senior Brother And Junior Brother I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1027.html"><span class="ch-num">Ch.1027</span>Senior Brother And Junior Brother II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1028.html"><span class="ch-num">Ch.1028</span>The Background Of Mifan Three Sects</a></li>
+<li class="toc-item"><a href="chapters/chapter-1029.html"><span class="ch-num">Ch.1029</span>The Congratulations Of The White Qilin I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1030.html"><span class="ch-num">Ch.1030</span>The Congratulations Of The White Qilin II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1031.html"><span class="ch-num">Ch.1031</span>Immortal Palace Within the Mirror I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1032.html"><span class="ch-num">Ch.1032</span>Immortal Palace Within the Mirror II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1033.html"><span class="ch-num">Ch.1033</span>Grand Assembly of the Purple Mansion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1034.html"><span class="ch-num">Ch.1034</span>Grand Assembly of the Purple Mansion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1035.html"><span class="ch-num">Ch.1035</span>Grand Assembly of the Purple Mansion III</a></li>
+<li class="toc-item"><a href="chapters/chapter-1036.html"><span class="ch-num">Ch.1036</span>Grand Assembly of the Purple Mansion IV</a></li>
+<li class="toc-item"><a href="chapters/chapter-1037.html"><span class="ch-num">Ch.1037</span>Gao Xuanzhi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1038.html"><span class="ch-num">Ch.1038</span>Gao Xuanzhi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1039.html"><span class="ch-num">Ch.1039</span>Baiye Capital Immortal Dao I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1040.html"><span class="ch-num">Ch.1040</span>Baiye Capital Immortal Dao II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1041.html"><span class="ch-num">Ch.1041</span>Calculations I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1042.html"><span class="ch-num">Ch.1042</span>Calculations II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1043.html"><span class="ch-num">Ch.1043</span>Splitting The Treasures</a></li>
+<li class="toc-item"><a href="chapters/chapter-1044.html"><span class="ch-num">Ch.1044</span>Cultivators Of The Floating Cloud Cave I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1045.html"><span class="ch-num">Ch.1045</span>Cultivators Of The Floating Cloud Cave II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1046.html"><span class="ch-num">Ch.1046</span>Two Blessings At Once I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1047.html"><span class="ch-num">Ch.1047</span>Two Blessings At Once II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1048.html"><span class="ch-num">Ch.1048</span>The Change In Spiritual Aura</a></li>
+<li class="toc-item"><a href="chapters/chapter-1049.html"><span class="ch-num">Ch.1049</span>Yuan Xius Intent I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1050.html"><span class="ch-num">Ch.1050</span>Yuan Xius Intent II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1051.html"><span class="ch-num">Ch.1051</span>The Beginning Of The Immortal Family I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1052.html"><span class="ch-num">Ch.1052</span>The Beginning Of The Immortal Family II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1053.html"><span class="ch-num">Ch.1053</span>Records of Wanyu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1054.html"><span class="ch-num">Ch.1054</span>Records of Wanyu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1055.html"><span class="ch-num">Ch.1055</span>The Rise And Fall Of Worldly Affairs I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1056.html"><span class="ch-num">Ch.1056</span>The Rise And Fall Of Worldly Affairs II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1057.html"><span class="ch-num">Ch.1057</span>White River Stream Region I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1058.html"><span class="ch-num">Ch.1058</span>White River Stream Region II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1059.html"><span class="ch-num">Ch.1059</span>Greetings Great Lord</a></li>
+<li class="toc-item"><a href="chapters/chapter-1060.html"><span class="ch-num">Ch.1060</span>North Brocade River King I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1061.html"><span class="ch-num">Ch.1061</span>North Brocade River King II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1062.html"><span class="ch-num">Ch.1062</span>Settling Floating Cloud Cave I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1063.html"><span class="ch-num">Ch.1063</span>Settling Floating Cloud Cave II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1064.html"><span class="ch-num">Ch.1064</span>Sumian I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1065.html"><span class="ch-num">Ch.1065</span>Sumian II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1066.html"><span class="ch-num">Ch.1066</span>Matters Of Immortal Capital I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1067.html"><span class="ch-num">Ch.1067</span>Matters Of Immortal Capital II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1068.html"><span class="ch-num">Ch.1068</span>Wenhu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1069.html"><span class="ch-num">Ch.1069</span>Wenhu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1070.html"><span class="ch-num">Ch.1070</span>Test I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1071.html"><span class="ch-num">Ch.1071</span>Test II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1072.html"><span class="ch-num">Ch.1072</span>Entering Hidden Cloud I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1073.html"><span class="ch-num">Ch.1073</span>Entering Hidden Cloud II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1074.html"><span class="ch-num">Ch.1074</span>Establishing White River Dispatch Office I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1075.html"><span class="ch-num">Ch.1075</span>Establishing White River Dispatch Office II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1076.html"><span class="ch-num">Ch.1076</span>The Backstory Of Mifan I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1077.html"><span class="ch-num">Ch.1077</span>The Backstory Of Mifan II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1078.html"><span class="ch-num">Ch.1078</span>Cui Family Of Chongzhou I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1079.html"><span class="ch-num">Ch.1079</span>Cui Family Of Chongzhou II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1080.html"><span class="ch-num">Ch.1080</span>Sovereign In Peril</a></li>
+<li class="toc-item"><a href="chapters/chapter-1081.html"><span class="ch-num">Ch.1081</span>Return In Fulfillment I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1082.html"><span class="ch-num">Ch.1082</span>Return In Fulfillment II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1083.html"><span class="ch-num">Ch.1083</span>The Secret Of Essence Gathering Pill I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1084.html"><span class="ch-num">Ch.1084</span>The Secret Of Essence Gathering Pill II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1085.html"><span class="ch-num">Ch.1085</span>Becoming A Mountain I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1086.html"><span class="ch-num">Ch.1086</span>Becoming A Mountain II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1087.html"><span class="ch-num">Ch.1087</span>Four Borders I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1088.html"><span class="ch-num">Ch.1088</span>Four Borders II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1089.html"><span class="ch-num">Ch.1089</span>The Battle Of Golden Tang I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1090.html"><span class="ch-num">Ch.1090</span>The Battle Of Golden Tang II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1091.html"><span class="ch-num">Ch.1091</span>Clash in the Wilderness</a></li>
+<li class="toc-item"><a href="chapters/chapter-1092.html"><span class="ch-num">Ch.1092</span>Might of the Halberd Commander I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1093.html"><span class="ch-num">Ch.1093</span>Might of the Halberd Commander II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1094.html"><span class="ch-num">Ch.1094</span>Death By Roar I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1095.html"><span class="ch-num">Ch.1095</span>Death By Roar II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1096.html"><span class="ch-num">Ch.1096</span>A Scene Of Ruin I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1097.html"><span class="ch-num">Ch.1097</span>A Scene Of Ruin II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1098.html"><span class="ch-num">Ch.1098</span>The News From Jingyi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1099.html"><span class="ch-num">Ch.1099</span>The News From Jingyi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1100.html"><span class="ch-num">Ch.1100</span>First Encounter I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1101.html"><span class="ch-num">Ch.1101</span>First Encounter II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1102.html"><span class="ch-num">Ch.1102</span>Walking In The Great Void I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1103.html"><span class="ch-num">Ch.1103</span>Walking In The Great Void II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1104.html"><span class="ch-num">Ch.1104</span>Changxiao and Ye Hui</a></li>
+<li class="toc-item"><a href="chapters/chapter-1105.html"><span class="ch-num">Ch.1105</span>Taking Stock I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1106.html"><span class="ch-num">Ch.1106</span>Taking Stock II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1107.html"><span class="ch-num">Ch.1107</span>The Sword Gates Retrieval I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1108.html"><span class="ch-num">Ch.1108</span>The Sword Gates Retrieval II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1109.html"><span class="ch-num">Ch.1109</span>The Profound Peak Mountain Gate I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1110.html"><span class="ch-num">Ch.1110</span>The Profound Peak Mountain Gate II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1111.html"><span class="ch-num">Ch.1111</span>Fish Bait I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1112.html"><span class="ch-num">Ch.1112</span>Fish Bait II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1113.html"><span class="ch-num">Ch.1113</span>Detailed Explanation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1114.html"><span class="ch-num">Ch.1114</span>Detailed Explanation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1115.html"><span class="ch-num">Ch.1115</span>Sophistry</a></li>
+<li class="toc-item"><a href="chapters/chapter-1116.html"><span class="ch-num">Ch.1116</span>Arranging All Matters I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1117.html"><span class="ch-num">Ch.1117</span>Arranging All Matters II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1118.html"><span class="ch-num">Ch.1118</span>Arranging All Matters III</a></li>
+<li class="toc-item"><a href="chapters/chapter-1119.html"><span class="ch-num">Ch.1119</span>Arranging All Matters IV</a></li>
+<li class="toc-item"><a href="chapters/chapter-1120.html"><span class="ch-num">Ch.1120</span>The Dark Night</a></li>
+<li class="toc-item"><a href="chapters/chapter-1121.html"><span class="ch-num">Ch.1121</span>Pill And Formation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1122.html"><span class="ch-num">Ch.1122</span>Pill And Formation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1123.html"><span class="ch-num">Ch.1123</span>The Will Of Purple Smoke I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1124.html"><span class="ch-num">Ch.1124</span>The Will Of Purple Smoke II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1125.html"><span class="ch-num">Ch.1125</span>Indistinguishable Truth And Falsehood I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1126.html"><span class="ch-num">Ch.1126</span>Indistinguishable Truth And Falsehood II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1127.html"><span class="ch-num">Ch.1127</span>Jiangque I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1128.html"><span class="ch-num">Ch.1128</span>Jiangque II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1129.html"><span class="ch-num">Ch.1129</span>Market Site Designation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1130.html"><span class="ch-num">Ch.1130</span>Market Site Designation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1131.html"><span class="ch-num">Ch.1131</span>A Cup Of Tea To Divide The Peak</a></li>
+<li class="toc-item"><a href="chapters/chapter-1132.html"><span class="ch-num">Ch.1132</span>Entrustment I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1133.html"><span class="ch-num">Ch.1133</span>Entrustment II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1134.html"><span class="ch-num">Ch.1134</span>Across The Mortal World I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1135.html"><span class="ch-num">Ch.1135</span>Across The Mortal World II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1136.html"><span class="ch-num">Ch.1136</span>Duties I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1137.html"><span class="ch-num">Ch.1137</span>Duties II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1138.html"><span class="ch-num">Ch.1138</span>Suspicion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1139.html"><span class="ch-num">Ch.1139</span>Suspicion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1140.html"><span class="ch-num">Ch.1140</span>Shaohui I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1141.html"><span class="ch-num">Ch.1141</span>Shaohui II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1142.html"><span class="ch-num">Ch.1142</span>Opening Scene I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1143.html"><span class="ch-num">Ch.1143</span>Opening Scene II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1144.html"><span class="ch-num">Ch.1144</span>One Talisman One Decree I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1145.html"><span class="ch-num">Ch.1145</span>One Talisman One Decree II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1146.html"><span class="ch-num">Ch.1146</span>Inkling</a></li>
+<li class="toc-item"><a href="chapters/chapter-1147.html"><span class="ch-num">Ch.1147</span>Fleeing To The Eastern Sea I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1148.html"><span class="ch-num">Ch.1148</span>Fleeing To The Eastern Sea II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1149.html"><span class="ch-num">Ch.1149</span>Profound Method I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1150.html"><span class="ch-num">Ch.1150</span>Profound Method II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1151.html"><span class="ch-num">Ch.1151</span>Thunder I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1152.html"><span class="ch-num">Ch.1152</span>Thunder II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1153.html"><span class="ch-num">Ch.1153</span>Cursed Fire</a></li>
+<li class="toc-item"><a href="chapters/chapter-1154.html"><span class="ch-num">Ch.1154</span>Qian and Xia I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1155.html"><span class="ch-num">Ch.1155</span>Qian and Xia II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1156.html"><span class="ch-num">Ch.1156</span>Threat I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1157.html"><span class="ch-num">Ch.1157</span>Threat II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1158.html"><span class="ch-num">Ch.1158</span>Inquiries Before And After</a></li>
+<li class="toc-item"><a href="chapters/chapter-1159.html"><span class="ch-num">Ch.1159</span>The Choice Of Capital Immortal Dao I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1160.html"><span class="ch-num">Ch.1160</span>The Choice Of Capital Immortal Dao II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1161.html"><span class="ch-num">Ch.1161</span>Retreat And Running I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1162.html"><span class="ch-num">Ch.1162</span>Retreat And Running II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1163.html"><span class="ch-num">Ch.1163</span>Fiend</a></li>
+<li class="toc-item"><a href="chapters/chapter-1164.html"><span class="ch-num">Ch.1164</span>Drifting Into The Mist I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1165.html"><span class="ch-num">Ch.1165</span>Drifting Into The Mist II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1166.html"><span class="ch-num">Ch.1166</span>Resolve And Bearing I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1167.html"><span class="ch-num">Ch.1167</span>Resolve And Bearing II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1168.html"><span class="ch-num">Ch.1168</span>Unexpected I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1169.html"><span class="ch-num">Ch.1169</span>Unexpected II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1170.html"><span class="ch-num">Ch.1170</span>Wearing A Sword I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1171.html"><span class="ch-num">Ch.1171</span>Wearing A Sword II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1172.html"><span class="ch-num">Ch.1172</span>The Falling White Cranes I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1173.html"><span class="ch-num">Ch.1173</span>The Falling White Cranes II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1174.html"><span class="ch-num">Ch.1174</span>Fires End</a></li>
+<li class="toc-item"><a href="chapters/chapter-1175.html"><span class="ch-num">Ch.1175</span>Cleaning Up I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1176.html"><span class="ch-num">Ch.1176</span>Cleaning Up II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1177.html"><span class="ch-num">Ch.1177</span>Thunder Rain I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1178.html"><span class="ch-num">Ch.1178</span>Thunder Rain II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1179.html"><span class="ch-num">Ch.1179</span>Shouyu</a></li>
+<li class="toc-item"><a href="chapters/chapter-1180.html"><span class="ch-num">Ch.1180</span>Seclusion Of Chengming I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1181.html"><span class="ch-num">Ch.1181</span>Seclusion Of Chengming II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1182.html"><span class="ch-num">Ch.1182</span>Rules I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1183.html"><span class="ch-num">Ch.1183</span>Rules II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1184.html"><span class="ch-num">Ch.1184</span>A Request For Pill</a></li>
+<li class="toc-item"><a href="chapters/chapter-1185.html"><span class="ch-num">Ch.1185</span>Admonition I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1186.html"><span class="ch-num">Ch.1186</span>Admonition II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1187.html"><span class="ch-num">Ch.1187</span>Inquiring I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1188.html"><span class="ch-num">Ch.1188</span>Inquiring II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1189.html"><span class="ch-num">Ch.1189</span>Good News From The Purple Smoke Gate</a></li>
+<li class="toc-item"><a href="chapters/chapter-1190.html"><span class="ch-num">Ch.1190</span>Settling The Matters Of Purple Smoke Gate I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1191.html"><span class="ch-num">Ch.1191</span>Settling The Matters Of Purple Smoke Gate II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1192.html"><span class="ch-num">Ch.1192</span>Purple Mansion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1193.html"><span class="ch-num">Ch.1193</span>Purple Mansion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1194.html"><span class="ch-num">Ch.1194</span>True Profound Quintessence-Gathering I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1195.html"><span class="ch-num">Ch.1195</span>True Profound Quintessence-Gathering II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1196.html"><span class="ch-num">Ch.1196</span>Qingxu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1197.html"><span class="ch-num">Ch.1197</span>Qingxu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1198.html"><span class="ch-num">Ch.1198</span>Two Letters</a></li>
+<li class="toc-item"><a href="chapters/chapter-1199.html"><span class="ch-num">Ch.1199</span>The Western Shores Blood Scripts I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1200.html"><span class="ch-num">Ch.1200</span>The Western Shores Blood Scripts II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1201.html"><span class="ch-num">Ch.1201</span>A Huge Commotion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1202.html"><span class="ch-num">Ch.1202</span>A Huge Commotion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1203.html"><span class="ch-num">Ch.1203</span>Grace Covenant I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1204.html"><span class="ch-num">Ch.1204</span>Grace Covenant II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1205.html"><span class="ch-num">Ch.1205</span>Final Oblivion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1206.html"><span class="ch-num">Ch.1206</span>Final Oblivion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1207.html"><span class="ch-num">Ch.1207</span>Three Profoundities I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1208.html"><span class="ch-num">Ch.1208</span>Three Profoundities II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1209.html"><span class="ch-num">Ch.1209</span>Great Divine Ability I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1210.html"><span class="ch-num">Ch.1210</span>Great Divine Ability II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1211.html"><span class="ch-num">Ch.1211</span>Purple Stable Valley I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1212.html"><span class="ch-num">Ch.1212</span>Purple Stable Valley II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1213.html"><span class="ch-num">Ch.1213</span>Premonition of the Purple Mansion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1214.html"><span class="ch-num">Ch.1214</span>Premonition of the Purple Mansion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1215.html"><span class="ch-num">Ch.1215</span>Guest From The Southern Sea I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1216.html"><span class="ch-num">Ch.1216</span>Guest From The Southern Sea II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1217.html"><span class="ch-num">Ch.1217</span>Glazed Pagoda Of Unrestrained Boundary I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1218.html"><span class="ch-num">Ch.1218</span>Glazed Pagoda Of Unrestrained Boundary II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1219.html"><span class="ch-num">Ch.1219</span>Peacock I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1220.html"><span class="ch-num">Ch.1220</span>Peacock II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1221.html"><span class="ch-num">Ch.1221</span>Seeking Dao I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1222.html"><span class="ch-num">Ch.1222</span>Seeking Dao II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1223.html"><span class="ch-num">Ch.1223</span>Intercalary Of Valley Water I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1224.html"><span class="ch-num">Ch.1224</span>Intercalary Of Valley Water II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1225.html"><span class="ch-num">Ch.1225</span>Nine Mounds I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1226.html"><span class="ch-num">Ch.1226</span>Nine Mounds II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1227.html"><span class="ch-num">Ch.1227</span>Old Tales Of The Peacock I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1228.html"><span class="ch-num">Ch.1228</span>Old Tales Of The Peacock II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1229.html"><span class="ch-num">Ch.1229</span>Great Li Codex I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1230.html"><span class="ch-num">Ch.1230</span>Great Li Codex II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1231.html"><span class="ch-num">Ch.1231</span>Register I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1232.html"><span class="ch-num">Ch.1232</span>Register II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1233.html"><span class="ch-num">Ch.1233</span>Eastern Residence I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1234.html"><span class="ch-num">Ch.1234</span>Eastern Residence II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1235.html"><span class="ch-num">Ch.1235</span>Execution</a></li>
+<li class="toc-item"><a href="chapters/chapter-1236.html"><span class="ch-num">Ch.1236</span>Merit Conferment and Dao Stipend I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1237.html"><span class="ch-num">Ch.1237</span>Merit Conferment and Dao Stipend II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1238.html"><span class="ch-num">Ch.1238</span>Great Peacock Karma I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1239.html"><span class="ch-num">Ch.1239</span>Great Peacock Karma II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1240.html"><span class="ch-num">Ch.1240</span>Nine Mounds Goodwill I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1241.html"><span class="ch-num">Ch.1241</span>Nine Mounds Goodwill II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1242.html"><span class="ch-num">Ch.1242</span>Refining A Pill Through Fate I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1243.html"><span class="ch-num">Ch.1243</span>Refining A Pill Through Fate II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1244.html"><span class="ch-num">Ch.1244</span>Jia-Yi Form Pair I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1245.html"><span class="ch-num">Ch.1245</span>Jia-Yi Form Pair II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1246.html"><span class="ch-num">Ch.1246</span>Within Mifan I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1247.html"><span class="ch-num">Ch.1247</span>Within Mifan II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1248.html"><span class="ch-num">Ch.1248</span>Marriage I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1249.html"><span class="ch-num">Ch.1249</span>Marriage II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1250.html"><span class="ch-num">Ch.1250</span>Evil Cicada I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1251.html"><span class="ch-num">Ch.1251</span>Evil Cicada II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1252.html"><span class="ch-num">Ch.1252</span>Bei Sea I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1253.html"><span class="ch-num">Ch.1253</span>Bei Sea II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1254.html"><span class="ch-num">Ch.1254</span>The Secret Of The Great Ancestor I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1255.html"><span class="ch-num">Ch.1255</span>The Secret Of The Great Ancestor II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1256.html"><span class="ch-num">Ch.1256</span>White Blood Sap I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1257.html"><span class="ch-num">Ch.1257</span>White Blood Sap II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1258.html"><span class="ch-num">Ch.1258</span>Taie I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1259.html"><span class="ch-num">Ch.1259</span>Taie II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1260.html"><span class="ch-num">Ch.1260</span>Deng Family I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1261.html"><span class="ch-num">Ch.1261</span>Deng Family II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1262.html"><span class="ch-num">Ch.1262</span>Thunder Pool I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1263.html"><span class="ch-num">Ch.1263</span>Thunder Pool II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1264.html"><span class="ch-num">Ch.1264</span>Upholds Martial Force And Preserves Truth I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1265.html"><span class="ch-num">Ch.1265</span>Upholds Martial Force And Preserves Truth II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1266.html"><span class="ch-num">Ch.1266</span>Imperial Edict I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1267.html"><span class="ch-num">Ch.1267</span>Imperial Edict II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1268.html"><span class="ch-num">Ch.1268</span>Unified Metal I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1269.html"><span class="ch-num">Ch.1269</span>Unified Metal II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1270.html"><span class="ch-num">Ch.1270</span>Immortal Decree I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1271.html"><span class="ch-num">Ch.1271</span>Immortal Decree II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1272.html"><span class="ch-num">Ch.1272</span>Rumor I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1273.html"><span class="ch-num">Ch.1273</span>Rumor II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1274.html"><span class="ch-num">Ch.1274</span>Discussion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1275.html"><span class="ch-num">Ch.1275</span>Discussion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1276.html"><span class="ch-num">Ch.1276</span>Manifestation Of Earth Virtue I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1277.html"><span class="ch-num">Ch.1277</span>Manifestation Of Earth Virtue II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1278.html"><span class="ch-num">Ch.1278</span>Dispelling Doubts I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1279.html"><span class="ch-num">Ch.1279</span>Dispelling Doubts I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1280.html"><span class="ch-num">Ch.1280</span>Forming Pills In A Hundred Days I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1281.html"><span class="ch-num">Ch.1281</span>Forming Pills In A Hundred Days II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1282.html"><span class="ch-num">Ch.1282</span>Frost I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1283.html"><span class="ch-num">Ch.1283</span>Frost II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1284.html"><span class="ch-num">Ch.1284</span>Pine Snow Asks The Wall I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1285.html"><span class="ch-num">Ch.1285</span>Pine Snow Asks The Wall II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1286.html"><span class="ch-num">Ch.1286</span>Precursor I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1287.html"><span class="ch-num">Ch.1287</span>Precursor II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1288.html"><span class="ch-num">Ch.1288</span>Having Chosen The Exclusive Position I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1289.html"><span class="ch-num">Ch.1289</span>Having Chosen The Exclusive Position II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1290.html"><span class="ch-num">Ch.1290</span>Why Seek The Intercalary I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1291.html"><span class="ch-num">Ch.1291</span>Why Seek The Intercalary II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1292.html"><span class="ch-num">Ch.1292</span>The Meeting Of Two Sects I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1293.html"><span class="ch-num">Ch.1293</span>The Meeting Of Two Sects II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1294.html"><span class="ch-num">Ch.1294</span>The Curtain Rises I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1295.html"><span class="ch-num">Ch.1295</span>The Curtain Rises II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1296.html"><span class="ch-num">Ch.1296</span>Locust Ghost I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1297.html"><span class="ch-num">Ch.1297</span>Locust Ghost II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1298.html"><span class="ch-num">Ch.1298</span>Beginning Of Chaos I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1299.html"><span class="ch-num">Ch.1299</span>Beginning Of Chaos II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1300.html"><span class="ch-num">Ch.1300</span>Baoqing I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1301.html"><span class="ch-num">Ch.1301</span>Baoqing II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1302.html"><span class="ch-num">Ch.1302</span>Great Rat I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1303.html"><span class="ch-num">Ch.1303</span>Great Rat II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1304.html"><span class="ch-num">Ch.1304</span>Taking Leave I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1305.html"><span class="ch-num">Ch.1305</span>Taking Leave II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1306.html"><span class="ch-num">Ch.1306</span>Entrust I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1307.html"><span class="ch-num">Ch.1307</span>Entrust II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1308.html"><span class="ch-num">Ch.1308</span>Hidden Place I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1309.html"><span class="ch-num">Ch.1309</span>Hidden Place II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1310.html"><span class="ch-num">Ch.1310</span>Seeking Help I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1311.html"><span class="ch-num">Ch.1311</span>Seeking Help II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1312.html"><span class="ch-num">Ch.1312</span>Confirming The Succession I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1313.html"><span class="ch-num">Ch.1313</span>Confirming The Succession II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1314.html"><span class="ch-num">Ch.1314</span>Baiku I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1315.html"><span class="ch-num">Ch.1315</span>Baiku II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1316.html"><span class="ch-num">Ch.1316</span>Entering The Game I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1317.html"><span class="ch-num">Ch.1317</span>Entering The Game II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1318.html"><span class="ch-num">Ch.1318</span>Hunyi Immortal Wall I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1319.html"><span class="ch-num">Ch.1319</span>Hunyi Immortal Wall II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1320.html"><span class="ch-num">Ch.1320</span>Supreme Yang Transmutation Radiance I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1321.html"><span class="ch-num">Ch.1321</span>Supreme Yang Transmutation Radiance II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1322.html"><span class="ch-num">Ch.1322</span>Yin Banishing Transformation I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1323.html"><span class="ch-num">Ch.1323</span>Yin Banishing Transformation II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1324.html"><span class="ch-num">Ch.1324</span>Unyielding Backbone I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1325.html"><span class="ch-num">Ch.1325</span>Unyielding Backbone II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1326.html"><span class="ch-num">Ch.1326</span>Upheaval I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1327.html"><span class="ch-num">Ch.1327</span>Upheaval II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1328.html"><span class="ch-num">Ch.1328</span>The Fruit Of Vengeance I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1329.html"><span class="ch-num">Ch.1329</span>The Fruit Of Vengeance II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1330.html"><span class="ch-num">Ch.1330</span>Demonic Disciple I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1331.html"><span class="ch-num">Ch.1331</span>Demonic Disciple II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1332.html"><span class="ch-num">Ch.1332</span>Dispute I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1333.html"><span class="ch-num">Ch.1333</span>Dispute II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1334.html"><span class="ch-num">Ch.1334</span>Ghost Corpse I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1335.html"><span class="ch-num">Ch.1335</span>Ghost Corpse II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1336.html"><span class="ch-num">Ch.1336</span>Old Enemies I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1337.html"><span class="ch-num">Ch.1337</span>Old Enemies II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1338.html"><span class="ch-num">Ch.1338</span>Withdraw I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1339.html"><span class="ch-num">Ch.1339</span>Withdraw II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1340.html"><span class="ch-num">Ch.1340</span>The Might Of The Supreme Yang I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1341.html"><span class="ch-num">Ch.1341</span>The Might Of The Supreme Yang II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1342.html"><span class="ch-num">Ch.1342</span>Joining Forces I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1343.html"><span class="ch-num">Ch.1343</span>Joining Forces II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1344.html"><span class="ch-num">Ch.1344</span>Suppress I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1345.html"><span class="ch-num">Ch.1345</span>Suppress II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1346.html"><span class="ch-num">Ch.1346</span>Chilu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1347.html"><span class="ch-num">Ch.1347</span>Chilu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1348.html"><span class="ch-num">Ch.1348</span>Bright Yang Killing I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1349.html"><span class="ch-num">Ch.1349</span>Bright Yang Killing II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1350.html"><span class="ch-num">Ch.1350</span>Snowfall Over The Purple Pavilion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1351.html"><span class="ch-num">Ch.1351</span>Snowfall Over The Purple Pavilion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1352.html"><span class="ch-num">Ch.1352</span>Returning To The Mountain I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1353.html"><span class="ch-num">Ch.1353</span>Returning To The Mountain II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1354.html"><span class="ch-num">Ch.1354</span>Zhaoguang Profound Purple I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1355.html"><span class="ch-num">Ch.1355</span>Zhaoguang Profound Purple II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1356.html"><span class="ch-num">Ch.1356</span>Ruler of Manifested Mountains and Rivers I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1357.html"><span class="ch-num">Ch.1357</span>Ruler of Manifested Mountains and Rivers II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1358.html"><span class="ch-num">Ch.1358</span>Viewing Pavilion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1359.html"><span class="ch-num">Ch.1359</span>Viewing Pavilion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1360.html"><span class="ch-num">Ch.1360</span>Meeting I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1361.html"><span class="ch-num">Ch.1361</span>Meeting II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1362.html"><span class="ch-num">Ch.1362</span>Yanhu I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1363.html"><span class="ch-num">Ch.1363</span>Yanhu II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1364.html"><span class="ch-num">Ch.1364</span>Crimson Light I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1365.html"><span class="ch-num">Ch.1365</span>Crimson Light II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1366.html"><span class="ch-num">Ch.1366</span>The Real And Fake Profound Command Token I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1367.html"><span class="ch-num">Ch.1367</span>The Real And Fake Profound Command Token II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1368.html"><span class="ch-num">Ch.1368</span>Mifan Spirit Sword I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1369.html"><span class="ch-num">Ch.1369</span>Mifan Spirit Sword II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1370.html"><span class="ch-num">Ch.1370</span>Meticulous Preparations I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1371.html"><span class="ch-num">Ch.1371</span>Meticulous Preparations II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1372.html"><span class="ch-num">Ch.1372</span>Treasured Elephant I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1373.html"><span class="ch-num">Ch.1373</span>Treasured Elephant II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1374.html"><span class="ch-num">Ch.1374</span>Tian Sanglin I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1375.html"><span class="ch-num">Ch.1375</span>Tian Sanglin II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1376.html"><span class="ch-num">Ch.1376</span>Brilliant Yang Kings Axe I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1377.html"><span class="ch-num">Ch.1377</span>Brilliant Yang Kings Axe II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1378.html"><span class="ch-num">Ch.1378</span>Seclusion I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1379.html"><span class="ch-num">Ch.1379</span>Seclusion II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1380.html"><span class="ch-num">Ch.1380</span>Chunyi I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1381.html"><span class="ch-num">Ch.1381</span>Chunyi II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1382.html"><span class="ch-num">Ch.1382</span>Retrieving The Item I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1383.html"><span class="ch-num">Ch.1383</span>Retrieving The Item II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1384.html"><span class="ch-num">Ch.1384</span>Turning Glows Into Mountain I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1385.html"><span class="ch-num">Ch.1385</span>Turning Glows Into Mountain II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1386.html"><span class="ch-num">Ch.1386</span>Golden Qi Soaring Into The Heavens I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1387.html"><span class="ch-num">Ch.1387</span>Golden Qi Soaring Into The Heavens II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1388.html"><span class="ch-num">Ch.1388</span>Heaven Whisker I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1389.html"><span class="ch-num">Ch.1389</span>Heaven Whisker II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1390.html"><span class="ch-num">Ch.1390</span>Established Momentum I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1391.html"><span class="ch-num">Ch.1391</span>Established Momentum II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1392.html"><span class="ch-num">Ch.1392</span>Forged Successfully I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1393.html"><span class="ch-num">Ch.1393</span>Forged Successfully II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1394.html"><span class="ch-num">Ch.1394</span>Please I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1395.html"><span class="ch-num">Ch.1395</span>Please II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1396.html"><span class="ch-num">Ch.1396</span>Golden Axe I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1397.html"><span class="ch-num">Ch.1397</span>Golden Axe II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1398.html"><span class="ch-num">Ch.1398</span>Breaking The Flame I</a></li>
+<li class="toc-item"><a href="chapters/chapter-1399.html"><span class="ch-num">Ch.1399</span>Breaking The Flame II</a></li>
+<li class="toc-item"><a href="chapters/chapter-1400.html"><span class="ch-num">Ch.1400</span>Heaven And Earth I</a></li>
+    </ul>
+    <p class="toc-count" id="tocCount">Showing 600 of 600 chapters</p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only. No copyright infringement intended.
+</footer>
+
+<script>
+function tocSearch() {
+  var q = document.getElementById('tocSearch').value.toLowerCase();
+  var items = document.querySelectorAll('.toc-item');
+  var vis = 0;
+  items.forEach(function(item) {
+    var txt = item.textContent.toLowerCase();
+    if (txt.indexOf(q) !== -1) { item.classList.remove('hidden'); vis++; }
+    else item.classList.add('hidden');
+  });
+  var cnt = document.getElementById('tocCount');
+  if (cnt) cnt.textContent = 'Showing ' + vis + ' of ' + items.length + ' chapters';
+}
+</script>
+</body>
+</html>
