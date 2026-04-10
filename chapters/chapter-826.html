@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 826: Sensing The Opportunity (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-825.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-827.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 826: Sensing The Opportunity (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The battlefield had grown even more chaotic. Screams and angry shouts rose and fell in waves. Li Xuanfeng and Lingu Rao watched, when suddenly, a sharp screech pierced the sky. A new demonic cloud was surging toward the battlefield from the north.</p>
+<p>“Lord Gao and Master Monk Luejin’s forces have arrived!”</p>
+<p>A loud shout rang out over the battlefield, followed by a blast of scorching heat. Zhong Qian’s expression shifted and he retreated with a sweep of his spear, shattering the incoming fire. The tip of his spear now glowed faintly red.</p>
+<p>A man appeared in the sky, wearing a dark red and black robe, a golden jade belt, and dark crimson boots. His eyes were deep-set and sharp as he leaned on a cavalry lance amid the clouds and sneered, “So this is all the Murong Family is capable of? Seems a century of clinging to Buddhist doctrine has ground your noble lineage into spinelessness!”</p>
+<p>Murong Gong’s face darkened, and his voice turned cold and low, “Lou Fangjing, why don’t you try me yourself? All you do is bark.”</p>
+<p>The man in the dark red robe scowled, his tone turning icy, “Murong Gong… My Gao Family bears a northern surname personally granted by Wei Emperor Gong. It’s one thing for Daoist Masters to speak as equals, but you? You’ve no right to speak the Lou surname. Know your place…”</p>
+<p>Murong Gong spat disdainfully, “Ha! What a noble Gao name. It was Lou Chongyang and Tuoba Changming who sold out our sixteen Eastern Hu families to beg riches from the Wei Emperor. And you still dare show your face! The Yuan Family at least reclaimed the Tuoba name. But your family still flaunts its fake lineage. Shameless beyond comparison!”</p>
+<p>Gao Fangjing stared coldly, leaving his lance at rest as he replied softly, “My Gao ancestors were of Zhou descent, do not compare us with your kind!”</p>
+<p>As the two exchanged barbs, a monk stepped down from the sky and stopped beside Murong Gong. His face was covered with dense golden patterns, and his eyes were tightly shut. He quietly turned toward the mist.</p>
+<p>Li Xuanfeng watched silently. Beside him, Lingu Rao seemed uneasy and asked in a low voice, “Xuanfeng… should we intervene?”</p>
+<p>“Wait a bit longer,” said Li Xuanfeng, holding back his longbow. Sure enough, a man in Golden Feather Sect robes rose from below. He flew to Zhong Qian’s side with a grave expression, drew a thin golden sword from his robe, and held it upright in silence.</p>
+<p>As the cultivators stared intently at each other, the monk whose face was covered in golden markings slowly opened his eyes. His pupils were a sea of white with a single grain-sized speck of gold that pierced through the mist.</p>
+<p>He spoke softly, “You two benefactors, please reveal yourselves.”</p>
+<p>Li Xuanfeng and Lingu Rao were silent for a moment before they withdrew their near-invisible veil of gauze, allowing their figures to appear midair.</p>
+<p>Zhong Qian initially looked up at them cautiously, but upon seeing Li Xuanfeng’s attire and face, his heart skipped a beat. A flicker of guilt crossed his expression as he sighed inwardly,It’s Senior Xuanfeng!</p>
+<p>He had once received help from Li Xuanfeng and remembered the senior vividly. Though he now suspected it might have been orchestrated by the Purple Mansion Realm cultivators, the impact was real. Li Xuanfeng had truly saved him during a time of crisis.</p>
+<p>Seeing him again as a devil cultivator filled Zhong Qian with a touch of shame.</p>
+<p>Thankfully, we didn’t meet in the midst of battle… a small mercy within misfortune.</p>
+<p>The Golden Feather Sect Daoist clearly hadn’t expected their appearance and offered a slight, surprised bow toward the two.</p>
+<p>The devil cultivator camp reacted more dramatically. The gold-marked buddhist cultivator examined them quietly, while Murong Gong’s face twisted with a mix of fear and hatred. His lips moved, and he sneered coldly, “A Shilou dog! Your Wei-blooded kin has arrived!”</p>
+<p>Gao Fangjing appeared not to hear his words. He carefully studied Li Xuanfeng in silence, though the grip on his spear noticeably tightened.</p>
+<p>The appearance of the two caused a tense stalemate in the sky, until Murong Gong finally muttered darkly, “What are you two waiting for?”</p>
+<p>Boom!</p>
+<p>A burst of mana light exploded in the sky. The gold-marked monk clasped his hands together, catching Lingu Rao’s curved blade. Gao Fangjing twirled his lance, encircling the two, and a surge of golden-red true flame erupted, forcing them to raise their dharma artifacts in defense.</p>
+<p>Murong Gong raised his head, locking eyes with Li Xuanfeng. Radiant lines began to glow along the lower half of his face. He slowly lifted his longbow, a speck of golden light resting on the string.</p>
+<p>“Damn it!”</p>
+<p>He stepped closer on violet energy, already regretting his earlier words. Had he known Li Xuanfeng and the others would appear, he’d never have provoked Gao Fangjing. He had simply thought everything under control and let disdain slip through.</p>
+<p>Though he looked down on the Shilou Family and scorned their character, Gao Fangjing’s strength was undeniably superior, and the best suited to face Li Xuanfeng.</p>
+<p>Fine then… the Shilou Family are petty men. Provoked or not, they’d never step in anyway.</p>
+<p>This thought flashed through his mind in an instant. A buzzing rang in his ears, and pain stabbed his chest. He instantly formed a seal and summoned a mass of violet clouds, plunging into them to evade the arrow’s light.</p>
+<p>It was, indeed, the best move. Li Xuanfeng’s name had grown well-known, and enemies no longer dared to face his magical arrows head-on. They would always dodge first. If one didn’t have Astral Qi to trace a target, this violet mist technique was quite effective, and even Li Xuanfeng couldn’t locate him at once.</p>
+<p>Yet Li Xuanfeng’s expression didn’t shift. Ignoring Murong Gong’s hasty retreat, Li Xuanfeng lightly raised his longbow and released the golden string. Nearby, the gold-marked monk suddenly jerked his head up and started coughing out blood.</p>
+<p>The monk gently swept a hand across his chest, and the gaping wound slowly closed. He caught Lingu Rao’s spell art with one hand and called out in a resonant voice, “Daoist Murong…”</p>
+<p>Before he could finish, he saw Li Xuanfeng’s golden bow aimed at the violet mist. The man’s gaze was calm and unwavering. Murong Gong found himself caught between advancing and retreating, and shifted the violet cloud to lunge toward Lingu Rao instead.</p>
+<p>“Master Monk Luejin! Since you’re not afraid of bodily harm, go deal with that one!” said Murong Gong.</p>
+<p>Master Monk Luejin showed no anger. The golden markings on his face shimmered faintly, and a gentle look rose in his eyes.</p>
+<p>He brought his hands together before his chest in a respectful gesture and said softly, “I am Luejin, of White Horse Temple under the Great Mahayana Dharma Realm. Greetings, benefactor.”</p>
+<p>Li Xuanfeng scrutinized him. This man’s mana emanated an uncommon clarity; it was utterly different from the many buddhist cultivators he had seen before. In fact, he bore a faint resemblance to the guest cultivator Kongheng from his own household.</p>
+<p>But the battlefield left no room for an extended exchange. Li Xuanfeng raised his bow, brilliant golden light condensing on the string as usual.</p>
+<p>Luejin stared intently at the arrow’s glow, his voice calm and low, “The arrow is a weapon that harms, it cannot appear in the Buddha’s land.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-825.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-827.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

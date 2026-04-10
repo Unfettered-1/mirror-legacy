@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 864: The Fall Of Great Ning Palace (III) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-863.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-865.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 864: The Fall Of Great Ning Palace (III)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Yu Jiang</p>
+<p>Li Qinghong had just seen him earlier, when she had been duelling Guo Hongjian; he was a cultivator from the Southern Sea whose aura was hard to gauge and carried an air of deep mystery.</p>
+<p>He simply stood there, staring at Li Qinghong’s dazzling purple lightning-covered figure. His expression was naturally full of admiration, as if he were waiting for something rather than attacking.</p>
+<p>Li Qinghong knew this person was formidable and held her spear without striking. After two seconds, she saw a streak of blue-black light shoot skyward from Chengshui Tomb in the north, rapidly spreading and dyeing half the sky blue-black.</p>
+<p>Boom!</p>
+<p>A thunderous roar erupted, as if something had fallen from the distant mountains, sending tremors through the earth. A hazy purple-black energy surged skyward.</p>
+<p>The demonic smoke in the north all paused, and twisted in chaotic confusion. Some turned back north; some halted to fight among themselves; and a few continued south, becoming increasingly disordered.</p>
+<p>She glanced worriedly, but the young man before her seemed to have been waiting for this moment to arrive, and finally spoke, “Daoist Li, the Great Ning Palace has fallen. Chengshui Tomb is filled with all sorts of relics, and the devil cultivators will surely rush to search for them, so the offensive will slow down for a while.</p>
+<p>“I came here especially for this chance, and I ask for your guidance.”</p>
+<p>His clear voice slowly echoed in the air. Li Qinghong frowned slightly at the unexpected words and softly replied, “Li Qinghong greets you, Daoist friend. But there is a great calamity between the North and South at the moment. I fear it is not appropriate for a duel right now. Please wait until this time has passed. If I survive, you may seek me out then.”</p>
+<p>Yu Jiang looked at her seriously and replied, “I have some grudges with the Azure Pond Sect, and since you blocked the devil cultivators, I’m not too pleased.”</p>
+<p>Li Qinghong narrowed her eyes slightly. His words were contradictory, but she immediately became alert,Of course, since the southern advance of the devil cultivators was the will of several Purple Mansion Realm cultivators, I greatly reduced the pressure on the defense lines by blocking them alone. As time passes, I might offend all the Purple Mansion Realm cultivators…</p>
+<p>She exhaled slightly. She started to regard the person in front of her as a cultivator sent by one of the Purple Mansion Realm cultivators to block her. On one hand, she was relieved he hadn’t come a moment earlier, and on the other, she drew her spear, purple lightning rippling, and softly said, “Li Qinghong of Qingdu.”</p>
+<p>“Yu Jiang of the Southern Sea,” replied the man.</p>
+<p>The young man nodded lightly, and suddenly a clap of thunder exploded by his ear. Li Qinghong’s figure vanished from where she stood. She rode a surge of purple lightning, speeding toward him with Sixfold Profound Thunder Punishment Tokens spinning in her hand and shining with silver-white lightning.</p>
+<p>“When Yang reaches its peak, it gives birth to six thunders!”</p>
+<p>Boom!</p>
+<p>Before her spear could reach him, a streak of silver-white lightning shot forth, but Yu Jiang glanced at the Sixfold Profound Thunder Punishment Tokens and formed a seal with his hand. A glistening gold rune appeared in his palm.</p>
+<p>He said softly, “Thunder falls in Dui, resting in the sea of clouds.”</p>
+<p>In an instant, a vast ocean appeared in the air and a sparkling golden light rose from it. The silver-white lightning fell into it and disappeared like being drawn into a bottomless vortex.</p>
+<p>The vast ocean swirled once, then condensed into a single golden talisman that fell into Yu Jiang’s hand. Li Qinghong’s Profound Thunder had been dispelled.</p>
+<p>However, she already knew this person was formidable and was not surprised. But as the Duruo Spear carried a purple shadow and thrust forward, Yu Jiang actually raised his hand to slap at her spear.</p>
+<p>“Hm?”</p>
+<p>Li Qinghong’s silver spear seemed to land on something soft, bending slightly and brushing past him. The black-robed youth casually deflected a surge of purple lightning with a wave of his hand.</p>
+<p>Clang!</p>
+<p>Li Qinghong pulled her spear back, reversed it, and raised the Sixfold Profound Thunder Punishment Tokens in front of her to guard against attacks. She glanced quickly and saw that the tip of the Duruo Spear had indeed bent slightly, but it was slowly straightening out like a living thing.</p>
+<p>“This is the Shamanic Talisman Dao technique…”</p>
+<p>She now had a rough measure of her opponent’s strength, while Yu Jiang remained outwardly calm. Still, the hand holding the golden talisman trembled slightly, dissipating a bit of silver lightning. Clearly he wasn’t as nonchalant as he appeared.</p>
+<p>Li Qinghong drew her spear back, but Yu Jiang raised his sleeve and lightly flicked it, releasing a few specks of black light that spun in midair, transforming into flowing talismans that quietly circled him once before falling into his eyes.</p>
+<p>His pupils suddenly widened, staring intently. Li Qinghong felt as if thunder had exploded in her mind, seeing only darkness as drops of fresh blood dripped, and everything before her became unclear.</p>
+<p>What a formidable spell art!Li Qinghong’s vision dimmed, giving Yu Jiang a chance to form another spell seal. His gaze fell on the Duruo Spear in her hand, and he calculated silently,That spear is not ordinary. Perhaps because of its Profound Thunder nature, it naturally restrains shape-shifting demons and evildoers. It was able to straighten itself out almost immediately after receiving my palm strike…</p>
+<p>He placed one hand under his elbow, extended two fingers on the other hand, and pointed them at the Duruo Spear in Li Qinghong’s hand. Raising his head slightly, he intoned, “Rise, Shamanic Transformation, turn the weapon into demonkind.”</p>
+<p>Li Qinghong’s eyes briefly darkened, but a clear light surged from her dantian, sweeping away the illusions of the Shamanic Talisman Dao in her mind. Once she regained her clarity, she summoned her lightning and suddenly felt something slimy in her hand.</p>
+<p>The Duruo Spear in her hand had turned into a white python with fine scales, opening its mouth in confusion as it tried to wriggle free. Li Qinghong gripped it tightly, realizing she had fallen into someone else’s spell rhythm.</p>
+<p>“Command!”</p>
+<p>She decisively spat out a Profound Thunder, and a spot of light shot from between her lips and teeth. Yu Jiang raised an eyebrow, stepped back half a step, and the air exploded with a purple thunder cascade that came crashing down. He had no choice but to pause his spell art to defend himself.</p>
+<p>Li Qinghong seized the opportunity, pouring her vast lightning energy into her spear and completely purging the Shamanic Talisman Dao art from it. The Duruo Spear instantly regained its original form, its silver light flashing as it merged into the lightning cascade.</p>
+<p>Yu Jiang struggled to move in the thunder cascade but managed to raise his hands, talismans glowing as he pressed both palms against the spear, trying to deflect it.</p>
+<p>Li Qinghong was no longer playing around. Her eyes turned a bright purple-white, and terrifying lightning coursed through her body, instantly tearing his spell art apart as she thrust straight at him.</p>
+<p>“Good!”</p>
+<p>Yu Jiang had no choice but to avoid her strike. He gently twirled his robe, letting it be shredded in the lightning. His figure reappeared several feet away, and he spat out a mouthful of purple lightning.</p>
+<p>Both of them stopped fighting and looked north, only to see billowing demonic smoke roaring as several magnificently dressed, awe-inspiring devil cultivators stood among the clouds, slowly pressing down from the horizon.</p>
+<p>Clang…</p>
+<p>But neither of them looked at the demonic smoke in front of them. Instead, they gazed farther north, where a point of golden light was rushing through the air with fierce, overbearing Astral Qi, ruthlessly tearing through the demonic smoke and rapidly approaching.</p>
+<p>Thunder arts split the sky, wielding the spear like a wandering dragon.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-863.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-865.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

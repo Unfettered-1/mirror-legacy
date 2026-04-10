@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 876: Clash Between Evils (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-875.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-877.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 876: Clash Between Evils (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“One arrow.”</p>
+<p>Li Xuanfeng stood in the air, clad in gleaming white armor. The markings on his face shone as his long brows relaxed. His white radiance flowed across his chiseled face, and his eyes were fixed on the distance.</p>
+<p>Petals fluttered down from the sky behind him; it was an omen marking the fall of a Buddhist cultivator. One arrow from Li Xuanfeng had caused the heavens to pale, and obliterated the monk without even a chance at reincarnation.</p>
+<p>Everyone stared in stunned silence. There was not a whisper on either the Jiangnan and Jiangbei sides. Only the faint crashing of water against the rocks echoed as countless eyes watched the petals fall.</p>
+<p>“Killed by a single arrow.”</p>
+<p>Many Embryonic Breathing and Qi Cultivation Realms cultivators were at a loss as they only saw a monk fall on the Buddhist side. Cheers erupted in the south, while some in the north remained silent. Others gnashed their teeth, cursing the demon under their breath.</p>
+<p>But the Foundation Establishment Realm cultivators all fell silent. These were all prominent figures from Jiangnan and Jiangbei. This great battle between the two sides had broadened their horizons; cases of one-shot kills among Foundation Establishment Realm cultivators weren’t unheard of.</p>
+<p>Notable figures in the southern-northern struggle such as Tuoba Chongyuan, Tang Shedu, Lingu Rao, and even some from the Murong Family could easily dispatch early-stage Foundation Establishment Realm cultivators in one exchange. Li Xuanfeng himself had risen to fame after slaying Murong Wu in a mere fifteen minutes.</p>
+<p>Yet, though those twelve monks varied in strength, they were all proper cultivators of the Void Path. To kill one with a single arrow…</p>
+<p>The most troublesome part of the monk’s path was their reincarnation method. Unless they were destroyed in an instant, body and soul, they could always revive through a devout follower. That arrow had utterly erased both body and soul; it was an unbelievable feat. A shared thought rose in everyone’s heart,Could it be that a special Purple Mansion Realm talisman was activated with that incantation and bound to the arrow?</p>
+<p>Is this really Li Xuanfeng? Or did he unleash some kind of demonic force?</p>
+<p>The monk holding the pagoda had not merely been slain, the arrow had shattered his body and soul. The Huixu Demon Subduing Grand Formation collapsed with a boom, and the Kongsijiang Demon Bowl could no longer be maintained. The remaining eleven monks turned pale, staring in shock and pain at the flower rain filling the sky.</p>
+<p>“Xu Mo has returned to the Buddhist soil…”</p>
+<p>Shock and suspicion surged among the remaining eleven monks. All of Jiangnan and Jiangbei seemed paralyzed for a moment. No one moved, and only the white-armored man’s bowstring stirred.</p>
+<p>Buzz!</p>
+<p>The white bow instantly bent into a full moon shape. All eleven felt like blades were pressed against their backs, and sweat poured down in unison. Their hands twitched, but none managed to form a spell before a fragrant breeze swept over them.</p>
+<p>The sky brightened once more.</p>
+<p>Too fast!</p>
+<p>The dharma artifact of the ring-holding monk shattered. His face was pale, then abruptly went slack. Flower petals filled the sky again, mixed with dewdrops like jade pearls and an auspicious glow that filled the sky. All hearts turned cold.</p>
+<p>Another arrow!</p>
+<p>No, only ten of the eleven monks remained in the air. Their minds went blank, leaving just one word,Flee!</p>
+<p>The northern cultivators were the only ones who were even faster. The very moment the bowstring rang out, the demonic clouds over the north had already begun to scatter like melting snow under the sun. Countless streaks of escape light erupted, filling the sky with chaotic colors as everyone fled northward.</p>
+<p>Whoosh…</p>
+<p>The entire northern bank of cultivators routed. All sorts of dharma artifacts shot skyward as they scrambled to flee north. The Foundation Establishment Realm cultivators vanished in a single breath, while the Embryonic Breathing Realm, Qi Cultivation Realm disciples, and monks below were thrown into chaos. They rose and fell, colliding in disarray.</p>
+<p>The northern factions had always been a disorganized mess. Thus, the beginning of the rout was like a dam breaking as everyone started to flee in all directions. Some greedy individuals even took the opportunity to attack one another amid the chaos, sending blood light flashing across the sky.</p>
+<p>Shouts rang out.</p>
+<p>“Run quickly!!”</p>
+<p>“Head to Mount Bianyan… the great formation there has broken…”</p>
+<p>The northern bank, long shrouded in demonic smoke, was finally cleared. Only bloodstains remained on the ground, as even the corpses had been scavenged for use. There was nothing to see aside from the red-black stain across the land.</p>
+<p>But even as the northern cultivators withdrew, the ten monks in the sky did not move an inch. All wore frozen expressions; it was not just the ten, the monks who arrived afterward were also stuck in place, unable to move.</p>
+<p>Si Yuanli’s joy froze on his face as he looked toward the horizon. A layer of color slowly emerged, dazzling and radiant, suspended on the farthest edge of the sky like a giant eye that gazed coldly at them.</p>
+<p>“The Maha is watching with his own eyes!” Si Yuanli had a scholarly background, and thus recognized it at a glance. He quickly ducked his head, panic rising within, and instantly understood why none of the monks fled.</p>
+<p>He muttered to himself, “It’s not that they can’t flee… they dare not.”</p>
+<p>In the Seven Dharma Forms of Buddhist Dao, one stage higher could crush someone outright. The fate and very lives of these monks were in the Maha’s hands now. How could they possibly escape?</p>
+<p>A suffocating pressure lingered for a moment. Those on the southern bank also began to sense something amiss when they saw the colorful light in the sky mirrored on the ground. Something in the great void had responded to a call and was emitting a faint glimmer.</p>
+<p>The light pierced through the air, turning into a deep purple-black hue. It rapidly expanded in the sky, revealing a purple alms bowl ringed by two black bands. No incantations adorned it, but its gaping mouth was dark and terrifying.</p>
+<p>“The true form of the Kongsijiang Demon Bowl!”</p>
+<p>The Buddhist artifact gradually took form. The eldest monk among them pressed his palms together and murmured softly, “This demon of great evil has come this far, yet is returned to our junior brother… everyone, the mundane world is void. It is time for us to suppress the demon with our bodies and return to the Buddhist soil!”</p>
+<p>His expression remained calm, and his tone steady. He was clearly a cultivator of great attainment. Yet among the remaining nine, six looked down, faint traces of fear and anxiety in their eyes.</p>
+<p>Still, despite fearing that they would see themselves blasted into dust in the next moment, not one of them hesitated. They formed hand seals together, abandoning any thought of escape.</p>
+<p>The Maha made no move, and merely watched. Yet the monks had already lost their right to flee. Even those nearby who weren’t of the same Dao lineage stood paralyzed, their freedom gone.</p>
+<p>These ten did not evade. Suxikong’s true form activated, as his dharma body radiated colored light. Their dharma artifacts surged forth together, soaring toward the white-armored man in the sky.</p>
+<p>“Senior brother! Since there’s no chance of escape… at the very least, let this opportunity fall into our own hands!”</p>
+<p>Several whispers echoed in the ear of the leading monk. His smooth face darkened slightly; he had clearly understood his junior brother’s intention.</p>
+<p>Li Xuanfeng’s karmic burden had only grown ever more dreadful as he repelled the northern forces. His karmic entanglement would only deepen with every one of the twelve he slew. Even if only one or two survived out of ten, as long as Li Xuanfeng was killed, infinite karmic rewards would follow. With fewer people to share them… they might immediately attain the title of The Merciful One, and have a boundless future!</p>
+<p>The ten understood there was no retreat. Filled with a desperate resolve, they charged together, gritting their teeth as they rapidly closed the distance.</p>
+<p>Every cultivator knew Li Xuanfeng was no slouch in close combat, but no matter how strong he was up close, how could it compare to the bow in his hand?</p>
+<p>If they kept engaging from afar with spell arts, their only fate was to be picked off one by one. Biting down under the mounting pressure, they advanced and shouted coldly in unison, “Fiend, meet your end!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-875.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-877.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

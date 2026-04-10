@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 825: Sensing The Opportunity (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-824.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-826.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 825: Sensing The Opportunity (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xuanfeng and Lingu Rao paused above the shimmering blue waters, not venturing any farther. While Lingu Rao focused intently on the scene, Li Xuanfeng began to ponder,Since Yuan Xiu, Qiushui, and the others are already in the great void and are likely even watching directly over Chengshui Tomb. Why do we need to investigate? This blue water must be some anomaly caused by the Great Ning Palace. There must be another reason we were sent.</p>
+<p>As he was thinking, Lingu Rao glanced twice at the blue water below and sent a mana transmission, “Fellow Daoist Xuanfeng, the waters above Chengshui Tomb have transformed into Converging Water. They’re certainly unnatural.”</p>
+<p>Li Xuanfeng considered the matter for a moment as he examined the luminous blue water amid the dark mist, then asked, “Could it be related to the dragon species?”</p>
+<p>“Perhaps not the dragon species exactly…” replied Lingu Rao.</p>
+<p>The Lingu Family originated from Mount Yue and was one of the rare families not descended from northern migrants. As native southerners, they had their own inherited knowledge.</p>
+<p>Lingu Rao said quietly, “You may not know, but the Gao Family, now known for their True Flame, originally rose from the shores of Yan State’s Converging Sea and had a lineage tied to Converging Water. Even the Tuoba Family once attempted to seize the Converging Water and Water Mansion lineages. My concern is that transforming the entirety of Chengshui Tomb into a Converging Water marsh would take immense effort, even for Purple Mansion Realm cultivators—unless a special spiritual artifact is involved. Why go to such lengths?”</p>
+<p>With such doubts weighing on them, one pondering the motives of Purple Mansion Realm cultivators, while the other speculated about northern cultivators, the two refused to proceed farther north.</p>
+<p>Li Xuanfeng activated his perception technique, golden light glinting in his eyes as he scanned the clouds, and asked, “Do you know what Dao lineage the royal descendants of Ning State cultivate?”</p>
+<p>Lingu Rao thought for a moment and replied, “They cultivate the True Essence. They even have a realm called Anhuai Heaven hidden within the great void. At their peak, they had several Purple Mansion Realm cultivators. Whether they ever produced a True Monarch… that, we cannot say for sure.”</p>
+<p>Li Xuanfeng considered this, then raised his head in unison with Lingu Rao to look eastward. As expected, a golden immortal radiance pierced through the demonic fog. Shimmering hues of true essence and dharma artifact light reflected across the blue waters.</p>
+<p>Lingu Rao slowly lifted his gaze, eyes contemplative, and murmured, “It’s the Golden Feather Sect.”</p>
+<p>Li Xuanfeng’s heart settled, and he activated his dharma artifact at the same time as Lingu Rao. Sure enough, he heard Lingu Rao say, “When a Daoist Master is in the great void, what could possibly escape their sight? If they ordered us to investigate, this is no simple task. So this is where it all leads.”</p>
+<p>Both men now clearly understood the situation. Li Xuanfeng paused in thought, then spoke quietly, “Why would Daoist Master Yuan Xiu conceal his intentions behind a scouting mission? It is likely the Golden Feather Sect doesn’t want their own people to know. We must tread carefully.”</p>
+<p>His words hinted at the underlying discord among the sects. Lingu Rao nodded in agreement, his face revealing approval. The two rose into the wind together, following the Golden Feather Sect’s cultivators from a distance.</p>
+<p>They had only flown a few kilometers when demonic light flickered in the air. A group of devil cultivators had broken into fierce combat with each other. Blood-red and white lights clashed, black mist surged, and droplets of blood rain fell sporadically from the sky.</p>
+<p>Li Xuanfeng’s earlier confusion began to ease as Lingu Rao commented, “No wonder we saw no patrolling devil cultivators on our way, so there was internal discord!”</p>
+<p>Li Xuanfeng activated his perception technique again and peered into the demonic clouds. Sure enough, the sky was filled with devil cultivators locked in chaotic battle. Rays of light, demonic mist, blood essence, and pale smoke intermingled. The chaos was tearing through the sky with shattering bursts of dharma light.</p>
+<p>High above, several figures were locked in fierce battle. A black-robed youth wielded a long spear, dark energy swirling around it. He had bright eyes, refined features, and a striking presence. His spear was pointed straight at a devil cultivator before him.</p>
+<p>His opponent had an ugly expression on his face. Surrounded by violet light and clad in vibrant, yet ornate robes, he was likely a direct descendant of the Murong Family. The two appeared to have just clashed and now faced each other warily.</p>
+<p>Li Xuanfeng glanced at the spear-wielding youth and was struck by a sense of familiarity. He narrowed his eyes slightly and exclaimed, “Zhong Qian?!”</p>
+<p>This was none other than Zhong Qian, the youth who had once led Li Xuanfeng into the grotto heaven! After entering, he had vanished without a trace. Li Xuanfeng had long assumed he’d met a bad end, having heard nothing of him for years.</p>
+<p>Never thought he’d fall to the devil Dao…</p>
+<p>Suspicion stirred in his heart, but then he saw the Murong devil cultivator, wrapped in purple light, stare deeply at Zhong Qian and murmur, “Fellow Daoist… what game are you playing? You suddenly led troops out of formation, so surely you’ve gained the blessing of the Golden Feather Sect and the Azure Pond Sect… But as a devil cultivator, what good end awaits you in the South?</p>
+<p>“It was Murong En who failed to recognize your talent and could not tolerate a heroic youth like you! If you back down now, I’ll personally recommend you to the Purple Mansion Realm cultivators.”</p>
+<p>Zhong Qian did not respond. He stood firm with his spear and thrust forward, sending black clouds rolling and striking the violet radiance. It was only when the violent clash scattered dark smoke through the air that he spoke, “Murong Gong… This is my first time clashing with the Purple Essence Dao. Let’s see some real skill!”</p>
+<p>Li Xuanfeng watched as the two fought fiercely. Below them, devil cultivators were clashing among themselves, while buddhist cultivators released golden light in retaliation. It was impossible to tell who was fighting whom—rather, it seemed like everyone had seized the moment to settle personal grudges. After only a glance or two, he grasped the situation.</p>
+<p>The northern forces were extremely fragmented. There were buddhist cultivators of the Seven Dharma Forms, numerous devil Daos, and even Purple Mansion Realm and Golden Core Realm cultivators. Many of them were simply devil cultivators conscripted from surrounding regions.</p>
+<p>They were all greedy and self-serving, harboring grudges against each other while coveting one another’s possessions. Zhong Qian had secretly assembled a force and marched south, only to be intercepted. Yet the devil cultivators on both sides had already descended into chaos. They were settling old debts, seizing opportunities, and battling in a disorderly frenzy.</p>
+<p>Lingu Rao watched for a while as he slowly grasped the situation, and said quietly, “Fellow Daoist Xuanfeng… looks like the devil cultivators are having a mutiny among themselves…”</p>
+<p>Li Xuanfeng responded calmly, “If they were not backed by Purple Mansion Realm cultivators, how could a mutiny like this even occur?”</p>
+<p>Lingu Rao replied, “Exactly! But could the Golden Feather Sect really be backing these devil cultivators? That would be strange indeed…”</p>
+<p>Lingu Rao’s confusion was understandable. These devil cultivators consumed human blood and Human Pills; their conduct and cultivation techniques were thoroughly demonic. Worse still, they had slain countless cultivators from Jiangnan. The various sects had long come to despise them.</p>
+<p>This was true even under the Azure Pond Sect’s governance, so how could the prestigious families under the Golden Feather Sect, many of whom had suffered great losses in this war, accept devil cultivators under their banner? Where would these devil cultivators even be allowed to settle?</p>
+<p>All sects, regardless of their foundations, had to maintain at least a semblance of morality in Jiangnan. The Azure Pond Sect was already being denounced as a demonic sect by others. Even when they harvested blood essence, they had to disguise it as inter-sect warfare. They dared not openly kill and bleed innocents.</p>
+<p>The Golden Feather Sect’s reputation was far better than Azure Pond Sect’s. They now had the eyes of the world upon them, so how could they possibly take in a band of rebellious devil cultivators? No matter how you framed it, it simply wouldn’t make sense…</p>
+<p>Moreover, from the perspective of the devil cultivators, allying with Golden Feather Sect was a bad deal. It didn’t matter if the Golden Feather Sect shielded them now, once the north-south conflict ended, the reckoning would come.</p>
+<p>“Could it be that they aren’t with the Golden Feather Sect… but then why are there so many Golden Feather Sect cultivators here?”</p>
+<p>Clang!</p>
+<p>After watching for a few moments, Li Xuanfeng and Lingu Rao saw that the Golden Feather Sect could no longer remain idle. Their cloudship tore through the sky, its concealing mist completely dispersed, and numerous cultivators leapt from both sides in rapid succession.</p>
+<p>“Golden Feather Sect…”</p>
+<p>These cultivators didn’t assist Zhong Qian in the air but instead dove into the demonic mist. They launched coordinated assaults to hunt down devil cultivators. Taking advantage of Murong Gong being tied down, they deliberately avoided Zhong Qian’s men and targeted the enemy devil cultivators.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-824.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-826.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 809: Great Defeat (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-808.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-810.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 809: Great Defeat (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Maha Pi Jia’s figure withdrew back into the multicolored clouds, layers of gazes retracting with him, leaving only his vast, resonant voice, “Zipei, how could you do this?!”</p>
+<p>When Maha Pi Jia had manifested in this world, he had deliberately brushed the archer with divine radiance. How could such brilliance, used to receive one into the Dharma Realm, be something a mere Foundation Establishment Realm cultivator could resist? He should have lost his mind long ago!</p>
+<p>If not for finding this archer rather intriguing, that sweep of divine light would have reduced Li Xuanfeng to dust. But Maha Pi Jia had restrained himself, thinking that even if he couldn’t tame him, he could leave him as karmic destiny for Tang Shedu to achieve The Merciful One.</p>
+<p>It was with all that planning and restraint that he had left Li Xuanfeng alive. The amount of radiance had been calculated to perfection. It should have moved Li Xuanfeng to tears and planted a seed in his heart that would one day sprout.</p>
+<p>Who could have imagined it would turn out like this? Li Xuanfeng’s condition was completely different from what his calculations had predicted. Startled and doubtful, Maha Pi Jia’s thoughts surged like a tide. An instant later, he reacted, causing the clouds to shift and roll.</p>
+<p>Did Zipei strike early?thought the Maha.</p>
+<p>Maha Pi Jia dismissed the thought without hesitation. Though there were differences among Purple Mansion Realm cultivators, Zipei practiced Immortal Mansion secret techniques and possessed first-rate spirit artifacts. But these were all meant for frontal combat. Even three Zipeis combined wouldn’t rival him when it came to scheming and calculation…</p>
+<p>If Zipei had intervened to protect Li Xuanfeng or assisted him secretly, there was no way he wouldn’t have seen it. Moreover, the result could not have aligned so cleanly with Li Xuanfeng remaining unconscious and unable to act, just as he had calculated.</p>
+<p>His thoughts leapt across the great void in an instant, and everything became painfully clear,It was Jinlian and Zhelu!</p>
+<p>Only another Maha’s intervention would be able to conceal everything so flawlessly and fool even him. The combined efforts of Jinlian and Zhelu, who had accompanied him south, were more than enough to throw off his calculations!</p>
+<p>Maha Pi Jia’s gaze sank into the clouds as he swiftly unraveled the clues. Zipei’s seemingly playful and death-seeking gestures had been mere misdirection. The female cultivator had reached a tacit agreement with the two Mahas and had plotted against him…</p>
+<p>As for how the other two had acted earlier than him despite appearing slower, Maha Pi Jia could easily guess that it must have been the unseen efforts of Yuan Xiu and Qiushui. Jinlian and Zhelu had fought just as fiercely against him earlier for Tang Shedu, so it made perfect sense they would be just as unwilling for Tang Shedu to fall into his hands now. That didn’t surprise Maha Pi Jia. What truly caught him off guard was Daoist Master Zipei’s stance.</p>
+<p>Be it Yuan Su, Yuan Xiu, even Qiushui or Tiandong, these so-called Daoist Masters always held themselves above others and were never willing to compromise with us… And now they’re working in sync with Jinlian and Zhelu?!</p>
+<p>I misjudged only one thing… Qi Wang’s Profound Heaven Hearing is far more important than I had imagined! Even Jinlian and Zhelu realized it only after the fact, but by then it was too late for regrets…</p>
+<p>Yet there was no anger in Pi Jia’s voice, only a silent faint chill in the air as he spoke, “Fellow Daoists, you’ve all schemed so thoroughly against me, simply because Qi Wang’s Profound Heaven Hearing is that important… purple, gold and demonic Daos are truly impressive. To leave it in my hands for a hundred years while pretending not to care, that’s the very embodiment of the elegance of the demonic Dao.”</p>
+<p>Daoist Master Zipei arched her willow-leaf brows slightly and uttered just a few words, “Bald donkey. Will you deliver it yourself, or shall I come and take it?”</p>
+<p>Maha Pi Jia’s voice grew somewhat ethereal, reverberating as it scattered amidst the blue rain, “Suit yourself, Daoist Master.”</p>
+<p>The colorful clouds in the sky rolled back and gradually faded into the great void. The blue rain overhead grew increasingly illusory. Li Xuanfeng’s vision cleared at last, and he looked up at the two streaks of descending multicolored light.</p>
+<p>“Congratulations, Daoist Master Zipei,” said Li Xuanfeng.</p>
+<p>One light and one shadow appeared within the great void. The stern, aged face of Yuan Xiu appeared first. His robes were as neat and proper as ever, imbued with flowing azure. Though clearly the youngest among them, he had never preserved his looks, thus appearing older than he was.</p>
+<p>The other figure was naturally Daoist Master Qiushui of the Golden Feather Sect. The female cultivator swept her sleeve, casting a burst of golden light that suppressed Li Xuanfeng’s injuries before she finally spoke, “Qi Wang’s Profound Heaven Hearing… fortunately, not too many complications arose.”</p>
+<p>Daoist Master Zipei nodded, showing Zhang Qiushui a rare bit of warmth as she said softly, “Pi Jia is still young. He’s still unseasoned compared to those two old bald donkeys, Jinlian and Zhelu. Catching him off guard made things easier to manipulate.”</p>
+<p>Daoist Yuan Xiu beckoned, and Li Xuanfeng’s golden bow shot into his hand. With a slight tug, a streak of colored light leapt from the bow and returned to his palm.</p>
+<p>“Merely going with the flow.”</p>
+<p>Yuan Xiu flicked his wrist with a trace of distaste and shattered the colored light. When he withdrew his hand, the golden bow floated back into Li Xuanfeng’s grip—neither heavier nor lighter than before. It seemed no different to the eye.</p>
+<p>Li Xuanfeng understood. When he had exited seclusion, this bow had just been repaired and handed to him by Chi Zhiyan. It had surely been tampered with beforehand so that it could be used in the scheme against the Maha.</p>
+<p>“Tang Shedu… had long been seen through. Nothing more than a pawn…”</p>
+<p>Azure light sank fully back into the seal as the three Daoists conversed. The Pristine Heaven’s Pool beneath their feet faded, revealing once more the sinister demonic qi of Chengshui Tomb.</p>
+<p>Using the mana he had just stabilized, Li Xuanfeng rode the wind and stood firm above a swamp of glistening rainwater. The demonic aura rolled through the air, and the Azure Pond Sect cultivators were nowhere to be seen.</p>
+<p>“Li Xuanfeng!”</p>
+<p>As he looked into the distance, searching for traces of his kin, a sinister shout rang out. A surge of thick demonic qi swept forth, shrouded in pitch-black magical light.</p>
+<p>Murong En burst forth from the depths of Chengshui Tomb. Moments ago, he had fought within the seal and naturally targeted the Azure Pond Sect cultivators. He had crushed them all and was now brimming with pride.</p>
+<p>When he saw Li Xuanfeng’s dull armor, his faint breath, pale face, and nearly depleted mana, he immediately burst into laughter, “And what can you do now?”</p>
+<p>Though Murong En didn’t know what had transpired within the seal, Maha Pi Jia’s radiance had just retreated, and it was almost certain that Tang Shedu had entered the Dharma Realm. Since Li Xuanfeng had survived, he was likely on their side now.</p>
+<p>Though Murong En had formed his own conclusions, he remained cautious, merely rising on the wind and observing from afar. Li Xuanfeng, noticing that he didn’t seem to see the three Daoist Masters standing before him, lowered his head slightly in silence. He understood the demon was finished.</p>
+<p>Since Maha Pi Jia agreed to hand over Qi Wang’s Profound Heaven Hearing, Murong En must have been abandoned.</p>
+<p>As expected, Daoist Yuan Xiu glanced at Murong En and nodded, “Qi Wang’s Profound Heaven Hearing.”</p>
+<p>Daoist Master Qiushui smiled faintly and spoke gently, “I’ll do it.”</p>
+<p>A faint smile lingered on her face as her red lips moved slightly, as though casually summoning a household servant. Her voice was crisp and gentle, “You, demon—come here.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-808.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-810.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 828: Ready And Set To Depart (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-827.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-829.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 828: Ready And Set To Depart (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Daoist Master Chang Yun paused briefly and then spoke, “It’s the Great Mahayana Dharma Realm again. They still shrink from battle, even at such a critical juncture. Any thoughts, fellow Daoists?”</p>
+<p>The three Daoist Masters were far from ordinary. However, the Great Mahayana Dharma Realm was renowned among Buddhist cultivators for their survival skills. While Li Xuanfeng’s arrow was powerful, the monk’s rescue of Luejin had been rough and imprecise. It was more like taking the opportunity to withdraw than an act of necessity.</p>
+<p>Daoist Master Qiushui said slowly, “There’s nothing surprising about it. The Great Mahayana Dharma Realm has always been like this. Half ancient, half modern, and ever wavering. If not for that, they wouldn’t have fallen from being the premier Buddhist sect to where they are now.”</p>
+<p>Daoist Master Yuan Xiu disliked Buddhist cultivators the most, but even his sarcasm carried his usual solemness, “The monks see profit in the south and drool with desire. But when they witness slaughter by the thousands and blood flooding the land, their scriptures suddenly come to mind. They cry ‘sin, sin’ and tuck their tails to retreat.</p>
+<p>“Isn’t it always the same? Binding today’s cultivators with ancient rules only ends in a mess, just like that White Horse Temple of theirs.”</p>
+<p>His words were sharp, and the other two Daoist Masters didn’t know how to respond. Daoist Master Qiushui chuckled inwardly,No wonder those two seniors always argue, Tiaoxiao’s words are sharp by nature, and though Si Boxiu disdains mockery, he’s no slouch when it comes to sarcasm either.</p>
+<p>Daoist Master Chang Yun awkwardly looked away, and his interest was caught by the deep blue Converging Water beneath his feet. He seemed lost in thought, hesitated a moment, then suddenly spoke, “I’ve only just emerged from seclusion and tore through the great void to rush here. However, this vast expanse of Converging Water at Chengshui Tomb struck me as odd. Who conjured it? Or is it the work of some special spirit artifact?”</p>
+<p>Yuan Xiu didn’t hold him in high regard and sneered inwardly.He’s from the Eastern Sea, that’s why he’s always cautious about everything… He’s naturally wary of any interference from the Dragon Clan.</p>
+<p>Yet his aged face only shifted slightly as he replied, “No. Daoist Friend Kan used the Xinyou Pristine Marsh Seal, combined with the artifact’s natural effect, to transform this place into a marsh. The Murong Family, leveraging the principle of Water Virtue, converted that marsh into Converging Water, thus creating this great lake.”</p>
+<p>“I see! I had thought the north had employed some kind of spirit artifact.” Daoist Master Chang Yun’s concerns were somewhat eased, and he nodded, “It seems it won’t be long before Senior Zipei condenses her core if she can wield such divine ability.”</p>
+<p>He paused, and then smiled. “I’m fortunate indeed to have migrated inland and been given the chance to witness such a grand occasion… Missing Shangyuan’s ascension to True Monarch was truly the greatest regret of my life!”</p>
+<p>Daoist Master Qiushui’s voice remained as gentle and graceful as ever as he said, “When the True Monarch attained the Dao, the snowy peaks of the Northern Sea stretched for a thousand kilometers and were mostly transformed into the Green Jade Heavenly Mountains. His disciple, Nian Yi, has already established a sect there called the True Unity Dao, with its mountain gate named Green Jade Cliff. If you’re interested, you should go take a look.”</p>
+<p>Perhaps because their sects shared similar stances, Daoist Master Qiushui’s tone was much gentler compared to Yuan Xiu’s, prompting Chang Yun to nod slightly. The Daoist gathered his sleeves and reminded the others. “While Pristine Water can be transformed into Converging Water, it can also be reversed. We must guard against saboteurs. The great void must be tightly defended; if this Converging Water disperses and we fail to catch the Great Ning Palace, then all of this will have been for nothing!”</p>
+<p>“Of course.” Yuan Xiu replied stiffly, “There are too many eyes watching within the great void. Who would dare commit such a grave offense and risk the wrath of both northern and southern Dao lineages? Not even the great Wang or Xie Families could bear that burden, let alone our sects.”</p>
+<p>Li Xuanfeng stood silently to the side, matched by Lingu Rao on the opposite side. They were like two statues, yet neither missed a single word spoken by the Daoist masters. Li Xuanfeng suddenly realized,It seems neither Ning Heyuan joining my expedition nor the immense impact of the Xinyou Pristine Marsh Seal was a coincidence. It had all been arranged long ago. Daoist Master Zipei, the most powerful in the south, personally acted to turn Chengshui Tomb into a marsh, then the north stepped in to convert it into Converging Water. Every step was deliberate…</p>
+<p>Though the north and south are at odds, their coordination is flawless. They contend in the small and cooperate in the great. The world is like a bird caught in a cage. Much like a fish in a net, there is not a sliver of a chance of escape.</p>
+<p>His gaze fell, yet he heard Daoist Master Chang Yun’s voice again, “Since the Great Ning Palace has descended, let us each send our envoys…”</p>
+<p>Behind him, Zhong Qian slightly raised his brows, gripping his long spear tightly as he gazed toward the distant crystalline glow.</p>
+<p>***</p>
+<p>Li Qinghong descended from the sky on lightning. Mount Qingdu was already packed with people. Li Ximing led a welcoming party, visibly moved as he cupped his hands and said with a smile, “With Aunt and Elder Brother safely returned, my heart is finally at ease!”</p>
+<p>“Your cultivation has improved again,” replied Li Qinghong, smiling at him. Although only Xicheng among the Xiyue generation had been raised personally by her, she was still easier to approach than most, and Ximing and the others were all quite familiar with her.</p>
+<p>Li Ximing stepped aside, and Li Xuanxuan, standing behind him with a smile, said, “I knew all along that those devil cultivators wouldn’t stand a chance with Qinghong commanding thunder and lightning.”</p>
+<p>The entire Li Family was overjoyed by the two’s safe return, and the heavy atmosphere atop the mountain was instantly swept away. Li Xizhi looked around and asked, “But where is our Minghuang?”</p>
+<p>“This…” Li Xuanxuan paused and let out a deep sigh before answering, “It’s truly unfortunate, he entered seclusion just a few days ago to break through. But there’s a difficult matter involved… it’s a long story, and we’ll need to ask Xizhi about it.”</p>
+<p>Li Xizhi understood that there was something inconvenient to say, but he didn’t want to neglect Li Quantao. He turned slightly and said gently, “Quantao is seriously injured. Let him recuperate on my mountain for now. There are many family matters to attend to, I must go inspect them first.”</p>
+<p>Li Quantao had been absorbed in examining the great formation on the mountain. But when he heard Li Xizhi, the soreness and exhaustion rushed in all at once. He nodded and replied, “I know a bit about formations. This mountain’s setup is quite clever. Go ahead, Brother Xizhi, I’ll take this chance to heal.”</p>
+<p>An Siwei escorted him down, and the others rode the wind upward. Li Qinghong relayed all that had happened and shared the good news from Cheng Gao that Li Xuanfeng was unharmed, putting everyone at ease.</p>
+<p>Li Ximing led the group onto Lijing Mountain. He activated the formation, circled around to the rear mountain, and unsealed several layers of wards, revealing a residence made of green stone. The residence had two wings to the left and right, with a circular white-stone pond in the center.</p>
+<p>Li Qinghong let out a soft sigh and said, “It’s been many years since I last returned to this old house.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-827.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-829.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 831: In The Demonic Smoke (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-830.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-832.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 831: In The Demonic Smoke (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The thick demonic aura on the man clearly gave him away as a northern devil cultivator or rogue, so Li Wushao flicked his tongue and answered, “I am a protector under Master Monk Kongheng of Yan State! And what about you, what unit are you from to be prying this much?”</p>
+<p>The snake demon spoke with conviction, but inwardly grumbled,Damn it… using that monk’s name again. I’ve practically been his mount these past months! What a disgrace…</p>
+<p>The man hesitated. Though most Buddhist cultivator forces were now centered around the Way of Emptiness, Way of Compassion, and Way of Virtue, representatives of all seven northern sects had shown up. Who could say where this Kongheng fit in?</p>
+<p>Still, seeing the snake demon so confident, he replied coldly, “I’ve never heard of any Master Monk Kongheng!”</p>
+<p>“Blind, are you?!” Li Wushao cursed aloud, slapped the ground with his tail. He pointed directly at him, and roared, “My master is someone even Master Monk Yu Xin of the Great Desire Sect begged in vain for a single debate! And you, a petty devil cultivator, dare bark at someone of such stature?”</p>
+<p>Yu Xin had indeed led the initial assault on Mount Yan Pass as a master of the Dao of Great Desire, only to be repelled by Li Qinghong and others. The tale held truth, and with the black serpent holding his head high, his bearing was indeed quite intimidating.</p>
+<p>This snake’s mouth is vile,thought the devil cultivator.</p>
+<p>The devil cultivator was already half-convinced once he heard the name Yu Xin. But being cursed so thoroughly still left him displeased. A trace of doubt lingered in his heart as he said coldly, “If you truly serve such a great master, you must be well-versed in scripture!”</p>
+<p>“Hah! You asked for this!” Li Wushao sneered in response and began rapidly reciting the Respected Cultivator’s Subduing Words that Kongheng had once taught him. The cryptic and profound incantations echoed through the air. Combined with his earlier claims, it immediately made the devil cultivator in front of him flinch and panic.</p>
+<p>“Plagued fool of a snake!” Buddhist cultivators’ scriptures were notoriously strange and unpredictable. The devil cultivator didn’t want to risk getting converted mid-interrogation, so he hurled an insult to save face and quickly took to the wind, vanishing into the black mist.</p>
+<p>“Pah!” Li Wushao spat in the direction of his retreating figure and slithered back into the ruins. The man was likely one of the Foundation Establishment Realm cultivators stationed here. After that little farce, it seemed he wouldn’t be facing any more interference.</p>
+<p>Most of the devil cultivators stationed here withdrew after the incident at Chengshui Tomb, and that master monk also returned to the north… otherwise that guy wouldn’t have been so easy to fool…</p>
+<p>Li Wushao had also seen the shimmering lights descending from the north. He wasn’t surprised, but muttered inwardly,Humans are so obsessed with appearances. If you want to kill, then just kill, why the need for so many pretenses and disputes? They fight and struggle until they die, all for some hollow display.</p>
+<p>Li Wushao had seen plenty of this in the Eastern Sea. Whenever some dragon son from the water palaces needed an Immortal Foundation for alchemy or forging, the local demonic creatures simply lined up to be slaughtered. There was no need for wars or disputes, none of this endless back and forth.</p>
+<p>That said, Li Wushao still envied the refinement of inland cultivators. Even Purple Mansion Realm cultivators had to feign civility when killing those at Foundation Establishment Realm, and senseless slaughter was rarer. Life was far more comfortable that way.</p>
+<p>He lowered his head and moved through the ruins. Before long, he reached the place where he had once been stationed. After digging around for a bit, he unearthed a halberd.</p>
+<p>The halberd had a simple design and was remarkably light. Inscribed upon it were the words,Li Family of Qingdu, Chen Family of Lijing, Chen Mufeng.</p>
+<p>So the kid died here after all.</p>
+<p>Li Wushao had met this man before, back when he was captured and brought to the Li Family. Chen Mufeng had still been a boy then, and they’d crossed paths.</p>
+<p>“Damn it…” The snake demon scowled and pried up a few large stones. Sure enough, he found half of Chen Mufeng’s skull. He dug up the other half from the soil. It was already rotted, so the snake demon wiped them clean, pieced them together, and stashed them in his storage pouch.</p>
+<p>Humans have a tradition of burying the dead. I’ll bring it back for Chen Donghe to give him a proper burial,thought Li Wushao.</p>
+<p>He blinked a few times, searched the area twice, and dragged out a few corpses of Li Family members. Thankfully, he didn’t recognize any of them.</p>
+<p>He stowed them all away and cursed, “Damn it, dying right on the spot!”</p>
+<p>Now in human form, his eyelid twitched as he scanned the area again. He silently let out a breath of relief when there was no sign of An Zheyan’s corpse. That guy had once worked alongside him mining beneath Moongaze Lake. He had always been smiling under his bald head, with a hearty appetite and a tendency to slack off—though he could run surprisingly fast.</p>
+<p>He looked around once more. There had also been a burly man wielding a golden hammer, probably named Li Wen, who was also missing. It was quite likely he had been reduced to ash, with his hammer taken by someone.</p>
+<p>As he made his way back, he found a few more corpses along the way and quietly gathered them up, thinking to himself,Those guys from Moon Lake Peak of the devil gate… they probably ran the moment things turned bad, maybe not even fast enough to escape.</p>
+<p>He walked barefoot through the field, spotting familiar faces now and then, or what remained of them. Sometimes it was a nose he recognized, or half a rotted ear that looked vaguely familiar, lying discarded on the ground.</p>
+<p>Each time Li Wushao saw one, he swore under his breath. His muttering continued as he wandered through the gate, the curses growing quieter, until at last, the old snake fell silent.</p>
+<p>In all his years in the Eastern Sea, Li Wushao had never truly had friends. His kin considered his bloodline too lowly to speak to, and the other demon clans didn’t even dare look him in the eye.</p>
+<p>It was only after arriving at the Li Family that Li Wushao came to understand the concept of acquaintances and friends. Despite his foul mouth and gruff demeanor, people like An Zheyan and Chen Donghe didn’t mind him. Perhaps there had been some mutual benefit, but they treated him with camaraderie nonetheless.</p>
+<p>Li Yuexiang had been just a little girl; she was sweet and well-behaved. Xiao Guiluan’s children were all sharp and clever. Back then, Li Wushao had been assigned to guard her by Li Yuanjiao.</p>
+<p>Li Yuexiang had always liked white dresses since she was young. She once told Li Wushao, “I usually stay on the mountain. Uncle Wushao, you don’t have to wait on me all the time. If you come from the lake, I won’t be waiting too long.”</p>
+<p>In the blink of an eye, more than twenty years had passed. When Li Yuanjiao had died, Li Xuanfeng had asked whether he wanted to stay with the Li Family. Li Wushao hadn’t dared make a peep in front of that man then. But if he were honest with himself, he had grown used to this kind of life, one where he didn’t have to be constantly afraid and could speak his mind.</p>
+<p>Now his acquaintances had become corpses, scattered in pieces across the ground. Even in the cold weather, they were rotting badly. For the first time, Li Wushao furrowed his brow over a few mere Qi Cultivation Realm humans.</p>
+<p>The old snake wandered all the way to the collapsed formation’s center. His spiritual sense swept the ruins, and after rummaging for a bit, he suddenly caught sight of a broken sword.</p>
+<p>The broken sword was just over a foot long. A wooden charm dangled from its hilt, one palm long and two fingers wide, stained in dried black blood. Delicate and graceful words were written on it,I’ve long awaited your return.</p>
+<p>Devil winds howled as the old snake glanced at the charm, then at the charred marks on the stone and the dark bloodstains. He stared for two seconds, then turned back to the charm, and let out a raspy hiss—the choked, guttural sound unique to grieving serpents.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-830.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-832.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

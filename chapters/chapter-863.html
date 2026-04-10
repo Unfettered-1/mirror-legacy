@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 863: The Fall Of Great Ning Palace (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-862.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-864.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 863: The Fall Of Great Ning Palace (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Boom!</p>
+<p>Purple lightning roiled in the sky with a terrifying momentum. The lightning around Li Qinghong’s entire body had turned bright purple. Each feather on her feathered robe was glowing brightly.</p>
+<p>She had slaughtered her way here without regard for cost or consumption, breaking several sieges at different crossings. Even though she had been injured, she’d also saved a lot of time.</p>
+<p>She immediately activated the Vast Sky Fierce Sparrow inside her body. Her internal mana surged and her thunder pool roared with waves of lightning. Her eyes shone with a misty purple hue, and her silver-white spear shone as it pointed forward. Silver lightning burst forth from the six tokens in her palm, descending with a thunderous crash.</p>
+<p>Of the four northern cultivators beside Li Ximing, three were Purple Mansion and Golden Core Daos cultivators that had ingested blood qi. The last one was a true devil cultivator from the Diverse Mansion Unified Furnace. The silver lightning exploded, and they all let out pained howls.</p>
+<p>The three blood qi-infused Purple Mansion and Golden Core Daos cultivators were better off as they were only paralyzed. However, the last devil cultivator was like a man thrown into boiling oil. His robes burst apart, and his skin bubbled with countless blisters. His blood vessels burst, and thick black smoke billowed forth.</p>
+<p>His eyes burst from their sockets like two rotten fruits, exploding midair with a pop. The blood evaporated in an instant, and his body melted like wax, revealing pale white bones at the elbows.</p>
+<p>“Profound Thunder!”</p>
+<p>Li Ximing was shocked as he watched. This devil cultivator had been the most restrained in his previous battle with Li Ximing. He was often drenched in sweat under his Radiant Light and unable to move freely. Yet, thunder truly was the bane of devils. And among all lightning, Profound Thunder was supreme—he naturally couldn’t compare.</p>
+<p>Li Qinghong had seen countless devil cultivators on her way. Her almond-shaped eyes glinted as she immediately understood that this one’s entire body had almost certainly been refined through demonic rituals, usually making him indestructible. But he was as fragile as tofu against Profound Thunder, breaking apart in just two strikes.</p>
+<p>She rode the lightning closer, and the purple spear shadow pierced into the demonic smoke, seizing the moment when the silver lightning was still reverberating in the air. Purple light and sparrow shadows flew in, but instead of striking the devil cultivator whose body was already melting, she turned and aimed at a figure in midair.</p>
+<p>Li Qinghong had rescued several crossings already, and had long since understood the mindset of the attackers. She wasn’t in a rush to kill the heavily wounded devil cultivator; letting him go would actually attract many cultivators to hunt him down and relieve pressure on the grand formation.</p>
+<p>As she calculated, the cultivators themselves were miserable. Their internal mana was still trembling, yet they were being forced to use their dharma artifacts to defend. Their hearts quaked,This southern devil sect… even has a Dao lineage of thunder arts? Why are they working with the devil sect?</p>
+<p>Li Ximing formed a spell seal and saw a round shield fly toward him in the air, humming and shimmering faintly. But its quality was truly mediocre. It had just reached him when the purple-and-white spear was already there.</p>
+<p>Clang!</p>
+<p>Purple lightning exploded on the round shield. The dharma artifact was struck so hard it staggered to a stop and almost flew backward. It started to give off black smoke from the sheer heat of the collision. But Li Qinghong’s spear did not pause; it thrust forward again.</p>
+<p>Just then, a bright radiance descended, and the familiar suppressive force returned. The bright light atop the sky flickered, and a magnificent white barrier rose once again.</p>
+<p>Battling such a fierce, thunder-wielding cultivator was already nerve-wracking and left no room for distraction. The renewed suppression caused merely a half beat of delay in the northern cultivator, but that was enough. His eyes were filled with the sight of lightning striking down on him.</p>
+<p>Puff!</p>
+<p>Li Qinghong was battle-hardened and experienced in spell combat. Her spear flashed, and the dharma robe on his body, as fragile as a layer of thick hide, shattered with a crack. Her spear had already pierced his chest, spraying blood.</p>
+<p>At that moment, the dharma artifacts of the remaining devil cultivators finally arrived one after another, but they were all subdued by the Radiant Origin Pass. The man with the spear through his chest turned deathly pale, vomiting blood as he stumbled backward, desperately suppressing the lightning within him.</p>
+<p>Li Qinghong withdrew her spear and activated the Vast Sky Fierce Sparrow within her, purple lightning crackling under her boots. She pointed her spear diagonally, eyes like lightning, and coldly shouted, “Begone!”</p>
+<p>Silver lightning spread with her words, forcing them back several steps. Li Ximing loosened the Radiant Origin Pass’s suppressive force at just the right moment. Three dharma artifacts flew out in a hurry, and the three men, as if granted amnesty, quickly retreated.</p>
+<p>As for the devil cultivator whose body had melted earlier, he dared not linger any longer. He had long since transformed into a black mist and fled several kilometers away. He was also being chased by other streams of demonic light and continued fleeing northward at a frantic pace.</p>
+<p>Li Qinghong stepped forward with her spear. A muffled thunder rang out, and purple lightning landed beside Li Xizhi. When she looked back, the surrounding cultivators felt a chill of fear and retreated in unison.</p>
+<p>Li Xizhi had held his own against five opponents, which was a testament to his mastery of spell arts. He took the opportunity to rest and replenish his energy. But when he saw Li Qinghong return alone, his expression turned slightly somber.</p>
+<p>Li Qinghong’s purple lightning shielded him; the Profound Punishment Tokens whirled around her; the Duruo Spear gleamed silver; and the Cyan Sparrow Plume shone brilliantly. Thunder itself was already fearsome, but with her late Foundation Establishment Realm cultivation strengthened by the Vast Sky Fierce Sparrow, she shone even more brightly, making everyone’s expressions change in shock.</p>
+<p>“Lightning cultivator…”</p>
+<p>The female cultivator of the Wood Virtue shuddered slightly, her eyes filled with disbelief. Five of them had surrounded and attacked him for so long, yet they had gained nothing. They lingered unwillingly until Li Qinghong’s Sixfold Profound Thunder Punishment Tokens lit up, at which point they all fled in a rush.</p>
+<p>Li Qinghong exhaled lightly and looked into the distance, where streaks of escape light continued to converge rapidly. More and more brilliant streams of light were flowing together.</p>
+<p>Li Xizhi moved closer to her and said softly, “Aunt, I’m afraid we can’t hold anymore.”</p>
+<p>The situation was becoming increasingly clear. The Foundation Establishment Realm cultivators in the sky had some reservations and weren’t fully engaged; many of them were still fighting among themselves. Yet, the number of Embryonic Breathing and Qi Cultivation Realm cultivators flooding in was growing rapidly…</p>
+<p>What’s more, those who had arrived so far were just rogue cultivators from the north without any background. The ones with real strength were still observing from the sidelines, ready to pounce at any moment.</p>
+<p>“The Azure Pond Sect’s formation here isn’t exactly impressive. Even if these Foundation Establishment Realm cultivators don’t strike, the southbound devil cultivators can each throw a spell art and still tear this grand formation apart.”</p>
+<p>Once the formation beneath their feet was broken, a horde of cultivators would swarm them. There would be no point in holding this place any longer.</p>
+<p>Li Qinghong nodded silently and said softly, “I’ve received some news. I’ll do my best to hold on for a little longer… maybe there’s still a chance.”</p>
+<p>She turned to the north. The purple light in her almond eyes dimmed, but the bright purple lightning on her robe still danced, intimidating the demons in the sky.</p>
+<p>A patch of black cloud gradually emerged from the demonic smoke and slowly approached them. It didn’t carry an overwhelmingly demonic aura; instead, it exuded a peculiar and profound feeling.</p>
+<p>Li Ximing frowned slightly as his Immortal Foundation burst into the air, transforming into a massive radiant pass that glowed with a searing light.</p>
+<p>It illuminated a man in crisp, practical black robes. His face was slightly pale, and he stood with his hands behind his back. He had sharp eyebrows, and two calm gray eyes. He slowly rode on two black clouds, and held a white talisman in his hand as he stopped unhurriedly in front of them.</p>
+<p>“Fellow Daoist, we meet again.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-862.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-864.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

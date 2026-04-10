@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 802: Captured Alive (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-801.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-803.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 802: Captured Alive (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Even as he observed the pair closely, Li Xizhi noticed dozens of immortal lights approaching from the south. His heart quickened slightly,There are many immortals that are certainly coming. Aunt might not leave Mount Yan Pass, but perhaps my own family, or even the Yang Family, will arrive…</p>
+<p>The Heavenly Glow in his hand shifted slightly as he thought. It didn’t attack the two cultivators, but instead soared upward through layers of clouds toward the dozens of approaching immortal lights.</p>
+<p>However, this brief delay caused Li Quantao to instantly spat out blood. His strength was modest, since he was only at the early stage of the Foundation Establishment Realm. He relied entirely on the ancient dharma artifact in his possession.</p>
+<p>Though the Water Wall Pearl could block most attacks due to its indestructible nature, the two devil cultivators before him were cunning. Their increasingly tricky spells caused Li Quantao to repeatedly cough up blood.</p>
+<p>Now, Li Quantao didn’t even have the mental capacity to pay attention to Li Xizhi’s actions. His spirits sank further as the foreboding sense of impending death gradually overcame him.</p>
+<p>The Water Wall Pearl had enabled Li Encheng, at the early Foundation Establishment Realm, to evenly battle Chi Wei, a direct descendant of an immortal sect at the late Foundation Establishment Realm. Yet in Li Quantao’s hands, it was merely a defensive artifact. This disparity in mastery filled Li Quantao with bitterness,I truly fall short of my father in every aspect!</p>
+<p>Li Xizhi saw no one arriving to assist them, so he reactivated his mana to face the enemy. But it only took a few exchanges for Li Quantao to be badly injured, forcing Li Xizhi to look toward Yu Yuwei for help.</p>
+<p>However, his heart sank. Yu Yuwei had initially been fighting two alone, but he now faced yet another devil cultivator. The elderly man was overwhelmed and unable to offer assistance.</p>
+<p>His face darkened, but he then heard Li Quantao’s faint, thread-like voice in his ear, “Brother Zhi! The Yu Family can’t be trusted. Yu Yuwei covets my artifact, so he’ll deliberately watch passively… He won’t help!”</p>
+<p>Li Quantao had always been strongly hostile toward the Yu Family. Li Xizhi could only silently sigh, drawing his sword again as he stood protectively in front of Li Quantao as the two devil cultivators launched another assault on them.</p>
+<p>“Go!” Li Xizhi judged that, given his talisman seeds and talisman qi, he could endure longer than Li Quantao. If they fled, Yu Yuwei would be forced to act, willing or not.</p>
+<p>He transmitted using divine sense, “I’ll hold the artifact and escape. Heavenly Glow excels in escape arts, so these two devil cultivators likely won’t catch me…”</p>
+<p>Boom!</p>
+<p>But before he finished speaking, the gray and white mist hurriedly withdrew like frightened rabbits. The surrounding demonic energy scattered completely as a deafening rumble and dazzling white light stunned everyone present.</p>
+<p>Li Xizhi immediately activated his perception art, clearly seeing Qiu Ji’s pale face convulsing violently. A silver-white spear tip pierced through Qiu Ji’s chest, forcing trails of black smoke into the air.</p>
+<p>A burst of purple lightning exploded from dark clouds, causing Qiu Ji to scream. Devil cultivator Ge stared in shock. His scalp tingled and his legs weakened. When he heard a thunderclap, he retreated dozens of feet in panic.</p>
+<p>Though briefly weakened by lightning, Qiu Ji was extraordinary. He immediately transformed into white mist and reformed into a skull-like head. Unable to flee, he threw himself toward Li Quantao.</p>
+<p>Boom!</p>
+<p>The skull-like mist was extremely fast, but the crystalline purple light moved faster, instantly intercepting it.</p>
+<p>“This is…” Li Quantao paled, not yet reacting fully, as the purple light transformed into a female cultivator in an azure-purple feathered robe who landed gracefully before Li Xizhi.</p>
+<p>Her eyes were a hazy purple and she held a silver spear.</p>
+<p>Li Qinghong coldly stared at the white skull, muttering, “Qiu Ji…”</p>
+<p>She lifted Qiu Ji by the neck, leaving everyone utterly astonished. Even Yu Yuwei was shocked. His devil cultivator opponents exchanged quick glances before immediately fleeing.</p>
+<p>Qiu Ji, having been shattered by the lightning, took two full seconds to reform half his body in the air. His upper torso hung helplessly in the woman’s grasp, his expression filled with extreme terror. His trembling lips appeared to be muttering pleas for mercy.</p>
+<p>The purple brilliance in the almond-shaped eyes of the woman seemed sharp enough to pierce right through him. Hatred gradually surfaced in her gaze, filling Qiu Ji with dread.</p>
+<p>It’s her… that female cultivator from the Li Family! So it’s already come to this! If I’d known she hated me so deeply, I would have killed one of her relatives back at the market…</p>
+<p>Despite being shielded by thunder, it wasn’t easy for Li Qinghong’s physical body to pierce through the corrosive demonic qi. Bright crimson blood trickled down her wrist, yet she only felt satisfaction in her vengeance.</p>
+<p>Qiu Ji, eyes filled with blurry purple lightning, could only cry out in terror, “Milady, you are—”</p>
+<p>Boom!</p>
+<p>Purple lightning instantly crashed down on him. Qiu Ji screamed in agony as a delicate hand closed tightly around the white mist of his body.</p>
+<p>Li Qinghong’s red lips parted slightly as she said coldly, “Old bastard… after so many years… I’ve finally caught you.”</p>
+<p>Her melodious voice echoed through the air. Although this particular corner of the battlefield only had few devil and immortal cultivators, everyone present shuddered.</p>
+<p>Qiu Ji’s face was a mask of despair as he thought,How could it be this sudden… how could she be this ruthless?!</p>
+<p>He didn’t believe himself entirely helpless against Li Qinghong. But the unexpected ambush and Li Qinghong’s resolute killing intent had resulted in his current miserable state.</p>
+<p>Nearby, devil cultivator Ge was frightened nearly to death. Though Qiu Ji’s strength was slightly inferior to his, he’d lost all ability to resist so quickly because of the ambush. Which devil cultivator wouldn’t fear a woman bathed in lightning like this?</p>
+<p>He desperately tried fleeing silently with all his might, but at that moment, the Heavenly Glow cultivator and the man wielding the Water Mansion artifact arrogantly took advantage and eagerly blocked his escape. One moved swiftly, always appearing ahead of him. The other was even more troublesome as he used the Water Mansion artifact to firmly suppress his escaping light.</p>
+<p>But what truly chilled devil cultivator Ge’s heart was that the female cultivator, with her silver spear and feathered robe surrounded by purple lightning, had long locked onto him with her lightning-infused spiritual sense. She seemed to be casually standing there, but whenever her almond-shaped eyes glanced over at him, he knew any sign of fleeing would invite instant annihilation by lightning!</p>
+<p>Damn that fool Qiu Ji… Clearly, he had deep ties with this family! Yet he kept scheming and hiding the truth from me completely! Now look at what’s happened! My life is finished!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-801.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-803.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

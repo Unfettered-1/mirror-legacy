@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 838: Taking Action (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-837.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-839.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 838: Taking Action (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>“Hold on, fellow Daoist.”</p>
+<p>Li Xuanfeng gave no further reply. The black-clad youth below was extremely alert. He merely glanced once up at them and instantly stirred up devil winds, his robe billowing as he fled in the opposite direction. If he was not struck down in time, he could become a future threat.</p>
+<p>Li Xuanfeng drew back his bowstring and a golden arrow settled onto the string. The youth below immediately felt his ears ring, dread flooding his heart as his body trembled with instinctive alarm.</p>
+<p>Their eyes had met earlier. Li Xuanfeng’s perception technique had pierced through the black mist on the youth’s face and saw his features clearly. The youth had also seen his features. The moment he saw that bow in Li Xuanfeng’s hand, he prepared to flee, with high alert in his heart.</p>
+<p>Now, understanding dawned upon him like a plunge into an icy lake. He shuddered inwardly,That’s the Bianyan’s Immortal Bow, Li Xuanfeng…</p>
+<p>This youth was none other than Helian Changguang of Tiefo State, the one who had fought Li Qinghong during the devil plague. Back then, Li Qinghong had slain the female cultivator at his side and obtained a Dharma robe which had later been forged into the Cyan Sparrow Plume. She had once worried over it and specifically mentioned it to Li Xuanfeng.</p>
+<p>As Li Xuanfeng loosed an arrow, thoughts raced through Helian Changguang’s mind like lightning. He quickly made a judgment in his heart,Seems the small hall I was heading toward has already caught their eyes, this arrow is to block me!</p>
+<p>So he immediately leaped away from the hall, not hoping to dodge the ghostlike arrow, but fully presenting a posture of retreat. Devil smoke churned beneath his feet as he stepped back twice. Pain bloomed in his chest, and he coughed up blood.</p>
+<p>Though Helian Changguang was Tiefo State royalty, their nation was already weak, and in recent years had suffered a severe decline in talent. Things had gotten so bad that a mere mid-stage Foundation Establishment Realm cultivator like him had been sent out. Clearly, there was no one else to use.</p>
+<p>Helian Changguang had been constantly on edge during this whole foray. Any random cultivator around him would at least be in late-stage Foundation Establishment Realm and many even stronger. Just now, he had merely clashed with a single devil and had nearly been killed.</p>
+<p>He was a naturally cautious man. He couldn’t see where the arrow came from nor where it would go. All he felt was a numbness and pain, and suddenly a gaping hole had opened in his chest. Terror consumed him.</p>
+<p>To have such a towering reputation… he truly is exceptional. When weapon mastery reaches its peak, it births intent. This man surely possesses arrow intent…</p>
+<p>He had no intention of entangling himself with Li Xuanfeng. He immediately turned to flee, pulling out a life-saving talisman as black energy ignited around his body. He muttered under his breath, “Translucent Bloodsilver Technique!”</p>
+<p>But Li Xuanfeng only drew nearer. The first arrow returned to his bowstring, and another leaped up from his waist. He pulled the string taut once more.</p>
+<p>“Strike!”</p>
+<p>In the distance, the black-clad youth’s head exploded like a watermelon, releasing a cloud of blood mist. His hands clawed at where his head had been, and his headless body panicked further, transforming into a streak of devil light and fleeing at top speed.</p>
+<p>He really means to kill me!</p>
+<p>Helian Changguang couldn’t guess Li Xuanfeng’s thoughts. He poured all of his mana and blood essence into his spell. He pushed the Translucent Bloodsilver Technique to its limit, forming a silver-red aura that worked to expel as much of the Astral Qi from his body as possible.</p>
+<p>“Hmm?”</p>
+<p>Helian Changguang’s Translucent Bloodsilver Technique was a secret method of the Whole Pill Dao. Perhaps it was the outer world’s qi or the nature of the secret realm, but its power had inexplicably increased. He coughed up a blood arrow, but it was shredded by Astral Qi before it could touch the ground.</p>
+<p>This surprised Li Xuanfeng. His Astral Qi had been refined through a combination of spiritual orifices and lifelong cultivation, and was now enhanced by two Immortal Foundations. Its power was terrifying.</p>
+<p>Once someone was infected by his Astral Qi, it clung like a bone-rotting parasite. It would bind to one’s mana and, once inside the body, would take years to purge. It was not something a simple blood cough could resolve.</p>
+<p>Perhaps his spell art is truly extraordinary…thought Li Xuanfeng.</p>
+<p>Li Xuanfeng didn’t recognize his Immortal Foundation, but beside him, Si Yuanli gave a soft exclamation of surprise. Li Xuanfeng’s waist quivered as three more arrows jumped up. His vigilance had deepened.</p>
+<p>According to Qinghong’s description, this man is cautious, capable, ruthless and decisive. That seems entirely accurate.</p>
+<p>Though his cultivation is still shallow, he’s already able to dissolve my Astral Qi. His technique must be marvelous. He’s simply not strong enough to unleash its full potential. Someone like him mustn’t be allowed to escape. I must not be careless. It’s better to eliminate him early and avoid future trouble.</p>
+<p>He drew his golden bow to a full moon curve. Five arrows circled the bow but did not touch the string. Instead, a gold-red arrow darted from his waist like a swimming fish and settled obediently on the bow.</p>
+<p>Clang!</p>
+<p>A burst of golden-red light erupted in the distance. Si Yuanli felt a sudden gust of wind sting his face and couldn’t help but glance at the middle-aged man beside him in astonishment, “Brother Xuanfeng, isn’t that a bit much to kill a chicken with an ox blade?”</p>
+<p>His only answer was a buzzing sound, as Li Xuanfeng vanished from his side. When Si Yuanli looked up, he saw that while Helian Changguang’s devil light was fast, it was not nearly fast enough to outpace the arrow. He had already turned into a sky full of devil smoke.</p>
+<p>Li Xuanfeng’s eyes flashed with golden light as he flew at lightning speed into the devil smoke. His Heavenly Gilded Helm was operating at full power, enhancing his speed even further. He reached into the smoke and snatched at something, finally stopping to scan his surroundings with narrowed eyes.</p>
+<p>Si Yuanli stepped closer and saw the fierce man slowly open his palm, revealing a silver-gray drop of mercury that writhed and spun in his hand, radiating a faintly intoxicating glow.</p>
+<p>A thin layer of silver light coated the mercury drop, resisting Li Xuanfeng’s mana and preserving Helian Changguang’s soul. But now, that light was gradually fading, growing dimmer and dimmer.</p>
+<p>Si Yuanli feigned sudden realization, exhaled heavily, and said quietly, “The Whole Pill Dao is known for its mystique. As expected, it includes many life-saving spell arts. If not for Brother Xuanfeng’s vigilance, this one would have truly escaped.”</p>
+<p>Li Xuanfeng nodded silently. The drop of mercury in his palm suddenly revealed a face. He was high-nosed and deep-eyed, unmistakably Helian Changguang himself. His voice was sorrowful as he said, “Immortal seniors, I have never offended either of you… I merely lingered a few steps too long; does that warrant my death? Senior Xuanfeng, your junior killed my concubine, took my dharma artifact, and chased me to ruin and dismemberment. I’ve not sought revenge, yet now you seek my life? Is this the act of a true and righteous man…”</p>
+<p>Helian Changguang had pieced together the reason for Li Xuanfeng’s murderous intent in just a few seconds. His voice turned mournful, filled with pitiful desperation.</p>
+<p>Si Yuanli laughed heartily and simply said, “You’re a devil head, does killing you need a reason? Man-eaters and blood-drinkers like you deserve death from all.”</p>
+<p>Li Xuanfeng merely tilted his head, gaze shifting away. He didn’t reply to Helian Changguang at all. His mana grew brighter and brighter, polishing away the silver sheen on the mercury drop.</p>
+<p>Crack…</p>
+<p>Before Helian Changguang could respond again, Li Xuanfeng’s radiant mana had surged past all resistance. His soul was instantly annihilated, leaving only the dimly glowing drop of mercury behind.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-837.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-839.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

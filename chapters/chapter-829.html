@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 829: Ready And Set To Depart (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-828.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-830.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 829: Ready And Set To Depart (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>This was the very house built by the Li Family’s founder and his four sons when they had first established their family. Back then, Li Yuanxiu had managed family affairs from here, and Qinghong had lived here briefly. Their memories were still fresh. The house had since been reinforced with formations, and the ground now glimmered faintly with light.</p>
+<p>Li Ximing and the others seldom visited this place. As they strode into the back courtyard, Li Qinghong caught sight of a stone cage placed precisely at the courtyard’s center.</p>
+<p>The cage had no extra engravings, and only a faint glow indicated it was lined with formation arrays. At its very center, a child crouched, hugging his knees and lying sideways on the ground.</p>
+<p>The child’s golden eyes swept over them when he saw them approach. His cheeks were covered in tiny feather-like scales, and he stared at them blankly.</p>
+<p>Li Xuanxuan said, “This is Jiang Ao…”</p>
+<p>He briefly explained the child’s birth and Kongheng’s suspicions, then sighed gloomily. “He’s only a few months old, but refuses breast milk and cooked food… He only craves raw flesh. He doesn’t understand scolding or words. Whenever he sees a person, he pounces on them to try and devour them like a beast…”</p>
+<p>Li Xizhi sighed inwardly, examined the child closely, and flicked out a ray of Heavenly Glow to capture him. The child immediately revealed a look of greed, biting at the glow with rows of white teeth. He didn’t stop trying to chew even as his mouth filled with blood from the recoil.</p>
+<p>“This…” After a few more moments of observation, Li Xizhi let out a deep breath and said softly, “This is Minghuang’s child…”</p>
+<p>Li Xuanxuan looked up at him, but it was Li Ximing who spoke first, “Brother, I heard that there’s a Veiled Yin Dao lineage in Chen State’s Jizhong, known as the kingdom of women. Perhaps seeking a bride from there might help.”</p>
+<p>“It’s not that simple… I’ve been researching everywhere ever since I learned of this.” Li Xizhi spoke softly, “The Wei Emperor sought to gather all Dao lineages under his rule, and the Veiled Yin lineage suffered greatly. Its practitioners were forced into the imperial harem or turned into eunuch cultivators. Thus it has practically vanished since the Wei dynasty. The only place where it still exists is Chen State.</p>
+<p>“But that place is a kingdom of women, where yin and yang are reversed, so how could they possibly send one of their own out to marry? They might only allow someone like Zhouwei to marry into their state.”</p>
+<p>Li Ximing was taken aback. But after a moment of thought, it was understandable. Li Xizhi gently set down Li Jiang’ao and spoke again, “What I mean is, there’s no need to completely dismiss the matter. Anything involving a fate tied to Metallic Essence often carries strange outcomes. Have a few more children and see how things develop.</p>
+<p>“As for Jiang’ao…”</p>
+<p>He seemed troubled as well and could only say, “Let’s raise him for now… Perhaps there will one day be a method to cure his disorder. After all, he is our blood, we can’t just end things hastily.”</p>
+<p>Everyone nodded and took a seat in the main hall of the old residence. Li Qinghong, never one for ostentation, had already transformed her long feathered robe into a plain white garment.</p>
+<p>She spoke softly, “Though we faced a demonic calamity, we gained quite a bit in return.”</p>
+<p>She retrieved several storage pouches from her robes and laid them out on the table, along with two dharma artifacts.</p>
+<p>One was a dimly glowing small jar, while the other was a gray, misty short blade. There was also a fist-sized pile of black shards, the remnants of Chimen Difu’s dharma artifact that Li Qinghong had conveniently gathered.</p>
+<p>The storage pouches from Qi Cultivation Realm cultivators weren’t worth mentioning. The truly valuable ones had belonged to Qiu Ji and the devil cultivator Ge.</p>
+<p>But having managed the household for many years, Li Xuanxuan considered even the smallest scrap valuable. He took out the Qi Cultivation Realm pouches, sorted the blood-nourishing items from the mundane, and as a former market steward with a sharp eye, quickly made an estimate.</p>
+<p>“These Qi Cultivation Realm goods alone are worth ten years of our family’s profits!”</p>
+<p>After all, those devil cultivators had plundered and looted plenty, so they had quite a few treasures in their pouches. Just as Li Xizhi used his mana to lift the black shards on the table for a closer inspection, Li Xuanxuan spoke in his gravelly voice, “This is Black Profound Gold, a material of the Foundation Establishment Realm.”</p>
+<p>The old man had lived long and seen much. Li Xizhi nodded and placed the shards back on the table. Li Ximing, who still didn’t possess a Foundation Establishment Realm dharma artifact, was examining the two items.</p>
+<p>Li Qinghong said softly, “These were obtained by me and Xizhi during a life-and-death battle in the north. Xizhi still doesn’t have a decent magic sword, so I intend to arrange them this way.”</p>
+<p>She handed the intricately patterned demonic jar to Li Ximing and said quietly, “This artifact was refined by the devil for many years and contains many good things. But it suits his devil techniques. If I were to use it, not only would it be powerless, it might even be damaged.”</p>
+<p>Li Ximing’s palm lit up slightly, and black smoke rose from the demonic jar. He shook his head and said, “Aunt, your thunder technique is particularly effective against demons. My Bright Yang isn’t weak either, but even I can’t use this. Why don’t we…”</p>
+<p>Li Qinghong interrupted softly, “You and I will be heading north in a few days. Guanzhong is filled with cultivators, especially those from the Azure Pond Sect, but perhaps even other sects will send representatives. Take this item and exchange it for a dharma artifact that suits you.”</p>
+<p>Li Ximing had already guessed as much by the time his aunt finished and nodded. Li Qinghong then handed the gray, misty blade to Li Xizhi and instructed, “You have broader connections within the sect. Perhaps you can trade this for a proper dharma sword.”</p>
+<p>Li Xizhi nodded. Li Qinghong then took inventory of the remaining contents in the storage pouches and arranged for them all to be added to the family’s reserves.</p>
+<p>She then asked, “How is the family’s current collection of spell arts?”</p>
+<p>Li Xuanxuan knew these things like the back of his hand and responded immediately, “Twenty-seven low-grade spell arts: fifteen of Grade One, seven of Grade Two, and three of Grade Three. If we include the Profound Water Sword Technique and the Wing Clipper Spear technique, we only have six in total.</p>
+<p>“As for Grade Four, only the Slaughter Jun Kui Light remains. We have very few perception and footwork techniques; just the Grand Veined Golden Eyes, Clear Sight Spirit Pupil, and River Crossing Torrential Step.”</p>
+<p>Li Qinghong nodded and said, “We cannot practice the devil techniques from northern cultivators, but their spell arts are usable. These pouches contain the Grade Three techniques such as the White Current Control Method and Black Smoke Cloud Sigil. They’re worth studying.”</p>
+<p>After all, cultivators from both the north and south rarely carried their cultivation methods on them. It was nearly impossible to acquire spells from fallen enemies. Li Qinghong had only managed to acquire them this time because the devil cultivators had just ravaged Xu State, destroying sects and throwing many spell techniques into their pouches.</p>
+<p>Li Xuanxuan received them like treasured artifacts. Li Qinghong’s tone turned serious, “The defeat at Chengshui Tomb was not our fault, and returning will not bring much punishment. However, we cannot delay our return. The sword gate’s flying boat sent us all the way to the lake. The Azure Pond Sect likely noticed I came home. As for Xizhi…”</p>
+<p>Li Xizhi shook his head slightly and explained, “My jade pendant is linked with the Azure Pond Sect’s General Affairs Hall. I absolutely must return north.”</p>
+<p>Everyone turned to look at him, and Li Xizhi said, “While on the flying boat earlier, I saw a crystalline light falling northward, landing directly on Chengshui Tomb. No matter how important Ning State’s relics are, they can’t compare with something that fell from a royal tomb. If I’m right, the north-south conflict is about to come to an end.”</p>
+<p>A calm expression appeared on Li Xizhi’s face. He turned to his younger brother Li Ximing, the corner of his mouth curving into a gentle smile. His voice was warm and composed as he said, “Be patient, Brother Ming. Once our family weathers this storm, I’ll help you acquire the Radiant Sky Stone.”</p>
+<p>“I…” Li Ximing had been pondering this matter for a long time and had been distracted throughout the entire conversation. His brother’s words struck him straight in the heart, leaving him unsure of what to say.</p>
+<p>The words caught in his throat for a long while before he finally said, “Just take care of yourself, Brother… My cultivation still has a long way to go…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-828.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-830.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

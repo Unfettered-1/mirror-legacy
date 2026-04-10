@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 812: Chimen Difu (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-811.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-813.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 812: Chimen Difu (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>When he heard the nervousness in their exchange, Li Xizhi needed no further confirmation. This Bo Lie King Gao Fu was very likely a Purple Mansion Realm cultivator. Tension stirred in his heart as he thought,More and more powerful cultivators are arriving from the north… It’s vast up there, nothing like Jiangnan…</p>
+<p>Everyone exchanged glances, then looked to Li Xizhi. After all, capturing techniques were a specialty of his Heavenly Glow Art. No one present could match him in that regard. Even if they were just Qi Cultivation Realm cultivators, it was still best to act decisively.</p>
+<p>Li Xizhi understood at once. Two streaks of rainbow light leaped forth with a flick of his sleeve, diving into the water and darting forward like swimming serpents.</p>
+<p>The two devil cultivators were standing still when suddenly, rainbow light surged from beneath their feet. Startled, they shot upward, but there was no escaping Li Xizhi’s preparation. The rainbow lights captured them in an instant.</p>
+<p>A white mist immediately enveloped the two devil cultivators. They were both tossed about and their dharma artifacts knocked from their hands by Heavenly Glow. When their vision cleared, four daoists stood before them.</p>
+<p>Four Foundation Establishment Realm cultivators!</p>
+<p>The two were so terrified the world spun around them. They exchanged a glance and began kowtowing frantically, begging for mercy. But Li Qinghong had no intention of wasting time. Two bolts of lightning danced in her hands and locked onto their brows. She was ready to strike in an instant.</p>
+<p>Ignoring their panicked faces, she waved her hand to separate them and asked sternly, “How many cultivators are in the cave?”</p>
+<p>“My lord…”</p>
+<p>The two devil cultivators couldn’t see each other, preventing any chance of coordinating answers. Faced with a Foundation Establishment Realm cultivator skilled in thunder arts, and already missing six of their seven souls, they didn’t dare lie.</p>
+<p>They quickly answered, “My lord… the cave dwelling houses followers of Ancestor Difu… We don’t know what mission he accepted, but he’s stationed here. We’re just minor subordinates… We haven’t committed any killings… We just beg to live…”</p>
+<p>Their answers were mostly consistent so Li Qinghong pressed further, “There’s only one devil leader? Any reinforcements nearby?”</p>
+<p>She questioned them thoroughly. Although there weren’t many major devil cultivators in the area, this Ancestor Difu appeared to be a formidable one. He was an old devil cultivator who had wandered through Xu and Yue States for years, with unfathomably deep demonic arts.</p>
+<p>However, with four cultivators on her side, Li Qinghong wasn’t afraid of a single devil cultivator. But if a fight broke out and drew the attention of others, that could be trouble.</p>
+<p>After a moment of thought, she asked, “What else do you know about this devil? Where is he originally from?”</p>
+<p>“Ancestor Difu’s surname is Chimen. He’s a devil cultivator from Zhao. Word is, he offended someone powerful in Zhao, so he’s been roaming around Xu and Yue States ever since…” replied one of the devil cultivators.</p>
+<p>“Chimen.”</p>
+<p>Li Qinghong pressed them with a few more questions. Chimen wasn’t a renowned clan in the north, which put her a bit at ease. Li Xizhi asked softly, “That Bo Lie King… has he already entered the great void?”</p>
+<p>“Reporting to my lord, he most likely has…” replied one of the devil cultivators.</p>
+<p>Yu Yuwei made a swift decision and said gravely, “We can’t delay any longer! Strike now, kill him, and flee toward the Eastern Sea. If we hesitate, we’ll surely lose our chance!”</p>
+<p>With their decision made, two bolts of lightning tightly bound the captives. Li Qinghong took them and descended first on lightning, with the other three cautiously following her.</p>
+<p>Glimmers of light quickly rose from the dark waters. Li Qinghong soon spotted the glow of mana-based illumination and, on closer look, realized it was merely a low-tier Qi Cultivation Realm formation.</p>
+<p>She had brought the captives down with her in case the formation was tough and required deception to bypass. Unexpectedly, this Chimen Difu, despite being a longtime Foundation Establishment Realm cultivator, was so penniless he still used an early stage Qi Cultivation Realm formation.</p>
+<p>Then again, it makes sense… If he’s just using a temporary spot to rest for a month or two, why waste high-grade formations?</p>
+<p>Reflecting on it, Li Qinghong realized that even she, with a notable background, was still using Qi Cultivation Realm formations. Chimen Difu wouldn’t be any better off.</p>
+<p>It’s just that I’ve seen too many direct descendents, it seems I’ve gotten used to a higher standard.</p>
+<p>Since they were no longer needed, two lightning bolts burst forth and reduced the devil cultivators to ash. Li Qinghong raised her Duruo Spear, and struck directly at the formation with one thrust.</p>
+<p>Boom!</p>
+<p>A white bolt of thunder exploded underwater, sending the black swamp water rushing in with a deafening roar. Behind her, Li Xizhi summoned a beam of Heavenly Glow to hold back the waters, then swept his sleeve to erase all noise.</p>
+<p>Thus, the surface of the swamp remained still, mirroring the dark clouds above like a mirror. There was no trace of Foundation Establishment Realm activity that could be detected.</p>
+<p>“Who’s there?!”</p>
+<p>An old voice rang out in alarm and confusion; it was clearly Chimen Difu. Fierce black wind surged along the earth veins as the formation shattered like an eggshell, alerting the old devil.</p>
+<p>As a Foundation Establishment Realm cultivator, Chimen Difu clearly hadn’t built the formation for defense. It was only an alarm. Once the group broke through, a vast subterranean chamber came into view.</p>
+<p>Two devil cultivators had been guarding the gate, but now they leaped to their feet in terror. Their blood-colored light hadn’t even turned into escape light before Li Qinghong’s group was already upon them.</p>
+<p>Boom!</p>
+<p>Two blasts of dharma light shot toward them. A purple flame dragon roared and obliterated one into black smoke, while a bolt of lightning struck the other, turning him to ash.</p>
+<p>Huff…</p>
+<p>As dark clouds rolled through the cave, the remaining Qi Cultivation Realm devil cultivators screamed and fled inside. Li Qinghong’s feathered robe lit up, streaks of blue-white light and thunder falling with her spear. She was blazing bright and unstoppable.</p>
+<p>Yu Yuwei also understood the moment’s urgency. Water and fire lights surged from his body, and a violet-red cauldron flew out, summoning two purple dragons that swept through the black mist.</p>
+<p>Li Quantao’s Water Wall Pearl lifted a curtain of white water that instantly dispersed the black fog, revealing an old man with a dazed expression.</p>
+<p>“Ah?”</p>
+<p>With Li Qinghong and Yu Yuwei striking in tandem, and Li Quantao and Li Xizhi assisting from the flanks, their combined strength was enough to shock even a newly reincarnated Tuoba Chongyuan. Though they were all injured, they had prepared well. Their assault was enough to shake the whole cave dwelling, sending stones crashing down.</p>
+<p>Chimen Difu, garbed in black with snow-white hair, looked every bit the aged devil he was. He held a strange black ring in his hand, and his robes glimmered faintly with black light. His aged eyes were filled with terror and confusion. He nearly coughed up blood on the spot.</p>
+<p>Purple flame dragons and crackling lightning intertwined before him. One side was blazing fire, and the other dazzling thunder. Either one demanded his full strength, yet they came at him without warning…</p>
+<p>The spell he had just activated was instantly scattered. Though he had wandered Xu and Yue States for years and seen much, even he was caught utterly unprepared and nearly froze on the spot.</p>
+<p>What… what esteemed Purple Mansion Realm bloodline have I offended?! Or have I fallen into someone’s trap… how did it come to this?!</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-811.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-813.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

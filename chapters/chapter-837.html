@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 837: Yuanli (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-836.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-838.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 837: Yuanli (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Jianà was clearly an elite among Buddhist cultivators, with little distinction between his methods of escape and survival. His aura was somewhat similar to the Ancient Sects of Buddhism, and his spells lacked any sinister traits. Thus, Li Xuanfeng had held back and hadn’t struck to kill in the end.</p>
+<p>Though he had secretly held back, his display was impressive enough to intimidate the devil cultivators around them. He casually walked down to stand before the six square cauldrons. Gazing at the dazzling treasures, he spoke softly to those behind him, “Go ahead…”</p>
+<p>“This…”</p>
+<p>Li Xuanfeng stood alone beneath the immortal seat. The surrounding devil cultivators hovered in the air, too afraid to fly closer, though their greedy and reluctant gazes were apparent.</p>
+<p>Si Yuanli swallowed hard while staring at the cauldrons and replied, “Brother Xuanfeng! How could I have the nerve to take more? The best treasures have already landed in my hands… you decide what to take…”</p>
+<p>“Hmm…?” Li Xuanfeng was surprised, causing him to glance at the man. Looking at the man’s honest and sincere appearance, Li Xuanfeng casually waved his hand, taking only two layers of the spirit items from the ground.</p>
+<p>The dark green-black screen naturally fell into his hand as well. Then, without lingering, Li Xuanfeng took flight with Si Yuanli. Behind them, the devil cultivators could no longer restrain themselves—chaos erupted atop the great hall in a thunderous clash.</p>
+<p>Naturally, Li Xuanfeng hadn’t taken everything in one go. He watched coldly as the devil and Buddhist cultivators broke out into a brawl. Even the seven cultivators within the central hall had settled their fights. Several dark lights fled in disgrace, and scattered across the sky.</p>
+<p>“Murong Gong!” A thunderous shout echoed across the sky. Torrents of True Flame surged into the sky, golden-red light shooting up into the heavens and raining down as sheets of fire. Though the flames started as gold and crimson, they turned dark red midway down, sizzling as they scorched the air.</p>
+<p>Gao Fangjing emerged from the great hall in a dark red robe, his face flowing with flame, hands entwined in raging fire like a demon god. A flickering violet light leapt feebly away, and Gao Fangjing laughed wildly, “Come now! Old dog Murong, bark one more time for grandpa, would you? Still have time to talk now?”</p>
+<p>His strength was truly overwhelming. He had beaten Murong Gong and the devil cultivator into a sorry state, sending both fleeing in different directions. The watching cultivators all glanced sideways as he pursued them wielding his lance, flames trailing across the sky.</p>
+<p>Li Xuanfeng glanced around, and Si Yuanli’s soft voice reached his ear, “Brother Xuanfeng, what now?”</p>
+<p>Si Yuanli’s earlier words had left Li Xuanfeng unsure of his temperament, so he simply answered softly, “I leave it to you, fellow Daoist.”</p>
+<p>Si Yuanli gripped the great cauldron tightly. He understood better than the others what lay within it. His hands clutched the green rim so hard they turned pale, and his expression grew grave as he thought to himself,But the location is wrong… The Daoist Master once said something from my family was inside a small hall in the lake, but we’ve already missed it… The Daoist Masters are watching from the surface, and I can’t afford to act too obviously…</p>
+<p>Earlier I gave it back to Li Xuanfeng to avoid drawing ire, which might’ve raised his suspicions… but that’s not necessarily a bad thing. So far he’s one of us… if I can go with the flow, this might turn out better for me.</p>
+<p>Though he was troubled inwardly, his face remained puzzled and hesitant as he shook his head and replied, “Why don’t we find another place to rest and wait for the Daoist Master to summon us out?”</p>
+<p>Li Xuanfeng heard him clearly, but didn’t believe him in the slightest. This only confirmed his suspicions,The Si Family is discreet, not foolish… I’ve never heard of this Si Yuanli, but Master Yuan Xiu gave me that Monarch Calling Command Golden Talisman in secret. There must be a reason for it…</p>
+<p>If this matter was so easily resolved, why would he give me a Purple Mansion Realm talisman? Moreover, Yuan Xiu is famed for his expertise in talismans, so this one isn’t ordinary. He wouldn’t give it away without cause.</p>
+<p>There must be a scheme here. Whatever he asks next, I’ll protect and follow.</p>
+<p>As Si Yuanli turned toward him, Li Xuanfeng didn’t overthink it and responded softly, “I’ll follow your lead, fellow Daoist!”</p>
+<p>Si Yuanli nodded quickly, looking every bit the timid and meek figure, and answered, “There are many northern cultivators here. Though Brother Xuanfeng is strong and fears none, there may still be strange methods difficult to guard against. It would be unwise to linger too long…</p>
+<p>“There were many small halls on the lake we passed by along the way earlier. While they may not hold anything valuable, they’re safe and easy to access. Why not go take a look?”</p>
+<p>Li Xuanfeng responded with a grunt, immediately understanding,So that’s why this old fox looked so reluctant earlier and acted like he was trading sesame for a watermelon. It turns out the item his Daoist Master mentioned is in one of those lake halls…</p>
+<p>The thought flashed through his mind. Si Yuanli truly played the part of a timid man to perfection. When their eyes happened to meet, his look of fear was flawlessly acted.</p>
+<p>Since he had kept up the act this far, Li Xuanfeng played along, frowning deeply as he said, “I’ve been tasked to protect you, so naturally I’ll follow wherever you go.”</p>
+<p>Si Yuanli chuckled awkwardly and quickly fled the cliffside at the center of the battlefield with Li Xuanfeng. A few devil and Buddhist cultivators still trailed them from afar, their eyes glinting with hesitation. Si Yuanli drew his green sword and let out a relieved expression.</p>
+<p>He’s a fine warrior. He’s strong, flexible, socially adept, and able to read the times. No wonder the Purple Mansion Realm cultivators favor him so much… a golden bow indeed, and very useful…</p>
+<p>He looked left and right while scanning the lake for palaces. He even had the spare attention to run through his thoughts again,No wonder Daoist Master Yuan Su married his family’s daughter to him and held him in such regard. After Yuan Su’s death, our own master took him in without delay…</p>
+<p>Yu Su is greedy, selfish, and even ignores even his kin. Lingu Rao is formidable, but his family is too deeply tied to the Great Xiukui Temple. Only this one is capable, values loyalty, and is easy to coerce. If I were a Purple Mansion Realm cultivator, I’d use him too…</p>
+<p>Si Yuanli paused slightly as a small palace appeared on the surface of the lake below them. He quickly gathered his thoughts and feigned surprise, looking up and asking, “People are still out here looting?”</p>
+<p>“Just so you know, not every faction sent their core disciples inside… some lacked the strength and stayed at the periphery early on to collect spirit items and treasures. It’s not a bad strategy.” Since Si Yuanli was continuing to play his role, Li Xuanfeng responded offhandedly. His gaze swept across the devil cultivator below, then suddenly narrowed as he murmured, “Hmm?”</p>
+<p>A certain devil cultivator below them had a cold face and held a sinister demon blade. His tall nose and deep eye sockets marked him as one of the northernmost cultivators. He was most likely from either South or North Mobei, with Hu or Jie ancestry almost certainly in the mix.</p>
+<p>Though he had never seen this man before, Li Xuanfeng found his attire and bearing strikingly familiar to a description he’d heard in the past. He stared quietly, and the golden bow behind him suddenly leaped into his hand.</p>
+<p>What a coincidence. I searched for him many times amid all the devilish smoke and battles without luck. Yet here he is, right inside the Great Ning Palace.</p>
+<p>After all, the man below was a devil cultivator. Si Yuanli didn’t find it strange that Li Xuanfeng took up his bow, but when he saw how solemn his expression was, he assumed it must be a formidable foe and asked softly, “Brother Xuanfeng? Who is that?”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-836.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-838.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 862: The Fall Of Great Ning Palace (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-861.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-863.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 862: The Fall Of Great Ning Palace (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Great Ning Palace.</p>
+<p>The sky over Great Ning Palace was gloomy and gray. The once bright and beautiful lake had completely dried up, the ground had cracked, and the occasional clouds drifting overhead quickly dissipated.</p>
+<p>The cliff at the very center had already collapsed, filling more than half of the dry lakebed. Countless palace halls and towers had toppled and collapsed, littering the ground with wreckage. It was a scene of desolation.</p>
+<p>Trouble had broken out in Anhuai Heaven, and a host of Purple Mansion Realm cultivators had started to battle. They had even started fighting inside Great Ning Palace itself, causing the entire area to quake. In less than fifteen minutes, the place had been reduced to ruins. If not for the continuous efforts to maintain it, it could very well have been shattered into dust.</p>
+<p>Now, with all the Mahas and Purple Mansion Realm cultivators inside, some unknown Purple Mansion Realm cultivator had apparently left a hidden trap that destroyed the sky-piercing pillar of light. It had been smashed to pieces after everyone had entered, leaving Great Ning Palace abandoned and disregarded, shrouded in darkness.</p>
+<p>Silence lay heavy over the area as Li Xuanfeng stepped down from the palace ruins. The ground was covered in rubble. He pressed one hand on a stone stair several feet wide, pulled it loose, and casually tossed it aside, where it landed with a heavy rumble.</p>
+<p>Li Xuanfeng had been trapped here for some time, but he hadn’t been idle. After all, there might be quite a few spirit items hidden in the ruins of the collapsed palaces that he could put to use.</p>
+<p>He retrieved a bright silver lamp from the debris, brushed away the dust, and saw large words engraved on its base,Gaoping’s Xi Family.</p>
+<p>This lamp was only at the Qi Cultivation Realm. Li Xuanfeng examined it carefully; the craftsmanship was elegant and refined. Just then, he heard Si Yuanli’s voice from the side, “When the Wei State fell, many cultivators fled south and reached the riverbank. At that time, most of the land south of the Great River was under Chu’s control. The King of Chu ordered the cultivators to stay north of the river, forbidding them to cross south.</p>
+<p>“The Sima, Su, Xi, Xiao, and other families gathered in Jiangbei and held secret talks for several days. Led by the Li and Jiang families on both sides of the Jia River, they founded the Ning State, upheld the legacy of Wei, and made the Wanglin Upper Sect the leading immortal sect.”</p>
+<p>The collapsed palace’s roof ridge jutted high into the air. Si Yuanli sat cross-legged on top of it, resting his chin on one hand, looking rather leisurely as he continued, “Sect rivalry wasn’t so fierce at that time. All cultivators did their best for the country. Ning State made the King of Chu extremely wary, and he always viewed the later-arriving families with suspicion…”</p>
+<p>After listening for a while, Li Xuanfeng glanced at the glowing signature of Gaoping’s Xi Family on the lamp base in his hand and said softly, “I heard the founder of the Chunyi Dao came from the Xi Family…”</p>
+<p>“It was indeed the Gaoping’s Xi Family.” Si Yuanli replied, “That person only ever listened in at Chongming Hall, so strictly speaking, it was only half of a proper Dao lineage. But the more one lacked something, the more they cared about it. I heard that person claimed allegiance to the Green Pine Temple Dao lineage for life. The Chunyi Dao was the same way—always obsessing over such things.”</p>
+<p>Li Xuanfeng nodded slightly. Si Yuanli paused for a moment, then spoke softly, “Fellow Daoist, you guessed right. My Si Family originally bore the surname Sima. We were a powerful family from the north, with Purple Mansion Realm cultivators as far back as the Zhou dynasty. When Wei fell, we fled south all the way and finally settled in Jiangnan.”</p>
+<p>“So that’s your ancestral origin…” Li Xuanfeng noted.</p>
+<p>Si Yuanli sighed softly, “The noble lineages from north and south have lasted to this day. When you look around, whose ancestors weren’t princes, marquises, or generals? It’s better not to mention it; once you do, all you can say is that their descendants are unworthy of their name.”</p>
+<p>Li Xuanfeng fell silent for a moment. At least his own family was acknowledged as Wei’s Li. Then he saw Si Yuanli pause for a moment and speak softly, “My ancestor once guarded the riverbank for the Wei State, and that’s how this scroll of the Huai River Map came to be. It was drawn by the True Monarch Shangyao Cui Yan of the time… It’s a first-class ancient Purple Mansion Realm spirit artifact.”</p>
+<p>Li Xuanfeng was slightly stunned and asked softly, “An ancient spirit artifact… It looks like it’s for defense and suppression. How does it compare to the Xinyou Pristine Marsh Seal?”</p>
+<p>“Well…” Si Yuanli considered for a while, then shook his head as he replied, “It can’t really be compared. Besides, different spirit artifacts perform differently in different hands. In any case, both spirit artifacts are extremely formidable.”</p>
+<p>Li Xuanfeng suddenly recalled the Binding Ring and Cloudsunder that Yu Muxian had used in the past. Since Si Yuanli seemed open to conversation, he casually asked, “How does it compare to Binding Ring and Cloudsunder?”</p>
+<p>“Hahahaha!” Si Yuanli let out a hearty laugh, raising his eyebrows with disdain, and answered, “Fellow Daoist, you must be joking! Binding Ring and Cloudsunder are imitations made by Yuanwu. Binding Ring is a copy of the Yue Cultivating Sect’s Bu Yue, while Cloudsunder is a copy of Xiu Kui Temple’s Tian Xiu. They’re already somewhat inferior to ordinary spirit artifacts. How could you compare them to an ancient spirit artifact?”</p>
+<p>He hesitated for a couple of seconds, as if searching for a suitable analogy. Then he pulled out an ordinary dharma sword from his storage pouch and pointed at it. “This thing also came from Yuanwu Peak. It’s said to be at the Foundation Establishment Realm, but anyone can tell it was just pieced together by countless Qi Cultivation Realm refinements over time. It barely meets the Foundation Establishment Realm, has the appearance, and some qualities of Foundation Establishment Realm, but no real wonders.”</p>
+<p>The orthodox Immortal Sect disciples would never use this kind of dharma sword. Li Xuanfeng examined it carefully, found it just as Si Yuanli had described, and nodded.</p>
+<p>Si Yuanli chuckled and said, “Fellow Daoist, comparing this thing to Fuchen Peak’s Water Wall Pearl is about the same as comparing those imitations to an ancient spirit artifact!”</p>
+<p>The words flashed through Li Xuanfeng’s mind like lightning, and he keenly caught a certain phrase,Binding Ring dwas a copy of the Yue Cultivating Sect’s Bu Yue…</p>
+<p>When Yu Muxian had brought out Binding Ring, Tang Shedu had mocked it endlessly, infuriating Xiao Yongling so much that even his spiritual qi changed color. Li Xuanfeng remembered that incident well. He vaguely recalled that the Xiao Family’s ancestor, Xiao Xianyou, who was once hailed as a Golden Core seedling, had been slain by a dharma artifact resembling the Binding Ring!</p>
+<p>Whether Tang Yuanwu actually had that level of strength at the time is another question… and the Binding Ring hadn’t even been completed yet. That means it must have been that spirit artifact, Bu Yue…</p>
+<p>Xiao Xianyou was killed by the Yue Cultivating Sect! Was it Shangyuan? Or who else?</p>
+<p>Li Xuanfeng wasn’t curious without reason. Xiao Chuting’s actions were difficult to understand, and there was no way to infer his position. If he could get information about Xiao Xianyou, he might be able to roughly deduce Xiao Chuting’s stance, giving himself a basis to judge the situation in the future.</p>
+<p>These direct descendants already have resources and innate abilities that are a hundred times greater than ordinary people, and most of their temperaments aren’t far off either… they monopolize the situations and relationships, leaving ordinary people clueless and at their mercy…</p>
+<p>Li Xuanfeng thought deeply. Si Yuanli seemed also touched by the Huai River Map. The two of them fell silent, and the sky overhead had turned a pale blue. A bright glow faintly shone through, illuminating them as if they were at the bottom of a lake.</p>
+<p>“After losing Daoist Master Qiushui’s divine abilities and suffering at the hands of all those Purple Mansion Realm cultivators, Great Ning Palace finally couldn’t hold on!” Si Yuanli exhaled and laughed, “Just wait a little longer, and we can finally leave this wretched place!”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-861.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-863.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

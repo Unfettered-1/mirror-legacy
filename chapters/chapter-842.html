@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 842: Anhuai Heaven — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-841.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-843.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 842: Anhuai Heaven</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Fine drizzle fell endlessly within Anhuai Heaven. Dark teal and pale blue palaces stood gracefully amidst flowing streams, while winding bridges threaded between the structures. The entire complex was arranged with elegant precision, bearing the refined charm of Jiangbei craftsmanship.</p>
+<p>Truly beautiful.</p>
+<p>Lu Jiangxian’s gaze followed the riverside scenery of Anhuai Heaven upward. His divine sense penetrated the illusion, inspecting every detail thoroughly as he swept through it and reached its deepest recesses.</p>
+<p>There, he found a pristine celestial palace, lit by luminous green lanterns. A cascade of crystal light poured out from its gates like a waterfall, flowing in every direction. A stairway of sparkling steps led upward to a lone immortal seat that faced the starlit night of the grotto heaven.</p>
+<p>Lu Jiangxian took just one glance and froze slightly, his pupils widening as he murmured, “What… is that…”</p>
+<p>The celestial seat at the summit was carved with dragons and phoenixes, its armrests adorned with depictions of two flood dragons. Large enough to hold two adults lying down, the seat was vacant—save for a tiny, crystalline object resting upon it.</p>
+<p>Though it was barely the size of a fingernail, it stood out upon the grand seat with an inexplicable allure that made it impossible to look away. It gleamed with a crystal luster, as if it had emerged from a narrow aperture. Its ends intertwined and condensed into a jade-like piece the size of a finger. All kinds of illusions erupted from it like a fountain.</p>
+<p>These fantastical and surreal visions included Daoists refining pills and ascending upon consumption, white cranes delivering fruits, monkeys knocking at doors, crystal shards exploding, and brine condensing.</p>
+<p>From time to time, white cranes and Daoists flew out of the illusions and landed on the palace grounds. The Daoists continued refining their pills while the cranes gently dropped fruits into the pill furnace, causing white flames to flare.</p>
+<p>In the blink of an eye, a breeze of spiritual energy swept past, shattering the visions. Then, new ones emerged as monkeys knocked again while immortals laid hands upon devotees’ heads.</p>
+<p>Metallic Essence… It’s Metallic Essence.</p>
+<p>Metallic Essence remnants exist within Anhuai Heaven!</p>
+<p>He had seen the Bright Yang Metallic Essence with his own eyes. He was in disbelief as the grotto heaven slowly took form in the great void. He immediately realized something was amiss,If that’s Metallic Essence… the situation in Anhuai Heaven has far surpassed anyone’s expectations… Those Purple Mansion Realm schemers thought they were trying to hook a fish, only to drag up an entire pond! Even they won’t be able to cover this up!</p>
+<p>The great void is filled with Mahas. Cultivators are already leaping into Anhuai Heaven! In less than fifteen minutes, the Purple Mansion Realm cultivators and Mahas will be able to observe inside… Things will soon spiral out of control. Li Xuanfeng must not be allowed to enter!</p>
+<p>———</p>
+<p>Chengshui Tomb.</p>
+<p>The sky was pitch black. The various Mahas, along with the Merciful One, sat in command, emanating waves of multicolored light. On the other side, the Purple Mansion Realm Daoist Masters had varied expressions. Some of them held dharma artifacts, while others sat quietly amidst the clouds, calmly observing the scene below.</p>
+<p>The water’s surface below them resembled a tabletop. The pavilions and towers atop it were barely palm-sized, and the figures upon them looked like ants, brandishing their dharma artifacts and clashing over prizes. Occasionally, their collisions would emit pinpricks of brilliance that flickered briefly before vanishing.</p>
+<p>The Purple Mansion Realm cultivators’ eyes varied between indifference and serenity as they all focused on the tabletop below. Their spiritual senses drifted about, occasionally pausing upon one another.</p>
+<p>As the situation in the waters evolved, more and more gazes converged on two individuals. The first was the stern-faced Yuan Xiu, but the other was none other than the poised and elegant Bo Lie King, Gao Fu.</p>
+<p>The burly man, wreathed in True Flame, stroked his beard and smiled slightly. The Gao Family wasn’t particularly dominant among the northern factions, and normally wouldn’t draw much attention. Yet Gao Fangjing, the greatest talent of their clan in nearly a century, had been slaughtering freely in the waters below and seizing great spoils. No wonder Gao Fu beamed with delight.</p>
+<p>Daoist Master Yuan Xiu’s face revealed nothing, but the hand resting atop his sleeve was relaxed, revealing a composed and content demeanor. He was clearly pleased deep down.</p>
+<p>Daoist Master Qiushui watched quietly, her gaze pausing on Zhong Qian. Meanwhile, Daoist Master Chang Yun kept his brows lowered, his expression unreadable.</p>
+<p>Qiushui softly remarked, “Daoist Master Yuan Xiu, I’ve never seen this Si Yuanli before. He’s quite the talent. No wonder you kept him so well hidden.”</p>
+<p>Si Boxiu forced a faint smile onto his stern face and replied quietly, “Daoist Qiushui flatters me. The Si Family has seen a decline in talent. This is the only one we’ve had in years. He does have some ability, but calling him a ‘young genius’ is perhaps too much praise.”</p>
+<p>Though his words were modest, he felt quite gratified. The Si Family not only had few members, but those few with promise often opposed him. Yuan Xiu had long found it troublesome, but finally, there was a younger cultivator who brought honor to the clan, and that gave him a sense of relief.</p>
+<p>Just as Qiushui finished speaking, a crystalline light pillar that pierced heaven and earth emerged from within Great Ning Palace. Several Purple Mansion Realm Daoist Masters exchanged glances, smiles blooming across their faces.</p>
+<p>Daoist Master Chang Yun chuckled. “You all calculated it precisely! Great Ning Palace really does hold the entrance to Anhuai Heaven!”</p>
+<p>“This is thanks to Daoist Master Qiushui…”</p>
+<p>Daoist Master Yuan Xiu returned the compliment casually, but Daoist Master Qiushui only smiled and said, “Everyone had their guesses, yet now you all place the credit on me.”</p>
+<p>The mood among the Daoist Masters was clearly pleasant. There were faint stirrings in the great void as other hidden Purple Mansion Realm cultivators turned their attention toward them.</p>
+<p>Daoist Yuan Xiu maintained his stern expressions as he muttered, “They wouldn’t lend a hand when help was needed, but now they come to share the spoils.”</p>
+<p>“Even if they send people now, they’ll be a step behind us…” Chang Yun responded briefly. But Yuan Xiu still felt uneasy, he feared more trouble might arise once they entered the grotto heaven. He secretly activated a divine ability to transmit a message, instructing Li Xuanfeng to take hold of the Huai River Map.</p>
+<p>As he was transmitting the message, he suddenly realized the surroundings had gone completely silent. His previously relaxed brows slowly stiffened. When he sensed the aura emanating from the crystalline light pillar, his aged face froze in disbelief, eyes brimming with shock.</p>
+<p>“This… this…”</p>
+<p>The crystalline pillar emitted waves of pure white brilliance, and the aura it revealed caused an eerie silence to settle over the great void. The three-headed, six-armed Maha and the Merciful One calculated frantically, shocked into disbelief. The Purple Mansion Realm cultivators looked at one another, their eyes filled with both wonder and obsession.</p>
+<p>Bo Lie King Gao Fu stroked his long beard, his black cloak rippling as rings of crimson light radiated from behind him. Blazing True Flame burned from his robe into the surrounding void.</p>
+<p>The bearded king murmured aloud, “Metallic Essence?”</p>
+<p>His words rang out like a bottle shattering, shaking the entire great void. The Mahas immediately opened their eyes, the Merciful Ones rose to their feet, and all the Purple Mansion Realm cultivators jolted with a resounding shout, “Metallic Essence!”</p>
+<p>Metallic Essence!</p>
+<p>The scene instantly exploded into a cascade of red, orange, green, and all colors imaginable. Multicolored light surged across the great void as over a dozen divine abilities activated simultaneously, flooding into Great Ning Heaven and erupting in a storm of radiant brilliance.</p>
+<p>All arrangements and strategies were abandoned in an instant. There was Metallic Essence at stake. It was worth risking one’s life for, so who could still think about measured moves? The Purple Mansion Realm cultivators and Mahas abandoned all restraint and, unlike their usual calculating selves, dove into the grotto heaven with ruthless decisiveness.</p>
+<p>Rumble!</p>
+<p>“Jinlian! You—!”</p>
+<p>A furious roar rang out in the sky. A Maha revealed its true form with three heads and six arms. Its massive body filled the great void. Its golden chest was as vast as a mountain, and its eyes hung in the air like two suns. When it moved, golden dust scattered across the heavens. The dharma artifacts on its arms swayed gently, shaking the mountains and wilderness of the manifested world below.</p>
+<p>Boom!</p>
+<p>The Maha descended on Great Ning Palace, pressing down with such weight that the entire celestial palace groaned under the strain.</p>
+<p>A voice rang out in shock and fury, “Stabilize the realm first! If Great Ning Palace collapses, none of us will be able to enter!”</p>
+<p>The command caused only a brief pause in the air. Great Ning Palace’s barrier couldn’t withstand such overwhelming force, it was like snow meeting fire, it vanished in an instant. Dozens of divine hands simultaneously surged forth, forcibly keeping the celestial palace intact within the great void.</p>
+<p>Daoist Master Yuan Xiu’s eyes flew open, his expression shifting rapidly. All composure and dignity vanished as a fierce look spread across his aged face.</p>
+<p>He shouted, “Qiushui! It’s a relic from Ning State! It’s still within Great Ning Palace!”</p>
+<p>Daoist Master Qiushui was equally stunned. She stared straight at the colorful light from the ruins, her heart pounding. Her pupils dilated as she suddenly looked up. One after another, Purple Mansion Realm cultivators revealed their forms, nearly compressing the great void into fragments.</p>
+<p>“A major calamity is coming…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-841.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-843.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

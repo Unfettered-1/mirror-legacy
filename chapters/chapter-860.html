@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 860: Profound Punishment (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-859.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-861.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 860: Profound Punishment (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Qinghong felt a chill in her heart. She pressed her lips together and gently transmitted through mana, “However, there is still Daoist Master Suiguan in the Upper Sect, who is said to be a first-class cultivator. I wonder if he is still on the mainland… If the devil cultivators move south, he should step in to stop them.”</p>
+<p>“Suiguan…”</p>
+<p>Daoist Master Suiguan was a peak Purple Mansion Realm cultivator from the Azure Pond Sect’s grotto heaven. He was said to be very powerful, and Kong Tingyun obviously knew this. She paused, put away the golden mountain in her hand, and used a secret technique to transmit her voice with a solemn expression, “My Daoist Master has already asked Penglai. If the True Monarch heads to the Outer Heavens, then Suiguan will definitely remain in the Azure Pond Sect and wouldn’t dare to enter the present world, let alone come to Jiangnan!”</p>
+<p>Li Qinghong slowly raised her head, her almond-shaped eyes meeting those of the woman. Kong Tingyun hesitated for a moment, then spoke softly, “The True Monarch’s divine powers are beyond measure, but Penglai is not necessarily inferior. The other Daoist Masters should also understand this, which is why they have made this plan.”</p>
+<p>Li Qinghong had weighed the causes and consequences and now understood. She remained silent for a moment, then replied softly, “Thank you, sister. But Moongaze Lake is right on the riverbank, and I must return. Even if the riverbank cannot be defended, I will still go back to protect the lake. I cannot abandon my clansmen and enter the sect alone.”</p>
+<p>Kong Tingyun sighed faintly in her heart, unsurprised, as she spoke gently, “In that case, I have a message from the Daoist Master that might help you, sister.”</p>
+<p>The round-faced woman in Xiang attire leaned close to her ear, keeping her mana exposure minimal amidst the spiritual energy, and spoke gently, “Flooded fields bring a hundred years of crop failure, which is certainly satisfying. But when the river floods back and destroys all the courtyards, that is even more satisfying.”</p>
+<p>Li Qinghong listened intently, and only then did Kong Tingyun continue, “Great Ning Palace will manifest in this world in half an hour. It is less than five hundred kilometers from here, so if you ride the lightning back, you should make it in time… I won’t delay you any longer. Please take care of yourself.”</p>
+<p>Half an hour!</p>
+<p>Kong Tingyun bowed slightly, and transformed into golden light that soared east, returning to the territory of Profound Peak Gate. Meanwhile, Li Qinghong silently rode the lightning west.</p>
+<p>She said Great Ning Palace would manifest in this world in half an hour…thought Li Qinghong.</p>
+<p>Li Qinghong did the math in her head. Kong Tingyun’s estimate was probably because Li Xuanfeng and others were still at Great Ning Palace or somewhere. As long as they could hold on for half an hour, there would definitely be a chance to turn the situation around.</p>
+<p>Even if Yuan Xiu was still trapped and unable to come out, at least Li Xuanfeng, Lingu Rao, and the others could still come!</p>
+<p>Judging from her tone, the southward movement of the devil cultivators this time is a result of a consensus among several Purple Mansion Realm cultivators. That means the riverbank’s formation is bound to be broken; it’s only a question of how long it can be held.</p>
+<p>Now that she knew the situation had shifted to target the Azure Pond Sect, this was no longer something that a few people could control. Li Qinghong no longer hoped to hold the riverbank; she only hoped to protect her own family.</p>
+<p>As long as second uncle emerges from Great Ning Palace in half an hour, his renowned prestige among the devil cultivators, combined with the strength of the whole family, will be enough to protect Moongaze Lake and force the southward-moving devil cultivators to change their course.</p>
+<p>Li Qinghong tightened her grip on the spear in her hand as brilliant purple lightning crackled constantly above her black hair. The six silver-white Sixfold Profound Thunder Punishment Tokens on her body glowed with dazzling light, intense thunder pouring into them as if they were ready to erupt at any moment.</p>
+<p>She darted into the wilderness. Those witnessing her passage only saw purple lightning gliding through a patch of black clouds, accompanied by faint rumbling. The Qi Cultivation and Embryonic Breathing Realms devil cultivators beneath her feet all scattered, not daring to lift their heads.</p>
+<p>After flying for several kilometers, she saw the riverbank filled with urgent streams of light requesting aid. Several Foundation Establishment Realm cultivators hastily rode streaks of light past her, as if transferred from marketplaces all over, rushing to reinforce the frontline defenses.</p>
+<p>Li Qinghong paused, purple light flowing through her eyes. She located the place where demonic smoke was the most rampant and arrived in an instant on her lightning.</p>
+<p>As soon as the purple light landed, she saw rolling black clouds surrounding a brown formation. There were numerous Qi Cultivation and Embryonic Breathing Realms cultivators beneath it, but in the sky, several Foundation Establishment Realm devil cultivators were working together, hurling all kinds of dharma artifacts at it.</p>
+<p>The formation was already on the verge of collapse, groaning under the weight of the black demonic hammers conjured by the joint efforts of those devil cultivators.</p>
+<p>She didn’t hesitate. She lifted her spear with one hand and formed a hand seal with her free hand. Bright lightning gathered at her fingertips, and the silver command tokens that had been impatiently waiting assembled before her into a hexagonal shape.</p>
+<p>She muttered, “When the sun reaches its apex, six thunders are born!”</p>
+<p>The six silver command tokens spun together, unleashing explosive thunder that instantly leaped across several kilometers, leaving a streak of silvery-white light in the sky, and slammed down among the six devil cultivators.</p>
+<p>Boom!</p>
+<p>Furious thunder rang out. Those devil cultivators had never expected such a powerful bolt of lightning to suddenly strike them. Caught off guard, their spells were forcibly interrupted and they screamed in agony as black smoke rose from their bodies.</p>
+<p>A cloud of darkness exploded outward from the six, and silvery lightning wrapped around their dharma artifacts, knocking them down from the sky. The lightning also surged along the threads of their mana, slamming into their bodies, filling the air with flickering silver and causing them to tremble violently.</p>
+<p>Clang!</p>
+<p>Li Qinghong didn’t pause. Her spear thrust forward and a bolt of purple lightning exploded, spanning several kilometers in an instant. Her eyes glowed with intense purple light, and the thunder at her feet surged with a fierce violet glow.</p>
+<p>“Hm?”</p>
+<p>Li Qinghong noticed one of them was already injured. Decisive and swift, her thunderous spear transformed into countless purple sparrow shadows, piercing through that devil cultivator and erupting in a burst of purple lightning.</p>
+<p>“Ah!”</p>
+<p>Li Qinghong had prepared this strike long ago, and had arrived with overwhelming force. The other devil cultivators were still reeling from the blast of the Sixfold Profound Thunder Punishment Tokens. Their bodies were trembling and blood was gushing from their mouths. How could they possibly react in time?</p>
+<p>The man managed only a single wail before lightning incinerated his eyes, blasting outward from his eye sockets, ears, and mouth. An instant later, the purple lightning erupted from every inch of his body from head to toe.</p>
+<p>Boom!</p>
+<p>He was already injured, and his body had just been seized from several Qi Cultivation Realm cultivators. He was torn to pieces by the lightning. A pitch-black bead leapt up and fled north at full speed without looking back.</p>
+<p>Only at this moment did the surrounding devil cultivators collectively panic. They exclaimed, “A lightning cultivator!”</p>
+<p>An old devil cultivator, experienced and knowledgeable, was especially stunned. Silver lightning still coiled around his body, burning his mana with a sizzling sound as he muttered, “Decreed as heavenly punishment, profound thunder is most effective against devil cultivators…”</p>
+<p>Li Qinghong wore a long, feathered robe of pale green and white. Purple lightning danced around her, causing her black hair to flutter. Though her almond eyes were beautiful, they now held a cold light. Her long spear shifted, while the spell art on her other slender hand never ceased.</p>
+<p>The Sixfold Profound Thunder Punishment Tokens formed another formation in the air, releasing a wave of silver lightning that filled the devil cultivators with dread and confusion. Her pleasant voice echoed in the sky.</p>
+<p>“Branch into the Chen Palace, decree the profound punishment.”</p>
+<p>Boom!</p>
+<p>The fleeing black bead had barely flown a kilometer before a silver bolt of lightning slammed down on it with a deafening boom. A heart-wrenching scream rang out; that person had likely been reduced to ashes.</p>
+<p>She hadn’t even glanced to the north. The purple lightning on her spear shifted direction, but before she could even speak, the remaining five devil cultivators leaped in terror. Every single one activated their escape light and fled north.</p>
+<p>Boom!</p>
+<p>The fleeing figures vanished into the clouds to the north, and only then did the deep rumble of thunder ring out. Li Qinghong let her spear fall and turned to face a young man emerging from the formation.</p>
+<p>The youth emerging from the formation wore a brown robe. He looked somewhat familiar, and was possibly from the Lingu Family. When he arrived in front of her, only to find the devil cultivators had already fled in defeat, he could only stand in amazement and mutter, “Senior…”</p>
+<p>Li Qinghong had just annihilated one of the devil cultivators in a blinding, thunderous assault right in front of the other five. Still, her internal mana was slightly unsettled. She paused briefly to adjust it, dispersed the seal in her hand, and the Sixfold Profound Thunder Punishment Tokens flew back to her body.</p>
+<p>“If you can’t hold out, request reinforcements again!” Li Qinghong responded crisply, not bothering to pursue the fleeing devil cultivators. Instead, she summoned her lightning once more, flying like a shooting star toward the next crossing, leaving the people in the formation staring in stunned, complicated silence.</p>
+<p>“Was that… the Li Family’s thunder cultivator, Li Qinghong?”</p>
+<p>The youth slowly let out a sigh of relief. Several cultivators flew out together, seeing the look of relief on each other’s faces. Though the demonic smoke ahead slowly began to gather again, it was much better than before.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-859.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-861.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

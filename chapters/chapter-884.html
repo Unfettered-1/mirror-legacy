@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 884: Scattered Geng, Drifting White (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-883.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-885.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 884: Scattered Geng, Drifting White (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>His iron-hard face lacked some of his father’s calm, but it carried the domineering air of one who had slaughtered countless cultivators. His every word was chilling, “The five prefectures are where the Yuan Family once supported the Chi Family. With Yuan Tuan and Yuan Chengdun dead, how can there be no resentment? Huyuan is kind but weak, while Hudu is venomous and ruthless. Should the balance shift, they may not remain loyal.</p>
+<p>“The Yu Family was fragmented by the Chi Family. Only Yu Yuwei could have united them, but he died early, so rising again will be near impossible.</p>
+<p>“The Lingu Family is deeply entrenched and has long harbored ambitions. They have ruled the Southern Sea for generations and are an esteemed family of Mount Yue, allied by marriage to the Xiukui Family. Si Yuanli will surely court them with favor, and they may serve as his support…</p>
+<p>“The Ning Family’s fate hinges on Ning Wan. Ning Heyuan likely has no chance of survival. Since the family will fall to Ning Hejing, they cannot be trusted lightly…”</p>
+<p>His gaze swept across the crowd and landed on Li Xizhi. He said quietly, “Xizhi… Our Li Family has labored through three generations to reach the ranks of the Jiangnan families. The Chi Family has grown too large to control. Si Yuanli will surely use you. Handle family affairs on your own initiative.”</p>
+<p>“Rest assured, Second Great Uncle.” The graceful and composed young man nodded, showing his usual poise. He said softly, “I only worry about Uncle Yuanqin…”</p>
+<p>“It is of no concern.” The white-armored man sat upright and spoke in a low voice, “He knows his limits.”</p>
+<p>Li Xizhi withdrew thoughtfully. Li Xuanfeng opened his eyes and looked at Li Qinghong, his voice softening, “Qinghong, if I am not around, you alone are best at combat among the family members. Thunder arts are fierce and explosive. Keep to the seas, deter those with ill intent, and do not involve yourself too deeply in the sect’s inner duels.”</p>
+<p>“Yes,” replied Li Qinghong.</p>
+<p>Only then did Li Xuanfeng turn to Li Ximing. Li Ximing had always feared him, and kept his head lowered, not daring to speak. The man before him merely asked, “Ximing, how confident are you in reaching the Purple Mansion Realm?”</p>
+<p>Li Ximing felt bitter inside, his heart full of sorrow, and answered heavily, “Less than twenty percent.”</p>
+<p>Li Xuanfeng nodded, and said gently, “That’s already considered good. Don’t rush for quick success… Where is Minghuang?”</p>
+<p>“He’s gone to the Eastern Sea, and has yet to return.” Li Xijun answered softly.</p>
+<p>Li Xuanfeng looked at him and spoke calmly, “You have a true passion for the Sword Dao. It’s a shame our family has held you back. Not everyone is born with the bearing of a sword immortal. Even Wang Xun had to travel the world. You should get out more.”</p>
+<p>Li Xijun paused slightly, only to see Li Xuanfeng turn to the elder nearby. For the first time, a slight tremor entered his voice, “Xuanling was the same back then. Once is enough, there’s no need for it to happen again.</p>
+<p>“Bring the family registry.”</p>
+<p>Li Xijun immediately withdrew, and before even two seconds passed, he returned with a purple jade slip, along with a book pressed beneath it. Li Xuanfeng took it gently, placed the jade slip casually on the table, and lifted his hand.</p>
+<p>Clang…</p>
+<p>Golden aura gathered in his hand, condensing into a pen of interwoven gold and silver. He turned to a single page marked ‘Uncle Branch,’ then flicked the brush across it.</p>
+<p>“Li Yuanyu.” He handed the items to Li Qinghong and said hoarsely, “You’re the most perceptive of all when it comes to reading people. You saw it clearly. I handled this matter poorly, but I have no more chances. From here on, you must keep a close watch over things…”</p>
+<p>Li Xuanfeng exhaled a breath of golden energy and fell silent. After a moment, he unfastened the brocade pouch at his waist, casually lifted its restriction, and gently drew out a white bow with his other hand.</p>
+<p>This white bow was forged from transformed Geng Metal. Li Xuanfeng carefully examined the mystic bow that had accompanied him through a lifetime of battle, gently caressing it. The words ‘Golden Age’ on the bow vanished, shifting and transforming into two new words, ‘White Lightning.’</p>
+<p>His voice grew gentler as he said, “I wielded gold metal in the rightful position, and finally completed this bow. The rest of my belongings in the storage pouch shall remain with the Yu Family. This celestial bow, let it be passed on to Yuanqin.”</p>
+<p>Li Qinghong vaguely saw golden sands rolling beneath her feet. Realizing Li Xuanfeng’s time was short, she simply nodded. The white-armored man rose for the final time, silver-white light rippling across his face, and his voice rang out like clashing metal, “In the war between North and South, I killed without count. Murong, Helian, Emptiness, Compassion, all fell to my blade in blood debt…</p>
+<p>“Now I enter stillness, and their resentment may rest for a time. Let no younger of the family travel north without reason, lest they fall victim to others. I, Li Xuanfeng, have committed the greatest bloodshed and done much evil. To fall by killing is only just, there is no resentment.”</p>
+<p>All those beneath the hall bowed their heads as tears streamed down their faces, but the man laughed heartily, pulling the sobbing Li Xuanxuan to his feet. He sent everyone else out of the hall with a light wave of his hand.</p>
+<p>The doors slammed shut, and he laughed, “Brother… Our second uncle disliked wine, so the three of us never dared drink much. Now that all is settled, how about one final drink?”</p>
+<p>A golden flask appeared in his hand, and he dropped a few glistening Wanglin Blossoms into it. Pouring it into jade cups, he smiled as he filled one for the weeping old man. Though his voice was slightly hoarse, it carried the boldness of one seasoned in war.</p>
+<p>“Brother!”</p>
+<p>Li Qinghong and the others stood outside the hall. The woman raised tear-filled eyes to see radiant brilliance flooding the entire hall, casting two shadows upon the door.</p>
+<p>One brother cried, the other laughed, and their voices rang out. They spoke of green swords and white blades, of casting down fiery clouds, of throwing swords through wood, of youthful daring, of subduing serpents and felling monks, and of moonlit whales sinking beneath the tide…</p>
+<p>The two laughed, argued, jested, and gambled with wine. When they spoke of shooting down the Lord of Golden Tang Gate with an arrow, they drank three rounds first, their arrows illuminating Chengshui Tomb, raising their cups in mutual respect.</p>
+<p>Then they spoke of tearing apart the Yan State demon general with bare hands. They slammed the table and clinked cups as they told the story of slaying eighteen monks, slaking each toast with a full bowl.</p>
+<p>Their laughter even drowned out the sobs outside the hall that echoed through the mountains. Li Xuanxuan had never felt so unrestrained and free. He spoke of things long buried, and Li Xuanfeng before him laughed heartily, bold and unflinching.</p>
+<p>But the brilliance within the hall slowly began to fade, though the elder’s voice remained strong, “Xuanfeng! Back then, the seat of leadership… it should have been yours and Xuanling’s!”</p>
+<p>Li Qinghong’s tears gradually ceased and her almond eyes fell. Only one shadow remained on the hall doors. Everyone looked up, listening as the old man shouted and cursed, wept and laughed, yet no one ever responded to him again.</p>
+<p>Splash…</p>
+<p>The autumn dew fell like rain from the sky, urgently drumming against the rooftops. A cold wind swept through the mountains, rustling the leaves with a loud whisper. It passed over everyone present, but not a single person summoned their mana.</p>
+<p>The clear, transparent autumn dew rolled down their Dharma robes, circled once or twice in the muddy soil, and gradually gathered into a stream, washing the dirt down the stone steps and leaving behind a patch of cold, pristine clarity.</p>
+<p>Li Qinghong lifted her head. The heavy clouds in the sky had scattered. Dusk deepened, stars began to twinkle, and the distant lake roared with waves. A few dark reefs rose from the surface, glinting faintly with metallic light.</p>
+<p>She stepped forward quietly and gently pushed the hall doors open. Inside, starlight and moonlight cast a soft, warm glow. The dark-colored steps stood out clearly, and the old man was slumped asleep against a pillar, dressed only in a white inner robe. Thankfully, someone had kindly draped his gray-blue cloak over him.</p>
+<p>In front of him was a scene of chaos, as the table was soaked in spilled wine. Yet across from him, everything was neat and tidy. The white bow stood upright by the desk, and a jade cup sat perfectly placed at the edge, filled with clear wine that reflected the moonlight, as if untouched.</p>
+<p>A single Wanglin Blossom floated in the wine.</p>
+<p>Her gaze slowly moved across the dark table. The only source of light in the grand hall was a charm, two fingers wide, placed on the corner of the desk, etched with intricate patterns. Everything was clean and orderly, as though the host had simply stepped away.</p>
+<p>Li Qinghong did not step inside. She knelt lightly outside the door, her voice slightly muffled, and murmured softly, “Second uncle…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-883.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-885.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

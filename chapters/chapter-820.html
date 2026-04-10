@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 820: The Northern Line (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-819.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-821.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 820: The Northern Line (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>The two were silent for a moment before another person came up. Li Xuanxuan tilted his ear and heard An Siwei quietly say, “My lord, Lady An is with child.”</p>
+<p>He was referring to one of Li Zhouwei’s concubines. A few months ago, such news would have been cause for celebration. But now, Li Xuanxuan’s heart sank.</p>
+<p>Still, the elder forced a smile and said reassuringly, “Go on then. Take her to Qingdu and have the Master Monk examine her…”</p>
+<p>Kongheng listened silently at the side while Li Ximing stood with his hands behind his back, eyes fixed on him. Only after An Siwei had left did Li Ximing ask softly, “Master Monk… is there any way to resolve this?”</p>
+<p>Kongheng could only shut his eyes and shake his head, replying, “Let us examine the lady first.”</p>
+<p>The three rode the wind down to the peak and took their seats in the hall. Li Ximing held his tea, thinking for a few moments, while Lady An entered from outside. She had a rounder face and looked gentler than Lady Xu. She stepped forward nervously, about to bow, but was quickly helped up by Li Xuanxuan.</p>
+<p>Kongheng glanced over her, took her pulse, and began forming hand seals. He examined her twice with dharma light, confirming there were no signs of reincarnation within her. He dared not divine further. Instead, he fell into thought, recalling the appearance of Lady Xu before her death. After a moment of silent consideration, he gave a slight nod.</p>
+<p>Li Ximing remained motionless, still staring into his tea. Li Xuanxuan spoke hoarsely, “You may go.”</p>
+<p>“Yes, sir.” Lady An answered softly and stepped out of the hall.</p>
+<p>Only then did the narrow-eyed monk speak in a low voice, “I examined her carefully. The lady’s condition is not severe. Had I been within the family earlier, using Buddhist secret techniques to nourish life and preserve fate, I might’ve been able to save Lady Xu.”</p>
+<p>Li Xuanxuan let out a slow breath of relief. Li Ximing finally raised his brow and asked with emphasis, “Is there any hope for the child? Will Jiang’ao have any abnormalities in the future?”</p>
+<p>Kongheng looked troubled and answered softly, “The matter of the young master is beyond me. Judging by his appearance… I fear it does not bode well. We must observe him closely over the coming years…”</p>
+<p>Li Jiang’ao’s mouthful of fangs and greedy gaze still lingered in Li Ximing’s mind. He figured Kongheng’s ‘does not bode well’ was likely an understatement, and said, “Will this child of Lady An be like Jiang’ao as well?”</p>
+<p>“I cannot say for certain…” Kongheng replied, “Fate and bloodline are influenced by spiritual energy, spiritual aura, time of birth, and parentage… Even in Great Wei, Northern Qi, and Great Liang, the Purple Mansion and Golden Core Realms cultivators still struggle to fully grasp such things. It is beyond what I can weigh or determine…</p>
+<p>“However…”</p>
+<p>He smiled wryly as he continued, “Bright Yang yields many offspring. There are often children even among Foundation Establishment Realm and Purple Mansion Realm cultivators. Surely there will be one among them who can carry on the great cause…”</p>
+<p>Kongheng had made himself clear. Li Ximing nodded and told him to go check on Lady An, then lowered his gaze again.</p>
+<p>Li Xuanxuan sat uneasily, and softly said, “And what should be done with Jiang’ao…”</p>
+<p>“Raise him.” Li Ximing responded calmly, “Since Kongheng can preserve the mother, then let Zhouwei marry a few more. Let him observe closely.”</p>
+<p>Li Xuanxuan could only agree and added, “And regarding Lady Xu…”</p>
+<p>“Keep it quiet for now.” Li Ximing was silent for a moment before suddenly saying, “I don’t know whether Zhouwei will resist this arrangement. He seems to have some genuine feelings for his concubine. But he knows what’s at stake, so he’ll follow the plan.”</p>
+<p>Li Xuanxuan glanced at his grandson with a trace of unfamiliarity. His golden robe shimmered brilliantly in the sunlight. With his cultivation now at the late stage of the Foundation Establishment Realm, even his features looked somewhat indistinct beneath the glowing light.</p>
+<p>Li Ximing sipped his tea and said heavily, “Though Li Xuanfeng wields a divine bow and is unmatched in archery, he may not be able to protect the family once he falls into the Azure Pond Sect’s hands. Aunt and Xizhi are missing in the demonic mists. Wushao’s life is uncertain, and we don’t know how many of those who went north will return.”</p>
+<p>He looked into Li Xuanxuan’s aged face and said softly, “The path to Purple Mansion is dim and distant. A Bright Yang bloodline appears only once in centuries. We must preserve it, whether it’s like a wolf or a tiger. Even if it’s nothing like its father, it’s still better than mediocrity.</p>
+<p>“If Bright Yang proves too wild, then let Li Jiang’ao be used. Though he is not human in nature, beasts too know how to mate! With enough generations and offspring, surely one will emerge with human temperament and extraordinary talent!”</p>
+<p>“You…” Li Xuanxuan fell into stunned silence. He had not expected those words. Li Ximing had not said anything unreasonable, but to his ears, it sounded cold and devoid of emotion. When he took in the radiant Bright Yang aura around the young cultivator before him, the old man suddenly realized,He was no longer that headstrong child devoted solely to cultivation. Now, his cultivation stands at a height where the entire family has to heed him…</p>
+<p>And yet, that same ruthless nature remains. If things continue like this, what place will the family laws and ancestral codes hold? In a hundred years, chaos will surely rise—only the Bright Yang bloodline flourishing while the other four branches are cast aside? What a farce that would be!</p>
+<p>He paused for a moment, then spoke in a gentle tone, “There’s no need to rush. Perhaps a turning point still lies ahead.”</p>
+<p>Li Ximing nodded and asked quietly, “Shall I go north and see what can be done? Offer some aid?”</p>
+<p>Li Xuanxuan would never agree to that, and he responded tactfully, “It’s enough that you care. But you mustn’t go north again.”</p>
+<p>“I’ll head back to refine pills. If anything comes up, simply send for me,” said Li Ximing.</p>
+<p>Li Ximing bowed and left, but his words remained heavy in the old man’s chest. Li Xuanxuan brooded deeply,The balance between the four bloodlines relies entirely on the close upbringing with the Qingdu bloodline. But if Bright Yang’s descendants grow strong… Bright Yang is already domineering, how could they treat mortals as equals? They may well claim sole legitimacy and scorn the other four lines.</p>
+<p>He didn’t know whether he’d live to see that day, but Li Xuanxuan had seen too much in his time. As he leaned back in his seat, he pondered,I must speak with Xijun about this… but I’ve no idea how his injuries have fared.</p>
+<p>If not for the treasured panacea, the Earth-View Bloodstone, Li Xijun would have perished at the lake that day. He had been in closed-door cultivation for years with no word. The old man had never dared disturb him.</p>
+<p>When Li Ximing exited the hall and approached his Alchemy Pavilion, he found several people already waiting outside. An Siwei stood in front, with a middle-aged man that was around thirty-something behind him. The man was accompanied by a woman and clutching a small child in his arms.</p>
+<p>Li Ximing paused, casting a questioning look toward An Siwei. The middle-aged man behind him immediately stepped forward and bowed. “Father…”</p>
+<p>“Oh!” Li Ximing was momentarily stunned before responding, “Chengzhen…”</p>
+<p>The man before him was his eldest son, Li Chengzhen. Born without a spiritual orifice, he had been sent down the mountain early in life. Li Ximing spent his days in closed-door cultivation, so years often went by with a single blink. Thus, he could no longer recognize his own son.</p>
+<p>The middle-aged and clearly nervous Li Chengzhen quickly brought the child forward. “Father! I know your time is precious. After I was betrothed to my wife, we soon had a son Zhouming. You were in seclusion, and we didn’t dare enter the mountain. Today, the boy has been tested and was found to have a spiritual orifice… I truly didn’t dare delay, so I came up the mountain, thick-skinned as it may be!”</p>
+<p>Even with a heart of stone, Li Ximing couldn’t move for a moment after hearing that. He pulled the child closer to inspect him, and upon further examination, confirmed that the child’s innate ability was, indeed, very poor.</p>
+<p>“Grandfather…”</p>
+<p>The child called out with wide, hopeful eyes. Li Ximing could only take his hand. A bittersweet ache welled in his heart, and unable to face them, he waved a hand to hide his emotions, “Let him stay here for now. You may leave if there’s nothing else.”</p>
+<p>The couple thanked him profusely and withdrew. For some reason, Li Ximing suddenly asked, “How have the two of them been living?”</p>
+<p>An Siwei answered quietly, “According to the rules of the family chief, mortals born from the direct descendant may not engage in trade, hold authority, annex land, or inherit property… The young master now makes a living by teaching.”</p>
+<p>Li Ximing instructed someone to take the child away and watched as everything was settled. He noticed the boy had even brought his luggage along in advance. An indescribable feeling stirred within him.</p>
+<p>He murmured, “Take me to see where they live.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-819.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-821.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

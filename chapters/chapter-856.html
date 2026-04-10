@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 856: Calamity (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-855.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-857.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 856: Calamity (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>On the riverbank.</p>
+<p>The demonic smoke on the northern bank was heavy and dark. Cultivators from all factions in the north gathered in small camps on the shore. The major forces each occupied a corner, their auras converging and flowing down the river with an imposing momentum.</p>
+<p>Even more northern rogue cultivators were visible further back. At a glance, the sky was full of fleeing lights, just waiting for the riverbank’s formation to break so they could flood into the south.</p>
+<p>The rolling demonic smoke halted at the river’s edge. A bright checkpoint hung suspended in the air. Gleaming white bricks that radiated grandeur were fitted tightly together. The city gate towered high, with two white pillars at its base carved with many runes and mysterious incantations.</p>
+<p>A brilliant light shimmered inside the city gate, as if aligned with a Bright Yang. The dazzling light radiated outwards, piercing the black smoke and forcing the devil cultivators to retreat.</p>
+<p>At the very top of the checkpoint sat a young man clad in a golden Daoist robe. A palm-sized white disc, covered in intricate patterns, floated in front of him. The youth sat upright, quietly watching the cultivators on the other side of the riverbank.</p>
+<p>He was accompanied by another figure in a white feathered robe, a spirit fan at his waist. He stood gracefully, carrying a sword in his arms. His gaze was on the north as he pondered.</p>
+<p>Li Xizhi was originally supposed to report to Mount Bianyan, but the entire north had been engulfed by demonic smoke a few hours ago. Mount Bianyan stood isolated in the black fog, giving him an excuse to stop at the checkpoint.</p>
+<p>After all, Li Xizhi had no desire to face the group of Chi Family members at Mount Bianyan. Besides, his own territory lay just beyond this grand formation, so he was all too happy to remain on guard now that something had changed.</p>
+<p>He had taken a short blade from a devil cultivator, examined it carefully, and exchanged it for a Foundation Establishment Realm sword. It was completely brownish-yellow in color and was called Xushi. Because of its rather poor materials, its quality was not high and ranked near the bottom among Foundation Establishment Realm weapons.</p>
+<p>After some careful inquiries, he learned that this sword actually came from Yuanwu Peak. It had been forged in the early years by Tang Shejun, a member of the Tang Family who had died while trying to break through to Purple Mansion Realm. The sword was now over a hundred years old.</p>
+<p>“What a coincidence…”</p>
+<p>Li Chejing’s Qingche Sword from back then had also been forged by the same Tang Shejun when he was the peak master of Yuanwu Peak. After looking at his options, Li Xizhi found nothing better and ultimately chose this sword.</p>
+<p>“What exactly is happening at the Great Ning Palace…”</p>
+<p>Half an hour earlier, the number of devil cultivators gathering at Li Ximing’s front line had grown. When some started to occasionally test the defenses, he had manifested his Immortal Foundation and stood atop the formation.</p>
+<p>Regardless of Li Ximing’s personal strength, his late stage Foundation Establishment Realm Immortal Foundation, condensed with a fourth-grade technique, was truly intimidating. When Li Xizhi, also at late stage Foundation Establishment Realm, stood beside him, they were more than enough to deter the crowd. The riverbank had many crossing points, so the devil cultivators, seeing that he was not to be trifled with, naturally gathered elsewhere.</p>
+<p>“Only the direct northern cultivators have gone to the Great Ning Palace, and they haven’t been seen since. The rest are easy to fool… They have no real fighting spirit…”</p>
+<p>Li Ximing was no fool and picked his moments carefully. But even though many devil cultivators withdrew, his mood remained low.</p>
+<p>He waited for a moment. A female cultivator in green robes flew from afar and landed at his side. She wore a light turquoise Daoist robe, with brilliant dharma light shimmering. Her beautiful face carried a hint of restrained anger, but she paused slightly when she saw Li Ximing.</p>
+<p>“Greetings, Senior Lingu,” said Li Ximing.</p>
+<p>This was Lingu Lanying, who was also guarding the riverbank. She had lost her mount and spirit pet during the earlier chaos, and had only just flown back in recent days to defend the riverbank.</p>
+<p>She took out a jade talisman and handed it to Li Xizhi, speaking softly, “News from Bianyan.”</p>
+<p>Li Xizhi focused intently as his spiritual sense probed the talisman. Lingu Lanying spoke bluntly, “News from Mount Bianyan… Chi Zhiyan is being forceful and decisive, ordering more troops and saying reinforcements will arrive soon. He’s telling us to hold this place.”</p>
+<p>She laughed sarcastically as she continued, “On the other hand, my family received news that although he’s sent people back to recruit more cultivators, he’s also gathered all the members of his direct bloodline at Mount Bianyan. Clearly, he wants us to clash head-on with the devil cultivators…”</p>
+<p>Li Xizhi sighed inwardly. Chi Zhiyan had never been a magnanimous person. Although he put on a good show of being gracious and approachable, his true nature was revealed the moment he had to act.</p>
+<p>The Li Family had wanted to receive this order to hold, since their Moongaze Lake was just behind the defensive line. Li Xizhi and the others wanted the Azure Pond Sect to stand firm and resist the devil cultivators. So although Chi Zhiyan was acting out of his own interests, it ultimately aligned with the Li Family’s needs.</p>
+<p>But the devil cultivators were pressing so fiercely that he was gathering up all the Azure Pond Sect direct descendants, Chi Family guest cultivators, and Qi Cultivation Realm cultivators back at Mount Bianyan, leaving the various families to hold the line. Clearly, he didn’t value their lives at all, he only wanted to squeeze out their last ounce of worth.</p>
+<p>Li Ximing sat quietly on the radiant pass, exchanging a glance with his brother. Both of them understood perfectly and watched coldly, thinking,Mount Bianyan, though on the far bank and isolated in the north, is actually the safest place. Its layers of formations are formidable. The devil cultivators will flow downstream like water. They would rather crash into our weaker earthen dike than break themselves on that rock.</p>
+<p>After all, the grand formation on Mount Bianyan could be seen from far away. Disregarding whether or not it could be breached, the first devils to charge it would certainly die. Meanwhile, the river crossing’s defenses were full of holes. If the devil cultivators could find just one weak spot, they only needed to reach out to grasp the wealth of Jiangnan.</p>
+<p>Chi Zhiyan gathering his direct descendants at Mount Bianyan is truly a no-lose position. Even if Purple Mansion Realm cultivators never show up and all lines in Jiangnan collapse, it’s just another plundering of the north…</p>
+<p>When the order came down, Lingu Lanying, Li Xizhi, and even the various families all saw the truth. This man was indeed a narrow-minded schemer. Now that he’d shed his mask, his actions basically spelled it out,Your own families’ foundation lies beyond the river. Surely the devil cultivators can’t break into Mount Azure Pond, can they? If you can’t hold it, that’s your own misfortune!</p>
+<p>Li Ximing was silent for a couple of breaths, then replied, “What do you think, Senior?”</p>
+<p>Lingu Lanying’s apricot eyes widened slightly as she answered, “We’ve already sent someone back to report to the sect master. If Chi Zhiyan is acting like this, how can the riverbank be held?!”</p>
+<p>Li Xizhi shook his head slightly and said softly, “It’s too late. Besides, the sect’s disciples are very good at self-preservation. Would they really fight to the death with us? Even if they came here, they’d only watch from the sidelines.”</p>
+<p>His words were tactful but clear. The Chi Family’s disciples were extremely privileged. Even if they were sent here, would they really follow the orders of people like Li Xizhi?</p>
+<p>Li Xizhi paused for a couple of breaths, then added, “If they actually do send people over, I fear the elders would have their own demands, which would make things even harder to handle.”</p>
+<p>“This…”</p>
+<p>Li Xizhi had reminded Lingu Lanying of an important fact. It would be one thing if the Chi Family really came to guard the formation and took over command. But if things went even a little wrong and they demanded an escort to leave, what then?</p>
+<p>The female cultivator looked at him with renewed attention and said gently, “After all, it’s still a force… Sigh! What exactly is happening at the Great Ning Palace? It doesn’t look like the north and south have completely fallen out… This place is full of holes. We can hold it for a while, but certainly not for days or months… Why hasn’t the Daoist Master said a word?”</p>
+<p>Li Xizhi offered comfort, “The Daoist Master hasn’t responded. Perhaps he’s still fighting the devil cultivators. It’s been six hours. Though Purple Mansion Realm duels can be long, they wouldn’t stretch on for months. If we hold on long enough, perhaps there’ll be a turning point.”</p>
+<p>Lingu Lanying fell slightly silent. She too knew that Moongaze Lake lay just beyond the grand formation, and the Li Family would naturally be more anxious than anyone. Meanwhile, her own Lingu Family, deeply rooted in the south, would likely be less affected.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-855.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-857.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

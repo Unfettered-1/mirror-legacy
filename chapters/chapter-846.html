@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 846: Palace of Enlightened Dao (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-845.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-847.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 846: Palace of Enlightened Dao (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>His dark expression wasn’t due to greed for what lay within the hall. If the Metallic Essence truly resided there, the disturbance caused by opening it would be far beyond what Mount Changhuai’s Purple Mansion Realm cultivators could conceal. Finding it first wouldn’t mean claiming it.</p>
+<p>Nor was he upset by Mount Changhuai slighting him so openly. What truly unsettled him was the deeper message saying that his old friends had all passed. Alone, Yuan Xiu was now weak and isolated. He was no longer well regarded by these younger cultivators.</p>
+<p>Though he often quarreled with Yuan Su and found him distasteful, if a junior had dared say such words before them, Yuan Su would’ve slapped the offender and cursed him to his face.</p>
+<p>That idiot’s done it more than once, too…</p>
+<p>The image of Yuan Su flashed through his mind, but Si Boxiu, his true name, quickly forced it away. He turned his gloomy gaze toward the Purple Mansion Realm cultivator of Mount Changhuai. But after a moment, he said nothing, simply flicking his sleeve and leaving in silence.</p>
+<p>He had only taken two steps when his divine power, Words of Hidden Perception, stirred faintly. Instantly stepping back, the golden talisman in his hand surged to life, blocking the beam of golden light coming straight at him.</p>
+<p>Two radiant dharma bodies shot out before him; they were both glowing gold. One had four arms and four legs, with two faces on its neck. One of the faces was grinning, and the other one weeping. The figure held various dharma artifacts in its hands.</p>
+<p>The other had two eyes on his face and a three on his chest. He gazed coldly, his arms arranged like a lotus bloom. It was he who had launched the golden attack just now.</p>
+<p>“Nuzi, Five-Eyed…”</p>
+<p>Si Boxiu was already simmering with frustration. But this incident was like a spark that had lit his fuse. His eyes turned dark, and countless tiny incantation symbols that were fine as sand surged like a river across his eyes.</p>
+<p>His voice overlapped with itself as he snarled, “You bald donkeys think you’ve got the guts for this? Who else dares!”</p>
+<p>“Fellow Daoist Yuan Xiu… no need to be rash…” Nuzi, the Merciful One, appeared completely calm and temperless. All of his faces smiled at once, as his voice rant out like a chant of scripture, “We can speak peacefully… All I ask is that you vow never to interfere with Li Xuanfeng again… Let me fulfill this little wish of salvation… and I shall trouble you no more within this grotto heaven.”</p>
+<p>Si Boxiu had always detested Buddhist cultivators. Rage surged in his chest. How could he listen to such drivel? His voice boomed like spring thunder, “Keep dreaming!”</p>
+<p>The golden talisman in his hand flared to life, unleashing a golden veil of light like falling rain. Complex runes burst forth; this was his famed Profound Yellow Dao Talisman. Yuan Xiu began to chant softly, “Preserve the talisman in the belly, draw protection from the hidden source, divine command, Conceal.”</p>
+<p>In that instant, the radiance on the two Merciful Ones dulled beneath a veil of ash. The colorful and golden halos behind their heads dimmed, and the entire sky seemed to fade to gray. All the scattered spiritual light was drawn into the talisman.</p>
+<p>Nuzi’s spell flickered twice in his hand. He gestured, but nothing formed. The golden blade that should have appeared failed to manifest. Anger twisted across both of his faces as he sneered, “A powerful divine art, indeed!”</p>
+<p>He shook his arm, and the golden blade came flying out. Half of it was still embedded in his own dharma body, like a venomous tongue biting into his limb. When he noticed that Five-Eyed was still standing idly, he hastily transmitted a message, “Five-Eyed! Act with me now! As long as we injure him, the effect is the same… Once it’s done, that fruit is yours without question!”</p>
+<p>The Five-Eyed Merciful One nodded deeply. The three eyes on his chest radiated a violet-blue glow. His expression was focused and calm, but inwardly, he was scheming,I’ve long heard this man is a standout even among Purple Mansion Realm cultivators. His mastery of talismans often wounds people by surprise… I wonder how badly he can hurt me. Ideally, he’ll injure me severely enough that I can fake near-death and slip away to cultivate in seclusion.</p>
+<p>He hadn’t joined this mess for some fruit. Yu Mujian had fallen at Moongaze Lake, and in his panic, he had miscalculated to the point of nearly sending himself to death. Now that a glimmer of hope appeared, he was filled with anxiety.</p>
+<p>He had made bold promises before that superior and claimed he would handle things cleanly. But on the surface, he still had to seek revenge against Li Xijun. If anyone sensed something amiss, and that superior caught wind of it, he’d be done for.</p>
+<p>After much deliberation, he settled on a plan of joining forces with Nuzi. Outwardly, he acted greedy and hesitant, but inwardly he hoped Yuan Xiu would strike him down quickly so he’d have an excuse to retreat north and lie low.</p>
+<p>Nuzi had no idea how many mental backflips the man beside him had done. But when he saw Five-Eyed truly act, he exhaled in relief and thought,Thankfully, this idiot desperately needs the fruit. Looks like this will go smoothly after all!</p>
+<p>Si Boxiu was in the midst of casting a divine technique when three beams of violet-blue light shot toward him. His expression darkened, and he flipped his palm over, forming a new spell as he murmured, “He who hears the Dao, void and emptiness, beware the deviant Dao, all ends in nothingness.”</p>
+<p>When he turned his palm back up, a mass of milky-white qi had formed in it. The beams struck it, and Si Boxiu furrowed his brow slightly. He forced his hand to close around it and tossed the qi aside, unraveling the spell with ease.</p>
+<p>The three eyes on Five-Eyed Merciful One’s chest blinked. He tried to replicate the spell twice, only to realize he’d already forgotten how to cast it. Both shocked and delighted, he shouted theatrically, “Nuzi! How is this man so powerful?! You dare trick me into fighting him to the death over a mere spirit fruit?! What logic is that?!”</p>
+<p>Nuzi, having just resolved a spell himself, suddenly swelled in size. Many arms appeared across his body, each forming a different weapon. He muttered via sound transmission, “Don’t play dumb, damn you! How many Purple Mansion Realm cultivators from that era were ever simple? Yuan Su, Yuan Xiu, Zipei and Qiushui were all titans! If he’s not famous, it’s only because Duanmu Kui and Donghua overshadowed him!”</p>
+<p>Of course Five-Eyed knew all this; he was just playing coy, angling for more. He replied with a transmission, “I’m done! I’m done! This old monk refuses to fight anymore!”</p>
+<p>“If you want more, I’ll pay you more!” Naturally, Nuzi saw through him and replied coldly. Though the two Merciful Ones appeared united, they were still bargaining in secret.</p>
+<p>Si Boxiu could see right through them and sneered, “A rabble of fools!”</p>
+<p>He was about to unleash another divine art when his expression suddenly froze. He looked up, studied something carefully, then abruptly withdrew his energy and placed his hands behind his back, face dark and silent.</p>
+<p>The two Merciful Ones also sensed something and raised their heads, only to see a man materialize before them.</p>
+<p>The newcomer had youthful features and wore azure robes. His sleeves fluttered, as his loose long hair swayed in the wind. His eyes were pale teal, and he was surrounded by glimmering green shadows.</p>
+<p>He stood with hands behind his back, his expression calm and unhurried. He glanced over casually and spoke softly, “Uncle, it truly has been many years.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-845.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-847.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 858: Calamity (III) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-857.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-859.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 858: Calamity (III)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Family.</p>
+<p>A continuous drizzle dripped and trickled among the treetops on Mount Qingdu. The atmosphere felt a bit gloomy inside the grand hall. The elder paced a few rounds in the hall, holding a letter in his hand.</p>
+<p>He called someone in, his heart heavy, and said, “Go and summon the heir.”</p>
+<p>The letter contained some speculations by Li Ximing and Li Xizhi about the situation between the north and the south. Li Xuanxuan had just received it and glanced through a few lines, but it had immediately made him rather uneasy.</p>
+<p>“The northern devil cultivators have lost their restraint and are swarming south. How could the defenses on the riverbank possibly hold?”</p>
+<p>Li Xuanxuan read the letter over and over, unable to find peace in his heart. Li Ximing advised him to send the heir to the Eastern Sea, clearly implying they might not be able to hold the riverbank.</p>
+<p>The letter even urged Li Xuanxuan and the others to flee to the Eastern Sea as well, which made the old man frown deeply and sigh heavily.</p>
+<p>How could I abandon the lake and run? I have lived long enough already. If the north falls and the devil cultivators come south all the way to Moongaze Lake, I will still hold my ground to the last moment…</p>
+<p>Someone needs to give an account if something happens to the sons and disciples. I should lead them to meet the ancestors in the netherworld. If the family is destroyed, there must be blood spilled.</p>
+<p>He sat down and pondered for a few seconds, feeling much more composed in his heart. After a while, Li Zhouwei came in, wearing his armor. He was only eighteen years old, but he was already at the seventh layer of Qi Cultivation Realm, with strong dharma light emanating from him. He was almost progressing one layer per year.</p>
+<p>Although the breakthroughs in the later stages of Qi Cultivation Realm were especially difficult and normally required several times the effort, at his speed, he would likely reach Foundation Establishment Realm at around twenty-two or twenty-three years old if he relied solely on self-cultivation.</p>
+<p>But the later stages of Qi Cultivation Realm were quite different for the Li Family. They had the Three Aspects Breaking Realm Pill and the Talisman Pill. After building up enough cultivation, they could first take the Breaking Realm Pill to break through, then steady their foundation before taking the Talisman Pill.</p>
+<p>The Talisman Pill’s effects were not comparable to ordinary pills. The cultivation it provided was real and solid, as if achieved through self-cultivation. In some ways, it was perhaps even better, and one could immediately attempt to reach the Foundation Establishment Realm.</p>
+<p>Without waiting for him to be greeted, Li Xuanxuan waved Li Zhouwei into the hall and handed him the letter. Li Zhouwei glanced through it and frowned. After a moment, seeing his golden eyes flicker, Li Xuanxuan said, “According to your uncle’s description, the riverbank may not hold.”</p>
+<p>Li Xuanxuan thought of sending him to the Eastern Sea but worried he might insist on staying at home, so he hesitated and only asked, “What does Minghuang think?”</p>
+<p>Li Zhouwei read the letter carefully again and replied, “Looking at the situation, if the riverbank falls and the devil cultivators flood into Jiangnan, they will likely take two routes. One goes down along Moongaze Lake, and the other squeezes through the wilderness between Shanji Prefecture and Lixia Prefecture.</p>
+<p>“That route is caught between two Purple Mansion Realm powers, so it’s not an easy path. I’m afraid they will still attack our family.”</p>
+<p>Li Xuanxuan hadn’t expected him to mention this matter. Just as he was about to ask further, he saw Li Zhouwei softly say, “After I head to the Eastern Sea, you should split the family into two routes. One burrows a way to Lixia, the other drives the people toward Mount Dali. Senior White Banyan Fox and that Luken are on good terms with our family and can grant us temporary refuge.”</p>
+<p>Li Zhouwei explained the arrangements in detail. Li Xuanxuan listened and felt slightly relieved in his heart. He said, “There probably won’t be many people who can be saved in the mountains.”</p>
+<p>Li Zhouwei nodded and replied, “The devil cultivators could reach here in less than fifteen minutes. The nearly million people along the lakeshore wouldn’t even have time to gather in that short time, let alone all squeeze into the mountains…”</p>
+<p>Li Xuanxuan fell silent. Li Zhouwei had no choice but to say, “It’s hard to predict these things. The riverbank might still hold. There are so many Purple Mansion Realm cultivators in Jiangnan, who knows which of them might act. We’re only making necessary preparations.”</p>
+<p>Li Xuanxuan nodded and said hoarsely, “There’s no time to lose. Take a group of people, pick some of the young talents from the various families, and bring the pills as well. I will have Kongheng take you there.”</p>
+<p>Li Zhouwei thought for a moment and said softly, “That works out. Lady An is about to give birth, and the Master Monk is considering the idea that Jiangnan is the Upper Evil Spirit Storage. It would be good to take her along to the Eastern Sea as well. Perhaps things will turn out differently there.”</p>
+<p>He was a decisive person, and the matter was settled neatly. He bade Li Xuanxuan farewell and immediately flew out of the hall and descended. Less than fifteen minutes later, Kongheng arrived with a few people and landed on the mountain.</p>
+<p>The monk was always calm and peaceful, and years of cultivation had made him appear even more unfathomable. There were few clear distinctions among Master Monks, making it hard to guess his true strength.</p>
+<p>Yet even those like Li Ximing who had broken through later than him had all reached the late stage of the Foundation Establishment Realm. This monk probably wasn’t far behind either. The Eastern Sea was chaotic, and the white ape would find it hard to establish a foothold there, but Kongheng would be much safer.</p>
+<p>When Kongheng saw Li Xuanxuan, he was very kind and said softly, “Please rest assured, my lord. Your esteemed family has accumulated much virtue and will surely turn calamity into blessing.”</p>
+<p>Li Xuanxuan disliked hearing talk of virtue and vice. He forced a smile as he sent the people out of the lake, then rode the wind back and sat in the grand hall, where he was once again left all alone.</p>
+<p>The elder pondered deeply, unable to determine whether it was virtue or vice he had accumulated. He stopped thinking about it and quietly looked out at the rainy weather outside the window, where white frost had already formed. After a moment, a nine-foot-tall, burly man in white armor came in and silently stood in the hall.</p>
+<p>“White ape!” Li Xuanxuan exclaimed. The old ape raised his head, his voice like rocks clashing, “Greetings, Master… this old servant has just returned from patrolling the lake.”</p>
+<p>The man and the ape had fled the raging flames in the marketplace all those years ago and had accompanied each other for decades, so there was no need to speak of their understanding.</p>
+<p>He saw Li Xuanxuan’s unease and moved to his side to stand, then said, “This old servant’s Stone Embrace Slumber technique has been brimming with spiritual energy and running smoothly in recent days. Perhaps there is a Purple Mansion Realm breakthrough in the True Essence Dao, or maybe some spiritual item has emerged.”</p>
+<p>Li Xuanxuan nodded silently, not perceiving anything unusual from it. Just as he was about to speak, he suddenly felt a cold breeze enter from the door. Li Xuanxuan raised his head slightly, as if something had dawned on him, and was about to stand up when suddenly he heard knocking at the hall door</p>
+<p>A handsome man in white entered. He had sword-shaped brows and star-like eyes, a handsome appearance, and held a slightly slender cold sword in his arms. His brows were furrowed slightly in worry as he looked inside.</p>
+<p>“Xijun!” Li Xuanxuan was overjoyed and stepped forward, holding the letter in his hand, and asked, “Has your injury fully healed?”</p>
+<p>“Greetings, Great Uncle.” Li Xijun first saluted, coughed twice, and smiled, “It hasn’t fully healed yet. I was worried about the family, so I came out of seclusion early.”</p>
+<p>Yu Mujian’s sword strike was indeed formidable. If it hadn’t been for the Earth-View Bloodstone, Li Xijun would likely have fallen on the spot. After several years of recuperation, he couldn’t stop worrying about the situation at home and emerged from seclusion early, with his strength only barely recovered to sixty percent.</p>
+<p>Li Xuanxuan was overjoyed, immediately pulling him over to find a seat. The white ape silently served tea. Li Xijun recognized him with a glance and said softly, “So it’s you… truly blessed with deep fortune, congratulations!”</p>
+<p>The white ape cupped his fists and withdrew. Li Xuanxuan recounted the events of the past few years in detail. Li Xijun listened, his brows furrowing tighter and tighter.</p>
+<p>After a long exhale, he replied, “As expected… I knew Azure Pond Sect wouldn’t have arranged anything good for my family… so it’s come to this.”</p>
+<p>He lowered his gaze, his eyes gradually reddening as he said softly, “I misjudged… I shouldn’t have trusted that Zhao Tinggui… he died and left everything to ruin my family…</p>
+<p>“Qinghong has already ridden the thunder to seek him out…”</p>
+<p>Li Xuanxuan didn’t know how to respond. The old man waited a moment and finally said, “But your injuries are not yet fully healed. You cannot act. It’s better to focus on cultivation and seclusion.”</p>
+<p>Li Xijun closed his eyes and exhaled, still carrying some sorrow. The Radiant Snow Pine Ridge began to circulate inside his body, driving all emotions from his mind.</p>
+<p>His tone calmed, and he said softly, “Not necessarily… even with my injuries, I can still strike once or twice without issue.”</p>
+<p>He shook his head slightly, held one hand level, and revealed a shimmering light condensed from frost and snow in his palm. It was pure white and crystal clear. A wave of cold mixed with sharpness surged around it.</p>
+<p>This was not quite a spell art, yet not exactly a spirit item either. It looked like a mass of highly condensed energy. With a thought from Li Xijun, the light leaped like a swimming fish, dancing in the air. Its fine scales were clearly visible as it flicked its tail and fell back into his palm.</p>
+<p>“What is this…”</p>
+<p>Li Xuanxuan had never seen such a thing before. For a moment he couldn’t figure it out. The old man was stunned for a second, then saw Li Xijun’s sword-shaped brows raise slightly as he said softly, “Sword Essence.”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-857.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-859.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

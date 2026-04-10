@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 865: Li Qinghong Side Story (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-864.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-866.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 865: Li Qinghong Side Story (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>This side story is a speculative future based on the Heaven Expanding Profound Talisman, beginning with the Northern-Southern conflict.</p>
+<p>“Profound Thunder.”</p>
+<p>Silver-white mist drifted amidst the darkness as long cyan-white plumes fluttered lightly. A bluish-purple glow streamed down from the white robe of a young woman and scattered along the hem of her skirt into the dark clouds.</p>
+<p>She looked no more than seventeen or eighteen years old, with a delicate nose and misty purple eyes. Purple and white lightning coiled around her, illuminating a breathtaking beauty.</p>
+<p>“Long Profound Heavenly Lightning Talisman is already seventy percent spent… The summoned thunder is becoming even more powerful…”</p>
+<p>Li Qinghong had just slain Xi Zikang and watched the young man collapse at her feet, her expression somewhat complex. The entire formation was channeling the lightning from the Long Profound Heavenly Lightning Talisman into her, and her footwork technique-infused body was nearly coalescing into lightning, naturally restoring her appearance to that of a seventeen or eighteen-year-old.</p>
+<p>The Profound Thunder was vast, yet it was not black but rather silver-white. Xi Zikang had mentioned that the Profound Thunder was not truly profound colored thunder. In ancient times, it had been classified among the Three Thunders and was called Divine Thunder.</p>
+<p>Later, Immortal Lord Huan Xuan had attained enlightenment in the Northern Sea, becoming the source of all thunder arts that wielded punishment and slaughter. The closer one was to the Northern Sea, the more terrifying tribulation lightning became. The Purple-Gold Devil Dao then migrated southward, and from that point on, it was no longer called Divine Thunder but rather, using the northern symbol Profound to represent it, became known as Profound Thunder. Hence its silver-white hue.</p>
+<p>Mist-like silver-white lightning drifted through the air. Li Qinghong climbed the white steps one by one. Figures either stood or knelt in the main hall below—some on the verge of death, while others slowly transformed into lightning.</p>
+<p>A few cultivators knelt sporadically, while thunderous voices roared furiously in the grand hall above.</p>
+<p>“Zhang Yuanyu!</p>
+<p>“Zhang Yuanyu!”</p>
+<p>Each time that voice echoed in the air, countless silver-white lightning bolts lit up the endless darkness above like a spiderweb, flashing briefly and leaving behind a chorus of rumbles.</p>
+<p>“Zhang Yuanyu!”</p>
+<p>Li Qinghong took another step forward on the steps before the grand hall. It was as if time that had been frozen began to flow again. The silver-white lightning cascaded back down the steps, and the voice roared once more, now tinged with a cold hatred, “Zhang Yuanyu… why did Taiyu die?”</p>
+<p>The voice lingered for a moment, then left a profound silence. No reply came from the other side, but a soft shower of golden rain fell through the cracks in the tightly closed hall doors, dotting her face like tiny stars.</p>
+<p>Dazzling lightning poured down the steps again, illuminating the carvings on the pillars and stairs in a brilliant silver-white that cast shifting light on her face.</p>
+<p>The voice sounded again, cold and grim, “Metal says transformation! Metal says transformation!</p>
+<p>“And what about you, Zhang Yuanyu? Did you not lend a helping hand with the fall of Great Liang and Taiyue’s rise to Fruition Attainment?”</p>
+<p>These words rolled forth like waves, then turned into a golden rain as they left the hall, fluttering toward her face. A crisp, pleasing sound rang in her ears like tiny bells as the cyan-white plumes on her clothes gave off a delicate metallic clink.</p>
+<p>Chaotic illusions arose before her eyes. There were crowds of people, rivers of blood, chariots thundering across the plains, broken swords, and swirling dust.</p>
+<p>Zhang Yuanyu…</p>
+<p>Li Qinghong paused slightly as an ethereal yet calm and clear voice drifted in, “Daoist friend, how much of the Profound Thunder Dao lineage remains? Moreover, how much strength do you truly have as a mere residual position of the Hearing Chime Seat? Why meddle here?”</p>
+<p>“Zhang Yuanyu!” The voice cracked like muffled thunder, echoing in the air, deep and resonant, “You old thing…”</p>
+<p>Countless silver-white talismans rose from the top to the bottom of the white steps. Silver-white lightning surged upward, and thick, dense thunderclouds gathered above Li Qinghong’s head.</p>
+<p>Profound lightning appeared on her robe, and the Long Profound Heavenly Lightning Talisman transformed into a point of purple light that flickered like a star above her head, sometimes near and sometimes far. Li Qinghong’s vision gradually blurred.</p>
+<p>Boom!</p>
+<p>A bolt of lightning flashed by, and the Long Profound Heavenly Lightning Talisman slowly activated, enveloping her in the Heart-Questioning Spell. Li Qinghong faintly heard a deep, cold voice, “Dongfang Weiming also wants to seize the Profound Thunder. You two old things have clearly colluded… Good… very good!”</p>
+<p>***</p>
+<p>The sunlight was fragmented, resting on the yellow-green treetops of autumn, and the light before her eyes was sliced into several segments by drifting dust, streaming down like liquid gold and landing on the boy’s profile.</p>
+<p>His gray pupils slowly shrank in the sunlight, reflecting Li Qinghong’s youthful face. Her gaze traveled down his cheek and paused at his lips, watching them part and close, his lips red and teeth white.</p>
+<p>“Sister.”</p>
+<p>Li Qinghong realized that her arm was still tender, with bead-like sweat dripping down its curve. Her arm was not overly pale, but the color of youth made it uniquely and strikingly beautiful.</p>
+<p>Ding-dang…</p>
+<p>A silver ring on the wooden spear in her hand spun, jingling as the spear tip danced among the osmanthus flowers on the treetops. Bright yellow blossoms were lifted by the spear tip and fell onto her wrist.</p>
+<p>Ding-dang… ding-dang…</p>
+<p>The crisp sound rose and fell, and she remembered this was the training method she had practiced when she was ten. She was spinning the silver ring to poke at the osmanthus flowers, knocking down just one blossom without letting a leaf fall or a flower shatter.</p>
+<p>At that time, Li Qinghong already had some cultivation and could do it easily, so she deliberately caught the flower on her wrist, partly because it looked nice, and partly because it was more challenging.</p>
+<p>The boy before her sat quietly in the sunlight, his lips still parting and closing. Li Qinghong’s vision blurred as his gray eyes moved closer and farther. She wanted to look at her brother longer and couldn’t help but mouth the words he was saying, “Sister.”</p>
+<p>A purple-black light shimmered in his gray pupils, reflecting a purple thunder pool within. She faintly glimpsed lightning leaping like snakes and dragons inside.</p>
+<p>Half of his face was bathed in sunlight, and his lips trembled, “This… is your era.”</p>
+<p>His gray pupils widened, and he stared calmly at Li Qinghong, saying, “What about us… sister…”</p>
+<p>Li Qinghong stared at him. Her younger brother Li Yuanyun had no achievements to speak of, and had died violently as a mere mortal, his bones lost and unrecovered.</p>
+<p>His gray pupils stared at her. Li Yuanyun’s face was seventy percent like their father Li Xuanling’s and also bore a strong resemblance to their grandfather Li Tongya, with long brows and deep-set eyes. This similarity, combined with his wasted, tragic death, left Li Qinghong feeling suffocated.</p>
+<p>“What about us… sister…”</p>
+<p>His lips softly closed, and Li Qinghong felt a chill in her heart as the scene before her blurred, and more voices emerged, “You want to forge six wheels and refine the will of divine powers, to slay immortals and demons, to guard the land and bring peace to the people. Good, sister, I have this aspiration too.</p>
+<p>“Sister, what should I do?”</p>
+<p>Yuanyun…thought Li Qinghong.</p>
+<p>Li Qinghong looked at his gray-black pupils as words stuck in her throat. She remembered her own youth had been too rushed. She could still comfort her brother when she had just begun cultivating, but later they hardly saw each other at all.</p>
+<p>She had to refine the six wheels, practice spear techniques, and continue her thunder arts cultivation, and the family’s affairs grew heavier by the day. Li Qinghong did not even have enough time for herself…</p>
+<p>Later, when she saw Li Yuanyun again, the boy had to bow and call her eldest sister. He had become the Li Family’s first male who could not cultivate, despite being the legitimate grandson of the renowned Li Tongya.</p>
+<p>This stayed until Li Yuanyun died in the market, leaving Li Qinghong both shocked and furious. In the end, she had captured Qiu Ji and used thunder to refine him, emerging from the demonic clouds, yet her heart found no peace.</p>
+<p>What had once burned in her heart as hatred now became clearer. Li Qinghong reached out to stroke her brother’s face, and everything before her suddenly faded.</p>
+<p>“Yun’er…”</p>
+<p>***</p>
+<p>Boom!</p>
+<p>A sharp crack of thunder suddenly jolted Li Qinghong out of her illusion. The lightning flowed down the white steps before her, the illusion dissipating like wind, and her gaze fell back on the scene before her.</p>
+<p>Lightning churned in the sky, as Li Qinghong watched quietly. There were various spell markings and illustrations on the walls of the grand hall. Unlike her family’s Celestial Thunder, these lightning bolts mostly appeared silver-white and crawled slowly along the walls.</p>
+<p>Silver-white lightning hung from the sky like liquid, extending deep into the boundless darkness. Li Qinghong opened her eyes slightly, and the grand hall before her was now close at hand.</p>
+<p>The rolling silver lightning danced, and the murals on the walls shifted constantly. One moment, it was transforming into a dragon and a serpent devouring each other, the next into a person raising a sword to the sky, and another into a broken sword dissolving into a single bead.</p>
+<p>Li Qinghong had never been accustomed to using the Sixfold Profound Thunder Punishment Tokens and had left them on Zongquan Island. The Duruo Spear still shone brightly as it continued to tremble in her hand.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-864.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-866.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

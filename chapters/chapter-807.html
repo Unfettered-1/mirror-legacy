@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 807: Severing Fate (I) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-806.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-808.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 807: Severing Fate (I)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xuanfeng held his profound bow level, as golden-red light spilled from the arrow. Several crimson streaks brushed past his cheek, the light on the profound arrow flowing vividly. Even before it struck, a bead of blood the size of a red bean had already welled up on Tang Shedu’s forehead.</p>
+<p>Clang!</p>
+<p>At this point in the battle, he gave Tang Shedu no chance to speak and said not a word himself. He relaxed his fingers, and a red-gold light flared brightly in the azure sky.</p>
+<p>Hum… hum…</p>
+<p>The golden-red profound arrow flickered once in the air, then vanished. The whispering blue rain paused momentarily, hesitating in the sky, before once again blanketing the azure waters below.</p>
+<p>Tang Shedu was immobilized within the cyan radiance, his mana surging from his body. His pupils dilated, but he could only raise his hands a palm’s width apart on either side. His eyes were filled with nothing but the gold-red light.</p>
+<p>“You…”</p>
+<p>Only now did he understand why Daoist Master Yuan Su commanded such respect. Just a single divine ability cultivated at the early stage of the Purple Mansion Realm was enough to make others wary. The might of the Xinyou Pristine Marsh Seal was utterly terrifying.</p>
+<p>“Damn it.”</p>
+<p>Even if the golden-red arrow had given him a chance to dodge, he might not have been able to avoid it. But he was pinned in place by the cyan light, and felt as if an iron nail was being driven into his brow, sending a stabbing pain through him.</p>
+<p>Boom!</p>
+<p>Just then, the five colorful clouds Tang Shedu had vaguely seen became clearer. Five radiant stairways crisscrossed in the sky, colliding with one another, only to be momentarily stalled by the Xinyou Pristine Marsh Seal.</p>
+<p>“Damn it!” exclaimed Tang Shedu.</p>
+<p>Blue raindrops pattered down as the feathered serpent in the sky closed its eyes. The glowing azure characters of Eastern Sea Pristine Plume slowly dimmed, and the cyan light pillar dissolved into rain.</p>
+<p>Thud!</p>
+<p>Tang Shedu collapsed to his knees, the color draining from his robes and armor, leaving only two glimmers of light. There was no distinction between sky and water in the Pristine Heaven’s Pool Below, where he knelt powerlessly between the azure sky and sea.</p>
+<p>Ting… ting, ting-ting…</p>
+<p>His eyes were screwed shut as a series of sharp impacts rang out from his body. It was the buzzing clangor of metal and iron. A line cracked open across his face with a crack, releasing a howling golden wind that peeled away two shriveled strips of flesh.</p>
+<p>His magical body seemed like an overinflated hide, splitting apart bit by bit along lines of golden light. Tang Shedu slowly opened his mouth wide, and golden-red brilliance gushed from his lips, ears, and nostrils and erupted into dazzling color in midair.</p>
+<p>Cough, cough, cough…</p>
+<p>Li Xuanfeng coughed repeatedly as thick golden dust fell softly from between his lips and teeth. Dark blood flowed from his eyes, turning into round, gleaming golden beads that rolled off his cheeks with soft clinks.</p>
+<p>Yet his hands did not stop. Five golden profound arrows leapt up once again, falling into his palms in sequence. The azure light before him began to twist and distort. Li Xuanfeng felt a sharp pain in his eyes as a hazy brilliance descended from the heavens.</p>
+<p>Everything before him fragmented into a blur, revealing boundless, ethereal golden clouds. Figures of varied expressions sat within them. There were men and women, some smiling enchantingly, others glaring with fury, others still rejoicing with delight…</p>
+<p>This hazy light was merely the ladder by which the Mahas, the Merciful Ones, sought to receive Tang Shedu. It brushed gently across the Heavenly Pool, but much of its power had been diminished by the Xinyou Pristine Marsh Seal, so it only drifted softly down over the two of them.</p>
+<p>Tang Shedu’s shattered flesh slowly reformed, while Li Xuanfeng, who was only lightly grazed, heard his spirit armor emit sharp grinding noises. His entire body felt as if it was being pierced by ten thousand blades, and he felt his mana draining into a bottomless void until utterly depleted.</p>
+<p>His eyes were half-closed, filled only with blood-red light. A deep voice echoed amid the blurry sounds around him, as if spoken by ten thousand in unison, calm and serene, “Shedu… have you… seen clearly?”</p>
+<p>The voice gently reverberated through the air. A wave of warmth welled up in Li Xuanfeng’s heart, and for some reason, he felt tears rising to his eyes. The chorus of ten thousand voices continued to echo, growing sharper with each repetition.</p>
+<p>Tang Shedu forced his eyes open. “I’ve seen it clearly… seen it clearly… seen it clearly!”</p>
+<p>The voice from above settled into the space, harmonizing with its own echo, as though he stood in a grand hall of chanting voices resounding all around, “You have overcome poison and endured envy, suffered ten thousand blades and the torment of karma. Now, you cast off evil and embrace righteousness with full awakening. A single gleam of golden light returns to your heart. You may now enter my Buddhist Dao.”</p>
+<p>The voice stabbed into Li Xuanfeng’s ears, causing golden blood to stream from them, but he understood the message clearly. The northern and southern Daoist lineages had plunged Xu State into chaos. In this karmic place, Tang Shedu had seized the moment, leveraging the conflict’s spiritual momentum to ascend. He had done so to the extent that even a Maha had been moved to personally come and guide his transformation!</p>
+<p>“Join the Northern Sect of Buddhism, attain one Dao among the seven… and you shall achieve the grand fruition.”</p>
+<p>The voice boomed thunderously. Li Xuanfeng held his golden bow steady as mist-like multicolored light descended from the heavens, floating gently down onto Tang Shedu. His flesh began to shine with crystalline clarity as it was blessed.</p>
+<p>The golden armor faded from Tang Shedu’s body, leaving his forehead smooth and white as if he’d returned to his original mortal form. He pressed his hands together in prayer and was about to speak, but suddenly stopped.</p>
+<p>Dong…</p>
+<p>The hazy multicolored light before them was abruptly severed cleanly in two. A delicate hand, like white jade, emerged from the great void into the azure rain and gently clasped the floating Xinyou Pristine Marsh Seal.</p>
+<p>The ten-thousand-voice chant vanished in an instant. The golden clouds dimmed, and a female cultivator in purple robes stood amidst the blue rain. She gazed down indifferently through delicate brows and cold eyes.</p>
+<p>She stepped fully into view, casually holding the Xinyou Pristine Marsh Seal. The spirit artifact glowed obediently in her grasp.</p>
+<p>Her red lips parted as she spoke softly, “That old bald donkey is putting on his tricks again.”</p>
+<p>As her words rang out, the azure pond beneath her erupted in chaos, roiling and leaping violently. It surged across five hundred kilometers, sweeping away all the multicolored light and giving rise to waves of purple clouds instead.</p>
+<p>“Daoist Zipei… this man is fated with the Northern Sect of Buddhism…”</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-806.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-808.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

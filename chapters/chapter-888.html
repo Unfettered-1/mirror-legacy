@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 888: Condolences (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-887.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-889.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 888: Condolences (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Li Xijun looked through the list again, his heart heavy. When he looked up at Li Qinghong, he saw that she had already reviewed the registry. Seated at the head, her mood was clearly grim as well.</p>
+<p>The restriction on Li Xuanfeng’s storage pouch had long been removed. Li Qinghong picked it up and looked toward Li Xuanxuan. The old man shook his head, so she could only rise and speak gently, “In accordance with the elder’s will, all belongings shall be confiscated.”</p>
+<p>She opened the storage pouch and poured its contents out with a rustle. Clearly, Li Xuanfeng had made thorough preparations before heading north. Much of his wealth had already been left to Li Yuanqin. The items now laid out mostly came from the Great Ning Palace. They were brilliant, dazzling, and varied, but possessed a weathered, ancient aura.</p>
+<p>Li Qinghong swept her spiritual sense across the table, immediately counting everything, and briefly froze.</p>
+<p>Seventeen Qi Cultivation Realm dharma artifacts, eleven Foundation Establishment Realm spirit items, four treasured panaceas, and seventy-five Qi Cultivation Realm spirit items!</p>
+<p>There were plenty of spirit items, though none at the Embryonic Breathing Realm. After fighting his way through the Great Ning Palace, Li Xuanfeng’s collection of Foundation Establishment Realm spirit items alone far exceeded the Li Family’s reserves.</p>
+<p>The Li Family had operated by the lake for over a century. Their stores were naturally full of Embryonic Breathing Realm spirit items and many Qi Cultivation Realm dharma artifacts. But Foundation Establishment spirit items and treasured panaceas were rare, and they usually had fewer than fifty types of Qi Cultivation spirit items.</p>
+<p>Setting aside the armor prepared for Li Zhouwei and various miscellaneous items, several objects placed at the center immediately drew everyone’s attention.</p>
+<p>From left to right, they were a stack of golden talismans, a letter, an incense burner, a screen the length of an arm, and a drop of mercury.</p>
+<p>Li Qinghong examined them closely. The golden talismans and the mercury drop were inscrutable in depth. The incense burner was a Foundation Establishment Realm dharma artifact crafted with ancient techniques. It had not yet been refined and glowed a dull red; the base bore the seal character Sima.</p>
+<p>She picked up the letter first and unfolded it. The letter was written on a kind of spiritual fabric, carelessly folded and pressed under the incense burner for who knows how many years. Deep impressions of the burner’s base remained.</p>
+<p>The script danced across the page like dragons and was written in ancient seal characters,Chen Xuanli and Chen Xuanxiang have gone south into Yue and founded a sect called Lingyu Gate. The King of Yue holds them in high regard; they are not easy to deal with. Your esteemed family has long guarded the riverbank and must remain vigilant… The True Monarch has not responded in years; caution must come first in all matters.</p>
+<p>The letter appeared to be from a cultivator of Ning State, addressed to the Sima Family. It was an old matter regarding Lingyu Gate. Li Qinghong read it carefully and thought to herself,So the Chen family of Lingyu Gate truly did migrate from Ning State. No wonder they gave their full support in the siege against Daoist Master Donghua. It was likely for the sake of the Ning’s Li lineage.</p>
+<p>The King of Yue held them in high regard… but the Chen Family is now destroyed, and the Yang Family is thin in numbers. Who knows when that old ancestor will achieve a breakthrough.</p>
+<p>She passed the letter along for others to read and picked up the screen. It, too, had not been refined with mana and was now only the length of an arm. The painting on its surface was indistinct, and it lay quietly in her palm. The screen was also a dharma artifact made with ancient techniques.</p>
+<p>But the screen had a mysterious luster, and Li Xuanfeng had placed it carefully in a corner. Clearly it was no ordinary item, and Li Qinghong gave it a few extra glances.</p>
+<p>Both of these ancient dharma artifacts were extraordinary. Just refining them would take several months, so their full potential couldn’t be seen for now. Just as Li Qinghong was about to speak, an old man transformed from a white ape descended into the hall.</p>
+<p>He spoke in a buzzing voice, “Message from the riverbank, the northern cultivators have retreated. The Azure Pond Sect’s immortal envoy has reached the northern shore and is heading straight for Qingdu.”</p>
+<p>Li Xizhi nodded and added aloud, “I’ve also received word. Mount Bianyan suffered a devastating defeat. They say the grand formation was breached, and everyone scattered. But eight or nine out of ten likely won’t survive.”</p>
+<p>As the master of Azure Pond Peak, Li Xizhi was better informed. The others exchanged glances. Li Xijun lifted his head thoughtfully and said in a low voice, “If the carnage reached this level, there must be Purple Mansion Realm cultivator scheming involved. Great uncle predicted it well, the Chi Family’s bloated influence is now plain to see.”</p>
+<p>Li Qinghong had personally taken part in the matter and knew the truth best of all. She even knew that Daoist Master Changxi of Profound Peak Gate had played a part. But such things were not for open discussion, so she only nodded slightly. Li Xijun followed suit, and the group rode the wind out of the grand formation together.</p>
+<p>Li Xizhi still looked a bit downcast. The aunts and nieces were all dressed in white. A faint glow of white spirit boats appeared in the distance. Though they couldn’t compare to the Heavenly Glow Dawn Cloudliner, they were still decent immortal vessels.</p>
+<p>It was rather ironic as the Dawn Cloudliner was a rare and extravagant weapon. But since the north-south conflict involved powerful cultivators, Chi Zhiyan was reluctant to use it. As a result, the Azure Pond Sect only used the Heavenly Glow Dawn Cloudliner to transport personnel, and the immortal vessel was still docked at Azure Pond Peak.</p>
+<p>Si Yuanli’s presence was visibly diminished without the Dawn Cloudliner. Gone was the typical grandeur of the Azure Pond Sect, where the heavenly glow would arrive before the immortals themselves. The white cloud boat drifted in from afar and was only noticed when it reached the lake.</p>
+<p>But Si Yuanli didn’t care. He sat in the cabin, somewhat lost in thought, still shaken by what he had learned,Purple Mansion… So the Moon Glazed Tree is a spirit item that helps one break through to the Purple Mansion Realm!</p>
+<p>The Azure Pond Sect had many ways to assist breaking through to the Foundation Establishment Realm. There was the Three Aspects Breaking Realm Pill, Tonghua Powder, Essence Gathering Pill, and more.</p>
+<p>Most were used by the direct descendants of the Chi, Si, Ning, and Tang Families. The Essence Gathering Pill was especially precious. Just swallowing it gave a five percent success rate, and if one refined an Immortal Foundation or a Foundation Establishment Realm demonic beast, the chances multiplied. If the Immortal Foundation even matched the user’s cultivation method, the success rate could rise to forty or fifty percent!</p>
+<p>However, as a descendant of a Purple Mansion Realm lineage, Si Yuanli knew that ways to aid in breaking through to the Purple Mansion Realm were rare. Pills? Somehow, after the cataclysms, all pills meant to assist in Purple Mansion Realm breakthroughs had lost effectiveness. Only a handful of pills developed post-cataclysm were useful, and they were exceedingly rare.</p>
+<p>The only options left were cultivation methods and secret arts. The Si Family’s Wesang Scripture was a Purple Mansion Realm technique of the rare Wood Virtue lineage. Passed down through generations, it contained four secret arts. Mastering them could increase one’s breakthrough chances by twenty percent. It was an extremely rare advantage.</p>
+<p>“Ning Wan’s cultivation method only has one secret art… even the Chi Family’s murky and weighty Dark Floating Compliant Cloud Sutra only contains four.”</p>
+<p>These secret arts were painstakingly developed by their predecessors and weren’t necessarily tied to the grade of the technique. It largely depended on the prestige of one’s ancestors. As such, the Si Family’s long-standing heritage gave them an edge over the Ning Family.</p>
+<p>As for using spirit items to assist in Purple Mansion Realm breakthroughs, the process was mysterious and unreliable. Truthfully, most Purple Mansion Realm cultivators succeeded through sheer risk and resolve. But now, with this fruit in reach, how could his heart not pound with desire?</p>
+<p>“My lord… we’ve arrived at Mount Qingdu!”</p>
+<p>Si Yuanli was pulled back to reality. He adjusted his robes and rose, lifting the jade curtain of the cabin. His gaze had already sharpened, and was completely different from before.</p>
+<p>Taking control of the Azure Pond Sect wasn’t just a matter for the Si Family, it was Si Yuanli’s own chance at the Purple Mansion Realm! Never had his resolve been so ironclad. He brushed the curtain aside, his face now sorrowful and eyes reddened as he stepped out to greet them.</p>
+<p>Li Qinghong was personally waiting by the lake. Si Yuanli quickly saw that all the Li Family’s Foundation Establishment Realm cultivators had arrived, showing him due respect. Si Yuanli truly felt some grief and regret over Li Xuanfeng’s death; there was no need for him to feign emotion. His expression was naturally sincere.</p>
+<p>Brother Xuanfeng fought to the end to protect the millions of Jiangnan… It is a deep and sorrowful loss…thought Si Yuanli.</p>
+<p>Si Yuanli landed on the peak and first glanced at Li Ximing. Though the man had abundant mana, there was nothing exceptional about him. His focus shifted to the graceful and poised Li Xizhi, quietly assessing,This one has the backing of both the Yang and Li Families, with deep cultivation and clear judgment. Chi Zhiyun favored him heavily back then, and I saw through it early on… Fortunately, Chi Zhiyan has already exhausted himself with foolish blunders.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-887.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-889.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>

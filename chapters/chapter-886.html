@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 886: Returning (II) — The Mirror Legacy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #f7f2e8;
+  --parchment-dark: #ede6d5;
+  --ink:         #2a1f0e;
+  --ink-light:   #4a3728;
+  --navbar-bg:   #1a1208;
+  --gold:        #c8922a;
+  --gold-light:  #e8b84b;
+  --gold-dark:   #9a6e1e;
+  --divider:     #c8a96e;
+  --shadow:      rgba(42,31,14,0.18);
+  --font-size:   18px;
+}
+
+html { font-size: var(--font-size); scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 0 2rem;
+  position: static;          /* CRITICAL: never sticky/fixed */
+}
+
+.navbar-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.navbar-brand:hover { color: var(--gold-light); }
+
+.navbar-home {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  color: #c8b89a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.navbar-home:hover { color: var(--gold-light); }
+
+/* ── PAGE WRAPPER ───────────────────────────────────── */
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── ORNAMENT DIVIDER ───────────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  letter-spacing: 0.5rem;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 1.5rem 0;
+}
+
+/* ── CHAPTER NAV BUTTONS ────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--parchment);
+  background: var(--gold-dark);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-index {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-dark);
+}
+.btn-index:hover { background: var(--gold-dark); color: var(--parchment); }
+
+/* ── FONT SIZE CONTROLS ─────────────────────────────── */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+.font-btn {
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+  width: 28px; height: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s;
+}
+.font-btn:hover { background: var(--gold-dark); color: var(--parchment); border-color: var(--gold); }
+
+/* ── CHAPTER HEADER ─────────────────────────────────── */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapter-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ── CHAPTER BODY ───────────────────────────────────── */
+.chapter-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.chapter-body p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── INDEX PAGE ─────────────────────────────────────── */
+.novel-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novel-info { flex: 1; min-width: 220px; }
+
+.novel-title-main {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.novel-author {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.genre-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.novel-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ── TABLE OF CONTENTS ──────────────────────────────── */
+.toc-section { margin-top: 2.5rem; }
+
+.toc-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-search {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--parchment-dark);
+  border: 1px solid var(--divider);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  outline: none;
+}
+.toc-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,146,42,0.15); }
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 1.5rem;
+}
+@media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.93rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.toc-item a:hover { color: var(--gold-dark); border-bottom-color: var(--gold-dark); }
+.toc-item .ch-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  min-width: 2.8rem;
+  flex-shrink: 0;
+}
+.toc-item.hidden { display: none; }
+
+.toc-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  color: #8a7a60;
+  border-top: 1px solid var(--divider);
+  margin-top: 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+}
+</style>
+  <script>
+(function() {
+  var sizes = [14, 16, 18, 20, 22, 24];
+  var idx = 2;
+  var saved = localStorage.getItem('ml_font_idx');
+  if (saved !== null) idx = parseInt(saved, 10);
+  function applySize() {
+    document.documentElement.style.setProperty('--font-size', sizes[idx] + 'px');
+  }
+  applySize();
+  window.mlFontIncrease = function() { if (idx < sizes.length-1) { idx++; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+  window.mlFontDecrease = function() { if (idx > 0) { idx--; applySize(); localStorage.setItem('ml_font_idx', idx); } };
+})();
+</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">The Mirror Legacy</a>
+    <a href="../index.html" class="navbar-home">&#8962; All Chapters</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="chapter-nav">
+      <a href="chapter-885.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-887.html" class="btn">Next &#8594;</a>
+    </div>
+  <hr class="divider">
+
+  <header class="chapter-header">
+    <div class="chapter-eyebrow">The Mirror Legacy</div>
+    <h1 class="chapter-title">Chapter 886: Returning (II)</h1>
+  </header>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+
+  <div class="chapter-body" id="chapterBody">
+    <p>Chengshui Marsh.</p>
+<p>The gloom over Jiangbei had gradually faded away. Bright light reflected across the surface of Chengshui Marsh. The Converging Water had also thinned, and one could vaguely make out the wreckage at the bottom.</p>
+<p>The air trembled faintly as the pitch-black great void revealed itself. An elderly man in green robes emerged, holding a talisman. He stood suspended in midair, his complexion slightly flushed, and began coughing,Cough… cough…</p>
+<p>His cough stirred ripples across the water’s surface, causing it to flash with a hint of golden light. A young man, also in green robes, appeared behind him and stepped forward cheerfully.</p>
+<p>“Uncle, are you feeling better?”</p>
+<p>The elder kept a stern expression, his voice slightly hoarse as he replied, “Mount Changhuai is, after all, the leading sect of Wu State… not so easily dealt with…”</p>
+<p>This was none other than Daoist Master Yuan Xiu, Si Boxiu. He glanced at Chi Buzi before him and frowned. “And yet you didn’t even make a move? Three strands of Metallic Essence. If you’d truly given it a go, you might have seized one for yourself.”</p>
+<p>Thinking back, he still looked regretful and said with a sigh, “That was the Metallic Essence left behind by the True Essence and Divine Fiend True Monarch Tianwu… That Fruition Attainment is still unclaimed. The essence itself is a thing of beauty. Even if True Monarch Tianwu had some scheme, he acted with honor. At the very least, he would have risen to a subordinate station…”</p>
+<p>“Haha…” Unexpectedly, Chi Buzi laughed twice, glanced northward, shrugged, and replied, “Uncle, you know I’m the most suspicious sort. Just looking at that thing gives me the creeps. I’m no saint; if I really tried to attain True Essence, who knows if I’d even succeed? I fear the lord’s backup plan would send me off to the afterlife before I got there.”</p>
+<p>Si Boxiu burst into laughter, shook his head, and sighed, “You overthink it. If the True Monarch hadn’t perished, the three strands of Metallic Essence in Anhuai Heaven wouldn’t look like this. The Fruition Attainment remains unclaimed simply because our lord has no use for it. He certainly wouldn’t fake death just to leave it vacant.”</p>
+<p>The old man paused for a moment before replying, “At most, it’s like the moon and sun not responding. There’s no way a True Monarch could exist while the Fruition Attainment remains vacant.”</p>
+<p>Chi Buzi curled his lips, activated his divine ability, and calculated with his fingers. He shook his head and said, “I’ve nothing more to say. I still need to divine something, I don’t have time to waste here.”</p>
+<p>Daoist Master Yuan Xiu squinted slightly and said suspiciously, “You’re not going back to the sect? Zhiyun is in closed-door cultivation, trying to break through. I fear no one is left to oversee the larger affairs.”</p>
+<p>“Forget it!” Chi Buzi waved his hand disinterestedly and said, “Isn’t Uncle still around? If worst comes to worst, there’s always Lord Suiguan. What’s there to worry about?”</p>
+<p>Chi Buzi had no intention of returning to manage the Azure Pond Sect on behalf of Pristine Water. Ever since Chi Wei’s death, he had gradually come to see the flaws in the pursuit of Metal essence. Every moment spent in the Azure Pond Sect felt like torment. Why would he return at all?</p>
+<p>Si Boxiu furrowed his brow, his voice growing solemn, “You know well what Lord Suiguan is like. The Chi Family was never populous to begin with, and now there isn’t a single Purple Mansion Realm cultivator left. How can they hold the ground? With Zhiyun in seclusion and you refusing to return, the Chi Family may not endure.”</p>
+<p>Heh!</p>
+<p>Chi Buzi sneered inwardly and thought to himself,I’ve been gone for years, and he’s the one who’s been thrilled! He’s coveted the Moon Glazed Tree for ages, and now he’s finally getting his wish! He’s probably praying I die out here!</p>
+<p>Chi Buzi, being extremely cunning, fully understood Si Boxiu’s true intentions. He knew the kind-sounding words were mere pretext, so he simply smiled and said, “I was born into this world to follow my nature and cultivate my fate. My parents gave me life, but they never forced me to do anything. I cared for them without obligation. They died early, and I’ve since changed bodies multiple times, so what bloodline could I possibly speak of? ‘Chi Buzi’ is just a name. What has the Chi Family to do with me?</p>
+<p>“An immortal ought to cast aside worldly burdens, thinking of family, then sect, then all beings, and finally the cosmos… but the cosmos follows natural law. What does that have to do with me? A Daoist Master has but one truth, the ‘self.’ To follow nature and fate, succeed and one ascends, fail and one dies.”</p>
+<p>Si Boxiu looked at him deeply, as if slowly beginning to understand why this man could cultivate with such speed, breaking through barrier after barrier. He only shook his head silently,He bears no concern for morality, family, or all living beings, only the word ‘immortal’ remains in his heart.</p>
+<p>Chi Buzi had no interest in mincing words. He was eager to seek out Purple Mansion Realm demonic creatures. He said everything he needed to in one breath, then entered the great void and vanished without a trace.</p>
+<p>Left behind, Si Boxiu stood in silent thought, running several things through his mind,There were only three strands of Metallic Essence to begin with. Zipei struck unexpectedly, caught Zhelu off guard, and forced the essence out. In the end, the Buddhist cultivators didn’t get a single share. How satisfying!</p>
+<p>But this was also Kan Xuyu’s final move. Once she returns, she’ll be attempting to attain Purple Essence… how incredibly difficult that is. Once she succeeds, this entire North–South contest will come to an end.</p>
+<p>Si Boxiu gathered his sleeves, stepped into the great void, and with a turn, disappeared as well.</p>
+<p>————</p>
+<p>Mount Bianyan.</p>
+<p>The sky above Mount Bianyan was completely empty. The vegetation on the mountain was torn and scattered. Even the hundred spirit cords embedded into the mountain as formation anchors had cleanly been dug out. Si Yuanli stood at the summit, quietly gazing into the distance.</p>
+<p>Clad in a flowing Dharma robe and bearing a sword at his waist, he appeared otherworldly in posture, yet his brows were knit with concern. Behind him stood his nephew, Si Tongyi, his most trusted aide.</p>
+<p>Most of the Chi Family’s direct descendants, as well as the peak masters and guest cultivators, had all died here. The resulting phenomena had been utterly suppressed, leaving behind only devastation, as if nothing had ever occurred.</p>
+<p>He had no need to feign sorrow or sigh in lamentation in front of his confidants. He simply stood in the night air, lost in silent contemplation.</p>
+<p>His other companions had been sent off to search for Chi Zhiyan’s whereabouts, but the white-robed middle-aged man knew his fate full well in his heart,The Mahas and Purple Mansion cultivators of Jiangbei have dissipated together. The larger confrontation between North and South has vanished as well. Everything can now be calculated piece by piece. The soul lamps on Azure Pond Peak must have gone out in swaths like a storm passing through. There’s no way to hide it.</p>
+<p>Every move Si Yuanli made in the limited time left would shape the fate of the Azure Pond Sect. The faces of each family head and each peak master flashed through his mind. Alone, facing the biting winds, he exhaled deeply.</p>
+<p>After turning it over in his mind, something struck him. He turned quickly toward Si Tongyi. He flipped his hand over and produced a white jade command token.</p>
+<p>He said with solemn urgency, “Take my seal and rush back to the sect tonight. Deliver a secret order to Li Yuanqin. Tell him to go to Moongaze Lake to see his father one last time. This must not be made public.”</p>
+<p>“I fear it may already be too late…” Si Tongyi said thoughtfully,</p>
+<p>But Si Yuanli shook his head. “Whether he makes it in time doesn’t matter. It’s just an excuse to send him back to the Li Family. Let them talk, and see what he’s made of.”</p>
+<p>Si Tongyi rose at once and rode the wind southward at full speed. Only then did Si Yuanli relax slightly and return to his thoughts, looking for any missed details.</p>
+<p>After a while, divine light surged before him. Si Yuanli looked up thoughtfully, as a familiar aged figure appeared. Joy lit his face and he felt a sense of relief as he bowed respectfully.</p>
+<p>“Ancestor!”</p>
+<p>Daoist Master Yuan Xiu swept his gaze over the ruined Mount Bianyan, his eyelid twitching. He said nothing, and merely flicked his sleeve. Si Yuanli’s surroundings instantly dimmed, he was now walking within the great void.</p>
+<p>“Daoist Master… the Huai River Map guarded the riverbanks. Li Xuanfeng used the Monarch Calling Golden Talisman and died in fierce combat… We followed orders and used every hidden card the Daoist Master had left behind…”</p>
+<p>Si Yuanli swiftly reported everything, only to see Si Boxiu standing silently, expressionless, hands clasped behind his back. There was no hint of praise on the old man’s face, only wordless stillness.</p>
+  </div>
+
+  <div class="ornament">&#10022; &#10022; &#10022;</div>
+  <hr class="divider">
+
+  <div class="chapter-nav">
+      <a href="chapter-885.html" class="btn">&#8592; Prev</a>
+      <a href="../index.html" class="btn btn-index">&#9776; Index</a>
+      <div class="font-controls">
+        <span>Font</span>
+        <button class="font-btn" onclick="mlFontDecrease()">A&#8722;</button>
+        <button class="font-btn" onclick="mlFontIncrease()">A+</button>
+      </div>
+      <a href="chapter-887.html" class="btn">Next &#8594;</a>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+  The Mirror Legacy &mdash; Fan Translation &mdash; For personal reading only.
+</footer>
+
+</body>
+</html>
